@@ -6,7 +6,7 @@
   >
     <div class="mx-auto grid h-full w-[935px] grid-cols-3">
       <!-- logo  -->
-      <div class="flex items-center">
+      <div class="flex w-full items-center">
         <img
           alt="Instagram"
           class="h-[29px]"
@@ -14,7 +14,7 @@
         />
       </div>
       <!-- search -->
-      <div class="flex items-center">
+      <div class="flex w-full items-center justify-center">
         <div
           class="flex h-[36px] w-[268px] items-center rounded-md bg-gray-200 px-[16px]"
         >
@@ -51,7 +51,7 @@
         </div>
       </div>
       <!-- nav -->
-      <div class="flex h-full w-[254px] items-center justify-between">
+      <div class="flex h-full w-full items-center justify-end space-x-[22px]">
         <svg
           aria-label="Home"
           class="_8-yf5"
