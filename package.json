@@ -7,6 +7,11 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.1"
+    "autoprefixer": "^10.4.5",
+    "nuxt": "3.0.0-rc.1",
+    "postcss": "^8.4.12",
+    "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.10",
+    "tailwindcss": "^3.0.24"
   }
 }
