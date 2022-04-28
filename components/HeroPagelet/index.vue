@@ -21,8 +21,6 @@ const handle = (e: MouseEvent, idx: number) => {
     startPointX.value - 500 * idx
   }px)`;
   startPointX.value -= 500 * idx;
-  console.log("A", heroPageletRef.value.clientWidth);
-  console.log("B", startPointX.value);
   if (
     idx === 1 &&
     Math.abs(startPointX.value - SIZE_HERO_PAGELET.WIDTH) >
@@ -50,7 +48,7 @@ const handle = (e: MouseEvent, idx: number) => {
 
 <template>
   <div
-    class="group relative inline-flex h-[119px] w-[614px] items-center overflow-hidden border-[1px] border-black"
+    class="relative mb-[24px] inline-flex h-[119px] w-[614px] items-center overflow-hidden border-[1px] border-gray-200"
   >
     <div class="flex h-[85px]" ref="heroPageletRef">
       <Item v-for="(i, idx) in Array.from(Array(20).keys())" :key="idx" />

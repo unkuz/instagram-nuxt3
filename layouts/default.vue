@@ -1,54 +1,20 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import Search from "~~/components/Header/Search.vue";
+import Logo from "~~/components/Header/Logo.vue";
+</script>
 
 <template>
   <header
-    class="mb-[24px] h-[60px] border-b-[1px] border-gray-200 shadow-sm shadow-gray-200"
+    class="mb-[24px] h-[60px] w-full border-b-[1px] border-gray-200 shadow-sm shadow-gray-200"
   >
     <div class="mx-auto grid h-full w-[935px] grid-cols-3">
       <!-- logo  -->
       <div class="flex w-full items-center">
-        <img
-          alt="Instagram"
-          class="h-[29px]"
-          src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png"
-        />
+        <Logo />
       </div>
       <!-- search -->
       <div class="flex w-full items-center justify-center">
-        <div
-          class="flex h-[36px] w-[268px] items-center rounded-md bg-gray-200 px-[16px]"
-        >
-          <svg
-            aria-label="Search"
-            class="_8-yf5"
-            color="#8e8e8e"
-            fill="#8e8e8e"
-            height="16"
-            role="img"
-            viewBox="0 0 24 24"
-            width="16"
-          >
-            <path
-              d="M19 10.5A8.5 8.5 0 1110.5 2a8.5 8.5 0 018.5 8.5z"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-            ></path>
-            <line
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              x1="16.511"
-              x2="22"
-              y1="16.511"
-              y2="22"
-            ></line>
-          </svg>
-        </div>
+        <Search />
       </div>
       <!-- nav -->
       <div class="flex h-full w-full items-center justify-end space-x-[22px]">
