@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <article class="w-[614px] border-[1px] border-gray-200">
+  <article class="mb-[24px] w-[614px] border-[1px] border-gray-200">
     <!-- head -->
     <div class="h-[60px]">
       <div class="mx-[16px] flex h-full items-center justify-between">

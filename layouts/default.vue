@@ -1,23 +1,17 @@
 <script lang="ts" setup>
 import Search from "~~/components/Header/Search.vue";
 import Logo from "~~/components/Header/Logo.vue";
-const isSelectHome = ref(false);
-const isSelectMess = ref(false);
-const isSelectPost = ref(false);
-const isSelectExplore = ref(false);
-const isSelectFav = ref(false);
-const isSelectSelf = ref(false);
+const isSelectHome = ref(true);
+const isSelectMess = ref(true);
+const isSelectPost = ref(true);
+const isSelectExplore = ref(true);
+const isSelectFav = ref(true);
+const isSelectSelf = ref(true);
 </script>
 
 <template>
   <header
-    class="
-      mb-[24px]
-      h-[60px]
-      w-full
-      border-b-[1px] border-gray-200
-      shadow-sm shadow-gray-200
-    "
+    class="mb-[24px] h-[60px] w-full border-b-[1px] border-gray-200 shadow-sm shadow-gray-200"
   >
     <div class="mx-auto grid h-full w-[935px] grid-cols-3">
       <!-- logo  -->
