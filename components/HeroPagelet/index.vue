@@ -18,9 +18,9 @@ onMounted(() => {
 
 const handle = (e: MouseEvent, idx: number) => {
   heroPageletRef.value.style.transform = `translateX(${
-    startPointX.value - 500 * idx
+    startPointX.value - SIZE_HERO_PAGELET.SPACE_SLICE * idx
   }px)`;
-  startPointX.value -= 500 * idx;
+  startPointX.value -= SIZE_HERO_PAGELET.SPACE_SLICE * idx;
   if (
     idx === 1 &&
     Math.abs(startPointX.value - SIZE_HERO_PAGELET.WIDTH) >
@@ -48,9 +48,9 @@ const handle = (e: MouseEvent, idx: number) => {
 
 <template>
   <div
-    class="relative mb-[24px] inline-flex h-[119px] w-[614px] items-center overflow-hidden border-[1px] border-gray-200"
+    class="relative mb-[24px] inline-flex h-[119px] w-[614px] items-center overflow-hidden border-[1px] border-gray-200 	"
   >
-    <div class="flex h-[85px]" ref="heroPageletRef">
+    <div class="flex h-[85px] transition-all	duration-200 ease-in-out" ref="heroPageletRef">
       <Item v-for="(i, idx) in Array.from(Array(20).keys())" :key="idx" />
     </div>
     <div
