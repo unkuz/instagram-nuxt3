@@ -13,4 +13,5 @@ export default defineNuxtConfig({
       },
     },
   },
+  buildModules: ["@pinia/nuxt"],
 });
