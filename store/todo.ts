@@ -10,6 +10,7 @@ export interface Todo {
 }
 export interface TodoState {
   items: Todo[] | undefined[];
+  haha: Boolean;
 }
 
 export interface UpdateTodo {
@@ -23,6 +24,7 @@ export interface TodoAdd {
 
 const state = (): TodoState => ({
   items: [],
+  haha: true,
 });
 
 const getters = {

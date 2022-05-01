@@ -5,16 +5,12 @@ import Post from "~~/components/Post/index.vue";
 definePageMeta({
   layout: "default",
 });
-definePageMeta({
-  layout: "main",
-});
 </script>
 
 <template>
   <div>
     <HeroPagelet />
-
     <Post v-for="i in Array.from(Array(5).keys())" :key="i" />
   </div>
-  <!-- <HeroPlaceHolder /> -->
+  <HeroPlaceHolder />
 </template>

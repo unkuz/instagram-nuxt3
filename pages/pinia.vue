@@ -4,4 +4,6 @@ import { useTodoStore } from "~~/store/todo";
 const todo = useTodoStore();
 </script>
 
-<template></template>
+<template>
+  <p>{{ todo.haha }}</p>
+</template>
