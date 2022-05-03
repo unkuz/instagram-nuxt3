@@ -238,7 +238,7 @@ const isSelectSelf = ref(true);
           data-testid="user-avatar"
           draggable="false"
           class="aspect-square w-[24px] rounded-full"
-          src="../assets/image/avatar.jpg"
+          src="/image/avatar.jpg"
         />
       </div>
     </div>

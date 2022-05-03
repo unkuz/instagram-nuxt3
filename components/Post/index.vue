@@ -34,7 +34,7 @@
     <div class="h-[614px] bg-gray-200">
       <img
         class="aspect-square"
-        src="../../assets/image/deth8za-94db9472-3b4c-4495-8f8c-ecaa93c92398.jpg"
+        src="/image/deth8za-94db9472-3b4c-4495-8f8c-ecaa93c92398.jpg"
         alt=""
       />
     </div>

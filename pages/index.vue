@@ -5,9 +5,16 @@ import Post from "~~/components/Post/index.vue";
 definePageMeta({
   layout: "default",
 });
+useHead({
+  titleTemplate: "Instagram",
+  meta: [{ name: "description", content: "My amazing site." }],
+});
 </script>
 
 <template>
+  <Head>
+    <Title>{{ "Instagram" }}</Title>
+  </Head>
   <div>
     <HeroPagelet />
     <Post v-for="i in Array.from(Array(5).keys())" :key="i" />
