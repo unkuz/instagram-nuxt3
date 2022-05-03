@@ -2,11 +2,11 @@
 import Search from "~~/components/Header/Search.vue";
 import Logo from "~~/components/Header/Logo.vue";
 const isSelectHome = ref(true);
-const isSelectMess = ref(true);
-const isSelectPost = ref(true);
-const isSelectExplore = ref(true);
-const isSelectFav = ref(true);
-const isSelectSelf = ref(true);
+const isSelectMess = ref(false);
+const isSelectPost = ref(false);
+const isSelectExplore = ref(false);
+const isSelectFav = ref(false);
+const isSelectSelf = ref(false);
 </script>
 
 <template>
