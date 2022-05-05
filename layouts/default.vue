@@ -11,7 +11,7 @@ const isSelectSelf = ref(false);
 
 <template>
   <header
-    class="fixed top-0 z-10 mb-[24px] h-[60px] w-full border-b-[1px] border-gray-200 bg-white shadow-sm shadow-gray-200"
+    class="fixed top-0 z-10 h-[60px] w-full border-b-[1px] border-gray-200 bg-white shadow-sm shadow-gray-200"
   >
     <div class="mx-auto grid h-full w-[935px] grid-cols-3">
       <!-- logo  -->

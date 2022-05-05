@@ -1,4 +1,4 @@
 export enum SIZE_HERO_PAGELET {
   WIDTH = 614,
-  SPACE_SLICE = 1000
+  SPACE_SLICE = 200,
 }
