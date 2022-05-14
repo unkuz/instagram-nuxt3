@@ -8,6 +8,7 @@ import FindPeople from "../Nav/FindPeople.vue";
 import ActivityFeed from "../Nav/ActivityFeed.vue";
 import SelfAvatar from "../Nav/SelfAvatar.vue";
 import { useResizeWindow } from "~~/composables/useResizeWindow";
+import { ROUTES } from "~~/constants/routes";
 
 const { width, height } = useResizeWindow();
 const isMobileResponsive = ref(false);
@@ -24,22 +25,19 @@ watchEffect(() => {
     <div
       class="mx-[20px] grid h-full grid-cols-2 md:flex md:justify-between lg:mx-auto lg:grid lg:w-[935px] lg:grid-cols-3"
     >
-      <!-- logo  -->
       <div class="flex w-full items-center md:w-auto lg:w-full">
         <Logo />
       </div>
-      <!-- search -->
       <div
         class="hidden w-full items-center justify-center md:flex md:w-auto lg:w-full"
       >
         <Search />
       </div>
-      <!-- nav -->
       <div
         class="flex h-full w-full items-center justify-end space-x-[22px] md:w-auto lg:w-full"
       >
-        <HomeIcon :isHidden="!isMobileResponsive" />
-        <Messenger :isHidden="true" />
+        <HomeIcon :isHidden="!isMobileResponsive" :to="ROUTES.HOME" />
+        <Messenger :isHidden="true" :to="ROUTES.MESSENGER" />
         <NewPost :isHidden="true" />
         <FindPeople :isHidden="!isMobileResponsive" />
         <ActivityFeed :isHidden="!isMobileResponsive" />

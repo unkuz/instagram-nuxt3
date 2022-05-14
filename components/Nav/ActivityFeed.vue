@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-import IconBase from "./IconBase.vue";
+import IconBase from "~~/components/Nav/IconBase.vue";
 const isSelectFav = ref(false);
 
 interface IconProps {
   isHidden?: boolean;
+  to?: string;
 }
-
 const props = defineProps<IconProps>();
 </script>
 
 <template>
-  <IconBase :isHidden="props.isHidden">
+  <IconBase :isHidden="props.isHidden" :to="props.to">
     <svg
       v-if="isSelectFav"
       aria-label="Activity Feed"

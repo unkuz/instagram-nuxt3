@@ -1,15 +1,18 @@
 <script lang="ts" setup>
-interface IconProps {
+export interface IconProps {
   isHidden?: boolean;
+  to?: string;
 }
 const props = defineProps<IconProps>();
 </script>
 
 <template>
-  <div
-    v-if="props.isHidden"
-    class="h-[24px] w-[24px] md:block md:hover:cursor-pointer"
-  >
-    <slot />
-  </div>
+  <NuxtLink :to="props.to">
+    <div
+      v-if="props.isHidden"
+      class="h-[24px] w-[24px] md:block md:hover:cursor-pointer"
+    >
+      <slot />
+    </div>
+  </NuxtLink>
 </template>

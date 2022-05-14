@@ -1,15 +1,16 @@
 <script lang="ts" setup>
 import IconBase from "~~/components/Nav/IconBase.vue";
 const isSelectSearch = ref(true);
-
 interface IconProps {
   isHidden?: boolean;
+  to?: string;
 }
+
 const props = defineProps<IconProps>();
 </script>
 
 <template>
-  <IconBase :isHidden="props.isHidden">
+  <IconBase :isHidden="props.isHidden" :to="props.to">
     <svg
       aria-label="Search and explore"
       class="mb-3"
