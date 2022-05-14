@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="fixed bottom-0 z-10 flex h-[60px] w-full items-center justify-around border-t-[1px] border-gray-200 bg-white"
+    class="fixed bottom-0 z-10 flex h-[60px] w-full items-center justify-around border-t-[1px] border-gray-200 bg-white sm:hidden"
   >
     <svg
       aria-label="Home"
