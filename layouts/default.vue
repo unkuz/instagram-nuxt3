@@ -11,15 +11,17 @@ const isSelectSelf = ref(false);
 
 <template>
   <header
-    class="fixed top-0 z-10 h-[60px] w-full border-b-[1px] border-gray-200 bg-white shadow-sm shadow-gray-200"
+    class="fixed top-0 z-10 h-[60px] w-full border-0 border-gray-200 bg-white shadow-gray-200 sm:border-b-[1px] sm:shadow-sm"
   >
-    <div class="mx-auto grid h-full w-[935px] grid-cols-3">
+    <div
+      class="mx-[20px] grid h-full grid-cols-2 lg:mx-auto lg:w-[935px] lg:grid-cols-3"
+    >
       <!-- logo  -->
       <div class="flex w-full items-center">
         <Logo />
       </div>
       <!-- search -->
-      <div class="flex w-full items-center justify-center">
+      <div class="hidden w-full items-center justify-center lg:flex">
         <Search />
       </div>
       <!-- nav -->
@@ -27,7 +29,7 @@ const isSelectSelf = ref(false);
         <svg
           v-if="isSelectHome"
           aria-label="Home"
-          class="md:hover:cursor-pointer"
+          class="hidden h-[24px] w-[24px] md:block md:hover:cursor-pointer"
           color="#262626"
           fill="#262626"
           height="24"
@@ -42,7 +44,7 @@ const isSelectSelf = ref(false);
         <svg
           v-else
           aria-label="Home"
-          class="md:hover:cursor-pointer"
+          class="hidden h-[24px] w-[24px] md:block md:hover:cursor-pointer"
           color="#262626"
           fill="#262626"
           height="24"
@@ -97,6 +99,7 @@ const isSelectSelf = ref(false);
             fill-rule="evenodd"
           ></path>
         </svg>
+
         <svg
           v-if="isSelectPost"
           aria-label="New post"
@@ -154,10 +157,11 @@ const isSelectSelf = ref(false);
             y2="17.455"
           ></line>
         </svg>
+
         <svg
           v-if="isSelectExplore"
           aria-label="Find people"
-          class="md:hover:cursor-pointer"
+          class="hidden h-[24px] w-[24px] md:block md:hover:cursor-pointer"
           color="#262626"
           fill="#262626"
           height="24"
@@ -172,7 +176,7 @@ const isSelectSelf = ref(false);
         <svg
           v-else
           aria-label="Find people"
-          class="md:hover:cursor-pointer"
+          class="hidden h-[24px] w-[24px] md:block md:hover:cursor-pointer"
           color="#262626"
           fill="#262626"
           height="24"
@@ -203,10 +207,11 @@ const isSelectSelf = ref(false);
             stroke-width="2"
           ></circle>
         </svg>
+
         <svg
           v-if="isSelectFav"
           aria-label="Activity Feed"
-          class="md:hover:cursor-pointer"
+          class="hidden h-[24px] w-[24px] md:block md:hover:cursor-pointer"
           color="#262626"
           fill="#262626"
           height="24"
@@ -221,7 +226,7 @@ const isSelectSelf = ref(false);
         <svg
           v-else
           aria-label="Activity Feed"
-          class="md:hover:cursor-pointer"
+          class="hidden h-[24px] w-[24px] md:block md:hover:cursor-pointer"
           color="#262626"
           fill="#262626"
           height="24"
@@ -233,17 +238,18 @@ const isSelectSelf = ref(false);
             d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"
           ></path>
         </svg>
+
         <img
           crossorigin="anonymous"
           data-testid="user-avatar"
           draggable="false"
-          class="aspect-square w-[24px] rounded-full"
+          class="hidden aspect-square w-[24px] rounded-full md:block"
           src="/image/avatar.jpg"
         />
       </div>
     </div>
   </header>
-  <div class="mx-auto mt-[84px] w-[935px]">
+  <div class="mx-auto mt-[50px] w-full sm:mt-[84px] lg:w-[935px]">
     <slot />
   </div>
   <footer />

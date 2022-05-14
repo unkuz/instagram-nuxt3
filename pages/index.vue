@@ -19,5 +19,5 @@ useHead({
     <HeroPagelet />
     <Post v-for="i in Array.from(Array(5).keys())" :key="i" />
   </div>
-  <HeroPlaceHolder />
+  <!-- <HeroPlaceHolder /> -->
 </template>

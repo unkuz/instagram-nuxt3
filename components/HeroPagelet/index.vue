@@ -48,19 +48,22 @@ const handle = (e: MouseEvent, idx: number) => {
 
 <template>
   <div
-    class="relative mb-[24px] inline-flex h-[119px] w-[614px] items-center overflow-hidden border-[1px] border-gray-200 	"
+    class="relative mb-[24px] inline-flex h-[119px] w-full items-center overflow-hidden border-0 border-gray-200 sm:border-[1px] md:w-[614px]"
   >
-    <div class="flex h-[85px] transition-all	duration-200 ease-in-out" ref="heroPageletRef">
+    <div
+      class="flex h-[85px] transition-all duration-500 ease-in-out"
+      ref="heroPageletRef"
+    >
       <Item v-for="(i, idx) in Array.from(Array(20).keys())" :key="idx" />
     </div>
     <div
       v-if="isShowNext"
-      class="absolute top-1/2 right-2 h-[22px] w-[22px] -translate-y-1/2 rounded-full bg-gray-200"
+      class="absolute top-1/2 right-2 hidden h-[22px] w-[22px] -translate-y-1/2 rounded-full bg-gray-200 sm:block"
       @click="handle($event, 1)"
     ></div>
     <div
       v-if="isShowPrev"
-      class="absolute top-1/2 left-2 h-[22px] w-[22px] -translate-y-1/2 rounded-full bg-gray-200"
+      class="absolute top-1/2 left-2 hidden h-[22px] w-[22px] -translate-y-1/2 rounded-full bg-gray-200 sm:block"
       @click="handle($event, -1)"
     ></div>
   </div>

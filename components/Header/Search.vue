@@ -1,9 +1,21 @@
 <script lang="ts" setup>
+import { useClickOutSide } from "~~/composables/useClickOutSide";
 const isSearchActive = ref(true);
+const searchRef = ref(null);
+
+// const toggleSearchActive = () => {
+//   isSearchActive.value = !isSearchActive.value;
+// };
+
+useClickOutSide(searchRef, () => {
+  isSearchActive.value = false;
+});
 </script>
 
 <template>
   <div
+    ref="searchRef"
+    @click="isSearchActive = false"
     class="relative flex h-[36px] w-[268px] cursor-text items-center rounded-md bg-gray-200 px-[16px]"
   >
     <svg
@@ -44,6 +56,10 @@ const isSearchActive = ref(true);
       >Search</span
     >
 
-    <input type="text" class="bg-transparent focus:outline-none" />
+    <input
+      type="text"
+      placeholder="Search"
+      class="absolute top-1/2 left-1/2 h-[30px] w-[236px] -translate-x-1/2 -translate-y-1/2 bg-transparent focus:outline-none"
+    />
   </div>
 </template>

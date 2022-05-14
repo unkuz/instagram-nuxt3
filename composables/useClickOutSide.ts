@@ -1,6 +1,6 @@
 export function useClickOutSide(ref: any, callback: Function) {
   const listener = (event: MouseEvent) => {
-    if (!ref.current || ref.current.contains(event.target)) {
+    if (!ref.value || ref.value.contains(event.target)) {
       return;
     }
     callback();

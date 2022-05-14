@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <article class="mb-[24px] w-[614px] border-[1px] border-gray-200">
+  <article class="mb-[24px] w-full border-[1px] border-gray-200 md:w-[614px]">
     <!-- head -->
     <div class="h-[60px]">
       <div class="mx-[16px] flex h-full items-center justify-between">
@@ -31,7 +31,7 @@
       </div>
     </div>
     <!-- body -->
-    <div class="h-[614px] bg-gray-200">
+    <div class="w-full bg-gray-200">
       <img
         class="aspect-square"
         src="/image/deth8za-94db9472-3b4c-4495-8f8c-ecaa93c92398.jpg"

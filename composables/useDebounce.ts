@@ -9,6 +9,5 @@ export function useDebounce(input: any, delayTimeSecond: number) {
   onUnmounted(() => {
     clearTimeout(timer);
   });
-
   return value;
 }
