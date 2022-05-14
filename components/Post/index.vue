@@ -1,9 +1,11 @@
 <script lang="ts" setup></script>
 
 <template>
-  <article class="mb-[24px] w-full border-[1px] border-gray-200 md:w-[614px]">
+  <article
+    class="mb-[24px] w-full border-gray-200 sm:border-[1px] md:w-[614px]"
+  >
     <!-- head -->
-    <div class="h-[60px]">
+    <div class="hidden h-[60px] sm:block">
       <div class="mx-[16px] flex h-full items-center justify-between">
         <!-- avatar -->
         <div>
@@ -31,7 +33,34 @@
       </div>
     </div>
     <!-- body -->
-    <div class="w-full bg-gray-200">
+    <div class="relative w-full">
+      <div class="absolute top-0 block h-[60px] w-full sm:hidden">
+        <div class="mx-[16px] flex h-full items-center justify-between">
+          <!-- avatar -->
+          <div>
+            <div
+              class="aspect-square w-[32px] rounded-full border-[1px] border-gray-200"
+            ></div>
+          </div>
+          <!-- right -->
+          <div>
+            <svg
+              aria-label="More Options"
+              class="_8-yf5"
+              color="#262626"
+              fill="#262626"
+              height="24"
+              role="img"
+              viewBox="0 0 24 24"
+              width="24"
+            >
+              <circle cx="12" cy="12" r="1.5"></circle>
+              <circle cx="6" cy="12" r="1.5"></circle>
+              <circle cx="18" cy="12" r="1.5"></circle>
+            </svg>
+          </div>
+        </div>
+      </div>
       <img
         class="aspect-square"
         src="/image/deth8za-94db9472-3b4c-4495-8f8c-ecaa93c92398.jpg"

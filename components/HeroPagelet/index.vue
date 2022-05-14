@@ -48,7 +48,7 @@ const handle = (e: MouseEvent, idx: number) => {
 
 <template>
   <div
-    class="relative mb-[24px] inline-flex h-[119px] w-full items-center overflow-hidden border-0 border-gray-200 sm:border-[1px] md:w-[614px]"
+    class="relative inline-flex h-[119px] w-full items-center overflow-hidden border-0 border-gray-200 sm:mb-[24px] sm:border-[1px] md:w-[614px]"
   >
     <div
       class="flex h-[85px] transition-all duration-500 ease-in-out"
