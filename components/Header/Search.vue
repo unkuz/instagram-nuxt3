@@ -1,25 +1,32 @@
 <script lang="ts" setup>
 import { useClickOutSide } from "~~/composables/useClickOutSide";
-const isSearchActive = ref(true);
+const isSearchActive = ref(false);
 const searchRef = ref(null);
+const inputSearch = ref(null);
+const searchValue = ref("");
 
-// const toggleSearchActive = () => {
-//   isSearchActive.value = !isSearchActive.value;
-// };
-
-useClickOutSide(searchRef, () => {
+const setActiveSearchInput = () => {
+  isSearchActive.value = true;
+};
+const closeSearch = (e: MouseEvent) => {
+  e.stopPropagation();
+  searchValue.value = "";
   isSearchActive.value = false;
+};
+
+watch(isSearchActive, (state, prev) => {
+  isSearchActive.value ? inputSearch.value.focus() : "";
 });
 </script>
 
 <template>
   <div
     ref="searchRef"
-    @click="isSearchActive = false"
+    @click="setActiveSearchInput"
     class="relative flex h-[36px] w-[268px] cursor-text items-center rounded-md bg-gray-200 px-[16px]"
   >
     <svg
-      v-show="isSearchActive"
+      v-show="!isSearchActive"
       aria-label="Search"
       class="_8-yf5"
       color="#8e8e8e"
@@ -51,15 +58,30 @@ useClickOutSide(searchRef, () => {
     </svg>
 
     <span
-      v-show="isSearchActive"
+      v-show="!isSearchActive"
       class="absolute top-1/2 left-[60px] -translate-y-1/2 text-sm"
       >Search</span
     >
 
     <input
       type="text"
-      placeholder="Search"
+      ref="inputSearch"
+      v-model="searchValue"
       class="absolute top-1/2 left-1/2 h-[30px] w-[236px] -translate-x-1/2 -translate-y-1/2 bg-transparent focus:outline-none"
     />
+    <div
+      class="absolute right-3 cursor-pointer"
+      v-show="isSearchActive"
+      @click="closeSearch"
+    >
+      <div class="relative h-[18px] w-[18px] rounded-full bg-gray-600">
+        <div
+          class="absolute top-1/2 left-1/2 h-[8px] w-[2px] -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 h-[8px] w-[2px] -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-white"
+        ></div>
+      </div>
+    </div>
   </div>
 </template>
