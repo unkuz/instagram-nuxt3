@@ -9,9 +9,10 @@
     >
       <div class="h-full w-full rounded-full bg-white p-[2px]">
         <img
-          class="aspect-square rounded-full"
-          src="/image/deth8za-94db9472-3b4c-4495-8f8c-ecaa93c92398.jpg"
+          class="aspect-square rounded-full object-cover"
+          src="/image/279375482_145702114637088_9152756357257867371_n.jpg"
           alt=""
+          crossorigin="anonymous"
         />
       </div>
     </div>
