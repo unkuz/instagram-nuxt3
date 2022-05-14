@@ -6,7 +6,7 @@
   >
     <svg
       aria-label="Home"
-      class="_8-yf5"
+      class="mb-3"
       color="#262626"
       fill="#262626"
       height="24"
@@ -20,7 +20,7 @@
     </svg>
     <svg
       aria-label="Search and explore"
-      class="_8-yf5"
+      class="mb-3"
       color="#262626"
       fill="#262626"
       height="24"
@@ -50,7 +50,7 @@
     </svg>
     <svg
       aria-label="New post"
-      class="_8-yf5"
+      class="mb-3"
       color="#262626"
       fill="#262626"
       height="24"
@@ -91,7 +91,7 @@
     </svg>
     <svg
       aria-label="Activity"
-      class="_8-yf5"
+      class="mb-3"
       color="#262626"
       fill="#262626"
       height="24"
@@ -107,7 +107,7 @@
       crossorigin="anonymous"
       data-testid="user-avatar"
       draggable="false"
-      class="aspect-square w-[24px] rounded-full"
+      class="mb-3 aspect-square w-[24px] rounded-full"
       src="/image/avatar.jpg"
     />
   </div>
