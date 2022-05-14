@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import Search from "~~/components/Header/Search.vue";
 import Logo from "~~/components/Header/Logo.vue";
+import Navbarbottom from "./navbarbottom.vue";
 const isSelectHome = ref(true);
 const isSelectMess = ref(false);
 const isSelectPost = ref(false);
@@ -252,5 +253,6 @@ const isSelectSelf = ref(false);
   <div class="mx-auto mt-[50px] w-full sm:mt-[84px] lg:w-[935px]">
     <slot />
   </div>
+  <Navbarbottom />
   <footer />
 </template>
