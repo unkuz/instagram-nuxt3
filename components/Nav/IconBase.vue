@@ -7,10 +7,7 @@ const props = defineProps<IconProps>();
 </script>
 
 <template>
-  <div
-    v-if="props.isHidden"
-    class="h-[24px] w-[24px] md:block md:hover:cursor-pointer"
-  >
+  <div class="h-[24px] w-[24px] md:block md:hover:cursor-pointer">
     <NuxtLink :to="props.to">
       <slot />
     </NuxtLink>

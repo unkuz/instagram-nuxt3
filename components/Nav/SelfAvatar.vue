@@ -3,14 +3,13 @@ import IconBase from "~~/components/Nav/IconBase.vue";
 const isSelectSelfAvatar = ref(true);
 
 interface IconProps {
-  isHidden?: boolean;
   to?: string;
 }
 const props = defineProps<IconProps>();
 </script>
 
 <template>
-  <div v-if="props.isHidden">
+  <div>
     <NuxtLink :to="props.to">
       <div
         v-if="isSelectSelfAvatar"

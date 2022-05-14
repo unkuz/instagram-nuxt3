@@ -9,12 +9,19 @@ import ActivityFeed from "../Nav/ActivityFeed.vue";
 import SelfAvatar from "../Nav/SelfAvatar.vue";
 import { useResizeWindow } from "~~/composables/useResizeWindow";
 import { ROUTES } from "~~/constants/routes";
+import ActivityFeedPop from "../Huge/ActivityFeedPop/index.vue";
+import AccountPop from "../Huge/AccountPop/index.vue";
 
 const { width, height } = useResizeWindow();
-const isMobileResponsive = ref(false);
+const isMobileResponsive = ref(true);
 
 watchEffect(() => {
-  isMobileResponsive.value = width.value < 768;
+  isMobileResponsive.value = width.value < 768 ?? false;
+});
+
+onMounted(() => {
+  console.log("W", width.value);
+  console.log("H", height.value);
 });
 </script>
 
@@ -34,14 +41,23 @@ watchEffect(() => {
         <Search />
       </div>
       <div
-        class="flex h-full w-full items-center justify-end space-x-[22px] md:w-auto lg:w-full"
+        class="flex h-full w-full flex-row-reverse items-center justify-start space-x-[22px] space-x-reverse md:w-auto md:flex-row md:justify-end md:first:mr-6 lg:w-full"
       >
-        <HomeIcon :isHidden="!isMobileResponsive" :to="ROUTES.HOME" />
+        <div v-if="!isMobileResponsive" class="md:mr-[22px]">
+          <HomeIcon :to="ROUTES.HOME" />
+        </div>
         <Messenger :isHidden="true" :to="ROUTES.MESSENGER" />
         <NewPost :isHidden="true" />
-        <FindPeople :isHidden="!isMobileResponsive" />
-        <ActivityFeed :isHidden="!isMobileResponsive" />
-        <SelfAvatar :isHidden="!isMobileResponsive" />
+        <FindPeople v-if="!isMobileResponsive" :to="ROUTES.EXPLORE" />
+        <div class="relative" v-if="!isMobileResponsive">
+          <ActivityFeed />
+          <!-- <ActivityFeedPop v-if="true" /> -->
+        </div>
+        <div class="relative" v-if="!isMobileResponsive">
+          <SelfAvatar />
+
+          <!-- <AccountPop v-if="true" /> -->
+        </div>
       </div>
     </div>
   </header>

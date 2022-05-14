@@ -2,6 +2,7 @@
 import HeroPagelet from "~~/components/HeroPagelet/index.vue";
 import HeroPlaceHolder from "~~/components/HeroPlaceHolder/index.vue";
 import Post from "~~/components/Post/index.vue";
+import NewPost from "~~/components/Huge/NewPost/index.vue";
 definePageMeta({
   layout: "default",
 });
@@ -19,5 +20,6 @@ useHead({
     <HeroPagelet />
     <Post v-for="i in Array.from(Array(5).keys())" :key="i" />
   </div>
+
   <!-- <HeroPlaceHolder />  -->
 </template>

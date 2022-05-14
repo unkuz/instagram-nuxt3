@@ -1,3 +1,3 @@
 <script lang="ts" setup></script>
 
-<template>EXPLORE</template>
+<template>EXPLORE DNJkHJK:FHJKLLjkhfjkhdfjkhsdjkhfjkdshfjkhdjkh</template>

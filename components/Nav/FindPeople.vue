@@ -10,7 +10,7 @@ const props = defineProps<IconProps>();
 </script>
 
 <template>
-  <IconBase :isHidden="props.isHidden" :to="props.to">
+  <IconBase :to="props.to">
     <svg
       v-if="isSelectExplore"
       aria-label="Find people"
