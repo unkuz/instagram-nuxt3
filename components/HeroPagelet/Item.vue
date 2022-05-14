@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="mx-[10px] inline-block max-w-[74px] overflow-hidden text-ellipsis whitespace-nowrap"
+    class="mx-[10px] inline-block max-w-[74px] select-none overflow-hidden text-ellipsis whitespace-nowrap sm:cursor-pointer"
   >
     <div
       class="mx-auto aspect-square h-[66px] overflow-hidden rounded-full bg-gradient-to-bl from-[#c42d91] to-[#f99d4c] p-[2px]"
