@@ -8,7 +8,7 @@ import SelfAvatar from "~~/components/Nav/SelfAvatar.vue";
 
 <template>
   <div
-    class="fixed bottom-0 z-10 h-[65px] w-full border-t-[1px] border-gray-200 bg-white sm:hidden"
+    class="fixed bottom-0 z-10 h-[65px] w-full border-t-[1px] border-gray-200 bg-white md:hidden"
   >
     <div class="mt-3 flex items-center justify-around">
       <HomeIcon :isHidden="true" />

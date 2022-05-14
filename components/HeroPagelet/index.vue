@@ -58,12 +58,12 @@ const handle = (e: MouseEvent, idx: number) => {
     </div>
     <div
       v-if="isShowNext"
-      class="absolute top-1/2 right-2 hidden h-[22px] w-[22px] -translate-y-1/2 rounded-full bg-gray-200 sm:block"
+      class="absolute top-1/2 right-2 h-[22px] w-[22px] -translate-y-1/2 rounded-full bg-gray-200 sm:block"
       @click="handle($event, 1)"
     ></div>
     <div
       v-if="isShowPrev"
-      class="absolute top-1/2 left-2 hidden h-[22px] w-[22px] -translate-y-1/2 rounded-full bg-gray-200 sm:block"
+      class="absolute top-1/2 left-2 h-[22px] w-[22px] -translate-y-1/2 rounded-full bg-gray-200 sm:block"
       @click="handle($event, -1)"
     ></div>
   </div>
