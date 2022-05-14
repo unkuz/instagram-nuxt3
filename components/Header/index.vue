@@ -43,19 +43,21 @@ onMounted(() => {
         <SearchPop v-if="true" />
       </div>
       <div
-        class="flex h-full w-full flex-row-reverse items-center justify-start space-x-[22px] space-x-reverse md:w-auto md:flex-row md:justify-end md:first:mr-6 lg:w-full"
+        class="flex h-full w-full flex-row-reverse items-center justify-start space-x-[22px] md:w-auto md:flex-row md:justify-end md:first:mr-6 lg:w-full"
       >
-        <div v-if="!isMobileResponsive" class="md:mr-[22px]">
+        <div v-if="!isMobileResponsive">
           <HomeIcon :to="ROUTES.HOME" />
         </div>
-        <Messenger :isHidden="true" :to="ROUTES.MESSENGER" />
+        <div class="ml-[22px] md:ml-0">
+          <Messenger :isHidden="true" :to="ROUTES.MESSENGER" />
+        </div>
         <NewPost :isHidden="true" />
         <FindPeople v-if="!isMobileResponsive" :to="ROUTES.EXPLORE" />
         <div class="relative" v-if="!isMobileResponsive">
           <ActivityFeed />
           <!-- <ActivityFeedPop v-if="true" /> -->
         </div>
-        <div class="relative" v-if="!isMobileResponsive">
+        <div class="relative mr-0" v-if="!isMobileResponsive">
           <SelfAvatar />
 
           <!-- <AccountPop v-if="true" /> -->
