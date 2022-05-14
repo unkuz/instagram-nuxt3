@@ -6,9 +6,7 @@ interface IconProps {
   to?: string;
 }
 const props = defineProps<IconProps>();
-const onCLickActivityFeed = () => {
-  console.log("HAHA");
-};
+const onCLickActivityFeed = () => {};
 </script>
 
 <template>

@@ -5,6 +5,13 @@ const searchRef = ref(null);
 const inputSearch = ref(null);
 const searchValue = ref("");
 
+watch(isSearchActive, (state) => {
+  state ? inputSearch.value.focus() : "";
+});
+useClickOutSide(searchRef, () => {
+  isSearchActive.value = false;
+});
+
 const setActiveSearchInput = () => {
   isSearchActive.value = true;
 };
@@ -13,10 +20,6 @@ const closeSearch = (e: MouseEvent) => {
   searchValue.value = "";
   isSearchActive.value = false;
 };
-
-watch(isSearchActive, (state, prev) => {
-  isSearchActive.value ? inputSearch.value.focus() : "";
-});
 </script>
 
 <template>

@@ -11,6 +11,7 @@ import { useResizeWindow } from "~~/composables/useResizeWindow";
 import { ROUTES } from "~~/constants/routes";
 import ActivityFeedPop from "../Huge/ActivityFeedPop/index.vue";
 import AccountPop from "../Huge/AccountPop/index.vue";
+import SearchPop from "../Huge/SearchPop/index.vue";
 
 const { width, height } = useResizeWindow();
 const isMobileResponsive = ref(true);
@@ -36,9 +37,10 @@ onMounted(() => {
         <Logo />
       </div>
       <div
-        class="hidden w-full items-center justify-center md:flex md:w-auto lg:w-full"
+        class="relative hidden w-full items-center justify-center md:flex md:w-auto lg:w-full"
       >
         <Search />
+        <SearchPop v-if="true" />
       </div>
       <div
         class="flex h-full w-full flex-row-reverse items-center justify-start space-x-[22px] space-x-reverse md:w-auto md:flex-row md:justify-end md:first:mr-6 lg:w-full"
