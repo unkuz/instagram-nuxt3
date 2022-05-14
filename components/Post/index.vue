@@ -68,7 +68,7 @@
       />
     </div>
     <!-- bottom -->
-    <div class="px-[16px]">
+    <div class="px-[16px] text-sm">
       <div class="mt-[4px] h-[54px]">
         <div class="grid h-full grid-cols-2">
           <div class="flex h-full w-full items-center space-x-[8px]">
@@ -158,15 +158,15 @@
         </div>
       </div>
       <!-- like -->
-      <div class="mb-[8px] h-[18px]">4,647 likes</div>
+      <div class="mb-[8px] h-[18px] font-medium">4,647 likes</div>
       <!-- comment -->
       <div class="mb-[4px] h-[62px]">
-        <p>kristenstewartx Beautiful 😘</p>
-        <p>... more</p>
-        <p>View all 62 comments</p>
+        <p><span class="font-medium">kristenstewartx</span> Beautiful 😘</p>
+        <p class="text-gray-600">... more</p>
+        <p class="text-gray-600">View all {{ "62" }} comments</p>
       </div>
       <!-- timer -->
-      <div class="mb-[16px] h-[18px]">1 DAY AGO</div>
+      <div class="mb-[16px] h-[18px] text-gray-600">1 DAY AGO</div>
       <div
         class="flex h-[53px] items-center justify-between border-t-[1px] border-gray-200"
       >
