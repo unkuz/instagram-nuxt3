@@ -54,7 +54,9 @@ const handle = (e: MouseEvent, idx: number) => {
       class="flex h-[85px] transition-all duration-500 ease-in-out"
       ref="heroPageletRef"
     >
-      <Item v-for="(i, idx) in Array.from(Array(20).keys())" :key="idx" />
+      <div v-for="(i, idx) in Array.from(Array(20).keys())" :key="idx">
+        <Item />
+      </div>
     </div>
     <div
       v-if="isShowNext"

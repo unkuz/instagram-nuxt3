@@ -15,10 +15,16 @@ import SearchPop from "../Huge/SearchPop/index.vue";
 
 const { width, height } = useResizeWindow();
 const isMobileResponsive = ref(true);
+const router = useRouter();
+console.log({ router });
 
 watchEffect(() => {
   isMobileResponsive.value = width.value < 768 ?? false;
 });
+const changeRoute = async (path) => {
+  console.log({ path });
+  await router.push(path);
+};
 
 onMounted(() => {
   console.log("W", width.value);
@@ -45,14 +51,22 @@ onMounted(() => {
       <div
         class="flex h-full w-full flex-row-reverse items-center justify-start space-x-[22px] md:w-auto md:flex-row md:justify-end md:first:mr-6 lg:w-full"
       >
-        <div v-if="!isMobileResponsive">
-          <HomeIcon :to="ROUTES.HOME" />
+        <div v-if="!isMobileResponsive" @click="changeRoute('/')">
+          <NuxtLink href="/" noRel target="_self">
+            <HomeIcon :to="ROUTES.HOME" />
+          </NuxtLink>
         </div>
-        <div class="ml-[22px] md:ml-0">
-          <Messenger :isHidden="true" :to="ROUTES.MESSENGER" />
+        <div class="ml-[22px] md:ml-0" @click="changeRoute('/direct/inbox/')">
+          <NuxtLink href="/direct/inbox/" noRel target="_self">
+            <Messenger :isHidden="true" :to="ROUTES.MESSENGER" />
+          </NuxtLink>
         </div>
         <NewPost :isHidden="true" />
-        <FindPeople v-if="!isMobileResponsive" :to="ROUTES.EXPLORE" />
+        <div @click="changeRoute('/explore/')">
+          <NuxtLink href="/explore/" noRel target="_self">
+            <FindPeople v-if="!isMobileResponsive" :to="ROUTES.EXPLORE" />
+          </NuxtLink>
+        </div>
         <div class="relative" v-if="!isMobileResponsive">
           <ActivityFeed />
           <!-- <ActivityFeedPop v-if="true" /> -->

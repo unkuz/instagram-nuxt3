@@ -40,7 +40,9 @@ useWindowResizeCallback(() => {
       ref="leftSectionRef"
     >
       <HeroPagelet />
-      <Post v-for="i in Array.from(Array(5).keys())" :key="i" />
+      <div v-for="i in Array.from(Array(5).keys())" :key="i">
+        <Post />
+      </div>
     </div>
     <div
       class="b fixed top-[84px] hidden h-[473px] w-[293px] bg-white text-sm lg:block"
