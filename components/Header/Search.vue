@@ -4,10 +4,24 @@ const isSearchActive = ref(false);
 const searchRef = ref(null);
 const inputSearch = ref(null);
 const searchValue = ref("");
+const isSearchHaveValue = ref(false);
 
 watch(isSearchActive, (state) => {
   state ? inputSearch.value.focus() : "";
 });
+watch(searchValue, (state) => {
+  isSearchHaveValue.value = state.trim() ? true : false;
+});
+
+watch([isSearchHaveValue, isSearchActive], () => {
+  if (isSearchActive.value) {
+    inputSearch.value.style.left = "50%";
+  } else {
+    inputSearch.value.style.left = "136px";
+    inputSearch.value.style.width = "200px";
+  }
+});
+
 useClickOutSide(searchRef, () => {
   isSearchActive.value = false;
 });
@@ -61,16 +75,15 @@ const closeSearch = (e: MouseEvent) => {
     </svg>
 
     <span
-      v-show="!isSearchActive"
+      v-show="!isSearchHaveValue"
       class="absolute top-1/2 left-[60px] -translate-y-1/2 text-sm"
       >Search</span
     >
-
     <input
       type="text"
       ref="inputSearch"
       v-model="searchValue"
-      class="absolute top-1/2 left-1/2 h-[30px] w-[236px] -translate-x-1/2 -translate-y-1/2 bg-transparent focus:outline-none"
+      class="absolute top-1/2 left-1/2 h-[30px] w-[236px] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm focus:outline-none"
     />
     <div
       class="absolute right-3 cursor-pointer"

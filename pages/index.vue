@@ -17,14 +17,6 @@ const mainRef = ref(null);
 const leftSectionRef = ref(null);
 const rightSectionRef = ref(null);
 
-watch(mainRef, (value) => {
-  console.log(mainRef?.value?.clientWidth);
-});
-watch(leftSectionRef, (value) => {
-  console.log([leftSectionRef.value]);
-  console.log(leftSectionRef.value.offsetLeft);
-});
-
 onMounted(() => {
   rightSectionRef.value.style.left = `${
     leftSectionRef.value.offsetLeft + 935 - 293
@@ -56,7 +48,7 @@ useWindowResizeCallback(() => {
     >
       <!-- avatar -->
       <div
-        class="mt-[18px] mb-[10px] flex h-[56px] items-center justify-between"
+        class="mt-[18px] mb-[22px] flex h-[56px] items-center justify-between"
       >
         <div
           class="aspect-square w-[56px] rounded-full bg-red-200 object-cover"
@@ -78,13 +70,13 @@ useWindowResizeCallback(() => {
 
       <!-- suggest for u text -->
       <div
-        class="mt-[12px] flex h-[11px] items-center justify-between text-sm text-gray-600"
+        class="flex h-[11px] items-center justify-between text-sm text-gray-600"
       >
-        <div>Suggestions for you</div>
+        <div class="text-gray-600">Suggestions for you</div>
         <div>See All</div>
       </div>
       <!-- list -->
-      <div class="mt-[8px] overflow-scroll">
+      <div class="mt-[8px] w-full">
         <div class="flex h-[48px] items-center justify-between py-[8px]">
           <div
             class="aspect-square w-[32px] rounded-full bg-red-200 object-cover"
@@ -99,7 +91,7 @@ useWindowResizeCallback(() => {
           </div>
           <div class="-ml-[70px]">
             <p class="font-medium">cuzknothz</p>
-            <p class="text-gray-600">cuzknothz</p>
+            <p class="text-gray-600">Suggested for you</p>
           </div>
           <div class="text-[#1da0f6]">Follow</div>
         </div>
@@ -117,7 +109,7 @@ useWindowResizeCallback(() => {
           </div>
           <div class="-ml-[70px]">
             <p class="font-medium">cuzknothz</p>
-            <p class="text-gray-600">cuzknothz</p>
+            <p class="text-gray-600">Suggested for you</p>
           </div>
           <div class="text-[#1da0f6]">Follow</div>
         </div>
@@ -135,7 +127,7 @@ useWindowResizeCallback(() => {
           </div>
           <div class="-ml-[70px]">
             <p class="font-medium">cuzknothz</p>
-            <p class="text-gray-600">cuzknothz</p>
+            <p class="text-gray-600">Suggested for you</p>
           </div>
           <div class="text-[#1da0f6]">Follow</div>
         </div>
@@ -153,7 +145,7 @@ useWindowResizeCallback(() => {
           </div>
           <div class="-ml-[70px]">
             <p class="font-medium">cuzknothz</p>
-            <p class="text-gray-600">cuzknothz</p>
+            <p class="text-gray-600">Suggested for you</p>
           </div>
           <div class="text-[#1da0f6]">Follow</div>
         </div>
@@ -171,7 +163,7 @@ useWindowResizeCallback(() => {
           </div>
           <div class="-ml-[70px]">
             <p class="font-medium">cuzknothz</p>
-            <p class="text-gray-600">cuzknothz</p>
+            <p class="text-gray-600">Suggested for you</p>
           </div>
           <div class="text-[#1da0f6]">Follow</div>
         </div>
@@ -189,7 +181,7 @@ useWindowResizeCallback(() => {
           </div>
           <div class="-ml-[70px]">
             <p class="font-medium">cuzknothz</p>
-            <p class="text-gray-600">cuzknothz</p>
+            <p class="text-gray-600">Suggested for you</p>
           </div>
           <div class="text-[#1da0f6]">Follow</div>
         </div>
