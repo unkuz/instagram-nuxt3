@@ -66,7 +66,7 @@
       />
     </div>
     <!-- bottom -->
-    <div class="px-[16px] text-sm">
+    <div class="px-[16px] text-xs">
       <div class="mt-[4px] h-[54px]">
         <div class="grid h-full grid-cols-2">
           <div class="flex h-full w-full items-center space-x-[8px]">
