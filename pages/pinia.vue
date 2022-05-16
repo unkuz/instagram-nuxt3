@@ -6,4 +6,5 @@ const todo = useTodoStore();
 
 <template>
   <p>{{ todo.haha }}</p>
+  <p @click="todo.changeHaha">LCIK</p>
 </template>

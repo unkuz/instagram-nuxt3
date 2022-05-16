@@ -5,6 +5,7 @@ import Post from "~~/components/Post/index.vue";
 import NewPost from "~~/components/Huge/NewPost/index.vue";
 import { useWindowResizeCallback } from "~~/composables/useWindowResizeCallback";
 import SelfAvatar from "~~/components/Nav/SelfAvatar.vue";
+
 definePageMeta({
   layout: "default",
 });

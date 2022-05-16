@@ -57,6 +57,9 @@ const actions = {
       i.id === id ? { ...i, ...data, updateAt: new Date() } : i
     );
   },
+  changeHaha() {
+    this.haha = false;
+  },
 };
 
 export const useTodoStore = defineStore("todoStore", {
