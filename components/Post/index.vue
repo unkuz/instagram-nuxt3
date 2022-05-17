@@ -69,7 +69,7 @@
     <div class="px-[16px] text-xs md:text-sm">
       <div class="mt-[4px] h-[54px]">
         <div class="grid h-full grid-cols-2">
-          <div class="flex h-full w-full items-center space-x-[8px]">
+          <div class="spac e-x-[8px] flex h-full w-full items-center">
             <svg
               aria-label="Like"
               class="_8-yf5"
