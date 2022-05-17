@@ -9,7 +9,7 @@ const props = defineProps<IconProps>();
 </script>
 
 <template>
-  <div>
+  <div class="select-none">
     <NuxtLink :to="props.to">
       <div
         v-if="isSelectSelfAvatar"

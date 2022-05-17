@@ -1,3 +1,3 @@
 <script lang="ts" setup></script>
 
-<template>INBOX</template>
+<template><div class="h-screen w-full bg-red-200">fff</div></template>

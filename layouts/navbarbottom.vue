@@ -15,7 +15,9 @@ import SelfAvatar from "~~/components/Nav/SelfAvatar.vue";
       <Search :isHidden="true" />
       <Reels :isHidden="true" />
       <Activity :isHidden="true" />
-      <SelfAvatar :isHidden="true" />
+      <div>
+        <SelfAvatar :isHidden="true" />
+      </div>
     </div>
   </div>
 </template>

@@ -13,22 +13,19 @@ import ActivityFeedPop from "../Huge/ActivityFeedPop/index.vue";
 import AccountPop from "../Huge/AccountPop/index.vue";
 import SearchPop from "../Huge/SearchPop/index.vue";
 
-const { width, height } = useResizeWindow();
+const { width } = useResizeWindow();
 const isMobileResponsive = ref(true);
-const router = useRouter();
-console.log({ router });
+const isShowAccountPop = ref(false);
+const isShowActivityFeed = ref(false);
+const handleAccountPop = () => {
+  isShowAccountPop.value = !isShowAccountPop.value;
+};
+const handleActivityFeed = () => {
+  isShowActivityFeed.value = !isShowActivityFeed.value;
+};
 
 watchEffect(() => {
   isMobileResponsive.value = width.value < 768 ?? false;
-});
-const changeRoute = async (path) => {
-  console.log({ path });
-  await router.push(path);
-};
-
-onMounted(() => {
-  console.log("W", width.value);
-  console.log("H", height.value);
 });
 </script>
 
@@ -51,30 +48,38 @@ onMounted(() => {
       <div
         class="flex h-full w-full flex-row-reverse items-center justify-start space-x-[22px] md:w-auto md:flex-row md:justify-end md:first:mr-6 lg:w-full"
       >
-        <div v-if="!isMobileResponsive" @click="changeRoute('/')">
+        <div v-if="!isMobileResponsive">
           <NuxtLink href="/" noRel target="_self">
             <HomeIcon :to="ROUTES.HOME" />
           </NuxtLink>
         </div>
-        <div class="ml-[22px] md:ml-0" @click="changeRoute('/direct/inbox/')">
+        <div class="ml-[22px] md:ml-0">
           <NuxtLink href="/direct/inbox/" noRel target="_self">
             <Messenger :isHidden="true" :to="ROUTES.MESSENGER" />
           </NuxtLink>
         </div>
         <NewPost :isHidden="true" />
-        <div @click="changeRoute('/explore/')">
+        <div>
           <NuxtLink href="/explore/" noRel target="_self">
             <FindPeople v-if="!isMobileResponsive" :to="ROUTES.EXPLORE" />
           </NuxtLink>
         </div>
-        <div class="relative" v-if="!isMobileResponsive">
+        <div
+          class="relative"
+          v-if="!isMobileResponsive"
+          @click="handleActivityFeed"
+        >
           <ActivityFeed />
-          <!-- <ActivityFeedPop v-if="true" /> -->
+          <ActivityFeedPop v-if="isShowActivityFeed" />
         </div>
-        <div class="relative mr-0" v-if="!isMobileResponsive">
+        <div
+          class="relative mr-0"
+          v-if="!isMobileResponsive"
+          @click="handleAccountPop"
+        >
           <SelfAvatar />
 
-          <!-- <AccountPop v-if="true" /> -->
+          <AccountPop v-if="isShowAccountPop" />
         </div>
       </div>
     </div>

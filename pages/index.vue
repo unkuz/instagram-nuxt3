@@ -1,14 +1,7 @@
 <script lang="ts" setup>
 import HeroPagelet from "~~/components/HeroPagelet/index.vue";
-import HeroPlaceHolder from "~~/components/HeroPlaceHolder/index.vue";
 import Post from "~~/components/Post/index.vue";
-import NewPost from "~~/components/Huge/NewPost/index.vue";
 import { useWindowResizeCallback } from "~~/composables/useWindowResizeCallback";
-import SelfAvatar from "~~/components/Nav/SelfAvatar.vue";
-
-definePageMeta({
-  layout: "default",
-});
 useHead({
   titleTemplate: "Instagram",
   meta: [{ name: "description", content: "My amazing site." }],
@@ -17,7 +10,11 @@ useHead({
 const mainRef = ref(null);
 const leftSectionRef = ref(null);
 const rightSectionRef = ref(null);
+const hell = ref(null);
 
+onBeforeMount(() => {
+  return "";
+});
 onMounted(() => {
   rightSectionRef.value.style.left = `${
     leftSectionRef.value.offsetLeft + 935 - 293
@@ -32,7 +29,7 @@ useWindowResizeCallback(() => {
 </script>
 
 <template>
-  <div>
+  <div ref="hell">
     <Head>
       <Title>{{ "Instagram" }}</Title>
     </Head>
