@@ -12,9 +12,6 @@ const leftSectionRef = ref(null);
 const rightSectionRef = ref(null);
 const hell = ref(null);
 
-onBeforeMount(() => {
-  return "";
-});
 onMounted(() => {
   rightSectionRef.value.style.left = `${
     leftSectionRef.value.offsetLeft + 935 - 293
@@ -44,7 +41,7 @@ useWindowResizeCallback(() => {
         </div>
       </div>
       <div
-        class="b fixed top-[84px] hidden h-[473px] w-[293px] bg-white text-sm lg:block"
+        class="fixed top-[84px] left-[20000px] hidden h-[473px] w-[293px] bg-white text-sm lg:block"
         ref="rightSectionRef"
       >
         <!-- avatar -->
