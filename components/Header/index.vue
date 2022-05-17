@@ -12,21 +12,33 @@ import { ROUTES } from "~~/constants/routes";
 import ActivityFeedPop from "../Huge/ActivityFeedPop/index.vue";
 import AccountPop from "../Huge/AccountPop/index.vue";
 import SearchPop from "../Huge/SearchPop/index.vue";
+import { useTransition } from "~~/store/transition";
 
 const { width } = useResizeWindow();
+const router = useRouter();
+const transition = useTransition();
 const isMobileResponsive = ref(true);
 const isShowAccountPop = ref(false);
 const isShowActivityFeed = ref(false);
+
+watchEffect(() => {
+  isMobileResponsive.value = width.value < 768 ?? false;
+});
 const handleAccountPop = () => {
   isShowAccountPop.value = !isShowAccountPop.value;
 };
 const handleActivityFeed = () => {
   isShowActivityFeed.value = !isShowActivityFeed.value;
 };
-
-watchEffect(() => {
-  isMobileResponsive.value = width.value < 768 ?? false;
-});
+const redirect = (url) => {
+  transition.setPrepare();
+  setTimeout(() => {
+    router.push(url);
+  }, 1000);
+  setTimeout(() => {
+    transition.cancelPrepare();
+  }, 2000);
+};
 </script>
 
 <template>
@@ -48,21 +60,21 @@ watchEffect(() => {
       <div
         class="flex h-full w-full flex-row-reverse items-center justify-start space-x-[22px] md:w-auto md:flex-row md:justify-end md:first:mr-6 lg:w-full"
       >
-        <div v-if="!isMobileResponsive">
-          <NuxtLink href="/" noRel target="_self">
-            <HomeIcon :to="ROUTES.HOME" />
-          </NuxtLink>
+        <div v-if="!isMobileResponsive" @click="redirect('/')">
+          <!-- <NuxtLink href="/" noRel target="_self"> -->
+          <HomeIcon :to="ROUTES.HOME" />
+          <!-- </NuxtLink> -->
         </div>
-        <div class="ml-[22px] md:ml-0">
-          <NuxtLink href="/direct/inbox/" noRel target="_self">
-            <Messenger :isHidden="true" :to="ROUTES.MESSENGER" />
-          </NuxtLink>
+        <div class="ml-[22px] md:ml-0" @click="redirect('/direct/inbox/')">
+          <!-- <NuxtLink href="/direct/inbox/" noRel target="_self"> -->
+          <Messenger :isHidden="true" :to="ROUTES.MESSENGER" />
+          <!-- </NuxtLink> -->
         </div>
         <NewPost :isHidden="true" />
-        <div>
-          <NuxtLink href="/explore/" noRel target="_self">
-            <FindPeople v-if="!isMobileResponsive" :to="ROUTES.EXPLORE" />
-          </NuxtLink>
+        <div @click="redirect('/explore/')">
+          <!-- <NuxtLink href="/explore/" noRel target="_self"> -->
+          <FindPeople v-if="!isMobileResponsive" :to="ROUTES.EXPLORE" />
+          <!-- </NuxtLink> -->
         </div>
         <div
           class="relative"
