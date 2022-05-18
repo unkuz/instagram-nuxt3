@@ -9,30 +9,25 @@ import ActivityFeed from "../Nav/ActivityFeed.vue";
 import SelfAvatar from "../Nav/SelfAvatar.vue";
 import { useResizeWindow } from "~~/composables/useResizeWindow";
 import { ROUTES } from "~~/constants/routes";
-import {useDebounceRoute} from '~~/composables/useDeboundRoute';
+import { useDebounceRoute } from "~~/composables/useDeboundRoute";
 import ActivityFeedPop from "../Huge/ActivityFeedPop/index.vue";
 import AccountPop from "../Huge/AccountPop/index.vue";
 import SearchPop from "../Huge/SearchPop/index.vue";
 import { useTransition } from "~~/store/transition";
+import { useSectionStore } from "~~/store/section";
+import { SECTION } from "~~/constants/section";
 
 const { width } = useResizeWindow();
+const sectionStore = useSectionStore();
 const router = useRouter();
 const transition = useTransition();
-const isMobileResponsive = ref(true);
 const isShowAccountPop = ref(false);
 const isShowActivityFeed = ref(false);
 
-watchEffect(() => {
-  isMobileResponsive.value = width.value < 768 ?? false;
-});
-const handleAccountPop = () => {
-  isShowAccountPop.value = !isShowAccountPop.value;
-};
-const handleActivityFeed = () => {
-  isShowActivityFeed.value = !isShowActivityFeed.value;
-};
-const redirect = (url) => {
-  useDebounceRoute(url)
+const section = computed(() => sectionStore.getSectionSelect);
+const isMobileResponsive = computed(() => width.value < 768);
+const handleSelect = (section: SECTION) => {
+  sectionStore.selectSection(section);
 };
 </script>
 
@@ -55,38 +50,36 @@ const redirect = (url) => {
       <div
         class="flex h-full w-full flex-row-reverse items-center justify-start space-x-[22px] md:w-auto md:flex-row md:justify-end md:first:mr-6 lg:w-full"
       >
-        <div v-if="!isMobileResponsive" @click="redirect('/')">
-          <!-- <NuxtLink href="/" noRel target="_self"> -->
-          <HomeIcon :to="ROUTES.HOME" />
-          <!-- </NuxtLink> -->
+        <div v-if="!isMobileResponsive" @click="handleSelect(SECTION.HOME)">
+          <HomeIcon :isSelect="section === SECTION.HOME" />
         </div>
-        <div class="ml-[22px] md:ml-0" @click="redirect('/direct/inbox/')">
-          <!-- <NuxtLink href="/direct/inbox/" noRel target="_self"> -->
-          <Messenger :isHidden="true" :to="ROUTES.MESSENGER" />
-          <!-- </NuxtLink> -->
+        <div class="ml-[22px] md:ml-0" @click="handleSelect(SECTION.MESSENGER)">
+          <Messenger :isSelect="section === SECTION.MESSENGER" />
         </div>
-        <NewPost :isHidden="true" />
-        <div @click="redirect('/explore/')">
-          <!-- <NuxtLink href="/explore/" noRel target="_self"> -->
-          <FindPeople v-if="!isMobileResponsive" :to="ROUTES.EXPLORE" />
-          <!-- </NuxtLink> -->
+        <div @click="handleSelect(SECTION.NEW_POST)">
+          <NewPost :isSelect="section === SECTION.NEW_POST" />
         </div>
         <div
+          v-if="!isMobileResponsive"
+          @click="handleSelect(SECTION.FINDPEOPLE)"
+        >
+          <FindPeople :isSelect="section === SECTION.FINDPEOPLE" />
+        </div>
+        <div
+          v-if="!isMobileResponsive"
           class="relative"
-          v-if="!isMobileResponsive"
-          @click="handleActivityFeed"
+          @click="handleSelect(SECTION.ACTIVITYFEED)"
         >
-          <ActivityFeed />
-          <ActivityFeedPop v-if="isShowActivityFeed" />
+          <ActivityFeed :isSelect="section === SECTION.ACTIVITYFEED" />
+          <ActivityFeedPop v-show="section === SECTION.ACTIVITYFEED" />
         </div>
         <div
-          class="relative mr-0"
           v-if="!isMobileResponsive"
-          @click="handleAccountPop"
+          class="relative mr-0"
+          @click="handleSelect(SECTION.SELF)"
         >
-          <SelfAvatar />
-
-          <AccountPop v-if="isShowAccountPop" />
+          <SelfAvatar :isSelect="section === SECTION.SELF" />
+          <AccountPop v-show="section === SECTION.SELF" />
         </div>
       </div>
     </div>

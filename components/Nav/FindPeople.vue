@@ -1,18 +1,16 @@
 <script lang="ts" setup>
 import IconBase from "~~/components/Nav/IconBase.vue";
-const isSelectExplore = ref(false);
 interface IconProps {
-  isHidden?: boolean;
-  to?: string;
+  isSelect: boolean;
 }
 
 const props = defineProps<IconProps>();
 </script>
 
 <template>
-  <IconBase :to="props.to">
+  <IconBase>
     <svg
-      v-if="isSelectExplore"
+      v-if="isSelect"
       aria-label="Find people"
       color="#262626"
       fill="#262626"

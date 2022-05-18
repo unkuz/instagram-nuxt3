@@ -2,15 +2,13 @@
 import IconBase from "~~/components/Nav/IconBase.vue";
 const isSelectHome = ref(true);
 interface IconProps {
-  isHidden?: boolean;
-  to?: string;
+  isSelect: boolean;
 }
-
 const props = defineProps<IconProps>();
 </script>
 
 <template>
-  <IconBase :isHidden="props.isHidden" :to="props.to">
+  <IconBase>
     <svg
       aria-label="Reels"
       class="mb-3"

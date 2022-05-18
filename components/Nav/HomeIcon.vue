@@ -1,18 +1,19 @@
 <script lang="ts" setup>
 import IconBase from "~~/components/Nav/IconBase.vue";
-const isSelectHome = ref(true);
+import { SECTION } from "~~/constants/section";
+import { useSectionStore } from "~~/store/section";
+import { useTransition } from "~~/store/transition";
 interface IconProps {
-  isHidden?: boolean;
-  to?: string;
+  isSelect: boolean;
 }
 
 const props = defineProps<IconProps>();
 </script>
 
 <template>
-  <IconBase :to="props.to">
+  <IconBase>
     <svg
-      v-if="isSelectHome"
+      v-if="isSelect"
       aria-label="Home"
       color="#262626"
       fill="#262626"

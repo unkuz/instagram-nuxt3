@@ -1,18 +1,16 @@
 <script lang="ts" setup>
 import IconBase from "~~/components/Nav/IconBase.vue";
-const isSelectMess = ref(false);
 interface IconProps {
-  isHidden?: boolean;
-  to?: string;
+  isSelect: boolean;
 }
 
 const props = defineProps<IconProps>();
 </script>
 
 <template>
-  <IconBase :isHidden="props.isHidden" :to="props.to">
+  <IconBase>
     <svg
-      v-if="isSelectMess"
+      v-if="isSelect"
       aria-label="Messenger"
       color="#262626"
       fill="#262626"

@@ -1,9 +1,18 @@
 <script lang="ts" setup>
 import { useTransition } from "./store/transition";
-
+import { useLockScroll } from "~~/composables/useLockScroll";
 const router = useRouter();
 const transition = ref(false);
 const transitionStore = useTransition();
+watch(
+  () => transitionStore.isPrepare,
+  () => {
+    if (transitionStore.isPrepare) {
+      console.log("TRIGGER");
+      useLockScroll();
+    }
+  }
+);
 </script>
 
 <template>

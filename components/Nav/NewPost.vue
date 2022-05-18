@@ -2,16 +2,15 @@
 import IconBase from "~~/components/Nav/IconBase.vue";
 const isSelectPost = ref(false);
 interface IconProps {
-  isHidden?: boolean;
-  to?: string;
+  isSelect: boolean;
 }
 const props = defineProps<IconProps>();
 </script>
 
 <template>
-  <IconBase :isHidden="props.isHidden" :to="props.to">
+  <IconBase>
     <svg
-      v-if="isSelectPost"
+      v-if="isSelect"
       aria-label="New post"
       color="#262626"
       fill="#262626"
