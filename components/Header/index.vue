@@ -26,7 +26,12 @@ const isShowActivityFeed = ref(false);
 
 const section = computed(() => sectionStore.getSectionSelect);
 const isMobileResponsive = computed(() => width.value < 768);
-const handleSelect = (section: SECTION) => {
+const handleSelect = (section: SECTION, url?) => {
+  if (url) {
+    setTimeout(() => {
+      router.push(url);
+    }, 500);
+  }
   sectionStore.selectSection(section);
 };
 </script>
@@ -50,10 +55,16 @@ const handleSelect = (section: SECTION) => {
       <div
         class="flex h-full w-full flex-row-reverse items-center justify-start space-x-[22px] md:w-auto md:flex-row md:justify-end md:first:mr-6 lg:w-full"
       >
-        <div v-if="!isMobileResponsive" @click="handleSelect(SECTION.HOME)">
+        <div
+          v-if="!isMobileResponsive"
+          @click="handleSelect(SECTION.HOME, '/')"
+        >
           <HomeIcon :isSelect="section === SECTION.HOME" />
         </div>
-        <div class="ml-[22px] md:ml-0" @click="handleSelect(SECTION.MESSENGER)">
+        <div
+          class="ml-[22px] md:ml-0"
+          @click="handleSelect(SECTION.MESSENGER, '/direct/inbox/')"
+        >
           <Messenger :isSelect="section === SECTION.MESSENGER" />
         </div>
         <div @click="handleSelect(SECTION.NEW_POST)">
@@ -61,7 +72,7 @@ const handleSelect = (section: SECTION) => {
         </div>
         <div
           v-if="!isMobileResponsive"
-          @click="handleSelect(SECTION.FINDPEOPLE)"
+          @click="handleSelect(SECTION.FINDPEOPLE, '/explore/')"
         >
           <FindPeople :isSelect="section === SECTION.FINDPEOPLE" />
         </div>
@@ -76,7 +87,7 @@ const handleSelect = (section: SECTION) => {
         <div
           v-if="!isMobileResponsive"
           class="relative mr-0"
-          @click="handleSelect(SECTION.SELF)"
+          @click="handleSelect(SECTION.SELF, '/cuzknothz/')"
         >
           <SelfAvatar :isSelect="section === SECTION.SELF" />
           <AccountPop v-show="section === SECTION.SELF" />
