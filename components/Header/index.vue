@@ -9,6 +9,7 @@ import ActivityFeed from "../Nav/ActivityFeed.vue";
 import SelfAvatar from "../Nav/SelfAvatar.vue";
 import { useResizeWindow } from "~~/composables/useResizeWindow";
 import { ROUTES } from "~~/constants/routes";
+import {useDebounceRoute} from '~~/composables/useDeboundRoute';
 import ActivityFeedPop from "../Huge/ActivityFeedPop/index.vue";
 import AccountPop from "../Huge/AccountPop/index.vue";
 import SearchPop from "../Huge/SearchPop/index.vue";
@@ -31,13 +32,7 @@ const handleActivityFeed = () => {
   isShowActivityFeed.value = !isShowActivityFeed.value;
 };
 const redirect = (url) => {
-  transition.setPrepare();
-  setTimeout(() => {
-    router.push(url);
-  }, 1000);
-  setTimeout(() => {
-    transition.cancelPrepare();
-  }, 2000);
+  useDebounceRoute(url)
 };
 </script>
 
