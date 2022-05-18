@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import IconBase from "~~/components/Nav/IconBase.vue";
-const isSelectHome = ref(true);
 interface IconProps {
   isSelect: boolean;
 }

@@ -1,8 +1,5 @@
 <script lang="ts" setup>
 import IconBase from "~~/components/Nav/IconBase.vue";
-import { SECTION } from "~~/constants/section";
-import { useSectionStore } from "~~/store/section";
-import { useTransition } from "~~/store/transition";
 interface IconProps {
   isSelect: boolean;
 }

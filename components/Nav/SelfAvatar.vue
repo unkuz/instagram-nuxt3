@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-import IconBase from "~~/components/Nav/IconBase.vue";
-const isSelectSelfAvatar = ref(true);
-
 interface IconProps {
   isSelect: boolean;
 }

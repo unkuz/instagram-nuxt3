@@ -5,4 +5,6 @@ export enum SECTION {
   ACTIVITYFEED = "ACTIVITYFEED",
   SELF = "SELF",
   NEW_POST = "NEW_POST",
+  REELS = "REELS",
+  SEARCH = "SEARCH",
 }

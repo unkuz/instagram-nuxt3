@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import IconBase from "~~/components/Nav/IconBase.vue";
-const isSelectPost = ref(false);
 interface IconProps {
   isSelect: boolean;
 }
