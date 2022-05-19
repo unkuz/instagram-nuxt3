@@ -2,6 +2,7 @@
 import Logo from '~~/components/Header/Logo.vue'
 import Search from '~~/components/Header/Search.vue'
 import HomeIcon from '~~/components/Nav/HomeIcon.vue'
+import { useDebounceRoute } from '~~/composables/useDeboundRoute'
 import { SECTION } from '~~/constants/section'
 import { useGlobalStore } from '~~/store/global'
 import { useSearchStore } from '~~/store/search'
@@ -17,15 +18,10 @@ import SelfAvatar from '../Nav/SelfAvatar.vue'
 const globalStore = useGlobalStore()
 const searchStore = useSearchStore()
 const isShowSearchToolkit = computed(() => searchStore.getIsShowSearchToolkit)
-const router = useRouter()
 const section = computed(() => globalStore.getSection)
 const isMobile = computed(() => globalStore.getIsMobile)
 const handleSelect = (section: SECTION, url?: string) => {
-  if (url) {
-    setTimeout(() => {
-      router.push(url)
-    }, 500)
-  }
+  useDebounceRoute(url)
   globalStore.setSection(section)
 }
 </script>
