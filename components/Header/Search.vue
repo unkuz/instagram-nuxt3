@@ -1,11 +1,10 @@
 <script lang="ts" setup>
 import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { useSearchStore } from '~~/store/search'
-const searchStore = useSearchStore()
 
+const searchStore = useSearchStore()
 const searchValue = computed(() => searchStore.getValue)
 const isSearchActive = computed(() => searchStore.isFocus)
-
 const searchRef = ref(null)
 const inputSearch = ref(null)
 const isSearchHaveValue = computed(() => searchStore.getIsSearchHaveValue)
@@ -31,11 +30,13 @@ useClickOutSide(searchRef, () => {
 const setActiveSearchInput = () => {
   searchStore.setIsFocus(true)
 }
+
 const closeSearch = (e: MouseEvent) => {
   e.stopPropagation()
   searchStore.clearValue()
   searchStore.setIsFocus(false)
 }
+
 const handleInputValueSearch = (e: Event) => {
   searchStore.setValue((e.target as HTMLInputElement).value)
 }
@@ -89,7 +90,7 @@ const handleInputValueSearch = (e: Event) => {
       @input="handleInputValueSearch"
       class="absolute top-1/2 left-1/2 h-[30px] w-[236px] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm focus:outline-none"
     />
-    <div class="absolute right-3 cursor-pointer" v-show="!isSearchActive" @click="closeSearch">
+    <div class="absolute right-3 cursor-pointer" v-show="isSearchActive" @click="closeSearch">
       <div class="relative h-[18px] w-[18px] rounded-full bg-gray-600">
         <div
           class="absolute top-1/2 left-1/2 h-[8px] w-[2px] -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white"
