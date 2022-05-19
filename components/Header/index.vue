@@ -4,6 +4,7 @@ import Search from '~~/components/Header/Search.vue'
 import HomeIcon from '~~/components/Nav/HomeIcon.vue'
 import { SECTION } from '~~/constants/section'
 import { useGlobalStore } from '~~/store/global'
+import { useSearchStore } from '~~/store/search'
 import AccountPop from '../Huge/AccountPop/index.vue'
 import ActivityFeedPop from '../Huge/ActivityFeedPop/index.vue'
 import SearchPop from '../Huge/SearchPop/index.vue'
@@ -14,6 +15,8 @@ import NewPost from '../Nav/NewPost.vue'
 import SelfAvatar from '../Nav/SelfAvatar.vue'
 
 const globalStore = useGlobalStore()
+const searchStore = useSearchStore()
+const isShowSearchToolkit = computed(() => searchStore.getIsShowSearchToolkit)
 const router = useRouter()
 const section = computed(() => globalStore.getSection)
 const isMobile = computed(() => globalStore.getIsMobile)
@@ -39,7 +42,7 @@ const handleSelect = (section: SECTION, url?: string) => {
       </div>
       <div class="relative hidden w-full items-center justify-center md:flex md:w-auto lg:w-full">
         <Search />
-        <SearchPop v-if="true" />
+        <SearchPop v-if="isShowSearchToolkit" />
       </div>
       <div
         class="flex h-full w-full flex-row-reverse items-center justify-start space-x-[22px] md:w-auto md:flex-row md:justify-end md:first:mr-6 lg:w-full"

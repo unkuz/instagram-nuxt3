@@ -1,16 +1,17 @@
 <script lang="ts" setup>
 import { useClickOutSide } from '~~/composables/useClickOutSide'
-const isSearchActive = ref(false)
+import { useSearchStore } from '~~/store/search'
+const searchStore = useSearchStore()
+
+const searchValue = computed(() => searchStore.getValue)
+const isSearchActive = computed(() => searchStore.isFocus)
+
 const searchRef = ref(null)
 const inputSearch = ref(null)
-const searchValue = ref('')
-const isSearchHaveValue = ref(false)
+const isSearchHaveValue = computed(() => searchStore.getIsSearchHaveValue)
 
 watch(isSearchActive, (state) => {
   state ? inputSearch.value.focus() : ''
-})
-watch(searchValue, (state) => {
-  isSearchHaveValue.value = state.trim() ? true : false
 })
 
 watch([isSearchHaveValue, isSearchActive], () => {
@@ -24,16 +25,19 @@ watch([isSearchHaveValue, isSearchActive], () => {
 })
 
 useClickOutSide(searchRef, () => {
-  isSearchActive.value = false
+  searchStore.setIsFocus(false)
 })
 
 const setActiveSearchInput = () => {
-  isSearchActive.value = true
+  searchStore.setIsFocus(true)
 }
 const closeSearch = (e: MouseEvent) => {
   e.stopPropagation()
-  searchValue.value = ''
-  isSearchActive.value = false
+  searchStore.clearValue()
+  searchStore.setIsFocus(false)
+}
+const handleInputValueSearch = (e: Event) => {
+  searchStore.setValue((e.target as HTMLInputElement).value)
 }
 </script>
 
@@ -81,10 +85,11 @@ const closeSearch = (e: MouseEvent) => {
     <input
       type="text"
       ref="inputSearch"
-      v-model="searchValue"
+      :value="searchValue"
+      @input="handleInputValueSearch"
       class="absolute top-1/2 left-1/2 h-[30px] w-[236px] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm focus:outline-none"
     />
-    <div class="absolute right-3 cursor-pointer" v-show="isSearchActive" @click="closeSearch">
+    <div class="absolute right-3 cursor-pointer" v-show="!isSearchActive" @click="closeSearch">
       <div class="relative h-[18px] w-[18px] rounded-full bg-gray-600">
         <div
           class="absolute top-1/2 left-1/2 h-[8px] w-[2px] -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white"
