@@ -1,13 +1,23 @@
 <script lang="ts" setup>
 import { useResizeWindow } from '~~/composables/useResizeWindow'
 import { useGlobalStore } from '~~/store/global'
+import { useLockScroll } from '~~/composables/useLockScroll'
 import Transition from '~~/components/Transition/index.vue'
-
+// useLockScroll()
 const globalStore = useGlobalStore()
 const isTransition = computed(() => globalStore.getIsTransition)
 const { width, height } = useResizeWindow()
 watch([width, height], () => {
   globalStore.setClientSize(width.value, height.value)
+})
+watch(isTransition, () => {
+  if (isTransition) {
+    window.scrollTo({ top: 0 })
+    document.body.style.overflow = 'hidden'
+    setTimeout(() => {
+      document.body.style.overflow = ''
+    }, 1000)
+  }
 })
 </script>
 
@@ -20,11 +30,15 @@ watch([width, height], () => {
       v-if="isTransition"
       class="absolute inset-0 z-40 flex items-center justify-center bg-sky-300 transition"
     ></div>
+    <div
+      v-if="isTransition"
+      class="bg-fuchsia-500-300 absolute inset-0 z-50 flex items-center justify-center opacity-60 transition"
+    ></div>
   </div>
 </template>
 <style scoped>
 .transition {
-  animation: transition 1s linear;
+  animation: transition 1s linear infinite;
 }
 
 @keyframes transition {
