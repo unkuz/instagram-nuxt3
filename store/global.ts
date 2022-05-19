@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import _ from 'lodash'
+import { MOBILE_BREAK_POINT } from '~~/constants/responsive'
 import { SECTION } from '~~/constants/section'
 
 const state = () => ({
@@ -12,7 +12,8 @@ const getters = {
   getSection: (state) => state.section,
   getClientWidth: (state) => state.clientWidth,
   getClientHeight: (state) => state.clientHeight,
-  getIsMobile: (state) => state.clientWidth < 768,
+  getIsMobile: (state) => state.clientWidth < MOBILE_BREAK_POINT,
+  getIsTransition: (state) => state.transition,
 }
 const actions = {
   setSection(section) {

@@ -3,24 +3,17 @@ import HeroPagelet from '~~/components/HeroPagelet/index.vue'
 import Suggestions from '~~/components/Huge/Suggestions/index.vue'
 import Post from '~~/components/Post/index.vue'
 import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
-import { SECTION } from '~~/constants/section'
-import { useSectionStore } from '~~/store/section'
+
 const mainRef = ref(null)
 const leftSectionRef = ref(null)
 const rightSectionRef = ref(null)
-const sectionStore = useSectionStore()
 
 onMounted(() => {
   rightSectionRef.value.style.left = `${leftSectionRef.value.offsetLeft + 935 - 293}px`
 })
-
 useWindowResizeCallback(() => {
   rightSectionRef.value.style.left = `${leftSectionRef.value.offsetLeft + 935 - 293}px`
 })
-
-const handle = () => {
-  sectionStore.selectSection(SECTION.MESSENGER)
-}
 </script>
 
 <template>
