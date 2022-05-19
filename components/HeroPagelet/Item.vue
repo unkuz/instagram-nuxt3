@@ -17,7 +17,7 @@
       </div>
     </div>
     <span class="text-ellipsis whitespace-nowrap text-xs">
-      {{ Math.random().toString(36).slice(2) + "dsfjkhsdjkfhsdjkj" }}
+      {{ Math.random().toString(36).slice(2) + 'dsfjkhsdjkfhsdjkj' }}
     </span>
   </div>
 </template>

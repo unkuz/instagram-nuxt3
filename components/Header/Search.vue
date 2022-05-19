@@ -1,40 +1,40 @@
 <script lang="ts" setup>
-import { useClickOutSide } from "~~/composables/useClickOutSide";
-const isSearchActive = ref(false);
-const searchRef = ref(null);
-const inputSearch = ref(null);
-const searchValue = ref("");
-const isSearchHaveValue = ref(false);
+import { useClickOutSide } from '~~/composables/useClickOutSide'
+const isSearchActive = ref(false)
+const searchRef = ref(null)
+const inputSearch = ref(null)
+const searchValue = ref('')
+const isSearchHaveValue = ref(false)
 
 watch(isSearchActive, (state) => {
-  state ? inputSearch.value.focus() : "";
-});
+  state ? inputSearch.value.focus() : ''
+})
 watch(searchValue, (state) => {
-  isSearchHaveValue.value = state.trim() ? true : false;
-});
+  isSearchHaveValue.value = state.trim() ? true : false
+})
 
 watch([isSearchHaveValue, isSearchActive], () => {
   if (isSearchActive.value) {
-    inputSearch.value.style.left = "50%";
-    inputSearch.value.style.width = "236px";
+    inputSearch.value.style.left = '50%'
+    inputSearch.value.style.width = '236px'
   } else {
-    inputSearch.value.style.left = "136px";
-    inputSearch.value.style.width = "200px";
+    inputSearch.value.style.left = '136px'
+    inputSearch.value.style.width = '200px'
   }
-});
+})
 
 useClickOutSide(searchRef, () => {
-  isSearchActive.value = false;
-});
+  isSearchActive.value = false
+})
 
 const setActiveSearchInput = () => {
-  isSearchActive.value = true;
-};
+  isSearchActive.value = true
+}
 const closeSearch = (e: MouseEvent) => {
-  e.stopPropagation();
-  searchValue.value = "";
-  isSearchActive.value = false;
-};
+  e.stopPropagation()
+  searchValue.value = ''
+  isSearchActive.value = false
+}
 </script>
 
 <template>
@@ -75,9 +75,7 @@ const closeSearch = (e: MouseEvent) => {
       ></line>
     </svg>
 
-    <span
-      v-show="!isSearchHaveValue"
-      class="absolute top-1/2 left-[60px] -translate-y-1/2 text-sm"
+    <span v-show="!isSearchHaveValue" class="absolute top-1/2 left-[60px] -translate-y-1/2 text-sm"
       >Search</span
     >
     <input
@@ -86,11 +84,7 @@ const closeSearch = (e: MouseEvent) => {
       v-model="searchValue"
       class="absolute top-1/2 left-1/2 h-[30px] w-[236px] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm focus:outline-none"
     />
-    <div
-      class="absolute right-3 cursor-pointer"
-      v-show="isSearchActive"
-      @click="closeSearch"
-    >
+    <div class="absolute right-3 cursor-pointer" v-show="isSearchActive" @click="closeSearch">
       <div class="relative h-[18px] w-[18px] rounded-full bg-gray-600">
         <div
           class="absolute top-1/2 left-1/2 h-[8px] w-[2px] -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white"

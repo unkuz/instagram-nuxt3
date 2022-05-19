@@ -7,9 +7,7 @@
       <div class="mx-[16px] flex h-full items-center justify-between">
         <!-- avatar -->
         <div>
-          <div
-            class="aspect-square w-[32px] rounded-full border-[1px] border-gray-200"
-          ></div>
+          <div class="aspect-square w-[32px] rounded-full border-[1px] border-gray-200"></div>
         </div>
         <!-- right -->
         <div>
@@ -36,9 +34,7 @@
         <div class="mx-[16px] flex h-full items-center justify-between">
           <!-- avatar -->
           <div>
-            <div
-              class="aspect-square w-[32px] rounded-full border-[1px] border-gray-200"
-            ></div>
+            <div class="aspect-square w-[32px] rounded-full border-[1px] border-gray-200"></div>
           </div>
           <!-- right -->
           <div>
@@ -161,13 +157,11 @@
       <div class="mb-[4px] h-[62px]">
         <p><span class="font-medium">kristenstewartx</span> Beautiful 😘</p>
         <p class="text-gray-600">... more</p>
-        <p class="text-gray-600">View all {{ "62" }} comments</p>
+        <p class="text-gray-600">View all {{ '62' }} comments</p>
       </div>
       <!-- timer -->
       <div class="mb-[16px] h-[18px] text-gray-600">1 DAY AGO</div>
-      <div
-        class="flex h-[53px] items-center justify-between border-t-[1px] border-gray-200"
-      >
+      <div class="flex h-[53px] items-center justify-between border-t-[1px] border-gray-200">
         <div>
           <svg
             aria-label="Emoji"

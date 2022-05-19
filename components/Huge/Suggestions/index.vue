@@ -20,18 +20,14 @@
     </div>
 
     <!-- suggest for u text -->
-    <div
-      class="flex h-[11px] items-center justify-between text-sm text-gray-600"
-    >
+    <div class="flex h-[11px] items-center justify-between text-sm text-gray-600">
       <div class="text-gray-600">Suggestions for you</div>
       <div>See All</div>
     </div>
     <!-- list -->
     <div class="mt-[8px] w-full">
       <div class="flex h-[48px] items-center justify-between py-[8px]">
-        <div
-          class="aspect-square w-[32px] rounded-full bg-red-200 object-cover"
-        >
+        <div class="aspect-square w-[32px] rounded-full bg-red-200 object-cover">
           <img
             crossorigin="anonymous"
             data-testid="user-avatar"
@@ -47,9 +43,7 @@
         <div class="text-[#1da0f6]">Follow</div>
       </div>
       <div class="flex h-[48px] items-center justify-between py-[8px]">
-        <div
-          class="aspect-square w-[32px] rounded-full bg-red-200 object-cover"
-        >
+        <div class="aspect-square w-[32px] rounded-full bg-red-200 object-cover">
           <img
             crossorigin="anonymous"
             data-testid="user-avatar"
@@ -65,9 +59,7 @@
         <div class="text-[#1da0f6]">Follow</div>
       </div>
       <div class="flex h-[48px] items-center justify-between py-[8px]">
-        <div
-          class="aspect-square w-[32px] rounded-full bg-red-200 object-cover"
-        >
+        <div class="aspect-square w-[32px] rounded-full bg-red-200 object-cover">
           <img
             crossorigin="anonymous"
             data-testid="user-avatar"
@@ -83,9 +75,7 @@
         <div class="text-[#1da0f6]">Follow</div>
       </div>
       <div class="flex h-[48px] items-center justify-between py-[8px]">
-        <div
-          class="aspect-square w-[32px] rounded-full bg-red-200 object-cover"
-        >
+        <div class="aspect-square w-[32px] rounded-full bg-red-200 object-cover">
           <img
             crossorigin="anonymous"
             data-testid="user-avatar"
@@ -101,9 +91,7 @@
         <div class="text-[#1da0f6]">Follow</div>
       </div>
       <div class="flex h-[48px] items-center justify-between py-[8px]">
-        <div
-          class="aspect-square w-[32px] rounded-full bg-red-200 object-cover"
-        >
+        <div class="aspect-square w-[32px] rounded-full bg-red-200 object-cover">
           <img
             crossorigin="anonymous"
             data-testid="user-avatar"
@@ -119,9 +107,7 @@
         <div class="text-[#1da0f6]">Follow</div>
       </div>
       <div class="flex h-[48px] items-center justify-between py-[8px]">
-        <div
-          class="aspect-square w-[32px] rounded-full bg-red-200 object-cover"
-        >
+        <div class="aspect-square w-[32px] rounded-full bg-red-200 object-cover">
           <img
             crossorigin="anonymous"
             data-testid="user-avatar"

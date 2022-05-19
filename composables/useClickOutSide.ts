@@ -1,17 +1,17 @@
 export function useClickOutSide(ref: any, callback: Function) {
   const listener = (event: MouseEvent) => {
     if (!ref.value || ref.value.contains(event.target)) {
-      return;
+      return
     }
-    callback();
-  };
+    callback()
+  }
   onMounted(() => {
-    window.addEventListener("mousedown", listener);
-    window.addEventListener("touchstart", listener);
-  });
+    window.addEventListener('mousedown', listener)
+    window.addEventListener('touchstart', listener)
+  })
 
   onUnmounted(() => {
-    window.removeEventListener("mousedown", listener);
-    window.removeEventListener("touchstart", listener);
-  });
+    window.removeEventListener('mousedown', listener)
+    window.removeEventListener('touchstart', listener)
+  })
 }

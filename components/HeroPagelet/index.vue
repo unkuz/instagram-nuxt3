@@ -1,53 +1,47 @@
 <script lang="ts" setup>
-import Item from "./Item.vue";
-import { SIZE_HERO_PAGELET } from "@/constants/mock";
+import Item from './Item.vue'
+import { SIZE_HERO_PAGELET } from '@/constants/mock'
 
-const heroPageletRef = ref<HTMLElement>(null);
-const startPointX = ref(0);
-const isShowPrev = ref(false);
-const isShowNext = ref(true);
+const heroPageletRef = ref<HTMLElement>(null)
+const startPointX = ref(0)
+const isShowPrev = ref(false)
+const isShowNext = ref(true)
 
 onMounted(() => {
-  if (
-    heroPageletRef &&
-    heroPageletRef.value.clientWidth < SIZE_HERO_PAGELET.WIDTH
-  ) {
-    isShowNext.value = false;
+  if (heroPageletRef && heroPageletRef.value.clientWidth < SIZE_HERO_PAGELET.WIDTH) {
+    isShowNext.value = false
   }
-});
+})
 
 const handle = (e: MouseEvent, idx: number) => {
   heroPageletRef.value.style.transform = `translateX(${
     startPointX.value - SIZE_HERO_PAGELET.SPACE_SLICE * idx
-  }px)`;
-  startPointX.value -= SIZE_HERO_PAGELET.SPACE_SLICE * idx;
+  }px)`
+  startPointX.value -= SIZE_HERO_PAGELET.SPACE_SLICE * idx
   if (
     idx === 1 &&
-    Math.abs(startPointX.value - SIZE_HERO_PAGELET.WIDTH) >
-      heroPageletRef.value.clientWidth
+    Math.abs(startPointX.value - SIZE_HERO_PAGELET.WIDTH) > heroPageletRef.value.clientWidth
   ) {
-    isShowNext.value = false;
+    isShowNext.value = false
     heroPageletRef.value.style.transform = `translateX(-${
       heroPageletRef.value.clientWidth - SIZE_HERO_PAGELET.WIDTH
-    }px)`;
-    startPointX.value = -(
-      heroPageletRef.value.clientWidth - SIZE_HERO_PAGELET.WIDTH
-    );
+    }px)`
+    startPointX.value = -(heroPageletRef.value.clientWidth - SIZE_HERO_PAGELET.WIDTH)
   } else {
-    isShowNext.value = true;
+    isShowNext.value = true
   }
   if (idx === -1 && startPointX.value >= 0) {
-    heroPageletRef.value.style.transform = `translateX(0px)`;
-    startPointX.value = 0;
-    isShowPrev.value = false;
+    heroPageletRef.value.style.transform = `translateX(0px)`
+    startPointX.value = 0
+    isShowPrev.value = false
   } else {
-    isShowPrev.value = true;
+    isShowPrev.value = true
   }
-};
+}
 
 const handleTouchStart = (e: TouchEvent) => {
-  console.log({ e });
-};
+  console.log({ e })
+}
 </script>
 
 <template>

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { useDebounce } from "~~/composables/useDebounce";
-const search = ref("");
-const a = ref(0);
-const result = useDebounce(search, 1.5);
+import { useDebounce } from '~~/composables/useDebounce'
+const search = ref('')
+const a = ref(0)
+const result = useDebounce(search, 1.5)
 </script>
 
 <template>

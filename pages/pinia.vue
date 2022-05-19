@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { useTodoStore } from "~~/store/todo";
+import { useTodoStore } from '~~/store/todo'
 
-const todo = useTodoStore();
+const todo = useTodoStore()
 </script>
 
 <template>

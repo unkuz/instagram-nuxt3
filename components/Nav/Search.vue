@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import IconBase from "~~/components/Nav/IconBase.vue";
+import IconBase from '~~/components/Nav/IconBase.vue'
 interface IconProps {
-  isSelect: boolean;
+  isSelect: boolean
 }
 
-const props = defineProps<IconProps>();
+const props = defineProps<IconProps>()
 </script>
 
 <template>

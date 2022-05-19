@@ -1,19 +1,19 @@
-import { useTransition } from "~~/store/transition";
-import { TIMMING_PAGE_TRANSITION } from "~~/constants/pageTransition";
+import { useTransition } from '~~/store/transition'
+import { TIMMING_PAGE_TRANSITION } from '~~/constants/pageTransition'
 export function useDebounceRoute(url: string) {
-  const transitionStore = useTransition();
-  const router = useRouter();
+  const transitionStore = useTransition()
+  const router = useRouter()
 
-  transitionStore.setPrepare();
+  transitionStore.setPrepare()
   let timer1 = setTimeout(() => {
-    router.push(url);
-  }, TIMMING_PAGE_TRANSITION / 2);
+    router.push(url)
+  }, TIMMING_PAGE_TRANSITION / 2)
   let timer2 = setTimeout(() => {
-    transitionStore.cancelPrepare();
-  }, TIMMING_PAGE_TRANSITION);
+    transitionStore.cancelPrepare()
+  }, TIMMING_PAGE_TRANSITION)
 
   onUnmounted(() => {
-    clearTimeout(timer1);
-    clearTimeout(timer2);
-  });
+    clearTimeout(timer1)
+    clearTimeout(timer2)
+  })
 }

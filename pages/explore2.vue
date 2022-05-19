@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const isOdd = (a) => a % 2 !== 0;
+const isOdd = (a) => a % 2 !== 0
 </script>
 
 <template>

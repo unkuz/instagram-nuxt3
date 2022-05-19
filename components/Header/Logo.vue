@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ROUTES } from "~~/constants/routes";
+import { ROUTES } from '~~/constants/routes'
 </script>
 
 <template>

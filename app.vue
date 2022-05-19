@@ -1,18 +1,15 @@
 <script lang="ts" setup>
-import { useTransition } from "./store/transition";
-import { useLockScroll } from "~~/composables/useLockScroll";
-const router = useRouter();
-const transition = ref(false);
-const transitionStore = useTransition();
-watch(
-  () => transitionStore.isPrepare,
-  () => {
-    if (transitionStore.isPrepare) {
-      console.log("TRIGGER");
-      useLockScroll();
-    }
-  }
-);
+import { useTransition } from './store/transition'
+import { useLockScroll } from '~~/composables/useLockScroll'
+import { useGlobalStore } from '~~/store/global'
+import { useResizeWindow } from '~~/composables/useResizeWindow'
+const globalStore = useGlobalStore()
+
+const transitionStore = useTransition()
+const { width, height } = useResizeWindow()
+watch([width, height], () => {
+  globalStore.setClientSize(width.value, height.value)
+})
 </script>
 
 <template>

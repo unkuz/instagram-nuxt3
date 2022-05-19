@@ -1,24 +1,21 @@
 <script lang="ts" setup>
-import ActivityFeed from "~~/components/Nav/ActivityFeed.vue";
-import HomeIcon from "~~/components/Nav/HomeIcon.vue";
-import Search from "~~/components/Nav/Search.vue";
-import SelfAvatar from "~~/components/Nav/SelfAvatar.vue";
-import { useSectionStore } from "~~/store/section";
-import Reels from "../components/Nav/Reels.vue";
-import { SECTION } from "~~/constants/section";
-const { width } = useResizeWindow();
-const router = useRouter();
-const isMobileResponsive = computed(() => width.value < 768);
+import ActivityFeed from '~~/components/Nav/ActivityFeed.vue'
+import HomeIcon from '~~/components/Nav/HomeIcon.vue'
+import Search from '~~/components/Nav/Search.vue'
+import SelfAvatar from '~~/components/Nav/SelfAvatar.vue'
+import { SECTION } from '~~/constants/section'
+import { useGlobalStore } from '~~/store/global'
+import Reels from '../components/Nav/Reels.vue'
 
-const sectionStore = useSectionStore();
-const section = computed(() => sectionStore.getSectionSelect);
-const handleSelect = (section, url) => {
-  sectionStore.selectSection(section);
-  router.push(url);
-};
-const isReelsSelect = computed(
-  () => sectionStore.getSectionSelect === SECTION.REELS && isMobileResponsive
-);
+const globalStore = useGlobalStore()
+const router = useRouter()
+const isMobile = computed(() => globalStore.getIsMobile)
+const section = computed(() => globalStore.getSection)
+const handleSelect = (section: SECTION, url?: string) => {
+  globalStore.setSection(section)
+  router.push(url)
+}
+const isReelsSelect = computed(() => globalStore.getSection === SECTION.REELS && isMobile)
 </script>
 
 <template>
