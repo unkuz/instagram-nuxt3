@@ -8,9 +8,6 @@ const mainRef = ref(null)
 const leftSectionRef = ref(null)
 const rightSectionRef = ref(null)
 
-onMounted(() => {
-  rightSectionRef.value.style.left = `${leftSectionRef.value.offsetLeft + 935 - 293}px`
-})
 useWindowResizeCallback(() => {
   rightSectionRef.value.style.left = `${leftSectionRef.value.offsetLeft + 935 - 293}px`
 })

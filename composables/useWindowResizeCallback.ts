@@ -3,6 +3,7 @@ export function useWindowResizeCallback(callback: Function): void {
     callback()
   }
   onMounted(() => {
+    callback()
     window.addEventListener('resize', resize)
   })
 

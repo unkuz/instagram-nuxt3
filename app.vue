@@ -18,8 +18,6 @@ watch([width, height], () => {
     <div
       v-if="isTransition"
       class="absolute inset-0 z-50 flex animate-pulse items-center justify-center bg-fuchsia-400 opacity-30"
-    >
-      <div class="h-[200px] w-[200px] animate-spin bg-red-400">KAKA</div>
-    </div>
+    ></div>
   </div>
 </template>

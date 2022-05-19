@@ -11,9 +11,4 @@ export function useDebounceRoute(url: string) {
   let timer2 = setTimeout(() => {
     globalStore.setTransition(false)
   }, TIMMING_PAGE_TRANSITION)
-
-  onUnmounted(() => {
-    clearTimeout(timer1)
-    clearTimeout(timer2)
-  })
 }
