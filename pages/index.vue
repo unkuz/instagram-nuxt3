@@ -5,11 +5,16 @@ import Post from '~~/components/Post/index.vue'
 import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
 
 const mainRef = ref(null)
-const leftSectionRef = ref(null)
-const rightSectionRef = ref(null)
+const leftRef = ref(null)
+const rightRef = ref(null)
+
+onMounted(() => {
+  rightRef.value.style.left = `${leftRef.value.offsetLeft + 642}px`
+  console.log('KAKA', leftRef.value.offsetLeft)
+})
 
 useWindowResizeCallback(() => {
-  rightSectionRef.value.style.left = `${leftSectionRef.value.offsetLeft + 935 - 293}px`
+  rightRef.value.style.left = `${leftRef.value.offsetLeft + 642}px`
 })
 </script>
 
@@ -19,10 +24,7 @@ useWindowResizeCallback(() => {
       <Title>Instagram</Title>
     </Head>
     <div ref="mainRef" class="flex w-full justify-center lg:block">
-      <div
-        class="inline-flex w-full flex-col items-center md:w-[614px] lg:block"
-        ref="leftSectionRef"
-      >
+      <div class="inline-flex w-full flex-col items-center md:w-[614px] lg:block" ref="leftRef">
         <HeroPagelet />
         <div v-for="i in Array.from(Array(5).keys())" :key="i">
           <Post />
@@ -30,7 +32,7 @@ useWindowResizeCallback(() => {
       </div>
       <div
         class="fixed top-[84px] left-[20000px] hidden h-[473px] w-[293px] bg-white text-sm lg:block"
-        ref="rightSectionRef"
+        ref="rightRef"
       >
         <Suggestions />
       </div>

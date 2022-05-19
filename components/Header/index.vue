@@ -15,13 +15,14 @@ import Messenger from '../Nav/Messenger.vue'
 import NewPost from '../Nav/NewPost.vue'
 import SelfAvatar from '../Nav/SelfAvatar.vue'
 
+const router = useRouter()
 const globalStore = useGlobalStore()
 const searchStore = useSearchStore()
 const isShowSearchToolkit = computed(() => searchStore.getIsShowSearchToolkit)
 const section = computed(() => globalStore.getSection)
 const isMobile = computed(() => globalStore.getIsMobile)
 const handleSelect = (section: SECTION, url?: string) => {
-  useDebounceRoute(url)
+  useDebounceRoute(url, router)
   globalStore.setSection(section)
 }
 </script>
