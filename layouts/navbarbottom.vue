@@ -11,6 +11,10 @@ const globalStore = useGlobalStore()
 const router = useRouter()
 const isMobile = computed(() => globalStore.getIsMobile)
 const section = computed(() => globalStore.getSection)
+
+const isMoblieAndSelectReels = computed(
+  () => globalStore.getIsMobile && globalStore.getSection === SECTION.REELS
+)
 const handleSelect = (section: SECTION, url?: string) => {
   globalStore.setSection(section)
   router.push(url)

@@ -37,7 +37,9 @@ const handleSelect = (section: SECTION, url?: string) => {
       <div class="flex w-full items-center md:w-auto lg:w-full">
         <Logo />
       </div>
-      <div class="relative hidden w-full items-center justify-center md:flex md:w-auto lg:w-full">
+      <div
+        class="relative hidden w-full items-center justify-center md:ml-[65px] md:flex md:w-auto lg:ml-0 lg:w-full"
+      >
         <Search />
         <SearchPop v-if="isShowSearchToolkit" />
       </div>
