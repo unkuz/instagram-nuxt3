@@ -27,7 +27,7 @@ useClickOutSide(accountPopRef, () => {
     >
       <div
         @click="handleSelect(SECTION.SELF, '/cuzknothz/')"
-        class="flex h-[37px] cursor-pointer items-center justify-start space-x-[12px] py-[8px] px-[16px]"
+        class="z-50 flex h-[37px] cursor-pointer items-center justify-start space-x-[12px] py-[8px] px-[16px] hover:bg-gray-300"
       >
         <svg
           aria-label="Profile"
@@ -73,7 +73,7 @@ useClickOutSide(accountPopRef, () => {
       <hr />
       <div
         @click="handleSelect(SECTION.SELF, '/login/')"
-        class="flex h-[37px] cursor-pointer justify-center px-[16px] py-[8px]"
+        class="flex h-[37px] cursor-pointer justify-center px-[16px] py-[8px] hover:bg-gray-300"
       >
         Log out
       </div>
