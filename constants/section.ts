@@ -8,3 +8,8 @@ export enum SECTION {
   REELS = 'REELS',
   SEARCH = 'SEARCH',
 }
+export enum POP_SECTION {
+  ADD = 'ADD',
+  ACTIVITY = 'ACTIVITY',
+  SELF = 'SELF',
+}

@@ -62,11 +62,7 @@ const handleSelect = (section: SECTION, url: string = '') => {
           <ActivityFeed :isSelect="section === SECTION.ACTIVITYFEED" />
           <ActivityFeedPop v-show="section === SECTION.ACTIVITYFEED" />
         </div>
-        <div
-          v-if="!isMobile"
-          class="relative mr-0"
-          @click="handleSelect(SECTION.SELF, '/cuzknothz/')"
-        >
+        <div v-if="!isMobile" class="relative mr-0" @click="handleSelect(SECTION.SELF)">
           <SelfAvatar :isSelect="section === SECTION.SELF" />
           <AccountPop v-show="section === SECTION.SELF" />
         </div>
