@@ -34,7 +34,6 @@ watch(isTransition, () => {
       v-if="isTransition"
       class="bg-fuchsia-500-300 absolute inset-0 z-50 flex items-center justify-center opacity-60 transition"
     ></div>
-    <div class="fixed top-[50px] right-0 z-50 h-[50px] w-[5px] bg-green-500"></div>
   </div>
 </template>
 <style scoped>

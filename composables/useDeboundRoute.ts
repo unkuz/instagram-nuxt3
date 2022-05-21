@@ -2,7 +2,12 @@ import { TIMMING_PAGE_TRANSITION } from '~~/constants/pageTransition'
 import { useGlobalStore } from '~~/store/global'
 export function useDebounceRoute(url: string, router: any) {
   const globalStore = useGlobalStore()
-
+  if (router.currentRoute.value.path == url) {
+    return
+  }
+  if (url === '') {
+    return
+  }
   globalStore.setTransition(true)
   setTimeout(() => {
     router.push(url)
