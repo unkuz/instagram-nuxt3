@@ -6,16 +6,16 @@ import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
 
 const mainRef = ref(null)
 const leftRef = ref(null)
-const rightRef = ref(null)
+// const rightRef = ref(null)
 
-onMounted(() => {
-  rightRef.value.style.left = `${leftRef.value.offsetLeft + 642}px`
-  console.log('KAKA', leftRef.value.offsetLeft)
-})
+// onMounted(() => {
+//   rightRef.value.style.left = `${leftRef.value.offsetLeft + 642}px`
+//   console.log('KAKA', leftRef.value.offsetLeft)
+// })
 
-useWindowResizeCallback(() => {
-  rightRef.value.style.left = `${leftRef.value.offsetLeft + 642}px`
-})
+// useWindowResizeCallback(() => {
+//   rightRef.value.style.left = `${leftRef.value.offsetLeft + 642}px`
+// })
 </script>
 
 <template>
@@ -30,12 +30,12 @@ useWindowResizeCallback(() => {
           <Post />
         </div>
       </div>
-      <div
+      <!-- <div
         class="fixed top-[84px] left-[20000px] hidden h-[473px] w-[293px] bg-white text-sm lg:block"
         ref="rightRef"
       >
-        <!-- <Suggestions /> -->
-      </div>
+        <Suggestions />
+      </div> -->
     </div>
   </div>
 </template>

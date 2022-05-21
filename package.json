@@ -19,6 +19,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.1.8",
     "@types/uuid": "^8.3.4",
+    "axios": "^0.27.2",
     "lodash": "^4.17.21",
     "pinia": "^2.0.13",
     "uuid": "^8.3.2"
