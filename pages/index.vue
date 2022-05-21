@@ -6,6 +6,10 @@ import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
 
 const mainRef = ref(null)
 const leftRef = ref(null)
+definePageMeta({
+  layout: 'main',
+})
+
 // const rightRef = ref(null)
 
 // onMounted(() => {

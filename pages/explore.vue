@@ -1,4 +1,8 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+definePageMeta({
+  layout: 'main-not-header',
+})
+</script>
 
 <template>
   <div class="grid h-[500px] w-full grid-cols-3 gap-[2px] md:gap-[28px]">
