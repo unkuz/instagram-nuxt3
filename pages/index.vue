@@ -34,7 +34,7 @@ useWindowResizeCallback(() => {
         class="fixed top-[84px] left-[20000px] hidden h-[473px] w-[293px] bg-white text-sm lg:block"
         ref="rightRef"
       >
-        <Suggestions />
+        <!-- <Suggestions /> -->
       </div>
     </div>
   </div>
