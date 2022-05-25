@@ -28,11 +28,7 @@ watch(isTransition, () => {
     </NuxtLayout>
     <div
       v-if="isTransition"
-      class="absolute inset-0 z-40 flex items-center justify-center bg-sky-300 transition"
-    ></div>
-    <div
-      v-if="isTransition"
-      class="bg-fuchsia-500-300 absolute inset-0 z-50 flex items-center justify-center opacity-60 transition"
+      class="absolute inset-0 z-40 flex items-center justify-center bg-violet-200 transition"
     ></div>
   </div>
 </template>

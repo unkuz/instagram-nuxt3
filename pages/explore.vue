@@ -6,24 +6,68 @@ definePageMeta({
 
 <template>
   <div class="grid h-[500px] w-full grid-cols-3 gap-[2px] md:gap-[28px]">
-    <div class="aspect-square overflow-hidden">
+    <div class="relative aspect-square overflow-hidden">
       <img
         class="aspect-square w-full object-cover"
         src="/explore/280053464_1025075078373353_2175908518960908191_n.jpg"
       />
+      <svg
+        aria-label="Carousel"
+        class="absolute top-[15px] right-[15px]"
+        color="#ffffff"
+        fill="#ffffff"
+        height="28"
+        role="img"
+        viewBox="0 0 48 48"
+        width="28"
+      >
+        <path
+          d="M34.8 29.7V11c0-2.9-2.3-5.2-5.2-5.2H11c-2.9 0-5.2 2.3-5.2 5.2v18.7c0 2.9 2.3 5.2 5.2 5.2h18.7c2.8-.1 5.1-2.4 5.1-5.2zM39.2 15v16.1c0 4.5-3.7 8.2-8.2 8.2H14.9c-.6 0-.9.7-.5 1.1 1 1.1 2.4 1.8 4.1 1.8h13.4c5.7 0 10.3-4.6 10.3-10.3V18.5c0-1.6-.7-3.1-1.8-4.1-.5-.4-1.2 0-1.2.6z"
+        ></path>
+      </svg>
     </div>
 
-    <div class="aspect-square md:col-start-1 md:row-start-2">
+    <div class="relative aspect-square md:col-start-1 md:row-start-2">
       <img
         class="aspect-square w-full object-cover"
         src="/explore/278009228_960257008015789_1126924171986179644_n.jpg"
       />
+      <svg
+        aria-label="Video"
+        class="absolute top-[15px] right-[15px]"
+        color="#ffffff"
+        fill="#ffffff"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path
+          d="M5.888 22.5a3.46 3.46 0 01-1.721-.46l-.003-.002a3.451 3.451 0 01-1.72-2.982V4.943a3.445 3.445 0 015.163-2.987l12.226 7.059a3.444 3.444 0 01-.001 5.967l-12.22 7.056a3.462 3.462 0 01-1.724.462z"
+        ></path>
+      </svg>
     </div>
-    <div class="col-start-3 row-span-2 row-start-1 object-cover md:col-span-2 md:col-start-2">
+    <div
+      class="relative col-start-3 row-span-2 row-start-1 object-cover md:col-span-2 md:col-start-2"
+    >
       <img
         class="aspect-auto h-full w-full object-cover md:aspect-square"
         src="/explore/275624700_382008663748898_3572544032225631298_n.jpg"
       />
+      <svg
+        aria-label="Video"
+        class="absolute top-[15px] right-[15px]"
+        color="#ffffff"
+        fill="#ffffff"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path
+          d="M5.888 22.5a3.46 3.46 0 01-1.721-.46l-.003-.002a3.451 3.451 0 01-1.72-2.982V4.943a3.445 3.445 0 015.163-2.987l12.226 7.059a3.444 3.444 0 01-.001 5.967l-12.22 7.056a3.462 3.462 0 01-1.724.462z"
+        ></path>
+      </svg>
     </div>
 
     <div class="aspect-square">
