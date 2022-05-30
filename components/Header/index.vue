@@ -21,6 +21,7 @@ const searchStore = useSearchStore()
 const isShowSearchToolkit = computed(() => searchStore.getIsShowSearchToolkit)
 const section = computed(() => globalStore.getSection)
 const isMobile = computed(() => globalStore.getIsMobile)
+const isMobileAndSelectNewPost = computed(() => globalStore.getIsMobileAndSelectNewPost)
 const handleSelect = (section: SECTION, url: string = '') => {
   useDebounceRoute(url, router)
   globalStore.setSection(section)
@@ -52,7 +53,7 @@ const handleSelect = (section: SECTION, url: string = '') => {
         <div class="ml-[22px] md:ml-0" @click="handleSelect(SECTION.MESSENGER, '/direct/inbox/')">
           <Messenger :isSelect="section === SECTION.MESSENGER" />
         </div>
-        <div @click="handleSelect(SECTION.NEW_POST)">
+        <div @click="handleSelect(SECTION.NEW_POST)" class="relative">
           <NewPost :isSelect="section === SECTION.NEW_POST" />
         </div>
         <div v-if="!isMobile" @click="handleSelect(SECTION.FINDPEOPLE, '/explore/')">

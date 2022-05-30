@@ -1,9 +1,11 @@
 <script lang="ts" setup>
 import BackDrop from '~~/components/Utils/BackDrop.vue'
+import { useLockScroll } from '~~/composables/useLockScroll'
+useLockScroll()
 </script>
 
 <template>
-  <div>
+  <div class="z-50">
     <BackDrop />
     <div
       class="absolute top-1/2 right-1/2 z-10 flex translate-x-1/2 -translate-y-1/2 items-center justify-center"

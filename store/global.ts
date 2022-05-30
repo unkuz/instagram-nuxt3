@@ -14,6 +14,8 @@ const getters = {
   getClientHeight: (state) => state.clientHeight,
   getIsMobile: (state) => state.clientWidth < MOBILE_BREAK_POINT,
   getIsTransition: (state) => state.transition,
+  getIsMobileAndSelectNewPost: (state) =>
+    state.clientWidth < MOBILE_BREAK_POINT && state.section === SECTION.NEW_POST,
 }
 const actions = {
   setSection(section) {

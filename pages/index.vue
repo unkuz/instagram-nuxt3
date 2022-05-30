@@ -3,16 +3,15 @@ import HeroPagelet from '~~/components/HeroPagelet/index.vue'
 import Suggestions from '~~/components/Huge/Suggestions/index.vue'
 import Post from '~~/components/Post/index.vue'
 import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
-import NewPost from '~~/components/Huge/NewPost/index.vue'
+// import NewPost from '~~/components/Huge/NewPost/index.vue
 import { useGlobalStore } from '~~/store/global'
 import { SECTION } from '~~/constants/section'
+import BackDrop from '~~/components/Utils/BackDrop.vue'
 const mainRef = ref(null)
 const leftRef = ref(null)
 definePageMeta({
   layout: 'main',
 })
-const globalStore = useGlobalStore()
-const section = computed(() => globalStore.getSection)
 
 // const rightRef = ref(null)
 
@@ -38,7 +37,6 @@ const section = computed(() => globalStore.getSection)
           <Post />
         </div>
       </div>
-      <NewPost v-if="section === SECTION.NEW_POST" />
       <!-- <div
         class="fixed top-[84px] left-[20000px] hidden h-[473px] w-[293px] bg-white text-sm lg:block"
         ref="rightRef"

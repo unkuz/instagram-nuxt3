@@ -3,10 +3,19 @@ import { useResizeWindow } from '~~/composables/useResizeWindow'
 import { useGlobalStore } from '~~/store/global'
 import { useLockScroll } from '~~/composables/useLockScroll'
 import Transition from '~~/components/Transition/index.vue'
+import NewPost from './components/Huge/NewPost/index.vue'
+import { SECTION } from '~~/constants/section'
+import NewPostMobile from './components/Huge/NewPostMobile/index.vue'
+
 // useLockScroll()
 const globalStore = useGlobalStore()
 const isTransition = computed(() => globalStore.getIsTransition)
 const { width, height } = useResizeWindow()
+
+const section = computed(() => globalStore.getSection)
+const isMobile = computed(() => globalStore.getIsMobile)
+const isMobileAndSelectNewPost = computed(() => globalStore.getIsMobileAndSelectNewPost)
+
 watch([width, height], () => {
   globalStore.setClientSize(width.value, height.value)
 })
@@ -30,6 +39,8 @@ watch(isTransition, () => {
       v-if="isTransition"
       class="absolute inset-0 z-40 flex items-center justify-center bg-violet-200 transition"
     ></div>
+    <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
+    <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
   </div>
 </template>
 <style scoped>
