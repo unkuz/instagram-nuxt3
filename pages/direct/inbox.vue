@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useGlobalStore } from '~~/store/global'
+import Navbarbottom from '~~/layouts/navbarbottom.vue'
 const globalStore = useGlobalStore()
 const isMobile = computed(() => globalStore.getIsMobile)
 </script>
