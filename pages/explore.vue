@@ -6,7 +6,7 @@ definePageMeta({
 
 <template>
   <div class="grid h-[500px] w-full grid-cols-3 gap-[2px] md:gap-[28px]">
-    <div class="relative aspect-square overflow-hidden">
+    <div class="group relative aspect-square cursor-pointer overflow-hidden">
       <img
         class="aspect-square w-full object-cover"
         src="/explore/280053464_1025075078373353_2175908518960908191_n.jpg"
@@ -25,6 +25,7 @@ definePageMeta({
           d="M34.8 29.7V11c0-2.9-2.3-5.2-5.2-5.2H11c-2.9 0-5.2 2.3-5.2 5.2v18.7c0 2.9 2.3 5.2 5.2 5.2h18.7c2.8-.1 5.1-2.4 5.1-5.2zM39.2 15v16.1c0 4.5-3.7 8.2-8.2 8.2H14.9c-.6 0-.9.7-.5 1.1 1 1.1 2.4 1.8 4.1 1.8h13.4c5.7 0 10.3-4.6 10.3-10.3V18.5c0-1.6-.7-3.1-1.8-4.1-.5-.4-1.2 0-1.2.6z"
         ></path>
       </svg>
+      <div class="absolute inset-0 z-10 opacity-30 group-hover:bg-black"></div>
     </div>
 
     <div class="relative aspect-square md:col-start-1 md:row-start-2">
