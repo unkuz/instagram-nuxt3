@@ -13,6 +13,5 @@ const isMobileResponsive = computed(() => width.value < 768)
       <slot />
     </div>
     <Navbarbottom />
-    <footer />
   </div>
 </template>
