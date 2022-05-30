@@ -1,7 +1,14 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const router = useRouter()
+
+const handleClick = () => {
+  router.push(`/stories/cuzknothz/${Math.random()}`)
+}
+</script>
 
 <template>
   <div
+    @click="handleClick"
     class="mx-[10px] inline-block max-w-[74px] select-none overflow-hidden text-ellipsis whitespace-nowrap sm:cursor-pointer"
   >
     <div
