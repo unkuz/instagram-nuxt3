@@ -3,10 +3,10 @@ import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { useSearchStore } from '~~/store/search'
 
 const searchStore = useSearchStore()
-const searchValue = computed(() => searchStore.getValue)
-const isSearchActive = computed(() => searchStore.isFocus)
 const searchRef = ref(null)
 const inputSearch = ref(null)
+const searchValue = computed(() => searchStore.getValue)
+const isSearchActive = computed(() => searchStore.isFocus)
 const isSearchHaveValue = computed(() => searchStore.getIsSearchHaveValue)
 
 watch(isSearchActive, (state) => {

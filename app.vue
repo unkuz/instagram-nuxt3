@@ -1,24 +1,20 @@
 <script lang="ts" setup>
 import { useResizeWindow } from '~~/composables/useResizeWindow'
-import { useGlobalStore } from '~~/store/global'
-import { useLockScroll } from '~~/composables/useLockScroll'
-import Transition from '~~/components/Transition/index.vue'
-import NewPost from './components/Huge/NewPost/index.vue'
 import { SECTION } from '~~/constants/section'
+import { useGlobalStore } from '~~/store/global'
+import NewPost from './components/Huge/NewPost/index.vue'
 import NewPostMobile from './components/Huge/NewPostMobile/index.vue'
 
-// useLockScroll()
 const globalStore = useGlobalStore()
-const isTransition = computed(() => globalStore.getIsTransition)
 const { width, height } = useResizeWindow()
-
+const isTransition = computed(() => globalStore.getIsTransition)
 const section = computed(() => globalStore.getSection)
 const isMobile = computed(() => globalStore.getIsMobile)
-const isMobileAndSelectNewPost = computed(() => globalStore.getIsMobileAndSelectNewPost)
 
 watch([width, height], () => {
   globalStore.setClientSize(width.value, height.value)
 })
+
 watch(isTransition, () => {
   if (isTransition) {
     window.scrollTo({ top: 0 })

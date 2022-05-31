@@ -4,19 +4,22 @@ import Arrow from '~~/components/Utils/Arrow.vue'
 import { SECTION } from '~~/constants/section'
 import { useGlobalStore } from '~~/store/global'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
-const router = useRouter()
 
+const router = useRouter()
+const globalStore = useGlobalStore()
 const accountPopRef = ref(null)
 const isShow = ref(true)
-const globalStore = useGlobalStore()
+
+useClickOutSide(accountPopRef, () => {
+  console.log('HEHE')
+})
+
 const handleSelect = (section: SECTION, url: string = '') => {
   useDebounceRoute(url, router)
   globalStore.setSection(section)
 }
-useClickOutSide(accountPopRef, () => {
-  console.log('HEHE')
-  // isShow.value = false
-})
+
+
 </script>
 
 <template>

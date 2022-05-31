@@ -21,7 +21,7 @@ const searchStore = useSearchStore()
 const isShowSearchToolkit = computed(() => searchStore.getIsShowSearchToolkit)
 const section = computed(() => globalStore.getSection)
 const isMobile = computed(() => globalStore.getIsMobile)
-const isMobileAndSelectNewPost = computed(() => globalStore.getIsMobileAndSelectNewPost)
+
 const handleSelect = (section: SECTION, url: string = '') => {
   useDebounceRoute(url, router)
   globalStore.setSection(section)

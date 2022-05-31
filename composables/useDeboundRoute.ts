@@ -10,9 +10,11 @@ export function useDebounceRoute(url: string, router: Router) {
     return
   }
   globalStore.setTransition(true)
+  
   setTimeout(() => {
     router.push(url)
   }, TIMMING_PAGE_TRANSITION / 2)
+
   setTimeout(() => {
     globalStore.setTransition(false)
   }, TIMMING_PAGE_TRANSITION)

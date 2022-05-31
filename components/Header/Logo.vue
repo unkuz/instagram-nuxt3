@@ -5,6 +5,7 @@ import { useGlobalStore } from '~~/store/global'
 
 const globalStore = useGlobalStore()
 const router = useRouter()
+
 const handleSelect = (section: SECTION, url?: string) => {
   useDebounceRoute(url, router)
   globalStore.setSection(section)
