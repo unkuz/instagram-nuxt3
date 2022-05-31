@@ -9,7 +9,6 @@ export function useClickOutSide(ref: any, callback: Function) {
     window.addEventListener('mousedown', listener)
     window.addEventListener('touchstart', listener)
   })
-
   onUnmounted(() => {
     window.removeEventListener('mousedown', listener)
     window.removeEventListener('touchstart', listener)

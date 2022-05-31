@@ -1,12 +1,11 @@
-export function useWindowResizeCallback(callback: Function): void {
-  const resize = (e: any) => {
+export function useWindowResizeCallback(callback: Function) {
+  const resize = (e: UIEvent) => {
     callback()
   }
   onMounted(() => {
     callback()
     window.addEventListener('resize', resize)
   })
-
   onUnmounted(() => {
     window.removeEventListener('resize', resize)
   })
