@@ -29,7 +29,7 @@ definePageMeta({
       <div>🍕🤣🤣🤣😂😂</div>
       <div>ฮาโลวีนน็อคภูมิทัศน์คอนเทนเนอร์ คาร์โก้สะบึมบ๊อกซ์เทควันโดวานิลลา</div>
     </div>
-    <div class="mt-[30px] flex justify-evenly">
+    <div class="mt-[30px] flex justify-around">
       <svg
         aria-label="Posts"
         class="_ab6-"
