@@ -13,11 +13,11 @@ definePageMeta({
       />
       <img
         src="/personal/avatar.jpg"
-        class="absolute top-[115px] left-[35px] h-[140px] w-[140px] rounded-full border-[5px] border-white object-cover"
+        class="absolute top-[67%] left-1/2 h-[120px] w-[120px] -translate-x-1/2 rounded-full border-[5px] border-white object-cover md:top-[115px] md:left-[35px] md:h-[140px] md:w-[140px] md:translate-x-0"
       />
     </div>
     <div>
-      <div class="ml-[180px] mt-[5px]">
+      <div class="mt-[50px] flex flex-col items-center md:ml-[180px] md:mt-[5px] md:block">
         <div>Cuzknothz</div>
         <div class="flex space-x-[20px]">
           <span>96 posts</span><span>38.8k followers</span><span>150 following</span>
