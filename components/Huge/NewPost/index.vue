@@ -8,14 +8,16 @@ useLockScroll()
   <div class="z-50">
     <BackDrop />
     <div
-      class="absolute top-1/2 right-1/2 z-10 flex translate-x-1/2 -translate-y-1/2 items-center justify-center"
+      class="absolute top-1/2 right-1/2 z-10 flex translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-xl border-[1px] border-gray-300"
     >
-      <div class="w-[728px] rounded-t-xl bg-white">
-        <div class="flex h-[42px] w-full items-center justify-center border-[1px] border-gray-300">
+      <div class="w-[300px] bg-white text-[0.9rem]">
+        <div
+          class="flex h-[42px] w-full items-center justify-center border-b-[1px] border-gray-300"
+        >
           Create new post
         </div>
         <div
-          class="flex aspect-square w-full flex-col items-center justify-center rounded-b-xl border-[1px] border-t-0 border-gray-300"
+          class="flex h-[200px] w-full flex-col items-center justify-center border-t-0 border-gray-300"
         >
           <svg
             aria-label="Icon to represent media such as images or videos"
@@ -41,8 +43,7 @@ useLockScroll()
             ></path>
           </svg>
           Drag photos and videos here
-          <input type="file" />
-          Select from your device
+          <input type="file" class="hidden" />
         </div>
       </div>
     </div>
