@@ -2,30 +2,37 @@ import { defineStore } from 'pinia'
 import { MOBILE_BREAK_POINT } from '~~/constants/responsive'
 import { SECTION } from '~~/constants/section'
 
-const state = () => ({
+interface GlobalState {
+  section: SECTION
+  clientWidth: number
+  clientHeight: number
+  transition: boolean
+}
+
+const state = (): GlobalState => ({
   section: SECTION.HOME,
-  clientWidth: '',
-  clientHeight: '',
+  clientWidth: 0,
+  clientHeight: 0,
   transition: false,
 })
 const getters = {
-  getSection: (state) => state.section,
-  getClientWidth: (state) => state.clientWidth,
-  getClientHeight: (state) => state.clientHeight,
-  getIsMobile: (state) => state.clientWidth < MOBILE_BREAK_POINT,
-  getIsTransition: (state) => state.transition,
-  getIsMobileAndSelectNewPost: (state) =>
+  getSection: (state: GlobalState) => state.section,
+  getClientWidth: (state: GlobalState) => state.clientWidth,
+  getClientHeight: (state: GlobalState) => state.clientHeight,
+  getIsMobile: (state: GlobalState) => state.clientWidth < MOBILE_BREAK_POINT,
+  getIsTransition: (state: GlobalState) => state.transition,
+  getIsMobileAndSelectNewPost: (state: GlobalState) =>
     state.clientWidth < MOBILE_BREAK_POINT && state.section === SECTION.NEW_POST,
 }
 const actions = {
-  setSection(section) {
+  setSection(section: SECTION) {
     this.section = section
   },
-  setClientSize(width, height) {
+  setClientSize(width: number, height: number) {
     this.clientWidth = width
     this.clientHeight = height
   },
-  setTransition(transition) {
+  setTransition(transition: boolean) {
     this.transition = transition
   },
 }

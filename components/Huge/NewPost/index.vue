@@ -1,13 +1,25 @@
 <script lang="ts" setup>
 import BackDrop from '~~/components/Utils/BackDrop.vue'
 import { useLockScroll } from '~~/composables/useLockScroll'
+import { useClickOutSide } from '~~/composables/useClickOutSide'
+import { useGlobalStore } from '~~/store/global'
+import { SECTION } from '~~/constants/section'
+
+const boxRef = ref(null)
+const globalStore = useGlobalStore()
+
 useLockScroll()
+
+useClickOutSide(boxRef, () => {
+  globalStore.setSection(SECTION.HOME)
+})
 </script>
 
 <template>
-  <div class="z-50">
+  <div class="z-50 h-screen w-screen">
     <BackDrop />
     <div
+      ref="boxRef"
       class="absolute top-1/2 right-1/2 z-10 flex translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-xl border-[1px] border-gray-300"
     >
       <div class="w-[300px] bg-white text-[0.9rem]">
@@ -21,7 +33,6 @@ useLockScroll()
         >
           <svg
             aria-label="Icon to represent media such as images or videos"
-            class="_8-yf5"
             color="#262626"
             fill="#262626"
             height="77"
