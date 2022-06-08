@@ -23,7 +23,7 @@ const isSelect = (select) => currentSelect === select
     </div>
     <div>
       <div class="mt-[50px] flex flex-col items-center md:ml-[180px] md:mt-[5px] md:block">
-        <div>Cuzknothz</div>
+        <div class="font-august uppercase">Cuzknothz</div>
         <div class="flex space-x-[20px]">
           <span>96 posts</span><span>38.8k followers</span><span>150 following</span>
         </div>

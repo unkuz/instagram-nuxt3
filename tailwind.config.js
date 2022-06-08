@@ -1,14 +1,17 @@
 module.exports = {
   content: [
-    "./components/**/*.{vue,js}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
-    "./nuxt.config.{js,ts}",
-    "./app.vue",
+    './components/**/*.{vue,js}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './nuxt.config.{js,ts}',
+    './app.vue',
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      august: ['august'],
+    },
   },
   plugins: [],
-};
+}
