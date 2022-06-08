@@ -1,13 +1,19 @@
 <script lang="ts" setup>
 import { useGlobalStore } from '~~/store/global'
+import { STATUS_CHAT, useChatStore } from '~~/store/chat'
 
 definePageMeta({
   layout: 'main',
 })
+
+const chatStore = useChatStore()
 const globalStore = useGlobalStore()
 const isMobile = computed(() => globalStore.getIsMobile)
-const isShowDetailChat = ref(false)
-const showDetail = () => (isShowDetailChat.value = true)
+const isShowDetailChat = computed(() => chatStore.getIsShowDetailChat)
+const showDetail = () => {
+  chatStore.setIsShowDetailChat(true)
+  chatStore.setStatus(STATUS_CHAT.SELECT)
+}
 </script>
 
 <template>

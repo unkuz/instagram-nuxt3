@@ -4,11 +4,14 @@ import Header from '~~/components/Header/index.vue'
 import { useGlobalStore } from '~~/store/global'
 import { SECTION } from '~~/constants/section'
 import { useDebounceRoute } from '~~/composables/useDeboundRoute'
+import { useChatStore, STATUS_CHAT } from '~~/store/chat'
 
 const globalStore = useGlobalStore()
+const chatStore = useChatStore()
 const section = computed(() => globalStore.getSection)
 const isMobile = computed(() => globalStore.getIsMobile)
 const router = useRouter()
+const statusChat = computed(() => chatStore.getStatus)
 const handleSelect = (section: SECTION, url: string = '') => {
   useDebounceRoute(url, router)
   globalStore.setSection(section)
