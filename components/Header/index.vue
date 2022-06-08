@@ -26,6 +26,7 @@ const handleSelect = (section: SECTION, url: string = '') => {
   useDebounceRoute(url, router)
   globalStore.setSection(section)
 }
+const isShowProfile = ref(false)
 </script>
 
 <template>
@@ -63,9 +64,9 @@ const handleSelect = (section: SECTION, url: string = '') => {
           <ActivityFeed :isSelect="section === SECTION.ACTIVITYFEED" />
           <ActivityFeedPop v-show="section === SECTION.ACTIVITYFEED" />
         </div>
-        <div v-if="!isMobile" class="relative mr-0" @click="handleSelect(SECTION.SELF)">
+        <div v-if="!isMobile" class="relative mr-0" @click="isShowProfile = !isShowProfile">
           <SelfAvatar :isSelect="section === SECTION.SELF" />
-          <AccountPop v-show="section === SECTION.SELF" />
+          <AccountPop v-show="isShowProfile" />
         </div>
       </div>
     </div>
