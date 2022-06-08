@@ -1,56 +1,80 @@
 <script lang="ts" setup>
+import { useGlobalStore } from '~~/store/global'
+
 definePageMeta({
   layout: 'main',
 })
+const globalStore = useGlobalStore()
+const isMobile = computed(() => globalStore.getIsMobile)
+const isShowDetailChat = ref(false)
+const showDetail = () => (isShowDetailChat.value = true)
 </script>
 
 <template>
   <div class="mt-[100px] flex w-full space-x-[30px] text-sm">
     <div
-      v-if="false"
-      class="w-[300px] flex-none rounded-2xl border-0 border-black bg-white md:border-[1px]"
+      v-if="(!isShowDetailChat && isMobile) || !isMobile"
+      class="w-full flex-none rounded-2xl border-0 border-black bg-white md:w-[300px] md:border-[1px]"
     >
-      <div class="flex h-[70px] items-center rounded-2xl duration-500 hover:bg-gray-200">
-        <div class="relative ml-[10px] mr-[10px] h-[50px] w-[50px] rounded-full bg-yellow-300">
+      <div
+        @click="showDetail"
+        class="flex h-[70px] items-center rounded-2xl duration-500 hover:bg-gray-200"
+      >
+        <div
+          class="relative ml-[10px] mr-[10px] aspect-square h-[50px] w-[50px] rounded-full bg-yellow-300"
+        >
           <div
             class="absolute bottom-[1px] right-[1px] h-[12px] w-[12px] rounded-full bg-green-500"
           ></div>
         </div>
-        <div class="flex flex-col">
-          <div class="flex w-[215px] justify-between"><span>ฟลุ</span><span>10:00</span></div>
+        <div class="flex w-full flex-col">
+          <div class="flex w-full justify-between md:w-[215px]">
+            <span>ฟลุ</span><span class="mr-[10px] md:mr-0">10:00</span>
+          </div>
 
           <span>ซเคิลวีไอ</span>
         </div>
       </div>
       <div class="mx-auto h-[1px] w-[200px] bg-black"></div>
+
       <div class="flex h-[70px] items-center rounded-2xl duration-500 hover:bg-gray-200">
-        <div class="relative ml-[10px] mr-[10px] h-[50px] w-[50px] rounded-full bg-yellow-300">
+        <div
+          class="relative ml-[10px] mr-[10px] aspect-square h-[50px] w-[50px] rounded-full bg-yellow-300"
+        >
           <div
             class="absolute bottom-[1px] right-[1px] h-[12px] w-[12px] rounded-full bg-green-500"
           ></div>
         </div>
-        <div class="flex flex-col">
-          <div class="flex w-[215px] justify-between"><span>ล์โอเลี้</span><span>10:00</span></div>
+        <div class="flex w-full flex-col">
+          <div class="flex w-full justify-between md:w-[215px]">
+            <span>ฟลุ</span><span class="mr-[10px] md:mr-0">10:00</span>
+          </div>
 
-          <span>สต์เฮาส์ </span>
+          <span>ซเคิลวีไอ</span>
         </div>
       </div>
       <div class="mx-auto h-[1px] w-[200px] bg-black"></div>
+
       <div class="flex h-[70px] items-center rounded-2xl duration-500 hover:bg-gray-200">
-        <div class="relative ml-[10px] mr-[10px] h-[50px] w-[50px] rounded-full bg-yellow-300">
+        <div
+          class="relative ml-[10px] mr-[10px] aspect-square h-[50px] w-[50px] rounded-full bg-yellow-300"
+        >
           <div
             class="absolute bottom-[1px] right-[1px] h-[12px] w-[12px] rounded-full bg-green-500"
           ></div>
         </div>
-        <div class="flex flex-col">
-          <div class="flex w-[215px] justify-between"><span>คอนเทนเ</span><span>10:00</span></div>
+        <div class="flex w-full flex-col">
+          <div class="flex w-full justify-between md:w-[215px]">
+            <span>ฟลุ</span><span class="mr-[10px] md:mr-0">10:00</span>
+          </div>
 
-          <span>ลี่สตริงออดิชั่นพรีเซ็นเตอร์ </span>
+          <span>ซเคิลวีไอ</span>
         </div>
       </div>
       <div class="mx-auto h-[1px] w-[200px] bg-black"></div>
     </div>
     <div
+      v-if="isShowDetailChat || !isMobile"
       class="relative h-[600px] flex-grow rounded-2xl border-0 border-black bg-white p-[5px] md:border-[1px] md:p-[20px]"
     >
       <div>
