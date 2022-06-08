@@ -1,87 +1,101 @@
 <script lang="ts" setup>
-import { useGlobalStore } from '~~/store/global'
-import Navbarbottom from '~~/layouts/navbarbottom.vue'
-import Search from '~~/components/Header/Search.vue'
-const globalStore = useGlobalStore()
-const isMobile = computed(() => globalStore.getIsMobile)
+definePageMeta({
+  layout: 'main',
+})
 </script>
 
 <template>
-  <div>
-    <Header v-if="!isMobile" />
-    <div class="mx-auto mt-[50px] w-full sm:mt-[84px] lg:w-[935px]">
-      <div class="flex h-screen w-full items-stretch border-0 border-gray-300 md:border-[1px]">
-        <div class="w-full border-r-[1px] border-gray-300 md:min-w-[350px]">
+  <div class="mt-[100px] flex w-full space-x-[30px] text-sm">
+    <div class="w-[300px] flex-none rounded-2xl border-[1px] border-black bg-white">
+      <div class="flex h-[70px] items-center rounded-2xl duration-500 hover:bg-gray-200">
+        <div class="relative ml-[10px] mr-[10px] h-[50px] w-[50px] rounded-full bg-yellow-300">
           <div
-            v-if="!isMobile"
-            class="flex h-[60px] items-center justify-between border-b-[1px] border-gray-300 px-[20px]"
-          >
-            <div class="h-0 w-[32px]"></div>
-            <div>CUZKNOTHZ</div>
-            <div>icon</div>
+            class="absolute bottom-[1px] right-[1px] h-[12px] w-[12px] rounded-full bg-green-500"
+          ></div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex w-[215px] justify-between"><span>ฟลุ</span><span>10:00</span></div>
+
+          <span>ซเคิลวีไอ</span>
+        </div>
+      </div>
+      <div class="mx-auto h-[1px] w-[200px] bg-black"></div>
+      <div class="flex h-[70px] items-center rounded-2xl duration-500 hover:bg-gray-200">
+        <div class="relative ml-[10px] mr-[10px] h-[50px] w-[50px] rounded-full bg-yellow-300">
+          <div
+            class="absolute bottom-[1px] right-[1px] h-[12px] w-[12px] rounded-full bg-green-500"
+          ></div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex w-[215px] justify-between"><span>ล์โอเลี้</span><span>10:00</span></div>
+
+          <span>สต์เฮาส์ </span>
+        </div>
+      </div>
+      <div class="mx-auto h-[1px] w-[200px] bg-black"></div>
+      <div class="flex h-[70px] items-center rounded-2xl duration-500 hover:bg-gray-200">
+        <div class="relative ml-[10px] mr-[10px] h-[50px] w-[50px] rounded-full bg-yellow-300">
+          <div
+            class="absolute bottom-[1px] right-[1px] h-[12px] w-[12px] rounded-full bg-green-500"
+          ></div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex w-[215px] justify-between"><span>คอนเทนเ</span><span>10:00</span></div>
+
+          <span>ลี่สตริงออดิชั่นพรีเซ็นเตอร์ </span>
+        </div>
+      </div>
+      <div class="mx-auto h-[1px] w-[200px] bg-black"></div>
+    </div>
+    <div class="h-[400px] flex-grow rounded-2xl border-[1px] border-black bg-white p-[20px]">
+      <div>
+        <div class="flex">
+          <div class="relative ml-[10px] mr-[10px] h-[50px] w-[50px] rounded-full bg-yellow-300">
+            <div
+              class="absolute bottom-[1px] right-[1px] h-[12px] w-[12px] rounded-full bg-green-500"
+            ></div>
           </div>
-          <div v-else class="flex h-[60px] items-center justify-center bg-red-300"><Search /></div>
-          <div class="text-sm">
-            <div
-              class="flex h-[72px] w-full cursor-pointer items-center px-[20px] py-[8px] hover:bg-gray-200"
+          <div class="flex flex-col items-start space-y-3">
+            <span
+              class="flex h-[40px] min-w-[40px] flex-none items-center rounded-full bg-[#f5f7fb] px-[30px]"
+              >บึ้มฟลุตออ</span
             >
-              <div class="mr-[12px]">
-                <div class="aspect-square h-[56px] overflow-hidden rounded-full">
-                  <img
-                    class="h-full w-full rounded-full object-cover"
-                    src="/explore/269745549_1653199611678007_2927572044521418605_n.jpg"
-                    alt=""
-                    crossorigin="anonymous"
-                  />
-                </div>
-              </div>
-              <div>
-                <div>jfsdakfjksdf</div>
-                <div class="text-gray-300">Active today</div>
-              </div>
-            </div>
-            <div
-              class="flex h-[72px] w-full cursor-pointer items-center px-[20px] py-[8px] hover:bg-gray-200"
+            <span
+              class="flex h-[40px] min-w-[40px] items-center rounded-full bg-[#f5f7fb] px-[30px]"
+              >สพุทโธโฮลวีตวืดเปโ</span
             >
-              <div class="mr-[12px]">
-                <div class="aspect-square h-[56px] overflow-hidden rounded-full">
-                  <img
-                    class="h-full w-full rounded-full object-cover"
-                    src="/explore/269745549_1653199611678007_2927572044521418605_n.jpg"
-                    alt=""
-                    crossorigin="anonymous"
-                  />
-                </div>
-              </div>
-              <div>
-                <div>jfsdakfjksdf</div>
-                <div class="text-gray-300">Active today</div>
-              </div>
-            </div>
-            <div
-              class="flex h-[72px] w-full cursor-pointer items-center px-[20px] py-[8px] hover:bg-gray-200"
-            >
-              <div class="mr-[12px]">
-                <div class="aspect-square h-[56px] overflow-hidden rounded-full">
-                  <img
-                    class="h-full w-full rounded-full object-cover"
-                    src="/explore/269745549_1653199611678007_2927572044521418605_n.jpg"
-                    alt=""
-                    crossorigin="anonymous"
-                  />
-                </div>
-              </div>
-              <div>
-                <div>jfsdakfjksdf</div>
-                <div class="text-gray-300">Active today</div>
-              </div>
-            </div>
           </div>
         </div>
-        <div v-if="!isMobile" class="w-full"></div>
+        <div class="flex flex-col items-end space-y-3">
+          <span
+            class="flex h-[40px] min-w-[40px] items-center rounded-full bg-fuchsia-400 px-[30px]"
+            >ดี๊กระด๊าโปรเจ็กเตอร์แทงกั๊กรีไซเคิลวีไอพี ส</span
+          >
+          <span
+            class="flex h-[40px] min-w-[40px] items-center rounded-full bg-fuchsia-400 px-[30px]"
+            >นอิ่มแปร้แฟนซีมอบตั</span
+          >
+        </div>
+        <div class="flex">
+          <div class="relative ml-[10px] mr-[10px] h-[50px] w-[50px] rounded-full bg-yellow-300">
+            <div
+              class="absolute bottom-[1px] right-[1px] h-[12px] w-[12px] rounded-full bg-green-500"
+            ></div>
+          </div>
+          <div class="flex flex-col items-start space-y-3">
+            <span
+              class="flex h-[40px] min-w-[40px] flex-none items-center rounded-full bg-[#f5f7fb] px-[30px]"
+              >บึ้มฟลุตออ</span
+            >
+            <span
+              class="flex h-[40px] min-w-[40px] items-center rounded-full bg-[#f5f7fb] px-[30px]"
+              >สพุทโธโฮลวีตวืดเปโ</span
+            >
+          </div>
+        </div>
+
+        <div class="h-[55px] rounded-full border-[1px] border-black"></div>
       </div>
     </div>
-
-    <Navbarbottom />
   </div>
 </template>

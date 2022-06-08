@@ -18,8 +18,6 @@ const handleSelect = (section: SECTION, url: string = '') => {
   useDebounceRoute(url, router)
   globalStore.setSection(section)
 }
-
-
 </script>
 
 <template>
