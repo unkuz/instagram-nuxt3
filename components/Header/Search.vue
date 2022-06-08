@@ -15,8 +15,8 @@ watch(isSearchActive, (state) => {
 
 watch([isSearchHaveValue, isSearchActive], () => {
   if (isSearchActive.value) {
-    inputSearch.value.style.left = '50%'
-    inputSearch.value.style.width = '236px'
+    inputSearch.value.style.left = '46%'
+    inputSearch.value.style.width = '221px'
   } else {
     inputSearch.value.style.left = '136px'
     inputSearch.value.style.width = '200px'
