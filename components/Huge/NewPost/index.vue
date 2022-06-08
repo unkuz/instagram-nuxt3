@@ -23,7 +23,7 @@ useClickOutSide(boxRef, () => {
       class="absolute top-1/2 right-1/2 z-10 flex translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-xl border-[1px] border-gray-300"
     >
       <div class="relative w-[300px] bg-white text-[0.9rem]">
-        <div class="absolute right-[5px] top-[5px]">
+        <div class="absolute right-[12px] top-[12px]">
           <div class="relative h-[18px] w-[18px] rounded-full bg-gray-600">
             <div
               class="absolute top-1/2 left-1/2 h-[8px] w-[2px] -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white"
