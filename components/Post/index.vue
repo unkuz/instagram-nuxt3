@@ -56,8 +56,8 @@
         </div>
       </div>
       <img
-        class="aspect-square"
-        src="/image/deth8za-94db9472-3b4c-4495-8f8c-ecaa93c92398.jpg"
+        class="aspect-square object-cover"
+        src="/explore/275624700_382008663748898_3572544032225631298_n.jpg"
         alt=""
       />
     </div>
