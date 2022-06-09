@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import Navbarbottom from './navbarbottom.vue'
 import Header from '~~/components/Header/index.vue'
-import { useGlobalStore } from '~~/store/global'
-import { SECTION } from '~~/constants/section'
 import { useDebounceRoute } from '~~/composables/useDeboundRoute'
-import { useChatStore, STATUS_CHAT } from '~~/store/chat'
+import { SECTION } from '~~/constants/section'
+import { useChatStore } from '~~/store/chat'
+import { useGlobalStore } from '~~/store/global'
+import Navbarbottom from './navbarbottom.vue'
 
 const globalStore = useGlobalStore()
 const chatStore = useChatStore()
