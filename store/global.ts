@@ -4,6 +4,7 @@ import { SECTION } from '~~/constants/section'
 
 interface GlobalState {
   section: SECTION
+  prevSection: SECTION
   clientWidth: number
   clientHeight: number
   transition: boolean
@@ -11,6 +12,7 @@ interface GlobalState {
 
 const state = (): GlobalState => ({
   section: SECTION.HOME,
+  prevSection: SECTION.NONE,
   clientWidth: 0,
   clientHeight: 0,
   transition: false,
@@ -26,6 +28,7 @@ const getters = {
 }
 const actions = {
   setSection(section: SECTION) {
+    this.prevSection = this.section
     this.section = section
   },
   setClientSize(width: number, height: number) {

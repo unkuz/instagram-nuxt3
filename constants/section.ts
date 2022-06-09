@@ -7,6 +7,7 @@ export enum SECTION {
   NEW_POST = 'NEW_POST',
   REELS = 'REELS',
   SEARCH = 'SEARCH',
+  NONE = 'NONE',
 }
 
 export enum POP_SECTION {

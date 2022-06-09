@@ -13,7 +13,7 @@ const isSelect = (select) => currentSelect === select
   <div class="text-sm">
     <div class="relative h-[250px] hover:z-50">
       <img
-        class="absolute h-full  cursor-pointer w-full object-cover  hover:scale-110 hover:rotate-[3deg] duration-700"
+        class="absolute h-full  cursor-pointer w-full object-cover  hover:scale-110 sm:hover:rotate-[3deg] hover:-rotate-3 duration-700"
         src="/personal/274541816_246263407707597_708415355959487821_n.jpg"
       />
       <img
@@ -22,7 +22,7 @@ const isSelect = (select) => currentSelect === select
       />
     </div>
     <div>
-      <div class="mt-[50px] flex flex-col items-center md:ml-[180px] md:mt-[5px] md:block">
+      <div class="mt-[50px] flex flex-col items-center md:ml-[180px] md:mt-[5px] md:block duration-500">
         <div class="font-august uppercase">Cuzknothz</div>
         <div class="flex space-x-[20px]">
           <span>96 posts</span><span>38.8k followers</span><span>150 following</span>

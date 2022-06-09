@@ -27,7 +27,7 @@ watch(isTransition, () => {
 </script>
 
 <template>
-  <div>
+  <div >
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

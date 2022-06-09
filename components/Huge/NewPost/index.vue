@@ -5,8 +5,12 @@ import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { useGlobalStore } from '~~/store/global'
 import { SECTION } from '~~/constants/section'
 
+const router = useRouter()
 const boxRef = ref(null)
 const globalStore = useGlobalStore()
+const closePostBox = ()=>{
+  globalStore.setSection(SECTION.HOME)
+}
 
 useLockScroll()
 
@@ -24,7 +28,7 @@ useClickOutSide(boxRef, () => {
     >
       <div class="relative w-[300px] bg-white text-[0.9rem]">
         <div class="absolute right-[12px] top-[12px]">
-          <div class="relative h-[18px] w-[18px] rounded-full bg-gray-600">
+          <div class="relative h-[18px] w-[18px] rounded-full bg-gray-600" @click="closePostBox">
             <div
               class="absolute top-1/2 left-1/2 h-[8px] w-[2px] -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white"
             ></div>
