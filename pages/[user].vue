@@ -11,18 +11,20 @@ const isSelect = (select) => currentSelect === select
 
 <template>
   <div class="text-sm">
-    <div class="relative h-[250px] hover:z-50">
+    <div class="relative h-[250px] hover:z-10">
       <img
-        class="absolute h-full  cursor-pointer w-full object-cover  hover:scale-110 sm:hover:rotate-[3deg] hover:-rotate-3 duration-700"
+        class="absolute h-full w-full cursor-pointer object-cover duration-700 hover:-rotate-3 hover:scale-110 sm:hover:rotate-[3deg]"
         src="/personal/274541816_246263407707597_708415355959487821_n.jpg"
       />
       <img
         src="/personal/avatar.jpg"
-        class="absolute cursor-pointer top-[67%] left-1/2 h-[120px] w-[120px] -translate-x-1/2 rounded-full border-[5px] border-white object-cover duration-500 hover:scale-110 md:top-[60%] md:left-[3%] md:h-[140px] md:w-[140px] md:translate-x-0"
+        class="absolute top-[67%] left-1/2 h-[120px] w-[120px] -translate-x-1/2 cursor-pointer rounded-full border-[5px] border-white object-cover duration-500 hover:scale-110 md:top-[60%] md:left-[3%] md:h-[140px] md:w-[140px] md:translate-x-0"
       />
     </div>
     <div>
-      <div class="mt-[50px] flex flex-col items-center md:ml-[180px] md:mt-[5px] md:block duration-500">
+      <div
+        class="mt-[50px] flex flex-col items-center duration-500 md:ml-[180px] md:mt-[5px] md:block"
+      >
         <div class="font-august uppercase">Cuzknothz</div>
         <div class="flex space-x-[20px]">
           <span>96 posts</span><span>38.8k followers</span><span>150 following</span>
