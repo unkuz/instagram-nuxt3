@@ -4,6 +4,7 @@ import { useProfileStore } from '~~/store/profile'
 definePageMeta({
   layout: 'main',
 })
+
 const profileStore = useProfileStore()
 const currentSelect = computed(() => profileStore.getSelect)
 const isSelect = (select) => currentSelect === select
