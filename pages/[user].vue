@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { SELECT_TYPE } from '~~/constants/screens/account'
 import { useProfileStore } from '~~/store/profile'
+
 definePageMeta({
   layout: 'main',
 })
