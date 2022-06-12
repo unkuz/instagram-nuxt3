@@ -1,18 +1,21 @@
 <script lang="ts" setup>
 import { SELECT_TYPE } from '~~/constants/screens/account'
 import { useProfileStore } from '~~/store/profile'
+import Modal from '~~/components/Huge/Profile/Modal.vue'
 
 definePageMeta({
   layout: 'main',
 })
 
 const profileStore = useProfileStore()
+const isShowFollowing = computed(() => profileStore.isShowFollowing)
+const isShowFollowers = computed(() => profileStore.isShowFollowers)
 const currentSelect = computed(() => profileStore.getSelect)
 const isSelect = (select) => currentSelect === select
 </script>
 
 <template>
-  <div class="text-sm">
+  <div class="relative text-sm">
     <div class="relative h-[250px] hover:z-10">
       <img
         class="absolute h-full w-full cursor-pointer object-cover duration-700 hover:-rotate-3 hover:scale-110 sm:hover:rotate-[3deg]"
@@ -29,7 +32,12 @@ const isSelect = (select) => currentSelect === select
       >
         <div class="font-august uppercase">Cuzknothz</div>
         <div class="flex space-x-[20px]">
-          <span>96 posts</span><span>38.8k followers</span><span>150 following</span>
+          <span>96 posts</span
+          ><span @click="profileStore.setIsShowFollowing(true)" class="cursor-pointer"
+            >38.8k followers</span
+          ><span @click="profileStore.setIsShowFollowing(true)" class="cursor-pointer"
+            >150 following</span
+          >
         </div>
       </div>
     </div>
@@ -408,5 +416,6 @@ const isSelect = (select) => currentSelect === select
         class="aspect-square w-full object-cover"
       />
     </div>
+    <Modal v-if="isShowFollowing" />
   </div>
 </template>
