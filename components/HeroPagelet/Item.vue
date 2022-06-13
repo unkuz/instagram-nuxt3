@@ -12,7 +12,7 @@ const handleClick = () => {
     class="mx-[10px] inline-block max-w-[74px] select-none overflow-hidden text-ellipsis whitespace-nowrap sm:cursor-pointer"
   >
     <div
-      class="mx-auto aspect-square h-[66px] w-[66px] overflow-hidden rounded-[50%] bg-gradient-to-bl from-[#c42d91] to-[#f99d4c] p-[2px]"
+      class="mx-auto aspect-square h-[66px] w-[66px] overflow-hidden rounded-[50%] bg-gradient-to-bl from-[#c42d91] to-[#f99d4c] p-[3px]"
     >
       <div class="h-full w-full rounded-[50%] bg-white p-[2px]">
         <img
