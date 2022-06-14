@@ -4,11 +4,15 @@ import { useLockScroll } from '~~/composables/useLockScroll'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { useGlobalStore } from '~~/store/global'
 import { SECTION } from '~~/constants/section'
+import { saveAs } from 'file-saver'
+import { v4 } from 'uuid'
 
 const router = useRouter()
+const inputFileRef = ref(null)
+const imagePreviewRef = ref(null)
 const boxRef = ref(null)
 const globalStore = useGlobalStore()
-const closePostBox = ()=>{
+const closePostBox = () => {
   globalStore.setSection(SECTION.HOME)
 }
 
@@ -17,6 +21,19 @@ useLockScroll()
 useClickOutSide(boxRef, () => {
   globalStore.setSection(SECTION.HOME)
 })
+onMounted(() => {
+  inputFileRef.value.addEventListener('change', (event) => {
+    const fileList = event.target.files
+    imagePreviewRef.value.src = URL.createObjectURL(fileList[0])
+
+    saveAs(URL.createObjectURL(fileList[0]), v4())
+  })
+})
+
+const handleUpload = () => {
+  console.log()
+  inputFileRef.value.click()
+}
 </script>
 
 <template>
@@ -43,6 +60,7 @@ useClickOutSide(boxRef, () => {
           Create new post
         </div>
         <div
+          @click="handleUpload"
           class="flex h-[200px] w-full flex-col items-center justify-center border-t-0 border-gray-300"
         >
           <svg
@@ -68,7 +86,8 @@ useClickOutSide(boxRef, () => {
             ></path>
           </svg>
           Drag photos and videos here
-          <input type="file" class="hidden" />
+          <img src="" alt="" ref="imagePreviewRef" />
+          <input type="file" multiple hidden ref="inputFileRef" accept=".jpg, .jpeg, .png" />
         </div>
       </div>
     </div>
