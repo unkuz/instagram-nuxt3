@@ -4,17 +4,24 @@ import { useLockScroll } from '~~/composables/useLockScroll'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { useGlobalStore } from '~~/store/global'
 import { SECTION } from '~~/constants/section'
+import { usePostStore } from '~~/store/post'
 import { saveAs } from 'file-saver'
 import { v4 } from 'uuid'
 
 const router = useRouter()
+const postStore = usePostStore()
 const inputFileRef = ref(null)
 const imagePreviewRef = ref(null)
+const containerPreviewRef = ref(null)
 const boxRef = ref(null)
 const globalStore = useGlobalStore()
+const files = ref([])
 const closePostBox = () => {
   globalStore.setSection(SECTION.HOME)
 }
+
+const postFiles = computed(() => postStore.getFiles)
+const isHasFile = computed(() => postStore.getFiles.length > 0)
 
 useLockScroll()
 
@@ -23,10 +30,15 @@ useClickOutSide(boxRef, () => {
 })
 onMounted(() => {
   inputFileRef.value.addEventListener('change', (event) => {
-    const fileList = event.target.files
-    imagePreviewRef.value.src = URL.createObjectURL(fileList[0])
+    postStore.setFiles(event.target.files)
+    console.log(postFiles.value)
+    Array.from(postFiles.value).forEach((i: Blob) => {
+      const image = document.createElement('img')
+      image.src = URL.createObjectURL(i)
+      containerPreviewRef.value.appendChild(image)
+    })
 
-    saveAs(URL.createObjectURL(fileList[0]), v4())
+    // saveAs(URL.createObjectURL(fileList[0]), v4())
   })
 })
 
@@ -38,12 +50,17 @@ const handleUpload = () => {
 
 <template>
   <div class="z-50 h-screen w-screen">
+    <input type="file" multiple hidden ref="inputFileRef" accept=".jpg, .jpeg, .png" />
     <BackDrop />
     <div
       ref="boxRef"
       class="absolute top-1/2 right-1/2 z-10 flex translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-xl border-[1px] border-gray-300"
     >
-      <div class="relative w-[300px] bg-white text-[0.9rem]">
+      <div
+        :class="`relative  ${
+          isHasFile ? 'w-[500px]' : 'w-[300px]'
+        }  bg-white text-[0.9rem] duration-1000`"
+      >
         <div class="absolute right-[12px] top-[12px]">
           <div class="relative h-[18px] w-[18px] rounded-full bg-gray-600" @click="closePostBox">
             <div
@@ -59,9 +76,12 @@ const handleUpload = () => {
         >
           Create new post
         </div>
+        <div v-show="isHasFile" class="h-[500px] overflow-scroll" ref="containerPreviewRef">
+          <img src="" ref="imagePreviewRef" alt="" />
+        </div>
         <div
           @click="handleUpload"
-          class="flex h-[200px] w-full flex-col items-center justify-center border-t-0 border-gray-300"
+          class="flex h-[200px] w-full flex-col items-center justify-center space-x-[10px] border-t-0 border-gray-300"
         >
           <svg
             aria-label="Icon to represent media such as images or videos"
@@ -86,8 +106,6 @@ const handleUpload = () => {
             ></path>
           </svg>
           Drag photos and videos here
-          <img src="" alt="" ref="imagePreviewRef" />
-          <input type="file" multiple hidden ref="inputFileRef" accept=".jpg, .jpeg, .png" />
         </div>
       </div>
     </div>
