@@ -1,29 +1,47 @@
 <script lang="ts" setup>
 import BackDrop from '~~/components/Utils/BackDrop.vue'
-import { useLockScroll } from '~~/composables/useLockScroll'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
-import { useGlobalStore } from '~~/store/global'
+import { useLockScroll } from '~~/composables/useLockScroll'
 import { SECTION } from '~~/constants/section'
+import { useGlobalStore } from '~~/store/global'
 import { usePostStore } from '~~/store/post'
-import { saveAs } from 'file-saver'
-import { v4 } from 'uuid'
 
-const router = useRouter()
 const postStore = usePostStore()
-const isShowTooltipMore = ref(false)
-const listBolb = ref([])
 const inputFileRef = ref(null)
-const imagePreviewRef = ref(null)
 const containerPreviewRef = ref(null)
 const boxRef = ref(null)
 const globalStore = useGlobalStore()
-const files = ref([])
+
+const postFiles = computed(() => postStore.getFiles)
+const listBolbs = computed(() => postStore.getBlobs)
+const isHasFile = computed(() => Array.from(postFiles.value).length > 0)
+
+onMounted(() => {
+  inputFileRef.value.addEventListener('change', (event) => {
+    console.log('FILES', event.target.files)
+    postStore.setFiles(event.target.files)
+    listBolbs.value.forEach((i: Blob) => {
+      const image = document.createElement('img')
+      image.src = String(i)
+      image.style.width = '100%'
+      image.style.height = '100%'
+      containerPreviewRef.value.appendChild(image)
+    })
+  })
+})
+
+onUnmounted(() => {
+  postStore.clearFiles()
+})
+
+useLockScroll()
+useClickOutSide(boxRef, () => {
+  globalStore.setSection(SECTION.HOME)
+})
+
 const closePostBox = () => {
   globalStore.setSection(SECTION.HOME)
 }
-
-const postFiles = computed(() => postStore.getFiles)
-const isHasFile = computed(() => Array.from(postFiles.value).length > 0)
 
 const handle = (idx) => {
   idx === 1
@@ -41,40 +59,7 @@ const handle = (idx) => {
         500 +
         'px'
       })`)
-
-  // debugger
 }
-
-useLockScroll()
-
-useClickOutSide(boxRef, () => {
-  globalStore.setSection(SECTION.HOME)
-})
-onMounted(() => {
-  inputFileRef.value.addEventListener('change', (event) => {
-    postStore.setFiles(event.target.files)
-    console.log(postFiles.value)
-    Array.from(postFiles.value).forEach((i: Blob) => {
-      const image = document.createElement('img')
-      const blobImg = URL.createObjectURL(i)
-      image.src = blobImg
-      image.style.width = '100%'
-      image.style.height = '100%'
-
-      listBolb.value.push(blobImg)
-      containerPreviewRef.value.appendChild(image)
-    })
-
-    // saveAs(URL.createObjectURL(fileList[0]), v4())
-  })
-})
-onUnmounted(() => {
-  listBolb.value.forEach((i) => {
-    console.log({ i })
-    window.URL.revokeObjectURL(i)
-  })
-  postStore.setFiles([])
-})
 
 const handleUpload = () => {
   inputFileRef.value.click()
@@ -121,7 +106,7 @@ const handleUpload = () => {
           </div>
           <div
             v-show="isHasFile"
-            class="flex h-auto items-center bg-black duration-500"
+            class="flex max-h-[750px] items-center overflow-x-scroll bg-black duration-500"
             ref="containerPreviewRef"
           ></div>
         </div>
@@ -129,9 +114,9 @@ const handleUpload = () => {
           @click="handleUpload"
           :class="`flex ${
             isHasFile
-              ? 'absolute bottom-[20px] right-[20px] flex aspect-square h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black/20'
+              ? 'absolute bottom-[20px] right-[20px] flex aspect-square h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-[50%] bg-black/20'
               : 'h-[200px] w-full flex-col items-center justify-center space-x-[10px] border-t-0 border-gray-300'
-          }    duration-500`"
+          }`"
         >
           <svg
             v-if="isHasFile"
