@@ -16,17 +16,21 @@ const postFiles = computed(() => postStore.getFiles)
 const listBolbs = computed(() => postStore.getBlobs)
 const isHasFile = computed(() => Array.from(postFiles.value).length > 0)
 
+watch(listBolbs, () => {
+  containerPreviewRef.value.innerHTML = ''
+  listBolbs.value.forEach((i: Blob) => {
+    const image = document.createElement('img')
+    image.src = String(i)
+    image.style.width = '100%'
+    image.style.height = '100%'
+    containerPreviewRef.value.appendChild(image)
+  })
+})
+
 onMounted(() => {
   inputFileRef.value.addEventListener('change', (event) => {
     console.log('FILES', event.target.files)
     postStore.setFiles(event.target.files)
-    listBolbs.value.forEach((i: Blob) => {
-      const image = document.createElement('img')
-      image.src = String(i)
-      image.style.width = '100%'
-      image.style.height = '100%'
-      containerPreviewRef.value.appendChild(image)
-    })
   })
 })
 
