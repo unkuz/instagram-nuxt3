@@ -131,7 +131,7 @@ const handleUpload = () => {
             isHasFile
               ? 'absolute bottom-[20px] right-[20px] flex aspect-square h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black/20'
               : 'h-[200px] w-full flex-col items-center justify-center space-x-[10px] border-t-0 border-gray-300'
-          }   `"
+          }    duration-500`"
         >
           <svg
             v-if="isHasFile"
