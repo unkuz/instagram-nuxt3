@@ -10,6 +10,8 @@ import { v4 } from 'uuid'
 
 const router = useRouter()
 const postStore = usePostStore()
+const isShowTooltipMore = ref(false)
+const listBolb = ref([])
 const inputFileRef = ref(null)
 const imagePreviewRef = ref(null)
 const containerPreviewRef = ref(null)
@@ -21,7 +23,27 @@ const closePostBox = () => {
 }
 
 const postFiles = computed(() => postStore.getFiles)
-const isHasFile = computed(() => postStore.getFiles.length > 0)
+const isHasFile = computed(() => Array.from(postFiles.value).length > 0)
+
+const handle = (idx) => {
+  idx === 1
+    ? (containerPreviewRef.value.style.transform = `translateX(${
+        (containerPreviewRef.value.style.transform
+          ? Number(containerPreviewRef.value.style.transform.slice(0, -2))
+          : 0) +
+        500 +
+        'px'
+      })`)
+    : (containerPreviewRef.value.style.transform = `translateX(${
+        (containerPreviewRef.value.style.transform
+          ? Number(containerPreviewRef.value.style.transform.slice(0, -2))
+          : 0) -
+        500 +
+        'px'
+      })`)
+
+  // debugger
+}
 
 useLockScroll()
 
@@ -34,22 +56,33 @@ onMounted(() => {
     console.log(postFiles.value)
     Array.from(postFiles.value).forEach((i: Blob) => {
       const image = document.createElement('img')
-      image.src = URL.createObjectURL(i)
+      const blobImg = URL.createObjectURL(i)
+      image.src = blobImg
+      image.style.width = '100%'
+      image.style.height = '100%'
+
+      listBolb.value.push(blobImg)
       containerPreviewRef.value.appendChild(image)
     })
 
     // saveAs(URL.createObjectURL(fileList[0]), v4())
   })
 })
+onUnmounted(() => {
+  listBolb.value.forEach((i) => {
+    console.log({ i })
+    window.URL.revokeObjectURL(i)
+  })
+  postStore.setFiles([])
+})
 
 const handleUpload = () => {
-  console.log()
   inputFileRef.value.click()
 }
 </script>
 
 <template>
-  <div class="z-50 h-screen w-screen">
+  <div class="z-50 h-screen w-full">
     <input type="file" multiple hidden ref="inputFileRef" accept=".jpg, .jpeg, .png" />
     <BackDrop />
     <div
@@ -76,14 +109,49 @@ const handleUpload = () => {
         >
           Create new post
         </div>
-        <div v-show="isHasFile" class="h-[500px] overflow-scroll" ref="containerPreviewRef">
-          <img src="" ref="imagePreviewRef" alt="" />
+        <!-- <textarea v-show="isHasFile" class="w-full" />
+        <span data-lexical-text="true">asdfdsfaa</span> -->
+        <div class="relative">
+          <div @click="handle(1)" class="absolute left-0 z-10 text-white">previous</div>
+          <div @click="handle(-1)" class="absolute right-0 z-10 text-white">next</div>
+          <div
+            class="absolute bottom-[15px] left-1/2 z-10 flex -translate-x-1/2 justify-between space-x-[4px]"
+          >
+            <div v-for="i in postFiles" class="h-[6px] w-[6px] rounded-[50%] bg-white"></div>
+          </div>
+          <div
+            v-show="isHasFile"
+            class="flex h-auto items-center bg-black duration-500"
+            ref="containerPreviewRef"
+          ></div>
         </div>
         <div
           @click="handleUpload"
-          class="flex h-[200px] w-full flex-col items-center justify-center space-x-[10px] border-t-0 border-gray-300"
+          :class="`flex ${
+            isHasFile
+              ? 'absolute bottom-[20px] right-[20px] flex aspect-square h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black/20'
+              : 'h-[200px] w-full flex-col items-center justify-center space-x-[10px] border-t-0 border-gray-300'
+          }   `"
         >
           <svg
+            v-if="isHasFile"
+            aria-label="Open Media Gallery"
+            class="_ab6-"
+            color="#ffffff"
+            fill="#ffffff"
+            height="16"
+            role="img"
+            viewBox="0 0 24 24"
+            width="16"
+          >
+            <path
+              d="M19 15V5a4.004 4.004 0 00-4-4H5a4.004 4.004 0 00-4 4v10a4.004 4.004 0 004 4h10a4.004 4.004 0 004-4zM3 15V5a2.002 2.002 0 012-2h10a2.002 2.002 0 012 2v10a2.002 2.002 0 01-2 2H5a2.002 2.002 0 01-2-2zm18.862-8.773A.501.501 0 0021 6.57v8.431a6 6 0 01-6 6H6.58a.504.504 0 00-.35.863A3.944 3.944 0 009 23h6a8 8 0 008-8V9a3.95 3.95 0 00-1.138-2.773z"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+
+          <svg
+            v-if="!isHasFile"
             aria-label="Icon to represent media such as images or videos"
             color="#262626"
             fill="#262626"
@@ -105,7 +173,7 @@ const handleUpload = () => {
               fill="currentColor"
             ></path>
           </svg>
-          Drag photos and videos here
+          <span v-if="!isHasFile">Drag photos and videos here</span>
         </div>
       </div>
     </div>
