@@ -66,6 +66,7 @@ const handle = (idx) => {
 }
 
 const handleUpload = () => {
+  inputFileRef.value.value = null
   inputFileRef.value.click()
 }
 </script>
