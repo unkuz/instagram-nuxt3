@@ -6,6 +6,8 @@ import { SIZE_CONTAINER_POST } from '~~/constants/mock'
 import { SECTION } from '~~/constants/section'
 import { useGlobalStore } from '~~/store/global'
 import { usePostStore } from '~~/store/post'
+import { useTopBackDrop } from '~~/composables/useTopBackDrop'
+import { useCenterElement } from '~~/composables/useCenterElement'
 
 const postStore = usePostStore()
 const inputFileRef = ref(null)
@@ -17,6 +19,8 @@ const startPointX = ref(0)
 const postFiles = computed(() => postStore.getFiles)
 const listBolbs = computed(() => postStore.getBlobs)
 const isHasFile = computed(() => Array.from(postFiles.value).length > 0)
+
+useCenterElement(boxRef)
 
 const currentImageSlideIdx = computed(() => {
   if (!startPointX.value) {
@@ -42,7 +46,6 @@ watch(listBolbs, () => {
 
 onMounted(() => {
   inputFileRef.value.addEventListener('change', (event) => {
-    console.log('FILES', event.target.files)
     postStore.setFiles(event.target.files)
   })
 })
@@ -78,7 +81,7 @@ const handleSlide = (indicator) => {
     <BackDrop />
     <div
       ref="boxRef"
-      class="absolute top-1/2 right-1/2 z-10 flex translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-xl border-[1px] border-gray-300"
+      class="absolute z-10 flex items-center justify-center overflow-hidden rounded-xl border-[1px] border-gray-300"
     >
       <div
         :class="`relative  ${
@@ -179,7 +182,7 @@ const handleSlide = (indicator) => {
               fill="currentColor"
             ></path>
           </svg>
-          <span v-if="!isHasFile">Drag photos and videos here</span>
+          <span class="mt-[20px]" v-if="!isHasFile">Drag photos and videos here</span>
         </div>
       </div>
     </div>

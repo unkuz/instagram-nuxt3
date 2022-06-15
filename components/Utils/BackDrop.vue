@@ -1,5 +1,8 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const backDropRef = ref(null)
+useTopBackDrop(backDropRef)
+</script>
 
 <template>
-  <div class="absolute inset-0 bg-gray-200 opacity-60 z-10"></div>
+  <div ref="backDropRef" class="absolute left-0 z-10 h-screen w-full bg-gray-200 opacity-60"></div>
 </template>
