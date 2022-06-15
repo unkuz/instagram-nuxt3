@@ -20,7 +20,7 @@ const postFiles = computed(() => postStore.getFiles)
 const listBolbs = computed(() => postStore.getBlobs)
 const isHasFile = computed(() => Array.from(postFiles.value).length > 0)
 
-useCenterElement(boxRef)
+// useCenterElement(boxRef, inputFileRef)
 
 const currentImageSlideIdx = computed(() => {
   if (!startPointX.value) {
@@ -41,6 +41,7 @@ watch(listBolbs, () => {
       objectFit: 'cover',
     })
     containerPreviewRef.value.appendChild(image)
+    console.log('REF', boxRef.value.clientHeight)
   })
 })
 
@@ -54,7 +55,7 @@ onUnmounted(() => {
   postStore.clearFiles()
 })
 
-useLockScroll()
+// useLockScroll()
 useClickOutSide(boxRef, () => {
   globalStore.setSection(SECTION.HOME)
 })
@@ -81,7 +82,7 @@ const handleSlide = (indicator) => {
     <BackDrop />
     <div
       ref="boxRef"
-      class="absolute z-10 flex items-center justify-center overflow-hidden rounded-xl border-[1px] border-gray-300"
+      class="absolute top-1/2 right-1/2 z-10 flex translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-xl border-[1px] border-gray-300"
     >
       <div
         :class="`relative  ${

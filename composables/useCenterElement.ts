@@ -1,4 +1,4 @@
-export function useCenterElement(refElement) {
+export function useCenterElement(refElement, refFile) {
   const position = () => {
     Object.assign(refElement.value.style, {
       top: `${window.scrollY + window.innerHeight / 2 - refElement.value.clientHeight / 2}px`,
@@ -10,6 +10,9 @@ export function useCenterElement(refElement) {
     position()
     window.addEventListener('scroll', position)
     window.addEventListener('resize', position)
+  })
+  onUpdated(() => {
+    position()
   })
 
   onUnmounted(() => {
