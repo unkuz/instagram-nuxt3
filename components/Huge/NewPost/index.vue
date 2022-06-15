@@ -2,6 +2,7 @@
 import BackDrop from '~~/components/Utils/BackDrop.vue'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { useLockScroll } from '~~/composables/useLockScroll'
+import { SIZE_CONTAINER_POST } from '~~/constants/mock'
 import { SECTION } from '~~/constants/section'
 import { useGlobalStore } from '~~/store/global'
 import { usePostStore } from '~~/store/post'
@@ -11,18 +12,30 @@ const inputFileRef = ref(null)
 const containerPreviewRef = ref(null)
 const boxRef = ref(null)
 const globalStore = useGlobalStore()
+const startPointX = ref(0)
 
 const postFiles = computed(() => postStore.getFiles)
 const listBolbs = computed(() => postStore.getBlobs)
 const isHasFile = computed(() => Array.from(postFiles.value).length > 0)
+
+const currentImageSlideIdx = computed(() => {
+  if (!startPointX.value) {
+    return 0
+  } else {
+    return -startPointX.value / 500
+  }
+})
 
 watch(listBolbs, () => {
   containerPreviewRef.value.innerHTML = ''
   listBolbs.value.forEach((i: Blob) => {
     const image = document.createElement('img')
     image.src = String(i)
-    image.style.width = '100%'
-    image.style.height = '100%'
+    Object.assign(image.style, {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+    })
     containerPreviewRef.value.appendChild(image)
   })
 })
@@ -47,27 +60,15 @@ const closePostBox = () => {
   globalStore.setSection(SECTION.HOME)
 }
 
-const handle = (idx) => {
-  idx === 1
-    ? (containerPreviewRef.value.style.transform = `translateX(${
-        (containerPreviewRef.value.style.transform
-          ? Number(containerPreviewRef.value.style.transform.slice(0, -2))
-          : 0) +
-        500 +
-        'px'
-      })`)
-    : (containerPreviewRef.value.style.transform = `translateX(${
-        (containerPreviewRef.value.style.transform
-          ? Number(containerPreviewRef.value.style.transform.slice(0, -2))
-          : 0) -
-        500 +
-        'px'
-      })`)
-}
-
 const handleUpload = () => {
   inputFileRef.value.value = null
   inputFileRef.value.click()
+}
+
+const handleSlide = (indicator) => {
+  containerPreviewRef.value.style.transform = `translateX(${startPointX.value + 500 * indicator}px)`
+  startPointX.value += indicator * 500
+  console.log(startPointX.value / 500)
 }
 </script>
 
@@ -102,16 +103,31 @@ const handleUpload = () => {
         <!-- <textarea v-show="isHasFile" class="w-full" />
         <span data-lexical-text="true">asdfdsfaa</span> -->
         <div class="relative">
-          <div @click="handle(1)" class="absolute left-0 z-10 text-white">previous</div>
-          <div @click="handle(-1)" class="absolute right-0 z-10 text-white">next</div>
+          <div
+            @click="handleSlide(1)"
+            class="absolute left-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer text-white"
+          >
+            previous
+          </div>
+          <div
+            @click="handleSlide(-1)"
+            class="absolute right-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer text-white"
+          >
+            next
+          </div>
           <div
             class="absolute bottom-[15px] left-1/2 z-10 flex -translate-x-1/2 justify-between space-x-[4px]"
           >
-            <div v-for="i in postFiles" class="h-[6px] w-[6px] rounded-[50%] bg-white"></div>
+            <div
+              v-for="(i, idx) in postFiles"
+              :class="`h-[6px] w-[6px] rounded-[50%] bg-white ${
+                currentImageSlideIdx === idx ? 'bg-[#0c8aff]' : 'bg-white'
+              }`"
+            ></div>
           </div>
           <div
             v-show="isHasFile"
-            class="flex max-h-[750px] items-center overflow-x-scroll bg-black duration-500"
+            class="flex h-[750px] items-center bg-black duration-300"
             ref="containerPreviewRef"
           ></div>
         </div>
