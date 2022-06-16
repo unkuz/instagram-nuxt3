@@ -36,8 +36,8 @@ watch(listBolbs, () => {
     const image = document.createElement('img')
     image.src = String(i)
     Object.assign(image.style, {
-      width: '100%',
-      height: '100%',
+      width: '500px',
+      height: '750px',
       objectFit: 'cover',
     })
     containerPreviewRef.value.appendChild(image)
@@ -106,7 +106,7 @@ const handleSlide = (indicator) => {
         </div>
         <!-- <textarea v-show="isHasFile" class="w-full" />
         <span data-lexical-text="true">asdfdsfaa</span> -->
-        <div class="relative">
+        <div class="relative w-full">
           <div
             @click="handleSlide(1)"
             class="absolute left-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer text-white"
@@ -131,7 +131,7 @@ const handleSlide = (indicator) => {
           </div>
           <div
             v-show="isHasFile"
-            class="flex h-[750px] items-center bg-black duration-300"
+            class="inline-flex h-[750px] w-full items-center bg-black duration-300"
             ref="containerPreviewRef"
           ></div>
         </div>
