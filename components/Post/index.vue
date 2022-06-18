@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const router = useRouter()
+</script>
 
 <template>
   <article class="mb-[24px] w-full border-gray-200 sm:border-[1px]">
@@ -81,8 +83,9 @@
               ></path>
             </svg>
             <svg
+              @click="router.push('/p/hjksadkfjhdsajkfhsdkjl')"
               aria-label="Comment"
-              class="_8-yf5"
+              class="cursor-pointer"
               color="#262626"
               fill="#262626"
               height="24"
