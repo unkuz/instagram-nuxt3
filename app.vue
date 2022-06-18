@@ -5,6 +5,10 @@ import { useGlobalStore } from '~~/store/global'
 import NewPost from './components/Huge/NewPost/index.vue'
 import NewPostMobile from './components/Huge/NewPostMobile/index.vue'
 
+useHead({
+  title: 'Instagram',
+})
+
 const globalStore = useGlobalStore()
 const { width, height } = useResizeWindow()
 const isTransition = computed(() => globalStore.getIsTransition)

@@ -21,6 +21,7 @@ const actions = {
     this.listBlobs.forEach((i) => {
       URL.revokeObjectURL(i)
     })
+    this.listBlobs = []
   },
 }
 

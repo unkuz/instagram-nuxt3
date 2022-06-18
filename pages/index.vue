@@ -27,9 +27,6 @@ definePageMeta({
 
 <template>
   <div>
-    <Head>
-      <Title>Instagram</Title>
-    </Head>
     <div ref="mainRef" class="flex w-full justify-center lg:block">
       <div class="inline-flex w-full flex-col items-center md:w-[614px] lg:block" ref="leftRef">
         <HeroPagelet />
