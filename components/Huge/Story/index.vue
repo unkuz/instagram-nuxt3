@@ -28,8 +28,10 @@ onMounted(() => {
 
 watch(isVideoPlay, () => {
   if (isVideoPlay.value) {
+    // bigPlayIcon.value.style.transform = 'scale(0,0)'
     bigPlayIcon.value.style.opacity = '0'
   } else {
+    // bigPlayIcon.value.style.transform = 'scale(1,1)'
     bigPlayIcon.value.style.opacity = '1'
   }
 })
@@ -86,7 +88,9 @@ const togglePlay = () => {
       <div
         @click="togglePlay"
         ref="bigPlayIcon"
-        class="absolute top-1/2 left-1/2 h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 opacity-0 duration-500"
+        :class="`absolute top-1/2 left-1/2 h-[100px] w-[100px] origin-center -translate-x-1/2 -translate-y-1/2  ${
+          isVideoPlay ? 'scale-0' : ' scale-100'
+        } opacity-0 duration-500`"
       >
         <svg
           aria-label="Play"
