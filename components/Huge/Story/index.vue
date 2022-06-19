@@ -61,6 +61,7 @@ onUnmounted(() => {
 })
 
 const toggleMuted = () => {
+  isVideoMuted.value = !isVideoMuted.value
   videoRef.value.muted = !videoRef.value.muted
 }
 
