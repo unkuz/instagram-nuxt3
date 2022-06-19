@@ -181,10 +181,9 @@ useClickOutSide(emojiRef, () => {
       <!-- timer -->
       <div class="mb-[16px] h-[18px] text-gray-600">1 DAY AGO</div>
       <div class="flex items-center justify-between border-gray-200 md:border-t-[1px]">
-        <div class="relative">
+        <div class="relative" ref="emojiRef">
           <div
             v-if="isShowEmoji"
-            ref="emojiRef"
             class="absolute -top-[310px] h-[300px] overflow-y-scroll border-[1px] border-gray-300 bg-white"
           >
             <div v-for="topic in emoji">
@@ -224,8 +223,8 @@ useClickOutSide(emojiRef, () => {
             class="w-[290px] resize-none focus:outline-none md:w-[420px]"
           ></textarea>
         </div>
-        <div class="h-[22px] w-[22px] cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.53 46.53" class="fromLinkFiber17">
+        <div class="h-[22px] w-[22px] cursor-pointer active:fill-[#00aeff]">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.53 46.53">
             <g data-name="Layer 2">
               <path
                 d="M.11 15.5a1.53 1.53 0 00.52 1.78c.33.27 1.09.47 11.57 3C18.38 21.71 23.46 23 23.51 23s1.27 5 2.71 11.08S28.89 45.22 29 45.41a1.82 1.82 0 001.08 1 1.43 1.43 0 001.5-.41c.34-.33.54-.91 7.61-22.13 4-12 7.29-21.92 7.32-22.09A1.72 1.72 0 0044.71 0c-.16 0-10.1 3.33-22.08 7.32C1.89 14.24.82 14.61.52 14.92a2.4 2.4 0 00-.41.58zM25 10c9.5-3.16 17.28-5.74 17.29-5.72S30.78 38.84 30.73 38.84s-.85-3.44-1.85-7.65c-2.69-11.27-2.43-10.3-2.82-10.69a1.82 1.82 0 00-.63-.42c-.16 0-4.19-1-9-2.16L7.7 15.83v-.05z"
