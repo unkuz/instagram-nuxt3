@@ -47,10 +47,8 @@ onMounted(() => {
 
 watch(isVideoPlay, () => {
   if (isVideoPlay.value) {
-    // bigPlayIcon.value.style.transform = 'scale(0,0)'
     bigPlayIcon.value.style.opacity = '0'
   } else {
-    // bigPlayIcon.value.style.transform = 'scale(1,1)'
     bigPlayIcon.value.style.opacity = '1'
   }
 })
