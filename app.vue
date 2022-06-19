@@ -4,16 +4,21 @@ import { SECTION } from '~~/constants/section'
 import { useGlobalStore } from '~~/store/global'
 import NewPost from './components/Huge/NewPost/index.vue'
 import NewPostMobile from './components/Huge/NewPostMobile/index.vue'
+import { useTopBackDrop } from '~~/composables/useTopBackDrop'
+import Story from './components/Huge/Story/index.vue'
+import { useStoryStore } from './store/story'
 
 useHead({
   title: 'Instagram',
 })
 
 const globalStore = useGlobalStore()
+const storyStore = useStoryStore()
 const { width, height } = useResizeWindow()
 const isTransition = computed(() => globalStore.getIsTransition)
 const section = computed(() => globalStore.getSection)
 const isMobile = computed(() => globalStore.getIsMobile)
+const isShowStory = computed(() => storyStore.getIsShowStory)
 
 watch([width, height], () => {
   globalStore.setClientSize(width.value, height.value)
@@ -41,6 +46,7 @@ watch(isTransition, () => {
     ></div>
     <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
     <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
+    <Story v-if="isShowStory" />
   </div>
 </template>
 <style scoped>

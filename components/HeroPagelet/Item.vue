@@ -1,8 +1,11 @@
 <script lang="ts" setup>
+import { useStoryStore } from '~~/store/story'
+
 const router = useRouter()
+const storyStore = useStoryStore()
 
 const handleClick = () => {
-  router.push(`/stories/cuzknothz/${Math.random()}`)
+  storyStore.setIsShowStory(true)
 }
 </script>
 
