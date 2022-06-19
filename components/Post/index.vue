@@ -1,5 +1,21 @@
 <script lang="ts" setup>
+import { emoji } from '~~/constants/emoji'
+import { useClickOutSide } from '~~/composables/useClickOutSide'
+
+const emojiRef = ref(null)
 const router = useRouter()
+const isShowEmoji = ref(false)
+const commentValueText = ref('')
+
+const toggleShowEmoji = () => (isShowEmoji.value = !isShowEmoji.value)
+
+const emojiAdd = (value) => {
+  commentValueText.value += value
+}
+
+useClickOutSide(emojiRef, () => {
+  isShowEmoji.value = false
+})
 </script>
 
 <template>
@@ -67,7 +83,7 @@ const router = useRouter()
     <div class="px-[16px] text-xs md:text-sm">
       <div class="mt-[4px] h-[54px]">
         <div class="grid h-full grid-cols-2">
-          <div class="flex h-full w-full items-center space-x-[8px]">
+          <div class="flex h-full w-full items-center space-x-[10px]">
             <svg
               aria-label="Like"
               class="_8-yf5"
@@ -164,11 +180,31 @@ const router = useRouter()
       </div>
       <!-- timer -->
       <div class="mb-[16px] h-[18px] text-gray-600">1 DAY AGO</div>
-      <div class="flex h-[53px] items-center justify-between border-t-[1px] border-gray-200">
-        <div>
+      <div class="flex items-center justify-between border-gray-200 md:border-t-[1px]">
+        <div class="relative">
+          <div
+            v-if="isShowEmoji"
+            ref="emojiRef"
+            class="absolute -top-[310px] h-[300px] overflow-y-scroll border-[1px] border-gray-300 bg-white"
+          >
+            <div v-for="topic in emoji">
+              <p class="h-[20px] pl-[10px] text-[0.8rem] font-[500]">{{ topic.label }}</p>
+              <div class="grid w-[280px] grid-cols-7 text-[1.25rem]">
+                <div
+                  v-for="i in topic.icons"
+                  @click="emojiAdd(i)"
+                  class="flex h-[40px] cursor-pointer select-none items-center justify-center"
+                >
+                  {{ i }}
+                </div>
+              </div>
+            </div>
+          </div>
+
           <svg
+            @click="toggleShowEmoji"
             aria-label="Emoji"
-            class="_8-yf5"
+            class="cursor-pointer"
             color="#262626"
             fill="#262626"
             height="24"
@@ -181,8 +217,23 @@ const router = useRouter()
             ></path>
           </svg>
         </div>
-        <div>Comment</div>
-        <div>Post</div>
+        <div>
+          <textarea
+            placeholder="Add a comment…"
+            v-model="commentValueText"
+            class="w-[290px] resize-none focus:outline-none md:w-[420px]"
+          ></textarea>
+        </div>
+        <div class="h-[22px] w-[22px] cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.53 46.53" class="fromLinkFiber17">
+            <g data-name="Layer 2">
+              <path
+                d="M.11 15.5a1.53 1.53 0 00.52 1.78c.33.27 1.09.47 11.57 3C18.38 21.71 23.46 23 23.51 23s1.27 5 2.71 11.08S28.89 45.22 29 45.41a1.82 1.82 0 001.08 1 1.43 1.43 0 001.5-.41c.34-.33.54-.91 7.61-22.13 4-12 7.29-21.92 7.32-22.09A1.72 1.72 0 0044.71 0c-.16 0-10.1 3.33-22.08 7.32C1.89 14.24.82 14.61.52 14.92a2.4 2.4 0 00-.41.58zM25 10c9.5-3.16 17.28-5.74 17.29-5.72S30.78 38.84 30.73 38.84s-.85-3.44-1.85-7.65c-2.69-11.27-2.43-10.3-2.82-10.69a1.82 1.82 0 00-.63-.42c-.16 0-4.19-1-9-2.16L7.7 15.83v-.05z"
+                data-name="Layer 1"
+              ></path>
+            </g>
+          </svg>
+        </div>
       </div>
     </div>
   </article>
