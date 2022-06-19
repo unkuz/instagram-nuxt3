@@ -10,9 +10,7 @@ const globalStore = useGlobalStore()
 const accountPopRef = ref(null)
 const isShow = ref(true)
 
-useClickOutSide(accountPopRef, () => {
-  console.log('HEHE')
-})
+useClickOutSide(accountPopRef, () => {})
 
 const handleSelect = (section: SECTION, url: string = '') => {
   useDebounceRoute(url, router)
