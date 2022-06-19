@@ -11,6 +11,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       august: ['august'],
+      quicksan: ['quicksand'],
     },
   },
   plugins: [],

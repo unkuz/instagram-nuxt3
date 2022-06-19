@@ -4,3 +4,12 @@
   font-family: august;
   src: url(602d0d76ac6fe41e789e0053_august-bold.woff2);
 }
+
+@font-face {
+  font-family: quicksand;
+  src: url(../fonts/Quicksand-Medium.ttf);
+}
+
+html {
+  font-size: 15px;
+}

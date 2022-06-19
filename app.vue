@@ -36,7 +36,7 @@ watch(isTransition, () => {
 </script>
 
 <template>
-  <div>
+  <div class="font-quicksan">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

@@ -30,7 +30,7 @@ const isSelect = (select) => currentSelect === select
       <div
         class="mt-[50px] flex flex-col items-center duration-500 md:ml-[180px] md:mt-[5px] md:block"
       >
-        <div class="font-august uppercase">Cuzknothz</div>
+        <div>Cuzknothz</div>
         <div class="flex space-x-[20px]">
           <span>96 posts</span
           ><span @click="profileStore.setIsShowFollowing(true)" class="cursor-pointer"
