@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useTopBackDrop } from '~~/composables/useTopBackDrop'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
+import { useLockScroll } from '~~/composables/useLockScroll'
 import { useStoryStore } from '~~/store/story'
 
 const storyStore = useStoryStore()
@@ -16,14 +17,22 @@ const isVideoMuted = ref(true)
 const isShowPlayButton = ref(false)
 
 useTopBackDrop(containerRef)
+useLockScroll()
 
 useClickOutSide(mediaContainerRef, () => {
   storyStore.setIsShowStory(false)
 })
 
+const keyCodeBehaviour = (e) => {
+  if (e.charCode === 32) {
+    togglePlay()
+  }
+}
+
 onMounted(() => {
   videoRef.value.play()
   videoRef.value.addEventListener('timeupdate', updateTime)
+  window.addEventListener('keypress', keyCodeBehaviour)
 })
 
 watch(isVideoPlay, () => {
@@ -36,7 +45,10 @@ watch(isVideoPlay, () => {
   }
 })
 
-onUnmounted(() => window.removeEventListener('timeupdate', updateTime))
+onUnmounted(() => {
+  window.removeEventListener('timeupdate', updateTime)
+  window.removeEventListener('keypress', keyCodeBehaviour)
+})
 
 const updateTime = () => {
   Object.assign(barRef.value.style, {
