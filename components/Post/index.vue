@@ -187,7 +187,7 @@ useClickOutSide(emojiRef, () => {
             class="absolute -top-[310px] h-[300px] overflow-y-scroll border-[1px] border-gray-300 bg-white"
           >
             <div v-for="topic in emoji">
-              <p class="h-[20px] pl-[10px] text-[0.8rem] font-[500]">{{ topic.label }}</p>
+              <p class="mt-[10px] h-[20px] pl-[10px] text-[0.8rem] font-[500]">{{ topic.label }}</p>
               <div class="grid w-[280px] grid-cols-7 text-[1.25rem]">
                 <div
                   v-for="i in topic.icons"
