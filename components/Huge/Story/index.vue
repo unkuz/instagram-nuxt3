@@ -71,11 +71,11 @@ const togglePlay = () => {
     ref="containerRef"
     class="absolute top-0 left-0 z-50 flex h-screen w-full items-center justify-center bg-black/80"
   >
-    <div class="relative h-[881px] w-[495.5px] bg-white" ref="mediaContainerRef">
+    <div class="relative h-full w-full sm:h-[881px] sm:w-[495.5px]" ref="mediaContainerRef">
       <div class="absolute inset-0">
         <video
           @click="togglePlay"
-          class="h-full w-full object-contain"
+          class="h-full w-full object-cover"
           src="/video/277951101_388380176198930_7921718664685624255_n.mp4"
           autoplay
           loop
@@ -102,7 +102,7 @@ const togglePlay = () => {
         </svg>
       </div>
       <!-- top -->
-      <div class="mx-auto w-[445px]">
+      <div class="mx-auto w-[90%] sm:w-[445px]">
         <div class="mt-[25px] flex w-full justify-between space-x-2">
           <div class="relative h-[2px] w-full bg-[#c2c2c2]" ref="containerBar">
             <div ref="barRef" class="absolute top-0 left-0 h-full bg-white"></div>
