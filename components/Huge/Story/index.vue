@@ -29,6 +29,16 @@ const keyCodeBehaviour = (e) => {
   }
 }
 
+const updateTime = () => {
+  Object.assign(barRef.value.style, {
+    width: `${
+      (videoRef.value.currentTime * containerBar.value.clientWidth) / videoRef.value.duration
+    }px`,
+  })
+  isVideoPlay.value = !videoRef.value.paused
+  isVideoMuted.value = videoRef.value.muted
+}
+
 onMounted(() => {
   videoRef.value.play()
   videoRef.value.addEventListener('timeupdate', updateTime)
@@ -50,27 +60,10 @@ onUnmounted(() => {
   window.removeEventListener('keypress', keyCodeBehaviour)
 })
 
-const updateTime = () => {
-  Object.assign(barRef.value.style, {
-    width: `${
-      (videoRef.value.currentTime * containerBar.value.clientWidth) / videoRef.value.duration
-    }px`,
-  })
-  isVideoPlay.value = !videoRef.value.paused
-  isVideoMuted.value = videoRef.value.muted
+const toggleMuted = () => {
+  videoRef.value.muted = !videoRef.value.muted
 }
-const play = () => {
-  videoRef.value.play()
-}
-const pause = () => {
-  videoRef.value.pause()
-}
-const mute = () => {
-  videoRef.value.muted = false
-}
-const unmute = () => {
-  videoRef.value.muted = true
-}
+
 const togglePlay = () => {
   if (videoRef.value.paused) {
     videoRef.value.play()
@@ -132,7 +125,7 @@ const togglePlay = () => {
           </div>
           <div class="flex items-center space-x-[10px]">
             <svg
-              @click="play"
+              @click="togglePlay"
               v-if="!isVideoPlay"
               aria-label="Play"
               class="cursor-pointer"
@@ -149,7 +142,7 @@ const togglePlay = () => {
             </svg>
             <svg
               v-else
-              @click="pause"
+              @click="togglePlay"
               aria-label="Pause"
               class="cursor-pointer"
               color="#ffffff"
@@ -165,7 +158,7 @@ const togglePlay = () => {
             </svg>
             <svg
               v-if="isVideoMuted"
-              @click="mute"
+              @click="toggleMuted"
               aria-label="Audo is muted."
               class="cursor-pointer"
               color="#ffffff"
@@ -182,7 +175,7 @@ const togglePlay = () => {
               ></path>
             </svg>
             <svg
-              @click="unmute"
+              @click="toggleMuted"
               v-else
               aria-label="Audio is playing"
               class="cursor-pointer"
