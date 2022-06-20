@@ -15,8 +15,12 @@ useClickOutSide(viewPostRef, () => {
 })
 
 onMounted(() => {
-  viewPostRef.value.style.transform = 'scale(1)'
-  viewPostRef.value.style.opacity = '1'
+  viewPostRef.value.style.transform = 'scale(0)'
+  viewPostRef.value.style.opacity = '0'
+  setTimeout(() => {
+    viewPostRef.value.style.transform = 'scale(1)'
+    viewPostRef.value.style.opacity = '1'
+  }, 200)
 })
 </script>
 
@@ -27,16 +31,16 @@ onMounted(() => {
   >
     <div
       ref="viewPostRef"
-      class="flex h-[800px] w-[1000px] scale-0 bg-fuchsia-300 opacity-0 duration-500"
+      class="flex h-screen w-[1000px] scale-0 bg-fuchsia-300 opacity-0 duration-500 md:h-[800px]"
     >
-      <div class="flex-1">
+      <div class="hidden md:block md:flex-1">
         <img
           src="/personal/268574545_1103358217107085_3927417365605344326_n.jpg"
           alt=""
           class="h-full w-full object-cover"
         />
       </div>
-      <div class="h-full flex-1 bg-white">
+      <div class="h-full bg-white md:flex-1">
         <div class="h-[60px] border-b-[1px] border-gray-300">
           <div class="mx-[16px] flex h-full items-center justify-between">
             <div class="flex items-center space-x-[10px]">
