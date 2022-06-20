@@ -35,7 +35,7 @@ onMounted(() => {
     >
       <div class="hidden md:block md:flex-1">
         <img
-          src="/personal/268574545_1103358217107085_3927417365605344326_n.jpg"
+          src="/personal/285912787_394288332653847_7603823348223049999_n.jpg"
           alt=""
           class="h-full w-full object-cover object-center"
         />
