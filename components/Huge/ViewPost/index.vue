@@ -31,13 +31,13 @@ onMounted(() => {
   >
     <div
       ref="viewPostRef"
-      class="flex h-screen w-[1000px] scale-0 bg-fuchsia-300 opacity-0 duration-500 md:h-[800px]"
+      class="flex h-screen scale-0 bg-fuchsia-300 opacity-0 duration-500 md:h-[800px] md:w-full xl:w-[1000px]"
     >
       <div class="hidden md:block md:flex-1">
         <img
           src="/personal/268574545_1103358217107085_3927417365605344326_n.jpg"
           alt=""
-          class="h-full w-full object-cover"
+          class="h-full w-full object-cover object-center"
         />
       </div>
       <div class="h-full bg-white md:flex-1">
