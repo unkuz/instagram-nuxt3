@@ -1,8 +1,11 @@
 <script lang="ts" setup>
 import { emoji } from '~~/constants/emoji'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
+import { useViewPostStore } from '~~/store/viewPost'
 
 const emojiRef = ref(null)
+const viewPostStore = useViewPostStore()
+
 const router = useRouter()
 const isShowEmoji = ref(false)
 const commentValueText = ref('')
@@ -16,10 +19,14 @@ const emojiAdd = (value) => {
 useClickOutSide(emojiRef, () => {
   isShowEmoji.value = false
 })
+
+const viewPost = () => {
+  viewPostStore.setIsShow(true)
+}
 </script>
 
 <template>
-  <article class="mb-[24px] w-full border-gray-200 sm:border-[1px]">
+  <article ref="postRef" class="mb-[24px] w-full border-gray-200 sm:border-[1px]">
     <!-- head -->
     <div class="h-[60px]">
       <div class="mx-[16px] flex h-full items-center justify-between">
@@ -77,7 +84,7 @@ useClickOutSide(emojiRef, () => {
               ></path>
             </svg>
             <svg
-              @click="router.push('/p/hjksadkfjhdsajkfhsdkjl')"
+              @click="viewPost"
               aria-label="Comment"
               class="cursor-pointer"
               color="#262626"
