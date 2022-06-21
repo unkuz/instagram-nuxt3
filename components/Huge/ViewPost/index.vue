@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import BackDrop from '~~/components/Utils/BackDrop.vue';
-import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback';
-import { useViewPostStore } from '~~/store/viewPost';
+import BackDrop from '~~/components/Utils/BackDrop.vue'
+import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
+import { useViewPostStore } from '~~/store/viewPost'
 
 const viewPostStore = useViewPostStore()
 
@@ -30,7 +30,6 @@ const calcHeightComment = () => {
 }
 
 useWindowResizeCallback(calcHeightComment)
-
 </script>
 
 <template>
@@ -54,7 +53,22 @@ useWindowResizeCallback(calcHeightComment)
                 <div class="h-[40px] w-[40px] rounded-[50%] bg-black"></div>
                 <p class="cursor-pointer">cuzknothz</p>
               </div>
-              <div>...</div>
+              <div>
+                <svg
+                  aria-label="More Options"
+                  class="_ab6-"
+                  color="#262626"
+                  fill="#262626"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <circle cx="12" cy="12" r="1.5"></circle>
+                  <circle cx="6" cy="12" r="1.5"></circle>
+                  <circle cx="18" cy="12" r="1.5"></circle>
+                </svg>
+              </div>
             </div>
           </div>
           <div ref="commentRef" class="overflow-y-scroll p-[16px]">
