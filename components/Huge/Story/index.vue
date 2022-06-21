@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { useClickOutSide } from '~~/composables/useClickOutSide';
-import { useLockScroll } from '~~/composables/useLockScroll';
-import { useTopBackDrop } from '~~/composables/useTopBackDrop';
-import { useStoryStore } from '~~/store/story';
+import { useClickOutSide } from '~~/composables/useClickOutSide'
+import { useLockScroll } from '~~/composables/useLockScroll'
+import { useTopBackDrop } from '~~/composables/useTopBackDrop'
+import { useStoryStore } from '~~/store/story'
 
 const storyStore = useStoryStore()
 
@@ -85,7 +85,7 @@ const togglePlay = () => {
         <video
           @click="togglePlay"
           class="h-full w-full object-cover"
-          src="/video/242322324_812426336116660_1281566458903572911_n.mp4"
+          src="/video/277951101_388380176198930_7921718664685624255_n.mp4"
           autoplay
           loop
           muted
@@ -208,8 +208,7 @@ const togglePlay = () => {
                   fill-rule="evenodd"
                 ></path>
               </svg>
-              <div class="w-[200px] h-[200px] absolute bg-fuchsia-200"></div>
-
+              <div class="absolute h-[200px] w-[200px] bg-fuchsia-200"></div>
             </div>
           </div>
         </div>
