@@ -1,10 +1,11 @@
 <script lang="ts" setup>
-import { useTopBackDrop } from '~~/composables/useTopBackDrop'
-import { useClickOutSide } from '~~/composables/useClickOutSide'
-import { useLockScroll } from '~~/composables/useLockScroll'
-import { useStoryStore } from '~~/store/story'
+import { useClickOutSide } from '~~/composables/useClickOutSide';
+import { useLockScroll } from '~~/composables/useLockScroll';
+import { useTopBackDrop } from '~~/composables/useTopBackDrop';
+import { useStoryStore } from '~~/store/story';
 
 const storyStore = useStoryStore()
+
 const containerRef = ref(null)
 const barRef = ref(null)
 const containerBar = ref(null)
@@ -14,7 +15,6 @@ const mediaContainerRef = ref(null)
 
 const isVideoPlay = ref(false)
 const isVideoMuted = ref(true)
-const isShowPlayButton = ref(false)
 
 useTopBackDrop(containerRef)
 useLockScroll()
@@ -24,8 +24,11 @@ useClickOutSide(mediaContainerRef, () => {
 })
 
 const keyCodeBehaviour = (e) => {
+  console.log(e.charCode)
   if (e.charCode === 32) {
     togglePlay()
+  } else if (e.charCode === 13) {
+    storyStore.setIsShowStory(false)
   }
 }
 
@@ -82,7 +85,7 @@ const togglePlay = () => {
         <video
           @click="togglePlay"
           class="h-full w-full object-cover"
-          src="/video/277951101_388380176198930_7921718664685624255_n.mp4"
+          src="/video/242322324_812426336116660_1281566458903572911_n.mp4"
           autoplay
           loop
           muted
@@ -189,21 +192,25 @@ const togglePlay = () => {
                 d="M16.636 7.028a1.5 1.5 0 10-2.395 1.807 5.365 5.365 0 011.103 3.17 5.378 5.378 0 01-1.105 3.176 1.5 1.5 0 102.395 1.806 8.396 8.396 0 001.71-4.981 8.39 8.39 0 00-1.708-4.978zm3.73-2.332A1.5 1.5 0 1018.04 6.59 8.823 8.823 0 0120 12.007a8.798 8.798 0 01-1.96 5.415 1.5 1.5 0 002.326 1.894 11.672 11.672 0 002.635-7.31 11.682 11.682 0 00-2.635-7.31zm-8.963-3.613a1.001 1.001 0 00-1.082.187L5.265 6H2a1 1 0 00-1 1v10.003a1 1 0 001 1h3.265l5.01 4.682.02.021a1 1 0 001.704-.814L12.005 2a1 1 0 00-.602-.917z"
               ></path>
             </svg>
-            <svg
-              aria-label="Menu"
-              class="cursor-pointer"
-              color="#ffffff"
-              fill="#ffffff"
-              height="24"
-              role="img"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <path
-                d="M12 9.75A2.25 2.25 0 1014.25 12 2.25 2.25 0 0012 9.75zm-6 0A2.25 2.25 0 108.25 12 2.25 2.25 0 006 9.75zm12 0A2.25 2.25 0 1020.25 12 2.25 2.25 0 0018 9.75z"
-                fill-rule="evenodd"
-              ></path>
-            </svg>
+            <div class="relative">
+              <svg
+                aria-label="Menu"
+                class="cursor-pointer"
+                color="#ffffff"
+                fill="#ffffff"
+                height="24"
+                role="img"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  d="M12 9.75A2.25 2.25 0 1014.25 12 2.25 2.25 0 0012 9.75zm-6 0A2.25 2.25 0 108.25 12 2.25 2.25 0 006 9.75zm12 0A2.25 2.25 0 1020.25 12 2.25 2.25 0 0018 9.75z"
+                  fill-rule="evenodd"
+                ></path>
+              </svg>
+              <div class="w-[200px] h-[200px] absolute bg-fuchsia-200"></div>
+
+            </div>
           </div>
         </div>
       </div>
