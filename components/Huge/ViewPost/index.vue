@@ -37,11 +37,11 @@ useWindowResizeCallback(calcHeightComment)
     <BackDrop>
       <div
         ref="viewPostRef"
-        class="flex h-screen scale-0 bg-fuchsia-300 opacity-0 duration-500 md:h-[800px] md:w-full xl:w-[1000px] overflow-hidden"
+        class="flex h-screen scale-0 overflow-hidden bg-fuchsia-300 opacity-0 duration-500 md:h-[800px] md:w-full xl:w-[1000px]"
       >
         <div class="hidden md:block md:flex-1">
           <img
-            src="/personal/284244344_5311122635605193_5864440318105391567_n.jpg"
+            src="/personal/285912787_394288332653847_7603823348223049999_n.jpg"
             alt=""
             class="h-full w-full object-cover object-center"
           />
@@ -71,7 +71,7 @@ useWindowResizeCallback(calcHeightComment)
               </div>
             </div>
           </div>
-          <div ref="commentRef" class="overflow-y-scroll p-[16px] ">
+          <div ref="commentRef" class="overflow-y-scroll p-[16px]">
             <div
               v-for="i in Array.from(Array(40).keys())"
               class="mb-[10px] flex w-full items-center justify-between"
