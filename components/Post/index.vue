@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { emoji } from '~~/constants/emoji'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { useViewPostStore } from '~~/store/viewPost'
+import Emoji from './Emoji.vue'
 
 const emojiRef = ref(null)
 const viewPostStore = useViewPostStore()
@@ -167,23 +167,7 @@ const viewPost = () => {
       <div class="mb-[16px] h-[18px] text-gray-600">1 DAY AGO</div>
       <div class="flex items-center justify-between border-gray-200 md:border-t-[1px]">
         <div class="relative" ref="emojiRef">
-          <div
-            v-if="isShowEmoji"
-            class="absolute -top-[310px] h-[300px] overflow-y-scroll border-[1px] border-gray-300 bg-white"
-          >
-            <div v-for="topic in emoji">
-              <p class="mt-[10px] h-[20px] pl-[10px] text-[0.8rem] font-[500]">{{ topic.label }}</p>
-              <div class="grid w-[280px] grid-cols-7 text-[1.5rem]">
-                <div
-                  v-for="i in topic.icons"
-                  @click="emojiAdd(i)"
-                  class="flex h-[40px] cursor-pointer select-none items-center justify-center"
-                >
-                  {{ i }}
-                </div>
-              </div>
-            </div>
-          </div>
+          <Emoji v-if="isShowEmoji" @emoji-add="emojiAdd" />
 
           <svg
             @click="toggleShowEmoji"
