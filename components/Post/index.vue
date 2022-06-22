@@ -173,7 +173,7 @@ const viewPost = () => {
           >
             <div v-for="topic in emoji">
               <p class="mt-[10px] h-[20px] pl-[10px] text-[0.8rem] font-[500]">{{ topic.label }}</p>
-              <div class="grid w-[280px] grid-cols-7 text-[1.25rem]">
+              <div class="grid w-[280px] grid-cols-7 text-[1.5rem]">
                 <div
                   v-for="i in topic.icons"
                   @click="emojiAdd(i)"
