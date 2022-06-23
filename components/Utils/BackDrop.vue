@@ -1,14 +1,7 @@
-<script lang="ts" setup>
-import { useTopBackDrop } from '~~/composables/useTopBackDrop'
-const backDropRef = ref(null)
-useTopBackDrop(backDropRef)
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <div
-    ref="backDropRef"
-    class="absolute left-0 z-10 flex h-screen w-full items-center justify-center bg-black/80"
-  >
+  <div class="fixed top-0 left-0 z-10 flex h-screen w-full items-center justify-center bg-black/80">
     <slot />
   </div>
 </template>
