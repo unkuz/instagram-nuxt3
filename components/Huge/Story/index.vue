@@ -7,7 +7,6 @@ import BackDrop from '~~/components/Utils/BackDrop.vue'
 
 const storyStore = useStoryStore()
 
-const containerRef = ref(null)
 const barRef = ref(null)
 const containerBar = ref(null)
 const videoRef = ref(null)
@@ -17,7 +16,6 @@ const mediaContainerRef = ref(null)
 const isVideoPlay = ref(false)
 const isVideoMuted = ref(true)
 
-useTopBackDrop(containerRef)
 // useLockScroll()
 
 useClickOutSide(mediaContainerRef, () => {
