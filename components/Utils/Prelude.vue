@@ -4,9 +4,9 @@ useLockScroll()
 </script>
 
 <template>
-  <div class="fixed top-0 left-0 z-20 flex h-screen w-full items-center justify-center bg-white">
+  <div class="fixed top-0 left-0 z-20 h-screen w-full space-y-[50px] bg-white">
     <svg
-      class="aspect-square h-[100px] w-[100px]"
+      class="absolute top-1/2 left-1/2 aspect-square h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2"
       width="145"
       height="145"
       viewBox="0 0 145 145"
@@ -54,5 +54,10 @@ useLockScroll()
         </radialGradient>
       </defs>
     </svg>
+    <div
+      class="absolute bottom-[40px] left-1/2 -translate-x-1/2 font-august text-[1.7rem] tracking-wide"
+    >
+      CUZKNOTHZ
+    </div>
   </div>
 </template>
