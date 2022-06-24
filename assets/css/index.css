@@ -13,3 +13,7 @@
 html {
   font-size: 15px;
 }
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
