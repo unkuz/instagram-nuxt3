@@ -58,6 +58,6 @@
     ],
     "start_url": "/?source=pwa",
     "display": "fullscreen",
-    "background_color": "#000000",
-    "theme_color": "#000000"
+    "background_color": "#fff",
+    "theme_color": "#fff"
 }
