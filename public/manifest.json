@@ -1,6 +1,6 @@
 {
-    "name": "__Instagram",
-    "short_name": "_Instagram",
+    "name": "Instagram",
+    "short_name": "Instagram",
     "icons": [
         {
             "src": "/icon-192x192.png",
