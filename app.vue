@@ -20,10 +20,10 @@ useHead({
       content:
         'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
     },
-    // {
-    //   name: 'theme-color',
-    //   content: '#000',
-    // },
+    {
+      name: 'theme-color',
+      content: '#fff',
+    },
   ],
 })
 
