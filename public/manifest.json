@@ -1,0 +1,63 @@
+{
+    "name": "Instagram Cuzknothz",
+    "icons": [
+        {
+            "src": "/instagram_icon.png",
+            "types": "img/png",
+            "sizes": "512x512",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/instagram_icon.png",
+            "types": "img/png",
+            "sizes": "384x384",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/instagram_icon.png",
+            "types": "img/png",
+            "sizes": "192x192",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/instagram_icon.png",
+            "types": "img/png",
+            "sizes": "128x128",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/instagram_icon.png",
+            "types": "img/png",
+            "sizes": "96x96",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/instagram_icon.png",
+            "types": "img/png",
+            "sizes": "72x72",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/instagram_icon.png",
+            "types": "img/png",
+            "sizes": "48x48",
+            "purpose": "any"
+        },
+        {
+            "src": "/instagram_icon.png",
+            "types": "img/png",
+            "sizes": "180x180",
+            "purpose": "any"
+        },
+        {
+            "src": "/instagram_icon.png",
+            "types": "img/png",
+            "sizes": "120x120",
+            "purpose": "any"
+        }
+    ],
+    "start_url": "/?source=pwa",
+    "display": "fullscreen",
+    "background_color": "#000000",
+    "theme_color": "#000000"
+}

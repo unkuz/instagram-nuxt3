@@ -20,6 +20,10 @@ useHead({
       content:
         'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
     },
+    {
+      name: 'theme-color',
+      content: '#000',
+    },
   ],
 })
 
@@ -48,6 +52,15 @@ watch(isTransition, () => {
     }, 1000)
   }
 })
+
+if (process.client) {
+  window.addEventListener('load', () => {
+    if (!('serviceWorker' in navigator)) {
+      throw new Error('serviceWorker is not supported in current browser!')
+    }
+    navigator.serviceWorker.register('/sw.js')
+  })
+}
 </script>
 
 <template>
