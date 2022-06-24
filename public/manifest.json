@@ -23,7 +23,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "/?source=pwa",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "white",
     "theme_color": "#fff" 
