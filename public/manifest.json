@@ -57,7 +57,7 @@
         }
     ],
     "start_url": "/?source=pwa",
-    "display": "fullscreen",
-    "background_color": "#fff",
+    "display": "standalone",
+    "background_color": "white",
     "theme_color": "#fff"
 }
