@@ -9,6 +9,8 @@ import Story from './components/Huge/Story/index.vue'
 import { useStoryStore } from './store/story'
 import ViewPost from './components/Huge/ViewPost/index.vue'
 import { useViewPostStore } from './store/viewPost'
+import Prelude from './components/Utils/Prelude.vue'
+import { usePrelude } from '~~/composables/usePrelude'
 
 useHead({
   title: 'Instagram',
@@ -18,6 +20,7 @@ const globalStore = useGlobalStore()
 const viewPostStore = useViewPostStore()
 
 const storyStore = useStoryStore()
+const { isShowPrelude } = usePrelude()
 const { width, height } = useResizeWindow()
 const isTransition = computed(() => globalStore.getIsTransition)
 const section = computed(() => globalStore.getSection)
@@ -53,6 +56,7 @@ watch(isTransition, () => {
     <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
     <Story v-if="isShowStory" />
     <ViewPost v-if="isShowViewPost" />
+    <Prelude v-if="isShowPrelude" />
   </div>
 </template>
 <style scoped>
