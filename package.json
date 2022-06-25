@@ -5,7 +5,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "start":"nuxt start"
+    "start": "nuxt start"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.182",
@@ -19,6 +19,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.1.8",
     "@types/uuid": "^8.3.4",
+    "@vueuse/core": "^8.7.5",
     "axios": "^0.27.2",
     "file-saver": "^2.0.5",
     "lodash": "^4.17.21",

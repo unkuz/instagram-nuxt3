@@ -16,7 +16,7 @@ const handleSelect = (section: SECTION, url?: string) => {
   <img
     alt="Instagram"
     @click="handleSelect(SECTION.HOME, '/')"
-    class="mt-[7px] h-[29px] cursor-pointer select-none"
+    class="mt-[7px] h-[29px] w-[103px] cursor-pointer select-none"
     draggable="false"
     src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png"
   />
