@@ -65,6 +65,7 @@ if (process.client) {
 
 <template>
   <div class="font-quicksan">
+    <Prelude v-if="isShowPrelude" />
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -76,7 +77,6 @@ if (process.client) {
     <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
     <Story v-if="isShowStory" />
     <ViewPost v-if="isShowViewPost" />
-    <Prelude v-if="isShowPrelude" />
   </div>
 </template>
 <style scoped>
