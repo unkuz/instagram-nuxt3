@@ -1,10 +1,17 @@
 <script lang="ts" setup>
 import Navbarbottom from './navbarbottom.vue'
+import Header from '~~/components/Header/index.vue'
+import { useGlobalStore } from '~~/store/global'
+const globalStore = useGlobalStore()
+const isMobile = computed(() => globalStore.getIsMobile)
 </script>
 
 <template>
   <div>
-    <div class="mx-auto mt-[50px] w-full text-[0.8rem] sm:mt-[84px] lg:w-[605px]">
+    <Header v-if="!isMobile" />
+    <div
+      :class="`mx-auto  ${isMobile ? 'mt-0' : ''} w-full text-[0.8rem] md:mt-[84px] lg:w-[605px]`"
+    >
       <slot />
     </div>
     <Navbarbottom />
