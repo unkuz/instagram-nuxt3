@@ -65,7 +65,7 @@ if (process.client) {
 
 <template>
   <div class="font-quicksan">
-    <Prelude v-if="isShowPrelude" />
+    <Prelude v-if="false" />
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
