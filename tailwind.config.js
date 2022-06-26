@@ -13,5 +13,5 @@ module.exports = {
       quicksan: ['quicksand'],
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide')],
 }
