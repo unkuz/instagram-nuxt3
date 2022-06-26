@@ -11,6 +11,7 @@ definePageMeta({
         class="aspect-square w-full object-cover"
         src="/explore/280053464_1025075078373353_2175908518960908191_n.jpg"
       />
+
       <svg
         aria-label="Carousel"
         class="absolute top-[15px] right-[15px]"
