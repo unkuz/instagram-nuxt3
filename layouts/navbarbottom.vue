@@ -24,7 +24,7 @@ const handleSelect = (section: SECTION, url?: string) => {
 <template>
   <div
     :class="`fixed bottom-0 z-10 h-[65px] w-full border-t-[1px] border-gray-200  ${
-      isReelsSelect ? 'bg-black' : 'bg-white'
+      isReelsSelect ? 'border-none bg-black' : 'bg-white'
     } md:hidden`"
   >
     <div class="mt-3 flex items-center justify-around">

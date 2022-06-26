@@ -6,10 +6,10 @@ definePageMeta({
 
 <template>
   <div>
-    <div class="flex flex-col space-y-[20px]">
-      <div v-for="i in Array.from(Array(10).keys())" class="relative w-full">
+    <div class="flex snap-y flex-col">
+      <div v-for="i in Array.from(Array(10).keys())" class="relative h-screen w-full snap-center">
         <video
-          class="w-full"
+          class="h-screen w-full object-cover"
           src="/video/242322324_812426336116660_1281566458903572911_n.mp4"
           autoplay
           muted
