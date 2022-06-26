@@ -6,8 +6,8 @@ definePageMeta({
 
 <template>
   <div>
-    <div class="flex snap-y flex-col">
-      <div v-for="i in Array.from(Array(10).keys())" class="relative h-screen w-full snap-center">
+    <div class="flex h-screen w-full snap-y snap-mandatory flex-col overflow-y-scroll">
+      <div v-for="i in Array.from(Array(10).keys())" class="relative h-screen w-full snap-start">
         <video
           class="h-screen w-full object-cover"
           src="/video/242322324_812426336116660_1281566458903572911_n.mp4"
