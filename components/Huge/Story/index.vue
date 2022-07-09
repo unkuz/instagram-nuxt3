@@ -1,9 +1,7 @@
 <script lang="ts" setup>
-import { useClickOutSide } from '~~/composables/useClickOutSide'
-import { useLockScroll } from '~~/composables/useLockScroll'
-import { useTopBackDrop } from '~~/composables/useTopBackDrop'
-import { useStoryStore } from '~~/store/story'
 import BackDrop from '~~/components/Utils/BackDrop.vue'
+import { useClickOutSide } from '~~/composables/useClickOutSide'
+import { useStoryStore } from '~~/store/story'
 
 const storyStore = useStoryStore()
 
@@ -15,8 +13,6 @@ const mediaContainerRef = ref(null)
 
 const isVideoPlay = ref(false)
 const isVideoMuted = ref(true)
-
-// useLockScroll()
 
 useClickOutSide(mediaContainerRef, () => {
   storyStore.setIsShowStory(false)
