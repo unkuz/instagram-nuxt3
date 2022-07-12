@@ -10,7 +10,6 @@ const containerBar = ref(null)
 const videoRef = ref(null)
 const bigPlayIcon = ref(null)
 const mediaContainerRef = ref(null)
-
 const isVideoPlay = ref(false)
 const isVideoMuted = ref(true)
 
