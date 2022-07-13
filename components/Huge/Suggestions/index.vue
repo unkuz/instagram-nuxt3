@@ -161,7 +161,7 @@ onMounted(() => {
     <div class="mt-[10px] flex flex-col items-center space-y-2 text-gray-500">
       <div>Technology using</div>
       <div class="flex justify-center space-x-[10px]">
-        <a href="https://vuejs.org/" target="_blank">
+        <a href="https://vuejs.org/" target="_blank" title="VueJS">
           <svg
             class="h-[24px] w-[24px] cursor-pointer"
             viewBox="0 0 128 128"
@@ -181,7 +181,7 @@ onMounted(() => {
             ></path>
           </svg>
         </a>
-        <a href="https://v3.nuxtjs.org/" target="_blank">
+        <a href="https://v3.nuxtjs.org/" target="_blank" title="Nuxt3JS">
           <svg
             viewBox="0 0 221 65"
             fill="none"
@@ -209,7 +209,7 @@ onMounted(() => {
             </defs>
           </svg>
         </a>
-        <a href="https://pinia.vuejs.org/" target="_blank">
+        <a href="https://pinia.vuejs.org/" target="_blank" title="Pinia">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -321,7 +321,7 @@ onMounted(() => {
             </g>
           </svg>
         </a>
-        <a href="https://vercel.com/" target="_blank">
+        <a href="https://vercel.com/" target="_blank" title="Vercel">
           <svg
             data-testid="dashboard/logo"
             aria-label="Vercel Logo"
