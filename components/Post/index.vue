@@ -166,7 +166,7 @@ const viewPost = () => {
       </div>
       <!-- timer -->
       <div class="mb-[16px] h-[18px] text-gray-600">1 DAY AGO</div>
-      <div class="flex items-center justify-between border-gray-200 md:border-t-[1px]">
+      <div class="flex h-[50px] items-center justify-between border-gray-200 md:border-t-[1px]">
         <div class="relative" ref="emojiRef">
           <Emoji v-if="isShowEmoji" @emoji-add="emojiAdd" />
           <svg
@@ -189,7 +189,7 @@ const viewPost = () => {
           <textarea
             placeholder="Add a comment…"
             v-model="commentValueText"
-            class="m-auto block w-[290px] resize-none focus:outline-none md:w-[420px]"
+            class="m-auto block w-[290px] resize-none placeholder:text-center placeholder:text-[0.8rem] focus:outline-none md:w-[420px]"
           ></textarea>
         </div>
         <div class="h-[22px] w-[22px] cursor-pointer active:fill-[#00aeff]">
