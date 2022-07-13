@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import BackDrop from '~~/components/Utils/BackDrop.vue'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
+import { useLockScroll } from '~~/composables/useLockScroll'
 import { APP_ROUTES } from '~~/routes'
-import { useStoryStore } from '~~/store/story'
 
 const barRef = ref(null)
 const containerBar = ref(null)
@@ -11,6 +11,8 @@ const bigPlayIcon = ref(null)
 const mediaContainerRef = ref(null)
 const isVideoPlay = ref(false)
 const isVideoMuted = ref(true)
+
+useLockScroll()
 
 useClickOutSide(mediaContainerRef, () => {
   navigateTo(APP_ROUTES._____)
