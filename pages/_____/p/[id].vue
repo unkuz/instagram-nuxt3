@@ -3,12 +3,15 @@ import BackDrop from '~~/components/Utils/BackDrop.vue'
 import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
 import { APP_ROUTES } from '~~/routes'
 import { useViewPostStore } from '~~/store/viewPost'
+import { useLockScroll } from '~~/composables/useLockScroll'
 
 const viewPostRef = ref(null)
 const commentHeadingRef = ref(null)
 const commentRef = ref(null)
 const commentContainerRef = ref(null)
 const router = useRouter()
+
+useLockScroll()
 
 useClickOutSide(viewPostRef, () => {
   router.back()
