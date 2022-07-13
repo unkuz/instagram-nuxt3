@@ -4,8 +4,6 @@ import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
 import { APP_ROUTES } from '~~/routes'
 import { useViewPostStore } from '~~/store/viewPost'
 
-const viewPostStore = useViewPostStore()
-
 const viewPostRef = ref(null)
 const commentHeadingRef = ref(null)
 const commentRef = ref(null)
@@ -13,15 +11,6 @@ const commentContainerRef = ref(null)
 
 useClickOutSide(viewPostRef, () => {
   navigateTo(APP_ROUTES._____)
-})
-
-onMounted(() => {
-  viewPostRef.value.style.transform = 'scale(0)'
-  viewPostRef.value.style.opacity = '0'
-  setTimeout(() => {
-    viewPostRef.value.style.transform = 'scale(1)'
-    viewPostRef.value.style.opacity = '1'
-  }, 200)
 })
 
 const calcHeightComment = () => {
@@ -38,7 +27,7 @@ useWindowResizeCallback(calcHeightComment)
     <BackDrop>
       <div
         ref="viewPostRef"
-        class="flex h-screen scale-0 overflow-hidden bg-fuchsia-300 opacity-0 duration-500 md:h-[800px] md:w-full xl:w-[1000px]"
+        class="flex h-screen overflow-hidden bg-fuchsia-300 duration-500 md:h-[800px] md:w-full xl:w-[1000px]"
       >
         <div class="hidden md:block md:flex-1">
           <img
