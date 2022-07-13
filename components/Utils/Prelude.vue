@@ -57,6 +57,6 @@ useLockScroll()
         </radialGradient>
       </defs>
     </svg>
-    <p class="font-august text-[1.8rem] uppercase tracking-wide">cuzknothz</p>
+    <p class="font-august text-[1.6rem] uppercase tracking-wide">cuzknothz</p>
   </div>
 </template>
