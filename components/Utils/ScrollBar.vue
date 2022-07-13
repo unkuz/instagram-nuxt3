@@ -47,6 +47,7 @@ const dragEnd = (e) => {
       @dragstart="dragStart"
       @dragend="dragEnd"
       ref="customScrollBarRef"
+      draggable
       class="fixed right-0 z-50 h-[200px] w-[6px] bg-[#00b3ff]"
     ></div>
   </div>
