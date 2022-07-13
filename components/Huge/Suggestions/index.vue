@@ -302,6 +302,16 @@ onMounted(() => {
             </g>
           </g>
         </svg>
+        <svg
+          data-testid="dashboard/logo"
+          aria-label="Vercel Logo"
+          fill="var(--geist-foreground)"
+          height="26"
+          viewBox="0 0 75 65"
+          class="h-[22px]"
+        >
+          <path d="M37.59.25l36.95 64H.64l36.95-64z"></path>
+        </svg>
       </div>
     </div>
   </div>
