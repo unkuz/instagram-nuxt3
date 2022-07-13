@@ -28,7 +28,6 @@ useHead({
 })
 
 const globalStore = useGlobalStore()
-const viewPostStore = useViewPostStore()
 const storyStore = useStoryStore()
 
 const { isShowPrelude } = usePrelude()
@@ -37,7 +36,6 @@ const isTransition = computed(() => globalStore.getIsTransition)
 const section = computed(() => globalStore.getSection)
 const isMobile = computed(() => globalStore.getIsMobile)
 const isShowStory = computed(() => storyStore.getIsShowStory)
-const isShowViewPost = computed(() => viewPostStore.getIsShow)
 
 watch([width, height], () => {
   globalStore.setClientSize(width.value, height.value)
@@ -75,8 +73,6 @@ if (process.client) {
     ></div>
     <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
     <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
-    <Story v-if="isShowStory" />
-    <ViewPost v-if="isShowViewPost" />
   </div>
 </template>
 <style scoped>

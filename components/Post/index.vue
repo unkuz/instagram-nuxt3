@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useClickOutSide } from '~~/composables/useClickOutSide'
+import { APP_ROUTES } from '~~/routes'
 import { useViewPostStore } from '~~/store/viewPost'
 import Emoji from './Emoji.vue'
 
@@ -21,7 +22,7 @@ useClickOutSide(emojiRef, () => {
 })
 
 const viewPost = () => {
-  viewPostStore.setIsShow(true)
+  navigateTo(`${APP_ROUTES._____}/p/jsadfhksdjf`)
 }
 </script>
 

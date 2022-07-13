@@ -1,11 +1,8 @@
 <script lang="ts" setup>
-import { useStoryStore } from '~~/store/story'
-
-const router = useRouter()
-const storyStore = useStoryStore()
+import { APP_ROUTES } from '~~/routes'
 
 const handleClick = () => {
-  storyStore.setIsShowStory(true)
+  navigateTo(`${APP_ROUTES._____}/stories/sdjkfhjksadhfdkj`)
 }
 </script>
 
