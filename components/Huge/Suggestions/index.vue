@@ -123,20 +123,26 @@
         <div class="text-[#1da0f6]">Follow</div>
       </div>
     </div>
-    <div class="text-gray-600">
-      <span class="after:content-['.']">About</span>
-      <span class="after:content-['.']">Help</span>
-      <span class="after:content-['.']">Press</span>
-      <span class="after:content-['.']">API</span>
-      <span class="after:content-['.']">Jobs</span>
-      <span>Privacy Terms</span>
+    <div class="mt-[10px]">
+      <div class="flex justify-center text-gray-600">
+        <span class="after:content-['.']">About</span>
+        <span class="after:content-['.']">Help</span>
+        <span class="after:content-['.']">Press</span>
+        <span class="after:content-['.']">API</span>
+        <span class="after:content-['.']">Jobs</span>
+        <span>Privacy Terms</span>
+      </div>
+      <div class="mb-[13px] flex justify-center text-gray-600">
+        <span class="after:content-['.']">Location</span>
+        <span class="after:content-['.']">Top accounts</span>
+        <span class="after:content-['.']">Hashtags</span>
+        <span>Language</span>
+      </div>
     </div>
-    <div class="mb-[16px] text-gray-600">
-      <span class="after:content-['.']">Location</span>
-      <span class="after:content-['.']">Top accounts</span>
-      <span class="after:content-['.']">Hashtags</span>
-      <span>Language</span>
+
+    <div class="flex flex-col items-center space-y-2 text-gray-500">
+      <div>© 2022 Instagram clone by</div>
+      <div class="font-august text-[1.2rem] uppercase tracking-wider text-black">Cuzknothz</div>
     </div>
-    <div class="text-gray-200">© 2022 Instagram from Cuzknothz</div>
   </div>
 </template>
