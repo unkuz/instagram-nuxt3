@@ -15,7 +15,7 @@ const isSelect = (select) => currentSelect === select
 </script>
 
 <template>
-  <div class="relative text-sm">
+  <div class="relative mb-[84px] text-sm">
     <div class="relative h-[250px] hover:z-10">
       <img
         class="absolute h-full w-full cursor-pointer object-cover duration-700 hover:-rotate-3 hover:scale-110 sm:hover:rotate-[3deg]"
