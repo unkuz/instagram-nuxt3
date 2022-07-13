@@ -3,35 +3,37 @@ import HeroPagelet from '~~/components/HeroPagelet/index.vue'
 import Suggestions from '~~/components/Huge/Suggestions/index.vue'
 import Post from '~~/components/Post/index.vue'
 import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
-const mainRef = ref(null)
-const leftRef = ref(null)
+
 definePageMeta({
   layout: 'main',
 })
+const rightRef = ref<HTMLElement>(null)
 
-const rightRef = ref(null)
+const positionRight = () => {
+  rightRef.value.style.top = `${window.scrollY}px`
+}
 
 onMounted(() => {
-  rightRef.value.style.left = `${leftRef.value.offsetLeft + 642}px`
-  console.log('KAKA', leftRef.value.offsetLeft)
+  positionRight()
+  addEventListener('scroll', positionRight)
 })
 
-useWindowResizeCallback(() => {
-  rightRef.value.style.left = `${leftRef.value.offsetLeft + 642}px`
+onUnmounted(() => {
+  removeEventListener('scroll', positionRight)
 })
 </script>
 
 <template>
   <div>
-    <div ref="mainRef" class="flex w-full justify-center lg:block">
-      <div class="inline-flex w-full flex-col items-center md:w-[614px] lg:block" ref="leftRef">
+    <div class="relative flex w-full justify-center lg:block">
+      <div class="inline-flex w-full flex-col items-center md:w-[614px] lg:block">
         <HeroPagelet />
         <div v-for="i in Array.from(Array(5).keys())" :key="i">
           <Post />
         </div>
       </div>
       <div
-        class="fixed top-[84px] left-[20000px] hidden h-[473px] w-[293px] bg-white text-sm lg:block"
+        class="absolute top-0 right-0 hidden h-[473px] w-[293px] bg-white text-sm lg:block"
         ref="rightRef"
       >
         <Suggestions />

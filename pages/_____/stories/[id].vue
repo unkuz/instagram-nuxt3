@@ -4,8 +4,6 @@ import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { APP_ROUTES } from '~~/routes'
 import { useStoryStore } from '~~/store/story'
 
-const storyStore = useStoryStore()
-
 const barRef = ref(null)
 const containerBar = ref(null)
 const videoRef = ref(null)
