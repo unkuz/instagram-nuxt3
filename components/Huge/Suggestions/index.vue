@@ -148,7 +148,7 @@ onMounted(() => {
 
     <div class="flex flex-col items-center space-y-2 text-gray-500">
       <div>© 2022 Instagram clone by</div>
-      <div class="font-august text-[1.2rem] uppercase tracking-wider text-black">Cuzknothz</div>
+      <div class="font-august text-[1.2rem] uppercase tracking-wider text-black">Cuzknothz_.</div>
     </div>
   </div>
 </template>
