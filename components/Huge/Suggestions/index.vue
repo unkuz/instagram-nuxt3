@@ -1,4 +1,10 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+onMounted(() => {
+  document.fonts.ready.then(() => {
+    console.log('FONT')
+  })
+})
+</script>
 
 <template>
   <div>

@@ -1,19 +1,11 @@
 @import './tailwind.css';
 @import './custom_scroll_bar.css';
-@font-face {
-  font-family: august;
-  src: url(602d0d76ac6fe41e789e0053_august-bold.woff2);
-}
+@import './font_face.css';
 
-@font-face {
-  font-family: quicksand;
-  src: url(../fonts/Quicksand-Medium.ttf);
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
   font-size: 15px;
-}
-
-* {
-  -webkit-tap-highlight-color: transparent;
 }
