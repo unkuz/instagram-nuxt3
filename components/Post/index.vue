@@ -185,11 +185,11 @@ const viewPost = () => {
             ></path>
           </svg>
         </div>
-        <div>
+        <div class="w-full">
           <textarea
             placeholder="Add a comment…"
             v-model="commentValueText"
-            class="m-auto block w-[290px] resize-none placeholder:text-center placeholder:text-[0.8rem] focus:outline-none md:w-[420px]"
+            class="m-auto block w-[85%] resize-none placeholder:text-center placeholder:text-[0.8rem] focus:outline-none md:w-[420px]"
           ></textarea>
         </div>
         <div class="h-[22px] w-[22px] cursor-pointer active:fill-[#00aeff]">
