@@ -13,7 +13,6 @@ const router = useRouter()
 useClickOutSide(viewPostRef, () => {
   router.back()
 })
-
 const calcHeightComment = () => {
   commentRef.value.style.height = `${
     commentContainerRef.value.clientHeight - commentHeadingRef.value.clientHeight
