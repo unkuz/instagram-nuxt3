@@ -9,7 +9,7 @@ const options = [
 </script>
 
 <template>
-  <div>
+  <div class="z-50">
     <div class="fixed inset-0 bg-black/20"></div>
     <div class="absolute bottom-0 right-1/2 w-[85%] translate-x-1/2 text-[0.8rem] sm:w-[400px]">
       <div
@@ -36,7 +36,7 @@ const options = [
         <div
           v-for="(i, idx) in options"
           :key="idx"
-          class="flex h-[60px] cursor-pointer items-center border-b-[1px] border-black/10 px-[30px] text-red-500 hover:bg-blue-300"
+          class="flex h-[60px] cursor-pointer items-center border-b-[1px] border-black/10 px-[30px] text-red-500 last:border-b-0 hover:bg-blue-300"
         >
           {{ i.name }}
         </div>
