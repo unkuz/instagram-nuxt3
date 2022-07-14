@@ -51,9 +51,8 @@ useWindowResizeCallback(calcHeightComment)
               </div>
               <div>
                 <svg
-                  @click="showMore"
                   aria-label="More Options"
-                  class="_ab6-"
+                  class="cursor-pointer"
                   color="#262626"
                   fill="#262626"
                   height="24"

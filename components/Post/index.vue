@@ -48,7 +48,7 @@ const showMore = () => {
           <svg
             @click="showMore"
             aria-label="More Options"
-            class="_8-yf5"
+            class="cursor-pointer"
             color="#262626"
             fill="#262626"
             height="24"
