@@ -21,7 +21,7 @@ useClickOutSide(moreRef, () => {
 
 <template>
   <div class="z-50">
-    <div class="fixed inset-0 bg-black/20"></div>
+    <div class="fixed inset-0 bg-black/60"></div>
     <div
       class="fixed bottom-0 right-1/2 w-[85%] translate-x-1/2 text-[0.8rem] sm:w-[400px]"
       ref="moreRef"
