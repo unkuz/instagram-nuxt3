@@ -12,6 +12,7 @@ import { useViewPostStore } from './store/viewPost'
 import Prelude from './components/Utils/Prelude.vue'
 import { usePrelude } from '~~/composables/usePrelude'
 import More from './components/Utils/More.vue'
+import { useMoreStore } from '~~/store/more'
 
 useHead({
   title: 'Instagram',
@@ -30,6 +31,7 @@ useHead({
 
 const globalStore = useGlobalStore()
 const storyStore = useStoryStore()
+const moreStore = useMoreStore()
 
 const { isShowPrelude } = usePrelude()
 const { width, height } = useResizeWindow()
@@ -37,6 +39,7 @@ const isTransition = computed(() => globalStore.getIsTransition)
 const section = computed(() => globalStore.getSection)
 const isMobile = computed(() => globalStore.getIsMobile)
 const isShowStory = computed(() => storyStore.getIsShowStory)
+const isShowMore = computed(() => moreStore.isShow)
 
 watch([width, height], () => {
   globalStore.setClientSize(width.value, height.value)
@@ -74,7 +77,7 @@ if (process.client) {
     ></div>
     <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
     <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
-    <More />
+    <More v-if="isShowMore" />
   </div>
 </template>
 <style scoped>

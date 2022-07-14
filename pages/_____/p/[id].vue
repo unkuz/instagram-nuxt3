@@ -4,12 +4,14 @@ import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
 import { APP_ROUTES } from '~~/routes'
 import { useViewPostStore } from '~~/store/viewPost'
 import { useLockScroll } from '~~/composables/useLockScroll'
+import { useMoreStore } from '~~/store/more'
 
 const viewPostRef = ref(null)
 const commentHeadingRef = ref(null)
 const commentRef = ref(null)
 const commentContainerRef = ref(null)
 const router = useRouter()
+const moreStore = useMoreStore()
 
 useLockScroll()
 
@@ -49,6 +51,7 @@ useWindowResizeCallback(calcHeightComment)
               </div>
               <div>
                 <svg
+                  @click="showMore"
                   aria-label="More Options"
                   class="_ab6-"
                   color="#262626"

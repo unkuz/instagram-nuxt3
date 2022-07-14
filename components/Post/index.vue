@@ -1,11 +1,13 @@
 <script lang="ts" setup>
 import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { APP_ROUTES } from '~~/routes'
+import { useMoreStore } from '~~/store/more'
 import { useViewPostStore } from '~~/store/viewPost'
 import Emoji from './Emoji.vue'
 
 const emojiRef = ref(null)
 const viewPostStore = useViewPostStore()
+const moreStore = useMoreStore()
 
 const router = useRouter()
 const isShowEmoji = ref(false)
@@ -24,6 +26,9 @@ useClickOutSide(emojiRef, () => {
 const viewPost = () => {
   navigateTo(`${APP_ROUTES._____}/p/jsadfhksdjf`)
 }
+const showMore = () => {
+  moreStore.setShow()
+}
 </script>
 
 <template>
@@ -41,6 +46,7 @@ const viewPost = () => {
         <!-- right -->
         <div>
           <svg
+            @click="showMore"
             aria-label="More Options"
             class="_8-yf5"
             color="#262626"

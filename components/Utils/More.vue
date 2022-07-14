@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import { useMoreStore } from '~~/store/more'
+import { useClickOutSide } from '~~/composables/useClickOutSide'
+
 const options = [
   { name: 'Block' },
   { name: 'Unfollow' },
@@ -6,12 +9,22 @@ const options = [
   { name: 'Ignore Friend Recomandation' },
   { name: 'Send Profile To...' },
 ]
+
+const moreRef = ref(null)
+const moreStore = useMoreStore()
+
+useClickOutSide(moreRef, () => {
+  moreStore.setHidden()
+})
 </script>
 
 <template>
   <div class="z-50">
     <div class="fixed inset-0 bg-black/20"></div>
-    <div class="absolute bottom-0 right-1/2 w-[85%] translate-x-1/2 text-[0.8rem] sm:w-[400px]">
+    <div
+      class="fixed bottom-0 right-1/2 w-[85%] translate-x-1/2 text-[0.8rem] sm:w-[400px]"
+      ref="moreRef"
+    >
       <div
         class="flex h-[60px] items-center justify-between rounded-[0.8rem] bg-white px-[20px] sm:px-[30px]"
       >
