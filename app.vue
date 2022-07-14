@@ -11,6 +11,7 @@ import ViewPost from './components/Huge/ViewPost/index.vue'
 import { useViewPostStore } from './store/viewPost'
 import Prelude from './components/Utils/Prelude.vue'
 import { usePrelude } from '~~/composables/usePrelude'
+import More from './components/Utils/More.vue'
 
 useHead({
   title: 'Instagram',
@@ -73,6 +74,7 @@ if (process.client) {
     ></div>
     <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
     <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
+    <More />
   </div>
 </template>
 <style scoped>
