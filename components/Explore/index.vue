@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import BigSquare from '~~/components/Explore/BigSquare.vue'
 import Square from '~~/components/Explore/Square.vue'
 
 interface IProps {
@@ -18,7 +17,7 @@ console.log(props.cluster)
       v-if="random < 1 / 3"
       class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[28px] md:gap-[28px]"
     >
-      <BigSquare :img="cluster[0]" />
+      <Square isBig :img="cluster[0]" />
       <Square :img="cluster[1]" />
       <Square :img="cluster[2]" />
     </div>
@@ -28,7 +27,7 @@ console.log(props.cluster)
       class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[28px] md:gap-[28px]"
     >
       <Square :img="cluster[0]" />
-      <BigSquare :img="cluster[1]" />
+      <Square isBig :img="cluster[1]" />
       <Square :img="cluster[2]" />
     </div>
     <div v-else class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[28px] md:gap-[28px]">
