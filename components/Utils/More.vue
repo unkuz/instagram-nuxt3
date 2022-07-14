@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useMoreStore } from '~~/store/more'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
+import { useLockScroll } from '~~/composables/useLockScroll'
 
 const options = [
   { name: 'Block' },
@@ -12,7 +13,7 @@ const options = [
 
 const moreRef = ref(null)
 const moreStore = useMoreStore()
-
+useLockScroll()
 useClickOutSide(moreRef, () => {
   moreStore.setHidden()
 })
