@@ -3,6 +3,7 @@ import HeroPagelet from '~~/components/HeroPagelet/index.vue'
 import Suggestions from '~~/components/Huge/Suggestions/index.vue'
 import Post from '~~/components/Post/index.vue'
 import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
+import Stories from '~~/components/Stories/index.vue'
 
 definePageMeta({
   layout: 'main',
@@ -27,7 +28,7 @@ onUnmounted(() => {
   <div>
     <div class="relative flex w-full justify-center lg:block">
       <div class="inline-flex w-full flex-col items-center md:w-[614px] lg:block">
-        <HeroPagelet />
+        <Stories />
         <div v-for="i in Array.from(Array(5).keys())" :key="i">
           <Post />
         </div>
