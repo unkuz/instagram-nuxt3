@@ -2,7 +2,7 @@
 import Square from '~~/components/Explore/Square.vue'
 
 interface IProps {
-  cluster: string[]
+  cluster: string[] | undefined[]
 }
 const props = defineProps<IProps>()
 

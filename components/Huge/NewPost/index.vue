@@ -16,8 +16,6 @@ const postFiles = computed(() => postStore.getFiles)
 const listBolbs = computed(() => postStore.getBlobs)
 const isHasFile = computed(() => Array.from(postFiles.value).length > 0)
 
-// useCenterElement(boxRef, inputFileRef)
-
 const currentImageSlideIdx = computed(() => {
   if (!startPointX.value) {
     return 0
@@ -82,9 +80,7 @@ const handleSlide = (indicator) => {
           class="absolute top-1/2 right-1/2 z-10 flex translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-xl border-[1px] border-gray-300"
         >
           <div
-            :class="`relative  ${
-              isHasFile ? 'w-[500px]' : 'w-[300px]'
-            }  bg-white text-[0.9rem] duration-1000`"
+            :class="`relative  ${isHasFile ? 'w-[500px]' : 'w-[300px]'}  bg-white text-[0.9rem] `"
           >
             <div class="absolute right-[12px] top-[12px]">
               <div
@@ -131,7 +127,7 @@ const handleSlide = (indicator) => {
               </div>
               <div
                 v-show="isHasFile"
-                class="inline-flex h-[750px] w-full items-center bg-black duration-300"
+                class="inline-flex h-[750px] w-full items-center bg-black duration-100"
                 ref="containerPreviewRef"
               ></div>
             </div>
