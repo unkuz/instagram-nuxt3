@@ -71,10 +71,10 @@ if (process.client) {
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-    <div
+    <!-- <div
       v-if="isTransition"
       class="absolute inset-0 z-40 flex items-center justify-center bg-violet-200 transition"
-    ></div>
+    ></div> -->
     <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
     <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
     <More v-if="isShowMore" />
