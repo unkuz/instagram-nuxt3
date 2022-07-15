@@ -29,6 +29,64 @@ const viewPost = () => {
 const showMore = () => {
   moreStore.setShow()
 }
+
+interface IProps {
+  created_at: number
+  caption_text: string
+  has_liked: boolean
+  carousel_media: {
+    images: {
+      id?: number
+      src?: string
+    }[]
+    videos: {
+      id: number
+      src: string
+    }[]
+  }
+  comments: {
+    text: string
+    created_at: number
+    user: {
+      pk: number
+      username: string
+      full_name: string
+      is_private: boolean
+      profile_pic_url: string
+    }
+    comment_like_count: number
+    reply: {
+      text: string
+      created_at: number
+      user: {
+        pk: number
+        username: string
+        full_name: string
+        is_private: boolean
+        profile_pic_url: string
+      }
+      comment_like_count: number
+    }[]
+  }[]
+  id: string
+  is_seen: boolean
+  like_count: number
+  location: {
+    short_name: string
+  }
+  user: {
+    id: string
+    username: string
+    full_name: string
+    profile_pic_url: string
+    friendship_status: {
+      following: boolean
+      outgoing_request: boolean
+    }
+  }
+}
+
+defineProps<IProps>()
 </script>
 
 <template>
@@ -39,9 +97,9 @@ const showMore = () => {
         <!-- avatar -->
         <div class="flex items-center space-x-[10px] text-[0.8rem]">
           <div class="aspect-square h-[32px] w-[32px] rounded-full border-[1px] border-gray-200">
-            <img class="rounded-full object-cover" src="/image/avatar.jpg" />
+            <img class="rounded-full object-cover" :src="user.profile_pic_url" />
           </div>
-          <div>cuzknothz</div>
+          <div>{{ user.username }}</div>
         </div>
         <!-- right -->
         <div>
@@ -65,11 +123,12 @@ const showMore = () => {
     </div>
     <!-- body -->
     <div class="relative w-full">
-      <img
-        class="aspect-square object-cover"
-        src="/explore/275624700_382008663748898_3572544032225631298_n.jpg"
-        alt=""
-      />
+      <div v-for="i in carousel_media.images" :key="i.id">
+        <img class="w-full" :src="i.src" alt="" />
+      </div>
+      <div v-for="i in carousel_media.videos" :key="i.id">
+        <video :src="i.src" autoplay muted loop class="w-full" />
+      </div>
     </div>
     <!-- bottom -->
     <div class="px-[16px] text-xs md:text-sm">
@@ -163,12 +222,14 @@ const showMore = () => {
         </div>
       </div>
       <!-- like -->
-      <div class="mb-[8px] h-[18px] font-medium">4,647 likes</div>
+      <div class="mb-[8px] h-[18px] font-medium">{{ like_count }} likes</div>
       <!-- comment -->
       <div class="mb-[4px] h-[62px]">
-        <p><span class="font-medium">kristenstewartx</span> Beautiful 😘</p>
+        <p class="overflow-hidden whitespace-nowrap">
+          <span class="font-medium">{{ user.username }}</span> {{ caption_text }}
+        </p>
         <p class="text-gray-600">... more</p>
-        <p class="text-gray-600">View all {{ '62' }} comments</p>
+        <p class="text-gray-600">View all {{ comments.length }} comments</p>
       </div>
       <!-- timer -->
       <div class="mb-[16px] h-[18px] text-gray-600">1 DAY AGO</div>
