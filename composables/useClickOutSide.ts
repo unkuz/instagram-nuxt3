@@ -1,5 +1,6 @@
 export function useClickOutSide(ref: any, callback: Function) {
   const listener = (event: MouseEvent) => {
+    event.stopPropagation()
     if (!ref.value || ref.value.contains(event.target)) {
       return
     }
