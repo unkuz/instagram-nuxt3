@@ -96,10 +96,12 @@ defineProps<IProps>()
       <div class="mx-[16px] flex h-full items-center justify-between">
         <!-- avatar -->
         <div class="flex items-center space-x-[10px] text-[0.8rem]">
-          <div class="aspect-square h-[32px] w-[32px] rounded-full border-[1px] border-gray-200">
+          <div
+            class="aspect-square h-[32px] w-[32px] cursor-pointer rounded-full border-[1px] border-gray-200"
+          >
             <img class="rounded-full object-cover" :src="user.profile_pic_url" />
           </div>
-          <div>{{ user.username }}</div>
+          <div class="cursor-pointer">{{ user.username }}</div>
         </div>
         <!-- right -->
         <div>
@@ -124,10 +126,10 @@ defineProps<IProps>()
     <!-- body -->
     <div class="relative w-full">
       <div v-for="i in carousel_media.images" :key="i.id">
-        <img class="w-full" :src="i.src" alt="" />
+        <img class="w-full cursor-pointer" :src="i.src" alt="" />
       </div>
       <div v-for="i in carousel_media.videos" :key="i.id">
-        <video :src="i.src" autoplay muted loop class="w-full" />
+        <video :src="i.src" autoplay muted loop class="w-full cursor-pointer" />
       </div>
     </div>
     <!-- bottom -->
@@ -137,7 +139,7 @@ defineProps<IProps>()
           <div class="flex h-full w-full items-center space-x-[10px]">
             <svg
               aria-label="Like"
-              class="_8-yf5"
+              class="cursor-pointer"
               color="#262626"
               fill="#262626"
               height="24"
@@ -170,7 +172,7 @@ defineProps<IProps>()
             </svg>
             <svg
               aria-label="Share Post"
-              class="_8-yf5"
+              class="cursor-pointer"
               color="#262626"
               fill="#262626"
               height="24"
@@ -200,7 +202,7 @@ defineProps<IProps>()
           <div class="flex h-full w-full items-center justify-end">
             <svg
               aria-label="Save"
-              class="_8-yf5"
+              class="cursor-pointer"
               color="#262626"
               fill="#262626"
               height="24"
@@ -222,14 +224,14 @@ defineProps<IProps>()
         </div>
       </div>
       <!-- like -->
-      <div class="mb-[8px] h-[18px] font-medium">{{ like_count }} likes</div>
+      <div class="mb-[8px] h-[18px] cursor-pointer font-medium">{{ like_count }} likes</div>
       <!-- comment -->
       <div class="mb-[4px] h-[62px]">
         <p class="overflow-hidden whitespace-nowrap">
           <span class="font-medium">{{ user.username }}</span> {{ caption_text }}
         </p>
-        <p class="text-gray-600">... more</p>
-        <p class="text-gray-600">View all {{ comments.length }} comments</p>
+        <p class="cursor-pointer text-gray-600">... more</p>
+        <p class="cursor-pointer text-gray-600">View all {{ comments.length }} comments</p>
       </div>
       <!-- timer -->
       <div class="mb-[16px] h-[18px] text-gray-600">1 DAY AGO</div>
