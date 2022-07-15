@@ -10,21 +10,21 @@
   "devDependencies": {
     "@types/lodash": "^4.14.182",
     "autoprefixer": "^10.4.5",
-    "nuxt": "^3.0.0-rc.4",
+    "nuxt": "^3.0.0-rc.5",
     "postcss": "^8.4.12",
     "prettier": "^2.6.2",
     "prettier-plugin-tailwindcss": "^0.1.10",
     "tailwindcss": "^3.1.2"
   },
   "dependencies": {
-    "@pinia/nuxt": "^0.1.8",
+    "@pinia/nuxt": "^0.3.0",
     "@types/uuid": "^8.3.4",
     "@vueuse/core": "^8.7.5",
-    "axios": "^0.27.2",
+    "axios": "^1.0.0-alpha.1",
     "file-saver": "^2.0.5",
     "gsap": "^3.10.4",
     "lodash": "^4.17.21",
-    "pinia": "^2.0.13",
+    "pinia": "^2.0.16",
     "tailwind-scrollbar-hide": "^1.1.7",
     "uuid": "^8.3.2"
   }
