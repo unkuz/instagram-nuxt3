@@ -1,9 +1,58 @@
 <script lang="ts" setup>
+import { useAuthStore } from '~~/store/auth'
+import Item from './Item.vue'
 onMounted(() => {
   document.fonts.ready.then(() => {
     console.log('FONT')
   })
 })
+
+const authStore = useAuthStore()
+
+const isFollow = ref(false)
+
+const suggests = [
+  {
+    name: 'sedtattoo',
+    avatar: '/suggest/284584637_285456953721363_220426031922693229_n.jpg',
+    id: 'sedtattoo',
+  },
+  {
+    name: 'nookke_ke',
+    avatar: '/suggest/291983943_405778434919413_2405751568009775521_n.jpg',
+    id: 'nookke_ke',
+  },
+  {
+    name: 'farelyph',
+    avatar: '/suggest/144128347_784776258788491_1358360609030238183_n.jpg',
+    id: 'farelyph',
+  },
+  {
+    name: 'kaaninggy_',
+    avatar: '/suggest/290390138_1085656348825173_8947081895696353226_n.jpg',
+    id: 'kaaninggy_',
+  },
+  {
+    name: 'gabi_the_minischnauzer',
+    avatar: '/suggest/247431843_198274605668472_397576996448622_n.jpg',
+    id: 'gabi_the_minischnauzer',
+  },
+  {
+    name: 'cryexofficial',
+    avatar: '/suggest/285178340_705143053896837_3008849651841634176_n.jpg',
+    id: 'cryexofficial',
+  },
+  {
+    name: 'elizentt',
+    avatar: '/suggest/272887264_1317711585344508_1039895395246482301_n.jpg',
+    id: 'elizentt',
+  },
+  {
+    name: 'camokr',
+    avatar: '/suggest/293329529_545430770659089_1339469674371699030_n.jpg',
+    id: 'camokr',
+  },
+]
 </script>
 
 <template>
@@ -15,7 +64,7 @@ onMounted(() => {
           data-testid="user-avatar"
           draggable="false"
           class="rounded-full sm:hover:cursor-pointer"
-          src="/image/avatar.jpg"
+          :src="authStore.avatar"
         />
       </div>
       <div class="-ml-[70px]">
@@ -32,102 +81,13 @@ onMounted(() => {
     </div>
     <!-- list -->
     <div class="mt-[8px] w-full">
-      <div class="flex h-[48px] items-center justify-between py-[8px]">
-        <div class="aspect-square w-[32px] rounded-full bg-red-200 object-cover">
-          <img
-            crossorigin="anonymous"
-            data-testid="user-avatar"
-            draggable="false"
-            class="rounded-full sm:hover:cursor-pointer"
-            src="/image/avatar.jpg"
-          />
-        </div>
-        <div class="-ml-[70px]">
-          <p class="font-medium">cuzknothz</p>
-          <p class="text-gray-600">Suggested for you</p>
-        </div>
-        <div class="text-[#1da0f6]">Follow</div>
-      </div>
-      <div class="flex h-[48px] items-center justify-between py-[8px]">
-        <div class="aspect-square w-[32px] rounded-full bg-red-200 object-cover">
-          <img
-            crossorigin="anonymous"
-            data-testid="user-avatar"
-            draggable="false"
-            class="rounded-full sm:hover:cursor-pointer"
-            src="/image/avatar.jpg"
-          />
-        </div>
-        <div class="-ml-[70px]">
-          <p class="font-medium">cuzknothz</p>
-          <p class="text-gray-600">Suggested for you</p>
-        </div>
-        <div class="text-[#1da0f6]">Follow</div>
-      </div>
-      <div class="flex h-[48px] items-center justify-between py-[8px]">
-        <div class="aspect-square w-[32px] rounded-full bg-red-200 object-cover">
-          <img
-            crossorigin="anonymous"
-            data-testid="user-avatar"
-            draggable="false"
-            class="rounded-full sm:hover:cursor-pointer"
-            src="/image/avatar.jpg"
-          />
-        </div>
-        <div class="-ml-[70px]">
-          <p class="font-medium">cuzknothz</p>
-          <p class="text-gray-600">Suggested for you</p>
-        </div>
-        <div class="text-[#1da0f6]">Follow</div>
-      </div>
-      <div class="flex h-[48px] items-center justify-between py-[8px]">
-        <div class="aspect-square w-[32px] rounded-full bg-red-200 object-cover">
-          <img
-            crossorigin="anonymous"
-            data-testid="user-avatar"
-            draggable="false"
-            class="rounded-full sm:hover:cursor-pointer"
-            src="/image/avatar.jpg"
-          />
-        </div>
-        <div class="-ml-[70px]">
-          <p class="font-medium">cuzknothz</p>
-          <p class="text-gray-600">Suggested for you</p>
-        </div>
-        <div class="text-[#1da0f6]">Follow</div>
-      </div>
-      <div class="flex h-[48px] items-center justify-between py-[8px]">
-        <div class="aspect-square w-[32px] rounded-full bg-red-200 object-cover">
-          <img
-            crossorigin="anonymous"
-            data-testid="user-avatar"
-            draggable="false"
-            class="rounded-full sm:hover:cursor-pointer"
-            src="/image/avatar.jpg"
-          />
-        </div>
-        <div class="-ml-[70px]">
-          <p class="font-medium">cuzknothz</p>
-          <p class="text-gray-600">Suggested for you</p>
-        </div>
-        <div class="text-[#1da0f6]">Follow</div>
-      </div>
-      <div class="flex h-[48px] items-center justify-between py-[8px]">
-        <div class="aspect-square w-[32px] rounded-full bg-red-200 object-cover">
-          <img
-            crossorigin="anonymous"
-            data-testid="user-avatar"
-            draggable="false"
-            class="rounded-full sm:hover:cursor-pointer"
-            src="/image/avatar.jpg"
-          />
-        </div>
-        <div class="-ml-[70px]">
-          <p class="font-medium">cuzknothz</p>
-          <p class="text-gray-600">Suggested for you</p>
-        </div>
-        <div class="text-[#1da0f6]">Follow</div>
-      </div>
+      <Item
+        v-for="{ name, avatar, id } in suggests"
+        :key="id"
+        :name="name"
+        :avatar="avatar"
+        :id="id"
+      />
     </div>
     <div class="mt-[10px]">
       <div class="flex justify-center text-gray-600">

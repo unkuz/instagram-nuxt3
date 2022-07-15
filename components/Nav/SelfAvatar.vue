@@ -1,8 +1,12 @@
 <script lang="ts" setup>
+import { useAuthStore } from '~~/store/auth'
+
 interface IconProps {
   isSelect: boolean
 }
 const props = defineProps<IconProps>()
+
+const authStore = useAuthStore()
 </script>
 
 <template>
@@ -16,7 +20,7 @@ const props = defineProps<IconProps>()
           data-testid="user-avatar"
           draggable="false"
           class="h-[24px] w-[24px] rounded-full object-cover"
-          src="/image/avatar.jpg"
+          :src="authStore.avatar"
         />
       </div>
     </div>
