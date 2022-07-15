@@ -68,6 +68,7 @@ useClickOutSide(moreRef, () => {
           </div>
         </div>
         <div
+          @click="moreStore.setHidden()"
           class="mt-[10px] flex h-[45px] cursor-pointer items-center justify-center rounded-[0.8rem] bg-white px-[30px] sm:h-[50px]"
         >
           Done
