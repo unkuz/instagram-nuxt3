@@ -34,7 +34,7 @@ useClickOutSide(moreRef, () => {
   <div class="z-50">
     <div class="fixed inset-0 bg-black/60"></div>
     <div
-      class="fixed right-1/2 -bottom-[100%] w-[85%] translate-x-1/2 text-[0.8rem] duration-500 sm:w-[400px]"
+      class="fixed right-1/2 -bottom-[100%] w-[85%] translate-x-1/2 text-[0.8rem] sm:w-[400px]"
       ref="moreRef"
     >
       <div
