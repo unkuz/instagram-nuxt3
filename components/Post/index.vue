@@ -12,6 +12,7 @@ const moreStore = useMoreStore()
 const router = useRouter()
 const isShowEmoji = ref(false)
 const commentValueText = ref('')
+const containerMediaRef = ref(null)
 
 const toggleShowEmoji = () => (isShowEmoji.value = !isShowEmoji.value)
 
@@ -124,18 +125,28 @@ defineProps<IProps>()
       </div>
     </div>
     <!-- body -->
-    <div class="relative w-full">
-      <div v-for="i in carousel_media.images" :key="i.id">
-        <img class="w-full cursor-pointer" :src="i.src" alt="" />
+    <div class="inline-flex overflow-hidden" ref="containerMediaRef">
+      <div
+        v-if="carousel_media.images"
+        v-for="i in carousel_media.images"
+        :key="i.id"
+        class="min-w-full"
+      >
+        <img class="min-h-full min-w-full cursor-pointer object-cover" :src="i.src" alt="" />
       </div>
-      <div v-for="i in carousel_media.videos" :key="i.id">
-        <video :src="i.src" autoplay muted loop class="w-full cursor-pointer" />
+      <div
+        v-if="carousel_media.videos"
+        class="min-w-full overflow-hidden"
+        v-for="i in carousel_media.videos"
+        :key="i.id"
+      >
+        <video :src="i.src" autoplay muted loop class="cursor-pointer" />
       </div>
     </div>
     <!-- bottom -->
     <div class="px-[16px] text-xs md:text-sm">
       <div class="mt-[4px] h-[54px]">
-        <div class="grid h-full grid-cols-2">
+        <div class="grid h-full grid-cols-3">
           <div class="flex h-full w-full items-center space-x-[10px]">
             <svg
               aria-label="Like"
@@ -199,6 +210,14 @@ defineProps<IProps>()
               ></polygon>
             </svg>
           </div>
+          <div class="flex items-center justify-center space-x-[4px]">
+            <div
+              v-for="i in carousel_media.images.concat(carousel_media.videos)"
+              :class="`h-[6px] w-[6px]  rounded-[50%] bg-white ${
+                true ? 'bg-[#0c8aff]' : 'bg-white'
+              }`"
+            ></div>
+          </div>
           <div class="flex h-full w-full items-center justify-end">
             <svg
               aria-label="Save"
@@ -234,7 +253,7 @@ defineProps<IProps>()
         <p class="cursor-pointer text-gray-600">View all {{ comments.length }} comments</p>
       </div>
       <!-- timer -->
-      <div class="mb-[16px] h-[18px] text-gray-600">1 DAY AGO</div>
+      <div class="mb-[16px] h-[18px] text-gray-600">{{ created_at }} DAY AGO</div>
       <div class="flex h-[50px] items-center justify-between border-gray-200 md:border-t-[1px]">
         <div class="relative" ref="emojiRef">
           <Emoji v-if="isShowEmoji" @emoji-add="emojiAdd" />

@@ -17,7 +17,7 @@ const goToAccount = () => {
 
 <template>
   <div class="flex h-[48px] items-center justify-between py-[8px]">
-    <div @click="goToAccount" class="aspect-square w-[32px] rounded-full bg-red-200 object-cover">
+    <div @click="goToAccount" class="aspect-square w-[32px] rounded-full object-cover">
       <img
         crossorigin="anonymous"
         data-testid="user-avatar"
