@@ -22,6 +22,7 @@
     "@vueuse/core": "^8.7.5",
     "axios": "^0.27.2",
     "file-saver": "^2.0.5",
+    "gsap": "^3.10.4",
     "lodash": "^4.17.21",
     "pinia": "^2.0.13",
     "tailwind-scrollbar-hide": "^1.1.7",

@@ -2,7 +2,7 @@
 import { useMoreStore } from '~~/store/more'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { useLockScroll } from '~~/composables/useLockScroll'
-
+import gsap from 'gsap'
 const options = [
   { name: 'Block' },
   { name: 'Unfollow' },
@@ -11,9 +11,20 @@ const options = [
   { name: 'Send Profile To...' },
 ]
 
+const isShowMore = computed(() => moreStore.isShow)
+
 const moreRef = ref(null)
+
 const moreStore = useMoreStore()
 useLockScroll()
+
+onMounted(() => {
+  gsap.to(moreRef.value, {
+    bottom: 0,
+    duration: 0.2,
+  })
+})
+
 useClickOutSide(moreRef, () => {
   moreStore.setHidden()
 })
@@ -23,7 +34,7 @@ useClickOutSide(moreRef, () => {
   <div class="z-50">
     <div class="fixed inset-0 bg-black/60"></div>
     <div
-      class="fixed bottom-0 right-1/2 w-[85%] translate-x-1/2 text-[0.8rem] sm:w-[400px]"
+      class="fixed right-1/2 -bottom-[100%] w-[85%] translate-x-1/2 text-[0.8rem] duration-500 sm:w-[400px]"
       ref="moreRef"
     >
       <div
