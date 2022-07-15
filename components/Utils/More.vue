@@ -16,7 +16,7 @@ const isShowMore = computed(() => moreStore.isShow)
 const moreRef = ref(null)
 
 const moreStore = useMoreStore()
-useLockScroll()
+// useLockScroll()
 
 onMounted(() => {
   gsap.to(moreRef.value, {
