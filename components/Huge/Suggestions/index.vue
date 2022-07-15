@@ -158,7 +158,7 @@ onMounted(() => {
         </div>
       </a>
     </div>
-    <div class="mt-[10px] flex flex-col items-center space-y-2 text-gray-500">
+    <!-- <div class="mt-[10px] flex flex-col items-center space-y-2 text-gray-500">
       <div>Technology using</div>
       <div class="flex justify-center space-x-[10px]">
         <a href="https://vuejs.org/" target="_blank" title="VueJS">
@@ -334,6 +334,6 @@ onMounted(() => {
           </svg>
         </a>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
