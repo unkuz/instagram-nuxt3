@@ -11,7 +11,7 @@ defineProps<IProps>()
 <template>
   <div
     @click="navigateTo(`/${id}`)"
-    class="mx-[10px] inline-block max-w-[74px] select-none overflow-hidden text-ellipsis whitespace-nowrap sm:cursor-pointer"
+    class="mx-[8px] inline-block max-w-[74px] select-none overflow-hidden text-ellipsis whitespace-nowrap sm:cursor-pointer"
   >
     <div
       class="mx-auto flex aspect-square h-[66px] w-[66px] flex-col items-center overflow-hidden rounded-[50%] bg-gradient-to-bl from-[#c42d91] to-[#f99d4c] p-[3px]"
