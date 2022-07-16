@@ -10,6 +10,7 @@ import MutedIcon_ from '~~/assets/svg/muted_icon.svg'
 import UnMutedIcon_ from '~~/assets/svg/un_muted_icon.svg'
 import MenuIcon_ from '~~/assets/svg/menu_icon.svg'
 
+const router = useRouter()
 const barRef = ref(null)
 const containerBar = ref(null)
 const videoRef = ref(null)
@@ -18,18 +19,22 @@ const mediaContainerRef = ref(null)
 const isVideoPlay = ref(false)
 const isVideoMuted = ref(true)
 
-useLockScroll()
+// useLockScroll()
 
 useClickOutSide(mediaContainerRef, () => {
-  navigateTo(APP_ROUTES._____)
+  router.back()
 })
 
 const keyCodeBehaviour = (e) => {
   console.log(e.charCode)
   if (e.charCode === 32) {
     togglePlay()
-  } else if (e.charCode === 13) {
-    navigateTo(APP_ROUTES._____)
+  }
+  if (e.charCode === 13) {
+    router.back()
+  }
+  if (e.charCode === 109) {
+    toggleMuted()
   }
 }
 
