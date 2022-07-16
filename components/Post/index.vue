@@ -13,6 +13,7 @@ import { APP_ROUTES } from '~~/routes'
 import { useMoreStore } from '~~/store/more'
 import { useViewPostDetailStore } from '~~/store/viewPostDetail'
 import Emoji from './Emoji.vue'
+import { isEllipsisActive } from '~~/utils/ellipsText'
 
 export interface IProps {
   created_at: number
@@ -72,8 +73,14 @@ export interface IProps {
 
 const props = defineProps<IProps>()
 const emojiRef = ref(null)
+const captionRef = ref<HTMLParagraphElement>(null)
 const moreStore = useMoreStore()
 const viewPostDetailStore = useViewPostDetailStore()
+const isCaptionEllips = ref(false)
+
+watch(captionRef, () => {
+  isCaptionEllips.value = isEllipsisActive(captionRef)
+})
 
 const router = useRouter()
 const isShowEmoji = ref(false)
@@ -184,10 +191,17 @@ const showMore = () => {
       </div>
       <div class="mb-[8px] h-[18px] cursor-pointer font-medium">{{ like_count }} likes</div>
       <div :class="`mb-[4px] ${isShowMore ? ' ' : 'h-[62px]'}`">
-        <p :class="`overflow-hidden ${isShowMore ? ' ' : 'whitespace-nowrap'}`">
+        <p
+          :class="`overflow-hidden text-ellipsis ${isShowMore ? ' ' : 'whitespace-nowrap'}`"
+          ref="captionRef"
+        >
           <span class="font-medium">{{ user.username }}</span> {{ caption_text }}
         </p>
-        <p v-if="!isShowMore" class="cursor-pointer text-gray-600" @click="isShowMore = true">
+        <p
+          v-if="!isShowMore && isCaptionEllips"
+          class="cursor-pointer text-gray-600"
+          @click="isShowMore = true"
+        >
           ... more
         </p>
         <p class="cursor-pointer text-gray-600">View all {{ comments.length }} comments</p>
