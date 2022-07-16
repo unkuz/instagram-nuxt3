@@ -11,6 +11,7 @@ import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { APP_ROUTES } from '~~/routes'
 import { useMoreStore } from '~~/store/more'
 import Emoji from './Emoji.vue'
+import ArrowIcon_ from '~~/assets/svg/arrow_icon.svg'
 
 export interface IProps {
   created_at: number
@@ -134,8 +135,19 @@ defineProps<IProps>()
           <video :src="i.src" autoplay muted loop class="cursor-pointer" />
         </div>
       </div>
-      <div class="absolute left-5 top-[50%]" @click="prev">Prev</div>
-      <div class="absolute right-5 top-[50%]" @click="next">Next</div>
+      <div
+        class="absolute left-5 top-[50%] flex h-[22px] w-[22px] -translate-y-1/2 items-center justify-center rounded-full bg-black/20"
+        @click="prev"
+      >
+        <ArrowIcon_ class="h-[12px] w-[12px] rotate-180" />
+      </div>
+
+      <div
+        class="absolute right-5 top-[50%] flex h-[22px] w-[22px] -translate-y-1/2 items-center justify-center rounded-full bg-black/20"
+        @click="next"
+      >
+        <ArrowIcon_ class="h-[12px] w-[12px]" />
+      </div>
     </div>
 
     <div class="px-[16px] text-xs md:text-sm">
