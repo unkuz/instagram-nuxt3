@@ -28,6 +28,7 @@
     "pinia": "^2.0.16",
     "ramda": "^0.28.0",
     "rxjs": "^7.5.6",
-    "tailwind-scrollbar-hide": "^1.1.7"
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "vite-svg-loader": "^3.4.0"
   }
 }

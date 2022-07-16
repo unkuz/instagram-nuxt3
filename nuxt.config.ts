@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from 'nuxt'
+import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
   css: ['~/assets/css/index.css'],
@@ -19,5 +20,8 @@ export default defineNuxtConfig({
       { hid: 'apple-touch-icon', rel: 'apple-touch-icon', href: '/icon-192x192.png' },
       { rel: 'manifest', href: '/manifest.json' },
     ],
+  },
+  vite: {
+    plugins: [svgLoader({})],
   },
 })
