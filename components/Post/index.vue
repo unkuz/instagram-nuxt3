@@ -9,6 +9,7 @@ import ViewPostIcon_ from '~~/assets/svg/view_post_icon.svg'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { APP_ROUTES } from '~~/routes'
 import { useMoreStore } from '~~/store/more'
+import { useCarousel } from '~~/composables/useCarousel'
 import Emoji from './Emoji.vue'
 
 const emojiRef = ref(null)
@@ -19,13 +20,7 @@ const isShowEmoji = ref(false)
 const commentValueText = ref('')
 const containerMediaRef = ref<HTMLDivElement>(null)
 
-onMounted(() => {
-  setTimeout(() => {
-    containerMediaRef.value.style.transform = `translateX(-${
-      containerMediaRef.value.getClientRects()[0].width
-    }px)`
-  }, 1000)
-})
+const { next, prev } = useCarousel(containerMediaRef)
 
 const toggleShowEmoji = () => (isShowEmoji.value = !isShowEmoji.value)
 
@@ -120,7 +115,7 @@ defineProps<IProps>()
         </div>
       </div>
     </div>
-    <div class="overflow-hidden">
+    <div class="relative overflow-hidden">
       <div class="inline-flex duration-200" ref="containerMediaRef">
         <div
           v-if="carousel_media.images"
@@ -139,6 +134,8 @@ defineProps<IProps>()
           <video :src="i.src" autoplay muted loop class="cursor-pointer" />
         </div>
       </div>
+      <div class="absolute left-5 top-[50%]" @click="prev">Prev</div>
+      <div class="absolute right-5 top-[50%]" @click="next">Next</div>
     </div>
 
     <div class="px-[16px] text-xs md:text-sm">
