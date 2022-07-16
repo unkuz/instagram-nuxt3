@@ -98,14 +98,25 @@ useWindowResizeCallback(calcHeightComment)
 <template>
   <div class="text-[0.8rem]">
     <BackDrop>
+      <div v-if="!post"></div>
       <div
+        v-else
         ref="viewPostRef"
-        class="flex h-screen overflow-hidden bg-fuchsia-300 duration-500 md:h-[800px] md:w-full xl:w-[1000px]"
+        class="flex h-screen overflow-hidden duration-500 md:h-[800px] md:w-full xl:w-[1000px]"
       >
         <div class="hidden md:block md:flex-1">
           <img
-            :src="post.carousel_media.images[0].src"
+            v-for="i in post.carousel_media.images"
+            :src="i.src"
             alt=""
+            class="h-full w-full object-cover object-center"
+          />
+          <video
+            v-for="i in post.carousel_media.videos"
+            :src="i.src"
+            alt=""
+            muted
+            autoplay
             class="h-full w-full object-cover object-center"
           />
         </div>
