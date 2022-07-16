@@ -79,6 +79,7 @@ const router = useRouter()
 const isShowEmoji = ref(false)
 const commentValueText = ref('')
 const containerMediaRef = ref<HTMLDivElement>(null)
+const isShowMore = ref(false)
 
 const { next, prev, current } = useCarousel(containerMediaRef)
 
@@ -182,11 +183,13 @@ const showMore = () => {
         </div>
       </div>
       <div class="mb-[8px] h-[18px] cursor-pointer font-medium">{{ like_count }} likes</div>
-      <div class="mb-[4px] h-[62px]">
-        <p class="overflow-hidden whitespace-nowrap">
+      <div :class="`mb-[4px] ${isShowMore ? ' ' : 'h-[62px]'}`">
+        <p :class="`overflow-hidden ${isShowMore ? ' ' : 'whitespace-nowrap'}`">
           <span class="font-medium">{{ user.username }}</span> {{ caption_text }}
         </p>
-        <p class="cursor-pointer text-gray-600">... more</p>
+        <p v-if="!isShowMore" class="cursor-pointer text-gray-600" @click="isShowMore = true">
+          ... more
+        </p>
         <p class="cursor-pointer text-gray-600">View all {{ comments.length }} comments</p>
       </div>
       <div class="mb-[16px] h-[18px] text-gray-600">{{ created_at }} DAY AGO</div>
