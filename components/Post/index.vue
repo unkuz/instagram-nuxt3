@@ -17,7 +17,15 @@ const moreStore = useMoreStore()
 const router = useRouter()
 const isShowEmoji = ref(false)
 const commentValueText = ref('')
-const containerMediaRef = ref(null)
+const containerMediaRef = ref<HTMLDivElement>(null)
+
+onMounted(() => {
+  setTimeout(() => {
+    containerMediaRef.value.style.transform = `translateX(-${
+      containerMediaRef.value.getClientRects()[0].width
+    }px)`
+  }, 1000)
+})
 
 const toggleShowEmoji = () => (isShowEmoji.value = !isShowEmoji.value)
 
@@ -112,24 +120,27 @@ defineProps<IProps>()
         </div>
       </div>
     </div>
-    <div class="inline-flex overflow-hidden" ref="containerMediaRef">
-      <div
-        v-if="carousel_media.images"
-        v-for="i in carousel_media.images"
-        :key="i.id"
-        class="min-w-full"
-      >
-        <img class="min-h-full min-w-full cursor-pointer object-cover" :src="i.src" alt="" />
-      </div>
-      <div
-        v-if="carousel_media.videos"
-        class="min-w-full overflow-hidden"
-        v-for="i in carousel_media.videos"
-        :key="i.id"
-      >
-        <video :src="i.src" autoplay muted loop class="cursor-pointer" />
+    <div class="overflow-hidden">
+      <div class="inline-flex duration-200" ref="containerMediaRef">
+        <div
+          v-if="carousel_media.images"
+          v-for="i in carousel_media.images"
+          :key="i.id"
+          class="min-w-full"
+        >
+          <img class="min-h-full min-w-full cursor-pointer object-cover" :src="i.src" alt="" />
+        </div>
+        <div
+          v-if="carousel_media.videos"
+          class="min-w-full overflow-hidden"
+          v-for="i in carousel_media.videos"
+          :key="i.id"
+        >
+          <video :src="i.src" autoplay muted loop class="cursor-pointer" />
+        </div>
       </div>
     </div>
+
     <div class="px-[16px] text-xs md:text-sm">
       <div class="mt-[4px] h-[54px]">
         <div class="grid h-full grid-cols-3">
