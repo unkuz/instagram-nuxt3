@@ -1,0 +1,15 @@
+<svg
+                  aria-label="Menu"
+                  class="cursor-pointer"
+                  color="#ffffff"
+                  fill="#ffffff"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M12 9.75A2.25 2.25 0 1014.25 12 2.25 2.25 0 0012 9.75zm-6 0A2.25 2.25 0 108.25 12 2.25 2.25 0 006 9.75zm12 0A2.25 2.25 0 1020.25 12 2.25 2.25 0 0018 9.75z"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
