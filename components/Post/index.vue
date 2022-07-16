@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import ArrowIcon_ from '~~/assets/svg/arrow_icon.svg'
 import DirectIcon_ from '~~/assets/svg/direct_icon.svg'
 import EmojiIcon_ from '~~/assets/svg/emoji_icon.svg'
 import LikeIcon_ from '~~/assets/svg/like_icon.svg'
@@ -11,7 +12,6 @@ import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { APP_ROUTES } from '~~/routes'
 import { useMoreStore } from '~~/store/more'
 import Emoji from './Emoji.vue'
-import ArrowIcon_ from '~~/assets/svg/arrow_icon.svg'
 
 export interface IProps {
   created_at: number
@@ -69,6 +69,7 @@ export interface IProps {
   }
 }
 
+const props = defineProps<IProps>()
 const emojiRef = ref(null)
 const moreStore = useMoreStore()
 
@@ -80,6 +81,9 @@ const containerMediaRef = ref<HTMLDivElement>(null)
 const { next, prev, current } = useCarousel(containerMediaRef)
 
 const toggleShowEmoji = () => (isShowEmoji.value = !isShowEmoji.value)
+const totalMedia = computed(
+  () => props.carousel_media.images.concat(props.carousel_media.videos).length
+)
 
 const emojiAdd = (value) => {
   commentValueText.value += value
@@ -95,8 +99,6 @@ const viewPost = () => {
 const showMore = () => {
   moreStore.setShow()
 }
-
-defineProps<IProps>()
 </script>
 
 <template>
@@ -147,6 +149,11 @@ defineProps<IProps>()
         @click="next"
       >
         <ArrowIcon_ class="h-[12px] w-[12px]" />
+      </div>
+      <div
+        class="absolute top-[20px] right-[20px] rounded-full bg-black/50 px-[8px] py-[2px] text-[0.8rem] text-white"
+      >
+        {{ `${current + 1}/${totalMedia}` }}
       </div>
     </div>
 
