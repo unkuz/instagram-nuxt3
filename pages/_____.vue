@@ -2,12 +2,14 @@
 import Suggestions from '~~/components/Huge/Suggestions/index.vue'
 import Post from '~~/components/Post/index.vue'
 import Stories from '~~/components/Stories/index.vue'
-import { timeLine } from '~~/mocks/reelTimeLine'
+import { useTimeLineStore } from '~~/store/timeline'
 
 definePageMeta({
   layout: 'main',
 })
 const rightRef = ref<HTMLElement>(null)
+const timeLineStore = useTimeLineStore()
+const timeline = computed(() => timeLineStore.timeline)
 
 const positionRight = () => {
   rightRef.value.style.top = `${window.scrollY}px`
@@ -40,7 +42,7 @@ onUnmounted(() => {
             location,
             created_at,
             user,
-          } in timeLine"
+          } in timeline"
           :key="id"
           :caption_text="caption_text"
           :has_liked="has_liked"

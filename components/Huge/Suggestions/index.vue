@@ -1,16 +1,18 @@
 <script lang="ts" setup>
 import { useAuthStore } from '~~/store/auth'
+import { useSuggestionStore } from '~~/store/suggestion'
 import Item from './Item.vue'
-import { suggests } from '~~/mocks/suggets'
+
+const authStore = useAuthStore()
+const suggestionStore = useSuggestionStore()
+
+const suggestion = computed(() => suggestionStore.suggestion)
+
 onMounted(() => {
   document.fonts.ready.then(() => {
     console.log('FONT')
   })
 })
-
-const authStore = useAuthStore()
-
-const isFollow = ref(false)
 </script>
 
 <template>
@@ -40,7 +42,7 @@ const isFollow = ref(false)
     <!-- list -->
     <div class="mt-[8px] w-full">
       <Item
-        v-for="{ name, avatar, id } in suggests"
+        v-for="{ name, avatar, id } in suggestion"
         :key="id"
         :name="name"
         :avatar="avatar"

@@ -1,8 +1,12 @@
 <script lang="ts" setup>
 import { onMounted } from 'vue'
 import { SIZE_HERO_PAGELET } from '~~/constants/mock'
+import { useStoriesStore } from '~~/store/stories'
 import Story from './Story.vue'
-import { stories } from '~~/mocks/stories'
+
+const storiesStore = useStoriesStore()
+
+const stories = computed(() => storiesStore.stories)
 
 const heroPageletRef = ref<HTMLElement>(null)
 const startPointX = ref(0)
