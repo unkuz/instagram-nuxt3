@@ -11,6 +11,7 @@ import { useCarousel } from '~~/composables/useCarousel'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { APP_ROUTES } from '~~/routes'
 import { useMoreStore } from '~~/store/more'
+import { useViewPostDetailStore } from '~~/store/viewPostDetail'
 import Emoji from './Emoji.vue'
 
 export interface IProps {
@@ -72,6 +73,7 @@ export interface IProps {
 const props = defineProps<IProps>()
 const emojiRef = ref(null)
 const moreStore = useMoreStore()
+const viewPostDetailStore = useViewPostDetailStore()
 
 const router = useRouter()
 const isShowEmoji = ref(false)
@@ -94,7 +96,8 @@ useClickOutSide(emojiRef, () => {
 })
 
 const viewPost = () => {
-  navigateTo(`${APP_ROUTES._____}/p/jsadfhksdjf`)
+  viewPostDetailStore.setPostDetail(props.id)
+  navigateTo(`${APP_ROUTES._____}/p/${props.id}`)
 }
 const showMore = () => {
   moreStore.setShow()
