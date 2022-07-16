@@ -71,7 +71,11 @@ interface TimeLine {
 }
 
 const post = computed(() => viewPostDetailStore.post)
-// useLockScroll()
+const hasErr = computed(() => viewPostDetailStore.hasErr)
+
+watch(hasErr, () => {
+  navigateTo('/errror/404')
+})
 
 useClickOutSide(viewPostRef, () => {
   router.back()

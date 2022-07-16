@@ -73,6 +73,9 @@ const actions = {
   setPostDetail(id: string) {
     const timeLineStore = useTimeLineStore()
     this.post = timeLineStore.timeline.find((i) => i.id === id)
+    if (!this.post) {
+      this.hasErr = true
+    }
   },
 }
 
