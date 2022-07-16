@@ -5,8 +5,9 @@ import BackDrop from '~~/components/Utils/BackDrop.vue'
 import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
 import { useMoreStore } from '~~/store/more'
 import { useViewPostDetailStore } from '~~/store/viewPostDetail'
+import { gsap } from 'gsap'
 
-const viewPostRef = ref(null)
+const viewPostRef = ref<HTMLElement>(null)
 const commentHeadingRef = ref(null)
 const commentRef = ref(null)
 const commentContainerRef = ref(null)
@@ -92,6 +93,13 @@ const calcHeightComment = () => {
   }px`
 }
 
+onMounted(() => {
+  gsap.to(viewPostRef.value, {
+    bottom: 0,
+    duration: 0.2,
+  })
+})
+
 useWindowResizeCallback(calcHeightComment)
 </script>
 
@@ -102,9 +110,9 @@ useWindowResizeCallback(calcHeightComment)
       <div
         v-else
         ref="viewPostRef"
-        class="flex h-screen overflow-hidden duration-500 md:h-[800px] md:w-full xl:w-[1000px]"
+        class="fixed -bottom-[100%] flex h-screen flex-col overflow-hidden md:h-[800px] md:w-full lg:flex-row xl:w-[1000px]"
       >
-        <div class="hidden md:block md:flex-1">
+        <div class="md:block md:flex-1 lg:hidden">
           <img
             v-for="i in post.carousel_media.images"
             :src="i.src"

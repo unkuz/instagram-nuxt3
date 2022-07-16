@@ -145,7 +145,7 @@ const showMore = () => {
           v-for="i in carousel_media.videos"
           :key="i.id"
         >
-          <video :src="i.src" autoplay muted loop class="cursor-pointer" />
+          <video :src="i.src" loop class="cursor-pointer" />
         </div>
       </div>
       <div
@@ -192,7 +192,9 @@ const showMore = () => {
       <div class="mb-[8px] h-[18px] cursor-pointer font-medium">{{ like_count }} likes</div>
       <div :class="`mb-[4px] ${isShowMore ? ' ' : 'h-[62px]'}`">
         <p
-          :class="`overflow-hidden text-ellipsis ${isShowMore ? ' ' : 'whitespace-nowrap'}`"
+          :class="`overflow-hidden text-ellipsis hover:select-all ${
+            isShowMore ? ' ' : 'whitespace-nowrap'
+          }`"
           ref="captionRef"
         >
           <span class="font-medium">{{ user.username }}</span> {{ caption_text }}

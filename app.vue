@@ -9,6 +9,7 @@ import NewPostMobile from './components/Huge/NewPostMobile/index.vue'
 import More from './components/Utils/More.vue'
 import Prelude from './components/Utils/Prelude.vue'
 import { useStoryStore } from './store/story'
+import ProgressBar from './components/Utils/ProgressBar.vue'
 
 useHead({
   title: 'Instagram',
@@ -62,7 +63,7 @@ if (process.client) {
 </script>
 
 <template>
-  <div class="font-quicksan">
+  <div class="font-quicksan selection:bg-[#339cff] selection:text-[#339cff]">
     <Prelude v-if="isShowPrelude" />
     <NuxtLayout>
       <NuxtPage />
@@ -74,6 +75,7 @@ if (process.client) {
     <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
     <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
     <More v-if="isShowMore" />
+    <ProgressBar />
   </div>
 </template>
 <style scoped>
