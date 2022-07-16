@@ -1,8 +1,10 @@
-export const useCarousel = (containerMediaRef) => {
+import { Ref } from 'nuxt/dist/app/compat/capi'
+
+export const useCarousel = (containerMediaRef: Ref<HTMLDivElement>) => {
   const currentIndex = ref(0)
   watch(currentIndex, (idx) => {
     containerMediaRef.value.style.transform = `translateX(${
-      -containerMediaRef.value.getClientRects()[0].width * idx
+      -containerMediaRef.value.offsetWidth * idx
     }px)`
   })
   const next = () => {
