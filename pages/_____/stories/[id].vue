@@ -100,7 +100,6 @@ const togglePlay = () => {
         >
           <PlayIcon_ />
         </div>
-        <!-- top -->
         <div class="mx-auto w-[90%] sm:w-[445px]">
           <div class="mt-[25px] flex w-full justify-between space-x-2">
             <div class="relative h-[2px] w-full bg-[#c2c2c2]" ref="containerBar">
