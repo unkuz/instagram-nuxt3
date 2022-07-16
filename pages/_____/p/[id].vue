@@ -13,7 +13,7 @@ const commentContainerRef = ref(null)
 const router = useRouter()
 const moreStore = useMoreStore()
 
-useLockScroll()
+// useLockScroll()
 
 useClickOutSide(viewPostRef, () => {
   router.back()
