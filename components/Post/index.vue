@@ -76,7 +76,7 @@ const isShowEmoji = ref(false)
 const commentValueText = ref('')
 const containerMediaRef = ref<HTMLDivElement>(null)
 
-const { next, prev } = useCarousel(containerMediaRef)
+const { next, prev, current } = useCarousel(containerMediaRef)
 
 const toggleShowEmoji = () => (isShowEmoji.value = !isShowEmoji.value)
 
@@ -148,9 +148,9 @@ defineProps<IProps>()
           </div>
           <div class="flex items-center justify-center space-x-[4px]">
             <div
-              v-for="i in carousel_media.images.concat(carousel_media.videos)"
+              v-for="(i, idx) in carousel_media.images.concat(carousel_media.videos)"
               :class="`h-[6px] w-[6px]  rounded-[50%] bg-white ${
-                true ? 'bg-[#0c8aff]' : 'bg-white'
+                current === idx ? 'bg-[#0c8aff]' : 'bg-[#535353]'
               }`"
             ></div>
           </div>
