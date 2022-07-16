@@ -10,7 +10,7 @@ defineProps<IProps>()
 
 <template>
   <div
-    @click="navigateTo(`/${id}`)"
+    @click="navigateTo(`/_____/stories/${id}`)"
     class="mx-[8px] inline-block max-w-[74px] select-none overflow-hidden text-ellipsis whitespace-nowrap sm:cursor-pointer"
   >
     <div
