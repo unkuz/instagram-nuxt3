@@ -1,5 +1,12 @@
 import { defineStore } from 'pinia'
 import { timeLine } from '~~/mocks/reelTimeLine'
+import { TimeLine } from '~~/models/timline'
+
+interface TimeLineState {
+  timeline: TimeLine[]
+  hasErr: boolean
+  error: {}
+}
 
 const state = () => ({
   timeline: [...timeLine],

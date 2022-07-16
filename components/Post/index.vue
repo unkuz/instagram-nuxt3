@@ -6,10 +6,11 @@ import MoreIcon_ from '~~/assets/svg/more_icon.svg'
 import SaveIcon_ from '~~/assets/svg/save_icon.svg'
 import ShareIcon_ from '~~/assets/svg/share_icon.svg'
 import ViewPostIcon_ from '~~/assets/svg/view_post_icon.svg'
+import { useCarousel } from '~~/composables/useCarousel'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
+import { TimeLine } from '~~/models/timline'
 import { APP_ROUTES } from '~~/routes'
 import { useMoreStore } from '~~/store/more'
-import { useCarousel } from '~~/composables/useCarousel'
 import Emoji from './Emoji.vue'
 
 const emojiRef = ref(null)
@@ -39,63 +40,7 @@ const showMore = () => {
   moreStore.setShow()
 }
 
-interface IProps {
-  created_at: number
-  caption_text: string
-  has_liked: boolean
-  carousel_media: {
-    images: {
-      id?: number
-      src?: string
-    }[]
-    videos: {
-      id: number
-      src: string
-    }[]
-  }
-  comments: {
-    text: string
-    created_at: number
-    user: {
-      pk: number
-      username: string
-      full_name: string
-      is_private: boolean
-      profile_pic_url: string
-    }
-    comment_like_count: number
-    reply: {
-      text: string
-      created_at: number
-      user: {
-        pk: number
-        username: string
-        full_name: string
-        is_private: boolean
-        profile_pic_url: string
-      }
-      comment_like_count: number
-    }[]
-  }[]
-  id: string
-  is_seen: boolean
-  like_count: number
-  location: {
-    short_name: string
-  }
-  user: {
-    id: string
-    username: string
-    full_name: string
-    profile_pic_url: string
-    friendship_status: {
-      following: boolean
-      outgoing_request: boolean
-    }
-  }
-}
-
-defineProps<IProps>()
+defineProps<TimeLine>()
 </script>
 
 <template>
