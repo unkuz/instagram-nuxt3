@@ -130,7 +130,7 @@ const showMore = () => {
       </div>
     </div>
     <div class="relative overflow-hidden">
-      <div class="inline-flex duration-200" ref="containerMediaRef">
+      <div class="inline-flex" ref="containerMediaRef">
         <div
           v-if="carousel_media.images"
           v-for="i in carousel_media.images"

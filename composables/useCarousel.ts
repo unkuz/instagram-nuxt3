@@ -1,3 +1,4 @@
+import { gsap } from 'gsap'
 import { Ref } from 'nuxt/dist/app/compat/capi'
 import { useGlobalStore } from '~~/store/global'
 
@@ -11,9 +12,10 @@ export const useCarousel = (containerMediaRef: Ref<HTMLDivElement>) => {
   const timer = ref(0)
 
   watch(current, (idx) => {
-    containerMediaRef.value.style.transform = `translateX(${
-      -containerMediaRef.value.offsetWidth * idx
-    }px)`
+    gsap.to(containerMediaRef.value, {
+      transform: `translateX(${-containerMediaRef.value.offsetWidth * idx}px)`,
+      duration: 0.2,
+    })
   })
   const next = () => {
     current.value += 1
