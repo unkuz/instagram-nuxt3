@@ -3,7 +3,6 @@ import ArrowIcon_ from '~~/assets/svg/arrow_icon.svg'
 import { useCarousel } from '~~/composables/useCarousel'
 import { useDoubleClick } from '~~/composables/useDoubleClick'
 import { useTimeLineStore } from '~~/store/timeline'
-import UnlikeIcon from '../Tiny/UnlikeIcon.vue'
 import Unlike from './Unlike.vue'
 
 interface IProps {
@@ -12,21 +11,14 @@ interface IProps {
   has_liked: boolean
   id: string
 }
-const emit = defineEmits(['currentIndexCarousel'])
-
 const props = defineProps<IProps>()
-
-const containerMediaRef = ref<HTMLDivElement>(null)
-const unlikeRef = ref<HTMLDivElement>(null)
-
+const emit = defineEmits(['currentIndexCarousel'])
 const timelineStore = useTimeLineStore()
-
+const containerMediaRef = ref<HTMLDivElement>(null)
 const toggleLike = () => {
   timelineStore.setToggleLikePost(props.id)
 }
-
 useDoubleClick(containerMediaRef, () => {}, toggleLike)
-
 const { next, prev, current } = useCarousel(containerMediaRef)
 
 watch(current, (idx) => {
