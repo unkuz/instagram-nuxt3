@@ -6,14 +6,14 @@ export const useDoubleClick = (ref: Ref<HTMLElement>, click: () => void, dblclic
   const _click = (event) => {
     if (event.detail === 1) {
       timer = setTimeout(() => {
-        console.log('click')
+        click()
       }, 200)
     }
   }
 
   const _dbclick = (event) => {
     clearTimeout(timer)
-    console.log('dblclick')
+    dblclick()
   }
 
   onMounted(() => {

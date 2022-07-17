@@ -77,6 +77,8 @@ const mediaArr = computed(() => props.carousel_media.images.concat(props.carouse
       :images="carousel_media.images"
       :videos="carousel_media.videos"
       @current-index-carousel="setCurrent($event)"
+      :has_liked="has_liked"
+      :id="id"
     />
 
     <div class="px-[16px] text-xs md:text-sm">

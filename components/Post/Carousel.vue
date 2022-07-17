@@ -2,22 +2,30 @@
 import ArrowIcon_ from '~~/assets/svg/arrow_icon.svg'
 import { useCarousel } from '~~/composables/useCarousel'
 import { useDoubleClick } from '~~/composables/useDoubleClick'
+import { useTimeLineStore } from '~~/store/timeline'
+import UnlikeIcon from '../Tiny/UnlikeIcon.vue'
+import Unlike from './Unlike.vue'
 
 interface IProps {
   images: any
   videos: any
+  has_liked: boolean
+  id: string
 }
 const emit = defineEmits(['currentIndexCarousel'])
 
 const props = defineProps<IProps>()
 
 const containerMediaRef = ref<HTMLDivElement>(null)
+const unlikeRef = ref<HTMLDivElement>(null)
 
-useDoubleClick(
-  containerMediaRef,
-  () => {},
-  () => {}
-)
+const timelineStore = useTimeLineStore()
+
+const toggleLike = () => {
+  timelineStore.setToggleLikePost(props.id)
+}
+
+useDoubleClick(containerMediaRef, () => {}, toggleLike)
 
 const { next, prev, current } = useCarousel(containerMediaRef)
 
@@ -46,9 +54,10 @@ const totalMedia = computed(() => props.images.concat(props.videos).length)
       <ArrowIcon_ />
     </div>
     <div
-      class="absolute top-[20px] right-[20px] rounded-full bg-black/50 px-[8px] py-[2px] text-[0.8rem] text-white"
+      class="absolute top-[20px] right-[20px] flex min-w-[40px] justify-center rounded-full bg-black/50 px-[8px] py-[3px] text-[0.8rem] text-white"
     >
-      {{ `${current + 1}/${totalMedia}` }}
+      <span>{{ `${current + 1}/${totalMedia}` }}</span>
     </div>
+    <Unlike v-if="has_liked" />
   </div>
 </template>
