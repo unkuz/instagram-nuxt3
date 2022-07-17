@@ -31,7 +31,7 @@ const totalMedia = computed(() => props.images.concat(props.videos).length)
 
 <template>
   <div class="relative overflow-hidden">
-    <div class="inline-flex cursor-grab select-none" ref="containerMediaRef">
+    <div class="inline-flex cursor-grab select-none active:cursor-grabbing" ref="containerMediaRef">
       <div v-if="images" v-for="i in images" :key="i.id" class="min-w-full">
         <img class="min-h-full min-w-full object-cover" draggable="false" :src="i.src" alt="" />
       </div>
