@@ -1,54 +1,67 @@
 <script lang="ts" setup>
-const customScrollBarRef = ref(null)
-const dragYStart = ref(0)
-const dragYEnd = ref(0)
+import { gsap } from 'gsap'
+
+const customScrollBarRef = ref<HTMLDivElement>(null)
+
+const startY = ref(0)
+const endY = ref(0)
+const isReady = ref(false)
+const initY = ref(0)
 
 const position = () => {
-  Object.assign(customScrollBarRef.value.style, {
-    height: `${(window.innerHeight * window.innerHeight) / document.body.scrollHeight}px`,
-    top: `${(window.scrollY / document.body.scrollHeight) * window.innerHeight}px`,
+  initY.value = (window.scrollY / document.body.scrollHeight) * window.innerHeight
+  gsap.to(customScrollBarRef.value, {
+    height: `${(window.innerHeight * window.innerHeight) / document.body.clientHeight}`,
+    top: `${(window.scrollY / document.body.scrollHeight) * window.innerHeight}`,
+    duration: 0.5,
   })
 }
 
-watch([dragYStart, dragYEnd], () => {
-  const y = ((dragYEnd.value - dragYStart.value) / window.innerHeight) * document.body.scrollHeight
-  window.scrollTo(0, y)
-  console.log()
+watch([isReady, startY, endY], () => {
+  if (isReady.value) {
+    const scrollToY = ((endY.value - startY.value) / innerHeight) * document.body.scrollHeight
+    window.scrollTo(0, scrollToY)
+  }
 })
+
+const mouseMove = (e: MouseEvent) => {
+  console.error('MOVE')
+  endY.value = e.clientY
+}
+const mouseUp = (e: MouseEvent) => {
+  isReady.value = false
+  console.error('UP')
+}
 
 onMounted(() => {
   position()
   window.addEventListener('scroll', position)
   window.addEventListener('resize', position)
+  window.addEventListener('mousemove', mouseMove)
+  window.addEventListener('mouseup', mouseUp)
 })
+
+const mouseDown = (e: MouseEvent) => {
+  console.error('DOWN')
+  isReady.value = true
+  startY.value = e.clientY
+}
 
 onUnmounted(() => {
   window.removeEventListener('scroll', position)
   window.removeEventListener('resize', position)
+  window.removeEventListener('mousemove', mouseMove)
+  window.removeEventListener('mouseup', mouseUp)
 })
-
-const dragStart = (e) => {
-  e.preventDefault()
-  console.log('START', e.screenX)
-  console.log('START Y', e.screenY)
-  dragYStart.value = e.screenY
-}
-const dragEnd = (e) => {
-  e.preventDefault()
-  console.log('END', e.screenX)
-  console.log('END Y', e.screenY)
-  dragYEnd.value = e.screenY
-}
 </script>
 
 <template>
   <div>
     <div
-      @dragstart="dragStart"
-      @dragend="dragEnd"
+      @mousedown="mouseDown"
       ref="customScrollBarRef"
       draggable
-      class="fixed right-0 z-50 h-[200px] w-[6px] bg-[#00b3ff]"
+      class="fixed right-0 z-50 h-[200px] w-[6px] bg-[#00b3ff] hover:bg-[#ff0088] active:bg-[#ff0088]"
     ></div>
   </div>
 </template>

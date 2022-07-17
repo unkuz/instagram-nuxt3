@@ -10,6 +10,7 @@ import More from './components/Utils/More.vue'
 import Prelude from './components/Utils/Prelude.vue'
 import { useStoryStore } from './store/story'
 import ProgressBar from './components/Utils/ProgressBar.vue'
+import ScrollBar from './components/Utils/ScrollBar.vue'
 
 useHead({
   title: 'Instagram',
@@ -76,6 +77,7 @@ if (process.client) {
     <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
     <More v-if="isShowMore" />
     <!-- <ProgressBar /> -->
+    <ScrollBar />
   </div>
 </template>
 <style scoped>

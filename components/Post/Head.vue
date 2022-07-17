@@ -19,7 +19,7 @@ const showMore = () => {
     <div class="mx-[16px] flex h-full items-center justify-between">
       <div class="flex items-center space-x-[10px] text-[0.8rem]">
         <div
-          class="aspect-square h-[32px] w-[32px] cursor-pointer rounded-full border-[1px] border-gray-200"
+          class="aspect-square h-[32px] w-[32px] cursor-pointer select-none rounded-full border-[1px] border-gray-200"
         >
           <img class="rounded-full object-cover" :src="profile_pic_url" />
         </div>

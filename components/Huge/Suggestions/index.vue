@@ -16,9 +16,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
+  <div class="select-none" draggable="false">
     <div class="mt-[18px] mb-[22px] flex h-[56px] items-center justify-between">
-      <div class="aspect-square w-[56px] rounded-full bg-red-200 object-cover">
+      <div class="aspect-square w-[56px] select-none rounded-full bg-red-200 object-cover">
         <img
           crossorigin="anonymous"
           data-testid="user-avatar"
