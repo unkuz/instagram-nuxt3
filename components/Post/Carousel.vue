@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import ArrowIcon_ from '~~/assets/svg/arrow_icon.svg'
 import { useCarousel } from '~~/composables/useCarousel'
 import { useDoubleClick } from '~~/composables/useDoubleClick'
-import ArrowIcon_ from '~~/assets/svg/arrow_icon.svg'
 
 interface IProps {
   images: any
@@ -38,18 +38,12 @@ const totalMedia = computed(() => props.images.concat(props.videos).length)
         <video :src="i.src" loop class="cursor-pointer" />
       </div>
     </div>
-    <div
-      class="absolute left-5 top-[50%] flex h-[22px] w-[22px] -translate-y-1/2 items-center justify-center rounded-full bg-black/20"
-      @click="prev"
-    >
-      <ArrowIcon_ class="h-[12px] w-[12px] rotate-180" />
+    <div class="-translate-y-1/ absolute left-5 top-[50%] h-[22px] w-[22px]" @click="prev">
+      <ArrowIcon_ class="rotate-180" />
     </div>
 
-    <div
-      class="absolute right-5 top-[50%] flex h-[22px] w-[22px] -translate-y-1/2 items-center justify-center rounded-full bg-black/20"
-      @click="next"
-    >
-      <ArrowIcon_ class="h-[12px] w-[12px]" />
+    <div class="absolute right-5 top-[50%] h-[22px] w-[22px] -translate-y-1/2" @click="next">
+      <ArrowIcon_ />
     </div>
     <div
       class="absolute top-[20px] right-[20px] rounded-full bg-black/50 px-[8px] py-[2px] text-[0.8rem] text-white"
