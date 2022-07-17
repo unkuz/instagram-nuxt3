@@ -31,12 +31,12 @@ const totalMedia = computed(() => props.images.concat(props.videos).length)
 
 <template>
   <div class="relative overflow-hidden">
-    <div class="inline-flex" ref="containerMediaRef">
+    <div class="inline-flex cursor-grab" ref="containerMediaRef">
       <div v-if="images" v-for="i in images" :key="i.id" class="min-w-full">
-        <img class="min-h-full min-w-full cursor-pointer object-cover" :src="i.src" alt="" />
+        <img class="min-h-full min-w-full object-cover" :src="i.src" alt="" />
       </div>
       <div v-if="videos" class="min-w-full overflow-hidden" v-for="i in videos" :key="i.id">
-        <video :src="i.src" loop class="cursor-pointer" />
+        <video :src="i.src" loop />
       </div>
     </div>
     <div class="-translate-y-1/ absolute left-5 top-[50%] h-[22px] w-[22px]" @click="prev">
