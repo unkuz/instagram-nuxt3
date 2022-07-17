@@ -75,7 +75,7 @@ if (process.client) {
     <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
     <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
     <More v-if="isShowMore" />
-    <ProgressBar />
+    <!-- <ProgressBar /> -->
   </div>
 </template>
 <style scoped>
