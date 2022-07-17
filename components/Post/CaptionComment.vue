@@ -24,9 +24,7 @@ watch(captionRef, () => {
     <div class="mb-[8px] h-[18px] cursor-pointer font-medium">{{ like_count }} likes</div>
     <div :class="`mb-[4px] ${isShowMore ? ' ' : 'h-[62px]'}`">
       <p
-        :class="`overflow-hidden text-ellipsis hover:select-all ${
-          isShowMore ? ' ' : 'whitespace-nowrap'
-        }`"
+        :class="`overflow-hidden text-ellipsis ${isShowMore ? ' ' : 'whitespace-nowrap'}`"
         ref="captionRef"
       >
         <span class="font-medium">{{ user.username }}</span> {{ caption_text }}
