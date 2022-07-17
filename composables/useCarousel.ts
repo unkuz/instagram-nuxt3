@@ -1,5 +1,6 @@
 import { gsap } from 'gsap'
 import { Ref } from 'nuxt/dist/app/compat/capi'
+import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
 import { useGlobalStore } from '~~/store/global'
 
 export const useCarousel = (containerMediaRef: Ref<HTMLDivElement>) => {
@@ -11,12 +12,16 @@ export const useCarousel = (containerMediaRef: Ref<HTMLDivElement>) => {
 
   const timer = ref(0)
 
-  watch(current, (idx) => {
+  const transition = () => {
     gsap.to(containerMediaRef.value, {
-      transform: `translateX(${-containerMediaRef.value.offsetWidth * idx}px)`,
+      transform: `translateX(${-containerMediaRef.value.offsetWidth * current.value}px)`,
       duration: 0.2,
     })
-  })
+  }
+
+  useWindowResizeCallback(transition)
+  watch(current, () => transition())
+
   const next = () => {
     current.value += 1
   }
