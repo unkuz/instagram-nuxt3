@@ -6,6 +6,7 @@ import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
 import { useMoreStore } from '~~/store/more'
 import { useViewPostDetailStore } from '~~/store/viewPostDetail'
 import { gsap } from 'gsap'
+import { useResizeWindow } from '~~/composables/useResizeWindow'
 
 const viewPostRef = ref<HTMLElement>(null)
 const commentHeadingRef = ref(null)
@@ -14,6 +15,19 @@ const commentContainerRef = ref(null)
 const router = useRouter()
 const moreStore = useMoreStore()
 const viewPostDetailStore = useViewPostDetailStore()
+const postRef = ref(null)
+const { width, height } = useResizeWindow()
+
+useWindowResizeCallback(() => {
+  gsap.to(postRef.value, {
+    x: 0,
+    duration: 0.2,
+  })
+  gsap.to(postRef.value, {
+    width: width.value * 0.9,
+    height: height.value * 0.9,
+  })
+})
 
 interface TimeLine {
   created_at: number
@@ -95,7 +109,8 @@ const calcHeightComment = () => {
 
 onMounted(() => {
   gsap.to(viewPostRef.value, {
-    bottom: 0,
+    bottom: '50%',
+    transform: 'translateY(50%)',
     duration: 0.2,
   })
 })
@@ -107,7 +122,7 @@ useWindowResizeCallback(calcHeightComment)
   <div class="text-[0.8rem]">
     <BackDrop>
       <div v-if="!post"></div>
-      <div
+      <!-- <div
         v-else
         ref="viewPostRef"
         class="fixed -bottom-[100%] flex h-screen flex-col overflow-hidden md:h-[800px] md:w-full lg:flex-row xl:w-[1000px]"
@@ -173,7 +188,8 @@ useWindowResizeCallback(calcHeightComment)
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
+      <div ref="postRef" class="fixed -bottom-[100%] bg-black"></div>
     </BackDrop>
   </div>
 </template>

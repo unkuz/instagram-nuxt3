@@ -57,7 +57,7 @@ export const timeLine = [
       },
     },
     like_count: 3692,
-    has_liked: false,
+    has_liked: true,
     caption_text: 'Sooo cute 🥰🤍🤍',
     is_seen: true,
   },
