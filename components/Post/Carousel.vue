@@ -4,6 +4,7 @@ import { useCarousel } from '~~/composables/useCarousel'
 import { useDoubleClick } from '~~/composables/useDoubleClick'
 import { useTimeLineStore } from '~~/store/timeline'
 import Unlike from './Unlike.vue'
+import Like from './Like.vue'
 
 interface IProps {
   images: any
@@ -51,5 +52,6 @@ const totalMedia = computed(() => props.images.concat(props.videos).length)
       <span>{{ `${current + 1}/${totalMedia}` }}</span>
     </div>
     <Unlike v-if="has_liked" />
+    <Like v-else />
   </div>
 </template>
