@@ -23,9 +23,15 @@ export const useCarousel = (containerMediaRef: Ref<HTMLDivElement>) => {
   watch(current, () => transition())
 
   const next = () => {
+    if (current.value === containerMediaRef.value.childElementCount - 1) {
+      return
+    }
     current.value += 1
   }
   const prev = () => {
+    if (current.value === 0) {
+      return
+    }
     current.value -= 1
   }
 

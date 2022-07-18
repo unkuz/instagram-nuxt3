@@ -121,9 +121,7 @@ useWindowResizeCallback(calcHeightComment)
 <template>
   <div class="text-[0.8rem]">
     <BackDrop>
-      <div v-if="!post"></div>
-      <!-- <div
-        v-else
+      <div
         ref="viewPostRef"
         class="fixed -bottom-[100%] flex h-screen flex-col overflow-hidden md:h-[800px] md:w-full lg:flex-row xl:w-[1000px]"
       >
@@ -188,7 +186,7 @@ useWindowResizeCallback(calcHeightComment)
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
       <div ref="postRef" class="fixed -bottom-[100%] bg-black"></div>
     </BackDrop>
   </div>

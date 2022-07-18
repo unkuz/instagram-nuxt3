@@ -25,6 +25,8 @@ const { next, prev, current } = useCarousel(containerMediaRef)
 watch(current, (idx) => {
   emit('currentIndexCarousel', idx)
 })
+const isShowPre = computed(() => current.value !== 0)
+const isShowNext = computed(() => current.value !== props.images.concat(props.videos).length - 1)
 
 const totalMedia = computed(() => props.images.concat(props.videos).length)
 </script>
@@ -39,11 +41,19 @@ const totalMedia = computed(() => props.images.concat(props.videos).length)
         <video :src="i.src" loop />
       </div>
     </div>
-    <div class="-translate-y-1/ absolute left-5 top-[50%] h-[22px] w-[22px]" @click="prev">
+    <div
+      v-if="isShowPre"
+      class="-translate-y-1/ absolute left-5 top-[50%] h-[22px] w-[22px]"
+      @click="prev"
+    >
       <ArrowIcon_ class="rotate-180" />
     </div>
 
-    <div class="absolute right-5 top-[50%] h-[22px] w-[22px] -translate-y-1/2" @click="next">
+    <div
+      v-if="isShowNext"
+      class="absolute right-5 top-[50%] h-[22px] w-[22px] -translate-y-1/2"
+      @click="next"
+    >
       <ArrowIcon_ />
     </div>
     <div
