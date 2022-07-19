@@ -5,6 +5,7 @@ import { useDoubleClick } from '~~/composables/useDoubleClick'
 import { useTimeLineStore } from '~~/store/timeline'
 import Unlike from './Unlike.vue'
 import Like from './Like.vue'
+import Video from './Video.vue'
 
 interface IProps {
   images: any
@@ -19,7 +20,7 @@ const containerMediaRef = ref<HTMLDivElement>(null)
 const toggleLike = () => {
   timelineStore.setToggleLikePost(props.id)
 }
-useDoubleClick(containerMediaRef, () => {}, toggleLike)
+// useDoubleClick(containerMediaRef, () => {}, toggleLike)
 const { next, prev, current } = useCarousel(containerMediaRef)
 
 watch(current, (idx) => {
@@ -37,9 +38,7 @@ const totalMedia = computed(() => props.images.concat(props.videos).length)
       <div v-if="images" v-for="i in images" :key="i.id" class="min-w-full">
         <img class="min-h-full min-w-full object-cover" draggable="false" :src="i.src" alt="" />
       </div>
-      <div v-if="videos" class="min-w-full overflow-hidden" v-for="i in videos" :key="i.id">
-        <video :src="i.src" loop />
-      </div>
+      <Video v-for="video in videos" :video="video" :idPost="id" />
     </div>
     <div
       v-if="isShowPre"
