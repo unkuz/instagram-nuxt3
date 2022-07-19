@@ -55,6 +55,64 @@ export const timeLine = [
   },
   {
     created_at: 1657809031,
+    id: '1491446004554932',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [
+      {
+        text: 'Ćafe society ✨',
+        created_at: 1637435588,
+        user: {
+          pk: 20433830474,
+          username: 'kristenstewartonly',
+          full_name: 'kristenstewartonly',
+          is_private: false,
+          profile_pic_url: '/timeline/287276900_754445755556755_2583855386279093511_n.jpg',
+        },
+        comment_like_count: 1,
+        reply: [
+          {
+            text: 'Ohhh abd her paws???? Do they freeze in the snow??😮😮😮😮😮😮😮😮',
+            created_at: 1637435588,
+            user: {
+              pk: 20433830474,
+              username: 'lucypelliser',
+              full_name: 'lucypelliser',
+              is_private: false,
+              profile_pic_url: '/timline/217898896_294074609173929_1840603713036268432_n.jpg',
+            },
+            comment_like_count: 3,
+          },
+        ],
+      },
+    ],
+    carousel_media: {
+      images: [],
+      videos: [
+        { id: 1, src: '/video/280925318_330482962535290_2183630734609659543_n.mp4' },
+        { id: 2, src: '/video/290004587_395364059233883_1201392340782000330_n.mp4' },
+      ],
+    },
+    user: {
+      id: 'cryex',
+      username: 'cryex',
+      full_name: 'cryex',
+      profile_pic_url: '/suggest/285178340_705143053896837_3008849651841634176_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 578,
+    has_liked: true,
+    caption_text: `FALLING UP = OUT NOWSHOW ME THOSE 🌈 IN THE CHAT LETSGOOOOO
+OUT NOW ON ALL UR FAV PORTALS 💚
+APEX Records`,
+    is_seen: true,
+  },
+  {
+    created_at: 1657809031,
     id: 'CaEdjQnsfXi',
     location: {
       short_name: 'Copenhagen',
