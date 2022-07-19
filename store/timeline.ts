@@ -5,10 +5,10 @@ import { TimeLine } from '~~/models/timline'
 interface TimeLineState {
   timeline: TimeLine[]
   hasErr: boolean
-  error: {}
+  errors: {}
 }
 
-const state = () => ({
+const state = (): TimeLineState => ({
   timeline: [...timeLine],
   hasErr: false,
   errors: {},
