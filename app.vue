@@ -11,6 +11,7 @@ import Prelude from './components/Utils/Prelude.vue'
 import { useStoryStore } from './store/story'
 import ProgressBar from './components/Utils/ProgressBar.vue'
 import ScrollBar from './components/Utils/ScrollBar.vue'
+import Loading from './components/Utils/Loading.vue'
 
 useHead({
   title: 'Instagram',
@@ -78,6 +79,7 @@ if (process.client) {
     <More v-if="isShowMore" />
     <!-- <ProgressBar /> -->
     <!-- <ScrollBar /> -->
+    <Loading />
   </div>
 </template>
 <style scoped>
