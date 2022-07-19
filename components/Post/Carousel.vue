@@ -1,10 +1,9 @@
 <script lang="ts" setup>
 import ArrowIcon_ from '~~/assets/svg/arrow_icon.svg'
 import { useCarousel } from '~~/composables/useCarousel'
-import { useDoubleClick } from '~~/composables/useDoubleClick'
-import { useTimeLineStore } from '~~/store/timeline'
-import Unlike from './Unlike.vue'
+import Image from './Image.vue'
 import Like from './Like.vue'
+import Unlike from './Unlike.vue'
 import Video from './Video.vue'
 
 interface IProps {
@@ -15,12 +14,8 @@ interface IProps {
 }
 const props = defineProps<IProps>()
 const emit = defineEmits(['currentIndexCarousel'])
-const timelineStore = useTimeLineStore()
 const containerMediaRef = ref<HTMLDivElement>(null)
-const toggleLike = () => {
-  timelineStore.setToggleLikePost(props.id)
-}
-// useDoubleClick(containerMediaRef, () => {}, toggleLike)
+
 const { next, prev, current } = useCarousel(containerMediaRef)
 
 watch(current, (idx) => {
@@ -38,9 +33,8 @@ const totalMedia = computed(() => props.images.concat(props.videos).length)
       class="inline-flex min-w-full cursor-grab select-none active:cursor-grabbing"
       ref="containerMediaRef"
     >
-      <div v-if="images" v-for="i in images" :key="i.id" class="min-w-full">
-        <img class="min-h-full min-w-full object-cover" draggable="false" :src="i.src" alt="" />
-      </div>
+      <Image v-for="i in images" :key="i.id" :src="i.src" :idPost="id" />
+
       <Video v-for="video in videos" :video="video" :idPost="id" />
     </div>
     <div

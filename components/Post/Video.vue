@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import PlayIcon__ from '~~/assets/svg/play_original_icon.svg'
-import PauseIcon_ from '~~/assets/svg/pause_icon.svg'
 import PlayIcon_ from '~~/assets/svg/play_icon.svg'
+import { useDoubleClick } from '~~/composables/useDoubleClick'
 import { useTimeLineStore } from '~~/store/timeline'
 
 interface IProps {
