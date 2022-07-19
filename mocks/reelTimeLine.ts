@@ -1,6 +1,60 @@
 export const timeLine = [
   {
     created_at: 1657809031,
+    id: '1491446004554932',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [
+      {
+        text: 'Ćafe society ✨',
+        created_at: 1637435588,
+        user: {
+          pk: 20433830474,
+          username: 'kristenstewartonly',
+          full_name: 'kristenstewartonly',
+          is_private: false,
+          profile_pic_url: '/timeline/287276900_754445755556755_2583855386279093511_n.jpg',
+        },
+        comment_like_count: 1,
+        reply: [
+          {
+            text: 'Ohhh abd her paws???? Do they freeze in the snow??😮😮😮😮😮😮😮😮',
+            created_at: 1637435588,
+            user: {
+              pk: 20433830474,
+              username: 'lucypelliser',
+              full_name: 'lucypelliser',
+              is_private: false,
+              profile_pic_url: '/timline/217898896_294074609173929_1840603713036268432_n.jpg',
+            },
+            comment_like_count: 3,
+          },
+        ],
+      },
+    ],
+    carousel_media: {
+      images: [],
+      videos: [{ id: 1, src: '/video/Snapsave_56e3688d2b67192b312ff547582dd4b8_480p.mp4' }],
+    },
+    user: {
+      id: 'cryex',
+      username: 'cryex',
+      full_name: 'cryex',
+      profile_pic_url: '/suggest/285178340_705143053896837_3008849651841634176_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 578,
+    has_liked: true,
+    caption_text:
+      'MADNESS 5.0 INCOMING Leave a  for this absolute NUKE of a drop!PRE SAVE IN COMMENTS',
+    is_seen: true,
+  },
+  {
+    created_at: 1657809031,
     id: 'CaEdjQnsfXi',
     location: {
       short_name: 'Copenhagen',

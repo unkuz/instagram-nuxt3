@@ -35,13 +35,14 @@ const togglePlay = () => {
     videoRef.value.pause()
   }
 }
+const play = () => videoRef.value.play()
 
 useDoubleClick(videoRef, togglePlay, toggleLike)
 </script>
 
 <template>
   <div class="relative min-w-full overflow-hidden" :key="video.id">
-    <video :src="video.src" loop ref="videoRef" />
+    <video :src="video.src" loop ref="videoRef" class="min-w-full" />
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
         ref="bigPlayIcon"
@@ -49,7 +50,7 @@ useDoubleClick(videoRef, togglePlay, toggleLike)
           isVideoPlay ? 'scale-0 opacity-0' : ' scale-100 opacity-100'
         } opacity-0 duration-500`"
       >
-        <PlayIcon_ />
+        <PlayIcon_ @click="play" />
       </div>
     </div>
   </div>
