@@ -30,14 +30,20 @@ const updateTime = () => {
   isVideoMuted.value = videoRef.value.muted
 }
 
+const play = () => {
+  const allVideo = document.querySelectorAll('video')
+  allVideo.forEach((i) => {
+    i.pause()
+  })
+  videoRef.value.play()
+}
 const togglePlay = () => {
   if (videoRef.value.paused) {
-    videoRef.value.play()
+    play()
   } else {
     videoRef.value.pause()
   }
 }
-const play = () => videoRef.value.play()
 
 useDoubleClick(videoRef, togglePlay, toggleLike)
 useVideoPauseViewPort(videoRef)
@@ -53,7 +59,7 @@ watch(percent, () => {
 
 <template>
   <div class="group relative min-w-full overflow-hidden" :key="video.id">
-    <video :src="video.src" loop ref="videoRef" class="min-w-full" />
+    <video :src="video.src" ref="videoRef" loop class="min-w-full" />
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
         ref="bigPlayIcon"
