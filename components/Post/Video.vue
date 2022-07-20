@@ -4,6 +4,7 @@ import { useDoubleClick } from '~~/composables/useDoubleClick'
 import { useTimeLineStore } from '~~/store/timeline'
 import { useVideoPauseViewPort } from '~~/composables/useVideoPauseViewPort'
 import { usePercentVideo } from '~~/composables/usePercentVideo'
+import { gsap } from 'gsap'
 
 interface IProps {
   video: any
@@ -50,9 +51,9 @@ useVideoPauseViewPort(videoRef)
 const { percent } = usePercentVideo(videoRef)
 
 watch(percent, () => {
-  const widthParent = progressBarRef.value.parentElement.clientWidth
-  Object.assign(progressBarRef.value.style, {
-    width: `${percent.value * widthParent}px`,
+  const { clientWidth: widthParent } = progressBarRef.value.parentElement
+  gsap.to(progressBarRef.value, {
+    width: percent.value * widthParent,
   })
 })
 </script>
