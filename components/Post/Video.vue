@@ -2,6 +2,7 @@
 import PlayIcon_ from '~~/assets/svg/play_icon.svg'
 import { useDoubleClick } from '~~/composables/useDoubleClick'
 import { useTimeLineStore } from '~~/store/timeline'
+import { useVideoPauseViewPort } from '~~/composables/useVideoPauseViewPort'
 
 interface IProps {
   video: any
@@ -37,6 +38,7 @@ const togglePlay = () => {
 const play = () => videoRef.value.play()
 
 useDoubleClick(videoRef, togglePlay, toggleLike)
+useVideoPauseViewPort(videoRef)
 </script>
 
 <template>
