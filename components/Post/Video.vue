@@ -57,7 +57,7 @@ watch(percent, () => {
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
         ref="bigPlayIcon"
-        :class="`absolute top-1/2 left-1/2 h-[100px] w-[100px] origin-center -translate-x-1/2 -translate-y-1/2  ${
+        :class="`absolute top-1/2 left-1/2 h-[90px] w-[90px] origin-center -translate-x-1/2 -translate-y-1/2  ${
           isVideoPlay ? 'scale-0 opacity-0' : ' scale-100 opacity-100'
         } opacity-0 duration-500`"
       >
