@@ -32,8 +32,8 @@ const updateTime = () => {
 
 const play = () => {
   const allVideo = document.querySelectorAll('video')
-  allVideo.forEach((i) => {
-    i.pause()
+  allVideo.forEach((video) => {
+    video.pause()
   })
   videoRef.value.play()
 }
