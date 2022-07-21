@@ -1,6 +1,112 @@
 export const timeLine = [
   {
     created_at: 1657809031,
+    id: '1491446004554932gfdsg',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [
+        { id: 1, src: '/video/SnapInsta_279712456_370464281700813_4199424197168593943_n.mp4' },
+      ],
+    },
+    user: {
+      id: 'camokr',
+      username: 'camokr',
+      full_name: 'camokr',
+      profile_pic_url: '/timeline/199217281_189955476361657_1385657636525037305_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 1250,
+    has_liked: true,
+    caption_text: 'FckkITTTTuppPpppPPPPppoPPPPPPPPP',
+    is_seen: true,
+  },
+  {
+    created_at: 1657809031,
+    id: '1491446004554932gfdssdafg',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [{ id: 1, src: '/timeline/Resident-Evil-Village-Shadow-of-Rose-Cover.jpg' }],
+      videos: [],
+    },
+    user: {
+      id: 'Resident evil',
+      username: 'Resident evil',
+      full_name: 'Resident evil',
+      profile_pic_url: '/timeline/285283537_1062608861303949_3334989244620618440_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 1250,
+    has_liked: true,
+    caption_text: `Resident Evil Village's Shadows of Rose DLC has been announced and it will star Ethan Winters' daughter as she is trapped in the Megamycete.`,
+    is_seen: true,
+  },
+  {
+    created_at: 1657809031,
+    id: '1491446004554932gfdssdafgfsdaf',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [
+        { id: 1, src: '/timeline/SnapInsta_143534967_219225166522049_8683587039310240748_n.mp4' },
+      ],
+    },
+    user: {
+      id: '502',
+      username: '502',
+      full_name: '502',
+      profile_pic_url: '/timeline/124061407_425025075168021_5937960669759141166_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: -9999,
+    has_liked: true,
+    caption_text: `CAMO - Wifey (feat.사이먼 도미닉 ) [Official Music Video] OUT NOW
+
+Music Video is available on 502 YouTube (LINK IN BIO)
+
+Directed by 502
+Filmed by @3spice_official
+Edited by @hyun_ryuuu
+Photography by @fakedeeplee
+Hair & Makeup by @ranheemakeup @by_d_y
+Flowers by @kkotsoonee
+Styling by @recyde
+Models - @haejar @6a6ydia6la gold.koi
+Powered by @27factory_official
+
+[Song Credits]
+
+Lyrics by CAMO, 사이먼 도미닉 @longlivesmdc
+Produced by @undead6ix_x @roadsta_kidyoung @roadstabapex @j.is.u
+Arranged by Undead6ixxx, Roadsta
+Mix & Mastered by @dayrick_
+
+@camokr
+@longlivesmdc
+#welcometo502
+#AOMG`,
+    is_seen: true,
+  },
+  {
+    created_at: 1657809031,
     id: '1491446004554932',
     location: {
       short_name: 'Copenhagen',
