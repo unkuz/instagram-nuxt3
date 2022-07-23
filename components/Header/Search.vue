@@ -88,7 +88,7 @@ const handleInputValueSearch = (e: Event) => {
       ref="inputSearch"
       :value="searchValue"
       @input="handleInputValueSearch"
-      class="absolute top-1/2 left-1/2 h-[30px] w-[236px] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm focus:outline-none"
+      class="absolute top-1/2 left-1/2 h-[30px] w-[236px] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-[#09f] focus:outline-none"
     />
     <div class="absolute right-3 cursor-pointer" v-show="isSearchActive" @click="closeSearch">
       <div class="relative h-[18px] w-[18px] rounded-full bg-gray-600">

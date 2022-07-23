@@ -1,6 +1,280 @@
 export const timeLine = [
   {
     created_at: 1657809031,
+    id: '1491446004554932gfdsg',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [
+        { id: 1, src: '/video/SnapInsta_279712456_370464281700813_4199424197168593943_n.mp4' },
+      ],
+    },
+    user: {
+      id: 'camokr',
+      username: 'camokr',
+      full_name: 'camokr',
+      profile_pic_url: '/timeline/199217281_189955476361657_1385657636525037305_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 1250,
+    has_liked: true,
+    caption_text: 'FckkITTTTuppPpppPPPPppoPPPPPPPPP',
+    is_seen: true,
+  },
+  {
+    created_at: 1657809031,
+    id: '1491446004554932gfdssdafg',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [{ id: 1, src: '/timeline/Resident-Evil-Village-Shadow-of-Rose-Cover.jpg' }],
+      videos: [],
+    },
+    user: {
+      id: 'Resident evil',
+      username: 'Resident evil',
+      full_name: 'Resident evil',
+      profile_pic_url: '/timeline/285283537_1062608861303949_3334989244620618440_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 1250,
+    has_liked: true,
+    caption_text: `Resident Evil Village's Shadows of Rose DLC has been announced and it will star Ethan Winters' daughter as she is trapped in the Megamycete.`,
+    is_seen: true,
+  },
+  {
+    created_at: 1657809031,
+    id: '1491446004554932gfdssdafgfsdaf',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [
+        { id: 1, src: '/timeline/SnapInsta_143534967_219225166522049_8683587039310240748_n.mp4' },
+      ],
+    },
+    user: {
+      id: '502',
+      username: '502',
+      full_name: '502',
+      profile_pic_url: '/timeline/124061407_425025075168021_5937960669759141166_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: -9999,
+    has_liked: true,
+    caption_text: `CAMO - Wifey (feat.사이먼 도미닉 ) [Official Music Video] OUT NOW
+
+Music Video is available on 502 YouTube (LINK IN BIO)
+
+Directed by 502
+Filmed by @3spice_official
+Edited by @hyun_ryuuu
+Photography by @fakedeeplee
+Hair & Makeup by @ranheemakeup @by_d_y
+Flowers by @kkotsoonee
+Styling by @recyde
+Models - @haejar @6a6ydia6la gold.koi
+Powered by @27factory_official
+
+[Song Credits]
+
+Lyrics by CAMO, 사이먼 도미닉 @longlivesmdc
+Produced by @undead6ix_x @roadsta_kidyoung @roadstabapex @j.is.u
+Arranged by Undead6ixxx, Roadsta
+Mix & Mastered by @dayrick_
+
+@camokr
+@longlivesmdc
+#welcometo502
+#AOMG`,
+    is_seen: true,
+  },
+  {
+    created_at: 1657809031,
+    id: '1491446004554932',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [
+      {
+        text: 'Ćafe society ✨',
+        created_at: 1637435588,
+        user: {
+          pk: 20433830474,
+          username: 'kristenstewartonly',
+          full_name: 'kristenstewartonly',
+          is_private: false,
+          profile_pic_url: '/timeline/287276900_754445755556755_2583855386279093511_n.jpg',
+        },
+        comment_like_count: 1,
+        reply: [
+          {
+            text: 'Ohhh abd her paws???? Do they freeze in the snow??😮😮😮😮😮😮😮😮',
+            created_at: 1637435588,
+            user: {
+              pk: 20433830474,
+              username: 'lucypelliser',
+              full_name: 'lucypelliser',
+              is_private: false,
+              profile_pic_url: '/timline/217898896_294074609173929_1840603713036268432_n.jpg',
+            },
+            comment_like_count: 3,
+          },
+        ],
+      },
+    ],
+    carousel_media: {
+      images: [],
+      videos: [{ id: 1, src: '/video/Snapsave_56e3688d2b67192b312ff547582dd4b8_480p.mp4' }],
+    },
+    user: {
+      id: 'cryex',
+      username: 'cryex',
+      full_name: 'cryex',
+      profile_pic_url: '/suggest/285178340_705143053896837_3008849651841634176_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 578,
+    has_liked: true,
+    caption_text:
+      'MADNESS 5.0 INCOMING Leave a  for this absolute NUKE of a drop!PRE SAVE IN COMMENTS',
+    is_seen: true,
+  },
+  {
+    created_at: 1657809031,
+    id: '1491446004554932z',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [
+      {
+        text: 'Ćafe society ✨',
+        created_at: 1637435588,
+        user: {
+          pk: 20433830474,
+          username: 'kristenstewartonly',
+          full_name: 'kristenstewartonly',
+          is_private: false,
+          profile_pic_url: '/timeline/287276900_754445755556755_2583855386279093511_n.jpg',
+        },
+        comment_like_count: 1,
+        reply: [
+          {
+            text: 'Ohhh abd her paws???? Do they freeze in the snow??😮😮😮😮😮😮😮😮',
+            created_at: 1637435588,
+            user: {
+              pk: 20433830474,
+              username: 'lucypelliser',
+              full_name: 'lucypelliser',
+              is_private: false,
+              profile_pic_url: '/timline/217898896_294074609173929_1840603713036268432_n.jpg',
+            },
+            comment_like_count: 3,
+          },
+        ],
+      },
+    ],
+    carousel_media: {
+      images: [],
+      videos: [
+        { id: 1, src: '/video/280925318_330482962535290_2183630734609659543_n.mp4' },
+        { id: 2, src: '/video/290004587_395364059233883_1201392340782000330_n.mp4' },
+      ],
+    },
+    user: {
+      id: 'cryex',
+      username: 'cryex',
+      full_name: 'cryex',
+      profile_pic_url: '/suggest/285178340_705143053896837_3008849651841634176_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 578,
+    has_liked: true,
+    caption_text: `FALLING UP = OUT NOWSHOW ME THOSE 🌈 IN THE CHAT LETSGOOOOO
+OUT NOW ON ALL UR FAV PORTALS 💚
+APEX Records`,
+    is_seen: true,
+  },
+  {
+    created_at: 1657809031,
+    id: 'CaEdjQnsfXi',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [
+      {
+        text: 'Ćafe society ✨',
+        created_at: 1637435588,
+        user: {
+          pk: 20433830474,
+          username: 'kristenstewartonly',
+          full_name: 'kristenstewartonly',
+          is_private: false,
+          profile_pic_url: '/timeline/287276900_754445755556755_2583855386279093511_n.jpg',
+        },
+        comment_like_count: 1,
+        reply: [
+          {
+            text: 'Ohhh abd her paws???? Do they freeze in the snow??😮😮😮😮😮😮😮😮',
+            created_at: 1637435588,
+            user: {
+              pk: 20433830474,
+              username: 'lucypelliser',
+              full_name: 'lucypelliser',
+              is_private: false,
+              profile_pic_url: '/timline/217898896_294074609173929_1840603713036268432_n.jpg',
+            },
+            comment_like_count: 3,
+          },
+        ],
+      },
+    ],
+    carousel_media: {
+      images: [
+        { id: 1, src: '/timeline/274128535_258966956381331_8271174270620861076_n.jpg' },
+        { id: 2, src: '/timeline/274079799_7152843561454460_426527241120467041_n.jpg' },
+      ],
+      videos: [],
+    },
+    user: {
+      id: 'kristenstewartonly',
+      username: 'kristenstewartonly',
+      full_name: 'kristenstewartonly',
+      profile_pic_url: '/timeline/287276900_754445755556755_2583855386279093511_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 6904,
+    has_liked: true,
+    caption_text: 'Pretty she looks like an angel 😍',
+    is_seen: true,
+  },
+  {
+    created_at: 1657809031,
     id: 'CaM4QBLJalo',
     location: {
       short_name: 'Copenhagen',
@@ -57,7 +331,7 @@ export const timeLine = [
       },
     },
     like_count: 3692,
-    has_liked: false,
+    has_liked: true,
     caption_text: 'Sooo cute 🥰🤍🤍',
     is_seen: true,
   },
@@ -177,6 +451,60 @@ export const timeLine = [
     has_liked: false,
     caption_text:
       "Mini katana ☆\n-\nNew Hair cut ❤️✂️\nNow there's hair all over my sink again xD\n-\nMy dream hair cut is called the Jelly Fish 🐚",
+    is_seen: true,
+  },
+  {
+    created_at: 1657809031,
+    id: 'CXWGjIlI5DX',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [
+      {
+        text: "It's a winter-ful day to build a snowman⛄️",
+        created_at: 1637435588,
+        user: {
+          pk: 20433830474,
+          username: 'gabi_the_minischnauzer',
+          full_name: 'gabi_the_minischnauzer',
+          is_private: false,
+          profile_pic_url: '/timeline/247431843_198274605668472_397576996448622_n.jpg',
+        },
+        comment_like_count: 1,
+        reply: [
+          {
+            text: 'Ohhh abd her paws???? Do they freeze in the snow??😮😮😮😮😮😮😮😮',
+            created_at: 1637435588,
+            user: {
+              pk: 20433830474,
+              username: 'lucypelliser',
+              full_name: 'lucypelliser',
+              is_private: false,
+              profile_pic_url: '/timline/217898896_294074609173929_1840603713036268432_n.jpg',
+            },
+            comment_like_count: 3,
+          },
+        ],
+      },
+    ],
+    carousel_media: {
+      images: [{ id: 1, src: '/timeline/266031662_875252566522658_5486150086630373885_n.jpg' }],
+      videos: [],
+    },
+    user: {
+      id: 'gabi_the_minischnauzer',
+      username: 'gabi_the_minischnauzer',
+      full_name: 'gabi_the_minischnauzer',
+      profile_pic_url: '/timeline/247431843_198274605668472_397576996448622_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 659,
+    has_liked: true,
+    caption_text:
+      "It's a winter-ful day to build a snowman⛄️ \n•\n•\n•\n•\n•\n#snowday #snowman #winter #cutedog #cutie #cutiepie #dog #dogsofinstagram #dogstagram #hund #dogsofcopenhagen #dogsofinstaworld #dogsofinsta #doggos #dogoftheday #dogofdenmark #instadog #dailybarker #dog_features #doggie #pup #whitedog #schnauzer #schnauzerlove #minischnauzer #miniatureschnauzer #doglover #doglife #bandana #paws",
     is_seen: true,
   },
 ]

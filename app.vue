@@ -9,6 +9,9 @@ import NewPostMobile from './components/Huge/NewPostMobile/index.vue'
 import More from './components/Utils/More.vue'
 import Prelude from './components/Utils/Prelude.vue'
 import { useStoryStore } from './store/story'
+import ProgressBar from './components/Utils/ProgressBar.vue'
+import ScrollBar from './components/Utils/ScrollBar.vue'
+import Loading from './components/Utils/Loading.vue'
 
 useHead({
   title: 'Instagram',
@@ -28,7 +31,6 @@ useHead({
 const globalStore = useGlobalStore()
 const storyStore = useStoryStore()
 const moreStore = useMoreStore()
-
 const { isShowPrelude } = usePrelude()
 const { width, height } = useResizeWindow()
 const isTransition = computed(() => globalStore.getIsTransition)
@@ -74,6 +76,9 @@ if (process.client) {
     <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
     <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
     <More v-if="isShowMore" />
+    <!-- <ProgressBar /> -->
+    <!-- <ScrollBar /> -->
+    <Loading />
   </div>
 </template>
 <style scoped>

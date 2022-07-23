@@ -1,8 +1,7 @@
 <script lang="ts" setup>
-import { useMoreStore } from '~~/store/more'
+import { gsap } from 'gsap'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
-import { useLockScroll } from '~~/composables/useLockScroll'
-import gsap from 'gsap'
+import { useMoreStore } from '~~/store/more'
 import BackDrop from './BackDrop.vue'
 const options = [
   { name: 'Block' },
@@ -12,12 +11,8 @@ const options = [
   { name: 'Send Profile To...' },
 ]
 
-const isShowMore = computed(() => moreStore.isShow)
-
 const moreRef = ref(null)
-
 const moreStore = useMoreStore()
-// useLockScroll()
 
 onMounted(() => {
   gsap.to(moreRef.value, {

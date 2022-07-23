@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { onMounted } from 'vue'
+import ArrowIcon_ from '~~/assets/svg/arrow_icon.svg'
 import { SIZE_HERO_PAGELET } from '~~/constants/mock'
 import { useStoriesStore } from '~~/store/stories'
 import Story from './Story.vue'
@@ -68,32 +69,10 @@ const handleTouchStart = (e: TouchEvent) => {
       />
     </div>
     <div class="absolute top-1/2 right-2 -translate-y-1/2">
-      <div
-        v-if="isShowNext"
-        class="relative h-[22px] w-[22px] rounded-full bg-gray-200 sm:block"
-        @click="handle($event, 1)"
-      >
-        <svg
-          class="absolute top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2"
-          viewBox="0 0 24 24"
-        >
-          <path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z" />
-        </svg>
-      </div>
+      <ArrowIcon_ v-if="isShowNext" @click="handle($event, 1)" />
     </div>
     <div class="absolute top-1/2 left-2 -translate-y-1/2">
-      <div
-        v-if="isShowPrev"
-        class="relative h-[22px] w-[22px] rounded-full bg-gray-200 sm:block"
-        @click="handle($event, -1)"
-      >
-        <svg
-          class="absolute top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 rotate-180"
-          viewBox="0 0 24 24"
-        >
-          <path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z" />
-        </svg>
-      </div>
+      <ArrowIcon_ class="rotate-180" v-if="isShowPrev" @click="handle($event, -1)" />
     </div>
   </div>
 </template>

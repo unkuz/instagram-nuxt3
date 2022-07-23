@@ -1,22 +1,104 @@
 <script lang="ts" setup>
+import HeartIcon_ from '~~/assets/svg/heart_icon.svg'
+import MoreIcon_ from '~~/assets/svg/more_icon.svg'
 import BackDrop from '~~/components/Utils/BackDrop.vue'
 import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
-import { APP_ROUTES } from '~~/routes'
-import { useViewPostStore } from '~~/store/viewPost'
-import { useLockScroll } from '~~/composables/useLockScroll'
 import { useMoreStore } from '~~/store/more'
+import { useViewPostDetailStore } from '~~/store/viewPostDetail'
+import { gsap } from 'gsap'
+import { useResizeWindow } from '~~/composables/useResizeWindow'
 
-const viewPostRef = ref(null)
+const viewPostRef = ref<HTMLElement>(null)
 const commentHeadingRef = ref(null)
 const commentRef = ref(null)
 const commentContainerRef = ref(null)
 const router = useRouter()
 const moreStore = useMoreStore()
+const viewPostDetailStore = useViewPostDetailStore()
+const postRef = ref(null)
+const { width, height } = useResizeWindow()
 
-useLockScroll()
+useWindowResizeCallback(() => {
+  gsap.to(postRef.value, {
+    x: 0,
+    duration: 0.2,
+  })
+  gsap.to(postRef.value, {
+    width: width.value * 0.9,
+    height: height.value * 0.9,
+  })
+})
+
+interface TimeLine {
+  created_at: number
+  caption_text: string
+  has_liked: boolean
+  carousel_media: {
+    images: {
+      id?: number
+      src?: string
+    }[]
+    videos: {
+      id: number
+      src: string
+    }[]
+  }
+  comments: {
+    text: string
+    created_at: number
+    user: {
+      pk: number
+      username: string
+      full_name: string
+      is_private: boolean
+      profile_pic_url: string
+    }
+    comment_like_count: number
+    reply: {
+      text: string
+      created_at: number
+      user: {
+        pk: number
+        username: string
+        full_name: string
+        is_private: boolean
+        profile_pic_url: string
+      }
+      comment_like_count: number
+    }[]
+  }[]
+  id: string
+  is_seen: boolean
+  like_count: number
+  location: {
+    short_name: string
+  }
+  user: {
+    id: string
+    username: string
+    full_name: string
+    profile_pic_url: string
+    friendship_status: {
+      following: boolean
+      outgoing_request: boolean
+    }
+  }
+}
+
+const post = computed(() => viewPostDetailStore.post)
+const hasErr = computed(() => viewPostDetailStore.hasErr)
+
+watch(hasErr, () => {
+  navigateTo('/errror/404')
+})
 
 useClickOutSide(viewPostRef, () => {
   router.back()
+})
+
+onBeforeMount(() => {
+  const id = router.currentRoute.value.params.id
+  viewPostDetailStore.setPostDetail(id as string)
 })
 
 const calcHeightComment = () => {
@@ -24,6 +106,14 @@ const calcHeightComment = () => {
     commentContainerRef.value.clientHeight - commentHeadingRef.value.clientHeight
   }px`
 }
+
+onMounted(() => {
+  gsap.to(viewPostRef.value, {
+    bottom: '50%',
+    transform: 'translateY(50%)',
+    duration: 0.2,
+  })
+})
 
 useWindowResizeCallback(calcHeightComment)
 </script>
@@ -33,12 +123,21 @@ useWindowResizeCallback(calcHeightComment)
     <BackDrop>
       <div
         ref="viewPostRef"
-        class="flex h-screen overflow-hidden bg-fuchsia-300 duration-500 md:h-[800px] md:w-full xl:w-[1000px]"
+        class="fixed -bottom-[100%] flex h-screen flex-col overflow-hidden md:h-[800px] md:w-full lg:flex-row xl:w-[1000px]"
       >
-        <div class="hidden md:block md:flex-1">
+        <div class="md:block md:flex-1 lg:hidden">
           <img
-            src="/personal/285912787_394288332653847_7603823348223049999_n.jpg"
+            v-for="i in post.carousel_media.images"
+            :src="i.src"
             alt=""
+            class="h-full w-full object-cover object-center"
+          />
+          <video
+            v-for="i in post.carousel_media.videos"
+            :src="i.src"
+            alt=""
+            muted
+            autoplay
             class="h-full w-full object-cover object-center"
           />
         </div>
@@ -46,42 +145,32 @@ useWindowResizeCallback(calcHeightComment)
           <div ref="commentHeadingRef" class="h-[60px] border-b-[1px] border-gray-300">
             <div class="mx-[16px] flex h-full items-center justify-between">
               <div class="flex items-center space-x-[10px]">
-                <div class="h-[40px] w-[40px] rounded-[50%] bg-black"></div>
-                <p class="cursor-pointer">cuzknothz</p>
+                <div class="h-[40px] w-[40px] overflow-hidden rounded-[50%] bg-black">
+                  <img :src="post.user.profile_pic_url" />
+                </div>
+                <p class="cursor-pointer">{{ post.user.username }}</p>
               </div>
               <div>
-                <svg
-                  aria-label="More Options"
-                  class="cursor-pointer"
-                  color="#262626"
-                  fill="#262626"
-                  height="24"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="24"
-                >
-                  <circle cx="12" cy="12" r="1.5"></circle>
-                  <circle cx="6" cy="12" r="1.5"></circle>
-                  <circle cx="18" cy="12" r="1.5"></circle>
-                </svg>
+                <MoreIcon_ />
               </div>
             </div>
           </div>
           <div ref="commentRef" class="overflow-y-scroll p-[16px]">
             <div
-              v-for="i in Array.from(Array(40).keys())"
+              v-for="i in post.comments"
               class="mb-[10px] flex w-full items-center justify-between"
             >
               <div class="flex">
-                <div class="mr-[18px] aspect-square h-[40px] w-[40px] rounded-[50%] bg-black"></div>
+                <div
+                  class="mr-[18px] aspect-square h-[40px] w-[40px] min-w-[40px] cursor-pointer overflow-hidden rounded-[50%] bg-black"
+                >
+                  <img :src="i.user.profile_pic_url" class="" />
+                </div>
                 <div>
                   <div class="">
-                    <span class="mr-[4px]">cuzknothz</span>
+                    <span class="mr-[4px]">{{ i.user.username }}</span>
                     <span>
-                      น่ารัก​ครับ​น้องน่ารัก​ครับ​น้องน่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
-                      น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
-                      น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
-                      น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
+                      {{ i.text }}
                     </span>
                   </div>
 
@@ -92,24 +181,13 @@ useWindowResizeCallback(calcHeightComment)
                 </div>
               </div>
               <div class="cursor-pointer">
-                <svg
-                  aria-label="Like"
-                  color="#262626"
-                  fill="#262626"
-                  height="12"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="12"
-                >
-                  <path
-                    d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"
-                  ></path>
-                </svg>
+                <HeartIcon_ />
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div ref="postRef" class="fixed -bottom-[100%] bg-black"></div>
     </BackDrop>
   </div>
 </template>

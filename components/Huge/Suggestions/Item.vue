@@ -33,9 +33,9 @@ const goToAccount = () => {
       >
         {{ name }}
       </p>
-      <p class="text-gray-600">Suggested for you</p>
+      <p class="text-[0.8rem] text-gray-600">Suggested for you</p>
     </div>
-    <div class="flex w-[55px] cursor-pointer justify-end" @click="toggleFollow">
+    <div class="flex w-[55px] cursor-pointer justify-end text-[0.8rem]" @click="toggleFollow">
       <span v-if="isFollow" class="text-[#1da0f6]">Follow</span>
       <span v-else class="text-[#1da0f6]">Unfollow</span>
     </div>
