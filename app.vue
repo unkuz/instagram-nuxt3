@@ -31,7 +31,6 @@ useHead({
 const globalStore = useGlobalStore()
 const storyStore = useStoryStore()
 const moreStore = useMoreStore()
-
 const { isShowPrelude } = usePrelude()
 const { width, height } = useResizeWindow()
 const isTransition = computed(() => globalStore.getIsTransition)
