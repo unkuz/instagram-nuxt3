@@ -52,8 +52,8 @@ const { percent } = usePercentVideo(videoRef)
 
 watch(percent, () => {
   const { clientWidth: widthParent } = progressBarRef.value.parentElement
-  gsap.to(progressBarRef.value, {
-    width: percent.value * widthParent,
+  Object.assign(progressBarRef.value, {
+    width: `${percent.value * widthParent}px`,
   })
 })
 </script>
