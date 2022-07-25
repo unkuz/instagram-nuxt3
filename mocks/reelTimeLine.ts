@@ -1,6 +1,32 @@
 export const timeLine = [
   {
     created_at: 1657809031,
+    id: '1491446004554932gfdsgsdfasdf',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [{ id: 1, src: '/video/10000000_739041187434429_4988422346794921195_n.mp4' }],
+    },
+    user: {
+      id: 'huylee__',
+      username: 'huylee__',
+      full_name: 'huylee__',
+      profile_pic_url: '/timeline/171637990_283647803362926_7866601341664784694_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 405,
+    has_liked: true,
+    caption_text: 'Bên Trên Tầng Lầu | Cover Mẹ Gấu x Bố Gấu x Huy Lee',
+    is_seen: true,
+  },
+  {
+    created_at: 1657809031,
     id: '1491446004554932gfdsg',
     location: {
       short_name: 'Copenhagen',
