@@ -12,6 +12,7 @@ import { useStoryStore } from './store/story'
 import ProgressBar from './components/Utils/ProgressBar.vue'
 import ScrollBar from './components/Utils/ScrollBar.vue'
 import Loading from './components/Utils/Loading.vue'
+import { usePreventSpace } from '~~/composables/usePreventSpace'
 
 useHead({
   title: 'Instagram',
@@ -38,6 +39,7 @@ const section = computed(() => globalStore.getSection)
 const isMobile = computed(() => globalStore.getIsMobile)
 const isShowStory = computed(() => storyStore.getIsShowStory)
 const isShowMore = computed(() => moreStore.isShow)
+usePreventSpace()
 
 watch([width, height], () => {
   globalStore.setClientSize(width.value, height.value)
