@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 const state = () => ({
   isLogin: true,
   userName: 'cuzknothz',
-  avatar: '/image/avatar.jpg',
+  avatar: '/image/91480011.jpg',
 })
 
 const getters = {}
