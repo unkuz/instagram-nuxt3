@@ -8,11 +8,11 @@ const suggestionStore = useSuggestionStore()
 
 const suggestion = computed(() => suggestionStore.suggestion)
 
-onMounted(() => {
-  document.fonts.ready.then(() => {
-    console.log('FONT')
-  })
-})
+// onMounted(() => {
+//   document.fonts.ready.then(() => {
+//     console.log('FONT')
+//   })
+// })
 </script>
 
 <template>

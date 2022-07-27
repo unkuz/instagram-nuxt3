@@ -23,14 +23,24 @@ const toggleLike = () => {
   timelineStore.setToggleLikePost(props.idPost)
 }
 
-const loadVideo = () => {
-  videoRef.value.readyState === 4 ? (isVideoReady.value = true) : (isVideoReady.value = false)
-}
-
 onMounted(() => {
-  videoRef.value.addEventListener('loadeddata', loadVideo)
+  // videoRef.value.addEventListener('loadeddata', onLoadedData)
   videoRef.value.addEventListener('timeupdate', updateTime)
+  console.log(videoRef.value.readyState)
 })
+
+watch(
+  () => videoRef?.value?.readyState,
+  () => {
+    videoRef.value.readyState === 4 ? (isVideoReady.value = true) : (isVideoMuted.value = false)
+  }
+)
+
+// const onLoadedData = () => {
+//   console.log('??????', videoRef.value.readyState)
+//   debugger
+//   videoRef.value.readyState === 4 ? (isVideoReady.value = true) : (isVideoReady.value = false)
+// }
 
 const updateTime = () => {
   isVideoPlay.value = !videoRef.value.paused
@@ -89,7 +99,7 @@ watch(percent, () => {
 </template>
 <style lang="css">
 .skeleton {
-  animation: haha 1s infinite;
+  animation: haha 0.8s infinite linear;
 }
 
 @keyframes haha {
