@@ -69,9 +69,10 @@ const suggestion = computed(() => suggestionStore.suggestion)
       <div>© 2022 Instagram clone by</div>
       <a href="https://github.com/cuzknothz" target="_blank">
         <div
+          title="Cuzknothz github"
           class="cursor-pointer select-none font-august text-[1.2rem] uppercase tracking-wider text-black"
         >
-          Cuzknothz_.
+          Cuzknothz
         </div>
       </a>
     </div>
