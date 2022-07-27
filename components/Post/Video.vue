@@ -12,9 +12,10 @@ interface IProps {
 }
 const props = defineProps<IProps>()
 
-const videoRef = ref(null)
+const videoRef = ref<HTMLVideoElement>(null)
 const progressBarRef = ref<HTMLDivElement>(null)
 const isVideoPlay = ref(false)
+const isVideoReady = ref(false)
 const timelineStore = useTimeLineStore()
 
 const isVideoMuted = ref(true)
@@ -22,7 +23,12 @@ const toggleLike = () => {
   timelineStore.setToggleLikePost(props.idPost)
 }
 
+const loadVideo = () => {
+  videoRef.value.readyState === 4 ? (isVideoReady.value = true) : (isVideoReady.value = false)
+}
+
 onMounted(() => {
+  videoRef.value.addEventListener('loadeddata', loadVideo)
   videoRef.value.addEventListener('timeupdate', updateTime)
 })
 
@@ -76,5 +82,22 @@ watch(percent, () => {
     >
       <div ref="progressBarRef" class="h-full w-0 bg-blue-500"></div>
     </div>
+    <div v-if="!isVideoReady" class="absolute inset-0 bg-[#c0c0c0]">
+      <div class="skeleton absolute h-full w-[40px] bg-white blur-2xl"></div>
+    </div>
   </div>
 </template>
+<style lang="css">
+.skeleton {
+  animation: haha 1s infinite;
+}
+
+@keyframes haha {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+</style>
