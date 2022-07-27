@@ -92,8 +92,8 @@ watch(percent, () => {
     >
       <div ref="progressBarRef" class="h-full w-0 bg-blue-500"></div>
     </div>
-    <div v-if="!isVideoReady" class="absolute inset-0 bg-[#c0c0c0]">
-      <div class="skeleton absolute h-full w-[40px] bg-white blur-2xl"></div>
+    <div v-if="!isVideoReady" class="absolute inset-0 bg-[#e6e6e6d0]">
+      <div class="skeleton absolute h-full w-[100px] bg-white blur-2xl"></div>
     </div>
   </div>
 </template>
