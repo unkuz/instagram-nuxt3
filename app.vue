@@ -80,7 +80,7 @@ if (process.client) {
     <More v-if="isShowMore" />
     <!-- <ProgressBar /> -->
     <!-- <ScrollBar /> -->
-    <Loading />
+    <!-- <Loading /> -->
   </div>
 </template>
 <style scoped>
