@@ -15,7 +15,7 @@ const props = defineProps<IProps>()
 const videoRef = ref<HTMLVideoElement>(null)
 const progressBarRef = ref<HTMLDivElement>(null)
 const isVideoPlay = ref(false)
-const isVideoReady = ref(false)
+// const isVideoReady = ref(false)
 const timelineStore = useTimeLineStore()
 
 const isVideoMuted = ref(true)
@@ -29,12 +29,12 @@ onMounted(() => {
   console.log(videoRef.value.readyState)
 })
 
-watch(
-  () => videoRef?.value?.readyState,
-  () => {
-    videoRef.value.readyState === 4 ? (isVideoReady.value = true) : (isVideoMuted.value = false)
-  }
-)
+// watch(
+//   () => videoRef?.value?.readyState,
+//   () => {
+//     videoRef.value.readyState === 4 ? (isVideoReady.value = true) : (isVideoMuted.value = false)
+//   }
+// )
 
 // const onLoadedData = () => {
 //   console.log('??????', videoRef.value.readyState)
@@ -92,9 +92,9 @@ watch(percent, () => {
     >
       <div ref="progressBarRef" class="h-full w-0 bg-blue-500"></div>
     </div>
-    <div v-if="!isVideoReady" class="absolute inset-0 bg-[#e6e6e6d0]">
+    <!-- <div v-if="!isVideoReady" class="absolute inset-0 bg-[#e6e6e6d0]">
       <div class="skeleton absolute h-full w-[50px] bg-white blur-2xl"></div>
-    </div>
+    </div> -->
   </div>
 </template>
 <style lang="css">
