@@ -6,6 +6,7 @@ import TagIcon_ from '~~/assets/svg/tag_icon.svg'
 import TagIconSelected_ from '~~/assets/svg/tag_icon_selected.svg'
 import Modal from '~~/components/Huge/Profile/Modal.vue'
 import { SELECT_TYPE } from '~~/constants/screens/account'
+import { useAuthStore } from '~~/store/auth.js'
 import { useProfileStore } from '~~/store/profile'
 
 definePageMeta({
@@ -13,10 +14,12 @@ definePageMeta({
 })
 
 const profileStore = useProfileStore()
+const authStore = useAuthStore()
 const isShowFollowing = computed(() => profileStore.isShowFollowing)
 const isShowFollowers = computed(() => profileStore.isShowFollowers)
 const currentSelect = computed(() => profileStore.getSelect)
 const isSelect = (select) => currentSelect === select
+const avatar = computed(() => authStore.avatar)
 </script>
 
 <template>
@@ -27,7 +30,7 @@ const isSelect = (select) => currentSelect === select
         src="/personal/274541816_246263407707597_708415355959487821_n.jpg"
       />
       <img
-        src="/personal/avatar.jpg"
+        :src="avatar"
         class="absolute top-[67%] left-1/2 h-[120px] w-[120px] -translate-x-1/2 cursor-pointer rounded-full border-[5px] border-white object-cover md:top-[60%] md:left-[3%] md:h-[140px] md:w-[140px] md:translate-x-0"
       />
     </div>
