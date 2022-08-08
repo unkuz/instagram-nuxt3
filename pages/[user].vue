@@ -18,17 +18,16 @@ const authStore = useAuthStore()
 const isShowFollowing = computed(() => profileStore.isShowFollowing)
 const isShowFollowers = computed(() => profileStore.isShowFollowers)
 const currentSelect = computed(() => profileStore.getSelect)
-const isSelect = (select) => currentSelect === select
 const avatar = computed(() => authStore.avatar)
+const coverImg = computed(() => authStore.coverImg)
+
+const isSelect = (select) => currentSelect === select
 </script>
 
 <template>
   <div class="relative mb-[65px] text-sm">
     <div class="relative h-[250px]">
-      <img
-        class="absolute h-full w-full cursor-pointer object-cover"
-        src="/personal/274541816_246263407707597_708415355959487821_n.jpg"
-      />
+      <img class="absolute h-full w-full cursor-pointer object-cover" :src="coverImg" />
       <img
         :src="avatar"
         class="absolute top-[67%] left-1/2 h-[120px] w-[120px] -translate-x-1/2 cursor-pointer rounded-full border-[5px] border-white object-cover md:top-[60%] md:left-[3%] md:h-[140px] md:w-[140px] md:translate-x-0"
