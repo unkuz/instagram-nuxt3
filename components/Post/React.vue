@@ -21,7 +21,7 @@ const timelineStore = useTimeLineStore()
 
 const viewPost = () => {
   viewPostDetailStore.setPostDetail(props.id)
-  navigateTo(`${APP_ROUTES._____}/p/${props.id}`)
+  navigateTo(`${APP_ROUTES.HOME}/p/${props.id}`)
 }
 
 const toggleLike = () => {
