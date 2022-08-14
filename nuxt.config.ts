@@ -2,15 +2,10 @@ import { defineNuxtConfig } from 'nuxt'
 import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
-  css: ['~/assets/css/index.css'],
+  css: ['@/assets/css/index.css'],
   build: {
     postcss: {
-      postcssOptions: {
-        plugins: {
-          tailwindcss: {},
-          autoprefixer: {},
-        },
-      },
+      postcssOptions: require('./postcss.config.js'),
     },
   },
   buildModules: ['@pinia/nuxt'],
