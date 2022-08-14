@@ -13,6 +13,7 @@ import ProgressBar from './components/Utils/ProgressBar.vue'
 import ScrollBar from './components/Utils/ScrollBar.vue'
 import Loading from './components/Utils/Loading.vue'
 import { usePreventSpace } from '~~/composables/usePreventSpace'
+import Video from '~~/components/Utils/Video.vue'
 
 useHead({
   title: 'Instagram',
@@ -81,6 +82,7 @@ if (process.client) {
     <!-- <ProgressBar /> -->
     <!-- <ScrollBar /> -->
     <!-- <Loading /> -->
+    <Video />
   </div>
 </template>
 <style scoped>

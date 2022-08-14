@@ -1,4 +1,8 @@
+import { useCurrentVideoStore } from '~~/store/currentVideo'
+
 export const useVideoPauseViewPort = (videoRef) => {
+  const currentVideoStore = useCurrentVideoStore()
+
   const check = () => {
     const rect = videoRef.value.getBoundingClientRect()
 
@@ -10,6 +14,7 @@ export const useVideoPauseViewPort = (videoRef) => {
 
     if (!condition) {
       videoRef.value.pause()
+      currentVideoStore.setReady()
     }
   }
   onMounted(() => {

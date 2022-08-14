@@ -5,6 +5,7 @@ import { useTimeLineStore } from '~~/store/timeline'
 import { useVideoPauseViewPort } from '~~/composables/useVideoPauseViewPort'
 import { usePercentVideo } from '~~/composables/usePercentVideo'
 import { gsap } from 'gsap'
+import { useCurrentVideoStore } from '~~/store/currentVideo'
 
 interface IProps {
   video: any
@@ -13,12 +14,12 @@ interface IProps {
 const props = defineProps<IProps>()
 
 const videoRef = ref<HTMLVideoElement>(null)
+const currentVideoStore = useCurrentVideoStore()
 const progressBarRef = ref<HTMLDivElement>(null)
 const isVideoPlay = ref(false)
 // const isVideoReady = ref(false)
 const timelineStore = useTimeLineStore()
 
-const isVideoMuted = ref(true)
 const toggleLike = () => {
   timelineStore.setToggleLikePost(props.idPost)
 }
@@ -44,7 +45,6 @@ onMounted(() => {
 
 const updateTime = () => {
   isVideoPlay.value = !videoRef.value.paused
-  isVideoMuted.value = videoRef.value.muted
 }
 
 const play = () => {
@@ -67,10 +67,24 @@ useVideoPauseViewPort(videoRef)
 const { percent } = usePercentVideo(videoRef)
 
 watch(percent, () => {
-  const { clientWidth: widthParent } = progressBarRef.value.parentElement
-  gsap.to(progressBarRef.value, {
-    width: percent.value * widthParent,
-  })
+  // const { clientWidth: widthParent } = progressBarRef.value.parentElement
+  // gsap.to(progressBarRef.value, {
+  //   width: percent.value * widthParent,
+  // })
+})
+
+watch(isVideoPlay, () => {
+  if (isVideoPlay) {
+    console.log(videoRef.value.currentTime)
+    currentVideoStore.set({
+      src: videoRef.value.src,
+      isPlaying: !videoRef.value.paused,
+      startTime: videoRef.value.currentTime,
+      ready: false,
+    })
+  } else {
+    currentVideoStore.$reset()
+  }
 })
 </script>
 
