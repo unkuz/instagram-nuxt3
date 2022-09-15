@@ -30,31 +30,7 @@ onUnmounted(() => {
     <div class="relative flex w-full justify-center lg:block">
       <div class="inline-flex w-full flex-col items-center md:w-[614px] lg:block">
         <Stories />
-        <Post
-          v-for="{
-            caption_text,
-            has_liked,
-            carousel_media,
-            comments,
-            id,
-            is_seen,
-            like_count,
-            location,
-            created_at,
-            user,
-          } in timeline"
-          :key="id"
-          :caption_text="caption_text"
-          :has_liked="has_liked"
-          :carousel_media="carousel_media"
-          :comments="comments"
-          :is_seen="is_seen"
-          :id="id"
-          :like_count="like_count"
-          :location="location"
-          :created_at="created_at"
-          :user="user"
-        />
+        <Post v-for="i in timeline" :key="i.id" v-bind="i" />
       </div>
       <div
         class="absolute top-0 right-0 hidden h-[473px] w-[293px] bg-white text-sm lg:block"
