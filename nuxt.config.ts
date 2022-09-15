@@ -2,12 +2,8 @@ import { defineNuxtConfig } from 'nuxt'
 import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
+  modules: ['@nuxtjs/tailwindcss'],
   css: ['@/assets/css/index.css'],
-  build: {
-    postcss: {
-      postcssOptions: require('./postcss.config.js'),
-    },
-  },
   buildModules: ['@pinia/nuxt'],
   meta: {
     charset: 'utf-8',
