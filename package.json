@@ -10,7 +10,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.182",
     "autoprefixer": "^10.4.8",
-    "nuxt": "^3.0.0-rc.6",
+    "nuxt": "^3.0.0-rc.10",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.10",

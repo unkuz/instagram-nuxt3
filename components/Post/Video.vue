@@ -90,7 +90,7 @@ watch(isVideoPlay, () => {
 
 <template>
   <div class="group relative min-w-full overflow-hidden" :key="video.id">
-    <video :src="video.src" ref="videoRef" loop class="min-w-full" />
+    <video :src="video.src" ref="videoRef" class="min-w-full" />
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
         ref="bigPlayIcon"

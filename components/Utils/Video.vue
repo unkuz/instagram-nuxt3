@@ -30,7 +30,7 @@ watch(
 </script>
 
 <template>
-  <div class="fixed bottom-[20px] right-[20px] hidden cursor-pointer lg:block" id="video">
+  <div class="fixed bottom-[10px] right-[10px] hidden cursor-pointer lg:block" id="video">
     <video class="w-[200px]" ref="videoRef" />
   </div>
 </template>
