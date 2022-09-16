@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt'
 import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/robots'],
   css: ['@/assets/css/index.css'],
   buildModules: ['@pinia/nuxt'],
   meta: {
@@ -15,4 +15,10 @@ export default defineNuxtConfig({
   vite: {
     plugins: [svgLoader({})],
   },
+  robots:
+    /* module options */
+    {
+      UserAgent: '*',
+      Disallow: '',
+    },
 })

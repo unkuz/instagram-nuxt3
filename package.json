@@ -18,6 +18,7 @@
     "tailwindcss": "^3.1.8"
   },
   "dependencies": {
+    "@nuxtjs/robots": "^2.5.0",
     "@pinia/nuxt": "^0.4.2",
     "@sentry/node": "^7.13.0",
     "@sentry/tracing": "^7.13.0",
