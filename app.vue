@@ -82,7 +82,7 @@ if (process.client) {
     <!-- <ProgressBar /> -->
     <!-- <ScrollBar /> -->
     <!-- <Loading /> -->
-    <Video />
+    <!-- <Video /> -->
   </div>
 </template>
 <style scoped>

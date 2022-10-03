@@ -7,15 +7,13 @@ interface IProps {
 const props = defineProps<IProps>()
 
 const random = ref(Math.random())
-
-console.log(props.cluster)
 </script>
 
 <template>
   <div>
     <div
       v-if="random < 1 / 3"
-      class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[28px] md:gap-[28px]"
+      class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[15px] md:gap-[15px]"
     >
       <Square isBig :img="cluster[0]" />
       <Square :img="cluster[1]" />
@@ -24,13 +22,13 @@ console.log(props.cluster)
 
     <div
       v-else-if="random > 2 / 3"
-      class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[28px] md:gap-[28px]"
+      class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[15px] md:gap-[15px]"
     >
       <Square :img="cluster[0]" />
       <Square isBig :img="cluster[1]" />
       <Square :img="cluster[2]" />
     </div>
-    <div v-else class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[28px] md:gap-[28px]">
+    <div v-else class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[15px] md:gap-[15px]">
       <Square :img="cluster[0]" />
       <Square :img="cluster[1]" />
       <Square :img="cluster[2]" />
