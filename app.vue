@@ -9,11 +9,6 @@ import NewPostMobile from './components/Huge/NewPostMobile/index.vue'
 import More from './components/Utils/More.vue'
 import Prelude from './components/Utils/Prelude.vue'
 import { useStoryStore } from './store/story'
-import ProgressBar from './components/Utils/ProgressBar.vue'
-import ScrollBar from './components/Utils/ScrollBar.vue'
-import Loading from './components/Utils/Loading.vue'
-import { usePreventSpace } from '~~/composables/usePreventSpace'
-import Video from '~~/components/Utils/Video.vue'
 
 useHead({
   title: 'Instagram',
@@ -72,51 +67,8 @@ if (process.client) {
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-    <!-- <div
-      v-if="isTransition"
-      class="absolute inset-0 z-40 flex items-center justify-center bg-violet-200 transition"
-    ></div> -->
     <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
     <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
     <More v-if="isShowMore" />
-    <!-- <ProgressBar /> -->
-    <!-- <ScrollBar /> -->
-    <!-- <Loading /> -->
-    <!-- <Video /> -->
   </div>
 </template>
-<style scoped>
-.transition {
-  animation: transition 1s linear infinite;
-}
-
-@keyframes transition {
-  0% {
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-  }
-  10% {
-    clip-path: polygon(82% 0, 100% 0, 100% 100%, 68% 100%);
-  }
-  20% {
-    clip-path: polygon(65% 0, 100% 0, 100% 100%, 44% 100%);
-  }
-  30% {
-    clip-path: polygon(24% 0, 100% 0, 100% 100%, 10% 100%);
-  }
-  40% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-  50% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-  60% {
-    clip-path: polygon(0 0, 95% 0, 75% 100%, 0 100%);
-  }
-  80% {
-    clip-path: polygon(0 0, 59% 0, 30% 100%, 0 100%);
-  }
-  100% {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  }
-}
-</style>
