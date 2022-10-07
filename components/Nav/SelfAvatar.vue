@@ -11,8 +11,6 @@ const props = defineProps<IconProps>()
 
 const authStore = useAuthStore()
 const { T } = SizeAvatarEnum
-
-console.log(props.isSelect)
 </script>
 
 <template>

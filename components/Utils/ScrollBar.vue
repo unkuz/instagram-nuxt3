@@ -25,7 +25,6 @@ watch([isReady, startY, endY], () => {
 })
 
 const mouseMove = (e: MouseEvent) => {
-  console.error('MOVE')
   endY.value = e.clientY
 }
 const mouseUp = (e: MouseEvent) => {
@@ -42,7 +41,6 @@ onMounted(() => {
 })
 
 const mouseDown = (e: MouseEvent) => {
-  console.error('DOWN')
   isReady.value = true
   startY.value = e.clientY
 }

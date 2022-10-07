@@ -3,9 +3,7 @@ import { useProfileStore } from '~~/store/profile'
 
 const profileStore = useProfileStore()
 const currentSelect = computed(() => profileStore.getSelect)
-watch(currentSelect, () => {
-  console.log('CHNAGE')
-})
+watch(currentSelect, () => {})
 </script>
 
 <template>

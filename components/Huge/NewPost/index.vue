@@ -35,7 +35,6 @@ watch(listBolbs, () => {
       objectFit: 'cover',
     })
     containerPreviewRef.value.appendChild(image)
-    console.log('REF', boxRef.value.clientHeight)
   })
 })
 
@@ -66,7 +65,6 @@ const handleUpload = () => {
 const handleSlide = (indicator) => {
   containerPreviewRef.value.style.transform = `translateX(${startPointX.value + 500 * indicator}px)`
   startPointX.value += indicator * 500
-  console.log(startPointX.value / 500)
 }
 </script>
 
