@@ -1,7 +1,7 @@
 <template>
   <div
     :class="
-      clsx(`avatar aspect-square cursor-pointer rounded-[50%] ${className}`, {
+      clsx(`aspect-square cursor-pointer rounded-[50%] bg-cover bg-center ${className}`, {
         'w-[24px]': size === T,
         'w-[32px]': size === S,
         'w-[56px]': size === M,
@@ -26,9 +26,3 @@ interface IProps {
 
 const { size, url, className } = defineProps<IProps>()
 </script>
-<style scoped lang="css">
-.avatar {
-  background-position: center;
-  background-size: cover;
-}
-</style>

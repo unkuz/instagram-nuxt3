@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import { SizeAvatarEnum } from '~~/type'
 import PostIcon_ from '~~/assets/svg/post_icon.svg'
 import PostIconSelected_ from '~~/assets/svg/post_icon_selected.svg'
 import ReelIcon_ from '~~/assets/svg/reel_icon.svg'
 import TagIcon_ from '~~/assets/svg/tag_icon.svg'
 import TagIconSelected_ from '~~/assets/svg/tag_icon_selected.svg'
 import Modal from '~~/components/Huge/Profile/Modal.vue'
+import Avatar from '~~/components/Tiny/Avatar.vue'
 import { SELECT_TYPE } from '~~/constants/screens/account'
 import { useAuthStore } from '~~/store/auth.js'
 import { useProfileStore } from '~~/store/profile'
-import Avatar from '~~/components/Tiny/Avatar.vue'
+import { SizeAvatarEnum } from '~~/type'
 
 definePageMeta({
   layout: 'main',
@@ -30,7 +30,10 @@ const isSelect = (select) => currentSelect === select
 <template>
   <div class="relative mb-[65px] text-sm">
     <div class="relative h-[250px]">
-      <img class="absolute h-full w-full cursor-pointer object-cover" :src="coverImg" />
+      <div
+        class="absolute h-full w-full cursor-pointer bg-cover bg-center object-cover"
+        :style="{ backgroundImage: `url(${coverImg})` }"
+      ></div>
       <Avatar
         :size="L"
         :url="avatar"
