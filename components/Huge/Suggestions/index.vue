@@ -6,17 +6,10 @@ import Item from './Item.vue'
 import Avatar from '~~/components/Tiny/Avatar.vue'
 
 const { M } = SizeAvatarEnum
-
 const authStore = useAuthStore()
 const suggestionStore = useSuggestionStore()
-
 const suggestion = computed(() => suggestionStore.suggestion)
-
-// onMounted(() => {
-//   document.fonts.ready.then(() => {
-//     console.log('FONT')
-//   })
-// })
+const authorText = 'cuzknothz'
 </script>
 
 <template>
@@ -24,10 +17,10 @@ const suggestion = computed(() => suggestionStore.suggestion)
     <div class="mt-[18px] mb-[22px] flex h-[56px] items-center justify-between">
       <Avatar :size="M" :url="authStore.avatar" />
       <div class="-ml-[70px]">
-        <p class="font-medium">cuzknothz</p>
+        <p class="cursor-pointer font-medium">cuzknothz</p>
         <p class="text-gray-600">cuzknothz</p>
       </div>
-      <div class="text-[#1da0f6]">Switch</div>
+      <div class="cursor-pointer text-[#1da0f6]">Switch</div>
     </div>
     <div class="flex h-[11px] items-center justify-between text-sm text-gray-600">
       <div class="text-gray-600">Suggestions for you</div>
@@ -66,9 +59,9 @@ const suggestion = computed(() => suggestionStore.suggestion)
       <a href="https://github.com/cuzknothz" target="_blank">
         <div
           title="Cuzknothz github"
-          class="cursor-pointer select-none font-august text-[1.2rem] uppercase tracking-wider text-black"
+          class="cursor-pointer select-none font-august text-[1.25rem] uppercase tracking-wider text-black"
         >
-          Cuzknothz
+          {{ authorText }}
         </div>
       </a>
     </div>
