@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { SizeAvatarEnum } from '~~/type'
 import Avatar from '~~/components/Tiny/Avatar.vue'
+import Button from '~~/components/Tiny/Button.vue'
 
 const { S } = SizeAvatarEnum
 
@@ -34,9 +35,12 @@ const goToAccount = () => {
       </p>
       <p class="text-[0.8rem] text-gray-600">Suggested for you</p>
     </div>
-    <div class="flex w-[55px] cursor-pointer justify-end text-[0.8rem]" @click="toggleFollow">
-      <span v-if="isFollow" class="text-[#1da0f6]">Follow</span>
-      <span v-else class="text-[#1da0f6]">Unfollow</span>
+    <div
+      class="flex w-[55px] cursor-pointer justify-end text-[0.8rem] font-[500]"
+      @click="toggleFollow"
+    >
+      <Button v-if="isFollow" text="Unfollow" className="[&>span]:text-[#ff48a3]" />
+      <Button v-else text="Follow" className="[&>span]:text-[#1da0f6]" />
     </div>
   </div>
 </template>
