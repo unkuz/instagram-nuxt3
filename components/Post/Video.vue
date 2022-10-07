@@ -1,51 +1,34 @@
 <script lang="ts" setup>
+import { gsap } from 'gsap'
 import PlayIcon_ from '~~/assets/svg/play_icon.svg'
 import { useDoubleClick } from '~~/composables/useDoubleClick'
-import { useTimeLineStore } from '~~/store/timeline'
-import { useVideoPauseViewPort } from '~~/composables/useVideoPauseViewPort'
 import { usePercentVideo } from '~~/composables/usePercentVideo'
-import { gsap } from 'gsap'
+import { useVideoPauseViewPort } from '~~/composables/useVideoPauseViewPort'
 import { useCurrentVideoStore } from '~~/store/currentVideo'
+import { useTimeLineStore } from '~~/store/timeline'
 
 interface IProps {
   video: any
   idPost: string
 }
 const props = defineProps<IProps>()
-
 const videoRef = ref<HTMLVideoElement>(null)
-const currentVideoStore = useCurrentVideoStore()
 const progressBarRef = ref<HTMLDivElement>(null)
-const isVideoPlay = ref(false)
-// const isVideoReady = ref(false)
+const isVideoPlay = ref<boolean>(false)
 const timelineStore = useTimeLineStore()
 
 const toggleLike = () => {
   timelineStore.setToggleLikePost(props.idPost)
 }
 
-onMounted(() => {
-  // videoRef.value.addEventListener('loadeddata', onLoadedData)
-  videoRef.value.addEventListener('timeupdate', updateTime)
-  console.log(videoRef.value.readyState)
-})
-
-// watch(
-//   () => videoRef?.value?.readyState,
-//   () => {
-//     videoRef.value.readyState === 4 ? (isVideoReady.value = true) : (isVideoMuted.value = false)
-//   }
-// )
-
-// const onLoadedData = () => {
-//   console.log('??????', videoRef.value.readyState)
-//   debugger
-//   videoRef.value.readyState === 4 ? (isVideoReady.value = true) : (isVideoReady.value = false)
-// }
-
 const updateTime = () => {
   isVideoPlay.value = !videoRef.value.paused
 }
+
+onMounted(() => {
+  videoRef.value.addEventListener('timeupdate', updateTime)
+  console.log(videoRef.value.readyState)
+})
 
 const play = () => {
   const allVideo = document.querySelectorAll('video')
@@ -67,24 +50,10 @@ useVideoPauseViewPort(videoRef)
 const { percent } = usePercentVideo(videoRef)
 
 watch(percent, () => {
-  // const { clientWidth: widthParent } = progressBarRef.value.parentElement
-  // gsap.to(progressBarRef.value, {
-  //   width: percent.value * widthParent,
-  // })
-})
-
-watch(isVideoPlay, () => {
-  if (isVideoPlay) {
-    console.log(videoRef.value.currentTime)
-    currentVideoStore.set({
-      src: videoRef.value.src,
-      isPlaying: !videoRef.value.paused,
-      startTime: videoRef.value.currentTime,
-      ready: false,
-    })
-  } else {
-    currentVideoStore.$reset()
-  }
+  const { clientWidth: widthParent } = progressBarRef.value.parentElement
+  gsap.to(progressBarRef.value, {
+    width: percent.value * widthParent,
+  })
 })
 </script>
 
@@ -106,22 +75,5 @@ watch(isVideoPlay, () => {
     >
       <div ref="progressBarRef" class="h-full w-0 bg-blue-500"></div>
     </div>
-    <!-- <div v-if="!isVideoReady" class="absolute inset-0 bg-[#e6e6e6d0]">
-      <div class="skeleton absolute h-full w-[50px] bg-white blur-2xl"></div>
-    </div> -->
   </div>
 </template>
-<style lang="css">
-.skeleton {
-  animation: haha 0.8s infinite linear;
-}
-
-@keyframes haha {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: 100%;
-  }
-}
-</style>

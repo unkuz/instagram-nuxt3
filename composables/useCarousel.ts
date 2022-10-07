@@ -1,5 +1,5 @@
 import { gsap } from 'gsap'
-import { Ref } from 'nuxt/dist/app/compat/capi'
+import { Ref } from 'vue'
 import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
 import { useGlobalStore } from '~~/store/global'
 

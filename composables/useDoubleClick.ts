@@ -1,9 +1,9 @@
-import { Ref } from 'nuxt/dist/app/compat/capi'
+import { Ref } from 'vue'
 
 export const useDoubleClick = (ref: Ref<HTMLElement>, click: () => void, dblclick: () => void) => {
   let timer
 
-  const _click = (event) => {
+  const _click = (event: MouseEvent) => {
     if (event.detail === 1) {
       timer = setTimeout(() => {
         click()
@@ -11,7 +11,7 @@ export const useDoubleClick = (ref: Ref<HTMLElement>, click: () => void, dblclic
     }
   }
 
-  const _dbclick = (event) => {
+  const _dbclick = (event: MouseEvent) => {
     clearTimeout(timer)
     dblclick()
   }

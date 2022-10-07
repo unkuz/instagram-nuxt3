@@ -11,17 +11,17 @@ const rightRef = ref<HTMLElement>(null)
 const timeLineStore = useTimeLineStore()
 const timeline = computed(() => timeLineStore.timeline)
 
-const positionRight = () => {
+const positionRight = ref(() => {
   rightRef.value.style.top = `${window.scrollY}px`
-}
+})
 
 onMounted(() => {
-  positionRight()
-  addEventListener('scroll', positionRight)
+  positionRight.value()
+  addEventListener('scroll', positionRight.value)
 })
 
 onUnmounted(() => {
-  removeEventListener('scroll', positionRight)
+  removeEventListener('scroll', positionRight.value)
 })
 </script>
 

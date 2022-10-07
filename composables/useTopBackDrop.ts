@@ -1,4 +1,6 @@
-export function useTopBackDrop(refElement: any) {
+import { Ref } from 'vue'
+
+export function useTopBackDrop(refElement: Ref<HTMLDivElement>) {
   const handleScroll = () => {
     refElement.value.style.top = `${window.scrollY}px`
   }

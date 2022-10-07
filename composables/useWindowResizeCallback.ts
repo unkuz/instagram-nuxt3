@@ -1,4 +1,4 @@
-export function useWindowResizeCallback(callback: Function) {
+export function useWindowResizeCallback(callback: () => void) {
   const resize = (e: UIEvent) => {
     callback()
   }
@@ -6,11 +6,11 @@ export function useWindowResizeCallback(callback: Function) {
   onMounted(() => {
     callback()
     window.addEventListener('resize', resize)
-    window.addEventListener('scroll',resize)
+    window.addEventListener('scroll', resize)
   })
-  
+
   onUnmounted(() => {
     window.removeEventListener('resize', resize)
-    window.removeEventListener('scroll',resize)
+    window.removeEventListener('scroll', resize)
   })
 }
