@@ -24,7 +24,7 @@ const authorText = 'cuzknothz'
     </div>
     <div class="flex h-[11px] items-center justify-between text-sm text-gray-600">
       <div class="text-gray-600">Suggestions for you</div>
-      <div>See All</div>
+      <div class="cursor-pointer">See All</div>
     </div>
     <div class="mt-[8px] w-full">
       <Item
