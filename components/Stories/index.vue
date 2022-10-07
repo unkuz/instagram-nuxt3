@@ -59,13 +59,7 @@ const handleTouchStart = (e: TouchEvent) => {
       ref="heroPageletRef"
       @touchstart="handleTouchStart"
     >
-      <Story
-        v-for="{ avatar, id, name } in stories"
-        :key="id"
-        :name="name"
-        :avatar="avatar"
-        :id="id"
-      />
+      <Story v-for="i in stories" v-bind="i" :key="i.id" />
     </div>
     <div class="absolute top-1/2 right-2 -translate-y-1/2">
       <ArrowIcon_ v-show="isShowNext" @click="handle($event, 1)" />
