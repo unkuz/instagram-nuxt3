@@ -68,10 +68,10 @@ const handleTouchStart = (e: TouchEvent) => {
       />
     </div>
     <div class="absolute top-1/2 right-2 -translate-y-1/2">
-      <ArrowIcon_ v-if="isShowNext" @click="handle($event, 1)" />
+      <ArrowIcon_ v-show="isShowNext" @click="handle($event, 1)" />
     </div>
     <div class="absolute top-1/2 left-2 -translate-y-1/2">
-      <ArrowIcon_ class="rotate-180" v-if="isShowPrev" @click="handle($event, -1)" />
+      <ArrowIcon_ class="rotate-180" v-show="isShowPrev" @click="handle($event, -1)" />
     </div>
   </div>
 </template>

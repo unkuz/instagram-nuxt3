@@ -19,7 +19,7 @@ defineProps<IProps>()
     class="mx-[8px] inline-block max-w-[74px] select-none overflow-hidden text-ellipsis whitespace-nowrap sm:cursor-pointer"
   >
     <div
-      class="mx-auto flex aspect-square h-[66px] w-[66px] flex-col items-center overflow-hidden rounded-[50%] bg-gradient-to-bl from-[#ab21e294] to-[#00c3ff] p-[3px]"
+      class="mx-auto flex aspect-square h-[66px] w-[66px] flex-col items-center overflow-hidden rounded-[50%] bg-gradient-to-bl from-[#cc00ff] to-[#6fc8f1] p-[3px]"
     >
       <div class="h-full w-full rounded-[50%] bg-white p-[2px]">
         <Avatar :size="M" :url="avatar" />
