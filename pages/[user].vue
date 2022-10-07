@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { SizeAvatarEnum } from '~~/type'
 import PostIcon_ from '~~/assets/svg/post_icon.svg'
 import PostIconSelected_ from '~~/assets/svg/post_icon_selected.svg'
 import ReelIcon_ from '~~/assets/svg/reel_icon.svg'
@@ -8,11 +9,13 @@ import Modal from '~~/components/Huge/Profile/Modal.vue'
 import { SELECT_TYPE } from '~~/constants/screens/account'
 import { useAuthStore } from '~~/store/auth.js'
 import { useProfileStore } from '~~/store/profile'
+import Avatar from '~~/components/Tiny/Avatar.vue'
 
 definePageMeta({
   layout: 'main',
 })
 
+const { L } = SizeAvatarEnum
 const profileStore = useProfileStore()
 const authStore = useAuthStore()
 const isShowFollowing = computed(() => profileStore.isShowFollowing)
@@ -28,9 +31,10 @@ const isSelect = (select) => currentSelect === select
   <div class="relative mb-[65px] text-sm">
     <div class="relative h-[250px]">
       <img class="absolute h-full w-full cursor-pointer object-cover" :src="coverImg" />
-      <img
-        :src="avatar"
-        class="absolute top-[67%] left-1/2 h-[120px] w-[120px] -translate-x-1/2 cursor-pointer rounded-full border-[5px] border-white object-cover md:top-[60%] md:left-[3%] md:h-[140px] md:w-[140px] md:translate-x-0"
+      <Avatar
+        :size="L"
+        :url="avatar"
+        className="absolute top-[67%] left-1/2 -translate-x-1/2 border-[5px] border-white md:top-[60%] md:left-[3%] md:h-[140px] md:w-[140px] md:translate-x-0"
       />
     </div>
     <div>

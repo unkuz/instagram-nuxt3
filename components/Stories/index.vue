@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { onMounted } from 'vue'
 import ArrowIcon_ from '~~/assets/svg/arrow_icon.svg'
 import { SIZE_HERO_PAGELET } from '~~/constants/mock'
 import { useStoriesStore } from '~~/store/stories'

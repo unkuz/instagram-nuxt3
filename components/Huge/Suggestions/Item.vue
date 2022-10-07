@@ -1,4 +1,9 @@
 <script lang="ts" setup>
+import { SizeAvatarEnum } from '~~/type'
+import Avatar from '~~/components/Tiny/Avatar.vue'
+
+const { S } = SizeAvatarEnum
+
 interface IProps {
   avatar: string
   name: string
@@ -17,14 +22,8 @@ const goToAccount = () => {
 
 <template>
   <div class="flex h-[48px] items-center justify-between py-[8px]">
-    <div @click="goToAccount" class="aspect-square w-[32px] rounded-full object-cover">
-      <img
-        crossorigin="anonymous"
-        data-testid="user-avatar"
-        draggable="false"
-        class="rounded-full sm:hover:cursor-pointer"
-        :src="avatar"
-      />
+    <div @click="goToAccount">
+      <Avatar :size="S" :url="avatar" />
     </div>
     <div class="w-[185px]">
       <p
