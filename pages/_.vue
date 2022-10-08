@@ -32,10 +32,7 @@ onUnmounted(() => {
         <Stories />
         <Post v-for="i in timeline" :key="i.id" v-bind="i" />
       </div>
-      <div
-        class="absolute top-0 right-0 hidden h-[473px] w-[293px] bg-white text-sm lg:block"
-        ref="rightRef"
-      >
+      <div class="absolute top-0 right-0 hidden w-[293px] bg-white text-sm lg:block" ref="rightRef">
         <Suggestions />
       </div>
     </div>
