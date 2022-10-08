@@ -12,7 +12,8 @@ interface IProps {
 defineProps<IProps>()
 
 const moreStore = useMoreStore()
-const showMore = () => {
+const showMore = (e: Event) => {
+  e.stopPropagation()
   moreStore.setShow()
 }
 </script>
