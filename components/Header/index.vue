@@ -14,6 +14,7 @@ import FindPeople from '../Nav/FindPeople.vue'
 import Messenger from '../Nav/Messenger.vue'
 import NewPost from '../Nav/NewPost.vue'
 import SelfAvatar from '../Nav/SelfAvatar.vue'
+import Reels from '~~/components/Nav/Reels.vue'
 
 const router = useRouter()
 const globalStore = useGlobalStore()
@@ -49,23 +50,26 @@ const isShowProfile = ref(false)
         <div
           class="flex h-full w-full flex-row-reverse items-center justify-start space-x-[22px] md:w-auto md:flex-row md:justify-end md:first:mr-6 lg:w-full"
         >
-          <div v-if="!isMobile" @click="handleSelect(SECTION.HOME, '/')">
+          <div v-show="!isMobile" @click="handleSelect(SECTION.HOME, '/')">
             <HomeIcon :isSelect="section === SECTION.HOME" />
           </div>
           <div class="ml-[22px] md:ml-0" @click="handleSelect(SECTION.MESSENGER, '/direct/inbox/')">
             <Messenger :isSelect="section === SECTION.MESSENGER" :hasNew="true" />
           </div>
+          <div v-show="!isMobile" @click="handleSelect(SECTION.REELS, '/reels')">
+            <Reels :isSelect="false" />
+          </div>
           <div @click="handleSelect(SECTION.NEW_POST)" class="relative">
             <NewPost :isSelect="section === SECTION.NEW_POST" />
           </div>
-          <div v-if="!isMobile" @click="handleSelect(SECTION.FINDPEOPLE, '/explore/')">
+          <div v-show="!isMobile" @click="handleSelect(SECTION.FINDPEOPLE, '/explore/')">
             <FindPeople :isSelect="section === SECTION.FINDPEOPLE" />
           </div>
-          <div v-if="!isMobile" class="relative" @click="handleSelect(SECTION.ACTIVITYFEED)">
+          <div v-show="!isMobile" class="relative" @click="handleSelect(SECTION.ACTIVITYFEED)">
             <ActivityFeed :isSelect="section === SECTION.ACTIVITYFEED" />
             <ActivityFeedPop v-show="section === SECTION.ACTIVITYFEED" />
           </div>
-          <div v-if="!isMobile" class="relative mr-0" @click="isShowProfile = !isShowProfile">
+          <div v-show="!isMobile" class="relative mr-0" @click="isShowProfile = !isShowProfile">
             <SelfAvatar :isSelect="section === SECTION.SELF" />
             <AccountPop v-show="isShowProfile" />
           </div>
