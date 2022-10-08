@@ -4,7 +4,6 @@
 //   if (videos && videos.length > 0)
 //     videos.forEach((video) => {
 //       if (!video.ispaused) {
-//         console.log('VIDEO PLAYING', video)
 //       }
 //     })
 // })

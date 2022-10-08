@@ -26,7 +26,6 @@ const updateTime = () => {
 
 onMounted(() => {
   videoRef.value.addEventListener('timeupdate', updateTime)
-  console.log(videoRef.value.readyState)
 })
 
 const play = () => {

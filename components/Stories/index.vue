@@ -47,9 +47,7 @@ const handle = (e: MouseEvent, idx: number) => {
   }
 }
 
-const handleTouchStart = (e: TouchEvent) => {
-  console.log({ e })
-}
+const handleTouchStart = (e: TouchEvent) => {}
 </script>
 
 <template>

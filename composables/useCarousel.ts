@@ -37,32 +37,14 @@ export const useCarousel = (containerMediaRef: Ref<HTMLDivElement>) => {
 
   const touchStart = (e: TouchEvent) => {
     dragStartX.value = e.touches[0].clientX
-    console.log('START', e.touches[0].clientX)
   }
   const touchEnd = (e: TouchEvent) => {
     dragEndX.value = e.changedTouches[0].clientX
-    console.log('END', e.changedTouches[0].clientX)
   }
   const abc = computed(() => dragEndX.value - dragStartX.value)
   const width = computed(() => globalStore.clientWidth)
 
-  watch([dragStartX, dragEndX], ([a, b], [c, d]) => {
-    console.log(a, b, c, d)
-    if (a === b || c === d) {
-      console.log('HJKDFKJHFJKFHKJF')
-    }
-    console.log(a, b, c, d)
-    // if (Math.abs(abc.value) > width.value / 5) {
-    //   if (abc.value > 0) {
-    //     prev()
-    //   } else {
-    //     next()
-    //   }
-    //   console.log('PASS', abc.value)
-    // }
-
-    console.log('DIS', abc.value)
-  })
+  watch([dragStartX, dragEndX], ([a, b], [c, d]) => {})
 
   onMounted(() => {
     containerMediaRef.value.addEventListener('touchstart', touchStart)

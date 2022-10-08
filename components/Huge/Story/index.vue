@@ -18,7 +18,6 @@ useClickOutSide(mediaContainerRef, () => {
 })
 
 const keyCodeBehaviour = (e) => {
-  console.log(e.charCode)
   if (e.charCode === 32) {
     togglePlay()
   } else if (e.charCode === 13) {
