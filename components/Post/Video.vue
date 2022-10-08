@@ -67,7 +67,7 @@ watch(percent, () => {
           isVideoPlay ? 'scale-0 opacity-0' : ' scale-100 opacity-100'
         } opacity-0 duration-500`"
       >
-        <PlayIcon_ @click="play" />
+        <PlayIcon_ @click="play" class="scale-90 fill-[#ffffffee]" />
       </div>
     </div>
     <div
