@@ -20,7 +20,12 @@ defineProps<IProps>()
     </div>
     <div class="mb-[4px]">
       <p class="overflow-hidden text-ellipsis">
-        <span class="font-medium">{{ user.username }}</span> {{ caption_text }}
+        <span class="font-medium">
+          <span class="inline-block bg-gray-500 px-[10px] py-[1px] font-[500] text-white">{{
+            user.username
+          }}</span></span
+        >
+        {{ caption_text }}
       </p>
     </div>
     <div class="mt-[10px] flex gap-[5px]">

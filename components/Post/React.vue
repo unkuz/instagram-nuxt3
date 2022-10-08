@@ -30,7 +30,7 @@ const toggleLike = () => {
 </script>
 
 <template>
-  <div class="mt-[4px] grid h-[54px] grid-cols-3">
+  <div class="mt-[4px] grid h-[40px] grid-cols-3">
     <div class="flex h-full w-full items-center space-x-[10px]">
       <div @click="toggleLike"><LikeIcon_ v-if="!has_liked" /> <UnlikeIcon v-else /></div>
       <ViewPostIcon_ @click="viewPost" />
