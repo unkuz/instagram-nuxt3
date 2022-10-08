@@ -28,11 +28,20 @@ defineProps<IProps>()
         {{ caption_text }}
       </p>
     </div>
-    <div class="mt-[10px] flex gap-[5px]">
-      <Button text="#nuxt3" className="text-[0.8rem] !px-[7px]    !bg-fuchsia-400 " />
-      <Button text="#vue3" className="text-[0.8rem] !px-[7px]   !bg-gray-300 " />
-      <Button text="#django" className="text-[0.8rem] !px-[7px]   !bg-yellow-200 " />
-      <Button text="#reactJS" className="text-[0.8rem] !px-[7px]   !bg-blue-300 " />
+    <div class="mt-[10px] flex gap-[8px]">
+      <Button
+        text="#nuxt3"
+        className="text-[0.8rem] !px-[7px]    !bg-fuchsia-400 shadow-md shadow-fuchsia-400/40"
+      />
+      <Button text="#vue3" className="text-[0.8rem] !px-[7px]   !bg-gray-300 shadow-gray-300/40" />
+      <Button
+        text="#django"
+        className="text-[0.8rem] !px-[7px]   !bg-yellow-200 shadow-yellow-200/40"
+      />
+      <Button
+        text="#reactJS"
+        className="text-[0.8rem] !px-[7px]   !bg-blue-300 shadow-blue-300/40"
+      />
     </div>
     <div class="m-[15px_0px_5px_0px] h-[18px] text-[0.8rem] text-gray-400">
       {{ moment('Thu Oct 1 2022 17:30:03 GMT+0300').fromNow() }}
