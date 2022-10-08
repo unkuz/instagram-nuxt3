@@ -20,9 +20,8 @@ const { next, prev, current } = useCarousel(containerMediaRef)
 
 watch(current, (idx) => {
   emit('currentIndexCarousel', idx)
-
   Object.assign(containerMediaRef.value.style, {
-    height: `${containerMediaRef.value.children[idx].children[0].getClientRects()[0].height}px`,
+    height: `${containerMediaRef.value.children[idx].children[0].clientHeight}px`,
   })
 })
 const isShowPre = computed(() => current.value !== 0)
