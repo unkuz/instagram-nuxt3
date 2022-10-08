@@ -1,5 +1,7 @@
 <template>
-  <div :class="`rounded-[10px] bg-blue-100 py-[3px] px-[10px] ${className}`">
+  <div
+    :class="`inline-block cursor-pointer rounded-[10px] bg-blue-100 py-[3px] px-[10px] ${className}`"
+  >
     <span>{{ text }}</span>
   </div>
 </template>
