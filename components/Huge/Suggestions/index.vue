@@ -58,12 +58,12 @@ const authorText = 'cuzknothz'
       </div>
     </div>
 
-    <div class="flex flex-col items-center space-y-2 text-gray-500">
+    <div class="flex flex-col items-center space-y-2 text-[0.85rem]">
       <div>© 2022 Instagram clone by</div>
       <a href="https://github.com/cuzknothz" target="_blank">
         <div
           title="Cuzknothz github"
-          class="cursor-pointer select-none font-august text-[1.25rem] uppercase tracking-wider text-black"
+          class="cursor-pointer select-none font-august text-[1.25rem] uppercase tracking-wider text-black drop-shadow-md"
         >
           {{ authorText }}
         </div>
