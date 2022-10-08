@@ -20,14 +20,14 @@ const toggleShowEmoji = () => (isShowEmoji.value = !isShowEmoji.value)
 </script>
 
 <template>
-  <div class="flex min-h-[50px] items-center justify-between border-gray-200 md:border-t-[1px]">
+  <div class="flex min-h-[50px] items-center justify-between">
     <div class="relative" ref="emojiRef">
       <Emoji v-if="isShowEmoji" @emoji-add="emojiAdd" />
       <EmojiIcon_ @click="toggleShowEmoji" />
     </div>
 
     <div
-      class="m-auto my-[10px] block w-[85%] resize-none bg-transparent placeholder:text-center placeholder:text-[0.8rem] focus:outline-none md:w-[420px] lg:w-[88%]"
+      class="m-auto my-[10px] block min-h-[38px] w-[83%] resize-none rounded-md border-[1px] border-gray-200 bg-transparent p-[5px] placeholder:text-center placeholder:text-[0.8rem] focus:outline-none lg:w-[88%]"
       contentEditable
     >
       {{ commentValueText }}
