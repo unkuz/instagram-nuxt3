@@ -15,10 +15,8 @@ export default defineNuxtConfig({
   vite: {
     plugins: [svgLoader({})],
   },
-  robots:
-    /* module options */
-    {
-      UserAgent: '*',
-      Disallow: '',
-    },
+  robots: {
+    UserAgent: '*',
+    Disallow: '',
+  },
 })
