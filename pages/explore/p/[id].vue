@@ -66,7 +66,8 @@ useWindowResizeCallback(calcHeightComment)
           </div>
           <div ref="commentRef" class="overflow-y-scroll p-[16px]">
             <div
-              v-for="i in Array.from(Array(40).keys())"
+              v-for="(_i, idx) in 40"
+              :key="idx"
               class="mb-[10px] flex w-full items-center justify-between"
             >
               <div class="flex">

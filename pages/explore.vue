@@ -13,7 +13,7 @@ const explore = computed(() => exploreStore.list)
 
 <template>
   <div class="mb-[84px]">
-    <div v-for="(i, idx) in _.chunk(_.shuffle(explore), 3)">
+    <div v-for="(i, idx) in _.chunk(_.shuffle(explore), 3)" :key="idx">
       <Explore :cluster="i" />
     </div>
     <NuxtChild />

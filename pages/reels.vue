@@ -9,7 +9,7 @@ definePageMeta({
     <div
       class="flex h-screen w-full snap-y snap-mandatory flex-col overflow-y-scroll scrollbar-hide"
     >
-      <div v-for="i in Array.from(Array(10).keys())" class="relative h-screen w-full snap-center">
+      <div v-for="(_i, idx) in 10" :key="idx" class="relative h-screen w-full snap-center">
         <video
           class="h-screen w-full object-cover"
           src="/video/242322324_812426336116660_1281566458903572911_n.mp4"

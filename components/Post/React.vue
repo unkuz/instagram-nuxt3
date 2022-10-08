@@ -38,7 +38,8 @@ const toggleLike = () => {
     </div>
     <div class="flex items-center justify-center space-x-[4px]">
       <div
-        v-for="(i, idx) in mediaArr"
+        v-for="(_i, idx) in mediaArr"
+        :key="idx"
         :class="`h-[6px] w-[6px]  rounded-[50%] bg-white ${
           currentIdx === idx ? 'bg-[#0c8aff]' : 'bg-[#535353]'
         }`"

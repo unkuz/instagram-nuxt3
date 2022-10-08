@@ -118,6 +118,7 @@ const handleSlide = (indicator) => {
               >
                 <div
                   v-for="(i, idx) in postFiles"
+                  :key="idx"
                   :class="`h-[6px] w-[6px] rounded-[50%] bg-white ${
                     currentImageSlideIdx === idx ? 'bg-[#0c8aff]' : 'bg-white'
                   }`"
