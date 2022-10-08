@@ -15,7 +15,7 @@ defineProps<IProps>()
 
 <template>
   <div>
-    <div class="mb-[8px] h-[18px] cursor-pointer font-medium text-red-400">
+    <div class="mb-[5px] h-[18px] cursor-pointer font-medium text-red-400">
       {{ like_count }} likes
     </div>
     <div class="mb-[4px]">
