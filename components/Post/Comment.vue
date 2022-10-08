@@ -17,6 +17,10 @@ useClickOutSide(emojiRef, () => {
 })
 
 const toggleShowEmoji = () => (isShowEmoji.value = !isShowEmoji.value)
+
+const inputText = (e: any) => {
+  commentValueText.value = e.target.innerText
+}
 </script>
 
 <template>
@@ -27,8 +31,9 @@ const toggleShowEmoji = () => (isShowEmoji.value = !isShowEmoji.value)
     </div>
 
     <div
-      class="m-auto my-[10px] block min-h-[38px] w-[83%] resize-none rounded-md border-[1px] border-gray-200 bg-transparent p-[5px] placeholder:text-center placeholder:text-[0.8rem] focus:outline-none lg:w-[88%]"
+      class="m-auto my-[10px] block min-h-[38px] w-[83%] resize-none rounded-[5px] border-[1px] border-gray-200 bg-transparent p-[5px] placeholder:text-center placeholder:text-[0.8rem] focus:outline-none lg:w-[88%]"
       contentEditable
+      @input="inputText"
     >
       {{ commentValueText }}
     </div>
