@@ -53,7 +53,7 @@ const isShowProfile = ref(false)
             <HomeIcon :isSelect="section === SECTION.HOME" />
           </div>
           <div class="ml-[22px] md:ml-0" @click="handleSelect(SECTION.MESSENGER, '/direct/inbox/')">
-            <Messenger :isSelect="section === SECTION.MESSENGER" />
+            <Messenger :isSelect="section === SECTION.MESSENGER" :hasNew="true" />
           </div>
           <div @click="handleSelect(SECTION.NEW_POST)" class="relative">
             <NewPost :isSelect="section === SECTION.NEW_POST" />
