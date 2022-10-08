@@ -1,12 +1,24 @@
 import { defineStore } from 'pinia'
-import { stories } from '~~/mocks/stories'
+import { IStory } from '~~/models'
 
-const state = () => ({
-  stories: [...stories],
+interface IState {
+  data: IStory[]
+  hasErr: boolean
+  errors: Record<string, string>
+}
+
+const state = (): IState => ({
+  data: [],
+  hasErr: false,
+  errors: {},
 })
 
 const getters = {}
-const actions = {}
+const actions = {
+  save(data: IStory[]) {
+    this.data = data
+  },
+}
 
 export const useStoriesStore = defineStore('stories', {
   state,

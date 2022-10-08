@@ -1,15 +1,14 @@
 import { defineStore } from 'pinia'
-import { timeLine } from '~~/mocks/reelTimeLine'
-import { TimeLine } from '~~/models/timline'
+import { ITimeLine } from '~~/models'
 
-interface TimeLineState {
-  timeline: TimeLine[]
+interface IState {
+  data: ITimeLine[] | null
   hasErr: boolean
   errors: {}
 }
 
-const state = (): TimeLineState => ({
-  timeline: [...timeLine],
+const state = (): IState => ({
+  data: [],
   hasErr: false,
   errors: {},
 })
@@ -17,8 +16,11 @@ const state = (): TimeLineState => ({
 const getters = {}
 
 const actions = {
-  setToggleLikePost(id) {
-    this.timeline.forEach((i) => {
+  save(data: ITimeLine[]) {
+    this.data = data
+  },
+  setToggleLike(id: string) {
+    this.data.forEach((i: ITimeLine) => {
       if (i.id === id) {
         i.has_liked = !i.has_liked
         i.like_count = i.has_liked ? i.like_count + 1 : i.like_count - 1

@@ -4,7 +4,6 @@ import PlayIcon_ from '~~/assets/svg/play_icon.svg'
 import { useDoubleClick } from '~~/composables/useDoubleClick'
 import { usePercentVideo } from '~~/composables/usePercentVideo'
 import { useVideoPauseViewPort } from '~~/composables/useVideoPauseViewPort'
-import { useCurrentVideoStore } from '~~/store/currentVideo'
 import { useTimeLineStore } from '~~/store/timeline'
 
 interface IProps {
@@ -18,7 +17,7 @@ const isVideoPlay = ref<boolean>(false)
 const timelineStore = useTimeLineStore()
 
 const toggleLike = () => {
-  timelineStore.setToggleLikePost(props.idPost)
+  timelineStore.setToggleLike(props.idPost)
 }
 
 const updateTime = () => {

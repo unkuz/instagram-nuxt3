@@ -1,14 +1,18 @@
 <script lang="ts" setup>
-import { SizeAvatarEnum } from '~~/type'
-import { useAuthStore } from '~~/store/auth'
-import { useSuggestionStore } from '~~/store/suggestion'
-import Item from './Item.vue'
 import Avatar from '~~/components/Tiny/Avatar.vue'
+import { TSuggestion } from '~~/models'
+import { useAuthStore } from '~~/store/auth'
+import { SizeAvatarEnum } from '~~/type'
+import Item from './Item.vue'
+
+interface IProps {
+  suggestion: TSuggestion[]
+}
+
+defineProps<IProps>()
 
 const { M } = SizeAvatarEnum
 const authStore = useAuthStore()
-const suggestionStore = useSuggestionStore()
-const suggestion = computed(() => suggestionStore.suggestion)
 const authorText = 'cuzknothz'
 </script>
 

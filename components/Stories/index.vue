@@ -1,12 +1,14 @@
 <script lang="ts" setup>
 import ArrowIcon_ from '~~/assets/svg/arrow_icon.svg'
 import { SIZE_HERO_PAGELET } from '~~/constants/mock'
-import { useStoriesStore } from '~~/store/stories'
+import { IStory } from '~~/models'
 import Story from './Story.vue'
 
-const storiesStore = useStoriesStore()
+interface IProps {
+  stories: IStory[]
+}
 
-const stories = computed(() => storiesStore.stories)
+defineProps<IProps>()
 
 const heroPageletRef = ref<HTMLElement>(null)
 const startPointX = ref(0)

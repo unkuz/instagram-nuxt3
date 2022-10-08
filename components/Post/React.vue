@@ -25,7 +25,7 @@ const viewPost = () => {
 }
 
 const toggleLike = () => {
-  timelineStore.setToggleLikePost(props.id)
+  timelineStore.setToggleLike(props.id)
 }
 </script>
 

@@ -11,7 +11,7 @@ const imageRef = ref<HTMLImageElement>(null)
 const timelineStore = useTimeLineStore()
 
 const toggleLike = () => {
-  timelineStore.setToggleLikePost(props.idPost)
+  timelineStore.setToggleLike(props.idPost)
 }
 useDoubleClick(imageRef, () => {}, toggleLike)
 </script>

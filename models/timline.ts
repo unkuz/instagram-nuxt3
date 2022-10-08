@@ -1,4 +1,4 @@
-export interface TimeLine {
+export interface ITimeLine {
   created_at: number
   caption_text: string
   has_liked: boolean
