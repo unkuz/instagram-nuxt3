@@ -39,8 +39,8 @@ const goToAccount = () => {
       class="flex w-[55px] cursor-pointer justify-end text-[0.8rem] font-[500]"
       @click="toggleFollow"
     >
-      <Button v-if="isFollow" text="Unfollow" className="[&>span]:text-[#ff48a3]" />
-      <Button v-else text="Follow" className="[&>span]:text-[#1da0f6]" />
+      <Button v-if="isFollow" text="Unfollow" className="[&>span]:text-[#ff48a3] bg-[#fae1da]" />
+      <Button v-else text="Follow" className="[&>span]:text-[#1da0f6] bg-[#dff1fc]" />
     </div>
   </div>
 </template>
