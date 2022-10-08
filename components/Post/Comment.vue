@@ -20,7 +20,7 @@ const toggleShowEmoji = () => (isShowEmoji.value = !isShowEmoji.value)
 </script>
 
 <template>
-  <div class="flex min-h-[50px] items-center justify-between">
+  <div class="flex items-center justify-between sm:mb-[10px]">
     <div class="relative" ref="emojiRef">
       <Emoji v-if="isShowEmoji" @emoji-add="emojiAdd" />
       <EmojiIcon_ @click="toggleShowEmoji" />
