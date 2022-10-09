@@ -6,6 +6,7 @@ import { useDoubleClick } from '~~/composables/useDoubleClick'
 import { usePercentVideo } from '~~/composables/usePercentVideo'
 import { useVideoPauseViewPort } from '~~/composables/useVideoPauseViewPort'
 import { useTimeLineStore } from '~~/store/timeline'
+import ExpandIcon_ from '~~/assets/svg/full_screen.svg'
 
 interface IProps {
   video: any
@@ -13,6 +14,7 @@ interface IProps {
 }
 const props = defineProps<IProps>()
 const videoRef = ref<HTMLVideoElement>(null)
+const containerRef = ref<HTMLDivElement>(null)
 const progressBarRef = ref<HTMLDivElement>(null)
 const isVideoPlay = ref<boolean>(false)
 const timelineStore = useTimeLineStore()
@@ -54,10 +56,14 @@ watch(percent, () => {
     width: `${percent.value * widthParent}px`,
   })
 })
+
+const onFullScreen = () => {
+  videoRef.value.requestFullscreen()
+}
 </script>
 
 <template>
-  <div class="relative min-w-full overflow-hidden">
+  <div class="group relative min-w-full overflow-hidden" ref="containerRef">
     <video :src="video.src" ref="videoRef" class="min-w-full" />
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
@@ -70,11 +76,15 @@ watch(percent, () => {
           )
         "
       >
-        <PlayIcon_ @click="play" class="!h-[90px] !w-[90px] fill-[#ffffffee]" />
+        <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-[#ffffffee]" />
       </div>
     </div>
     <div class="absolute bottom-0 h-[4px] w-full cursor-default bg-transparent duration-500">
       <div ref="progressBarRef" class="h-full w-0 bg-[#3eff25]"></div>
     </div>
+    <ExpandIcon_
+      @click="onFullScreen"
+      class="absolute bottom-[20px] right-[20px] hidden w-[20px] cursor-pointer fill-white text-white group-hover:block"
+    />
   </div>
 </template>

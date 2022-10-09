@@ -20,10 +20,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    ref="unlikeRef"
-    class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 scale-125"
-  >
+  <div ref="unlikeRef" class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2">
     <UnlikeIcon_ />
   </div>
 </template>

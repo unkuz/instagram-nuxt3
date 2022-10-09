@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     'magic-regexp/nuxt',
     '@nuxtjs/algolia',
     'nuxt-lodash',
+    'nuxt-icon',
   ],
   buildModules: ['@pinia/nuxt', '@nuxtjs/web-vitals'],
   css: ['@/assets/css/index.css'],
