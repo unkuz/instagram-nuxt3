@@ -8,7 +8,7 @@ onMounted(() => {
   const tl = gsap.timeline()
 
   tl.to(unlikeRef.value, {
-    scale: 5,
+    scale: 4,
     duration: 0.5,
     ease: Elastic.easeOut.config(1, 0.3),
   })
