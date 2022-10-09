@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@twicpics/components/nuxt3',
     'magic-regexp/nuxt',
     '@nuxtjs/algolia',
+    'nuxt-lodash',
   ],
   buildModules: ['@pinia/nuxt', '@nuxtjs/web-vitals'],
   css: ['@/assets/css/index.css'],
@@ -69,5 +70,10 @@ export default defineNuxtConfig({
     config: {
       //
     },
+  },
+  lodash: {
+    prefix: '_',
+    prefixSkip: ['is'],
+    exclude: ['map'],
   },
 })

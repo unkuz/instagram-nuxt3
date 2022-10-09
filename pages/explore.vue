@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import Explore from '~~/components/Explore/index.vue'
-import _ from 'lodash'
 import { useExploreStore } from '~~/store/explore'
 definePageMeta({
   layout: 'main',
@@ -13,7 +12,7 @@ const explore = computed(() => exploreStore.list)
 
 <template>
   <div class="mb-[84px]">
-    <div v-for="(i, idx) in _.chunk(_.shuffle(explore), 3)" :key="idx">
+    <div v-for="(i, idx) in _Chunk(_Shuffle(explore), 3)" :key="idx">
       <Explore :cluster="i" />
     </div>
     <NuxtChild />
