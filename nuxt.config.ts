@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/robots',
     '@twicpics/components/nuxt3',
-    '@nuxtjs/html-validator',
+    'magic-regexp/nuxt',
+    '@nuxtjs/algolia',
   ],
   buildModules: ['@pinia/nuxt', '@nuxtjs/web-vitals'],
   css: ['@/assets/css/index.css'],
@@ -52,6 +53,21 @@ export default defineNuxtConfig({
         // Unreasonable rule
         'no-inline-style': 'off',
       },
+    },
+  },
+  algolia: {
+    apiKey: 'MY_API_KEY',
+    applicationId: 'MY_APPLICATION_ID',
+  },
+  ionic: {
+    integrations: {
+      //
+    },
+    css: {
+      //
+    },
+    config: {
+      //
     },
   },
 })
