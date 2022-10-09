@@ -13,7 +13,6 @@ interface IProps {
 }
 const props = defineProps<IProps>()
 const videoRef = ref<HTMLVideoElement>(null)
-const containerRef = ref<HTMLDivElement>(null)
 const progressBarRef = ref<HTMLDivElement>(null)
 const isVideoPlay = ref<boolean>(false)
 const timelineStore = useTimeLineStore()
@@ -57,7 +56,7 @@ watch(percent, () => {
 </script>
 
 <template>
-  <div class="group relative min-w-full overflow-hidden" ref="containerRef">
+  <div class="group relative min-w-full overflow-hidden">
     <video :src="video.src" ref="videoRef" class="min-w-full" />
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
