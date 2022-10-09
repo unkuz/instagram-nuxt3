@@ -23,7 +23,7 @@ watch(current, (idx) => {
   const lengthDeepInside = containerMediaRef.value.children[idx].children.length
   Object.assign(containerMediaRef.value.style, {
     height: `${
-      containerMediaRef.value.children[idx].children[lengthDeepInside - 3].clientHeight
+      containerMediaRef.value.children[idx].children[lengthDeepInside - 4].clientHeight
     }px`,
   })
 })
