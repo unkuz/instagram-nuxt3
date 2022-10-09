@@ -41,7 +41,7 @@ const totalMedia = computed(() => props.images.concat(props.videos).length)
     >
       <Image v-for="i in images" :key="i.id" :src="i.src" :idPost="id" />
 
-      <Video v-for="video in videos" :video="video" :idPost="id" />
+      <Video v-for="(video, idx) in videos" :key="idx" :video="video" :idPost="id" />
     </div>
     <div
       v-if="isShowPre"
