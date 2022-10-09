@@ -79,7 +79,7 @@ watch(percent, () => {
     <div class="absolute bottom-[20px] right-[20px] flex gap-[15px]">
       <PicInPicIcon_
         @click="videoRef.requestPictureInPicture()"
-        class="hidden w-[20px] cursor-pointer fill-white text-white group-hover:block"
+        class="hidden w-[20px] cursor-pointer fill-white text-white md:group-hover:block"
       />
       <ExpandIcon_
         @click="videoRef.requestFullscreen()"
