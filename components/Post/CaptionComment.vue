@@ -52,7 +52,7 @@ const { format } = Intl.NumberFormat('en', { notation: 'compact' })
     </div>
 
     <div class="m-[8px_0px_5px_0px] h-[18px] text-[0.8rem] text-gray-400">
-      {{ moment('Thu Oct 1 2022 17:30:03 GMT+0300').fromNow() }}
+      {{ moment('2022-10-09 14:08').fromNow() }}
     </div>
   </div>
 </template>
