@@ -2,6 +2,7 @@
 import Logo from '~~/components/Header/Logo.vue'
 import Search from '~~/components/Header/Search.vue'
 import HomeIcon from '~~/components/Nav/HomeIcon.vue'
+import Reels from '~~/components/Nav/Reels.vue'
 import { useDebounceRoute } from '~~/composables/useDeboundRoute'
 import { SECTION } from '~~/constants/section'
 import { useGlobalStore } from '~~/store/global'
@@ -14,7 +15,6 @@ import FindPeople from '../Nav/FindPeople.vue'
 import Messenger from '../Nav/Messenger.vue'
 import NewPost from '../Nav/NewPost.vue'
 import SelfAvatar from '../Nav/SelfAvatar.vue'
-import Reels from '~~/components/Nav/Reels.vue'
 
 const router = useRouter()
 const globalStore = useGlobalStore()

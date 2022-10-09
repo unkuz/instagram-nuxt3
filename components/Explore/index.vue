@@ -4,7 +4,7 @@ import Square from '~~/components/Explore/Square.vue'
 interface IProps {
   cluster: string[] | undefined[]
 }
-const props = defineProps<IProps>()
+defineProps<IProps>()
 
 const random = ref(Math.random())
 </script>

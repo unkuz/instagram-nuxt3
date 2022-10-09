@@ -2,7 +2,9 @@
 import { gsap } from 'gsap'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { useMoreStore } from '~~/store/more'
+import Avatar from '../Tiny/Avatar.vue'
 import BackDrop from './BackDrop.vue'
+
 const options = [
   { name: 'Block' },
   { name: 'Unfollow' },
@@ -11,7 +13,7 @@ const options = [
   { name: 'Send Profile To...' },
 ]
 
-const moreRef = ref(null)
+const moreRef = ref<HTMLDivElement>(null)
 const moreStore = useMoreStore()
 
 onMounted(() => {
@@ -37,7 +39,10 @@ useClickOutSide(moreRef, () => {
           class="flex h-[60px] items-center justify-between rounded-[0.8rem] bg-white px-[20px] sm:px-[30px]"
         >
           <div class="flex items-center space-x-[20px]">
-            <div class="aspect-square h-[45px] rounded-[50%] bg-fuchsia-300"></div>
+            <Avatar
+              url="/personal/284244344_5311122635605193_5864440318105391567_n.jpg"
+              className="w-[45px]"
+            />
             <div>
               <p>Joe Biden</p>
               <p>View Profile</p>
@@ -57,14 +62,14 @@ useClickOutSide(moreRef, () => {
           <div
             v-for="(i, idx) in options"
             :key="idx"
-            class="flex h-[60px] cursor-pointer items-center border-b-[1px] border-black/10 px-[30px] text-red-500 last:border-b-0 hover:bg-blue-300"
+            class="flex h-[60px] cursor-pointer items-center border-b-[1px] border-black/10 px-[30px] text-fuchsia-400 last:border-b-0 hover:bg-blue-300"
           >
             {{ i.name }}
           </div>
         </div>
         <div
           @click="moreStore.setHidden()"
-          class="mt-[10px] flex h-[45px] cursor-pointer items-center justify-center rounded-[0.8rem] bg-white px-[30px] sm:h-[50px]"
+          class="mt-[10px] flex h-[45px] cursor-pointer items-center justify-center rounded-[0.8rem] bg-white px-[30px] active:bg-blue-300 sm:h-[50px]"
         >
           Done
         </div>

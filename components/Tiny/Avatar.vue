@@ -20,7 +20,7 @@ const { T, S, M, L } = SizeAvatarEnum
 
 interface IProps {
   url: string
-  size: SizeAvatarEnum
+  size?: SizeAvatarEnum
   className?: string
 }
 

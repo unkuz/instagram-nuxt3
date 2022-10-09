@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import IconBase from '~~/components/Nav/IconBase.vue'
 import NewPostIcon_ from '~~/assets/svg/new_post_icon.svg'
 import NewPostIconSelected_ from '~~/assets/svg/new_post_icon_selected.svg'
+import IconBase from '~~/components/Nav/IconBase.vue'
 
 interface IconProps {
   isSelect: boolean

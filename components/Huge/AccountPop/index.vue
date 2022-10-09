@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import { is } from '@babel/types'
 import Arrow from '~~/components/Utils/Arrow.vue'
+import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { SECTION } from '~~/constants/section'
 import { useGlobalStore } from '~~/store/global'
-import { useClickOutSide } from '~~/composables/useClickOutSide'
 
 const router = useRouter()
 const globalStore = useGlobalStore()

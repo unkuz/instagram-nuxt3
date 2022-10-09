@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { SizeAvatarEnum } from '~~/type'
 import MoreIcon_ from '~~/assets/svg/more_icon.svg'
 import { useMoreStore } from '~~/store/more'
+import { SizeAvatarEnum } from '~~/type'
 import Avatar from '../Tiny/Avatar.vue'
 
 const { S } = SizeAvatarEnum

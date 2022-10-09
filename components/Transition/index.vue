@@ -2,7 +2,6 @@
 import { useGlobalStore } from '~~/store/global'
 
 const globalStore = useGlobalStore()
-const isTransition = computed(() => globalStore.getIsTransition)
 </script>
 
 <template>
