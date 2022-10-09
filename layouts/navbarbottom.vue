@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import clsx from 'classnames'
 import ActivityFeed from '~~/components/Nav/ActivityFeed.vue'
 import HomeIcon from '~~/components/Nav/HomeIcon.vue'
 import Search from '~~/components/Nav/Search.vue'
@@ -8,24 +9,25 @@ import { useGlobalStore } from '~~/store/global'
 import Reels from '../components/Nav/Reels.vue'
 
 const globalStore = useGlobalStore()
-const router = useRouter()
 const isMobile = computed(() => globalStore.getIsMobile)
 const section = computed(() => globalStore.getSection)
 const isReelsSelect = computed(() => globalStore.getSection === SECTION.REELS && isMobile)
-const isMoblieAndSelectReels = computed(
-  () => globalStore.getIsMobile && globalStore.getSection === SECTION.REELS
-)
 const handleSelect = (section: SECTION, url?: string) => {
+  navigateTo(url)
   globalStore.setSection(section)
-  router.push(url)
 }
 </script>
 
 <template>
   <div
-    :class="`fixed bottom-0 z-10 h-[65px] w-full border-t-[1px] border-gray-200  ${
-      isReelsSelect ? 'border-none bg-black' : 'bg-white'
-    } md:hidden`"
+    :class="
+      clsx(
+        'fixed bottom-0 z-10 h-[65px] w-full border-t-[1px] border-gray-200 bg-white md:hidden',
+        {
+          'border-none bg-black': isReelsSelect,
+        }
+      )
+    "
   >
     <div class="mt-3 flex items-center justify-around">
       <div @click="handleSelect(SECTION.HOME, '/')">

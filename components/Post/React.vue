@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import clsx from 'classnames'
 import LikeIcon_ from '~~/assets/svg/like_icon.svg'
 import SaveIcon_ from '~~/assets/svg/save_icon.svg'
 import ShareIcon_ from '~~/assets/svg/share_icon.svg'
@@ -40,9 +41,11 @@ const toggleLike = () => {
       <div
         v-for="(_i, idx) in mediaArr"
         :key="idx"
-        :class="`h-[6px] w-[6px]  rounded-[50%] bg-white ${
-          currentIdx === idx ? 'bg-blue-500' : 'bg-[#b9b9b9]'
-        }`"
+        :class="
+          clsx('h-[6px] w-[6px]  rounded-[50%]  bg-[#b9b9b9]', {
+            'bg-blue-500': currentIdx === idx,
+          })
+        "
       ></div>
     </div>
     <div class="flex h-full w-full items-center justify-end">

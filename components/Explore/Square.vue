@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import clsx from 'classnames'
 import ReelIcon_ from '~~/assets/svg/reel_icon.svg'
 
 interface IProps {
@@ -12,9 +13,11 @@ defineProps<IProps>()
 <template>
   <div
     v-if="!!img"
-    :class="`group relative aspect-square w-full cursor-pointer overflow-hidden ${
-      isBig ? 'col-span-2 row-span-2 ' : ' '
-    }`"
+    :class="
+      clsx('group relative aspect-square w-full cursor-pointer overflow-hidden', {
+        'col-span-2 row-span-2 ': isBig,
+      })
+    "
   >
     <img
       v-if="!!img"

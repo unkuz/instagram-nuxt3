@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import clsx from 'classnames'
 import BackDrop from '~~/components/Utils/BackDrop.vue'
 import { useClickOutSide } from '~~/composables/useClickOutSide'
 import { useStoryStore } from '~~/store/story'
@@ -86,9 +87,14 @@ const togglePlay = () => {
         <div
           @click="togglePlay"
           ref="bigPlayIcon"
-          :class="`absolute top-1/2 left-1/2 h-[100px] w-[100px] origin-center -translate-x-1/2 -translate-y-1/2  ${
-            isVideoPlay ? 'scale-0 opacity-0' : ' scale-100 opacity-100'
-          } opacity-0 duration-500`"
+          :class="
+            clsx(
+              'absolute top-1/2 left-1/2 h-[100px] w-[100px] origin-center -translate-x-1/2 -translate-y-1/2  scale-100  opacity-0 duration-500',
+              {
+                'scale-0 opacity-0': isVideoPlay,
+              }
+            )
+          "
         >
           <svg
             aria-label="Play"
