@@ -3,8 +3,8 @@ import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/robots', '@twicpics/components/nuxt3'],
+  buildModules: ['@pinia/nuxt', '@nuxtjs/web-vitals'],
   css: ['@/assets/css/index.css'],
-  buildModules: ['@pinia/nuxt'],
   meta: {
     charset: 'utf-8',
     link: [
@@ -23,5 +23,10 @@ export default defineNuxtConfig({
     domain: `https://<your-domain>.twic.pics`,
     anticipation: 0.5,
     step: 50,
+  },
+  webVitals: {
+    // provider: '', // auto detectd
+    debug: false,
+    disabled: false,
   },
 })
