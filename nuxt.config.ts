@@ -2,7 +2,12 @@ import { defineNuxtConfig } from 'nuxt/config'
 import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/robots', '@twicpics/components/nuxt3'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/robots',
+    '@twicpics/components/nuxt3',
+    '@nuxtjs/html-validator',
+  ],
   buildModules: ['@pinia/nuxt', '@nuxtjs/web-vitals'],
   css: ['@/assets/css/index.css'],
   meta: {
@@ -28,5 +33,25 @@ export default defineNuxtConfig({
     // provider: '', // auto detectd
     debug: false,
     disabled: false,
+  },
+  htmlValidator: {
+    usePrettier: false,
+    failOnError: false,
+    options: {
+      extends: ['html-validate:document', 'html-validate:recommended', 'html-validate:standard'],
+      rules: {
+        'svg-focusable': 'off',
+        'no-unknown-elements': 'error',
+        // Conflicts or not needed as we use prettier formatting
+        'void-style': 'off',
+        'no-trailing-whitespace': 'off',
+        // Conflict with Nuxt defaults
+        'require-sri': 'off',
+        'attribute-boolean-style': 'off',
+        'doctype-style': 'off',
+        // Unreasonable rule
+        'no-inline-style': 'off',
+      },
+    },
   },
 })

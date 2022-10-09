@@ -8,6 +8,7 @@
     "start": "nuxt start"
   },
   "devDependencies": {
+    "@nuxtjs/html-validator": "^1.0.0",
     "@nuxtjs/tailwindcss": "^5.3.5",
     "@nuxtjs/web-vitals": "^0.1.10",
     "@types/lodash": "^4.14.186",
