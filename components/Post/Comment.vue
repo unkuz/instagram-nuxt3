@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import DirectIcon_ from '~~/assets/svg/direct_icon.svg'
 import EmojiIcon_ from '~~/assets/svg/experiment.svg'
+import ExperimentFilledIcon_ from '~~/assets/svg/experiment_filled.svg'
 import Emoji from '~~/components/Utils/Emoji.vue'
 import { useClickOutSide } from '~~/composables'
 
@@ -27,7 +28,10 @@ const inputText = (e: any) => {
   <div class="flex items-center justify-between sm:mb-[5px]">
     <div class="relative" ref="emojiRef">
       <Emoji v-if="isShowEmoji" @emoji-add="emojiAdd" />
-      <EmojiIcon_ @click="toggleShowEmoji" class="w-[26px] cursor-pointer" />
+      <div @click="toggleShowEmoji" class="w-[26px] cursor-pointer">
+        <EmojiIcon_ v-show="!isShowEmoji" class="w-[26px]" />
+        <ExperimentFilledIcon_ v-show="isShowEmoji" class="w-[26px]" />
+      </div>
     </div>
 
     <div
