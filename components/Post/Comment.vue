@@ -31,7 +31,7 @@ const inputText = (e: any) => {
     </div>
 
     <div
-      class="m-auto my-[10px] block min-h-[38px] w-[83%] cursor-text resize-none rounded-[5px] border-[1px] border-gray-200 bg-transparent p-[5px] placeholder:text-center placeholder:text-[0.8rem] focus:outline-none lg:w-[88%]"
+      class="m-auto my-[10px] block min-h-[38px] w-[83%] cursor-text resize-none rounded-[5px] border-[1px] border-gray-200 bg-transparent p-[5px] shadow-sm shadow-gray-200 placeholder:text-center placeholder:text-[0.8rem] focus:outline-none lg:w-[88%]"
       contentEditable
       @input="inputText"
     >

@@ -52,7 +52,7 @@ const handleTouchStart = (e: TouchEvent) => {}
 
 <template>
   <div
-    class="relative inline-flex h-[119px] w-full items-center overflow-hidden border-0 border-gray-200 sm:mb-[24px] sm:border-[1px]"
+    class="relative inline-flex h-[119px] w-full items-center overflow-hidden border-0 border-gray-200 shadow-gray-200 sm:mb-[24px] sm:border-[1px] sm:shadow-sm"
   >
     <div
       class="flex h-[85px] transition-all duration-500 ease-in-out"
