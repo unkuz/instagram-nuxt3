@@ -21,6 +21,7 @@
     "@pinia/nuxt": "^0.4.2",
     "@sentry/node": "^7.14.2",
     "@sentry/tracing": "^7.14.2",
+    "@twicpics/components": "^0.11.0",
     "@vueuse/core": "^9.3.0",
     "axios": "^1.1.2",
     "classnames": "^2.3.2",
