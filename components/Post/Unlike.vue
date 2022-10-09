@@ -14,7 +14,7 @@ onMounted(() => {
   })
   tl.to(unlikeRef.value, {
     display: 'none',
-    duration: 0.3,
+    duration: 0,
   })
 })
 </script>

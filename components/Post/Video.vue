@@ -61,17 +61,16 @@ watch(percent, () => {
     <video :src="video.src" ref="videoRef" class="min-w-full" />
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
-        ref="bigPlayIcon"
         :class="
           clsx(
-            'absolute top-1/2 left-1/2 h-[90px] w-[90px] origin-center -translate-x-1/2 -translate-y-1/2 scale-100 opacity-100  opacity-0 duration-500',
+            'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-100 opacity-100  duration-200',
             {
               'scale-0 opacity-0': isVideoPlay,
             }
           )
         "
       >
-        <PlayIcon_ @click="play" class="scale-90 fill-[#ffffffee]" />
+        <PlayIcon_ @click="play" class="!h-[90px] !w-[90px] fill-[#ffffffee]" />
       </div>
     </div>
     <div
