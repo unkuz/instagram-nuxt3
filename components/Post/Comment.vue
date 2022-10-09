@@ -34,13 +34,14 @@ const inputText = (e: any) => {
       </div>
     </div>
 
-    <div
+    <span
       class="m-auto my-[10px] block min-h-[38px] w-[83%] cursor-text resize-none rounded-[5px] border-[1px] border-gray-200 bg-transparent p-[5px] shadow-sm shadow-gray-200 placeholder:text-center placeholder:text-[0.8rem] focus:outline-none lg:w-[88%]"
       contentEditable
+      role="textbox"
       @input="inputText"
     >
       {{ commentValueText }}
-    </div>
+    </span>
 
     <div class="aspect-square h-[20px] cursor-pointer active:fill-[#00aeff]">
       <DirectIcon_ />
