@@ -11,20 +11,22 @@ interface IProps {
 }
 
 defineProps<IProps>()
+
+const { format } = Intl.NumberFormat('en', { notation: 'compact' })
 </script>
 
 <template>
   <div>
     <div class="mb-[5px] flex h-[18px] cursor-pointer gap-[5px] text-[0.85rem]">
       <span class="text-red-400"
-        ><span>{{ like_count }}</span> likes</span
+        ><span>{{ format(like_count) }}</span> <span>likes</span></span
       >
       <span>|</span>
       <span class="text-fuchsia-400">
-        <span>{{ comments.length }}</span> comments</span
-      >
+        <span>{{ format(comments.length) }}</span> <span>comments</span>
+      </span>
     </div>
-    <div class="inline-block bg-gray-500 px-[10px] py-[1px] font-[500] text-white">
+    <div class="inline-block bg-gray-500 px-[10px] py-[1px] text-white">
       {{ user.username }}
     </div>
     <div class="mt-[5px] bg-gray-100/60 py-[5px]">
