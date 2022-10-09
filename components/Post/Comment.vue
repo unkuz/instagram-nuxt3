@@ -7,6 +7,7 @@ import { useClickOutSide } from '~~/composables'
 
 const emojiRef = ref(null)
 const isShowEmoji = ref(false)
+const textBoxRef = ref<HTMLTextAreaElement>(null)
 const commentValueText = ref('')
 
 const emojiAdd = (value: string) => {
@@ -20,7 +21,14 @@ useClickOutSide(emojiRef, () => {
 const toggleShowEmoji = () => (isShowEmoji.value = !isShowEmoji.value)
 
 const inputText = (e: any) => {
+  e.preventDefault()
   commentValueText.value = e.target.innerText
+}
+
+const calcHeight = () => {
+  textBoxRef.value.style.height = '1px'
+
+  textBoxRef.value.style.height = textBoxRef.value.scrollHeight + 'px'
 }
 </script>
 
@@ -34,14 +42,15 @@ const inputText = (e: any) => {
       </div>
     </div>
 
-    <span
-      class="m-auto my-[10px] block min-h-[38px] w-[83%] cursor-text resize-none rounded-[5px] border-[1px] border-gray-200 bg-transparent p-[5px] shadow-sm shadow-gray-200 placeholder:text-center placeholder:text-[0.8rem] focus:outline-none lg:w-[88%]"
-      contentEditable
-      role="textbox"
-      @input="inputText"
+    <textarea
+      ref="textBoxRef"
+      rows="1"
+      class="m-auto my-[10px] block w-[83%] cursor-text resize-none overflow-hidden rounded-[5px] border-[1px] border-gray-200 bg-transparent p-[5px] shadow-sm shadow-gray-200 placeholder:text-center placeholder:text-[0.8rem] focus:outline-none lg:w-[88%]"
+      v-model="commentValueText"
+      @keyup="calcHeight"
     >
       {{ commentValueText }}
-    </span>
+    </textarea>
 
     <div class="aspect-square h-[20px] cursor-pointer active:fill-[#00aeff]">
       <DirectIcon_ />
