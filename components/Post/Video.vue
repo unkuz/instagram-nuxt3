@@ -1,12 +1,11 @@
 <script lang="ts" setup>
 import clsx from 'classnames'
-import { gsap } from 'gsap'
+import ExpandIcon_ from '~~/assets/svg/full_screen.svg'
+import PicInPicIcon_ from '~~/assets/svg/picture_in_picture.svg'
 import PlayIcon_ from '~~/assets/svg/play_icon.svg'
 import { useDoubleClick } from '~~/composables/useDoubleClick'
 import { usePercentVideo } from '~~/composables/usePercentVideo'
-import { useVideoPauseViewPort } from '~~/composables/useVideoPauseViewPort'
 import { useTimeLineStore } from '~~/store/timeline'
-import ExpandIcon_ from '~~/assets/svg/full_screen.svg'
 
 interface IProps {
   video: any
@@ -47,7 +46,6 @@ const togglePlay = () => {
 }
 
 useDoubleClick(videoRef, togglePlay, toggleLike)
-useVideoPauseViewPort(videoRef)
 const { percent } = usePercentVideo(videoRef)
 
 watch(percent, () => {
@@ -56,10 +54,6 @@ watch(percent, () => {
     width: `${percent.value * widthParent}px`,
   })
 })
-
-const onFullScreen = () => {
-  videoRef.value.requestFullscreen()
-}
 </script>
 
 <template>
@@ -82,9 +76,15 @@ const onFullScreen = () => {
     <div class="absolute bottom-0 h-[4px] w-full cursor-default bg-transparent duration-500">
       <div ref="progressBarRef" class="h-full w-0 bg-[#3eff25]"></div>
     </div>
-    <ExpandIcon_
-      @click="onFullScreen"
-      class="absolute bottom-[20px] right-[20px] hidden w-[20px] cursor-pointer fill-white text-white group-hover:block"
-    />
+    <div class="absolute bottom-[20px] right-[20px] flex gap-[15px]">
+      <PicInPicIcon_
+        @click="videoRef.requestPictureInPicture()"
+        class="hidden w-[20px] cursor-pointer fill-white text-white group-hover:block"
+      />
+      <ExpandIcon_
+        @click="videoRef.requestFullscreen()"
+        class="hidden w-[20px] cursor-pointer fill-white text-white group-hover:block"
+      />
+    </div>
   </div>
 </template>
