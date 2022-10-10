@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import BackDrop from '@@/components/Utils/BackDrop.vue'
-import { useClickOutSide } from '@@/composables/useClickOutSide'
+import { useClickOutSide } from '@@/composables'
 import { useStoryStore } from '@@/store'
 import clsx from 'classnames'
 

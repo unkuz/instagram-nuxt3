@@ -4,7 +4,7 @@ import HomeIcon from '@@/components/Nav/HomeIcon.vue'
 import Reels from '@@/components/Nav/Reels.vue'
 import Search from '@@/components/Nav/Search.vue'
 import SelfAvatar from '@@/components/Nav/SelfAvatar.vue'
-import { SECTION } from '@@/constants/section'
+import { SECTION } from '@@/constants'
 import { useGlobalStore } from '@@/store'
 import clsx from 'classnames'
 

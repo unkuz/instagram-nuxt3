@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import ArrowIcon_ from '@@/assets/svg/arrow_icon.svg'
-import { SIZE_HERO_PAGELET } from '@@/constants/mock'
+import { SIZE_HERO_PAGELET } from '@@/constants'
 import { IStory } from '@@/models'
 import Story from './Story.vue'
 

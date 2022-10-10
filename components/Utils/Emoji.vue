@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { emoji } from '@@/constants/emoji'
+import { emoji } from '@@/constants'
 </script>
 
 <template>

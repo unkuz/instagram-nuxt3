@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { explore } from '@@/mocks/explore'
+import { explore } from '@@/mocks'
 
 const state = () => ({
   list: explore,

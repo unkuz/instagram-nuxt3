@@ -3,9 +3,8 @@ import NewPost from '@@/components/Huge/NewPost/index.vue'
 import NewPostMobile from '@@/components/Huge/NewPostMobile/index.vue'
 import More from '@@/components/Utils/More.vue'
 import Prelude from '@@/components/Utils/Prelude.vue'
-import { usePrelude } from '@@/composables/usePrelude'
-import { useResizeWindow } from '@@/composables/useResizeWindow'
-import { SECTION } from '@@/constants/section'
+import { usePrelude, useResizeWindow } from '@@/composables'
+import { SECTION } from '@@/constants'
 import { useGlobalStore, useMoreStore, useStoryStore } from '@@/store'
 
 useHead({

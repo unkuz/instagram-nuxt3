@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import BackDrop from '@@/components/Utils/BackDrop.vue'
-import { useLockScroll } from '@@/composables/useLockScroll'
-import { useWindowResizeCallback } from '@@/composables/useWindowResizeCallback'
+import { useWindowResizeCallback, useLockScroll } from '@@/composables'
 
 const viewPostRef = ref(null)
 const commentHeadingRef = ref(null)

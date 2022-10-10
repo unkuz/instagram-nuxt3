@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useClickOutSide } from '@@/composables/useClickOutSide'
+import { useClickOutSide } from '@@/composables'
 import { useMoreStore } from '@@/store'
 import { gsap } from 'gsap'
 import Avatar from '../Tiny/Avatar.vue'

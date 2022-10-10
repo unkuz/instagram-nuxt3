@@ -7,7 +7,7 @@ import PlayIcon_ from '@@/assets/svg/play_icon.svg'
 import PlayIcon__ from '@@/assets/svg/play_original_icon.svg'
 import UnMutedIcon_ from '@@/assets/svg/un_muted_icon.svg'
 import BackDrop from '@@/components/Utils/BackDrop.vue'
-import { useClickOutSide } from '@@/composables/useClickOutSide'
+import { useClickOutSide } from '@@/composables'
 
 const router = useRouter()
 const barRef = ref(null)

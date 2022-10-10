@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import ArrowIcon_ from '@@/assets/svg/arrow_icon.svg'
-import { useCarousel } from '@@/composables/useCarousel'
+import { useCarousel } from '@@/composables'
 import Image from './Image.vue'
 import Like from './Like.vue'
 import Unlike from './Unlike.vue'
