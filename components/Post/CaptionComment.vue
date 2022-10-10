@@ -40,27 +40,27 @@ const { format } = Intl.NumberFormat('en', { notation: 'compact' })
         <Button
           @click="navigateTo(`/explore/tags/${'abc'}`)"
           text="#vue3"
-          className="text-[0.8rem] !px-[7px]   !bg-gray-300 shadow-gray-300/40"
+          className="text-[0.8rem] !px-[7px]   !bg-gray-300 shadow-fuchsia-400/40"
         />
         <Button
           @click="navigateTo(`/explore/tags/${'abc'}`)"
           text="#django"
-          className="text-[0.8rem] !px-[7px]   !bg-yellow-200 shadow-yellow-200/40"
+          className="text-[0.8rem] !px-[7px]   !bg-yellow-200 shadow-fuchsia-400/40"
         />
         <Button
           @click="navigateTo(`/explore/tags/${'abc'}`)"
           text="#reactJS"
-          className="text-[0.8rem] !px-[7px]   !bg-blue-300 shadow-blue-300/40"
+          className="text-[0.8rem] !px-[7px]   !bg-blue-300 shadow-fuchsia-400/40"
         />
         <Button
           @click="navigateTo(`/explore/tags/${'abc'}`)"
           text="#tailwindcss"
-          className="text-[0.8rem] !px-[7px]   !bg-[#f5762cd5] shadow-blue-300/40"
+          className="text-[0.8rem] !px-[7px]   !bg-[#f5762cd5] shadow-fuchsia-400/40"
         />
         <Button
           @click="navigateTo(`/explore/tags/${'abc'}`)"
           text="#vercel"
-          className="text-[0.8rem] !px-[7px]   !bg-[#2bff00] shadow-blue-300/40"
+          className="text-[0.8rem] !px-[7px]   !bg-[#2bff00] shadow-fuchsia-400/40"
         />
       </div>
     </div>
