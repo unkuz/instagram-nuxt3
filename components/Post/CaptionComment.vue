@@ -31,7 +31,7 @@ const { format } = Intl.NumberFormat('en', { notation: 'compact' })
     </div>
     <div class="mt-[5px] bg-gray-100/60 py-[5px]">
       <div>{{ caption_text }}</div>
-      <div class="mt-[5px] flex gap-[8px]">
+      <div class="mt-[5px] flex flex-wrap gap-[8px]">
         <Button
           @click="navigateTo(`/explore/tags/${'abc'}`)"
           text="#nuxt3"
