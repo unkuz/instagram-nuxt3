@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { SizeAvatarEnum } from '~~/type'
+import { SizeAvatarEnum } from '@@/type'
 import Avatar from '../Tiny/Avatar.vue'
 
 const { M } = SizeAvatarEnum

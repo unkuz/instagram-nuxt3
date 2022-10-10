@@ -16,8 +16,8 @@
 </template>
 
 <script setup lang="ts">
-import BackDrop from '~~/components/Utils/BackDrop.vue'
-import { useClickOutSide } from '~~/composables/useClickOutSide'
+import BackDrop from '@@/components/Utils/BackDrop.vue'
+import { useClickOutSide } from '@@/composables/useClickOutSide'
 const postRef = ref<HTMLDivElement>(null)
 const router = useRouter()
 

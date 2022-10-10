@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import Arrow from '~~/components/Utils/Arrow.vue'
-import { useClickOutSide } from '~~/composables/useClickOutSide'
-import { SECTION } from '~~/constants/section'
-import { useGlobalStore } from '~~/store/global'
+import Arrow from '@@/components/Utils/Arrow.vue'
+import { useClickOutSide } from '@@/composables/useClickOutSide'
+import { SECTION } from '@@/constants/section'
+import { useGlobalStore } from '@@/store'
 
 const router = useRouter()
 const globalStore = useGlobalStore()

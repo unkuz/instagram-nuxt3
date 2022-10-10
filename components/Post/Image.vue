@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useDoubleClick } from '~~/composables/useDoubleClick'
-import { useTimeLineStore } from '~~/store/timeline'
+import { useDoubleClick } from '@@/composables/useDoubleClick'
+import { useTimeLineStore } from '@@/store'
 
 interface IProps {
   src: string

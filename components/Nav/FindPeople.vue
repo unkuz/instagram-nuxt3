@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import ExploreIcon_ from '~~/assets/svg/explore_icon.svg'
-import ExploreIconSelected_ from '~~/assets/svg/explore_icon_selected.svg'
-import IconBase from '~~/components/Nav/IconBase.vue'
+import ExploreIcon_ from '@@/assets/svg/explore_icon.svg'
+import ExploreIconSelected_ from '@@/assets/svg/explore_icon_selected.svg'
+import IconBase from '@@/components/Nav/IconBase.vue'
 
 interface IconProps {
   isSelect: boolean

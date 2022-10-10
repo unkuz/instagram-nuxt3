@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import ArrowIcon_ from '~~/assets/svg/arrow_icon.svg'
-import { SIZE_HERO_PAGELET } from '~~/constants/mock'
-import { IStory } from '~~/models'
+import ArrowIcon_ from '@@/assets/svg/arrow_icon.svg'
+import { SIZE_HERO_PAGELET } from '@@/constants/mock'
+import { IStory } from '@@/models'
 import Story from './Story.vue'
 
 interface IProps {

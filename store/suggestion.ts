@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { TSuggestion } from '~~/models'
+import { TSuggestion } from '@@/models'
 
 export interface IState {
   data: TSuggestion[]

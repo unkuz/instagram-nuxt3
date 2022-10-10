@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { useLockScroll } from '~~/composables/useLockScroll'
-import { useModalPosition } from '~~/composables/useModalPosition'
-import { useProfileStore } from '~~/store/profile'
+import { useLockScroll } from '@@/composables/useLockScroll'
+import { useModalPosition } from '@@/composables/useModalPosition'
+import { useProfileStore } from '@@/store'
 
 const { x, y } = useModalPosition()
 const boxRef = ref(null)

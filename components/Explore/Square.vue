@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import clsx from 'classnames'
-import ReelIcon_ from '~~/assets/svg/reel_icon.svg'
+import ReelIcon_ from '@@/assets/svg/reel_icon.svg'
 
 interface IProps {
   img: string | undefined

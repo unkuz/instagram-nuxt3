@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import clsx from 'classnames'
-import MenuIcon_ from '~~/assets/svg/menu_icon.svg'
-import MutedIcon_ from '~~/assets/svg/muted_icon.svg'
-import PauseIcon_ from '~~/assets/svg/pause_icon.svg'
-import PlayIcon_ from '~~/assets/svg/play_icon.svg'
-import PlayIcon__ from '~~/assets/svg/play_original_icon.svg'
-import UnMutedIcon_ from '~~/assets/svg/un_muted_icon.svg'
-import BackDrop from '~~/components/Utils/BackDrop.vue'
-import { useClickOutSide } from '~~/composables/useClickOutSide'
+import MenuIcon_ from '@@/assets/svg/menu_icon.svg'
+import MutedIcon_ from '@@/assets/svg/muted_icon.svg'
+import PauseIcon_ from '@@/assets/svg/pause_icon.svg'
+import PlayIcon_ from '@@/assets/svg/play_icon.svg'
+import PlayIcon__ from '@@/assets/svg/play_original_icon.svg'
+import UnMutedIcon_ from '@@/assets/svg/un_muted_icon.svg'
+import BackDrop from '@@/components/Utils/BackDrop.vue'
+import { useClickOutSide } from '@@/composables/useClickOutSide'
 
 const router = useRouter()
 const barRef = ref(null)

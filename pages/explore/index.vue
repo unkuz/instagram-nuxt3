@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import Explore from '~~/components/Explore/index.vue'
-import { useExploreStore } from '~~/store/explore'
+import Explore from '@@/components/Explore/index.vue'
+import { useExploreStore } from '@@/store'
 definePageMeta({
   layout: 'main',
 })

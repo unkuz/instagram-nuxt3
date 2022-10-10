@@ -1,7 +1,7 @@
+import { useWindowResizeCallback } from '@@/composables/useWindowResizeCallback'
+import { useGlobalStore } from '@@/store'
 import { gsap } from 'gsap'
 import { Ref } from 'vue'
-import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
-import { useGlobalStore } from '~~/store/global'
 
 export const useCarousel = (containerMediaRef: Ref<HTMLDivElement>) => {
   const globalStore = useGlobalStore()

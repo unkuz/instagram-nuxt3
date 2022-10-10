@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import DirectIcon_ from '~~/assets/svg/direct_icon.svg'
-import EmojiIcon_ from '~~/assets/svg/experiment.svg'
-import ExperimentFilledIcon_ from '~~/assets/svg/experiment_filled.svg'
-import Emoji from '~~/components/Utils/Emoji.vue'
-import { useClickOutSide } from '~~/composables'
+import DirectIcon_ from '@@/assets/svg/direct_icon.svg'
+import EmojiIcon_ from '@@/assets/svg/experiment.svg'
+import ExperimentFilledIcon_ from '@@/assets/svg/experiment_filled.svg'
+import Emoji from '@@/components/Utils/Emoji.vue'
+import { useClickOutSide } from '@@/composables'
 
 const emojiRef = ref(null)
 const isShowEmoji = ref(false)

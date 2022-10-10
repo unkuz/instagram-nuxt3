@@ -1,8 +1,8 @@
 <script lang="ts" setup>
+import BackDrop from '@@/components/Utils/BackDrop.vue'
+import { useClickOutSide } from '@@/composables/useClickOutSide'
+import { useStoryStore } from '@@/store'
 import clsx from 'classnames'
-import BackDrop from '~~/components/Utils/BackDrop.vue'
-import { useClickOutSide } from '~~/composables/useClickOutSide'
-import { useStoryStore } from '~~/store/story'
 
 const storyStore = useStoryStore()
 

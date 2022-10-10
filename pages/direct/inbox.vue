@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import { useGlobalStore } from '~~/store/global'
-import { STATUS_CHAT, useChatStore } from '~~/store/chat'
+import { STATUS_CHAT, useChatStore, useGlobalStore } from '@@/store'
 
 definePageMeta({
   layout: 'main',

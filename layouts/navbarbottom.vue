@@ -1,12 +1,12 @@
 <script lang="ts" setup>
+import ActivityFeed from '@@/components/Nav/ActivityFeed.vue'
+import HomeIcon from '@@/components/Nav/HomeIcon.vue'
+import Reels from '@@/components/Nav/Reels.vue'
+import Search from '@@/components/Nav/Search.vue'
+import SelfAvatar from '@@/components/Nav/SelfAvatar.vue'
+import { SECTION } from '@@/constants/section'
+import { useGlobalStore } from '@@/store'
 import clsx from 'classnames'
-import ActivityFeed from '~~/components/Nav/ActivityFeed.vue'
-import HomeIcon from '~~/components/Nav/HomeIcon.vue'
-import Search from '~~/components/Nav/Search.vue'
-import SelfAvatar from '~~/components/Nav/SelfAvatar.vue'
-import { SECTION } from '~~/constants/section'
-import { useGlobalStore } from '~~/store/global'
-import Reels from '../components/Nav/Reels.vue'
 
 const globalStore = useGlobalStore()
 const isMobile = computed(() => globalStore.getIsMobile)

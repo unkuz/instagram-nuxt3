@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useGlobalStore } from '~~/store/global'
+import { useGlobalStore } from '@@/store'
 
 const globalStore = useGlobalStore()
 </script>

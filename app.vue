@@ -1,14 +1,12 @@
 <script lang="ts" setup>
-import { usePrelude } from '~~/composables/usePrelude'
-import { useResizeWindow } from '~~/composables/useResizeWindow'
-import { SECTION } from '~~/constants/section'
-import { useGlobalStore } from '~~/store/global'
-import { useMoreStore } from '~~/store/more'
-import NewPost from './components/Huge/NewPost/index.vue'
-import NewPostMobile from './components/Huge/NewPostMobile/index.vue'
-import More from './components/Utils/More.vue'
-import Prelude from './components/Utils/Prelude.vue'
-import { useStoryStore } from './store/story'
+import NewPost from '@@/components/Huge/NewPost/index.vue'
+import NewPostMobile from '@@/components/Huge/NewPostMobile/index.vue'
+import More from '@@/components/Utils/More.vue'
+import Prelude from '@@/components/Utils/Prelude.vue'
+import { usePrelude } from '@@/composables/usePrelude'
+import { useResizeWindow } from '@@/composables/useResizeWindow'
+import { SECTION } from '@@/constants/section'
+import { useGlobalStore, useMoreStore, useStoryStore } from '@@/store'
 
 useHead({
   title: 'Instagram',

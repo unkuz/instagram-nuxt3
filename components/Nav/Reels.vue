@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import Reelicon_ from '~~/assets/svg/reel_icon.svg'
-import IconBase from '~~/components/Nav/IconBase.vue'
+import Reelicon_ from '@@/assets/svg/reel_icon.svg'
+import IconBase from '@@/components/Nav/IconBase.vue'
 
 interface IconProps {
   isSelect: boolean

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Arrow from '~~/components/Utils/Arrow.vue'
+import Arrow from '@@/components/Utils/Arrow.vue'
 </script>
 
 <template>

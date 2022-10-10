@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
-import { MOBILE_BREAK_POINT } from '~~/constants/responsive'
-import { SECTION } from '~~/constants/section'
+import { MOBILE_BREAK_POINT } from '@@/constants/responsive'
+import { SECTION } from '@@/constants/section'
 
 interface GlobalState {
   section: SECTION

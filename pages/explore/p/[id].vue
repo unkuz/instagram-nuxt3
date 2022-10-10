@@ -1,9 +1,7 @@
 <script lang="ts" setup>
-import BackDrop from '~~/components/Utils/BackDrop.vue'
-import { useWindowResizeCallback } from '~~/composables/useWindowResizeCallback'
-import { APP_ROUTES } from '~~/routes'
-import { useViewPostStore } from '~~/store/viewPost'
-import { useLockScroll } from '~~/composables/useLockScroll'
+import BackDrop from '@@/components/Utils/BackDrop.vue'
+import { useLockScroll } from '@@/composables/useLockScroll'
+import { useWindowResizeCallback } from '@@/composables/useWindowResizeCallback'
 
 const viewPostRef = ref(null)
 const commentHeadingRef = ref(null)

@@ -1,12 +1,11 @@
 <script lang="ts" setup>
+import LikeIcon_ from '@@/assets/svg/like_icon.svg'
+import SaveIcon_ from '@@/assets/svg/save_icon.svg'
+import ShareIcon_ from '@@/assets/svg/share_icon.svg'
+import ViewPostIcon_ from '@@/assets/svg/view_post_icon.svg'
+import { APP_ROUTES } from '@@/routes'
+import { useTimeLineStore, useViewPostDetailStore } from '@@/store'
 import clsx from 'classnames'
-import LikeIcon_ from '~~/assets/svg/like_icon.svg'
-import SaveIcon_ from '~~/assets/svg/save_icon.svg'
-import ShareIcon_ from '~~/assets/svg/share_icon.svg'
-import ViewPostIcon_ from '~~/assets/svg/view_post_icon.svg'
-import { APP_ROUTES } from '~~/routes'
-import { useTimeLineStore } from '~~/store/timeline'
-import { useViewPostDetailStore } from '~~/store/viewPostDetail'
 import UnlikeIcon from '../Tiny/UnlikeIcon.vue'
 
 interface IProps {

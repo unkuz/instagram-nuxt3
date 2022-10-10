@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useLockScroll } from '~~/composables/useLockScroll'
-import Logo from '~~/assets/svg/logo.svg'
+import { useLockScroll } from '@@/composables/useLockScroll'
+import Logo from '@@/assets/svg/logo.svg'
 
 useLockScroll()
 

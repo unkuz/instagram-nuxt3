@@ -1,11 +1,11 @@
 <script lang="ts" setup>
+import ExpandIcon_ from '@@/assets/svg/full_screen.svg'
+import PicInPicIcon_ from '@@/assets/svg/picture_in_picture.svg'
+import PlayIcon_ from '@@/assets/svg/play_icon.svg'
+import { useDoubleClick } from '@@/composables/useDoubleClick'
+import { usePercentVideo } from '@@/composables/usePercentVideo'
+import { useTimeLineStore } from '@@/store'
 import clsx from 'classnames'
-import ExpandIcon_ from '~~/assets/svg/full_screen.svg'
-import PicInPicIcon_ from '~~/assets/svg/picture_in_picture.svg'
-import PlayIcon_ from '~~/assets/svg/play_icon.svg'
-import { useDoubleClick } from '~~/composables/useDoubleClick'
-import { usePercentVideo } from '~~/composables/usePercentVideo'
-import { useTimeLineStore } from '~~/store/timeline'
 
 interface IProps {
   video: any

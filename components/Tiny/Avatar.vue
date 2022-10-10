@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import clsx from 'classnames'
-import { SizeAvatarEnum } from '~~/type'
+import { SizeAvatarEnum } from '@@/type'
 
 const { T, S, M, L } = SizeAvatarEnum
 

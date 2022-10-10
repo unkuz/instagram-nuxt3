@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Square from '~~/components/Explore/Square.vue'
+import Square from '@@/components/Explore/Square.vue'
 
 interface IProps {
   cluster: string[] | undefined[]

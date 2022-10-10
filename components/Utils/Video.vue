@@ -7,7 +7,7 @@
 //       }
 //     })
 // })
-import { useCurrentVideoStore } from '~~/store/currentVideo'
+import { useCurrentVideoStore } from '@@/store'
 
 const currentVideoStore = useCurrentVideoStore()
 const videoRef = ref<HTMLVideoElement>(null)

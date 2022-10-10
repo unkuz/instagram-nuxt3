@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import SearchIcon from '~~/assets/svg/search_icon_2367fdg.svg'
-import { useClickOutSide } from '~~/composables/useClickOutSide'
-import { useSearchStore } from '~~/store/search'
+import SearchIcon from '@@/assets/svg/search_icon_2367fdg.svg'
+import { useClickOutSide } from '@@/composables/useClickOutSide'
+import { useSearchStore } from '@@/store'
 
 const searchStore = useSearchStore()
 const searchRef = ref(null)

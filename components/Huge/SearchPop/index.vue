@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import Arrow from '~~/components/Utils/Arrow.vue'
-import { useClickOutSide } from '~~/composables/useClickOutSide'
+import Arrow from '@@/components/Utils/Arrow.vue'
+import { useClickOutSide } from '@@/composables/useClickOutSide'
 
 const searchResultRef = ref(null)
 const isShow = ref(true)

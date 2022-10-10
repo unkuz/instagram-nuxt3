@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { SECTION } from '~~/constants/section'
-import { useGlobalStore } from '~~/store/global'
+import { SECTION } from '@@/constants/section'
+import { useGlobalStore } from '@@/store'
 
 const globalStore = useGlobalStore()
 const router = useRouter()

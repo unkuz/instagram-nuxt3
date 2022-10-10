@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useProfileStore } from '~~/store/profile'
+import { useProfileStore } from '@@/store'
 
 const profileStore = useProfileStore()
 const currentSelect = computed(() => profileStore.getSelect)

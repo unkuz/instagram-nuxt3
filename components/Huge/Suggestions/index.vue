@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import Avatar from '~~/components/Tiny/Avatar.vue'
-import { TSuggestion } from '~~/models'
-import { useAuthStore } from '~~/store/auth'
-import { SizeAvatarEnum } from '~~/type'
+import Avatar from '@@/components/Tiny/Avatar.vue'
+import { TSuggestion } from '@@/models'
+import { useAuthStore } from '@@/store'
+import { SizeAvatarEnum } from '@@/type'
 import Item from './Item.vue'
 
 interface IProps {

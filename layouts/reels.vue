@@ -1,8 +1,9 @@
 <script lang="ts" setup>
+import Header from '@@/components/Header/index.vue'
+import { useGlobalStore } from '@@/store'
 import clsx from 'classnames'
-import Header from '~~/components/Header/index.vue'
-import { useGlobalStore } from '~~/store/global'
 import Navbarbottom from './navbarbottom.vue'
+
 const globalStore = useGlobalStore()
 const isMobile = computed(() => globalStore.getIsMobile)
 </script>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import MessageIcon_ from '~~/assets/svg/message_icon.svg'
-import MessageIconSelected_ from '~~/assets/svg/message_icon_selected.svg'
-import IconBase from '~~/components/Nav/IconBase.vue'
+import MessageIcon_ from '@@/assets/svg/message_icon.svg'
+import MessageIconSelected_ from '@@/assets/svg/message_icon_selected.svg'
+import IconBase from '@@/components/Nav/IconBase.vue'
 
 interface IconProps {
   isSelect: boolean

@@ -1,11 +1,9 @@
 <script lang="ts" setup>
-import Suggestions from '~~/components/Huge/Suggestions/index.vue'
-import Post from '~~/components/Post/index.vue'
-import Stories from '~~/components/Stories/index.vue'
-import { IStory, ITimeLine } from '~~/models'
-import { useStoriesStore } from '~~/store/stories'
-import { useSuggestionStore } from '~~/store/suggestion'
-import { useTimeLineStore } from '~~/store/timeline'
+import Suggestions from '@@/components/Huge/Suggestions/index.vue'
+import Post from '@@/components/Post/index.vue'
+import Stories from '@@/components/Stories/index.vue'
+import { IStory, ITimeLine } from '@@/models'
+import { useStoriesStore, useSuggestionStore, useTimeLineStore } from '@@/store'
 
 definePageMeta({
   layout: 'main',

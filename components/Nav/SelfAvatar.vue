@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import { useAuthStore } from '@@/store'
+import { SizeAvatarEnum } from '@@/type'
 import clsx from 'classnames'
-import { useAuthStore } from '~~/store/auth'
-import { SizeAvatarEnum } from '~~/type'
 import Avatar from '../Tiny/Avatar.vue'
 
 interface IconProps {

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import Avatar from '~~/components/Tiny/Avatar.vue'
-import Button from '~~/components/Tiny/Button.vue'
-import { SizeAvatarEnum } from '~~/type'
+import Avatar from '@@/components/Tiny/Avatar.vue'
+import Button from '@@/components/Tiny/Button.vue'
+import { SizeAvatarEnum } from '@@/type'
 
 const { S } = SizeAvatarEnum
 

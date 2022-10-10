@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import { useClickOutSide } from '@@/composables/useClickOutSide'
+import { useMoreStore } from '@@/store'
 import { gsap } from 'gsap'
-import { useClickOutSide } from '~~/composables/useClickOutSide'
-import { useMoreStore } from '~~/store/more'
 import Avatar from '../Tiny/Avatar.vue'
 import BackDrop from './BackDrop.vue'
 

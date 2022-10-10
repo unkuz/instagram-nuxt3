@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import Header from '~~/components/Header/index.vue'
-import { SECTION } from '~~/constants/section'
-import { useGlobalStore } from '~~/store/global'
+import Header from '@@/components/Header/index.vue'
+import { SECTION } from '@@/constants/section'
+import { useGlobalStore } from '@@/store'
 import Navbarbottom from './navbarbottom.vue'
 
 const globalStore = useGlobalStore()

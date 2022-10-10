@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import Navbarbottom from './navbarbottom.vue'
-import Header from '~~/components/Header/index.vue'
+import Header from '@@/components/Header/index.vue'
 const router = useRouter()
 const { width } = useResizeWindow()
 const isMobileResponsive = computed(() => width.value < 768)

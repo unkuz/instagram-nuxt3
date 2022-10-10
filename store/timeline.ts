@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ITimeLine } from '~~/models'
+import { ITimeLine } from '@@/models'
 
 interface IState {
   data: ITimeLine[] | null

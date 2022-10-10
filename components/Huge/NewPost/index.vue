@@ -1,10 +1,9 @@
 <script lang="ts" setup>
+import BackDrop from '@@/components/Utils/BackDrop.vue'
+import { useClickOutSide } from '@@/composables/useClickOutSide'
+import { SECTION } from '@@/constants/section'
+import { useGlobalStore, usePostStore } from '@@/store'
 import clsx from 'classnames'
-import BackDrop from '~~/components/Utils/BackDrop.vue'
-import { useClickOutSide } from '~~/composables/useClickOutSide'
-import { SECTION } from '~~/constants/section'
-import { useGlobalStore } from '~~/store/global'
-import { usePostStore } from '~~/store/post'
 
 const postStore = usePostStore()
 const inputFileRef = ref(null)
