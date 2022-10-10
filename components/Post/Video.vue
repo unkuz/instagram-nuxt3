@@ -56,7 +56,7 @@ watch(percent, () => {
 
 <template>
   <div class="group relative min-w-full overflow-hidden">
-    <video :src="video.src" ref="videoRef" class="min-w-full" />
+    <video :src="video.src" ref="videoRef" class="min-w-full" loop />
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
         :class="
@@ -72,19 +72,21 @@ watch(percent, () => {
       </div>
     </div>
     <div class="absolute bottom-0 h-[4px] w-full cursor-default bg-transparent duration-500">
-      <div ref="progressBarRef" class="h-full w-0 bg-[#3eff25]"></div>
+      <div ref="progressBarRef" class="h-full w-0 bg-[#ff19a7]"></div>
     </div>
     <div class="absolute bottom-[10px] right-[10px] flex gap-[15px]">
-      <PicInPicIcon_
-        title="Picture in picture"
-        @click="videoRef.requestPictureInPicture()"
-        class="hidden w-[20px] cursor-pointer fill-white text-white md:group-hover:block"
-      />
-      <ExpandIcon_
-        title="Full screen"
-        @click="videoRef.requestFullscreen()"
-        class="hidden w-[20px] cursor-pointer fill-white text-white group-hover:block"
-      />
+      <div title="Picture in picture">
+        <PicInPicIcon_
+          @click="videoRef.requestPictureInPicture()"
+          class="hidden w-[20px] cursor-pointer fill-white text-white md:group-hover:block"
+        />
+      </div>
+      <div title="Full screen">
+        <ExpandIcon_
+          @click="videoRef.requestFullscreen()"
+          class="hidden w-[20px] cursor-pointer fill-white text-white group-hover:block"
+        />
+      </div>
     </div>
   </div>
 </template>
