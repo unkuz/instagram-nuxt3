@@ -75,9 +75,6 @@ export default {
       <div class="keen-slider__slide" v-for="i in stories" :key="i.id">
         <Story v-bind="i" />
       </div>
-      <div class="keen-slider__slide" v-for="i in stories" :key="i.id">
-        <Story v-bind="i" />
-      </div>
     </div>
     <div class="absolute top-1/2 right-2 -translate-y-1/2">
       <ArrowIcon_ />
