@@ -71,7 +71,7 @@ export default {
   <div
     class="relative flex h-[119px] w-full items-center border-0 border-gray-200 shadow-gray-200 sm:mb-[24px] sm:border-[1px] sm:shadow-sm"
   >
-    <div ref="container" class="keen-slider h-[85px]">
+    <div ref="container" class="keen-slider h-full cursor-grabbing pt-[20px]">
       <div class="keen-slider__slide" v-for="i in stories" :key="i.id">
         <Story v-bind="i" />
       </div>
