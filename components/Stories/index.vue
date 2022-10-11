@@ -50,11 +50,11 @@ export default {
           },
         },
       },
-      dragSpeed: 1,
+      dragSpeed: 0.6,
       slides: {
         spacing: 0,
       },
-      renderMode: 'precision',
+      renderMode: 'performance',
     })
     return { container }
   },
