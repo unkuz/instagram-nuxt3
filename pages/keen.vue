@@ -17,7 +17,7 @@ export default {
   setup() {
     const [container] = useKeenSlider({
       slides: {
-        perView: 3,
+        perView: 'auto',
         spacing: 15,
       },
     })
