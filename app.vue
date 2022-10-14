@@ -59,7 +59,7 @@ if (process.client) {
 </script>
 
 <template>
-  <div class="font-quicksan">
+  <div class="scroll-smooth font-quicksan selection:bg-[#000000] selection:text-white">
     <Prelude v-if="isShowPrelude" />
     <NuxtLayout>
       <NuxtPage />
