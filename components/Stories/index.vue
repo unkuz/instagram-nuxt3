@@ -6,8 +6,7 @@ import 'keen-slider/keen-slider.min.css'
 
 export default {
   setup() {
-    const [container, slider] = useKeenSlider({
-      // loop: true,
+    const [container] = useKeenSlider({
       breakpoints: {
         '(min-width: 768px)': {
           slides: {
@@ -50,11 +49,9 @@ export default {
           },
         },
       },
-      dragSpeed: 0.6,
       slides: {
         spacing: 0,
       },
-      renderMode: 'performance',
     })
     return { container }
   },
@@ -75,12 +72,6 @@ export default {
       <div class="keen-slider__slide" v-for="i in stories" :key="i.id">
         <Story v-bind="i" />
       </div>
-    </div>
-    <div class="absolute top-1/2 right-2 -translate-y-1/2">
-      <ArrowIcon_ />
-    </div>
-    <div class="absolute top-1/2 left-2 -translate-y-1/2">
-      <ArrowIcon_ class="rotate-180" />
     </div>
   </div>
 </template>
