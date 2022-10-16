@@ -22,6 +22,7 @@ export const useDoubleClick = (ref: Ref<HTMLElement>, click: () => void, dblclic
       ref.value.addEventListener('dblclick', _dbclick)
     }
   })
+
   onUnmounted(() => {
     if (ref.value) {
       ref.value.removeEventListener('click', _click)

@@ -21,6 +21,7 @@ export const useVideoPauseViewPort = (videoRef: Ref<HTMLVideoElement>) => {
   onMounted(() => {
     addEventListener('scroll', check)
   })
+
   onBeforeUnmount(() => {
     removeEventListener('scroll', check)
   })

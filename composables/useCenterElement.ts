@@ -13,6 +13,7 @@ export function useCenterElement(refElement: Ref<HTMLDivElement>, refFile) {
     window.addEventListener('scroll', position)
     window.addEventListener('resize', position)
   })
+
   onUpdated(() => {
     position()
   })
