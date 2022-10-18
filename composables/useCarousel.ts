@@ -6,8 +6,10 @@ import { Ref } from 'vue'
 export const useCarousel = (containerMediaRef: Ref<HTMLDivElement>) => {
   const globalStore = useGlobalStore()
   const current = ref(0)
+
   const dragStartX = ref(0)
   const dragEndX = ref(0)
+
   const distance = ref(0)
 
   const timer = ref(0)
