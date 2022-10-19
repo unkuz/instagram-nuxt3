@@ -13,13 +13,7 @@ export default defineNuxtConfig({
   ],
   buildModules: ['@pinia/nuxt', '@nuxtjs/web-vitals'],
   css: ['@/assets/css/index.css'],
-  meta: {
-    charset: 'utf-8',
-    link: [
-      { hid: 'apple-touch-icon', rel: 'apple-touch-icon', href: '/icon-192x192.png' },
-      { rel: 'manifest', href: '/manifest.json' },
-    ],
-  },
+
   vite: {
     plugins: [svgLoader({})],
   },

@@ -58,6 +58,6 @@ onUnmounted(() => {
         <Suggestions :suggestion="suggestion" />
       </div>
     </div>
-    <NuxtChild />
+    <NuxtPage />
   </div>
 </template>
