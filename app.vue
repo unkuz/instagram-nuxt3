@@ -32,7 +32,6 @@ const section = computed(() => globalStore.getSection)
 const isMobile = computed(() => globalStore.getIsMobile)
 const isShowStory = computed(() => storyStore.getIsShowStory)
 const isShowMore = computed(() => moreStore.isShow)
-// usePreventSpace()
 
 watch([width, height], () => {
   globalStore.setClientSize(width.value, height.value)
