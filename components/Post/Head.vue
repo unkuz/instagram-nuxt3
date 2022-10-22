@@ -12,7 +12,7 @@ interface IProps {
 defineProps<IProps>()
 
 const moreStore = useMoreStore()
-const showMore = (e: Event) => {
+const showMore = (e: MouseEvent) => {
   e.stopPropagation()
   moreStore.setShow()
 }
