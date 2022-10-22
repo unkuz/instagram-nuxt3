@@ -72,7 +72,7 @@ watch(percent, () => {
       </div>
     </div>
     <div class="absolute bottom-0 h-[4px] w-full cursor-default bg-transparent duration-500">
-      <div ref="progressBarRef" class="h-full w-0 bg-[#ff19a7]"></div>
+      <div ref="progressBarRef" class="h-full w-0 bg-[#54ff20]"></div>
     </div>
     <div class="absolute bottom-[10px] right-[10px] flex gap-[15px]">
       <div title="Picture in picture">

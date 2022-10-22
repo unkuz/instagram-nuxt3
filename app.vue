@@ -17,7 +17,7 @@ useHead({
     },
     {
       name: 'theme-color',
-      content: '#fff',
+      content: '#000',
     },
   ],
 })
