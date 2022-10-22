@@ -6,6 +6,7 @@ export function deboundRoute(url: string) {
   // globalStore.setTransition(true)
   // setTimeout(() => {
   router.push(url)
+
   // // }, TIMMING_PAGE_TRANSITION / 2)
   // setTimeout(() => {
   // globalStore.setTransition(false)
