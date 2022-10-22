@@ -55,17 +55,27 @@ if (process.client) {
     navigator.serviceWorker.register('/sw.js')
   })
 }
+
+onMounted(() => {
+  console.log('Developed by %c Cuzknothz ', 'background: black; color: #fff')
+})
+
+const logSomeError = (e: Error) => {
+  console.log({ e })
+}
 </script>
 
 <template>
-  <div class="scroll-smooth font-quicksan selection:bg-[#000000] selection:text-white">
-    <Prelude v-if="isShowPrelude" />
-    <NuxtLayout>
-      <NuxtLoadingIndicator color="#1da0f6" />
-      <NuxtPage />
-    </NuxtLayout>
-    <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
-    <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
-    <More v-if="isShowMore" />
-  </div>
+  <NuxtErrorBoundary @error="logSomeError">
+    <div class="scroll-smooth font-quicksan selection:bg-[#000000] selection:text-white">
+      <Prelude v-if="isShowPrelude" />
+      <NuxtLayout>
+        <NuxtLoadingIndicator color="#1da0f6" />
+        <NuxtPage />
+      </NuxtLayout>
+      <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
+      <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
+      <More v-if="isShowMore" />
+    </div>
+  </NuxtErrorBoundary>
 </template>
