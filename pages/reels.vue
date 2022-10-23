@@ -14,7 +14,6 @@ definePageMeta({
           class="h-screen w-full object-cover"
           src="/video/242322324_812426336116660_1281566458903572911_n.mp4"
           autoplay
-          muted
           loop
         />
         <div class="absolute bottom-[50px] right-[25px] flex flex-col space-y-[35px]">
