@@ -10,15 +10,28 @@ interface IProps {
   video: any
   idPost: string
 }
+
 const props = defineProps<IProps>()
 const videoRef = ref<HTMLVideoElement>(null)
 const progressBarRef = ref<HTMLDivElement>(null)
 const isVideoPlay = ref<boolean>(false)
 const timelineStore = useTimeLineStore()
 
+const togglePlay = () => {
+  if (videoRef.value.paused) {
+    play()
+  } else {
+    videoRef.value.pause()
+  }
+}
+
 const toggleLike = () => {
   timelineStore.setToggleLike(props.idPost)
 }
+
+useDoubleClick(videoRef, togglePlay, toggleLike)
+
+const { percent } = usePercentVideo(videoRef)
 
 const updateTime = () => {
   isVideoPlay.value = !videoRef.value.paused
@@ -35,16 +48,6 @@ const play = () => {
   })
   videoRef.value.play()
 }
-const togglePlay = () => {
-  if (videoRef.value.paused) {
-    play()
-  } else {
-    videoRef.value.pause()
-  }
-}
-
-useDoubleClick(videoRef, togglePlay, toggleLike)
-const { percent } = usePercentVideo(videoRef)
 
 watch(percent, () => {
   const { clientWidth: widthParent } = progressBarRef.value.parentElement
