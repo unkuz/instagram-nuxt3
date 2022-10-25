@@ -48,7 +48,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div>
+  <div class="dark:bg-black/20">
     <div class="relative flex w-full justify-center lg:block">
       <div class="inline-flex w-full flex-col items-center md:w-[614px] lg:block">
         <Stories :stories="stories" />
