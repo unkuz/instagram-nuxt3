@@ -12,6 +12,7 @@ onMounted(() => {
     duration: 0.5,
     ease: Elastic.easeOut.config(1, 0.3),
   })
+
   tl.to(unlikeRef.value, {
     display: 'none',
     duration: 0,
