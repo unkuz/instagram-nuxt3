@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     'nuxt-lodash',
     'nuxt-icon',
   ],
-  buildModules: ['@pinia/nuxt', '@nuxtjs/web-vitals'],
+  buildModules: ['@pinia/nuxt','@nuxtjs/web-vitals'],
   css: ['@/assets/css/index.css'],
 
   vite: {
@@ -27,9 +27,12 @@ export default defineNuxtConfig({
     step: 50,
   },
   webVitals: {
-    // provider: '', // auto detectd
+    provider: '', // auto detectd
     debug: false,
     disabled: false,
+  },
+  googleAnalytics: {
+    id: 'UA-XXXXXXXX-X'
   },
   htmlValidator: {
     usePrettier: false,
@@ -71,4 +74,5 @@ export default defineNuxtConfig({
     prefixSkip: ['is'],
     exclude: ['map'],
   },
+  
 })
