@@ -3,6 +3,7 @@ import { SECTION } from '@@/constants'
 import { useGlobalStore } from '@@/store'
 
 const globalStore = useGlobalStore()
+
 const router = useRouter()
 
 const handleSelect = (section: SECTION, url?: string) => {
