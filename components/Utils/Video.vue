@@ -1,12 +1,4 @@
 <script lang="ts" setup>
-// onMounted(() => {
-//   const videos = document.getElementsByTagName('video')
-//   if (videos && videos.length > 0)
-//     videos.forEach((video) => {
-//       if (!video.ispaused) {
-//       }
-//     })
-// })
 import { useCurrentVideoStore } from '@@/store'
 
 const currentVideoStore = useCurrentVideoStore()
