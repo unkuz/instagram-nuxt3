@@ -4,5 +4,6 @@ export function useToggle(init: Boolean) {
   const toggle = () => {
     state.value = !state.value
   }
+  
   return [state, toggle]
 }
