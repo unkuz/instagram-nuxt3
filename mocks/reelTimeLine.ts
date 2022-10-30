@@ -74,7 +74,7 @@ export const timeLine = [
     },
     like_count: 2710,
     has_liked: false,
-    caption_text: 'Gotez - Talking Head (Official Lyric Video)',
+    caption_text: 'North Rebellion - Hold Me Tight',
     is_seen: true,
   },
   {
