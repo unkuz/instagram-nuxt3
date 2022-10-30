@@ -29,7 +29,6 @@ const mouseMove = (e: MouseEvent) => {
 }
 const mouseUp = (e: MouseEvent) => {
   isReady.value = false
-  console.error('UP')
 }
 
 onMounted(() => {

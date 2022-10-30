@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { gsap } from 'gsap';
 import ArrowIcon_ from '@@/assets/svg/arrow_icon.svg'
 import { useCarousel } from '@@/composables'
 import Image from './Image.vue'
@@ -20,14 +21,14 @@ const { next, prev, current } = useCarousel(containerMediaRef)
 
 watch(current, (idx) => {
   emit('currentIndexCarousel', idx)
-  const lengthDeepInside = containerMediaRef.value.children[idx].children.length
-  Object.assign(containerMediaRef.value.style, {
-    height: `${
-      containerMediaRef.value.children[idx].children[lengthDeepInside - 4].clientHeight
-    }px`,
+  gsap.to(containerMediaRef.value, {
+    height: containerMediaRef.value.children[idx].children[0].clientHeight,
+    duration: 0
   })
+
 })
 const isShowPre = computed(() => current.value !== 0)
+const currentIdx = computed(() => current.value)
 const isShowNext = computed(() => current.value !== props.images.concat(props.videos).length - 1)
 
 const totalMedia = computed(() => props.images.concat(props.videos).length)
@@ -35,33 +36,21 @@ const totalMedia = computed(() => props.images.concat(props.videos).length)
 
 <template>
   <div class="relative overflow-hidden">
-    <div
-      class="inline-flex min-w-full cursor-grab select-none active:cursor-grabbing"
-      ref="containerMediaRef"
-    >
+    <div class="inline-flex min-w-full cursor-grab select-none active:cursor-grabbing" ref="containerMediaRef">
       <Image v-for="i in images" :key="i.id" :src="i.src" :idPost="id" />
 
       <Video v-for="(video, idx) in videos" :key="idx" :video="video" :idPost="id" />
     </div>
-    <div
-      v-if="isShowPre"
-      class="-translate-y-1/ absolute left-5 top-[50%] h-[22px] w-[22px]"
-      @click="prev"
-    >
+    <div v-if="isShowPre" class="-translate-y-1/ absolute left-5 top-[50%] h-[22px] w-[22px]" @click="prev">
       <ArrowIcon_ class="rotate-180" />
     </div>
 
-    <div
-      v-if="isShowNext"
-      class="absolute right-5 top-[50%] h-[22px] w-[22px] -translate-y-1/2"
-      @click="next"
-    >
+    <div v-if="isShowNext" class="absolute right-5 top-[50%] h-[22px] w-[22px] -translate-y-1/2" @click="next">
       <ArrowIcon_ />
     </div>
     <div
-      class="absolute top-[20px] right-[20px] flex min-w-[40px] justify-center rounded-full bg-black/50 px-[8px] py-[3px] text-[0.8rem] text-white"
-    >
-      <span class="select-none">{{ `${current + 1}/${totalMedia}` }}</span>
+      class="absolute top-[20px] right-[20px] flex min-w-[40px] justify-center rounded-full bg-black/50 px-[8px] py-[3px] text-[0.8rem] text-white">
+      <span class="select-none">{{ `${currentIdx + 1}/${totalMedia}` }}</span>
     </div>
     <Unlike v-if="has_liked" />
     <Like v-else />

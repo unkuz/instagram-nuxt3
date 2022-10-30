@@ -65,35 +65,23 @@ const props = defineProps<IProps>()
 
 const currentIdx = ref(0)
 
-const setCurrent = (e: number) => (currentIdx.value = e)
+const setCurrent = (value: number) => (currentIdx.value = value)
 
 const mediaArr = computed(() => props.carousel_media.images.concat(props.carousel_media.videos))
 </script>
 
 <template>
-  <article
-    ref="postRef"
-    class="mb-[24px] w-full border-gray-200 shadow-gray-200 sm:border-[1px] sm:shadow-sm"
-  >
+  <article ref="postRef" class="mb-[24px] w-full border-gray-200 shadow-gray-200 sm:border-[1px] sm:shadow-sm">
     <Head :profile_pic_url="user.profile_pic_url" :username="user.username" />
-    <Carousel
-      :images="carousel_media.images"
-      :videos="carousel_media.videos"
-      @current-index-carousel="setCurrent($event)"
-      :has_liked="has_liked"
-      :id="id"
-    />
-
+    <Carousel :images="carousel_media.images" :videos="carousel_media.videos"
+      @current-index-carousel="setCurrent($event)" :has_liked="has_liked" :id="id" />
     <div class="px-[16px] text-xs md:text-sm">
       <React :currentIdx="currentIdx" :has_liked="has_liked" :mediaArr="mediaArr" :id="id" />
-      <CaptionComment
-        :like_count="like_count"
-        :created_at="created_at"
-        :comments="comments"
-        :caption_text="caption_text"
-        :user="user"
-      />
-      <Comment />
+      <CaptionComment :like_count="like_count" :created_at="created_at" :comments="comments"
+        :caption_text="caption_text" :user="user" />
+      <ClientOnly>
+        <Comment />
+      </ClientOnly>
     </div>
   </article>
 </template>
