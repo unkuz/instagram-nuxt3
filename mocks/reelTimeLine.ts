@@ -1,4 +1,30 @@
 export const timeLine = [
+    {
+    created_at: 1657809031,
+    id: '1491446004554932gffdsafdsffdsgsdfasdf',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [{ id: 1, src: '/video/North Rebellion - Hold Me Tight.mp4' }],
+    },
+    user: {
+      id: 'diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 2710,
+    has_liked: false,
+    caption_text: 'North Rebellion - Hold Me Tight',
+    is_seen: true,
+  },
   {
     created_at: 1657809031,
     id: '1491446004554932gfdsgsdfasdf',
