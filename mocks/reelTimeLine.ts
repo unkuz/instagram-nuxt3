@@ -1,6 +1,58 @@
 export const timeLine = [
     {
     created_at: 1657809031,
+    id: '1491446004554932gffdsafdsffdsgfsadfdsdfasdf',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [{ id: 1, src: '/video/Ryan Coss - On Fire.mp4' }],
+    },
+    user: {
+      id: 'diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 4630,
+    has_liked: false,
+    caption_text: 'Ryan Coss - On Fire',
+    is_seen: true,
+  },
+  {
+    created_at: 1657809031,
+    id: '1491446004554932gffdsafdsffdsgfsadfdsdfasdf',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [{ id: 1, src: '/video/Gotez - Talking Head (Official Lyric Video).mp4' }],
+    },
+    user: {
+      id: 'diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 6230,
+    has_liked: false,
+    caption_text: 'Gotez - Talking Head (Official Lyric Video)',
+    is_seen: true,
+  },
+  {
+    created_at: 1657809031,
     id: '1491446004554932gffdsafdsffdsgsdfasdf',
     location: {
       short_name: 'Copenhagen',
@@ -22,7 +74,7 @@ export const timeLine = [
     },
     like_count: 2710,
     has_liked: false,
-    caption_text: 'North Rebellion - Hold Me Tight',
+    caption_text: 'Gotez - Talking Head (Official Lyric Video)',
     is_seen: true,
   },
   {
