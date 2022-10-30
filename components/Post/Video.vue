@@ -73,7 +73,9 @@ onUnmounted(() => {
 
 <template>
   <div class="group relative min-w-full overflow-hidden">
-    <video :src="video.src" ref="videoRef" class="video min-w-full" loop />
+    <video ref="videoRef" class="video w-full block" :src="video.src" type="video/mp4" preload="auto" playsinline
+      crossorigin="anonymous" loop />
+
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div :class="
         clsx(
@@ -86,8 +88,8 @@ onUnmounted(() => {
         <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-[#ffffffee]" />
       </div>
     </div>
-    <div class="absolute bottom-0 h-[4px] hover:bg-white/60 hover:h-[5px] w-full cursor-default bg-transparent">
-      <div ref="progressBarRef" class="h-full w-0 bg-[#54ff20]"></div>
+    <div class="absolute bottom-0  h-[4px] hover:bg-[#45ff2077]  w-full cursor-pointer bg-transparent">
+      <div ref="progressBarRef" class="h-full w-0 bg-[#2fff1c]"></div>
     </div>
     <div class="absolute bottom-[10px] right-[10px] flex gap-[15px]">
       <div title="Picture in picture">

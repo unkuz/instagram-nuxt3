@@ -36,7 +36,7 @@ const totalMedia = computed(() => props.images.concat(props.videos).length)
 
 <template>
   <div class="relative overflow-hidden">
-    <div class="inline-flex min-w-full cursor-grab select-none active:cursor-grabbing" ref="containerMediaRef">
+    <div class="inline-flex min-w-full select-none" ref="containerMediaRef">
       <Image v-for="i in images" :key="i.id" :src="i.src" :idPost="id" />
 
       <Video v-for="(video, idx) in videos" :key="idx" :video="video" :idPost="id" />
@@ -50,7 +50,7 @@ const totalMedia = computed(() => props.images.concat(props.videos).length)
     </div>
     <div
       class="absolute top-[20px] right-[20px] flex min-w-[40px] justify-center rounded-full bg-black/50 px-[8px] py-[3px] text-[0.8rem] text-white">
-      <span class="select-none">{{ `${currentIdx + 1}/${totalMedia}` }}</span>
+      {{ `${currentIdx + 1}/${totalMedia}` }}
     </div>
     <Unlike v-if="has_liked" />
     <Like v-else />
