@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import SearchIcon from '@@/assets/svg/search_icon_2367fdg.svg'
-import { useClickOutSide } from '@@/composables'
-import { useSearchStore } from '@@/store'
+import SearchIcon from '@@/assets/svg/search_icon_2367fdg.svg';
+import { useClickOutSide } from '@@/composables';
+import { useSearchStore } from '@@/store';
+import clsx from 'classnames';
 
 const searchStore = useSearchStore()
 const searchRef = ref(null)
@@ -16,16 +17,6 @@ watch(isSearchActive, (state) => {
   }
 })
 
-watch([isSearchHaveValue, isSearchActive], () => {
-  if (isSearchActive.value) {
-    inputSearch.value.style.left = '46%'
-    inputSearch.value.style.width = '221px'
-  } else {
-    inputSearch.value.style.left = '136px'
-    inputSearch.value.style.width = '200px'
-  }
-})
-
 useClickOutSide(searchRef, () => {
   searchStore.setIsFocus(false)
 })
@@ -36,23 +27,13 @@ const handleInputSearch = (e: Event) => {
 </script>
 
 <template>
-  <div
-    ref="searchRef"
-    @click="searchStore.setIsFocus(true)"
-    class="relative flex h-[36px] w-[268px] cursor-text items-center rounded-md bg-gray-200 px-[16px]"
-  >
+  <div ref="searchRef" @click="searchStore.setIsFocus(true)"
+    class="relative flex h-[36px] w-[268px] cursor-text items-center rounded-md bg-gray-200 px-[16px]">
     <SearchIcon v-show="!isSearchActive" />
-    <span
-      v-show="!isSearchActive && !isSearchHaveValue"
-      class="absolute top-1/2 left-[60px] -translate-y-1/2 text-sm"
-      >Search</span
-    >
-    <input
-      type="text"
-      ref="inputSearch"
-      :value="searchValue"
-      @input="handleInputSearch"
-      class="absolute top-1/2 left-1/2 h-[30px] w-[236px] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-[#09f] focus:outline-none"
-    />
+    <span v-show="!isSearchActive && !isSearchHaveValue"
+      class="absolute top-1/2 left-[60px] -translate-y-1/2 text-sm">Search</span>
+    <input type="text" ref="inputSearch" :value="searchValue" @input="handleInputSearch" :class="clsx('absolute top-1/2  left-1/2 h-[30px] w-[90%] -translate-x-1/2 -translate-y-1/2 bg-black/20 text-sm caret-[#09f] focus:outline-none', {
+      'w-[72%]': !isSearchActive
+    })" />
   </div>
 </template>

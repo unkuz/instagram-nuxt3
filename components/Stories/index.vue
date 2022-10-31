@@ -1,8 +1,8 @@
 <script lang="ts">
 import { IStory } from '@@/models'
+import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import Story from './Story.vue'
-import 'keen-slider/keen-slider.min.css'
 
 export default {
   setup() {
@@ -66,8 +66,7 @@ export default {
 
 <template>
   <div
-    class="relative flex h-[119px] w-full items-center border-0 border-gray-200 shadow-gray-200 sm:mb-[24px] sm:border-[1px] sm:shadow-sm"
-  >
+    class="relative flex h-[119px] w-full items-center border-0 border-gray-200 shadow-gray-200 md:mb-[24px] md:border-[1px] md:shadow-sm">
     <div ref="container" class="keen-slider h-full cursor-grabbing pt-[20px]">
       <div class="keen-slider__slide" v-for="i in stories" :key="i.id">
         <Story v-bind="i" />

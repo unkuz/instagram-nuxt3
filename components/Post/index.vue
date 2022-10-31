@@ -71,7 +71,8 @@ const mediaArr = computed(() => props.carousel_media.images.concat(props.carouse
 </script>
 
 <template>
-  <article ref="postRef" class="mb-[24px] w-full border-gray-200 shadow-gray-200 sm:border-[1px] sm:shadow-sm">
+  <article ref="postRef" class="mb-[24px] w-full border-gray-200 shadow-gray-200 md:border-[1px] md:shadow-sm">
+
     <Head :profile_pic_url="user.profile_pic_url" :username="user.username" />
     <Carousel :images="carousel_media.images" :videos="carousel_media.videos"
       @current-index-carousel="setCurrent($event)" :has_liked="has_liked" :id="id" />

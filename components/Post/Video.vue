@@ -5,7 +5,8 @@ import PlayIcon_ from '@@/assets/svg/play_icon.svg'
 import { useDoubleClick, usePercentVideo } from '@@/composables'
 import { useTimeLineStore } from '@@/store'
 import clsx from 'classnames'
-import { gsap } from 'gsap';
+import { gsap } from 'gsap'
+import { isNil } from 'lodash'
 
 interface IProps {
   video: any
@@ -35,7 +36,9 @@ useDoubleClick(videoRef, togglePlay, toggleLike)
 const { percent } = usePercentVideo(videoRef)
 
 const updateTime = () => {
-  isVideoPlay.value = !videoRef.value.paused
+  if (!isNil(videoRef?.value?.paused)) {
+    isVideoPlay.value = !videoRef.value.paused
+  }
 }
 
 const play = () => {
@@ -48,16 +51,22 @@ const play = () => {
 }
 
 watch(percent, () => {
-  const { clientWidth: widthParent } = progressBarRef.value.parentElement
-  gsap.to(progressBarRef.value, {
-    width: percent.value * widthParent,
-    duration: 0
-  })
+  if (!isNil(progressBarRef?.value)) {
+    const { clientWidth: widthParent } = progressBarRef.value.parentElement
+    gsap.to(progressBarRef.value, {
+      width: percent.value * widthParent,
+      duration: 0
+    })
+  }
+
 })
 
 const scrub = (e: MouseEvent) => {
-  const scrubTime = (e.offsetX / progressBarRef.value.parentElement.offsetWidth) * videoRef.value.duration;
-  videoRef.value.currentTime = scrubTime;
+  if (!isNil(progressBarRef?.value) && !isNil(videoRef?.value)) {
+    const scrubTime = (e.offsetX / progressBarRef.value.parentElement.offsetWidth) * videoRef.value.duration;
+    videoRef.value.currentTime = scrubTime;
+  }
+
 }
 
 onMounted(() => {
@@ -85,7 +94,7 @@ onUnmounted(() => {
           }
         )
       ">
-        <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-[#ffffffee]" />
+        <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-[#ffffffc7]" />
       </div>
     </div>
     <div class="absolute bottom-0  h-[4px] hover:bg-[#45ff2077]  w-full cursor-pointer bg-transparent">

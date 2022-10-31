@@ -13,6 +13,7 @@
     "@nuxtjs/supabase": "^0.1.28",
     "@nuxtjs/tailwindcss": "^6.1.1",
     "@nuxtjs/web-vitals": "^0.1.10",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "@types/lodash": "^4.14.186",
     "autoprefixer": "^10.4.12",
     "nuxt": "^3.0.0-rc.12",

@@ -22,8 +22,10 @@ const actions = {
   setToggleLike(id: string) {
     this.data.forEach((i: ITimeLine) => {
       if (i.id === id) {
-        i.has_liked = !i.has_liked
-        i.like_count = i.has_liked ? i.like_count + 1 : i.like_count - 1
+        setTimeout(() => {
+          i.has_liked = !i.has_liked
+          i.like_count = i.has_liked ? i.like_count + 1 : i.like_count - 1
+        }, 500)
       }
     })
   },
