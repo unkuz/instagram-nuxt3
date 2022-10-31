@@ -32,7 +32,7 @@ const handleInputSearch = (e: Event) => {
     <SearchIcon v-show="!isSearchActive" />
     <span v-show="!isSearchActive && !isSearchHaveValue"
       class="absolute top-1/2 left-[60px] -translate-y-1/2 text-sm">Search</span>
-    <input type="text" ref="inputSearch" :value="searchValue" @input="handleInputSearch" :class="clsx('absolute top-1/2  left-1/2 h-[30px] w-[90%] -translate-x-1/2 -translate-y-1/2 bg-black/20 text-sm caret-[#09f] focus:outline-none', {
+    <input type="text" ref="inputSearch" :value="searchValue" @input="handleInputSearch" :class="clsx('absolute top-1/2  left-1/2 h-[30px] w-[90%] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-[#09f] focus:outline-none', {
       'w-[72%]': !isSearchActive
     })" />
   </div>
