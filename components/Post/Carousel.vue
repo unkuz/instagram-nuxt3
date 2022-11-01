@@ -48,7 +48,7 @@ const totalMedia = computed(() => props.images.concat(props.videos).length)
     <div v-if="isShowNext" class="absolute right-5 top-[50%] h-[22px] w-[22px] -translate-y-1/2" @click="next">
       <ArrowIcon_ />
     </div>
-    <div
+    <div v-show="totalMedia > 1"
       class="absolute top-[20px] right-[20px] flex min-w-[40px] justify-center rounded-full bg-black/50 px-[8px] py-[3px] text-[0.8rem] text-white">
       {{ `${currentIdx + 1}/${totalMedia}` }}
     </div>
