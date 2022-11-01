@@ -35,9 +35,9 @@ useDoubleClick(videoRef, togglePlay, toggleLike)
 const { percent } = usePercentVideo(videoRef)
 
 const updateTime = () => {
-  if (videoRef?.value?.paused) {
-    isVideoPlay.value = !videoRef.value.paused
-  }
+
+  isVideoPlay.value = !videoRef.value.paused
+
 }
 
 const play = () => {
@@ -50,21 +50,21 @@ const play = () => {
 }
 
 watch(percent, () => {
-  if (progressBarRef?.value) {
-    const { clientWidth: widthParent } = progressBarRef.value.parentElement
-    gsap.to(progressBarRef.value, {
-      width: percent.value * widthParent,
-      duration: 0
-    })
-  }
+
+  const { clientWidth: widthParent } = progressBarRef.value.parentElement
+  gsap.to(progressBarRef.value, {
+    width: percent.value * widthParent,
+    duration: 0
+  })
+
 
 })
 
 const scrub = (e: MouseEvent) => {
-  if (progressBarRef?.value && videoRef?.value) {
-    const scrubTime = (e.offsetX / progressBarRef.value.parentElement.offsetWidth) * videoRef.value.duration;
-    videoRef.value.currentTime = scrubTime;
-  }
+
+  const scrubTime = (e.offsetX / progressBarRef.value.parentElement.offsetWidth) * videoRef.value.duration;
+  videoRef.value.currentTime = scrubTime;
+
 
 }
 
