@@ -6,7 +6,6 @@ import { useDoubleClick, usePercentVideo } from '@@/composables'
 import { useTimeLineStore } from '@@/store'
 import clsx from 'classnames'
 import { gsap } from 'gsap'
-import { isNil } from 'lodash'
 
 interface IProps {
   video: any
@@ -36,7 +35,7 @@ useDoubleClick(videoRef, togglePlay, toggleLike)
 const { percent } = usePercentVideo(videoRef)
 
 const updateTime = () => {
-  if (!isNil(videoRef?.value?.paused)) {
+  if (videoRef?.value?.paused) {
     isVideoPlay.value = !videoRef.value.paused
   }
 }
@@ -51,7 +50,7 @@ const play = () => {
 }
 
 watch(percent, () => {
-  if (!isNil(progressBarRef?.value)) {
+  if (progressBarRef?.value) {
     const { clientWidth: widthParent } = progressBarRef.value.parentElement
     gsap.to(progressBarRef.value, {
       width: percent.value * widthParent,
@@ -62,7 +61,7 @@ watch(percent, () => {
 })
 
 const scrub = (e: MouseEvent) => {
-  if (!isNil(progressBarRef?.value) && !isNil(videoRef?.value)) {
+  if (progressBarRef?.value && videoRef?.value) {
     const scrubTime = (e.offsetX / progressBarRef.value.parentElement.offsetWidth) * videoRef.value.duration;
     videoRef.value.currentTime = scrubTime;
   }
