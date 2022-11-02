@@ -18,13 +18,14 @@ const containerRef = ref<HTMLVideoElement>(null)
 const progressBarRef = ref<HTMLDivElement>(null)
 const isVideoPlay = ref<boolean>(false)
 const timelineStore = useTimeLineStore()
+const isFullScreen = ref<boolean>(false)
 
 const togglePlay = () => {
     if (videoRef.value.paused) {
-        play()
-    } else {
-        videoRef.value.pause()
+        return play()
     }
+    videoRef.value.pause()
+
 }
 
 const toggleLike = () => {
@@ -51,22 +52,16 @@ const play = () => {
 }
 
 watch(percent, () => {
-
     const { clientWidth: widthParent } = progressBarRef.value.parentElement
     gsap.to(progressBarRef.value, {
         width: percent.value * widthParent,
         duration: 0
     })
-
-
 })
 
 const scrub = (e: MouseEvent) => {
-
     const scrubTime = (e.offsetX / progressBarRef.value.parentElement.offsetWidth) * videoRef.value.duration;
     videoRef.value.currentTime = scrubTime;
-
-
 }
 
 onMounted(() => {
@@ -77,6 +72,24 @@ onMounted(() => {
 onUnmounted(() => {
     progressBarRef.value.parentElement.removeEventListener('click', scrub)
 })
+
+
+
+
+
+
+const toggleFullScreen = () => {
+    if (document.fullscreenElement) {
+        isFullScreen.value = false
+        return document.exitFullscreen()
+    }
+    isFullScreen.value = true
+    containerRef.value.requestFullscreen()
+    document.addEventListener('keyup', (e) => {
+        console.log({ e })
+
+    })
+}
 
 </script>
 
@@ -97,8 +110,10 @@ onUnmounted(() => {
                 <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-[#ffffffc7]" />
             </div>
         </div>
-        <div class="absolute bottom-0  h-[4px] hover:bg-[#45ff2077]  w-full cursor-pointer bg-transparent">
-            <div ref="progressBarRef" class="h-full w-0 bg-[#2fff1c]"></div>
+        <div :class="clsx('absolute bottom-0  h-[4px] hover:bg-[#45ff2077] [&>div]:bg-[#2fff1c]  w-full cursor-pointer bg-transparent', {
+            'h-[8px] [&>div]:bg-[#1cbfff]': isFullScreen
+        })">
+            <div ref="progressBarRef" class="h-full w-0"></div>
         </div>
         <div class="absolute bottom-[10px] right-[10px] flex gap-[15px]">
             <div title="Picture in picture">
@@ -106,7 +121,7 @@ onUnmounted(() => {
                     class="hidden w-[20px] cursor-pointer fill-white text-white md:group-hover:block" />
             </div>
             <div title="Full screen">
-                <ExpandIcon_ @click="containerRef.requestFullscreen()"
+                <ExpandIcon_ @click="toggleFullScreen"
                     class="hidden w-[20px] cursor-pointer fill-white text-white group-hover:block" />
             </div>
         </div>

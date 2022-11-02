@@ -4,6 +4,7 @@ import Post from '@@/components/Post/index.vue'
 import Stories from '@@/components/Stories/index.vue'
 import { IStory, ITimeLine } from '@@/models'
 import { useStoriesStore, useSuggestionStore, useTimeLineStore } from '@@/store'
+import { useFetchCamel } from '~~/composables'
 
 definePageMeta({
     layout: 'main',
@@ -23,6 +24,13 @@ const { data: _suggestions } = await useFetch<IStory[]>(
     'https://mocki.io/v1/5e99de01-56f3-46a5-a0a0-477dcfd34beb'
 )
 
+
+const { data: _timelinez } = await useFetchCamel(
+    'https://mocki.io/v1/dc96749b-96d4-4656-b8a5-83e6f4dc0fda'
+)
+
+
+console.log({ _timelinez })
 storiesStore.save(_stories.value)
 timeLineStore.save(_timeline.value)
 suggestionStore.save(_suggestions.value)
