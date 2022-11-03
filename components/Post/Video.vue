@@ -90,8 +90,8 @@ const toggleFullScreen = () => {
 
 <template>
     <div ref="containerRef" class="group relative min-w-full overflow-hidden">
-        <video ref="videoRef" class="video w-full block" :src="video.src" type="video/mp4" preload="auto" playsinline
-            crossorigin="anonymous" loop />
+        <video ref="videoRef" class="video w-full max-h-[60vh] block bg-black" :src="video.src" type="video/mp4"
+            preload="auto" playsinline crossorigin="anonymous" loop />
 
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <div :class="
