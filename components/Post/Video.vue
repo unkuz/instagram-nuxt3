@@ -69,14 +69,9 @@ onMounted(() => {
     progressBarRef.value.parentElement.addEventListener('click', scrub)
 })
 
-onUnmounted(() => {
+onBeforeUnmount(() => {
     progressBarRef.value.parentElement.removeEventListener('click', scrub)
 })
-
-
-
-
-
 
 const toggleFullScreen = () => {
     if (document.fullscreenElement) {
