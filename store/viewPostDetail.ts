@@ -48,6 +48,7 @@ const state = () => ({
         },
         id: '',
         is_seen: '',
+        tags: [''],
         like_count: 0,
         location: {
             short_name: '',

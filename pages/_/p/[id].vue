@@ -16,7 +16,8 @@
                                 :mediaArr="mediaArr" :id="postDetailStore.post.id" />
                             <CaptionComment :like_count="postDetailStore.post.like_count"
                                 :created_at="postDetailStore.post.created_at" :comments="postDetailStore.post.comments"
-                                :caption_text="postDetailStore.post.caption_text" :user="postDetailStore.post.user" />
+                                :caption_text="postDetailStore.post.caption_text" :user="postDetailStore.post.user"
+                                :tags="postDetailStore.post.tags" />
 
                         </div>
                     </article>
