@@ -30,6 +30,7 @@ const calcHeight = () => {
 
     textBoxRef.value.style.height = textBoxRef.value.scrollHeight + 'px'
 }
+
 </script>
 
 <template>
