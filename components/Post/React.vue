@@ -14,18 +14,11 @@ interface IProps {
     id: any
 }
 
-const { id } = defineProps<IProps>()
-const viewPostDetailStore = useViewPostDetailStore()
+defineProps<IProps>()
 const timelineStore = useTimeLineStore()
 
-const viewPost = () => {
-    viewPostDetailStore.setPostDetail(id)
-    navigateTo(`/_/p/${id}`)
-}
 
-const toggleLike = () => {
-    timelineStore.setToggleLike(id)
-}
+
 
 
 </script>
@@ -35,11 +28,11 @@ const toggleLike = () => {
         'grid-cols-2': mediaArr.length < 2
     })">
         <div class="flex h-full w-full items-center space-x-[10px]">
-            <div @click="toggleLike">
+            <div @click="timelineStore.setToggleLike(id)">
                 <LikeIcon_ v-if="!has_liked" />
                 <UnlikeIcon v-else />
             </div>
-            <ViewPostIcon_ @click="viewPost" />
+            <ViewPostIcon_ @click="navigateTo(`/_/p/${id}`)" />
             <ShareIcon_ />
         </div>
         <div v-if="mediaArr.length > 1" class="flex items-center justify-center space-x-[4px]">

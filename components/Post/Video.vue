@@ -73,18 +73,28 @@ onBeforeUnmount(() => {
     progressBarRef.value.parentElement.removeEventListener('click', scrub)
 })
 
-const toggleFullScreen = () => {
+const toggleFullScreen = (e: MouseEvent) => {
+    e.preventDefault()
     if (document.fullscreenElement) {
-        isFullScreen.value = false
+
         return document.exitFullscreen()
     }
-    isFullScreen.value = true
     containerRef.value.requestFullscreen()
-    document.addEventListener('keyup', (e) => {
-        console.log({ e })
-
-    })
 }
+
+onMounted(() => {
+    containerRef.value.addEventListener('fullscreenchange', (e) => {
+        if (document.fullscreenElement) {
+            isFullScreen.value === true
+
+        }
+        else {
+            isFullScreen.value === false
+        }
+    })
+})
+
+
 
 </script>
 

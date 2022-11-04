@@ -54,7 +54,7 @@ const currentIdx = ref(0)
 
 
 const { data: _timeline } = await useFetch<ITimeLine[]>(
-    'https://mocki.io/v1/dc96749b-96d4-4656-b8a5-83e6f4dc0fda'
+    'https://mocki.io/v1/bbd9ad8d-fbd8-4d95-a9ac-ee6416513aae'
 )
 
 const detail = _timeline.value.find((i) => i.id === router.currentRoute.value.params.id)
@@ -76,7 +76,6 @@ onMounted(() => {
         opacity: 1
     })
 })
-
 
 </script>
 

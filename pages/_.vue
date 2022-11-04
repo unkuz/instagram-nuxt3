@@ -15,7 +15,7 @@ const timeLineStore = useTimeLineStore()
 const suggestionStore = useSuggestionStore()
 
 const { data: _timeline } = await useFetch<ITimeLine[]>(
-    'https://mocki.io/v1/dc96749b-96d4-4656-b8a5-83e6f4dc0fda'
+    'https://mocki.io/v1/bbd9ad8d-fbd8-4d95-a9ac-ee6416513aae'
 )
 const { data: _stories } = await useFetch<IStory[]>(
     'https://mocki.io/v1/5e99de01-56f3-46a5-a0a0-477dcfd34beb'
@@ -53,6 +53,7 @@ onMounted(() => {
 onUnmounted(() => {
     removeEventListener('scroll', positionRight.value)
 })
+
 </script>
 
 <template>
