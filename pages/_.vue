@@ -38,7 +38,6 @@ timeLineStore.save(_timeline.value ?? [])
 suggestionStore.save(_suggestions.value ?? [])
 
 const timeline = computed(() => timeLineStore.data)
-console.table(timeline);
 const stories = computed(() => storiesStore.data)
 const suggestion = computed(() => suggestionStore.data)
 

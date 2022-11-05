@@ -75,13 +75,11 @@ watch(isDarkMode, (value) => {
     }
 })
 
-const logSomeError = (e: Error) => {
-    console.log({ e })
-}
+
 </script>
 
 <template>
-    <!-- <NuxtErrorBoundary @error="logSomeError"> -->
+    <!-- <NuxtErrorBoundary > -->
     <div class="scroll-smooth font-quicksan selection:bg-[#000000] selection:text-white">
         <Prelude v-if="isShowPrelude" />
         <NuxtLayout>
