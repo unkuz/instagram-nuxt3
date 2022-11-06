@@ -6,7 +6,7 @@ import Head from './Head.vue'
 import React from './React.vue'
 
 export interface IProps {
-    created_at: number
+    created_at: string
     caption_text: string
     has_liked: boolean
     carousel_media: {

@@ -45,7 +45,7 @@ const randomColor = Math.floor(Math.random() * 16777215).toString(16);
         </div>
 
         <div class="m-[8px_0px_5px_0px] h-[18px] text-[0.8rem] text-gray-400">
-            {{ moment('2022-10-09 14:08').fromNow() }}
+            {{ moment(created_at).fromNow() }}
         </div>
     </div>
 </template>
