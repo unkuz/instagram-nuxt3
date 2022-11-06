@@ -3,7 +3,6 @@ import Logo from '@@/components/Header/Logo.vue'
 import Search from '@@/components/Header/Search.vue'
 import HomeIcon from '@@/components/Nav/HomeIcon.vue'
 import Reels from '@@/components/Nav/Reels.vue'
-import { useDebounceRoute } from '@@/composables'
 import { SECTION } from '@@/constants/section'
 import { useGlobalStore, useSearchStore } from '@@/store'
 import AccountPop from '../Huge/AccountPop/index.vue'
@@ -15,7 +14,6 @@ import Messenger from '../Nav/Messenger.vue'
 import NewPost from '../Nav/NewPost.vue'
 import SelfAvatar from '../Nav/SelfAvatar.vue'
 
-const router = useRouter()
 const globalStore = useGlobalStore()
 const searchStore = useSearchStore()
 const isShowSearchToolkit = computed(() => searchStore.getIsShowSearchToolkit)
