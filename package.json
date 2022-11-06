@@ -47,6 +47,7 @@
     "pinia": "^2.0.23",
     "rxjs": "^8.0.0-alpha.5",
     "tailwind-scrollbar-hide": "^1.1.7",
+    "vee-validate": "^4.7.2",
     "vite-svg-loader": "^3.6.0"
   }
 }
