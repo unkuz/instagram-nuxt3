@@ -83,7 +83,7 @@ watch(isDarkMode, (value) => {
     <div class="scroll-smooth font-quicksan selection:bg-[#000000] selection:text-white">
         <Prelude v-if="isShowPrelude" />
         <NuxtLayout>
-            <NuxtLoadingIndicator color="#1da0f6" />
+            <NuxtLoadingIndicator />
             <NuxtPage />
         </NuxtLayout>
         <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
