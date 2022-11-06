@@ -43,12 +43,12 @@ const handleSelect = (section: SECTION) => {
                 </NuxtLink>
             </div>
             <div @click="handleSelect(SECTION.ACTIVITYFEED)">
-                <NuxtLink to="'/activity-feed'">
+                <NuxtLink to="/activity-feed">
                     <ActivityFeed :isSelect="section === SECTION.ACTIVITYFEED" />
                 </NuxtLink>
             </div>
             <div @click="handleSelect(SECTION.SELF)">
-                <NuxtLink to="'/cuzknothz/'">
+                <NuxtLink to="/cuzknothz/">
                     <SelfAvatar :isSelect="section === SECTION.SELF" />
                 </NuxtLink>
             </div>
