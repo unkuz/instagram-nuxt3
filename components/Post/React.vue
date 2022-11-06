@@ -32,7 +32,9 @@ const timelineStore = useTimeLineStore()
                 <LikeIcon_ v-if="!has_liked" />
                 <UnlikeIcon v-else />
             </div>
-            <ViewPostIcon_ @click="navigateTo(`/_/p/${id}`)" />
+            <NuxtLink :to="`/_/p/${id}`">
+                <ViewPostIcon_ />
+            </NuxtLink>
             <ShareIcon_ />
         </div>
         <div v-if="mediaArr.length > 1" class="flex items-center justify-center space-x-[4px]">

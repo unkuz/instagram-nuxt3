@@ -15,9 +15,6 @@ const { M } = SizeAvatarEnum
 const authStore = useAuthStore()
 const authorText = 'cuzknothz'
 
-
-const goExplorePeople = () => navigateTo('/explore/people')
-const goLogOut = () => navigateTo('/login')
 </script>
 
 <template>
@@ -28,11 +25,15 @@ const goLogOut = () => navigateTo('/login')
                 <p class="cursor-pointer font-medium">cuzknothz</p>
                 <p class="text-gray-600">cuzknothz</p>
             </div>
-            <div class="cursor-pointer text-[#1da0f6]" @click="goLogOut">Log out</div>
+            <NuxtLink to="/login">
+                <div class="cursor-pointer text-[#1da0f6]">Log out</div>
+            </NuxtLink>
         </div>
         <div class="flex h-[11px] items-center justify-between text-sm text-gray-600">
             <div class="text-gray-600">Suggestions for you</div>
-            <div class="cursor-pointer" @click="goExplorePeople">See All</div>
+            <NuxtLink to="/explore/people">
+                <div class="cursor-pointer">See All</div>
+            </NuxtLink>
         </div>
         <div class="mt-[8px] w-full">
             <Item v-for="{ name, avatar, id } in suggestion" :key="id" :name="name" :avatar="avatar" :id="id" />
@@ -50,12 +51,12 @@ const goLogOut = () => navigateTo('/login')
 
         <div class="flex flex-col items-center space-y-2 text-[0.85rem]">
             <div>© 2022 Instagram clone by</div>
-            <a href="https://github.com/cuzknothz" target="_blank">
-                <div title="Cuzknothz github"
+            <NuxtLink to="https://github.com/cuzknothz" target="_blank">
+                <div
                     class="cursor-pointer select-none font-august text-[1.25rem] uppercase tracking-wider text-black drop-shadow-md">
                     {{ authorText }}
                 </div>
-            </a>
+            </NuxtLink>
         </div>
     </div>
 </template>

@@ -36,11 +36,11 @@ const randomColor = Math.floor(Math.random() * 16777215).toString(16);
         <div class="mt-[5px] bg-gray-100/60 py-[5px]">
             <div>{{ caption_text }}</div>
             <div class="mt-[5px] flex flex-wrap gap-[8px]">
-
-                <Button v-for="(i, idx) in tags" @click="navigateTo(`/explore/tags/${i}`)" :text="`#${i}`" :className="clsx('text-[0.8rem] !px-[7px]     shadow-md ',
-                    `!bg-[${randomColor}]`
-                )" />
-
+                <NuxtLink :to="`/explore/tags/${i}`" v-for="(i, idx) in tags" :key="idx">
+                    <Button :text="`#${i}`" :className="clsx('text-[0.8rem] !px-[7px]     shadow-md ',
+                        `!bg-[${randomColor}]`
+                    )" />
+                </NuxtLink>
             </div>
         </div>
 
