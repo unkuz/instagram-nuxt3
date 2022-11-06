@@ -1,11 +1,11 @@
 <script lang="ts" setup>
+import ArrowIcon_ from '@@/assets/svg/arrow_icon.svg';
+import { useCarousel } from '@@/composables';
 import { gsap } from 'gsap';
-import ArrowIcon_ from '@@/assets/svg/arrow_icon.svg'
-import { useCarousel } from '@@/composables'
-import Image from './Image.vue'
-import Like from './Like.vue'
-import Unlike from './Unlike.vue'
-import Video from './Video.vue'
+import Image from './Image.vue';
+import Like from './Like.vue';
+import Unlike from './Unlike.vue';
+import Video from './Video.vue';
 
 interface IProps {
     images: any
@@ -30,9 +30,7 @@ watch(current, (idx) => {
     }
 })
 const isShowPre = computed(() => current.value !== 0)
-const currentIdx = computed(() => current.value)
 const isShowNext = computed(() => current.value !== props.images.concat(props.videos).length - 1)
-
 const totalMedia = computed(() => props.images.concat(props.videos).length)
 </script>
 
@@ -44,15 +42,15 @@ const totalMedia = computed(() => props.images.concat(props.videos).length)
             <Video v-for="(video, idx) in videos" :key="idx" :video="video" :idPost="id" />
         </div>
         <div v-if="isShowPre" class="-translate-y-1/ absolute left-5 top-[50%] h-[22px] w-[22px]" @click="prev">
-            <ArrowIcon_ class="rotate-180" />
+            <ArrowIcon_ class="rotate-180 opacity-80" />
         </div>
 
         <div v-if="isShowNext" class="absolute right-5 top-[50%] h-[22px] w-[22px] -translate-y-1/2" @click="next">
-            <ArrowIcon_ />
+            <ArrowIcon_ class="opacity-80" />
         </div>
         <div v-show="totalMedia > 1"
             class="absolute top-[20px] right-[20px] flex min-w-[40px] justify-center rounded-full bg-black/50 px-[8px] py-[3px] text-[0.8rem] text-white">
-            {{ `${currentIdx + 1}/${totalMedia}` }}
+            {{ `${current + 1}/${totalMedia}` }}
         </div>
         <Unlike v-if="has_liked" />
         <Like v-else />

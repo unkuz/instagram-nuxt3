@@ -13,18 +13,21 @@ interface IProps {
 }
 
 const props = defineProps<IProps>()
-const videoRef = ref<HTMLVideoElement>(null)
-const containerRef = ref<HTMLVideoElement>(null)
-const progressBarRef = ref<HTMLDivElement>(null)
+const videoRef = ref<HTMLVideoElement>()
+const containerRef = ref<HTMLVideoElement>()
+const progressBarRef = ref<HTMLDivElement>()
 const isVideoPlay = ref<boolean>(false)
 const timelineStore = useTimeLineStore()
 const isFullScreen = ref<boolean>(false)
 
 const togglePlay = () => {
-    if (videoRef.value.paused) {
-        return play()
+    if (videoRef.value) {
+        if (videoRef.value.paused) {
+            return play()
+        }
+        videoRef.value.pause()
     }
-    videoRef.value.pause()
+
 
 }
 
@@ -37,8 +40,11 @@ useDoubleClick(videoRef, togglePlay, toggleLike)
 const { percent } = usePercentVideo(videoRef)
 
 const updateTime = () => {
+    if (videoRef.value) {
+        isVideoPlay.value = !videoRef.value.paused
 
-    isVideoPlay.value = !videoRef.value.paused
+    }
+
 
 }
 
@@ -48,29 +54,29 @@ const play = () => {
     allVideo.forEach((video) => {
         video.pause()
     })
-    videoRef.value.play()
+    videoRef.value && videoRef.value.play()
 }
 
 watch(percent, () => {
-    const { clientWidth: widthParent } = progressBarRef.value.parentElement
-    gsap.to(progressBarRef.value, {
+    const { clientWidth: widthParent } = progressBarRef.value!.parentElement!
+    gsap.to(progressBarRef.value!, {
         width: percent.value * widthParent,
         duration: 0
     })
 })
 
 const scrub = (e: MouseEvent) => {
-    const scrubTime = (e.offsetX / progressBarRef.value.parentElement.offsetWidth) * videoRef.value.duration;
-    videoRef.value.currentTime = scrubTime;
+    const scrubTime = (e.offsetX / progressBarRef.value!.parentElement!.offsetWidth) * videoRef.value!!.duration;
+    videoRef.value!.currentTime = scrubTime;
 }
 
 onMounted(() => {
-    videoRef.value.addEventListener('timeupdate', updateTime)
-    progressBarRef.value.parentElement.addEventListener('click', scrub)
+    videoRef.value!.addEventListener('timeupdate', updateTime)
+    progressBarRef.value!.parentElement!.addEventListener('click', scrub)
 })
 
 onBeforeUnmount(() => {
-    progressBarRef.value.parentElement.removeEventListener('click', scrub)
+    progressBarRef.value!.parentElement!.removeEventListener('click', scrub)
 })
 
 const toggleFullScreen = (e: MouseEvent) => {
@@ -79,11 +85,11 @@ const toggleFullScreen = (e: MouseEvent) => {
 
         return document.exitFullscreen()
     }
-    containerRef.value.requestFullscreen()
+    containerRef.value!.requestFullscreen()
 }
 
 onMounted(() => {
-    containerRef.value.addEventListener('fullscreenchange', (e) => {
+    containerRef.value!.addEventListener('fullscreenchange', (e) => {
         if (document.fullscreenElement) {
             isFullScreen.value === true
 
@@ -122,7 +128,7 @@ onMounted(() => {
         </div>
         <div class="absolute bottom-[10px] right-[10px] flex gap-[15px]">
             <div title="Picture in picture">
-                <PicInPicIcon_ @click="containerRef.requestPictureInPicture()"
+                <PicInPicIcon_ @click="containerRef!.requestPictureInPicture()"
                     class="hidden w-[20px] cursor-pointer fill-white text-white md:group-hover:block" />
             </div>
             <div title="Full screen">
