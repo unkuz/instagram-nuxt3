@@ -15,7 +15,7 @@ const timeLineStore = useTimeLineStore()
 const suggestionStore = useSuggestionStore()
 
 const { data: _timeline } = await useFetch<ITimeLine[]>(
-    'https://mocki.io/v1/5960b9c2-880a-41cc-a0bc-b2302e565581'
+    'https://mocki.io/v1/760e44f3-256b-49ff-8c04-e0f4e8bffcfc'
 )
 const { data: _stories } = await useFetch<IStory[]>(
     'https://mocki.io/v1/5e99de01-56f3-46a5-a0a0-477dcfd34beb'
