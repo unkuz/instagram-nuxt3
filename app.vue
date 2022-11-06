@@ -25,7 +25,6 @@ useHead({
 })
 
 const globalStore = useGlobalStore()
-const storyStore = useStoryStore()
 const moreStore = useMoreStore()
 const themeStore = useThemeStore()
 const { isShowPrelude } = usePrelude()
@@ -35,7 +34,6 @@ const isDarkMode = computed(() => themeStore.darkMode)
 const isTransition = computed(() => globalStore.getIsTransition)
 const section = computed(() => globalStore.getSection)
 const isMobile = computed(() => globalStore.getIsMobile)
-const isShowStory = computed(() => storyStore.getIsShowStory)
 const isShowMore = computed(() => moreStore.isShow)
 
 watch([width, height], () => {
@@ -81,13 +79,12 @@ watch(isDarkMode, (value) => {
 <template>
     <!-- <NuxtErrorBoundary > -->
     <div class="scroll-smooth font-quicksan selection:bg-[#000000] selection:text-white">
-        <Prelude v-if="isShowPrelude" />
         <NuxtLayout>
-            <NuxtLoadingIndicator />
+            <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" />
             <NuxtPage />
         </NuxtLayout>
+        <Prelude v-if="isShowPrelude" />
         <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
-        <NewPostMobile v-if="section === SECTION.NEW_POST && isMobile" />
         <More v-if="isShowMore" />
     </div>
     <!-- </NuxtErrorBoundary> -->
