@@ -7,7 +7,7 @@ interface IProps {
     idPost: string
 }
 const props = defineProps<IProps>()
-const imageRef = ref<HTMLImageElement>(null)
+const imageRef = ref<HTMLImageElement>()
 const timelineStore = useTimeLineStore()
 
 const toggleLike = () => {

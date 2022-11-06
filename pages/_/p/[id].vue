@@ -1,9 +1,9 @@
 <template>
     <div>
         <BackDrop>
-            <div class="flex  flex-row bg-white    " ref="postRef">
+            <div class="flex  flex-row bg-white" ref="postRef">
                 <div class="h-full w-[700px]">
-                    <article ref="postRef" class=" w-full border-gray-200 shadow-gray-200 md:border-[1px] md:shadow-sm">
+                    <article class=" w-full border-gray-200 shadow-gray-200 md:border-[1px] md:shadow-sm">
 
                         <Head :profile_pic_url="postDetailStore.post.user.profile_pic_url"
                             :username="postDetailStore.post.user.username" />
