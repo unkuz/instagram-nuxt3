@@ -3,7 +3,7 @@ import LikeIcon_ from '@@/assets/svg/like_icon.svg'
 import SaveIcon_ from '@@/assets/svg/save_icon.svg'
 import ShareIcon_ from '@@/assets/svg/share_icon.svg'
 import ViewPostIcon_ from '@@/assets/svg/view_post_icon.svg'
-import { useTimeLineStore, useViewPostDetailStore } from '@@/store'
+import { useTimeLineStore } from '@@/store'
 import clsx from 'classnames'
 import UnlikeIcon from '../Tiny/UnlikeIcon.vue'
 

@@ -15,7 +15,7 @@ interface IProps {
 }
 const props = defineProps<IProps>()
 const emit = defineEmits(['currentIndexCarousel'])
-const containerMediaRef = ref<HTMLDivElement>()
+const containerMediaRef = ref<HTMLDivElement | null>(null)
 
 const { next, prev, current } = useCarousel(containerMediaRef)
 

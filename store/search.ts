@@ -1,20 +1,27 @@
 import { defineStore } from 'pinia'
 
-const state = () => ({
+interface IState { 
+  value:string,
+  isFocus:boolean
+}
+
+
+
+const state = ():IState => ({
   value: '',
   isFocus: false,
 })
 const getters = {
-  getValue: (state) => state.value,
-  getIsFocus: (state) => state.isFocus,
-  getIsSearchHaveValue: (state) => !!state.value,
-  getIsShowSearchToolkit: (state) => state.isFocus && Boolean(state.value),
+  getValue: (state:IState) => state.value,
+  getIsFocus: (state:IState) => state.isFocus,
+  getIsSearchHaveValue: (state:IState) => !!state.value,
+  getIsShowSearchToolkit: (state:IState) => state.isFocus && Boolean(state.value),
 }
 const actions = {
-  setValue(value) {
+  setValue(value:string) {
     this.value = value
   },
-  setIsFocus(isFocus) {
+  setIsFocus(isFocus:boolean) {
     this.isFocus = isFocus
   },
   clearValue() {

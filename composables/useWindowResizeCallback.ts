@@ -1,5 +1,5 @@
 export function useWindowResizeCallback(callback: () => void) {
-  const resize = (e: UIEvent) => {
+  const resize = (_e: Event) => {
     callback()
   }
 

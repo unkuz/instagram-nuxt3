@@ -13,7 +13,7 @@ const options = [
   { name: 'Send Profile To...' },
 ]
 
-const moreRef = ref<HTMLDivElement>(null)
+const moreRef = ref<HTMLDivElement | null>(null)
 const moreStore = useMoreStore()
 
 onMounted(() => {

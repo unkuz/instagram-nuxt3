@@ -2,7 +2,7 @@ import { useWindowResizeCallback } from '@@/composables'
 import { gsap } from 'gsap'
 import { Ref } from 'vue'
 
-export const useCarousel = (containerMediaRef: Ref<HTMLDivElement | undefined>) => {
+export const useCarousel = (containerMediaRef: Ref<HTMLDivElement | null>) => {
     const current = ref(0)
 
     const transition = () => {

@@ -12,7 +12,7 @@ interface IProps {
 }
 defineProps<IProps>()
 
-const isFollow = ref(false)
+const isFollow = ref<boolean>(false)
 
 const toggleFollow = () => (isFollow.value = !isFollow.value)
 

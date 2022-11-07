@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import Arrow from '@@/components/Utils/Arrow.vue'
-import { useClickOutSide } from '@@/composables'
-import { SECTION } from '@@/constants'
-import { useGlobalStore } from '@@/store'
 import ProfileIcon_ from '@@/assets/svg/profile.svg';
+import Arrow from '@@/components/Utils/Arrow.vue';
+import { useClickOutSide } from '@@/composables';
+import { SECTION } from '@@/constants';
+import { useGlobalStore } from '@@/store';
 
 const globalStore = useGlobalStore()
-const accountPopRef = ref()
+const accountPopRef = ref<HTMLDivElement | null>(null)
 const isShow = ref(true)
 
 useClickOutSide(accountPopRef, () => { })

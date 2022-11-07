@@ -64,7 +64,7 @@ export interface IProps {
 
 const props = defineProps<IProps>()
 
-const currentIdx = ref(0)
+const currentIdx = ref<number>(0)
 
 const setCurrent = (value: number) => (currentIdx.value = value)
 

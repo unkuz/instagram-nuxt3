@@ -2,11 +2,11 @@
 import { Elastic, gsap } from 'gsap'
 import UnlikeIcon_ from '@@/assets/svg/unlike_icon.svg'
 
-const unlikeRef = ref<HTMLDivElement>()
+const unlikeRef = ref<HTMLDivElement | null>(null)
 
 onMounted(() => {
     const tl = gsap.timeline()
-    if (unlikeRef.value) {
+ 
 
 
         tl.to(unlikeRef.value, {
@@ -19,7 +19,7 @@ onMounted(() => {
             display: 'none',
             duration: 0,
         })
-    }
+    
 
 })
 </script>

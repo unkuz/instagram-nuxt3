@@ -5,27 +5,27 @@ import { useViewPostStore } from '@@/store'
 
 const viewPostStore = useViewPostStore()
 
-const viewPostRef = ref(null)
-const commentHeadingRef = ref(null)
-const commentRef = ref(null)
-const commentContainerRef = ref(null)
+const viewPostRef = ref<HTMLDivElement | null>(null)
+const commentHeadingRef = ref<HTMLDivElement | null>(null)
+const commentRef = ref<HTMLDivElement | null>(null)
+const commentContainerRef = ref<HTMLDivElement | null>(null)
 
 useClickOutSide(viewPostRef, () => {
   viewPostStore.setIsShow(false)
 })
 
 onMounted(() => {
-  viewPostRef.value.style.transform = 'scale(0)'
-  viewPostRef.value.style.opacity = '0'
+  viewPostRef.value!.style.transform = 'scale(0)'
+  viewPostRef.value!.style.opacity = '0'
   setTimeout(() => {
-    viewPostRef.value.style.transform = 'scale(1)'
-    viewPostRef.value.style.opacity = '1'
+    viewPostRef.value!.style.transform = 'scale(1)'
+    viewPostRef.value!.style.opacity = '1'
   }, 200)
 })
 
 const calcHeightComment = () => {
-  commentRef.value.style.height = `${
-    commentContainerRef.value.clientHeight - commentHeadingRef.value.clientHeight
+  commentRef.value!.style.height = `${
+    commentContainerRef.value!.clientHeight - commentHeadingRef.value!.clientHeight
   }px`
 }
 

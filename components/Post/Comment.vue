@@ -5,10 +5,10 @@ import ExperimentFilledIcon_ from '@@/assets/svg/experiment_filled.svg'
 import Emoji from '@@/components/Utils/Emoji.vue'
 import { useClickOutSide } from '@@/composables'
 
-const emojiRef = ref<HTMLDivElement>()
-const isShowEmoji = ref(false)
-const textBoxRef = ref<HTMLTextAreaElement>()
-const commentValueText = ref('')
+const emojiRef = ref<HTMLDivElement | null>(null)
+const isShowEmoji = ref<boolean>(false)
+const textBoxRef = ref<HTMLTextAreaElement | null>(null)
+const commentValueText = ref<string>('')
 
 const emojiAdd = (value: string) => {
     commentValueText.value += value
