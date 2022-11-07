@@ -5,28 +5,34 @@ import PlayIcon_ from '@@/assets/svg/play_icon.svg'
 import { useDoubleClick, usePercentVideo } from '@@/composables'
 import { useTimeLineStore } from '@@/store'
 import clsx from 'classnames'
+import { gsap } from 'gsap'
 
 interface IProps {
-  video: any
-  idPost: string
+    video: any
+    idPost: string
 }
 
 const props = defineProps<IProps>()
-const videoRef = ref<HTMLVideoElement>(null)
-const progressBarRef = ref<HTMLDivElement>(null)
+const videoRef = ref<HTMLVideoElement>()
+const containerRef = ref<HTMLVideoElement>()
+const progressBarRef = ref<HTMLDivElement>()
 const isVideoPlay = ref<boolean>(false)
 const timelineStore = useTimeLineStore()
+const isFullScreen = ref<boolean>(false)
 
 const togglePlay = () => {
-  if (videoRef.value.paused) {
-    play()
-  } else {
-    videoRef.value.pause()
-  }
+    if (videoRef.value) {
+        if (videoRef.value.paused) {
+            return play()
+        }
+        videoRef.value.pause()
+    }
+
+
 }
 
 const toggleLike = () => {
-  timelineStore.setToggleLike(props.idPost)
+    timelineStore.setToggleLike(props.idPost)
 }
 
 useDoubleClick(videoRef, togglePlay, toggleLike)
@@ -34,62 +40,97 @@ useDoubleClick(videoRef, togglePlay, toggleLike)
 const { percent } = usePercentVideo(videoRef)
 
 const updateTime = () => {
-  isVideoPlay.value = !videoRef.value.paused
+    if (videoRef.value) {
+        isVideoPlay.value = !videoRef.value.paused
+
+    }
+
+
 }
 
-onMounted(() => {
-  videoRef.value.addEventListener('timeupdate', updateTime)
-})
-
 const play = () => {
-  const allVideo = document.querySelectorAll('video')
-  allVideo.forEach((video) => {
-    video.pause()
-  })
-  videoRef.value.play()
+
+    const allVideo = document.querySelectorAll('video')
+    allVideo.forEach((video) => {
+        video.pause()
+    })
+    videoRef.value && videoRef.value.play()
 }
 
 watch(percent, () => {
-  const { clientWidth: widthParent } = progressBarRef.value.parentElement
-  Object.assign(progressBarRef.value.style, {
-    width: `${percent.value * widthParent}px`,
-  })
+    const { clientWidth: widthParent } = progressBarRef.value!.parentElement!
+    gsap.to(progressBarRef.value!, {
+        width: percent.value * widthParent,
+        duration: 0
+    })
 })
+
+const scrub = (e: MouseEvent) => {
+    const scrubTime = (e.offsetX / progressBarRef.value!.parentElement!.offsetWidth) * videoRef.value!!.duration;
+    videoRef.value!.currentTime = scrubTime;
+}
+
+onMounted(() => {
+    videoRef.value!.addEventListener('timeupdate', updateTime)
+    progressBarRef.value!.parentElement!.addEventListener('click', scrub)
+})
+
+onBeforeUnmount(() => {
+    progressBarRef.value!.parentElement!.removeEventListener('click', scrub)
+})
+
+const toggleFullScreen = (e: MouseEvent) => {
+    e.preventDefault()
+    if (document.fullscreenElement) {
+
+        return document.exitFullscreen()
+    }
+    containerRef.value!.requestFullscreen()
+}
+
+onMounted(() => {
+    containerRef.value!.addEventListener('fullscreenchange', (e) => {
+        if (document.fullscreenElement) {
+            isFullScreen.value === true
+
+        }
+        else {
+            isFullScreen.value === false
+        }
+    })
+})
+
+
+
 </script>
 
 <template>
-  <div class="group relative min-w-full overflow-hidden">
-    <video :src="video.src" ref="videoRef" class="min-w-full" loop />
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <div
-        :class="
-          clsx(
-            'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-100 opacity-100  duration-200',
-            {
-              'scale-0 opacity-0': isVideoPlay,
-            }
-          )
-        "
-      >
-        <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-[#ffffffee]" />
-      </div>
+    <div ref="containerRef" class="group relative min-w-full overflow-hidden">
+        <video ref="videoRef" class="video w-full  block bg-black" :src="video.src" type="video/mp4" preload="auto"
+            playsinline crossorigin="anonymous" loop />
+
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div :class="
+                clsx(
+                    'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-100 opacity-100  duration-200',
+                    {
+                        'scale-0 opacity-0': isVideoPlay,
+                    }
+                )
+            ">
+                <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-[#ffffffc7]" />
+            </div>
+        </div>
+        <div :class="clsx('absolute bottom-0  h-[4px] hover:bg-[#45ff2077] [&>div]:bg-[#2fff1c]  w-full cursor-pointer bg-transparent', {
+            'h-[8px] [&>div]:bg-[#1cbfff]': isFullScreen
+        })">
+            <div ref="progressBarRef" class="h-full w-0"></div>
+        </div>
+        <div class="absolute bottom-[10px] right-[10px] flex gap-[15px]">
+            <div title="Full screen">
+                <ExpandIcon_ @click="toggleFullScreen"
+                    class="hidden w-[20px] cursor-pointer fill-white text-white group-hover:block" />
+            </div>
+        </div>
     </div>
-    <div class="absolute bottom-0 h-[4px] w-full cursor-default bg-transparent duration-500">
-      <div ref="progressBarRef" class="h-full w-0 bg-[#54ff20]"></div>
-    </div>
-    <div class="absolute bottom-[10px] right-[10px] flex gap-[15px]">
-      <div title="Picture in picture">
-        <PicInPicIcon_
-          @click="videoRef.requestPictureInPicture()"
-          class="hidden w-[20px] cursor-pointer fill-white text-white md:group-hover:block"
-        />
-      </div>
-      <div title="Full screen">
-        <ExpandIcon_
-          @click="videoRef.requestFullscreen()"
-          class="hidden w-[20px] cursor-pointer fill-white text-white group-hover:block"
-        />
-      </div>
-    </div>
-  </div>
 </template>
