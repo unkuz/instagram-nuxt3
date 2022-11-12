@@ -7,7 +7,8 @@ import Avatar from '../Tiny/Avatar.vue'
 interface IconProps {
   isSelect: boolean
 }
-const props = defineProps<IconProps>()
+
+defineProps<IconProps>()
 
 const authStore = useAuthStore()
 const { T } = SizeAvatarEnum

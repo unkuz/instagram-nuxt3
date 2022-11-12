@@ -1,25 +1,17 @@
 <script lang="ts" setup>
-// onMounted(() => {
-//   const videos = document.getElementsByTagName('video')
-//   if (videos && videos.length > 0)
-//     videos.forEach((video) => {
-//       if (!video.ispaused) {
-//       }
-//     })
-// })
 import { useCurrentVideoStore } from '@@/store'
 
 const currentVideoStore = useCurrentVideoStore()
-const videoRef = ref<HTMLVideoElement>(null)
+const videoRef = ref<HTMLVideoElement | null>(null)
 const data = computed(() => currentVideoStore.data)
 
 watch(
   data,
   () => {
     if (data.value.ready) {
-      videoRef.value.src = data.value.src
-      !data.value.isPlaying ? videoRef.value.play() : videoRef.value.pause()
-      videoRef.value.currentTime = data.value.startTime
+      videoRef.value!.src = data.value.src
+      !data.value.isPlaying ? videoRef.value!.play() : videoRef.value!.pause()
+      videoRef.value!.currentTime = data.value.startTime
     }
   },
   {

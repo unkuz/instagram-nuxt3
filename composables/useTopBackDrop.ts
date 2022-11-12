@@ -1,8 +1,8 @@
 import { Ref } from 'vue'
 
-export function useTopBackDrop(refElement: Ref<HTMLDivElement>) {
+export function useTopBackDrop(refElement: Ref<HTMLDivElement | null>) {
   const handleScroll = () => {
-    refElement.value.style.top = `${window.scrollY}px`
+    refElement.value!.style.top = `${window.scrollY}px`
   }
 
   onMounted(() => {

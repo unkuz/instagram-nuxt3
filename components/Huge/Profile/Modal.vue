@@ -3,7 +3,7 @@ import { useLockScroll, useModalPosition } from '@@/composables'
 import { useProfileStore } from '@@/store'
 
 const { x, y } = useModalPosition()
-const boxRef = ref(null)
+const boxRef = ref<HTMLDivElement | null>(null)
 const profileStore = useProfileStore()
 useClickOutSide(boxRef, () => {
   profileStore.setIsShowFollowing(false)
@@ -11,8 +11,8 @@ useClickOutSide(boxRef, () => {
 useLockScroll()
 
 watch([x, y], () => {
-  boxRef.value.style.top = y.value - 250 + 'px'
-  boxRef.value.style.left = 935 / 2 - 200 + 'px'
+  boxRef.value!.style.top = y.value - 250 + 'px'
+  boxRef.value!.style.left = 935 / 2 - 200 + 'px'
 })
 </script>
 

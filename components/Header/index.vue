@@ -16,14 +16,14 @@ import SelfAvatar from '../Nav/SelfAvatar.vue'
 
 const globalStore = useGlobalStore()
 const searchStore = useSearchStore()
-const isShowSearchToolkit = computed(() => searchStore.getIsShowSearchToolkit)
-const section = computed(() => globalStore.getSection)
-const isMobile = computed(() => globalStore.getIsMobile)
+const isShowSearchToolkit = computed<boolean>(() => searchStore.getIsShowSearchToolkit)
+const section = computed<SECTION>(() => globalStore.getSection)
+const isMobile = computed<boolean>(() => globalStore.getIsMobile)
 
 const handleSelect = (section: SECTION) => {
     globalStore.setSection(section)
 }
-const isShowProfile = ref(false)
+const isShowProfile = ref<boolean>(false)
 </script>
 
 <template>

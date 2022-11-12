@@ -7,7 +7,7 @@ interface IconProps {
   isSelect: boolean
 }
 
-const props = defineProps<IconProps>()
+defineProps<IconProps>()
 </script>
 
 <template>

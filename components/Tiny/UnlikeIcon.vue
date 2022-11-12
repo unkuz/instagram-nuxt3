@@ -2,7 +2,7 @@
 import { gsap } from 'gsap'
 import UnlikeIcon_ from '@@/assets/svg/unlike_icon.svg'
 
-const unlikeIconRef = ref<HTMLElement>(null)
+const unlikeIconRef = ref<HTMLElement | null>(null)
 
 onMounted(() => {
   const tl = gsap.timeline()

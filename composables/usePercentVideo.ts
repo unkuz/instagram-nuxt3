@@ -1,6 +1,6 @@
 import { Ref } from 'vue'
 
-export const usePercentVideo = (videoRef: Ref<HTMLVideoElement | undefined>) => {
+export const usePercentVideo = (videoRef: Ref<HTMLVideoElement | null>) => {
     const percent = ref<number>(0)
 
     const updateTime = () => {

@@ -6,19 +6,19 @@ import clsx from 'classnames'
 
 const storyStore = useStoryStore()
 
-const barRef = ref(null)
-const containerBar = ref(null)
-const videoRef = ref(null)
-const bigPlayIcon = ref(null)
-const mediaContainerRef = ref(null)
-const isVideoPlay = ref(false)
-const isVideoMuted = ref(true)
+const barRef = ref<HTMLDivElement | null>(null)
+const containerBar = ref<HTMLDivElement | null>(null)
+const videoRef = ref<HTMLVideoElement | null>(null)
+const bigPlayIcon = ref<HTMLDivElement | null>(null)
+const mediaContainerRef = ref<HTMLDivElement | null>(null)
+const isVideoPlay = ref<boolean>(false)
+const isVideoMuted = ref<boolean>(true)
 
 useClickOutSide(mediaContainerRef, () => {
   storyStore.setIsShowStory(false)
 })
 
-const keyCodeBehaviour = (e) => {
+const keyCodeBehaviour = (e:KeyboardEvent) => {
   if (e.charCode === 32) {
     togglePlay()
   } else if (e.charCode === 13) {
@@ -27,26 +27,26 @@ const keyCodeBehaviour = (e) => {
 }
 
 const updateTime = () => {
-  Object.assign(barRef.value.style, {
+  Object.assign(barRef.value!.style, {
     width: `${
-      (videoRef.value.currentTime * containerBar.value.clientWidth) / videoRef.value.duration
+      (videoRef.value!.currentTime * containerBar.value!.clientWidth) / videoRef.value!.duration
     }px`,
   })
-  isVideoPlay.value = !videoRef.value.paused
-  isVideoMuted.value = videoRef.value.muted
+  isVideoPlay.value = !videoRef.value!.paused
+  isVideoMuted.value = videoRef.value!.muted
 }
 
 onMounted(() => {
-  videoRef.value.play()
-  videoRef.value.addEventListener('timeupdate', updateTime)
+  videoRef.value!.play()
+  videoRef.value!.addEventListener('timeupdate', updateTime)
   window.addEventListener('keypress', keyCodeBehaviour)
 })
 
 watch(isVideoPlay, () => {
   if (isVideoPlay.value) {
-    bigPlayIcon.value.style.opacity = '0'
+    bigPlayIcon.value!.style.opacity = '0'
   } else {
-    bigPlayIcon.value.style.opacity = '1'
+    bigPlayIcon.value!.style.opacity = '1'
   }
 })
 
@@ -57,14 +57,14 @@ onUnmounted(() => {
 
 const toggleMuted = () => {
   isVideoMuted.value = !isVideoMuted.value
-  videoRef.value.muted = !videoRef.value.muted
+  videoRef.value!.muted = !videoRef.value!.muted
 }
 
 const togglePlay = () => {
-  if (videoRef.value.paused) {
-    videoRef.value.play()
+  if (videoRef.value!.paused) {
+    videoRef.value!.play()
   } else {
-    videoRef.value.pause()
+    videoRef.value!.pause()
   }
 }
 </script>

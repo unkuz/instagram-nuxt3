@@ -5,15 +5,15 @@ import { useSearchStore } from '@@/store';
 import clsx from 'classnames';
 
 const searchStore = useSearchStore()
-const searchRef = ref(null)
-const inputSearch = ref(null)
-const searchValue = computed(() => searchStore.getValue)
-const isSearchActive = computed(() => searchStore.isFocus)
-const isSearchHaveValue = computed(() => searchStore.getIsSearchHaveValue)
+const searchRef = ref<HTMLInputElement | null>(null)
+const inputSearch = ref<HTMLInputElement | null>(null)
+const searchValue = computed<string>(() => searchStore.getValue)
+const isSearchActive = computed<boolean>(() => searchStore.isFocus)
+const isSearchHaveValue = computed<boolean>(() => searchStore.getIsSearchHaveValue)
 
 watch(isSearchActive, (state) => {
   if (state) {
-    inputSearch.value.focus()
+    inputSearch.value?.focus()
   }
 })
 

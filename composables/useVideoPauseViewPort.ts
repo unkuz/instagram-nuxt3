@@ -1,11 +1,11 @@
 import { useCurrentVideoStore } from '@@/store'
 import { Ref } from 'vue'
 
-export const useVideoPauseViewPort = (videoRef: Ref<HTMLVideoElement>) => {
+export const useVideoPauseViewPort = (videoRef: Ref<HTMLVideoElement | null>) => {
   const currentVideoStore = useCurrentVideoStore()
 
   const check = () => {
-    const rect = videoRef.value.getBoundingClientRect()
+    const rect = videoRef.value!.getBoundingClientRect()
 
     const condition =
       rect.bottom > 0 &&
@@ -14,7 +14,7 @@ export const useVideoPauseViewPort = (videoRef: Ref<HTMLVideoElement>) => {
       rect.top < (innerHeight || document.documentElement.clientHeight)
 
     if (!condition) {
-      videoRef.value.pause()
+      videoRef.value!.pause()
       currentVideoStore.setReady()
     }
   }

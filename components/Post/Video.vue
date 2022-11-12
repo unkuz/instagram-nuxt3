@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import ExpandIcon_ from '@@/assets/svg/full_screen.svg'
-import PicInPicIcon_ from '@@/assets/svg/picture_in_picture.svg'
 import PlayIcon_ from '@@/assets/svg/play_icon.svg'
 import { useDoubleClick, usePercentVideo } from '@@/composables'
 import { useTimeLineStore } from '@@/store'
@@ -13,9 +12,9 @@ interface IProps {
 }
 
 const props = defineProps<IProps>()
-const videoRef = ref<HTMLVideoElement>()
-const containerRef = ref<HTMLVideoElement>()
-const progressBarRef = ref<HTMLDivElement>()
+const videoRef = ref<HTMLVideoElement | null>(null)
+const containerRef = ref<HTMLVideoElement| null>(null)
+const progressBarRef = ref<HTMLDivElement| null>(null)
 const isVideoPlay = ref<boolean>(false)
 const timelineStore = useTimeLineStore()
 const isFullScreen = ref<boolean>(false)

@@ -3,11 +3,12 @@ import BackDrop from '@@/components/Utils/BackDrop.vue'
 import { useClickOutSide } from '@@/composables'
 import { SECTION } from '@@/constants'
 import { useGlobalStore, usePostStore } from '@@/store'
+import { ignorableWatch } from '@vueuse/shared'
 import clsx from 'classnames'
 
 const postStore = usePostStore()
-const inputFileRef = ref(null)
-const containerPreviewRef = ref(null)
+const inputFileRef = ref<HTMLInputElement | null>(null)
+const containerPreviewRef = ref<HTMLDivElement | null>(null)
 const boxRef = ref(null)
 const globalStore = useGlobalStore()
 const startPointX = ref(0)
@@ -25,7 +26,7 @@ const currentImageSlideIdx = computed(() => {
 })
 
 watch(listBolbs, () => {
-    containerPreviewRef.value.innerHTML = ''
+    containerPreviewRef.value!.innerHTML = ''
     listBolbs.value.forEach((i: Blob) => {
         const image = document.createElement('img')
         image.src = String(i)
@@ -34,13 +35,16 @@ watch(listBolbs, () => {
             height: '750px',
             objectFit: 'cover',
         })
-        containerPreviewRef.value.appendChild(image)
+        containerPreviewRef.value?.appendChild(image)
     })
 })
 
+
+
+
 onMounted(() => {
-    inputFileRef.value.addEventListener('change', (event) => {
-        postStore.setFiles(event.target.files)
+    inputFileRef.value?.addEventListener('change', (event) => {
+        postStore.setFiles((<HTMLInputElement>event.target).files)
     })
 })
 
@@ -58,12 +62,14 @@ const closePostBox = () => {
 }
 
 const handleUpload = () => {
-    inputFileRef.value.value = null
-    inputFileRef.value.click()
+    if(inputFileRef.value){
+        inputFileRef.value.value = ''
+    }
+    inputFileRef.value?.click()
 }
 
-const handleSlide = (indicator) => {
-    containerPreviewRef.value.style.transform = `translateX(${startPointX.value + 500 * indicator}px)`
+const handleSlide = (indicator : 1| -1) => {
+    containerPreviewRef.value!.style.transform = `translateX(${startPointX.value + 500 * indicator}px)`
     startPointX.value += indicator * 500
 }
 </script>
