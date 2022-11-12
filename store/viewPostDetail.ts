@@ -20,7 +20,7 @@ const state = () => ({
                 },
             ],
         },
-        comments: {
+        comments: [{
             text: '',
             created_at: '',
             user: {
@@ -45,7 +45,7 @@ const state = () => ({
                     comment_like_count: '',
                 },
             ],
-        },
+        }],
         id: '',
         is_seen: '',
         tags: [''],

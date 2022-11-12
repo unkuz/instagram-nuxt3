@@ -2,26 +2,26 @@ import { defineStore } from 'pinia'
 import { IStory } from '@@/models'
 
 interface IState {
-  data: IStory[]
-  hasErr: boolean
-  errors: Record<string, string>
+    data: IStory[]
+    hasErr: boolean
+    errors: Record<string, string>
 }
 
 const state = (): IState => ({
-  data: [],
-  hasErr: false,
-  errors: {},
+    data: [],
+    hasErr: false,
+    errors: {},
 })
 
 const getters = {}
 const actions = {
-  save(data: IStory[]) {
-    this.data = data
-  },
+    save(_data: IStory[]) {
+        this.data = _data
+    },
 }
 
 export const useStoriesStore = defineStore('stories', {
-  state,
-  getters,
-  actions,
+    state,
+    getters,
+    actions,
 })

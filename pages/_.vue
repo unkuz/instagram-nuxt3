@@ -2,7 +2,7 @@
 import Suggestions from '@@/components/Huge/Suggestions/index.vue'
 import Post from '@@/components/Post/index.vue'
 import Stories from '@@/components/Stories/index.vue'
-import { IStory, ITimeLine } from '@@/models'
+import { IStory, ITimeLine, TSuggestion } from '@@/models'
 import { useStoriesStore, useSuggestionStore, useTimeLineStore } from '@@/store'
 import { useFetchCamel } from '~~/composables'
 
@@ -42,8 +42,10 @@ timeLineStore.save(_timeline.value ?? [])
 suggestionStore.save(_suggestions.value ?? [])
 
 const timeline = computed(() => timeLineStore.data)
+
 const stories = computed(() => storiesStore.data)
-const suggestion = computed(() => suggestionStore.data)
+
+const suggestion = computed<TSuggestion[]>(() => suggestionStore.data)
 
 const rightRef = ref<HTMLElement | null>(null)
 

@@ -1,9 +1,12 @@
 <script lang="ts" setup>
-import CaptionComment from './CaptionComment.vue'
+import moment from 'moment'
+import Caption from './Caption.vue'
 import Carousel from './Carousel.vue'
 import Comment from './Comment.vue'
 import Head from './Head.vue'
+import LikeCommentCount from './LikeCommentCount.vue'
 import React from './React.vue'
+
 
 export interface IProps {
     created_at: string
@@ -79,8 +82,11 @@ const mediaArr = computed(() => props.carousel_media.images.concat(props.carouse
             @current-index-carousel="setCurrent($event)" :has_liked="has_liked" :id="id" />
         <div class="px-[16px] text-xs md:text-sm">
             <React :currentIdx="currentIdx" :has_liked="has_liked" :mediaArr="mediaArr" :id="id" />
-            <CaptionComment :like_count="like_count" :created_at="created_at" :comments="comments" :tags="tags"
-                :caption_text="caption_text" :user="user" />
+            <LikeCommentCount :likeCount="like_count" :commentCount="comments.length" />
+            <Caption :userName="user.username" :captionContent="caption_text" :tags="tags" />
+            <div class="m-[8px_0px_5px_0px] h-[18px] text-[0.8rem] text-gray-400">
+                {{ moment(created_at).fromNow() }}
+            </div>
             <ClientOnly>
                 <Comment />
             </ClientOnly>
