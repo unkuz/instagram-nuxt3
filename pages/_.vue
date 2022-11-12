@@ -15,7 +15,7 @@ const timeLineStore = useTimeLineStore()
 const suggestionStore = useSuggestionStore()
 
 const { data: _timeline } = await useFetch<ITimeLine[]>(
-    'https://mocki.io/v1/760e44f3-256b-49ff-8c04-e0f4e8bffcfc'
+    'https://mocki.io/v1/068e2c59-e08b-4d10-ab61-6e43f485c13b'
 )
 const { data: _stories } = await useFetch<IStory[]>(
     'https://mocki.io/v1/5e99de01-56f3-46a5-a0a0-477dcfd34beb'
@@ -41,10 +41,10 @@ const timeline = computed(() => timeLineStore.data)
 const stories = computed(() => storiesStore.data)
 const suggestion = computed(() => suggestionStore.data)
 
-const rightRef = ref<HTMLElement>(null)
+const rightRef = ref<HTMLElement | null>(null)
 
 const positionRight = ref(() => {
-    rightRef.value.style.top = `${window.scrollY}px`
+    rightRef.value!.style.top = `${window.scrollY}px`
 })
 
 onMounted(() => {

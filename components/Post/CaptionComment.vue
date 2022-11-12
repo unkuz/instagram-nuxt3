@@ -37,7 +37,7 @@ const randomColor = Math.floor(Math.random() * 16777215).toString(16);
             <div>{{ caption_text }}</div>
             <div class="mt-[5px] flex flex-wrap gap-[8px]">
                 <NuxtLink :to="`/explore/tags/${i}`" v-for="(i, idx) in tags" :key="idx">
-                    <Button :text="`#${i}`" :className="clsx('text-[0.8rem] !px-[7px]     shadow-md ',
+                    <Button :text="`#${i}`" :className="clsx('text-[0.8rem] !px-[7px] shadow-md text-white',
                         `!bg-[${randomColor}]`
                     )" />
                 </NuxtLink>

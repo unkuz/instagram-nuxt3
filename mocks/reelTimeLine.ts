@@ -1,5 +1,34 @@
 export const timeLine = [
     {
+        created_at: '2022-11-12 9:24',
+        id: '1491446004554932gffdsafdsffdsgsdfaassdfddfsdfassdfsdfddfsdfsdfsdfsdf',
+        location: {
+            short_name: 'Copenhagen',
+        },
+        comments: [],
+        carousel_media: {
+            images: [],
+            videos: [{
+                id: 1, src: `/video/Marc Benjamin, Galwaro, Julia Viktoria - Hard To Forget.mp4`
+            }],
+        },
+        user: {
+            id: 'diversity',
+            username: 'Diversity',
+            full_name: 'Diversity',
+            profile_pic_url: '/image/91480011.jpg',
+            friendship_status: {
+                following: true,
+                outgoing_request: false,
+            },
+        },
+        like_count: 1903,
+        has_liked: true,
+        caption_text: ` Marc Benjamin, Galwaro, Julia Viktoria - Hard To Forget `,
+        is_seen: true,
+        tags: ['Hard To Forget', 'Marc Benjamin', 'Slap house']
+    },
+    {
         created_at: '2022-11-05 21:54',
         id: '1491446004554932gffdsafdsffdsgsdfaasdfsdfassdfsdfdfsdfsdfsdfsdf',
         location: {
