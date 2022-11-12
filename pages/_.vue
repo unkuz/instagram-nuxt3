@@ -11,15 +11,19 @@ definePageMeta({
 })
 
 const storiesStore = useStoriesStore()
+
 const timeLineStore = useTimeLineStore()
+
 const suggestionStore = useSuggestionStore()
 
 const { data: _timeline } = await useFetch<ITimeLine[]>(
     'https://mocki.io/v1/068e2c59-e08b-4d10-ab61-6e43f485c13b'
 )
+
 const { data: _stories } = await useFetch<IStory[]>(
     'https://mocki.io/v1/5e99de01-56f3-46a5-a0a0-477dcfd34beb'
 )
+
 const { data: _suggestions } = await useFetch<IStory[]>(
     'https://mocki.io/v1/5e99de01-56f3-46a5-a0a0-477dcfd34beb'
 )
