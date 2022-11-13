@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import clsx from 'classnames';
 import Button from '@@/components/Tiny/Button.vue';
+import clsx from 'classnames';
+import { compact } from 'lodash';
 
 interface IProps {
     userName: string;
@@ -8,7 +9,14 @@ interface IProps {
     tags: Array<string>
 }
 
-defineProps<IProps>()
+const { captionContent, tags } = defineProps<IProps>()
+
+const hasCaptionOrTag = computed(() => {
+    if (captionContent.trim() === '' || compact(tags).length === 0) {
+        return false
+    }
+    return true
+})
 </script>
 
 <template>
@@ -16,7 +24,7 @@ defineProps<IProps>()
         <div class="inline-block bg-gray-500 px-[10px] py-[1px] text-white">
             {{ userName }}
         </div>
-        <div class="mt-[5px] bg-gray-100/60 py-[5px]">
+        <div class="mt-[5px] bg-gray-100/60 py-[5px]" v-if="hasCaptionOrTag">
             <div>{{ captionContent }}</div>
             <div class="mt-[5px] flex flex-wrap gap-[8px]">
                 <NuxtLink :to="`/explore/tags/${i}`" v-for="(i, idx) in tags" :key="idx">
@@ -27,9 +35,3 @@ defineProps<IProps>()
         </div>
     </div>
 </template>
-
-
-
-<style scoped>
-
-</style>

@@ -17,7 +17,7 @@ const timeLineStore = useTimeLineStore()
 const suggestionStore = useSuggestionStore()
 
 const { data: _timeline } = await useFetch<ITimeLine[]>(
-    'https://mocki.io/v1/068e2c59-e08b-4d10-ab61-6e43f485c13b'
+    'https://mocki.io/v1/42081048-09b4-4b22-b992-b01230a22e7f'
 )
 
 const { data: _stories } = await useFetch<IStory[]>(
@@ -32,9 +32,6 @@ const { data: _suggestions } = await useFetch<IStory[]>(
 const { data: _timelinez } = await useFetchCamel(
     'https://mocki.io/v1/dc96749b-96d4-4656-b8a5-83e6f4dc0fda'
 )
-
-
-
 
 
 storiesStore.save(_stories.value ?? [])
