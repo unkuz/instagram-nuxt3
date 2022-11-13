@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Button from '@@/components/Tiny/Button.vue';
 import clsx from 'classnames';
-import { compact } from 'lodash';
 
 interface IProps {
     userName: string;
@@ -12,7 +11,7 @@ interface IProps {
 const { captionContent, tags } = defineProps<IProps>()
 
 const hasCaptionOrTag = computed(() => {
-    if (captionContent.trim() === '' || compact(tags).length === 0) {
+    if (captionContent.trim() === '' || tags.length === 0) {
         return false
     }
     return true
