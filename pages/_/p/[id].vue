@@ -22,7 +22,7 @@
                     <div>
                         <Caption :userName="userName" :captionContent="captiontext" :tags="tags" />
                     </div>
-                    <div :class="clsx('h-[400px] w-full overflow-scroll my-[10px]', {
+                    <div :class="clsx('h-[400px] w-full overflow-y-scroll overflow-x-hidden my-[10px]', {
                         'flex justify-center items-center': !hasComment
                     })">
                         <template v-if="hasComment">

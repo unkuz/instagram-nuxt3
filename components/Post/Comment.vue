@@ -4,9 +4,9 @@ import EmojiIcon_ from '@@/assets/svg/experiment.svg'
 import ExperimentFilledIcon_ from '@@/assets/svg/experiment_filled.svg'
 import Emoji from '@@/components/Utils/Emoji.vue'
 import { useClickOutSide } from '@@/composables'
-import { useViewPostDetailStore, useAuthStore } from '@@/store';
-import { v4 as uuidv4 } from 'uuid';
-import _, { keyBy } from 'lodash';
+import { useAuthStore, useViewPostDetailStore } from '@@/store'
+import { gsap } from 'gsap'
+import { v4 as uuidv4 } from 'uuid'
 
 
 interface IProps {
@@ -22,6 +22,7 @@ const commentValueText = ref<string>('')
 const viewPostDetailStore = useViewPostDetailStore()
 const authStore = useAuthStore()
 
+
 const emojiAdd = (value: string) => {
     commentValueText.value += value
 }
@@ -32,7 +33,6 @@ useClickOutSide(emojiRef, () => {
 
 const toggleShowEmoji = () => (isShowEmoji.value = !isShowEmoji.value)
 
-const comments = computed(() => viewPostDetailStore.post.comments)
 
 const send = async () => {
     const idGen = uuidv4()
@@ -46,6 +46,21 @@ const send = async () => {
     commentValueText.value = ''
 
     document.getElementById(`post_detail_${idGen}`)?.scrollIntoView({ behavior: 'smooth' })
+
+    let tl = gsap.timeline()
+
+    tl.to(document.getElementById(`post_detail_${idGen}`), {
+        x: 100,
+        duration: 0
+    })
+
+    tl.to(document.getElementById(`post_detail_${idGen}`), {
+        x: 0,
+        duration: 0.3
+    })
+
+
+
 }
 
 </script>
