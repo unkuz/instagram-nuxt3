@@ -40,7 +40,7 @@ import Head from '@@/components/Post/Head.vue';
 import LikeCommentCount from '@@/components/Post/LikeCommentCount.vue';
 import React from '@@/components/Post/React.vue';
 import BackDrop from '@@/components/Utils/BackDrop.vue';
-import { useClickOutSide } from '@@/composables';
+import { useClickOutSide, useLockScroll } from '@@/composables';
 import { useViewPostDetailStore } from '@@/store';
 import { gsap } from 'gsap';
 import moment from 'moment';
@@ -72,6 +72,9 @@ const createdAt = computed(() => postDetailStore.post.created_at)
 const comments = computed(() => postDetailStore.post.comments)
 const captiontext = computed(() => postDetailStore.post.caption_text)
 const tags = computed(() => postDetailStore.post.tags)
+
+
+useLockScroll()
 
 
 const setCurrent = (value: number) => (currentIdx.value = value)
