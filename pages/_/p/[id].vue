@@ -34,7 +34,7 @@
                     </div>
                     <div class="">
                         <ClientOnly>
-                            <Comment />
+                            <Comment :id="id" />
                         </ClientOnly>
                     </div>
                 </div>

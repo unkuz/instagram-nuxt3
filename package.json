@@ -15,6 +15,7 @@
     "@nuxtjs/web-vitals": "^0.1.10",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@types/lodash": "^4.14.186",
+    "@types/uuid": "^8.3.4",
     "autoprefixer": "^10.4.12",
     "nuxt": "^3.0.0-rc.13",
     "nuxt-icon": "^0.1.7",
@@ -46,6 +47,7 @@
     "pinia": "^2.0.23",
     "rxjs": "^8.0.0-alpha.5",
     "tailwind-scrollbar-hide": "^1.1.7",
+    "uuid": "^9.0.0",
     "vee-validate": "^4.7.2",
     "vite-svg-loader": "^3.6.0"
   }

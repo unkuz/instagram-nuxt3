@@ -4,11 +4,23 @@ import EmojiIcon_ from '@@/assets/svg/experiment.svg'
 import ExperimentFilledIcon_ from '@@/assets/svg/experiment_filled.svg'
 import Emoji from '@@/components/Utils/Emoji.vue'
 import { useClickOutSide } from '@@/composables'
+import { useViewPostDetailStore, useAuthStore } from '@@/store';
+import { v4 as uuidv4 } from 'uuid';
+import _, { keyBy } from 'lodash';
+
+
+interface IProps {
+    id: string
+}
+
+const { id } = defineProps<IProps>()
 
 const emojiRef = ref<HTMLDivElement | null>(null)
 const isShowEmoji = ref<boolean>(false)
 const textBoxRef = ref<HTMLTextAreaElement | null>(null)
 const commentValueText = ref<string>('')
+const viewPostDetailStore = useViewPostDetailStore()
+const authStore = useAuthStore()
 
 const emojiAdd = (value: string) => {
     commentValueText.value += value
@@ -20,11 +32,21 @@ useClickOutSide(emojiRef, () => {
 
 const toggleShowEmoji = () => (isShowEmoji.value = !isShowEmoji.value)
 
-const inputText = (e: any) => {
-    e.preventDefault()
-    commentValueText.value = e.target.innerText
-}
+const comments = computed(() => viewPostDetailStore.post.comments)
 
+const send = async () => {
+    const idGen = uuidv4()
+    await viewPostDetailStore.comment(id, {
+        text: commentValueText.value,
+        userName: authStore.userName,
+        userImg: authStore.avatar,
+        id: idGen
+    })
+
+    commentValueText.value = ''
+
+    document.getElementById(`post_detail_${idGen}`)?.scrollIntoView({ behavior: 'smooth' })
+}
 
 </script>
 
@@ -38,13 +60,13 @@ const inputText = (e: any) => {
             </div>
         </div>
 
-        <textarea ref="textBoxRef" rows="1"
+        <textarea @keyup.enter="send" ref="textBoxRef" rows="1"
             class="m-auto my-[10px]  block w-[83%] cursor-text resize-none  rounded-[5px] border-[1px] border-gray-200 bg-transparent p-[5px] shadow-sm shadow-gray-200 placeholder:text-center placeholder:text-[0.8rem] focus:outline-none lg:w-[88%]"
             v-model="commentValueText">
       {{ commentValueText }}
     </textarea>
 
-        <div class="aspect-square h-[20px] cursor-pointer active:fill-[#00aeff]">
+        <div @click="send" class="aspect-square h-[20px] cursor-pointer active:fill-[#00aeff]">
             <DirectIcon_ />
         </div>
     </div>

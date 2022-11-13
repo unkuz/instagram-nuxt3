@@ -13,7 +13,7 @@ defineProps<IProps>()
 </script>
 
 <template>
-    <div class="mb-[10px]">
+    <div class="mb-[10px]" :id="`post_detail_${comment.id}`">
         <div class=" relative py-[5px]  rounded-md ">
             <div class="flex gap-[10px] items-center mx-[10px]">
                 <NuxtLink :to="`/${comment.user.username}`">

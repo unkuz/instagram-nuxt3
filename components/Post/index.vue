@@ -88,7 +88,7 @@ const mediaArr = computed(() => props.carousel_media.images.concat(props.carouse
                 {{ moment(created_at).fromNow() }}
             </div>
             <ClientOnly>
-                <Comment />
+                <Comment :id="id" />
             </ClientOnly>
         </div>
     </article>
