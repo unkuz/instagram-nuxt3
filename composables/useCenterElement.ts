@@ -1,6 +1,6 @@
 import { Ref } from 'vue'
 
-export function useCenterElement(refElement: Ref<HTMLDivElement | null>, refFile) {
+export function useCenterElement(refElement: Ref<HTMLDivElement | null>, refFile:Ref<HTMLDivElement | null>) {
   const position = () => {
     Object.assign(refElement.value!.style, {
       top: `${window.scrollY + window.innerHeight / 2 - refElement.value!.clientHeight / 2}px`,

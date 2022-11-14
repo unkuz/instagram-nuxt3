@@ -4,14 +4,16 @@ import { useMoreStore } from '@@/store'
 import { SizeAvatarEnum } from '@@/type'
 import Avatar from '../Tiny/Avatar.vue'
 
+const moreStore = useMoreStore()
 const { S } = SizeAvatarEnum
+
 interface IProps {
   profile_pic_url: string
   username: string
 }
+
 defineProps<IProps>()
 
-const moreStore = useMoreStore()
 const showMore = (e: MouseEvent) => {
   e.stopPropagation()
   moreStore.setShow()

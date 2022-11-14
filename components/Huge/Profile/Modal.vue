@@ -2,13 +2,16 @@
 import { useLockScroll, useModalPosition } from '@@/composables'
 import { useProfileStore } from '@@/store'
 
-const { x, y } = useModalPosition()
-const boxRef = ref<HTMLDivElement | null>(null)
 const profileStore = useProfileStore()
+const boxRef = ref<HTMLDivElement | null>(null)
+
+const { x, y } = useModalPosition()
+
+useLockScroll()
+
 useClickOutSide(boxRef, () => {
   profileStore.setIsShowFollowing(false)
 })
-useLockScroll()
 
 watch([x, y], () => {
   boxRef.value!.style.top = y.value - 250 + 'px'

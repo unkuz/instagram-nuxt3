@@ -15,12 +15,8 @@ interface IProps {
 }
 
 defineProps<IProps>()
+
 const timelineStore = useTimeLineStore()
-
-
-
-
-
 </script>
 
 <template>

@@ -11,8 +11,9 @@ interface IProps {
 
 defineProps<IProps>()
 
-const { M } = SizeAvatarEnum
 const authStore = useAuthStore()
+
+const { M } = SizeAvatarEnum
 const authorText = 'cuzknothz'
 
 </script>

@@ -12,6 +12,8 @@ interface IProps {
   text: string
   className?: string
 }
+
 defineProps<IProps>()
+
 const emit = defineEmits(['click'])
 </script>

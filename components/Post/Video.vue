@@ -12,11 +12,11 @@ interface IProps {
 }
 
 const props = defineProps<IProps>()
+const timelineStore = useTimeLineStore()
 const videoRef = ref<HTMLVideoElement | null>(null)
 const containerRef = ref<HTMLVideoElement| null>(null)
 const progressBarRef = ref<HTMLDivElement| null>(null)
 const isVideoPlay = ref<boolean>(false)
-const timelineStore = useTimeLineStore()
 const isFullScreen = ref<boolean>(false)
 
 const togglePlay = () => {
@@ -26,8 +26,6 @@ const togglePlay = () => {
         }
         videoRef.value.pause()
     }
-
-
 }
 
 const toggleLike = () => {
@@ -41,14 +39,10 @@ const { percent } = usePercentVideo(videoRef)
 const updateTime = () => {
     if (videoRef.value) {
         isVideoPlay.value = !videoRef.value.paused
-
     }
-
-
 }
 
 const play = () => {
-
     const allVideo = document.querySelectorAll('video')
     allVideo.forEach((video) => {
         video.pause()
@@ -81,7 +75,6 @@ onBeforeUnmount(() => {
 const toggleFullScreen = (e: MouseEvent) => {
     e.preventDefault()
     if (document.fullscreenElement) {
-
         return document.exitFullscreen()
     }
     containerRef.value!.requestFullscreen()
@@ -91,7 +84,6 @@ onMounted(() => {
     containerRef.value!.addEventListener('fullscreenchange', (e) => {
         if (document.fullscreenElement) {
             isFullScreen.value === true
-
         }
         else {
             isFullScreen.value === false

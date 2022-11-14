@@ -17,6 +17,10 @@ const props = defineProps<IProps>()
 const emit = defineEmits(['currentIndexCarousel'])
 const containerMediaRef = ref<HTMLDivElement | null>(null)
 
+const isShowPre = computed(() => current.value !== 0)
+const isShowNext = computed(() => current.value !== props.images.concat(props.videos).length - 1)
+const totalMedia = computed(() => props.images.concat(props.videos).length)
+
 const { next, prev, current } = useCarousel(containerMediaRef)
 
 watch(current, (idx) => {
@@ -29,9 +33,7 @@ watch(current, (idx) => {
         })
     }
 })
-const isShowPre = computed(() => current.value !== 0)
-const isShowNext = computed(() => current.value !== props.images.concat(props.videos).length - 1)
-const totalMedia = computed(() => props.images.concat(props.videos).length)
+
 </script>
 
 <template>

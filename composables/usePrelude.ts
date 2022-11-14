@@ -1,5 +1,5 @@
 export const usePrelude = () => {
-  const isShowPrelude = ref(true)
+  const isShowPrelude = ref<boolean>(true)
 
   onMounted(() => {
     document.fonts.ready.then(() => {

@@ -6,13 +6,16 @@ interface IProps {
     src: string
     idPost: string
 }
+
 const props = defineProps<IProps>()
-const imageRef = ref<HTMLImageElement | null>(null)
+
 const timelineStore = useTimeLineStore()
+const imageRef = ref<HTMLImageElement | null>(null)
 
 const toggleLike = () => {
     timelineStore.setToggleLike(props.idPost)
 }
+
 useDoubleClick(imageRef, () => { }, toggleLike)
 </script>
 

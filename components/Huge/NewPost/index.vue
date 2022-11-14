@@ -1,23 +1,26 @@
 <script lang="ts" setup>
 import BackDrop from '@@/components/Utils/BackDrop.vue'
-import { useClickOutSide } from '@@/composables'
+import { useClickOutSide, useLockScroll } from '@@/composables'
 import { SECTION } from '@@/constants'
 import { useGlobalStore, usePostStore } from '@@/store'
-import { ignorableWatch } from '@vueuse/shared'
 import clsx from 'classnames'
 
 const postStore = usePostStore()
+const globalStore = useGlobalStore()
 const inputFileRef = ref<HTMLInputElement | null>(null)
 const containerPreviewRef = ref<HTMLDivElement | null>(null)
-const boxRef = ref(null)
-const globalStore = useGlobalStore()
-const startPointX = ref(0)
+const boxRef = ref<HTMLDivElement | null>(null)
+const startPointX = ref<number>(0)
 
-const postFiles = computed(() => postStore.getFiles)
-const listBolbs = computed(() => postStore.getBlobs)
-const isHasFile = computed(() => Array.from(postFiles.value).length > 0)
+const postFiles = computed<File[]>(() => postStore.getFiles)
+const listBolbs = computed<Blob[]>(() => postStore.getBlobs)
+const isHasFile = computed<boolean>(() => Array.from(postFiles.value).length > 0)
 
-const currentImageSlideIdx = computed(() => {
+
+
+useLockScroll()
+
+const currentImageSlideIdx = computed<number>(() => {
     if (!startPointX.value) {
         return 0
     } else {
@@ -52,7 +55,6 @@ onUnmounted(() => {
     postStore.clearFiles()
 })
 
-// useLockScroll()
 useClickOutSide(boxRef, () => {
     globalStore.setSection(SECTION.HOME)
 })
@@ -62,13 +64,13 @@ const closePostBox = () => {
 }
 
 const handleUpload = () => {
-    if(inputFileRef.value){
+    if (inputFileRef.value) {
         inputFileRef.value.value = ''
     }
     inputFileRef.value?.click()
 }
 
-const handleSlide = (indicator : 1| -1) => {
+const handleSlide = (indicator: 1 | -1) => {
     containerPreviewRef.value!.style.transform = `translateX(${startPointX.value + 500 * indicator}px)`
     startPointX.value += indicator * 500
 }

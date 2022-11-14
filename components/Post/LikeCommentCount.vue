@@ -2,7 +2,6 @@
 interface IProps {
     likeCount: number;
     commentCount: number
-
 }
 
 defineProps<IProps>()

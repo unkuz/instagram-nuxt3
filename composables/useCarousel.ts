@@ -3,7 +3,7 @@ import { gsap } from 'gsap'
 import { Ref } from 'vue'
 
 export const useCarousel = (containerMediaRef: Ref<HTMLDivElement | null>) => {
-    const current = ref(0)
+    const current = ref<number>(0)
 
     const transition = () => {
         if (containerMediaRef.value) {

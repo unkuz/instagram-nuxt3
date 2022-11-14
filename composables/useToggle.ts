@@ -1,5 +1,5 @@
 export function useToggle(initState: boolean) {
-  const state = ref(initState)
+  const state = ref<boolean>(initState)
 
   const toggle = () => {
     state.value = !state.value

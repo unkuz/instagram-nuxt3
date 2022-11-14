@@ -1,5 +1,7 @@
-export function useDebounce(input: any, delayTimeSecond: number) {
-  const value = ref(input.value)
+import { Ref } from "vue"
+
+export function useDebounce(input: Ref<string>, delayTimeSecond: number) {
+  const value = ref<string>(input.value)
   let timer: ReturnType<typeof setTimeout>
   
   onUpdated(() => {

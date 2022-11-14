@@ -1,6 +1,6 @@
 export function useResizeWindow() {
-  const width = ref(0)
-  const height = ref(0)
+  const width = ref<number>(0)
+  const height = ref<number>(0)
 
   const resize = (e: UIEvent) => {
     const target = e.target as Window

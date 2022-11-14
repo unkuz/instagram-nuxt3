@@ -1,5 +1,5 @@
 export const usePreventSpace = () => {
-  const space = (e) => {
+  const space = (e:KeyboardEvent) => {
     if (e.keyCode === 32 && e.target === document.body) {
       e.preventDefault()
     }

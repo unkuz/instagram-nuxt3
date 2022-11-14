@@ -1,6 +1,6 @@
 export const useModalPosition = () => {
-  const x = ref(0)
-  const y = ref(0)
+  const x = ref<number>(0)
+  const y = ref<number>(0)
 
   const position = () => {
     x.value = window.innerWidth / 2

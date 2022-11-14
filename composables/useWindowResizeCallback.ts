@@ -1,4 +1,4 @@
-export function useWindowResizeCallback(callback: () => void) {
+export function useWindowResizeCallback(callback: Function) {
   const resize = (_e: Event) => {
     callback()
   }

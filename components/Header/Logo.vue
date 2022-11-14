@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { SECTION } from '@@/constants'
-import { useGlobalStore } from '@@/store'
+import { SECTION } from '@@/constants';
+import { useGlobalStore } from '@@/store';
 
 const globalStore = useGlobalStore()
 

@@ -14,6 +14,14 @@ useClickOutSide(viewPostRef, () => {
   viewPostStore.setIsShow(false)
 })
 
+const calcHeightComment = () => {
+  commentRef.value!.style.height = `${
+    commentContainerRef.value!.clientHeight - commentHeadingRef.value!.clientHeight
+  }px`
+}
+
+useWindowResizeCallback(calcHeightComment)
+
 onMounted(() => {
   viewPostRef.value!.style.transform = 'scale(0)'
   viewPostRef.value!.style.opacity = '0'
@@ -23,13 +31,8 @@ onMounted(() => {
   }, 200)
 })
 
-const calcHeightComment = () => {
-  commentRef.value!.style.height = `${
-    commentContainerRef.value!.clientHeight - commentHeadingRef.value!.clientHeight
-  }px`
-}
 
-useWindowResizeCallback(calcHeightComment)
+
 </script>
 
 <template>

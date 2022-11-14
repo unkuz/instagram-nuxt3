@@ -10,6 +10,7 @@ interface IProps {
     name: string
     id: string
 }
+
 defineProps<IProps>()
 
 const isFollow = ref<boolean>(false)
