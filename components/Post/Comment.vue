@@ -5,7 +5,7 @@ import ExperimentFilledIcon_ from '@@/assets/svg/experiment_filled.svg'
 import Emoji from '@@/components/Utils/Emoji.vue'
 import { useClickOutSide } from '@@/composables'
 import { useAuthStore, useViewPostDetailStore } from '@@/store'
-import { gsap } from 'gsap'
+import { gsap, TimelineLite } from 'gsap'
 import { v4 as uuidv4 } from 'uuid'
 
 
@@ -21,6 +21,7 @@ const textBoxRef = ref<HTMLTextAreaElement | null>(null)
 const commentValueText = ref<string>('')
 const viewPostDetailStore = useViewPostDetailStore()
 const authStore = useAuthStore()
+
 
 
 const emojiAdd = (value: string) => {
@@ -42,25 +43,20 @@ const send = async () => {
         userImg: authStore.avatar,
         id: idGen
     })
-
     commentValueText.value = ''
-
-    document.getElementById(`post_detail_${idGen}`)?.scrollIntoView({ behavior: 'smooth' })
+    const elementNeedScrollTo = document.getElementById(`post_detail_${idGen}`)
+    elementNeedScrollTo?.scrollIntoView({ behavior: 'smooth' })
 
     let tl = gsap.timeline()
 
-    tl.to(document.getElementById(`post_detail_${idGen}`), {
-        x: 100,
+    tl.to(elementNeedScrollTo, {
+        x: '100%',
         duration: 0
     })
-
-    tl.to(document.getElementById(`post_detail_${idGen}`), {
+    tl.to(elementNeedScrollTo, {
         x: 0,
         duration: 0.3
     })
-
-
-
 }
 
 </script>
