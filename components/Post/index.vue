@@ -6,6 +6,8 @@ import Comment from './Comment.vue'
 import Head from './Head.vue'
 import LikeCommentCount from './LikeCommentCount.vue'
 import React from './React.vue'
+import IndividualComment from '@@/components/Post/IndividualComment.vue';
+
 
 
 export interface IProps {
@@ -86,6 +88,9 @@ const mediaArr = computed(() => props.carousel_media.images.concat(props.carouse
             <Caption :userName="user.username" :captionContent="caption_text" :tags="tags" />
             <div class="m-[8px_0px_5px_0px] h-[18px] text-[0.8rem] text-gray-400">
                 {{ moment(created_at).fromNow() }}
+            </div>
+            <div class="max-h-[200px] overflow-y-scroll overflow-x-hidden w-full">
+                <IndividualComment v-for="(i, idx) in comments" :comment="i" :key="idx" />
             </div>
             <ClientOnly>
                 <Comment :id="id" />
