@@ -14,8 +14,8 @@ interface IProps {
 const props = defineProps<IProps>()
 const timelineStore = useTimeLineStore()
 const videoRef = ref<HTMLVideoElement | null>(null)
-const containerRef = ref<HTMLVideoElement| null>(null)
-const progressBarRef = ref<HTMLDivElement| null>(null)
+const containerRef = ref<HTMLVideoElement | null>(null)
+const progressBarRef = ref<HTMLDivElement | null>(null)
 const isVideoPlay = ref<boolean>(false)
 const isFullScreen = ref<boolean>(false)
 
@@ -109,7 +109,7 @@ onMounted(() => {
                     }
                 )
             ">
-                <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-[#ffffffc7]" />
+                <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-[#cfc3c3c7]" />
             </div>
         </div>
         <div :class="clsx('absolute bottom-0  h-[4px] hover:bg-[#45ff2077] [&>div]:bg-[#2fff1c]  w-full cursor-pointer bg-transparent', {
