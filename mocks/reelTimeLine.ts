@@ -754,7 +754,7 @@ APEX Records`,
             },
         ],
         carousel_media: {
-            images: [{ id: 1, src: '/image/IMG_20221112_144812.jpg' }, { id: 1, src: '/image/IMG_20221117_205049.jpg' }],
+            images: [{ id: 1, src: '/image/asfdsfsdf3tq436.jpg' }, { id: 1, src: '/image/2351873874823.jpg' }],
             videos: [],
         },
         user: {
