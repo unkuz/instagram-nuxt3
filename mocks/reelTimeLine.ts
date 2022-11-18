@@ -35,7 +35,7 @@ export const timeLine = [ {
     carousel_media: {
         images: [],
         videos: [{
-            id: 1, src: `/video/Jade Key - Home (feat. Enya Angel) [Diversity Release].mp4`
+            id: 1, src: `/video/Jade Key - Superhero.mp4`
         }],
     },
     user: {
