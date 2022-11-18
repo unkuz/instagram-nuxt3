@@ -1,4 +1,59 @@
-export const timeLine = [
+export const timeLine = [ {
+    created_at: '2022-11-12 9:24',
+    id: '4234gfdsdafglk',
+    location: {
+        short_name: 'Copenhagen',
+    },
+    comments: [
+        {
+            text: "Nice 😍❤",
+            created_at: 1637435588,
+            user: {
+                pk: 20433830474,
+                username: 'Helly Neko Music',
+                full_name: 'Helly Neko Music',
+                is_private: false,
+                profile_pic_url: '/timeline/channels4_profile.jpg',
+            },
+            comment_like_count: 1,
+            reply: [
+                {
+                    text: `you're my superhero~ <3`,
+                    created_at: 1637435588,
+                    user: {
+                        pk: 20433830474,
+                        username: 'Renko Kaitoshi',
+                        full_name: '마크뮤직',
+                        is_private: false,
+                        profile_pic_url: '/timeline/dsfsdfsdf.jpg',
+                    },
+                    comment_like_count: 3,
+                },
+            ],
+        },
+    ],
+    carousel_media: {
+        images: [],
+        videos: [{
+            id: 1, src: `/video/Jade Key - Home (feat. Enya Angel) [Diversity Release].mp4`
+        }],
+    },
+    user: {
+        id: 'diversity',
+        username: 'Diversity',
+        full_name: 'Diversity',
+        profile_pic_url: '/image/91480011.jpg',
+        friendship_status: {
+            following: true,
+            outgoing_request: false,
+        },
+    },
+    like_count: 1560,
+    has_liked: true,
+    caption_text: `Jade Key - Superhero`,
+    is_seen: true,
+    tags: ['Jade Key', 'Superhero','UK Hardcore']
+},
     {
         created_at: '2022-11-12 9:24',
         id: '4234gfdglk',
