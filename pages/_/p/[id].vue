@@ -1,7 +1,7 @@
 <template>
     <div>
         <BackDrop>
-            <div class="flex  xl:flex-row flex-col bg-white translate-y-[100vh] xl:h-[550px] h-[80vh] overflow-scroll xl:overflow-auto"
+            <div class="flex  xl:flex-row flex-col bg-white translate-y-[100vh] xl:h-[550px] h-[80vh] overflow-scroll xl:overflow-auto scale-0 opacity-0"
                 ref="postRef">
                 <div class="h-full xl:w-[700px] w-full md:w-[80vw] ">
                     <article class=" w-full border-gray-200 shadow-gray-200 md:border-[1px] md:shadow-sm">
@@ -65,9 +65,9 @@ useLockScroll()
 onMounted(() => {
     gsap.to(postRef.value, {
         translateY: 0,
-        ease: "elastic.out(1, 0.75)",
         duration: 0.3,
-        opacity: 1
+        opacity: 1,
+        scale: 1
     })
 })
 
