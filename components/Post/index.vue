@@ -7,6 +7,7 @@ import Head from './Head.vue'
 import LikeCommentCount from './LikeCommentCount.vue'
 import React from './React.vue'
 import IndividualComment from '@@/components/Post/IndividualComment.vue';
+import { gsap } from 'gsap';
 
 
 
@@ -69,12 +70,24 @@ export interface IProps {
 }
 
 const props = defineProps<IProps>()
+const isShowComment = ref<boolean>(false)
+const commentRef = ref<HTMLDivElement | null>(null)
 
 const currentIdx = ref<number>(0)
 
 const setCurrent = (value: number) => (currentIdx.value = value)
 
 const mediaArr = computed(() => props.carousel_media.images.concat(props.carousel_media.videos))
+
+const toggleShowComment = () => {
+    isShowComment.value = !isShowComment.value
+    gsap.to(commentRef.value, {
+        height: isShowComment.value ? 200 : 0,
+        duration: 0.2
+    })
+}
+
+
 </script>
 
 <template>
@@ -90,9 +103,16 @@ const mediaArr = computed(() => props.carousel_media.images.concat(props.carouse
             <div class="m-[8px_0px_5px_0px] h-[18px] text-[0.8rem] text-gray-400">
                 {{ moment(created_at).fromNow() }}
             </div>
-            <div class="max-h-[200px] overflow-y-scroll overflow-x-hidden w-full">
+            <div @click="toggleShowComment" class="w-full flex justify-center">
+                <span v-if="isShowComment">close comment</span>
+                <span v-else>show comment</span>
+            </div>
+
+            <div class="max-h-[200px] h-0 overflow-y-scroll overflow-x-hidden w-full mt-[5px]" ref="commentRef">
                 <IndividualComment v-for="(i, idx) in comments" :comment="i" :key="idx" />
             </div>
+
+
             <ClientOnly>
                 <Comment :id="id" />
             </ClientOnly>
