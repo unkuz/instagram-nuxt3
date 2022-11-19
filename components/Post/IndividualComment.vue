@@ -30,7 +30,7 @@ defineProps<IProps>()
                     <div class="flex gap-[3px] text-red-500"><span>{{ comment.comment_like_count }}</span>
                         <span class="cursor-pointer">Like</span>
                     </div>
-                    <p class="cursor-pointer">Reply</p>
+                    <p class="cursor-pointer text-red-500">Reply</p>
                 </div>
             </div>
             <div class="h-full w-[2px] bg-[#88ff18] absolute top-0 left-0 -translate-x-[0px]">
@@ -51,9 +51,9 @@ defineProps<IProps>()
                 <p>{{ text }}</p>
                 <div class="flex gap-[10px] mt-[5px] text-[0.8rem]">
                     <div class="flex gap-[3px] text-red-500"><span>{{ comment_like_count }}</span>
-                        <span class="cursor-pointer">Like</span>
+                        <span class="cursor-pointer ">Like</span>
                     </div>
-                    <p class="cursor-pointer">Reply</p>
+                    <p class="cursor-pointer text-red-500   ">Reply</p>
                 </div>
             </div>
             <div class="h-full w-[2px] bg-[#ffd209] absolute top-0 left-0 -translate-x-[0px]">
