@@ -1,7 +1,7 @@
 <template>
     <div>
         <BackDrop>
-            <div class="flex flex-row bg-white translate-y-[100vh]" ref="postRef">
+            <div class="flex flex-row bg-white translate-y-[100vh] h-[550px]" ref="postRef">
                 <div class="h-full w-[700px]">
                     <article class=" w-full border-gray-200 shadow-gray-200 md:border-[1px] md:shadow-sm">
 
@@ -18,25 +18,26 @@
                         </div>
                     </article>
                 </div>
-                <div class="h-auto  w-[500px] text-[0.85rem] p-[15px]">
+                <div class="h-full w-[500px] text-[0.85rem]  flex flex-col justify-between p-[15px_15px_0px_15px]"
+                    ref="rightSectionRef">
                     <div>
-                        <Caption :userName="userName" :captionContent="captiontext" :tags="tags" />
+                        <div>
+                            <Caption :userName="userName" :captionContent="captiontext" :tags="tags" />
+                        </div>
+                        <div :class="clsx('w-full overflow-y-scroll overflow-x-hidden py-[10px]', {
+                            'flex justify-center items-center': !hasComment
+                        })">
+                            <template v-if="hasComment">
+                                <IndividualComment v-for="(i, idx) in comments" :comment="i" :key="idx" />
+                            </template>
+                            <template v-else>
+                                <div> No comment to show !! </div>
+                            </template>
+                        </div>
                     </div>
-                    <div :class="clsx('h-[400px] w-full overflow-y-scroll overflow-x-hidden my-[10px]', {
-                        'flex justify-center items-center': !hasComment
-                    })">
-                        <template v-if="hasComment">
-                            <IndividualComment v-for="(i, idx) in comments" :comment="i" :key="idx" />
-                        </template>
-                        <template v-else>
-                            <div> No comment to show !! </div>
-                        </template>
-                    </div>
-                    <div class="">
-                        <ClientOnly>
-                            <Comment :id="id" />
-                        </ClientOnly>
-                    </div>
+
+                    <Comment :id="id" />
+
                 </div>
             </div>
         </BackDrop>
@@ -71,6 +72,7 @@ onMounted(() => {
 })
 
 const postRef = ref<HTMLDivElement | null>(null)
+const rightSectionRef = ref<HTMLDivElement | null>(null)
 const router = useRouter()
 const postDetailStore = useViewPostDetailStore()
 const currentIdx = ref<number>(0)
@@ -80,6 +82,7 @@ const { data: _timeline } = await useFetch<ITimeLine[]>(
 )
 
 postDetailStore.setPostDetail(router.currentRoute.value.params.id as string)
+
 
 const profilePicUrl = computed<string>(() => postDetailStore.post.user.profile_pic_url)
 const images = computed<{
@@ -103,6 +106,16 @@ const setCurrent = (value: number) => (currentIdx.value = value)
 
 useClickOutSide(postRef, () => {
     router.back()
+})
+
+
+onMounted(() => {
+    const topH = rightSectionRef.value?.children[0].children[0].clientHeight!
+    const bottomH = rightSectionRef.value?.children[1].clientHeight!
+
+    Object.assign((rightSectionRef.value?.children[0].children[1] as HTMLDivElement).style, {
+        height: `${535 - topH - bottomH}px`
+    })
 })
 
 const mediaArr = computed<{
