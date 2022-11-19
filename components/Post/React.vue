@@ -16,6 +16,8 @@ interface IProps {
 
 defineProps<IProps>()
 
+const isSaved = ref(true)
+
 const timelineStore = useTimeLineStore()
 </script>
 
@@ -41,7 +43,7 @@ const timelineStore = useTimeLineStore()
             "></div>
         </div>
         <div class="flex h-full w-full items-center justify-end">
-            <SaveIcon_ />
+            <SaveIcon_ class=" [&>path]:fill-[#fbff00]" />
         </div>
     </div>
 </template>
