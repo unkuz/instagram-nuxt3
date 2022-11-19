@@ -8,6 +8,8 @@ import LikeCommentCount from './LikeCommentCount.vue'
 import React from './React.vue'
 import IndividualComment from '@@/components/Post/IndividualComment.vue';
 import { gsap } from 'gsap';
+import DownIcon_ from '@@/assets/svg/down_icon_458438i.svg';
+import clsx from 'classnames';
 
 
 
@@ -103,12 +105,16 @@ const toggleShowComment = () => {
             <div class="m-[8px_0px_5px_0px] h-[18px] text-[0.8rem] text-gray-400">
                 {{ moment(created_at).fromNow() }}
             </div>
-            <div v-if="comments.length > 0" @click="toggleShowComment" class="w-full flex justify-center">
-                <span v-if="isShowComment">close comment</span>
-                <span v-else>show comment</span>
+            <div v-if="comments.length > 0" class="w-full flex justify-center">
+                <span>
+                    <DownIcon_ @click="toggleShowComment" :class="clsx('w-[20px] origin-center  cursor-pointer animate-bounce duration-100', {
+                        'rotate-180-css': isShowComment
+                    })" />
+                </span>
+
             </div>
 
-            <div class="max-h-[200px] h-0 overflow-y-scroll overflow-x-hidden w-full mt-[5px]" ref="commentRef">
+            <div class="max-h-[200px]  overflow-y-scroll overflow-x-hidden w-full mt-[5px]" ref="commentRef">
                 <IndividualComment v-for="(i, idx) in comments" :comment="i" :key="idx" />
             </div>
 
@@ -119,3 +125,8 @@ const toggleShowComment = () => {
         </div>
     </article>
 </template>
+<style lang="css" scoped>
+.rotate-180-css {
+    rotate: 180deg;
+}
+</style>
