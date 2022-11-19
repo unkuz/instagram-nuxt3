@@ -1,8 +1,9 @@
 <template>
     <div>
         <BackDrop>
-            <div class="flex flex-row bg-white translate-y-[100vh] h-[550px]" ref="postRef">
-                <div class="h-full w-[700px]">
+            <div class="flex xl:flex-row flex-col bg-white translate-y-[100vh] xl:h-[550px] h-[80vh] overflow-scroll xl:overflow-auto"
+                ref="postRef">
+                <div class="h-full xl:w-[700px] w-full">
                     <article class=" w-full border-gray-200 shadow-gray-200 md:border-[1px] md:shadow-sm">
 
                         <Head :profile_pic_url="profilePicUrl" :username="userName" />
@@ -14,11 +15,10 @@
                             <div class="m-[8px_0px_5px_0px] h-[18px] text-[0.8rem] text-gray-400">
                                 {{ moment(createdAt).fromNow() }}
                             </div>
-
                         </div>
                     </article>
                 </div>
-                <div class="h-full w-[500px] text-[0.85rem]  flex flex-col justify-between p-[15px_15px_0px_15px]"
+                <div class="h-full xl:w-[500px] w-full text-[0.85rem]  flex flex-col justify-between p-[15px_15px_0px_15px]"
                     ref="rightSectionRef">
                     <div>
                         <div>
