@@ -1,9 +1,10 @@
 <template>
     <div>
         <BackDrop>
-            <div class="flex  xl:flex-row flex-col bg-white translate-y-[100vh] xl:h-[550px] h-[80vh] overflow-scroll xl:overflow-auto scale-0 opacity-0"
+            <div class="flex xl:flex-row flex-col bg-white translate-y-[100vh] xl:h-[550px] h-[100vh] md:h-[80vh] overflow-scroll xl:overflow-auto scale-0 opacity-0"
                 ref="postRef">
-                <div class="h-full xl:w-[700px] w-full md:w-[80vw] ">
+                <div class="md:hidden w-full flex justify-end cursor-pointer" @click="back">X</div>
+                <div class="md:h-full xl:w-[700px] w-full md:w-[80vw] ">
                     <article class=" w-full border-gray-200 shadow-gray-200 md:border-[1px] md:shadow-sm">
 
                         <Head :profile_pic_url="profilePicUrl" :username="userName" />
@@ -18,7 +19,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="h-full md:w-[80vw] xl:w-[500px] w-full text-[0.85rem]  flex flex-col justify-between p-[15px_15px_0px_15px]"
+                <div class="md:h-full md:w-[80vw] xl:w-[500px] w-full text-[0.85rem]  flex flex-col justify-between p-[15px_15px_0px_15px]"
                     ref="rightSectionRef">
                     <div>
                         <div>
@@ -71,6 +72,7 @@ onMounted(() => {
     })
 })
 
+
 const postRef = ref<HTMLDivElement | null>(null)
 const rightSectionRef = ref<HTMLDivElement | null>(null)
 const router = useRouter()
@@ -117,6 +119,8 @@ onMounted(() => {
         height: `${535 - topH - bottomH}px`
     })
 })
+
+const back = () => router.back()
 
 const mediaArr = computed<{
     id: string,
