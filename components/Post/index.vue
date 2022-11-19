@@ -70,7 +70,7 @@ export interface IProps {
 }
 
 const props = defineProps<IProps>()
-const isShowComment = ref<boolean>(false)
+const isShowComment = ref<boolean>(true)
 const commentRef = ref<HTMLDivElement | null>(null)
 
 const currentIdx = ref<number>(0)
@@ -103,7 +103,7 @@ const toggleShowComment = () => {
             <div class="m-[8px_0px_5px_0px] h-[18px] text-[0.8rem] text-gray-400">
                 {{ moment(created_at).fromNow() }}
             </div>
-            <div @click="toggleShowComment" class="w-full flex justify-center">
+            <div v-if="comments.length > 0" @click="toggleShowComment" class="w-full flex justify-center">
                 <span v-if="isShowComment">close comment</span>
                 <span v-else>show comment</span>
             </div>
