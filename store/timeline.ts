@@ -27,5 +27,14 @@ export const useTimeLineStore = defineStore('timeline', {
                 }
             })
         },
+        setToggleSave(id: string) {
+            this.data.forEach((i: ITimeLine) => {
+                if (i.id === id) {
+                    setTimeout(() => {
+                        i.is_saved = !i.is_saved
+                    }, 500)
+                }
+            })
+        },
     },
 })

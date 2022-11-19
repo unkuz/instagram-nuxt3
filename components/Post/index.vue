@@ -64,7 +64,8 @@ export interface IProps {
             outgoing_request: boolean
         }
     }
-    tags: string[]
+    tags: string[],
+    is_saved: boolean
 }
 
 const props = defineProps<IProps>()
@@ -83,7 +84,7 @@ const mediaArr = computed(() => props.carousel_media.images.concat(props.carouse
         <Carousel :images="carousel_media.images" :videos="carousel_media.videos"
             @current-index-carousel="setCurrent($event)" :has_liked="has_liked" :id="id" />
         <div class="px-[16px] text-xs md:text-sm">
-            <React :currentIdx="currentIdx" :has_liked="has_liked" :mediaArr="mediaArr" :id="id" />
+            <React :currentIdx="currentIdx" :has_liked="has_liked" :mediaArr="mediaArr" :id="id" :hasSaved="is_saved" />
             <LikeCommentCount :likeCount="like_count" :commentCount="comments.length" />
             <Caption :userName="user.username" :captionContent="caption_text" :tags="tags" />
             <div class="m-[8px_0px_5px_0px] h-[18px] text-[0.8rem] text-gray-400">

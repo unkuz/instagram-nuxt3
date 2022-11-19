@@ -11,7 +11,8 @@
                         <Carousel :images="images" :videos="videos" @current-index-carousel="setCurrent($event)"
                             :has_liked="hasLiked" :id="id" />
                         <div class="px-[16px] text-xs md:text-sm">
-                            <React :currentIdx="currentIdx" :has_liked="hasLiked" :mediaArr="mediaArr" :id="id" />
+                            <React :currentIdx="currentIdx" :has_liked="hasLiked" :mediaArr="mediaArr" :id="id"
+                                :hasSaved="isSaved" />
                             <LikeCommentCount :likeCount="likeCount" :commentCount="commentCount" />
                             <div class="m-[8px_0px_5px_0px] h-[18px] text-[0.8rem] text-gray-400">
                                 {{ moment(createdAt).fromNow() }}
@@ -103,6 +104,7 @@ const captiontext = computed<string>(() => postDetailStore.post.caption_text)
 const tags = computed<string[]>(() => postDetailStore.post.tags)
 const comments = computed(() => postDetailStore.post.comments)
 const hasComment = computed<boolean>(() => postDetailStore.post.comments.length > 0)
+const isSaved = computed<boolean>(() => postDetailStore.post.is_saved)
 
 const setCurrent = (value: number) => (currentIdx.value = value)
 

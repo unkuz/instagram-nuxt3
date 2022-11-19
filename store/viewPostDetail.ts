@@ -64,6 +64,7 @@ const state = () => ({
                 outgoing_request: '',
             },
         },
+        is_saved: false
     },
     hasErr: false,
     errors: {},
