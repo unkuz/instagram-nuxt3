@@ -51,7 +51,7 @@ const authorText = 'cuzknothz'
         </div>
 
         <div class="flex flex-col items-center space-y-2 text-[0.85rem]">
-            <div>© 2022 Instagram clone by</div>
+            <div >© 2022 Instagram clone by</div>
             <NuxtLink to="https://github.com/cuzknothz" target="_blank">
                 <div
                     class="cursor-pointer select-none font-august text-[1.25rem] uppercase tracking-wider text-black drop-shadow-md">

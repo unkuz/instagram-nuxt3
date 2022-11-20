@@ -108,14 +108,10 @@ const toggleShowComment = () => {
                         'rotate-180-css': isShowComment
                     })" />
                 </span>
-
             </div>
-
             <div class="max-h-[200px]  overflow-y-scroll overflow-x-hidden w-full mt-[5px]" ref="commentRef">
                 <IndividualComment v-for="(i, idx) in comments" :comment="i" :key="idx" />
             </div>
-
-
             <ClientOnly>
                 <Comment :id="id" />
             </ClientOnly>

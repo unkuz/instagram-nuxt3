@@ -6,6 +6,7 @@ import ViewPostIcon_ from '@@/assets/svg/view_post_icon.svg'
 import { useTimeLineStore } from '@@/store'
 import clsx from 'classnames'
 import UnlikeIcon from '../Tiny/UnlikeIcon.vue'
+import PlusOne from './PlusOne.vue';
 
 interface IProps {
     has_liked: boolean
@@ -27,9 +28,12 @@ const timelineStore = useTimeLineStore()
         'grid-cols-2': mediaArr.length < 2
     })">
         <div class="flex h-full w-full items-center space-x-[10px]">
-            <div @click="timelineStore.setToggleLike(id)">
-                <LikeIcon_ v-if="!has_liked" />
-                <UnlikeIcon v-else />
+            <div @click="timelineStore.setToggleLike(id)" class="relative">
+                <div  v-if="has_liked">  <PlusOne/>   <UnlikeIcon /></div>
+            
+                <div v-else> <LikeIcon_  /></div>
+               
+                
             </div>
             <NuxtLink :to="`/_/p/${id}`">
                 <ViewPostIcon_ />
