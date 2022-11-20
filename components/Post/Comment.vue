@@ -7,6 +7,7 @@ import { useClickOutSide } from '@@/composables'
 import { useAuthStore, usePostDetailStore } from '@@/store'
 import { gsap, TimelineLite } from 'gsap'
 import { v4 as uuidv4 } from 'uuid'
+import Button from '@@/components/Tiny/Button.vue';
 
 
 interface IProps {
@@ -52,20 +53,17 @@ const send = async () => {
     <div class="flex w-full items-center justify-between sm:mb-[5px]">
         <div class="relative" ref="emojiRef">
             <Emoji v-if="isShowEmoji" @emoji-add="emojiAdd" />
-            <div @click="toggleShowEmoji" class="w-[26px] cursor-pointer">
-                <EmojiIcon_ v-show="!isShowEmoji" class="w-[26px]" />
-                <ExperimentFilledIcon_ v-show="isShowEmoji" class="w-[26px]" />
+            <div @click="toggleShowEmoji" class="cursor-pointer text-[#00aeff] font-[500] text-[0.8rem] active:text-[#8bff48]">
+                Emoji
             </div>
         </div>
-
-        <textarea @keyup.enter="send" ref="textBoxRef" rows="1"
-            class="m-auto my-[10px]  block w-[83%] cursor-text resize-none  rounded-[5px] border-[1px] border-gray-200 bg-transparent p-[5px] shadow-sm shadow-gray-200 placeholder:text-center placeholder:text-[0.8rem] focus:outline-none lg:w-[88%]"
+        <textarea @keyup.enter="send" ref="textBoxRef" rows="1" spellcheck="false"
+            class="m-auto my-[10px] h-[38px]  block w-[83%] cursor-text resize-none  rounded-[5px] border-[1px] border-gray-200 bg-transparent p-[5px] shadow-sm shadow-gray-200 placeholder:text-center placeholder:text-[0.8rem] focus:outline-none lg:w-[88%]"
             v-model="commentValueText">
       {{ commentValueText }}
     </textarea>
-
-        <div @click="send" class="aspect-square h-[20px] cursor-pointer active:fill-[#00aeff]">
-            <DirectIcon_ />
+        <div @click="send" class=" cursor-pointer text-[#00aeff] font-[500] text-[0.8rem] active:text-[#8bff48]">
+            Send
         </div>
     </div>
 </template>

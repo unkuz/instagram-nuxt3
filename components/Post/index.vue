@@ -104,7 +104,7 @@ const toggleShowComment = () => {
             </div>
             <div v-if="comments.length > 0" class="w-full flex justify-center">
                 <span>
-                    <DownIcon_ @click="toggleShowComment" :class="clsx('w-[20px] origin-center  cursor-pointer animate-bounce ', {
+                    <DownIcon_ @click="toggleShowComment" :class="clsx('w-[20px] origin-center  cursor-pointer animate-bounce [&>path]:fill-[#00d9ff]', {
                         'rotate-180-css': isShowComment
                     })" />
                 </span>
