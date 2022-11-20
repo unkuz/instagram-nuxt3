@@ -74,11 +74,8 @@ export interface IProps {
 const props = defineProps<IProps>()
 const isShowComment = ref<boolean>(true)
 const commentRef = ref<HTMLDivElement | null>(null)
-
 const currentIdx = ref<number>(0)
-
 const setCurrent = (value: number) => (currentIdx.value = value)
-
 const mediaArr = computed(() => props.carousel_media.images.concat(props.carousel_media.videos))
 
 const toggleShowComment = () => {
@@ -107,7 +104,7 @@ const toggleShowComment = () => {
             </div>
             <div v-if="comments.length > 0" class="w-full flex justify-center">
                 <span>
-                    <DownIcon_ @click="toggleShowComment" :class="clsx('w-[20px] origin-center  cursor-pointer animate-bounce duration-100', {
+                    <DownIcon_ @click="toggleShowComment" :class="clsx('w-[20px] origin-center  cursor-pointer animate-bounce ', {
                         'rotate-180-css': isShowComment
                     })" />
                 </span>

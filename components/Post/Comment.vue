@@ -44,19 +44,6 @@ const send = async () => {
         id: idGen
     })
     commentValueText.value = ''
-    const elementNeedScrollTo = document.getElementById(`post_detail_${idGen}`)
-    elementNeedScrollTo?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-
-    let tl = gsap.timeline()
-
-    tl.to(elementNeedScrollTo, {
-        x: '100%',
-        duration: 0
-    })
-    tl.to(elementNeedScrollTo, {
-        x: 0,
-        duration: 0.3
-    })
 }
 
 </script>
