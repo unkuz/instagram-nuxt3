@@ -9,7 +9,8 @@ const globalStore = useGlobalStore()
 const accountPopRef = ref<HTMLDivElement | null>(null)
 const isShow = ref(true)
 
-useClickOutSide(accountPopRef, () => { })
+useClickOutSide(accountPopRef, () => {
+})
 
 const handleSelect = (section: SECTION) => {
     globalStore.setSection(section)
@@ -29,12 +30,25 @@ const handleSelect = (section: SECTION) => {
                 </div>
             </NuxtLink>
             <hr />
+            <div
+                class="z-50 flex h-[37px] cursor-pointer items-center justify-start space-x-[12px] py-[8px] px-[16px] hover:bg-gray-300">
+
+                <span>Dark mode</span>
+                <span>
+                    <div class="w-[35px] h-[20px] rounded-[25px] border-[1px] border-black/20 relative">
+                        <div class="absolute h-full aspect-square bg-green-400 rounded-[50%]"></div>
+                    </div>
+                </span>
+            </div>
+
+            <hr />
             <NuxtLink to='/login/'>
                 <div @click="handleSelect(SECTION.SELF)"
                     class="flex h-[37px] cursor-pointer justify-center px-[16px] py-[8px] hover:bg-gray-300">
                     Log out
                 </div>
             </NuxtLink>
+
         </div>
     </div>
 </template>
