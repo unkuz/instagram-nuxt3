@@ -17,13 +17,22 @@ import SelfAvatar from '../Nav/SelfAvatar.vue'
 const globalStore = useGlobalStore()
 const searchStore = useSearchStore()
 const isShowSearchToolkit = computed<boolean>(() => searchStore.getIsShowSearchToolkit)
-const section = computed<SECTION>(() => globalStore.getSection)
+const section = computed<SECTION>(() => globalStore.section)
 const isMobile = computed<boolean>(() => globalStore.getIsMobile)
+const accountPopRef = ref<HTMLDivElement | null>(null)
+const activityFeedPopRef = ref<HTMLDivElement | null>(null)
+const isShowProfile = ref<boolean>(false)
+
+useClickOutSide(accountPopRef, () => {
+    isShowProfile.value = false
+})
+useClickOutSide(activityFeedPopRef, () => {
+    isShowProfile.value = false
+})
 
 const handleSelect = (section: SECTION) => {
     globalStore.setSection(section)
 }
-const isShowProfile = ref<boolean>(false)
 </script>
 
 <template>
@@ -66,11 +75,15 @@ const isShowProfile = ref<boolean>(false)
                 </div>
                 <div v-show="!isMobile" class="relative" @click="handleSelect(SECTION.ACTIVITYFEED)">
                     <ActivityFeed :isSelect="section === SECTION.ACTIVITYFEED" />
-                    <ActivityFeedPop v-show="section === SECTION.ACTIVITYFEED" />
+                    <div ref="activityFeedPopRef">
+                        <ActivityFeedPop v-show="section === SECTION.ACTIVITYFEED" />
+                    </div>
                 </div>
                 <div v-show="!isMobile" class="relative mr-0" @click="isShowProfile = !isShowProfile">
                     <SelfAvatar :isSelect="section === SECTION.SELF" />
-                    <AccountPop v-show="isShowProfile" />
+                    <div ref="accountPopRef">
+                        <AccountPop v-show="isShowProfile" />
+                    </div>
                 </div>
             </div>
         </div>

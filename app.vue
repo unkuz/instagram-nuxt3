@@ -1,11 +1,10 @@
 <script lang="ts" setup>
 import NewPost from '@@/components/Huge/NewPost/index.vue'
-import NewPostMobile from '@@/components/Huge/NewPostMobile/index.vue'
 import More from '@@/components/Utils/More.vue'
 import Prelude from '@@/components/Utils/Prelude.vue'
 import { usePrelude, useResizeWindow } from '@@/composables'
 import { SECTION } from '@@/constants'
-import { useGlobalStore, useMoreStore, useStoryStore, useThemeStore } from '@@/store'
+import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
 
 const darkMode = ref(true)
 
@@ -27,8 +26,8 @@ const { isShowPrelude } = usePrelude()
 const { width, height } = useResizeWindow()
 
 const isDarkMode = computed(() => themeStore.darkMode)
-const isTransition = computed(() => globalStore.getIsTransition)
-const section = computed(() => globalStore.getSection)
+const isTransition = computed(() => globalStore.transition)
+const section = computed(() => globalStore.section)
 const isMobile = computed(() => globalStore.getIsMobile)
 const isShowMore = computed(() => moreStore.isShow)
 
@@ -61,7 +60,7 @@ onMounted(() => {
 })
 
 watch(isDarkMode, (value) => {
-    const htmlElement = document.querySelector('html')
+    const htmlElement = document.querySelector('html')!
     if (value) {
         htmlElement.classList.add('dark')
     } else {

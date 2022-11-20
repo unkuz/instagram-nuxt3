@@ -10,8 +10,8 @@ import clsx from 'classnames'
 
 const globalStore = useGlobalStore()
 const isMobile = computed(() => globalStore.getIsMobile)
-const section = computed(() => globalStore.getSection)
-const isReelsSelect = computed(() => globalStore.getSection === SECTION.REELS && isMobile)
+const section = computed(() => globalStore.section)
+const isReelsSelect = computed(() => globalStore.section === SECTION.REELS && isMobile)
 const handleSelect = (section: SECTION) => {
     globalStore.setSection(section)
 }
