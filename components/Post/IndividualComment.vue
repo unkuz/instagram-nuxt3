@@ -10,11 +10,25 @@ interface IProps {
 }
 
 defineProps<IProps>()
+
+const timmer = ref<NodeJS.Timer>()
+
+const key = ref(0)
+onMounted(() => {
+    timmer.value = setInterval(() => {
+        key.value++
+    }, 1000)
+})
+
+onUnmounted(() => {
+    clearInterval(timmer.value)
+})
+
 </script>
 
 <template>
     <div class="mb-[10px]" :id="`post_detail_${comment.id}`">
-        <div class=" relative py-[5px]  rounded-md ">
+        <div class=" relative my-[5px]  rounded-md ">
             <div class="flex gap-[10px] items-center mx-[10px]">
                 <NuxtLink :to="`/${comment.user.username}`">
                     <Avatar :url="comment.user.profile_pic_url" :size="S" />
@@ -22,7 +36,7 @@ defineProps<IProps>()
                 <NuxtLink :to="`/${comment.user.username}`">
                     <p>{{ comment.user.username }}</p>
                 </NuxtLink>
-                <p class=" text-[0.7rem] text-[#666]">{{ moment(comment.created_at).fromNow() }}</p>
+                <p class=" text-[0.7rem] text-[#666]" :key="key">{{ moment(comment.created_at).fromNow() }}</p>
             </div>
             <div class="ml-[52px] -translate-y-[3px] pr-[10px]">
                 <p>{{ comment.text }}</p>
@@ -37,7 +51,7 @@ defineProps<IProps>()
             </div>
         </div>
         <div v-for="({ user, created_at, text, comment_like_count }, idx) in comment.reply" :key="idx"
-            class="ml-[42px] relative py-[5px]  rounded-md ">
+            class="ml-[42px] relative my-[5px]  rounded-md ">
             <div class="flex gap-[10px] items-center mx-[10px]">
                 <NuxtLink :to="`/${user.username}`">
                     <Avatar :url="user.profile_pic_url" :size="S" />
@@ -45,7 +59,7 @@ defineProps<IProps>()
                 <NuxtLink :to="`/${user.username}`">
                     <p>{{ user.username }}</p>
                 </NuxtLink>
-                <p class="text-[0.7rem] text-[#666]">{{ moment(created_at).fromNow() }}</p>
+                <p class="text-[0.7rem] text-[#666]" :key="key">{{ moment(created_at).fromNow() }}</p>
             </div>
             <div class="ml-[52px] -translate-y-[3px] pr-[10px]">
                 <p>{{ text }}</p>
@@ -56,7 +70,7 @@ defineProps<IProps>()
                     <p class="cursor-pointer text-red-500   ">Reply</p>
                 </div>
             </div>
-            <div class="h-full w-[2px] bg-[#ffd209] absolute top-0 left-0 -translate-x-[0px]">
+            <div class="h-full w-[2px] bg-[#e0a0fa] absolute top-0 left-0 -translate-x-[0px]">
             </div>
         </div>
     </div>

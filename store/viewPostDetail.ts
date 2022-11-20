@@ -2,107 +2,103 @@ import { defineStore } from 'pinia'
 import { useTimeLineStore } from '@@/store'
 
 
-const state = () => ({
-    post: {
-        created_at: '',
-        caption_text: '',
-        has_liked: false,
-        carousel_media: {
-            images: [
-                {
-                    id: '',
-                    src: '',
-                },
-            ],
-            videos: [
-                {
-                    id: '',
-                    src: '',
-                },
-            ],
-        },
-        comments: [{
-            text: '',
+export const usePostDetailStore = defineStore('post~detail', {
+    state: () => ({
+        post: {
             created_at: '',
+            caption_text: '',
+            has_liked: false,
+            carousel_media: {
+                images: [
+                    {
+                        id: '',
+                        src: '',
+                    },
+                ],
+                videos: [
+                    {
+                        id: '',
+                        src: '',
+                    },
+                ],
+            },
+            comments: [{
+                text: '',
+                created_at: '',
+                user: {
+                    pk: '',
+                    username: '',
+                    full_name: '',
+                    is_private: '',
+                    profile_pic_url: '',
+                },
+                comment_like_count: '',
+                reply: [
+                    {
+                        text: '',
+                        created_at: '',
+                        user: {
+                            pk: '',
+                            username: '',
+                            full_name: '',
+                            is_private: '',
+                            profile_pic_url: '',
+                        },
+                        comment_like_count: '',
+                    },
+                ],
+            }],
+            id: '',
+            is_seen: '',
+            tags: [''],
+            like_count: 0,
+            location: {
+                short_name: '',
+            },
             user: {
-                pk: '',
+                id: '',
                 username: '',
                 full_name: '',
-                is_private: '',
                 profile_pic_url: '',
-            },
-            comment_like_count: '',
-            reply: [
-                {
-                    text: '',
-                    created_at: '',
-                    user: {
-                        pk: '',
-                        username: '',
-                        full_name: '',
-                        is_private: '',
-                        profile_pic_url: '',
-                    },
-                    comment_like_count: '',
+                friendship_status: {
+                    following: '',
+                    outgoing_request: '',
                 },
-            ],
-        }],
-        id: '',
-        is_seen: '',
-        tags: [''],
-        like_count: 0,
-        location: {
-            short_name: '',
-        },
-        user: {
-            id: '',
-            username: '',
-            full_name: '',
-            profile_pic_url: '',
-            friendship_status: {
-                following: '',
-                outgoing_request: '',
             },
+            is_saved: false
         },
-        is_saved: false
+        hasErr: false,
+        errors: {},
+    }),
+    getters: {
+
     },
-    hasErr: false,
-    errors: {},
-})
+    actions: {
+        setPostDetail(id: string) {
+            const timeLineStore = useTimeLineStore()
+            this.post = timeLineStore.data.find((i) => i.id === id)
+            if (!this.post) {
+                this.hasErr = true
+            }
+        },
+        comment(id, { text, userName, userImg, id: commentId }) {
+            this.post.comments.push({
+                text: text,
+                created_at: new Date().getTime(),
+                user: {
+                    pk: '',
+                    username: userName,
+                    full_name: '',
+                    is_private: '',
+                    profile_pic_url: userImg,
+                },
+                comment_like_count: 0,
+                reply: [
+                ],
+                id: commentId
+            })
 
-const getters = {}
 
-const actions = {
-    setPostDetail(id: string) {
-        const timeLineStore = useTimeLineStore()
-        this.post = timeLineStore.data.find((i) => i.id === id)
-        if (!this.post) {
-            this.hasErr = true
         }
     },
-    comment(id, { text, userName, userImg, id: commentId }) {
-        this.post.comments.push({
-            text: text,
-            created_at: new Date().getTime(),
-            user: {
-                pk: '',
-                username: userName,
-                full_name: '',
-                is_private: '',
-                profile_pic_url: userImg,
-            },
-            comment_like_count: 0,
-            reply: [
-            ],
-            id: commentId
-        })
-
-
-    }
-}
-
-export const useViewPostDetailStore = defineStore('view_post_detail', {
-    state,
-    getters,
-    actions,
 })

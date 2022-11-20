@@ -56,7 +56,7 @@ import LikeCommentCount from '@@/components/Post/LikeCommentCount.vue';
 import React from '@@/components/Post/React.vue';
 import BackDrop from '@@/components/Utils/BackDrop.vue';
 import { useClickOutSide, useLockScroll } from '@@/composables';
-import { useViewPostDetailStore } from '@@/store';
+import { usePostDetailStore } from '@@/store';
 import clsx from 'classnames';
 import { gsap } from 'gsap';
 import moment from 'moment';
@@ -77,7 +77,7 @@ onMounted(() => {
 const postRef = ref<HTMLDivElement | null>(null)
 const rightSectionRef = ref<HTMLDivElement | null>(null)
 const router = useRouter()
-const postDetailStore = useViewPostDetailStore()
+const postDetailStore = usePostDetailStore()
 const currentIdx = ref<number>(0)
 
 const { data: _timeline } = await useFetch<ITimeLine[]>(
