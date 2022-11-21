@@ -110,8 +110,8 @@ const { key } = useForceRenderTimer()
                         'rotate-180-css': isShowComment
                     })" />
                 </span>
-                <div v-if="!isShowComment">Show comment</div>
-                <div v-else>Close comment</div>
+                <div v-if="!isShowComment">Expand comment</div>
+                <div v-else>Collapse comment</div>
             </div>
             <div class="max-h-[200px]  overflow-y-scroll overflow-x-hidden w-full mt-[5px]" ref="commentRef">
                 <IndividualComment v-for="(i, idx) in comments" :comment="i" :key="idx" />
