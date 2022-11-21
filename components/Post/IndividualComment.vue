@@ -2,28 +2,15 @@
 import Avatar from '@@/components/Tiny/Avatar.vue';
 import { SizeAvatarEnum } from '@@/type';
 import moment from 'moment';
-
-const { S } = SizeAvatarEnum
+import { useForceRenderPerTime } from '@@/composables';
 
 interface IProps {
     comment: any
 }
-
 defineProps<IProps>()
 
-const timmer = ref<NodeJS.Timer>()
-
-const key = ref(0)
-onMounted(() => {
-    timmer.value = setInterval(() => {
-        key.value++
-    }, 1000)
-})
-
-onUnmounted(() => {
-    clearInterval(timmer.value)
-})
-
+const { key } = useForceRenderPerTime()
+const { S } = SizeAvatarEnum
 </script>
 
 <template>

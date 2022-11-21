@@ -10,6 +10,7 @@ import IndividualComment from '@@/components/Post/IndividualComment.vue';
 import { gsap } from 'gsap';
 import DownIcon_ from '@@/assets/svg/down_icon_458438i.svg';
 import clsx from 'classnames';
+import { useForceRenderPerTime } from '@@/composables'
 
 
 
@@ -86,6 +87,8 @@ const toggleShowComment = () => {
     })
 }
 
+const { key } = useForceRenderPerTime()
+
 
 </script>
 
@@ -99,15 +102,18 @@ const toggleShowComment = () => {
             <React :currentIdx="currentIdx" :has_liked="has_liked" :mediaArr="mediaArr" :id="id" :hasSaved="is_saved" />
             <LikeCommentCount :likeCount="like_count" :commentCount="comments.length" />
             <Caption :userName="user.username" :captionContent="caption_text" :tags="tags" />
-            <div class="m-[8px_0px_5px_0px] h-[18px] text-[0.8rem] text-gray-400">
+            <div class="m-[0px_0px_0px_0px] h-[18px] text-[0.7rem] text-gray-400" :key="key">
                 {{ moment(created_at).fromNow() }}
             </div>
-            <div v-if="comments.length > 0" class="w-full flex justify-center">
+            <div @click="toggleShowComment" v-if="comments.length > 0"
+                class="w-full  flex justify-center text-[#00d9ff]">
                 <span>
-                    <DownIcon_ @click="toggleShowComment" :class="clsx('w-[20px] origin-center  cursor-pointer animate-bounce [&>path]:fill-[#00d9ff]', {
+                    <DownIcon_ :class="clsx('w-[16px] origin-center  cursor-pointer animate-pulse [&>path]:fill-[#00d9ff]', {
                         'rotate-180-css': isShowComment
                     })" />
                 </span>
+                <div v-if="!isShowComment">Show comment</div>
+                <div v-else>Close comment</div>
             </div>
             <div class="max-h-[200px]  overflow-y-scroll overflow-x-hidden w-full mt-[5px]" ref="commentRef">
                 <IndividualComment v-for="(i, idx) in comments" :comment="i" :key="idx" />
