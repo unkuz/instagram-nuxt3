@@ -100,11 +100,11 @@ const { key } = useForceRenderPerTime()
             <React :currentIdx="currentIdx" :has_liked="has_liked" :mediaArr="mediaArr" :id="id" :hasSaved="is_saved" />
             <LikeCommentCount :likeCount="like_count" :commentCount="comments.length" />
             <Caption :userName="user.username" :captionContent="caption_text" :tags="tags" />
-            <div class="m-[0px_0px_0px_0px] h-[18px] text-[0.7rem] text-gray-400" :key="key">
+            <div class="m-[0px_0px_0px_0px] h-[18px] text-[0.8rem] text-gray-400" :key="key">
                 {{ moment(created_at).fromNow() }}
             </div>
             <div @click="toggleShowComment" v-if="comments.length > 0"
-                class="w-full  flex justify-center text-[#00d9ff] select-none cursor-pointer">
+                class="w-full text-[0.8rem]  flex justify-center text-[#00d9ff] select-none cursor-pointer">
                 <span>
                     <DownIcon_ :class="clsx('w-[16px] origin-center animate-pulse [&>path]:fill-[#00d9ff]', {
                         'rotate-180-css': isShowComment
