@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     ],
     target: 'static',
     buildModules: ['@pinia/nuxt', '@nuxtjs/web-vitals'],
-    css: ['@/assets/css/index.css'],
+    css: ['@/assets/scss/index.scss'],
     image: {
       },
 

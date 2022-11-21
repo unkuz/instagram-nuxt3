@@ -47,6 +47,7 @@
     "nuxt-graphql-client": "^0.1.19",
     "pinia": "^2.0.23",
     "rxjs": "^8.0.0-alpha.5",
+    "sass": "^1.56.1",
     "tailwind-scrollbar-hide": "^1.1.7",
     "uuid": "^9.0.0",
     "vee-validate": "^4.7.2",
