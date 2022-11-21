@@ -12,8 +12,6 @@ import DownIcon_ from '@@/assets/svg/down_icon_458438i.svg';
 import clsx from 'classnames';
 import { useForceRenderPerTime } from '@@/composables'
 
-
-
 export interface IProps {
     created_at: string
     caption_text: string
@@ -106,9 +104,9 @@ const { key } = useForceRenderPerTime()
                 {{ moment(created_at).fromNow() }}
             </div>
             <div @click="toggleShowComment" v-if="comments.length > 0"
-                class="w-full  flex justify-center text-[#00d9ff]">
+                class="w-full  flex justify-center text-[#00d9ff] select-none cursor-pointer">
                 <span>
-                    <DownIcon_ :class="clsx('w-[16px] origin-center  cursor-pointer animate-pulse [&>path]:fill-[#00d9ff]', {
+                    <DownIcon_ :class="clsx('w-[16px] origin-center animate-pulse [&>path]:fill-[#00d9ff]', {
                         'rotate-180-css': isShowComment
                     })" />
                 </span>

@@ -2,12 +2,13 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev -p 9999",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "start": "nuxt start"
   },
   "devDependencies": {
+    "@nuxt/image": "^0.7.1",
     "@nuxt/test-utils-edge": "^3.0.0-rc.13-27777092.59d8c51",
     "@nuxtjs/html-validator": "^1.0.0",
     "@nuxtjs/supabase": "^0.1.28",

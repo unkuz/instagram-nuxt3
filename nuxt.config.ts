@@ -9,9 +9,14 @@ export default defineNuxtConfig({
         'magic-regexp/nuxt',
         '@nuxtjs/algolia',
         'nuxt-icon',
+        // '@nuxt/image'
+       
     ],
+    target: 'static',
     buildModules: ['@pinia/nuxt', '@nuxtjs/web-vitals'],
     css: ['@/assets/css/index.css'],
+    image: {
+      },
 
     vite: {
         plugins: [svgLoader({})],
