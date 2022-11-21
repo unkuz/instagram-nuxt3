@@ -1,4 +1,4 @@
-export const useForceRenderPerTime = (time: number = 1000) => {
+export const useForceRenderTimer = (time: number = 1000) => {
     const timer = ref<NodeJS.Timer>()
     const key = ref<number>(0)
 

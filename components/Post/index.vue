@@ -10,7 +10,7 @@ import IndividualComment from '@@/components/Post/IndividualComment.vue';
 import { gsap } from 'gsap';
 import DownIcon_ from '@@/assets/svg/down_icon_458438i.svg';
 import clsx from 'classnames';
-import { useForceRenderPerTime } from '@@/composables'
+import { useForceRenderTimer } from '@@/composables'
 
 export interface IProps {
     created_at: string
@@ -85,7 +85,7 @@ const toggleShowComment = () => {
     })
 }
 
-const { key } = useForceRenderPerTime()
+const { key } = useForceRenderTimer()
 
 
 </script>

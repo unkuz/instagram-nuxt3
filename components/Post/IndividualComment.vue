@@ -2,14 +2,14 @@
 import Avatar from '@@/components/Tiny/Avatar.vue';
 import { SizeAvatarEnum } from '@@/type';
 import moment from 'moment';
-import { useForceRenderPerTime } from '@@/composables';
+import { useForceRenderTimer } from '@@/composables';
 
 interface IProps {
     comment: any
 }
 defineProps<IProps>()
 
-const { key } = useForceRenderPerTime()
+const { key } = useForceRenderTimer()
 const { S } = SizeAvatarEnum
 </script>
 
