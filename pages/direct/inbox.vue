@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 definePageMeta({
-    layout:'main'
+    layout: 'main'
 })
 
 </script>
@@ -9,7 +9,7 @@ definePageMeta({
 
 <template>
     <div class="h-[500px] w-full bg-fuchsia-300">
-HAHAHAHHAHAHAHAHAHAJAHAJHAJAHJAHAJAHJAHAJHAJAHKDAHKDHAKHDKJAHDKHAKJHDKJAHDKJHAKJHDKAHDKJDKJ
+        This feature is still under development !!
     </div>
 </template>
 
