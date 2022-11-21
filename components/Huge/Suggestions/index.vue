@@ -12,6 +12,7 @@ interface IProps {
 defineProps<IProps>()
 
 const authStore = useAuthStore()
+const avatar = computed(() => authStore.data.avatar)
 
 const { M } = SizeAvatarEnum
 const authorText = 'cuzknothz'
@@ -21,7 +22,7 @@ const authorText = 'cuzknothz'
 <template>
     <div class="select-none" draggable="false">
         <div class="mt-[18px] mb-[22px] flex h-[56px] items-center justify-between">
-            <Avatar :size="M" :url="authStore.avatar" />
+            <Avatar :size="M" :url="avatar" />
             <div class="-ml-[70px]">
                 <p class="cursor-pointer font-medium">cuzknothz</p>
                 <p class="text-gray-600">cuzknothz</p>
@@ -51,7 +52,7 @@ const authorText = 'cuzknothz'
         </div>
 
         <div class="flex flex-col items-center space-y-2 text-[0.85rem]">
-            <div >© 2022 Instagram clone by</div>
+            <div>© 2022 Instagram clone by</div>
             <NuxtLink to="https://github.com/cuzknothz" target="_blank">
                 <div
                     class="cursor-pointer select-none font-august text-[1.25rem] uppercase tracking-wider text-black drop-shadow-md">

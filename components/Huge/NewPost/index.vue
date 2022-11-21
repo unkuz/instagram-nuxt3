@@ -12,8 +12,8 @@ const containerPreviewRef = ref<HTMLDivElement | null>(null)
 const boxRef = ref<HTMLDivElement | null>(null)
 const startPointX = ref<number>(0)
 
-const postFiles = computed<File[]>(() => postStore.getFiles)
-const listBolbs = computed<Blob[]>(() => postStore.getBlobs)
+const postFiles = computed<File[]>(() => postStore.files)
+const listBolbs = computed<Blob[]>(() => postStore.listBlobs)
 const isHasFile = computed<boolean>(() => Array.from(postFiles.value).length > 0)
 
 

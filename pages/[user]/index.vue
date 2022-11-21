@@ -19,9 +19,9 @@ const profileStore = useProfileStore()
 const authStore = useAuthStore()
 const isShowFollowing = computed(() => profileStore.isShowFollowing)
 const isShowFollowers = computed(() => profileStore.isShowFollowers)
-const currentSelect = computed(() => profileStore.getSelect)
-const avatar = computed(() => authStore.avatar)
-const coverImg = computed(() => authStore.coverImg)
+const currentSelect = computed(() => profileStore.select)
+const avatar = computed(() => authStore.data.avatar)
+const coverImg = computed(() => authStore.data.coverImg)
 
 const isSelect = (select) => currentSelect === select
 </script>

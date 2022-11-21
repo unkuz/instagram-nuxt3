@@ -5,6 +5,7 @@ import Stories from '@@/components/Stories/index.vue'
 import { IStory, ITimeLine, TSuggestion } from '@@/models'
 import { useStoriesStore, useSuggestionStore, useTimeLineStore } from '@@/store'
 import { useFetchCamel, useWindowResizeCallback } from '~~/composables'
+import {APP_API} from '@@/apis'
 
 definePageMeta({
     layout: 'main',
@@ -18,19 +19,16 @@ const suggestionStore = useSuggestionStore()
 
 
 const { data: _timeline } = await useFetch<ITimeLine[]>(
-    'https://mocki.io/v1/537ecd76-8c35-4894-be03-294592836a93'
+    APP_API.timeLine.list
 )
-
 const { data: _stories } = await useFetch<IStory[]>(
-    'https://mocki.io/v1/5e99de01-56f3-46a5-a0a0-477dcfd34beb'
+    APP_API.stories.list
 )
-
 const { data: _suggestions } = await useFetch<IStory[]>(
-    'https://mocki.io/v1/5e99de01-56f3-46a5-a0a0-477dcfd34beb'
+    APP_API.suggestions.list
 )
-
 const { data: _timelinez } = await useFetchCamel(
-    'https://mocki.io/v1/dc96749b-96d4-4656-b8a5-83e6f4dc0fda'
+    APP_API.timeLine.list
 )
 
 storiesStore.save(_stories.value ?? [])

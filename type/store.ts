@@ -3,4 +3,3 @@ export interface IStateStore<T> {
     hasErr: boolean,
     errors: {}
 }
-

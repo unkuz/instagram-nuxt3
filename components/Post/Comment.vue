@@ -40,8 +40,8 @@ const send = async () => {
     const idGen = uuidv4()
     await viewPostDetailStore.comment(id, {
         text: commentValueText.value,
-        userName: authStore.userName,
-        userImg: authStore.avatar,
+        userName: authStore.data.userName,
+        userImg: authStore.data.avatar,
         id: idGen
     })
     commentValueText.value = ''

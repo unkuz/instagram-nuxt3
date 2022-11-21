@@ -3,7 +3,7 @@ import { useProfileStore } from '@@/store'
 import { SELECT_TYPE } from '~~/constants/screens/account';
 
 const profileStore = useProfileStore()
-const currentSelect = computed<SELECT_TYPE>(() => profileStore.getSelect)
+const currentSelect = computed<SELECT_TYPE>(() => profileStore.select)
 
 watch(currentSelect, () => {})
 </script>

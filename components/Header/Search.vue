@@ -7,7 +7,7 @@ import clsx from 'classnames';
 const searchStore = useSearchStore()
 const searchRef = ref<HTMLInputElement | null>(null)
 const inputSearch = ref<HTMLInputElement | null>(null)
-const searchValue = computed<string>(() => searchStore.getValue)
+const searchValue = computed<string>(() => searchStore.value)
 const isSearchActive = computed<boolean>(() => searchStore.isFocus)
 const isSearchHaveValue = computed<boolean>(() => searchStore.getIsSearchHaveValue)
 

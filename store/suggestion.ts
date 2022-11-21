@@ -7,22 +7,15 @@ export interface IState {
   errors: Record<string, string>
 }
 
-const state = () => ({
-  data: [],
-  hasErr: false,
-  errors: {},
-})
-
-const getters = {}
-
-const actions = {
-  save(data: TSuggestion[]) {
-    this.data = data
-  },
-}
 
 export const useSuggestionStore = defineStore('suggestion', {
-  state,
-  getters,
-  actions,
+  state:():IState=>({
+    data: [],
+    hasErr: false,
+    errors: {},
+  }),
+  getters:{},
+  actions:{save(data: TSuggestion[]) {
+    this.data = data
+  },},
 })
