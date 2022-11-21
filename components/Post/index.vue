@@ -77,15 +77,25 @@ const currentIdx = ref<number>(0)
 const setCurrent = (value: number) => (currentIdx.value = value)
 const mediaArr = computed(() => props.carousel_media.images.concat(props.carousel_media.videos))
 
-const toggleShowComment = () => {
-    isShowComment.value = !isShowComment.value
+
+const animatitonComment = () => {
     gsap.to(commentRef.value, {
         height: isShowComment.value ? 200 : 0,
         duration: 0.2
     })
 }
 
+const toggleShowComment = () => {
+    isShowComment.value = !isShowComment.value
+    animatitonComment()
+}
+
 const { key } = useForceRenderTimer()
+
+const scrollToComment = () => {
+    isShowComment.value = true
+    animatitonComment()
+}
 
 
 </script>
@@ -98,7 +108,8 @@ const { key } = useForceRenderTimer()
             @current-index-carousel="setCurrent($event)" :has_liked="has_liked" :id="id" />
         <div class="px-[16px] text-xs md:text-sm">
             <React :currentIdx="currentIdx" :has_liked="has_liked" :mediaArr="mediaArr" :id="id" :hasSaved="is_saved" />
-            <LikeCommentCount :likeCount="like_count" :commentCount="comments.length" />
+            <LikeCommentCount :likeCount="like_count" :commentCount="comments.length"
+                @scrollToComment="scrollToComment" />
             <Caption :userName="user.username" :captionContent="caption_text" :tags="tags" />
             <div class="m-[0px_0px_0px_0px] h-[18px] text-[0.8rem] text-gray-400" :key="key">
                 {{ moment(created_at).fromNow() }}
