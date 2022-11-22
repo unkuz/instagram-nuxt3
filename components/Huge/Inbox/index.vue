@@ -7,7 +7,7 @@ import { SizeAvatarEnum } from '@@/type'
 import StatusUser from '@@/components/Tiny/StatusUser.vue';
 
 
-const { S,T } = SizeAvatarEnum
+const { S, T, M } = SizeAvatarEnum
 
 
 enum InboxTypeEnum {
@@ -33,7 +33,7 @@ const setExpand = (section: InboxTypeEnum) => {
 </script>
 
 <template>
-    <div class=" text-[0.8rem] text-white  h-[600px] p-[20px] pb-0 bg-[#5050505c]">
+    <div class=" text-[0.85rem] text-white  h-[80vh] min-h-[500px] p-[20px] pb-0 bg-[#5050505c]">
         <div class="flex w-full h-full gap-[20px]">
             <div class="w-[220px] h-[500px] ">
                 <Search />
@@ -58,7 +58,9 @@ const setExpand = (section: InboxTypeEnum) => {
                                     <StatusUser :isActive="true" />
                                 </div>
 
-                                <div class="line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa assumenda, excepturi vel non facere commodi delectus ipsam explicabo quaerat rem aspernatur placeat nobis veritatis quas quibusdam officia illum fugiat voluptatem?
+                                <div class="line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+                                    assumenda, excepturi vel non facere commodi delectus ipsam explicabo quaerat rem
+                                    aspernatur placeat nobis veritatis quas quibusdam officia illum fugiat voluptatem?
                                 </div>
                             </div>
                             <p class="text-[0.7rem]">12:30</p>
@@ -67,8 +69,8 @@ const setExpand = (section: InboxTypeEnum) => {
                 </div>
             </div>
             <div class="flex-1 bg-[#4f4f4f7c] rounded-t-[10px] overflow-hidden relative shadow-xl">
-                <div class="h-[40px] bg-black/60 px-[10px] flex items-center">
-                    <Avatar :size="T" url="/image/91480011.jpg" />
+                <div class="h-[60px] bg-black/60 px-[10px] flex items-center">
+                    <Avatar :size="S" url="/image/91480011.jpg" />
                 </div>
                 <div
                     class="absolute shadow-xl bottom-[10px] w-[90%] h-[40px] px-[10px] bg-black rounded-[10px] flex justify-between left-1/2 -translate-x-1/2">
@@ -103,8 +105,14 @@ const setExpand = (section: InboxTypeEnum) => {
                         <div class="h-[30px] w-[30px] bg-purple-500 rounded-[10px]"></div>
                         <div class="h-[30px] w-[30px] bg-purple-500 rounded-[10px]"></div>
                     </div>
-                    <p class="line-clamp-5 mt-[10px] text-[0.75rem]">Hello everybody !🍕🍕🍕 <br />
+                    <p class="line-clamp-5 mt-[10px] text-[0.8rem]">Hello everybody !🍕🍕🍕 <br />
                         Our company looking JavaScript Developer</p>
+                </div>
+                <div class="mt-[10px] flex flex-col gap-[10px]">
+                    <div class="w-full h-[60px] rounded-[10px] bg-gray-400"></div>
+                    <div class="w-full h-[60px] rounded-[10px] bg-gray-400"></div>
+                    <div class="w-full h-[60px] rounded-[10px] bg-gray-400"></div>
+                    <div class="w-full h-[60px] rounded-[10px] bg-gray-400"></div>
                 </div>
             </div>
         </div>
