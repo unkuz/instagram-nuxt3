@@ -26,6 +26,7 @@ const isShowProfile = ref<boolean>(false)
 useClickOutSide(accountPopRef, () => {
     isShowProfile.value = false
 })
+
 useClickOutSide(activityFeedPopRef, () => {
     isShowProfile.value = false
 })

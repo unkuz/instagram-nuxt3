@@ -28,13 +28,8 @@ const setExpand = (section: InboxTypeEnum) => {
     else {
         leftExpan.value = section
     }
-
 }
-
-
-
 </script>
-
 
 <template>
     <div class=" text-[0.8rem] text-white bg-[#0000004f] h-[600px] p-[20px] pb-0">
@@ -72,12 +67,10 @@ const setExpand = (section: InboxTypeEnum) => {
             </div>
             <div class="flex-1 bg-[#4f4f4f7c] rounded-t-[10px] overflow-hidden">
                 <div class="h-[40px] bg-black/60"></div>
-
             </div>
         </div>
     </div>
 </template>
-
 
 <style lang="css" scoped>
 .rotate-180-css {

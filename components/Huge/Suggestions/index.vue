@@ -16,7 +16,6 @@ const avatar = computed(() => authStore.data.avatar)
 
 const { M } = SizeAvatarEnum
 const authorText = 'cuzknothz'
-
 </script>
 
 <template>

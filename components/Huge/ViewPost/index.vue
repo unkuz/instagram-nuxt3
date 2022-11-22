@@ -30,9 +30,6 @@ onMounted(() => {
     viewPostRef.value!.style.opacity = '1'
   }, 200)
 })
-
-
-
 </script>
 
 <template>

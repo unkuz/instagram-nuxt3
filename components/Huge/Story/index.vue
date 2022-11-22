@@ -5,7 +5,6 @@ import { useStoryStore } from '@@/store'
 import clsx from 'classnames'
 
 const storyStore = useStoryStore()
-
 const barRef = ref<HTMLDivElement | null>(null)
 const containerBar = ref<HTMLDivElement | null>(null)
 const videoRef = ref<HTMLVideoElement | null>(null)
