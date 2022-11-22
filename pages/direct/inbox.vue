@@ -1,16 +1,17 @@
 <script setup lang="ts">
+import Inbox from '@@/components/Huge/Inbox/index.vue'
 
 definePageMeta({
-    layout: 'main'
+    layout:'main'
 })
+
+
 
 </script>
 
 
 <template>
-    <div class="h-[500px] w-full bg-fuchsia-300">
-        This feature is still under development !!
-    </div>
+    <Inbox/>
 </template>
 
 
