@@ -5,7 +5,7 @@ import { emoji } from '@@/constants'
 <template>
   <div>
     <div
-      class="absolute -top-[310px] h-[300px] overflow-y-scroll border-[1px] border-gray-300 bg-white"
+      class="absolute right-1/2 translate-x-[60px] -top-[310px] h-[300px] overflow-y-scroll border-[1px] border-gray-300 bg-white z-50"
     >
       <div v-for="(topic, idx) in emoji" :key="idx">
         <p class="mt-[10px] h-[20px] pl-[10px] text-[0.8rem] font-[500]">{{ topic.label }}</p>
