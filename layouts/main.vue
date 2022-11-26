@@ -15,7 +15,7 @@ const isShowNavBarBottom = computed(
     <div>
         <Header />
         <Extension/>
-        <div class="mx-auto mt-[50px] w-full overflow-hidden sm:mt-[84px] sm:overflow-visible lg:w-[935px]">
+        <div class="mx-auto mt-[50px] w-screen overflow-hidden sm:mt-[84px] sm:overflow-visible lg:w-[935px]">
             <slot />
         </div>
         <Navbarbottom v-if="isShowNavBarBottom" />
