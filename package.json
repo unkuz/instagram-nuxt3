@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@nuxt/image": "^0.7.1",
+    "@nuxt/image-edge": "^1.0.0-27821548.ab054e4",
     "@nuxt/test-utils-edge": "3.0.1-rc.0-27821553.ab125bd",
     "@nuxtjs/html-validator": "^1.1.1",
     "@nuxtjs/supabase": "^0.3.0",
@@ -35,6 +36,7 @@
     "@sentry/tracing": "^7.21.1",
     "@twicpics/components": "^0.13.1",
     "@vueuse/core": "^9.6.0",
+    "add": "^2.0.6",
     "axios": "^1.2.0",
     "camelcase-keys": "^8.0.2",
     "classnames": "^2.3.2",
@@ -52,6 +54,7 @@
     "tailwind-scrollbar-hide": "^1.1.7",
     "uuid": "^9.0.0",
     "vee-validate": "^4.7.3",
-    "vite-svg-loader": "^3.6.0"
+    "vite-svg-loader": "^3.6.0",
+    "yarn": "^1.22.19"
   }
 }

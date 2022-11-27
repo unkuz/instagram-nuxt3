@@ -1832,6 +1832,23 @@
   resolved "https://registry.npmjs.org/@nuxt/devalue/-/devalue-2.0.0.tgz"
   integrity sha512-YBI/6o2EBz02tdEJRBK8xkt3zvOFOWlLBf7WKYGBsSYSRtjjgrqPe2skp6VLLmKx5WbHHDNcW+6oACaurxGzeA==
 
+"@nuxt/image-edge@^1.0.0-27821548.ab054e4":
+  version "1.0.0-27821548.ab054e4"
+  resolved "https://registry.yarnpkg.com/@nuxt/image-edge/-/image-edge-1.0.0-27821548.ab054e4.tgz#7146f5b6a56142982ba23a148f1416af7423299e"
+  integrity sha512-1QSKE7HAIk8b/LeC4ff52Tsx0Z9M0V7xg+QqQh/l6jwkMlzvi6kqVXDT1AeiCwXOQX6IaOhASaEX6AgMx8jr3g==
+  dependencies:
+    "@nuxt/kit" "^3.0.0"
+    consola "^2.15.3"
+    defu "^6.1.1"
+    h3 "^1.0.1"
+    image-meta "^0.1.1"
+    node-fetch-native "^1.0.1"
+    ohash "^1.0.0"
+    pathe "^1.0.0"
+    ufo "^1.0.0"
+  optionalDependencies:
+    ipx "1.0.0-2"
+
 "@nuxt/image@^0.7.1":
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/@nuxt/image/-/image-0.7.1.tgz#3d64f76785c3ecd8983202d814cc5ed5c6dfb96f"
@@ -3026,6 +3043,11 @@ acorn@^8.8.1:
   version "8.8.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.1.tgz#0a3f9cbecc4ec3bea6f0a80b66ae8dd2da250b73"
   integrity sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==
+
+add@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/add/-/add-2.0.6.tgz#248f0a9f6e5a528ef2295dbeec30532130ae2235"
+  integrity sha512-j5QzrmsokwWWp6kUcJQySpbG+xfOBqqKnup3OIk1pz+kB/80SLorZ9V8zHFLO92Lcd+hbvq8bT+zOGoPkmBV0Q==
 
 agent-base@6, agent-base@^6.0.0, agent-base@^6.0.2:
   version "6.0.2"
@@ -6156,6 +6178,23 @@ ip@^2.0.0:
   resolved "https://registry.yarnpkg.com/ip/-/ip-2.0.0.tgz#4cf4ab182fee2314c75ede1276f8c80b479936da"
   integrity sha512-WKa+XuLG1A1R0UWhl2+1XQSi+fZWMsYKffMZTTYsiZaUD8k2yDAj5atimTUD2TZkyCkNEeYE5NhFZmupOGtjYQ==
 
+ipx@1.0.0-2:
+  version "1.0.0-2"
+  resolved "https://registry.yarnpkg.com/ipx/-/ipx-1.0.0-2.tgz#e26b40318c9dbc635d8f857c8f981199de4dd2d3"
+  integrity sha512-WQJA3oYPavbNUNKU9wyvMq34PvWLaxsio2woPXVYhxDQ8W/5OaZQusrbof3rXe3FZ4oib4/L9YYSN1D71Pq7nA==
+  dependencies:
+    consola "^2.15.3"
+    defu "^6.1.1"
+    destr "^1.2.1"
+    etag "^1.8.1"
+    image-meta "^0.1.1"
+    listhen "^1.0.0"
+    node-fetch-native "^1.0.1"
+    pathe "^1.0.0"
+    sharp "^0.31.2"
+    ufo "^1.0.0"
+    xss "^1.0.14"
+
 ipx@^0.9.9:
   version "0.9.11"
   resolved "https://registry.yarnpkg.com/ipx/-/ipx-0.9.11.tgz#89bbeffc6f62df80dfd0f8fe1e68c6638d09251c"
@@ -9184,6 +9223,20 @@ sharp@^0.30.7:
     tar-fs "^2.1.1"
     tunnel-agent "^0.6.0"
 
+sharp@^0.31.2:
+  version "0.31.2"
+  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.31.2.tgz#a8411c80512027f5a452b76d599268760c4e5dfa"
+  integrity sha512-DUdNVEXgS5A97cTagSLIIp8dUZ/lZtk78iNVZgHdHbx1qnQR7JAHY0BnXnwwH39Iw+VKhO08CTYhIg0p98vQ5Q==
+  dependencies:
+    color "^4.2.3"
+    detect-libc "^2.0.1"
+    node-addon-api "^5.0.0"
+    prebuild-install "^7.1.1"
+    semver "^7.3.8"
+    simple-get "^4.0.1"
+    tar-fs "^2.1.1"
+    tunnel-agent "^0.6.0"
+
 shebang-command@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/shebang-command/-/shebang-command-2.0.0.tgz"
@@ -10688,6 +10741,11 @@ yargs@^17.2.1, yargs@^17.5.1:
     string-width "^4.2.3"
     y18n "^5.0.5"
     yargs-parser "^21.0.0"
+
+yarn@^1.22.19:
+  version "1.22.19"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.19.tgz#4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
+  integrity sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ==
 
 yauzl@^2.10.0:
   version "2.10.0"

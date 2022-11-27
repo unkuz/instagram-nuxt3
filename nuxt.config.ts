@@ -4,19 +4,20 @@ import svgLoader from 'vite-svg-loader'
 export default defineNuxtConfig({
     modules: [
         '@nuxtjs/tailwindcss',
-        // '@nuxtjs/robots',
         '@twicpics/components/nuxt3',
         'magic-regexp/nuxt',
         '@nuxtjs/algolia',
         'nuxt-icon',
-        '@pinia/nuxt'
-       
+        '@pinia/nuxt',
+        '@nuxt/image-edge',
+        // '@nuxtjs/robots'
+
     ],
     target: 'static',
     buildModules: ['@nuxtjs/web-vitals'],
     css: ['@/assets/scss/index.scss'],
     image: {
-      },
+    },
 
     vite: {
         plugins: [svgLoader({})],
