@@ -34,7 +34,7 @@ const { S } = SizeAvatarEnum
                     <p class="cursor-pointer text-red-500">Reply</p>
                 </div>
             </div>
-            <div class="h-full w-[2px] bg-[#88ff18] absolute top-0 left-0 -translate-x-[0px]">
+            <div class="h-full w-[3px] bg-[#88ff18] absolute top-0 left-0 -translate-x-[0px]">
             </div>
         </div>
         <div v-for="({ user, created_at, text, comment_like_count }, idx) in comment.reply" :key="idx"
@@ -57,7 +57,7 @@ const { S } = SizeAvatarEnum
                     <p class="cursor-pointer text-red-500   ">Reply</p>
                 </div>
             </div>
-            <div class="h-full w-[2px] bg-[#e0a0fa] absolute top-0 left-0 -translate-x-[0px]">
+            <div class="h-full w-[3px] bg-[#e0a0fa] absolute top-0 left-0 -translate-x-[0px]">
             </div>
         </div>
     </div>

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { SizeAvatarEnum } from '@@/type'
-import Avatar from '../Tiny/Avatar.vue'
+import { SizeAvatarEnum } from '@@/type';
+import { stopOtherVideoPlaying } from '~~/helpers';
+import Avatar from '../Tiny/Avatar.vue';
 
 const { M } = SizeAvatarEnum
 
@@ -15,7 +16,7 @@ defineProps<IProps>()
 
 <template>
     <NuxtLink :to="`/_/stories/${id}`">
-        <div
+        <div @click="stopOtherVideoPlaying"
             class="mx-[8px] inline-block max-w-[74px] select-none overflow-hidden text-ellipsis whitespace-nowrap sm:cursor-pointer">
             <div
                 class="mx-auto flex aspect-square h-[66px] w-[66px] flex-col items-center overflow-hidden rounded-[50%] bg-gradient-to-bl from-[#cc00ff]/80 to-[#1bb7ff]/80 p-[3px]">

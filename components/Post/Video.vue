@@ -5,6 +5,7 @@ import { useDoubleClick, usePercentVideo } from '@@/composables'
 import { useTimeLineStore } from '@@/store'
 import clsx from 'classnames'
 import { gsap } from 'gsap'
+import { stopOtherVideoPlaying } from '~~/helpers'
 
 interface IProps {
     video: any
@@ -43,10 +44,7 @@ const updateTime = () => {
 }
 
 const play = () => {
-    const allVideo = document.querySelectorAll('video')
-    allVideo.forEach((video) => {
-        video.pause()
-    })
+   stopOtherVideoPlaying()
     videoRef.value && videoRef.value.play()
 }
 

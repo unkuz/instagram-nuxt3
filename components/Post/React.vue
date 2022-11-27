@@ -5,6 +5,7 @@ import ShareIcon_ from '@@/assets/svg/share_icon.svg'
 import ViewPostIcon_ from '@@/assets/svg/view_post_icon.svg'
 import { useTimeLineStore } from '@@/store'
 import clsx from 'classnames'
+import { stopOtherVideoPlaying } from '~~/helpers'
 import UnlikeIcon from '../Tiny/UnlikeIcon.vue'
 import PlusOne from './PlusOne.vue';
 
@@ -36,7 +37,7 @@ const timelineStore = useTimeLineStore()
                 
             </div>
             <NuxtLink :to="`/_/p/${id}`">
-                <ViewPostIcon_ />
+                <ViewPostIcon_ @click="stopOtherVideoPlaying" />
             </NuxtLink>
             <ShareIcon_ />
         </div>
