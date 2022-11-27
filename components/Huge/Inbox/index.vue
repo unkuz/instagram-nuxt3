@@ -2,9 +2,9 @@
 import Search from '@@/components/Huge/Inbox/Search/index.vue';
 import DownIcon_ from '@@/assets/svg/down_icon_458438i.svg';
 import clsx from 'classnames';
-import Avatar from '@@/components/Tiny/Avatar.vue';
+import Avatar from '@@/components/Atom/Avatar.vue';
 import { SizeAvatarEnum } from '@@/type'
-import StatusUser from '@@/components/Tiny/StatusUser.vue';
+import StatusUser from '@@/components/Atom/StatusUser.vue';
 
 
 const { S, T, M } = SizeAvatarEnum

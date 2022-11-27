@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Button from '@@/components/Tiny/Button.vue';
-import clsx from 'classnames';
 
 interface IProps {
     userName: string;

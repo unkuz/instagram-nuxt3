@@ -1,13 +1,8 @@
 <script lang="ts" setup>
-import DirectIcon_ from '@@/assets/svg/direct_icon.svg'
-import EmojiIcon_ from '@@/assets/svg/experiment.svg'
-import ExperimentFilledIcon_ from '@@/assets/svg/experiment_filled.svg'
 import Emoji from '@@/components/Utils/Emoji.vue'
 import { useClickOutSide } from '@@/composables'
 import { useAuthStore, usePostDetailStore } from '@@/store'
-import { gsap, TimelineLite } from 'gsap'
 import { v4 as uuidv4 } from 'uuid'
-import Button from '@@/components/Tiny/Button.vue';
 
 
 interface IProps {

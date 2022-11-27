@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Avatar from '@@/components/Tiny/Avatar.vue'
+import Avatar from '@@/components/Atom/Avatar.vue'
 import { TSuggestion } from '@@/models'
 import { useAuthStore } from '@@/store'
 import { SizeAvatarEnum } from '@@/type'

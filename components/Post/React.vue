@@ -6,7 +6,7 @@ import ViewPostIcon_ from '@@/assets/svg/view_post_icon.svg'
 import { useTimeLineStore } from '@@/store'
 import clsx from 'classnames'
 import { stopOtherVideoPlaying } from '~~/helpers'
-import UnlikeIcon from '../Tiny/UnlikeIcon.vue'
+import UnlikeIcon from '@@/components/Atom/UnlikeIcon.vue'
 import PlusOne from './PlusOne.vue';
 
 interface IProps {

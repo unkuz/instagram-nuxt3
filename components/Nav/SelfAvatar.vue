@@ -2,7 +2,7 @@
 import { useAuthStore } from '@@/store'
 import { SizeAvatarEnum } from '@@/type'
 import clsx from 'classnames'
-import Avatar from '../Tiny/Avatar.vue'
+import Avatar from '../Atom/Avatar.vue'
 
 interface IconProps {
   isSelect: boolean
