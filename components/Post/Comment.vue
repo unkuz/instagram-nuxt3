@@ -17,7 +17,6 @@ interface IProps {
 const { id } = defineProps<IProps>()
 
 const emojiRef = ref<HTMLDivElement | null>(null)
-const inputRef = ref<HTMLInputElement | null>(null)
 const isShowEmoji = ref<boolean>(false)
 const textBoxRef = ref<HTMLTextAreaElement | null>(null)
 const commentValueText = ref<string>('')
@@ -51,15 +50,20 @@ const send = async () => {
 </script>
 
 <template>
-  <div class="w-[100%] mx-auto !h-[40px] bg-[#88888836] rounded-[10px] relative  m-[20px_0px_20px_0px]" @click="inputRef?.focus()">
-    <input type="text" class="mx-auto h-full focus:outline-none bg-transparent absolute w-[85%] left-1/2 -translate-x-[236px]" ref="inputRef" v-model="commentValueText"/>
-    <div class="absolute top-1/2 -translate-y-1/2 right-[10px] flex items-center gap-[5px]">
-        <div ref="emojiRef">
-            <span @click="toggleShowEmoji"><EmojiIcon_ class="w-[20px] cursor-pointer"/></span>
-            <Emoji v-if="isShowEmoji" @emojiAdd="emojiAdd"/>
+    <div class="flex w-full items-center justify-between sm:mb-[5px]">
+        <div class="relative" ref="emojiRef">
+            <Emoji v-if="isShowEmoji" @emoji-add="emojiAdd" />
+            <div @click="toggleShowEmoji" class="cursor-pointer text-[#00aeff] font-[500] text-[0.8rem] active:text-[#8bff48]">
+                Emoji
+            </div>
         </div>
-        
-        <span><DirectIcon_ class="w-[15px] cursor-pointer" @click="send"/></span>
+        <textarea @keyup.enter="send" ref="textBoxRef" rows="1" spellcheck="false"
+            class="m-auto my-[10px] h-[38px]  block w-[83%] cursor-text resize-none  rounded-[5px] border-[1px] border-gray-200 bg-transparent p-[5px] shadow-sm shadow-gray-200 placeholder:text-center placeholder:text-[0.8rem] focus:outline-none lg:w-[88%]"
+            v-model="commentValueText">
+      {{ commentValueText }}
+    </textarea>
+        <div @click="send" class=" cursor-pointer text-[#00aeff] font-[500] text-[0.8rem] active:text-[#8bff48]">
+            Send
+        </div>
     </div>
-  </div>
 </template>

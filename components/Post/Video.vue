@@ -89,13 +89,11 @@ onMounted(() => {
     })
 })
 
-
-
 </script>
 
 <template>
     <div ref="containerRef" class="group relative min-w-full overflow-hidden">
-        <video ref="videoRef"  class="video w-full  block bg-black" :src="video.src" type="video/mp4" 
+        <video ref="videoRef"  class="video w-full  block bg-black" :src="video.src" type="video/mp4"  
             playsinline crossorigin="anonymous" loop />
 
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
