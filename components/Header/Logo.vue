@@ -13,7 +13,7 @@ const handleSelect = (section: SECTION) => {
     <NuxtLink to="/">
         <div @click="handleSelect(SECTION.HOME)"
             class="mt-[7px] h-[29px] w-[103px] cursor-pointer select-none bg-cover bg-center" :style="{
-              backgroundImage: `url(${'https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png'})`,
+              backgroundImage: `url(${'/icon/1b47f9d0e595.png'})`,
             }"></div>
     </NuxtLink>
 </template>
