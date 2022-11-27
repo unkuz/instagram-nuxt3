@@ -13,6 +13,9 @@ export default defineNuxtConfig({
         // '@nuxtjs/robots'
 
     ],
+    app: {
+        pageTransition: { name: 'page', mode: 'out-in' }
+    },
     target: 'static',
     buildModules: ['@nuxtjs/web-vitals'],
     css: ['@/assets/scss/index.scss'],

@@ -9,6 +9,7 @@ import {APP_API} from '@@/apis'
 
 definePageMeta({
     layout: 'main',
+     pageTransition: false
 })
 
 const rightRef = ref<HTMLElement | null>(null)
@@ -39,7 +40,11 @@ const timeline = computed(() => timeLineStore.data)
 const stories = computed(() => storiesStore.data)
 const suggestion = computed<TSuggestion[]>(() => suggestionStore.data)
 
-const calcLeftSuggestion = () => rightRef.value!.style.left = `${leftRef.value?.getClientRects()[0].left! + leftRef.value?.clientWidth! + 28}px`
+const calcLeftSuggestion = () =>{
+    if(rightRef.value && leftRef.value && leftRef.value.getClientRects()[0]){
+        rightRef.value.style.left = `${leftRef.value?.getClientRects()[0].left + leftRef.value.clientWidth! + 28}px`
+    }
+} 
 
 onMounted(() => {
     leftRef.value && calcLeftSuggestion()
