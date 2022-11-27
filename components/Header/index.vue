@@ -57,7 +57,7 @@ const handleSelect = (section: SECTION) => {
                     </NuxtLink>
                 </div>
                 <div class="ml-[22px] md:ml-0" @click="handleSelect(SECTION.MESSENGER)">
-                    <NuxtLink to="/direct/inbox/">
+                    <NuxtLink to="/inbox/">
                         <Messenger :isSelect="section === SECTION.MESSENGER" :hasNew="true" />
                     </NuxtLink>
                 </div>

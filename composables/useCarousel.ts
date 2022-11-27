@@ -10,10 +10,8 @@ export const useCarousel = (containerMediaRef: Ref<HTMLDivElement | null>) => {
             gsap.to(containerMediaRef.value, {
                 translateX: -containerMediaRef.value.offsetWidth * current.value,
                 duration: 0.2,
-                ease: "back.out(1.7)"
             })
         }
-
     }
 
     useWindowResizeCallback(transition)
@@ -27,7 +25,6 @@ export const useCarousel = (containerMediaRef: Ref<HTMLDivElement | null>) => {
             }
             current.value += 1
         }
-
     }
 
     const prev = () => {

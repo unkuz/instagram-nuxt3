@@ -82,7 +82,7 @@ export const usePostDetailStore = defineStore('post~detail', {
             }
         },
         comment(id, { text, userName, userImg, id: commentId }) {
-            this.post.comments.push({
+            this.post.comments.unshift({
                 text: text,
                 created_at: new Date().getTime(),
                 user: {

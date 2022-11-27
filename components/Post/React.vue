@@ -10,7 +10,7 @@ import UnlikeIcon from '../Tiny/UnlikeIcon.vue'
 import PlusOne from './PlusOne.vue';
 
 interface IProps {
-    has_liked: boolean
+    hasLiked: boolean
     currentIdx: number
     mediaArr: any
     id: any
@@ -30,11 +30,13 @@ const timelineStore = useTimeLineStore()
     })">
         <div class="flex h-full w-full items-center space-x-[10px]">
             <div @click="timelineStore.setToggleLike(id)" class="relative">
-                <div  v-if="has_liked">  <PlusOne/>   <UnlikeIcon /></div>
-            
-                <div v-else> <LikeIcon_  /></div>
-               
-                
+                <div v-if="hasLiked">
+                    <PlusOne />
+                    <UnlikeIcon />
+                </div>
+                <div v-else>
+                    <LikeIcon_ />
+                </div>
             </div>
             <NuxtLink :to="`/_/p/${id}`">
                 <ViewPostIcon_ @click="stopOtherVideoPlaying" />

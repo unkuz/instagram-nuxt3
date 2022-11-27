@@ -86,11 +86,11 @@ const scrollToComment = () => {
 <template>
     <article ref="postRef" class="mb-[24px] w-full border-gray-200 shadow-gray-200 md:border-[1px] md:shadow-sm">
 
-        <Head :profile_pic_url="user.profile_pic_url" :username="user.username" />
-        <Carousel :images="carousel_media.images" :videos="carousel_media.videos"
-            @current-index-carousel="setCurrent($event)" :has_liked="has_liked" :id="id" />
+        <Head :avatar="user.profile_pic_url" :userName="user.username" />
+        <Carousel :images="carousel_media.images" :videos="carousel_media.videos" :hasSaved="is_saved"
+            @currentIndexCarousel="setCurrent($event)" :hasLiked="has_liked" :id="id" />
         <div class="px-[16px] text-xs md:text-sm" >
-            <React :currentIdx="currentIdx" :has_liked="has_liked" :mediaArr="mediaArr" :id="id" :hasSaved="is_saved" />
+            <React :currentIdx="currentIdx" :hasLiked="has_liked" :mediaArr="mediaArr" :id="id" :hasSaved="is_saved" />
             <LikeCommentCount :likeCount="like_count" :commentCount="comments.length"
                 @scrollToComment="scrollToComment" />
             <Caption :userName="user.username" :captionContent="caption_text" :tags="tags" />

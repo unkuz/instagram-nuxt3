@@ -39,7 +39,6 @@ const handleSelect = (section: SECTION) => {
                     </div>
                 </span>
             </div>
-
             <hr />
             <NuxtLink to='/login/'>
                 <div @click="handleSelect(SECTION.SELF)"
