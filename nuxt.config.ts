@@ -17,6 +17,16 @@ export default defineNuxtConfig({
     buildModules: ['@nuxtjs/web-vitals'],
     css: ['@/assets/scss/index.scss'],
     image: {
+        presets: {
+            // cover: {
+            //     modifiers: {
+            //         fit: "cover",
+            //         format: "jpg",
+            //         width: 300,
+            //         height: 300,
+            //     },
+            // },
+        },
     },
 
     vite: {
