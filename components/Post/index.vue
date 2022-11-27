@@ -89,7 +89,7 @@ const scrollToComment = () => {
         <Head :profile_pic_url="user.profile_pic_url" :username="user.username" />
         <Carousel :images="carousel_media.images" :videos="carousel_media.videos"
             @current-index-carousel="setCurrent($event)" :has_liked="has_liked" :id="id" />
-        <div class="px-[16px] text-xs md:text-sm">
+        <div class="px-[16px] text-xs md:text-sm" >
             <React :currentIdx="currentIdx" :has_liked="has_liked" :mediaArr="mediaArr" :id="id" :hasSaved="is_saved" />
             <LikeCommentCount :likeCount="like_count" :commentCount="comments.length"
                 @scrollToComment="scrollToComment" />
@@ -106,8 +106,3 @@ const scrollToComment = () => {
         </div>
     </article>
 </template>
-<style lang="css" scoped>
-.rotate-180-css {
-    rotate: 180deg;
-}
-</style>

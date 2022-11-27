@@ -88,7 +88,6 @@ onMounted(() => {
         }
     })
 })
-
 </script>
 
 <template>
@@ -108,7 +107,7 @@ onMounted(() => {
                 <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-[#cfc3c3c7]" />
             </div>
         </div>
-        <div :class="clsx('absolute bottom-0  h-[4px] hover:bg-[#45ff2077] [&>div]:bg-[#2fff1c]  w-full cursor-pointer bg-transparent', {
+        <div :class="clsx('absolute bottom-0  h-[4px] hover:bg-[#45ff2077] [&>div]:bg-[#5cff1c]  w-full cursor-pointer bg-transparent', {
             'h-[8px] [&>div]:bg-[#1cbfff]': isFullScreen
         })">
             <div ref="progressBarRef" class="h-full w-0"></div>
