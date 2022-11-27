@@ -3,9 +3,7 @@ import Explore from '@@/components/Explore/index.vue'
 import { useExploreStore } from '@@/store'
 import _ from 'lodash';
 
-definePageMeta({
-    layout: 'main',
-})
+
 
 const exploreStore = useExploreStore()
 

@@ -8,7 +8,6 @@ import { useStoriesStore, useSuggestionStore, useTimeLineStore } from '@@/store'
 import { useFetchCamel, useWindowResizeCallback } from '~~/composables'
 
 definePageMeta({
-    layout: 'main',
      pageTransition: false
 })
 

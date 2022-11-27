@@ -10,9 +10,7 @@ import { SELECT_TYPE } from '@@/constants/screens/account'
 import { useAuthStore, useProfileStore } from '@@/store'
 import { SizeAvatarEnum } from '@@/type'
 
-definePageMeta({
-  layout: 'main',
-})
+
 
 const { L } = SizeAvatarEnum
 const profileStore = useProfileStore()
