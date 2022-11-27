@@ -5,6 +5,7 @@ import Prelude from '@@/components/Utils/Prelude.vue'
 import { usePrelude, useResizeWindow } from '@@/composables'
 import { SECTION } from '@@/constants'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
+import Loading from '@@/components/Atom/Loading.vue';
 
 const darkMode = ref(true)
 
@@ -68,6 +69,10 @@ watch(isDarkMode, (value) => {
     }
 })
 
+const nuxtApp = useNuxtApp()
+nuxtApp.hook('page:start', () => { console.log("page:start"); })
+nuxtApp.hook('page:finish', () => { console.log("page:finish"); })
+
 
 </script>
 
@@ -76,6 +81,7 @@ watch(isDarkMode, (value) => {
     <div class="scroll-smooth font-quicksan selection:bg-[#000000] selection:text-white">
         <NuxtLayout>
             <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" />
+            <Loading/>
             <NuxtPage />
         </NuxtLayout>
         <Prelude v-if="isShowPrelude" />
@@ -87,11 +93,12 @@ watch(isDarkMode, (value) => {
 <style>
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.4s;
+    transition: all 0.4s;
 }
+
 .page-enter-from,
 .page-leave-to {
-  opacity: 0;
-  filter: blur(1rem);
+    opacity: 0;
+    filter: blur(1rem);
 }
 </style>
