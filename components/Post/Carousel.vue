@@ -67,7 +67,7 @@ watch([() => hasSaved, () => hasLiked], () => {
             <Unlike v-if="hasLiked" />
             <Like v-else />
             <Save v-if="hasSaved" className="[&>path]:fill-[#ff8800] [&>path]:stroke-[#ff8800]" />
-            <Save v-else className="[&>path]:fill-[#ffffff00] [&>path]:stroke-[#000000]" />
+            <Save v-else className="[&>path]:fill-[#fff0] [&>path]:stroke-[#000000]" />
         </template>
     </div>
 </template>

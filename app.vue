@@ -80,7 +80,7 @@ nuxtApp.hook('page:finish', () => { console.log("page:finish"); })
     <!-- <NuxtErrorBoundary > -->
     <div class="scroll-smooth font-quicksan selection:bg-[#000000] selection:text-white">
         <NuxtLayout>
-            <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" />
+            <!-- <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" /> -->
             <Loading/>
             <NuxtPage />
         </NuxtLayout>
