@@ -12,9 +12,7 @@ export default defineNuxtConfig({
     '@nuxt/image-edge',
     // '@nuxtjs/robots'
   ],
-  app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
-  },
+  app: {},
   target: 'static',
   buildModules: ['@nuxtjs/web-vitals'],
   css: ['@/assets/scss/index.scss'],
