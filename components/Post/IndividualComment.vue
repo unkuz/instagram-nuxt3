@@ -22,7 +22,7 @@ const { S } = SizeAvatarEnum
         </NuxtLink>
         <NuxtLink :to="`/${comment.user.username}`">
           <p
-            class="inline-block bg-[#000000] px-[10px] py-[0px] text-[#ffffff] shadow-md line-clamp-1"
+            class="inline-block bg-[#000000] px-[10px] py-[1px] text-[#ffffff] shadow-md line-clamp-1"
           >
             {{ comment.user.username }}
           </p>
@@ -54,7 +54,7 @@ const { S } = SizeAvatarEnum
         </NuxtLink>
         <NuxtLink :to="`/${user.username}`">
           <p
-            class="inline-block bg-[#000000] px-[10px] py-[0px] text-[#ffffff] shadow-md line-clamp-1"
+            class="inline-block bg-[#000000] px-[10px] py-[1px] text-[#ffffff] shadow-md line-clamp-1"
           >
             {{ user.username }}
           </p>
