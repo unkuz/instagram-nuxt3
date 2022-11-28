@@ -17,7 +17,7 @@ useClickOutSide(mediaContainerRef, () => {
   storyStore.setIsShowStory(false)
 })
 
-const keyCodeBehaviour = (e:KeyboardEvent) => {
+const keyCodeBehaviour = (e: KeyboardEvent) => {
   if (e.charCode === 32) {
     togglePlay()
   } else if (e.charCode === 13) {

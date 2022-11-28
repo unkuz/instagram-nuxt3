@@ -14,7 +14,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-once
+  <div
+    v-once
     class="fixed top-0 left-0 z-20 flex h-screen w-full flex-col items-center justify-center space-y-[50px] bg-white duration-75"
   >
     <div class="w-[100px] lg:w-[120px]"><Logo /></div>

@@ -6,7 +6,7 @@ interface IState {
 
 export const useThemeStore = defineStore('theme', {
   state: (): IState => ({
-    darkMode: true
+    darkMode: true,
   }),
   getters: {},
   actions: {

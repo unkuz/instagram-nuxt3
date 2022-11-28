@@ -1,19 +1,19 @@
 import { defineStore } from 'pinia'
 
 export const useSearchStore = defineStore('searchStore', {
-  state:()=>({
+  state: () => ({
     value: '',
-    isFocus: false
+    isFocus: false,
   }),
-  getters:{
+  getters: {
     getIsSearchHaveValue: (state) => !!state.value,
     getIsShowSearchToolkit: (state) => state.isFocus && Boolean(state.value),
   },
-  actions:{
-    setValue(value:string) {
+  actions: {
+    setValue(value: string) {
       this.value = value
     },
-    setIsFocus(isFocus:boolean) {
+    setIsFocus(isFocus: boolean) {
       this.isFocus = isFocus
     },
     clearValue() {

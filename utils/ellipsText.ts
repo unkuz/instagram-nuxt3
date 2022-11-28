@@ -5,4 +5,3 @@ export const isEllipsisActive = (element: Ref<HTMLElement | null>) => {
     element.value.scrollWidth > element.value.parentElement.scrollWidth
   }
 }
-

@@ -2,9 +2,9 @@ import { defineStore } from 'pinia'
 import { explore } from '@@/mocks'
 
 export const useExploreStore = defineStore('EXPLORE', {
-  state:()=>({
+  state: () => ({
     list: explore,
   }),
-  getters:{},
-  actions:{},
+  getters: {},
+  actions: {},
 })

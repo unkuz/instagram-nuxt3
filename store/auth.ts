@@ -2,8 +2,6 @@ import { IStateStore } from '@@/type'
 import { defineStore } from 'pinia'
 import { IAuthData } from '~~/models'
 
-
-
 type TState = IStateStore<IAuthData>
 
 export const useAuthStore = defineStore('auth', {
@@ -13,7 +11,7 @@ export const useAuthStore = defineStore('auth', {
       userName: 'cuzknothz',
       avatar: '/image/91480011.jpg',
       coverImg: '/image/efc566f3-c275-44b3-a1a9-4eb8a361f626.jpg',
-      role: ''
+      role: '',
     },
     hasErr: false,
     errors: {},

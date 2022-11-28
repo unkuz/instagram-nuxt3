@@ -1,3 +1,5 @@
 export enum ScrollTypeEnum {
-    UP = 'UP', DOWN = 'DOWN', NONE = 'NONE'
+  UP = 'UP',
+  DOWN = 'DOWN',
+  NONE = 'NONE',
 }

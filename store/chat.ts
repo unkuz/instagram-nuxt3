@@ -6,19 +6,17 @@ export enum STATUS_CHAT {
 }
 
 export const useChatStore = defineStore('chatStore', {
-  state:()=>({
-        statusMobile: STATUS_CHAT.NONE,
-        isShowDetailChat: false,
+  state: () => ({
+    statusMobile: STATUS_CHAT.NONE,
+    isShowDetailChat: false,
   }),
-  getters:{
-
-  },
-  actions:{
-      setStatus(status: STATUS_CHAT) {
-          this.statusMobile = status
-      },
-      setIsShowDetailChat(isShowDetail:boolean) {
-          this.isShowDetailChat = isShowDetail
-      },
+  getters: {},
+  actions: {
+    setStatus(status: STATUS_CHAT) {
+      this.statusMobile = status
+    },
+    setIsShowDetailChat(isShowDetail: boolean) {
+      this.isShowDetailChat = isShowDetail
+    },
   },
 })

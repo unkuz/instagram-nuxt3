@@ -5,20 +5,19 @@ import Prelude from '@@/components/Utils/Prelude.vue'
 import { usePrelude, useResizeWindow, useScroll } from '@@/composables'
 import { SECTION } from '@@/constants'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
-import Loading from '@@/components/Atom/Loading.vue';
-
+import Loading from '@@/components/Atom/Loading.vue'
 
 const darkMode = ref(true)
 
 useHead({
-    title: 'Instagram',
-    meta: [
-        {
-            name: 'viewport',
-            content:
-                'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
-        },
-    ],
+  title: 'Instagram',
+  meta: [
+    {
+      name: 'viewport',
+      content:
+        'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
+    },
+  ],
 })
 
 const globalStore = useGlobalStore()
@@ -36,66 +35,66 @@ const isShowMore = computed(() => moreStore.isShow)
 useScroll()
 
 watch([width, height], () => {
-    globalStore.setClientSize(width.value, height.value)
-    darkMode.value = !darkMode.value
+  globalStore.setClientSize(width.value, height.value)
+  darkMode.value = !darkMode.value
 })
 
 watch(isTransition, () => {
-    if (isTransition) {
-        window.scrollTo({ top: 0 })
-        document.body.style.overflow = 'hidden'
-        setTimeout(() => {
-            document.body.style.overflow = ''
-        }, 1000)
-    }
+  if (isTransition) {
+    window.scrollTo({ top: 0 })
+    document.body.style.overflow = 'hidden'
+    setTimeout(() => {
+      document.body.style.overflow = ''
+    }, 1000)
+  }
 })
 
 if (process.client) {
-    window.addEventListener('load', () => {
-        if (!('serviceWorker' in navigator)) {
-            throw new Error('serviceWorker is not supported in current browser!')
-        }
-        navigator.serviceWorker.register('/sw.js')
-    })
+  window.addEventListener('load', () => {
+    if (!('serviceWorker' in navigator)) {
+      throw new Error('serviceWorker is not supported in current browser!')
+    }
+    navigator.serviceWorker.register('/sw.js')
+  })
 }
 
 onMounted(() => {
-    console.log('Developed by %c Cuzknothz ', 'background: black; color: #fff')
+  console.log('Developed by %c Cuzknothz ', 'background: black; color: #fff')
 })
 
 watch(isDarkMode, (value) => {
-    const htmlElement = document.querySelector('html')!
-    if (value) {
-        htmlElement.classList.add('dark')
-    } else {
-        htmlElement.classList.remove('dark')
-    }
+  const htmlElement = document.querySelector('html')!
+  if (value) {
+    htmlElement.classList.add('dark')
+  } else {
+    htmlElement.classList.remove('dark')
+  }
 })
 </script>
 
 <template>
-    <!-- <NuxtErrorBoundary > -->
-    <div class="scroll-smooth font-quicksan selection:bg-[#000000] selection:text-white">
-        <NuxtLayout>
-            <Prelude v-if="isShowPrelude" />
-            <!-- <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" /> -->
-            <Loading />
-            <NuxtPage />
-        </NuxtLayout>
-        <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
-        <More v-if="isShowMore" />
-    </div>
-    <!-- </NuxtErrorBoundary> -->
+  <!-- <NuxtErrorBoundary > -->
+  <div class="scroll-smooth font-quicksan selection:bg-[#000000] selection:text-white">
+    <NuxtLayout>
+      <Prelude v-if="isShowPrelude" />
+      <!-- <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" /> -->
+      <Loading />
+      <NuxtPage />
+    </NuxtLayout>
+    <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
+    <More v-if="isShowMore" />
+  </div>
+  <!-- </NuxtErrorBoundary> -->
 </template>
 <style>
 .page-enter-active,
 .page-leave-active {
-    transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .page-enter-from,
 .page-leave-to {
-    opacity: 0;
-    filter: blur(1rem);
+  opacity: 0;
+  filter: blur(1rem);
 }
 </style>
