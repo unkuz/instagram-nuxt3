@@ -2,10 +2,11 @@
 import NewPost from '@@/components/Huge/NewPost/index.vue'
 import More from '@@/components/Utils/More.vue'
 import Prelude from '@@/components/Utils/Prelude.vue'
-import { usePrelude, useResizeWindow } from '@@/composables'
+import { usePrelude, useResizeWindow, useScroll } from '@@/composables'
 import { SECTION } from '@@/constants'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
 import Loading from '@@/components/Atom/Loading.vue';
+
 
 const darkMode = ref(true)
 
@@ -31,6 +32,8 @@ const isTransition = computed(() => globalStore.transition)
 const section = computed(() => globalStore.section)
 const isMobile = computed(() => globalStore.getIsMobile)
 const isShowMore = computed(() => moreStore.isShow)
+
+useScroll()
 
 watch([width, height], () => {
     globalStore.setClientSize(width.value, height.value)
@@ -68,23 +71,17 @@ watch(isDarkMode, (value) => {
         htmlElement.classList.remove('dark')
     }
 })
-
-const nuxtApp = useNuxtApp()
-nuxtApp.hook('page:start', () => { console.log("page:start"); })
-nuxtApp.hook('page:finish', () => { console.log("page:finish"); })
-
-
 </script>
 
 <template>
     <!-- <NuxtErrorBoundary > -->
     <div class="scroll-smooth font-quicksan selection:bg-[#000000] selection:text-white">
         <NuxtLayout>
+            <Prelude v-if="isShowPrelude" />
             <!-- <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" /> -->
-            <Loading/>
+            <Loading />
             <NuxtPage />
         </NuxtLayout>
-        <Prelude v-if="isShowPrelude" />
         <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
         <More v-if="isShowMore" />
     </div>

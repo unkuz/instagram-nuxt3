@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-definePageMeta({
-  layout: 'reels',
-})
+
 </script>
 
 <template>

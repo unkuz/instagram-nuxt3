@@ -7,8 +7,8 @@ const nuxtApp = useNuxtApp()
 
 const isShow = ref(false)
 
-nuxtApp.hook('page:start', () => { isShow.value = true })
-nuxtApp.hook('page:finish', () => { isShow.value = false })
+nuxtApp.hook('page:start', () => isShow.value = true)
+nuxtApp.hook('page:finish', () => isShow.value = false)
 
 </script>
 <template>
