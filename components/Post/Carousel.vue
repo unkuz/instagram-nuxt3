@@ -16,14 +16,15 @@ interface IProps {
     id: string
     hasSaved: boolean
 }
+
 const initShowLikeSaved = ref<boolean>(true)
 const { images, videos, hasSaved, hasLiked } = defineProps<IProps>()
 const emit = defineEmits(['currentIndexCarousel'])
 const containerMediaRef = ref<HTMLDivElement | null>(null)
 
-const isShowPre = computed(() => current.value !== 0)
-const isShowNext = computed(() => current.value !== images.concat(videos).length - 1)
-const totalMedia = computed(() => images.concat(videos).length)
+const isShowPre = computed<boolean>(() => current.value !== 0)
+const isShowNext = computed<boolean>(() => current.value !== images.concat(videos).length - 1)
+const totalMedia = computed<number>(() => images.concat(videos).length)
 
 const { next, prev, current } = useCarousel(containerMediaRef)
 
@@ -66,6 +67,7 @@ watch([() => hasSaved, () => hasLiked], () => {
             <Unlike v-if="hasLiked" />
             <Like v-else />
             <Save v-if="hasSaved" className="[&>path]:fill-[#ff8800] [&>path]:stroke-[#ff8800]" />
+            <Save v-else className="[&>path]:fill-[#ffffff00] [&>path]:stroke-[#000000]" />
         </template>
     </div>
 </template>
