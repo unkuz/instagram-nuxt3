@@ -27,27 +27,16 @@ const themeStore = useThemeStore()
 const { isShowPrelude } = usePrelude()
 const { width, height } = useResizeWindow()
 
-const isDarkMode = computed(() => themeStore.darkMode)
-const isTransition = computed(() => globalStore.transition)
-const section = computed(() => globalStore.section)
-const isMobile = computed(() => globalStore.getIsMobile)
-const isShowMore = computed(() => moreStore.isShow)
+const isDarkMode = computed<boolean>(() => themeStore.darkMode)
+const section = computed<SECTION>(() => globalStore.section)
+const isMobile = computed<boolean>(() => globalStore.getIsMobile)
+const isShowMore = computed<boolean>(() => moreStore.isShow)
 
 useScroll()
 
 watch([width, height], () => {
   globalStore.setClientSize(width.value, height.value)
   darkMode.value = !darkMode.value
-})
-
-watch(isTransition, () => {
-  if (isTransition) {
-    window.scrollTo({ top: 0 })
-    document.body.style.overflow = 'hidden'
-    setTimeout(() => {
-      document.body.style.overflow = ''
-    }, 1000)
-  }
 })
 
 if (process.client) {
