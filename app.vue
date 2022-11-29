@@ -1,11 +1,12 @@
 <script lang="ts" setup>
+import Loading from '@@/components/Atom/Loading.vue'
 import NewPost from '@@/components/Huge/NewPost/index.vue'
 import More from '@@/components/Utils/More.vue'
 import Prelude from '@@/components/Utils/Prelude.vue'
 import { usePrelude, useResizeWindow, useScroll } from '@@/composables'
 import { SECTION } from '@@/constants'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
-import Loading from '@@/components/Atom/Loading.vue'
+import { tagDev } from './utils'
 
 const darkMode = ref(true)
 
@@ -59,7 +60,7 @@ if (process.client) {
 }
 
 onMounted(() => {
-  console.log('Developed by %c Cuzknothz ', 'background: black; color: #fff')
+  tagDev()
 })
 
 watch(isDarkMode, (value) => {
