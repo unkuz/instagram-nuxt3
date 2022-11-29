@@ -93,17 +93,35 @@ const toggleFullScreen = (e: MouseEvent) => {
 </script>
 
 <template>
-  <div ref="containerRef" class="group relative min-w-full overflow-hidden">
+  <div ref="containerRef" class="group relative min-w-full">
     <VideoPlayer
-      class="video block w-full bg-black"
+      class="video block w-full"
       :src="video.src"
-      type="video/mp4"
-      playsinline
-      controls
-      crossorigin="anonymous"
-      loop
       aspect-ratio="16:9"
-    />
+      poster=""
+      :children="[
+        'mediaLoader',
+        'posterImage',
+        'bigPlayButton',
+        'loadingSpinner',
+        'controlBar',
+        'textTrackDisplay',
+      ]"
+    >
+      <template v-slot="{ player, state }">
+        <div class="custom-player-controls">
+          <button @click="state.playing ? player.pause() : player.play()">
+            {{ state.playing ? 'Pause' : 'Play' }}
+          </button>
+          <button @click="player.muted(!state.muted)">
+            {{ state.muted ? 'UnMute' : 'Mute' }}
+          </button>
+          <div>{{ state }}</div>
+          <!-- <div>{{ player }}</div> -->
+          <!-- more custom controls elements ... -->
+        </div>
+      </template>
+    </VideoPlayer>
 
     <!-- <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
@@ -141,3 +159,10 @@ const toggleFullScreen = (e: MouseEvent) => {
     </div> -->
   </div>
 </template>
+<style scoped>
+::v-deep .custom-player-controls {
+  transform: translateY(-200px);
+  font-size: 16px;
+  color: red;
+}
+</style>
