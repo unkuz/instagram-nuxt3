@@ -6,6 +6,8 @@ import { useTimeLineStore } from '@@/store'
 import clsx from 'classnames'
 import { gsap } from 'gsap'
 import { stopOtherVideoPlaying } from '~~/helpers'
+import { VideoPlayer } from '@videojs-player/vue'
+import 'video.js/dist/video-js.css'
 
 interface IProps {
   video: any
@@ -33,9 +35,9 @@ const toggleLike = () => {
   timelineStore.setToggleLike(props.idPost)
 }
 
-useDoubleClick(videoRef, togglePlay, toggleLike)
+// useDoubleClick(videoRef, togglePlay, toggleLike)
 
-const { percent } = usePercentVideo(videoRef)
+// const { percent } = usePercentVideo(videoRef)
 
 const updateTime = () => {
   if (videoRef.value) {
@@ -48,13 +50,13 @@ const play = () => {
   videoRef.value && videoRef.value.play()
 }
 
-watch(percent, () => {
-  const { clientWidth: widthParent } = progressBarRef.value!.parentElement!
-  gsap.to(progressBarRef.value!, {
-    width: percent.value * widthParent,
-    duration: 0,
-  })
-})
+// watch(percent, () => {
+//   const { clientWidth: widthParent } = progressBarRef.value!.parentElement!
+//   gsap.to(progressBarRef.value!, {
+//     width: percent.value * widthParent,
+//     duration: 0,
+//   })
+// })
 
 const scrub = (e: MouseEvent) => {
   const scrubTime =
@@ -62,14 +64,14 @@ const scrub = (e: MouseEvent) => {
   videoRef.value!.currentTime = scrubTime
 }
 
-onMounted(() => {
-  videoRef.value!.addEventListener('timeupdate', updateTime)
-  progressBarRef.value!.parentElement!.addEventListener('click', scrub)
-})
+// onMounted(() => {
+//   videoRef.value!.addEventListener('timeupdate', updateTime)
+//   progressBarRef.value!.parentElement!.addEventListener('click', scrub)
+// })
 
-onBeforeUnmount(() => {
-  progressBarRef.value!.parentElement!.removeEventListener('click', scrub)
-})
+// onBeforeUnmount(() => {
+//   progressBarRef.value!.parentElement!.removeEventListener('click', scrub)
+// })
 
 const toggleFullScreen = (e: MouseEvent) => {
   e.preventDefault()
@@ -79,30 +81,31 @@ const toggleFullScreen = (e: MouseEvent) => {
   containerRef.value!.requestFullscreen()
 }
 
-onMounted(() => {
-  containerRef.value!.addEventListener('fullscreenchange', (e) => {
-    if (document.fullscreenElement) {
-      isFullScreen.value === true
-    } else {
-      isFullScreen.value === false
-    }
-  })
-})
+// onMounted(() => {
+//   containerRef.value!.addEventListener('fullscreenchange', (e) => {
+//     if (document.fullscreenElement) {
+//       isFullScreen.value === true
+//     } else {
+//       isFullScreen.value === false
+//     }
+//   })
+// })
 </script>
 
 <template>
   <div ref="containerRef" class="group relative min-w-full overflow-hidden">
-    <video
-      ref="videoRef"
+    <VideoPlayer
       class="video block w-full bg-black"
       :src="video.src"
       type="video/mp4"
       playsinline
+      controls
       crossorigin="anonymous"
       loop
+      aspect-ratio="16:9"
     />
 
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <!-- <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
         :class="
           clsx(
@@ -135,6 +138,6 @@ onMounted(() => {
           class="hidden w-[20px] cursor-pointer fill-white text-white group-hover:block"
         />
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
