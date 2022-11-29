@@ -17,8 +17,7 @@ export const timeLine = [
           profile_pic_url: '/timeline/channels4_profile.jpg',
         },
         comment_like_count: 1,
-        reply: [
-        ],
+        reply: [],
       },
     ],
     carousel_media: {
@@ -44,9 +43,137 @@ export const timeLine = [
     has_liked: false,
     caption_text: `Atef - Synergy`,
     is_seen: true,
-    tags: ['Atef - Synergy', 'Atef', 'Synergy','UK Hardcore','Happy Hardcore','Harddance'],
+    tags: ['Atef - Synergy', 'Atef', 'Synergy', 'UK Hardcore', 'Happy Hardcore', 'Harddance'],
     is_saved: true,
   },
+  {
+    created_at: '2022-11-29 22:05',
+    id: '45gffdaffs',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [
+      {
+        text: 'So beautiful!  :D❤❤❤',
+        created_at: '2022-11-29 22:50',
+        user: {
+          pk: 20433830474,
+          username: 'Johan Navarro',
+          full_name: 'Johan Navarro',
+          is_private: false,
+          profile_pic_url: '/timeline/asdfsdf.jpg',
+        },
+        comment_like_count: 1,
+        reply: [],
+      },
+    ],
+    carousel_media: {
+      images: [],
+      videos: [
+        {
+          id: 1,
+          src: `/video/KLYDIX & RuYA  - 초월ㆍTranscend.mp4`,
+        },
+      ],
+    },
+    user: {
+      id: 'Diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 1233444563,
+    has_liked: false,
+    caption_text: `KLYDIX & RuYA - 초월ㆍTranscend`,
+    is_seen: true,
+    tags: ['KLYDIX', 'RuYA', '초월ㆍTranscend'],
+    is_saved: false,
+  },
+  {
+    created_at: '2022-11-29 21:05',
+    id: '45gffdaffs',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [
+      {
+        text: 'Epic music, epic background ❤❤❤',
+        created_at: '2022-11-29 22:50',
+        user: {
+          pk: 20433830474,
+          username: 'Paintillery',
+          full_name: 'Paintillery',
+          is_private: false,
+          profile_pic_url: '/image/asfsdfasdf.jpg',
+        },
+        comment_like_count: 1,
+        reply: [],
+      },
+    ],
+    carousel_media: {
+      images: [],
+      videos: [
+        {
+          id: 1,
+          src: `/video/BÔN - I Can Show You.mp4`,
+        },
+      ],
+    },
+    user: {
+      id: 'Diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/asdfsdf.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 1245,
+    has_liked: false,
+    caption_text: `BÔN - I Can Show You.mp4`,
+    is_seen: true,
+    tags: [],
+    is_saved: false,
+  },
+  {
+    created_at: '2022-11-29 20:05',
+    id: '45gffdas',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [
+        {
+          id: 1,
+          src: `/video/Janery & Verox - Break Free.mp4`,
+        },
+      ],
+    },
+    user: {
+      id: 'Diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 1206,
+    has_liked: false,
+    caption_text: `Janery & Verox - Break Free`,
+    is_seen: true,
+    tags: ['Happy Hardcore'],
+    is_saved: false,
+  },
+
   {
     created_at: '2022-11-18 9:24',
     id: '4234gfdsdafglk',
@@ -131,6 +258,39 @@ export const timeLine = [
     is_seen: true,
     tags: ['Jade Key', 'Superhero', 'UK Hardcore'],
     is_saved: true,
+  },
+  {
+    created_at: '2022-11-29 22:05',
+    id: '45gffdafffs',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [
+        {
+          id: 1,
+          src: `/video/Aleficent & MØTHRA - Alive.mp4`,
+        },
+      ],
+    },
+    user: {
+      id: 'Diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 5089,
+    has_liked: false,
+    caption_text: `Krewella - Alive (Aleficent & MØTHRA Cover)`,
+    is_seen: true,
+    tags: ['Diversity', 'Future Bounce'],
+    is_saved: false,
   },
   {
     created_at: '2022-11-12 9:24',
@@ -446,34 +606,6 @@ export const timeLine = [
     is_saved: true,
   },
 
-  {
-    created_at: '2022-10-30 21:54',
-    id: '1491446234234004554932gfdsgsdfasdf',
-    location: {
-      short_name: 'Copenhagen',
-    },
-    comments: [],
-    carousel_media: {
-      images: [],
-      videos: [{ id: 1, src: '/video/10000000_739041187434429_4988422346794921195_n.mp4' }],
-    },
-    user: {
-      id: 'huylee__',
-      username: 'huylee__',
-      full_name: 'huylee__',
-      profile_pic_url: '/timeline/171637990_283647803362926_7866601341664784694_n.jpg',
-      friendship_status: {
-        following: true,
-        outgoing_request: false,
-      },
-    },
-    like_count: 405,
-    has_liked: true,
-    caption_text: 'Bên Trên Tầng Lầu | Cover Mẹ Gấu x Bố Gấu x Huy Lee',
-    is_seen: true,
-    tags: ['Bên Trên Tầng Lầu', 'megau98', 'Bố Gấu', 'huylee'],
-    is_saved: true,
-  },
   {
     created_at: '2022-10-29 21:54',
     id: '1491423423446004554932gfdsg',
