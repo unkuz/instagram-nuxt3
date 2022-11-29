@@ -1,5 +1,53 @@
 export const timeLine = [
   {
+    created_at: '2022-11-29 9:24',
+    id: '45gas',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [
+      {
+        text: 'Damn that energy, Good job man! 🤣🤣🤣',
+        created_at: '2022-11-29 10:50',
+        user: {
+          pk: 20433830474,
+          username: 'Lunaar',
+          full_name: 'Lunaar',
+          is_private: false,
+          profile_pic_url: '/timeline/channels4_profile.jpg',
+        },
+        comment_like_count: 1,
+        reply: [
+        ],
+      },
+    ],
+    carousel_media: {
+      images: [],
+      videos: [
+        {
+          id: 1,
+          src: `/video/Atef - Synergy.mp4`,
+        },
+      ],
+    },
+    user: {
+      id: 'diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 3060,
+    has_liked: false,
+    caption_text: `Atef - Synergy`,
+    is_seen: true,
+    tags: ['Atef - Synergy', 'Atef', 'Synergy','UK Hardcore','Happy Hardcore','Harddance'],
+    is_saved: true,
+  },
+  {
     created_at: '2022-11-18 9:24',
     id: '4234gfdsdafglk',
     location: {
