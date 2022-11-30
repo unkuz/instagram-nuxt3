@@ -1,5 +1,38 @@
 export const timeLine = [
   {
+    created_at: '2022-11-29 22:05',
+    id: '45gffdafffs',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [
+        {
+          id: 1,
+          src: `/video/Aleficent & MØTHRA - Alive.mp4`,
+        },
+      ],
+    },
+    user: {
+      id: 'Diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 5089,
+    has_liked: false,
+    caption_text: `Krewella - Alive (Aleficent & MØTHRA Cover)`,
+    is_seen: true,
+    tags: ['Diversity', 'Future Bounce'],
+    is_saved: false,
+  },
+  {
     created_at: '2022-11-29 9:24',
     id: '45gas',
     location: {
@@ -258,39 +291,6 @@ export const timeLine = [
     is_seen: true,
     tags: ['Jade Key', 'Superhero', 'UK Hardcore'],
     is_saved: true,
-  },
-  {
-    created_at: '2022-11-29 22:05',
-    id: '45gffdafffs',
-    location: {
-      short_name: 'Copenhagen',
-    },
-    comments: [],
-    carousel_media: {
-      images: [],
-      videos: [
-        {
-          id: 1,
-          src: `/video/Aleficent & MØTHRA - Alive.mp4`,
-        },
-      ],
-    },
-    user: {
-      id: 'Diversity',
-      username: 'Diversity',
-      full_name: 'Diversity',
-      profile_pic_url: '/image/91480011.jpg',
-      friendship_status: {
-        following: true,
-        outgoing_request: false,
-      },
-    },
-    like_count: 5089,
-    has_liked: false,
-    caption_text: `Krewella - Alive (Aleficent & MØTHRA Cover)`,
-    is_seen: true,
-    tags: ['Diversity', 'Future Bounce'],
-    is_saved: false,
   },
   {
     created_at: '2022-11-12 9:24',

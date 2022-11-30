@@ -107,6 +107,8 @@ const log = (a, b) => {
       aspect-ratio="16:9"
       controls
       poster=""
+      loop
+      
       :children="[
         'mediaLoader',
         'posterImage',
