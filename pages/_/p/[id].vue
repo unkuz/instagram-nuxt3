@@ -145,7 +145,9 @@ const mediaArr = computed<
               </template>
             </div>
           </div>
-          <Comment :id="id" />
+          <ClientOnly>
+            <Comment :id="id" />
+          </ClientOnly>
         </div>
       </div>
     </BackDrop>
