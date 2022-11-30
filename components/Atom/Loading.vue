@@ -12,7 +12,7 @@ nuxtApp.hook('page:finish', () => (isShow.value = false))
 <template>
   <div v-show="isShow">
     <BackDrop>
-      <LoadingIcon_ class="w-[200px] !bg-transparent" />
+      <LoadingIcon_ class="w-[150px] !bg-transparent" />
     </BackDrop>
   </div>
 </template>
