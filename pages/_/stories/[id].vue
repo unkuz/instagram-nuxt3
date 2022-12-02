@@ -88,7 +88,7 @@ const togglePlay = () => {
           <video
             @click="togglePlay"
             class="h-full w-full object-cover"
-            src="/video/242322324_812426336116660_1281566458903572911_n.mp4 "
+            src="/video/242322324_812426336116660_1281566458903572911_n.mp4"
             autoplay
             loop
             muted
