@@ -45,7 +45,7 @@ const authorText = 'cuzknothz'
         :id="id"
       />
     </div>
-    <div class="mt-[10px]">
+    <div class="mt-[10px] text-[0.85rem]">
       <div class="flex justify-center text-gray-600">
         <span
           v-for="(i, idx) in ['About', 'Help', 'Press', 'API', 'Jobs', 'Privacy Terms']"
@@ -64,7 +64,7 @@ const authorText = 'cuzknothz'
       </div>
     </div>
 
-    <div class="flex flex-col items-center space-y-2 text-[0.85rem]">
+    <div class="flex flex-col items-center gap-[5px] text-[0.8rem]">
       <div>© 2022 Instagram clone by</div>
       <NuxtLink to="https://github.com/cuzknothz" target="_blank">
         <div
