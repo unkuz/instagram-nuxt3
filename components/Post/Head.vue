@@ -25,7 +25,9 @@ const showMore = (e: MouseEvent) => {
     <div class="mx-[16px] flex h-full items-center justify-between">
       <div class="flex items-center space-x-[10px] text-[0.8rem]">
         <Avatar :size="S" :url="avatar" />
-        <div class="cursor-pointer bg-black text-white px-[4px]">{{ userName }}</div>
+        <div class="cursor-pointer bg-black px-[10px] py-[1px] text-xs text-white md:text-sm">
+          {{ userName }}
+        </div>
       </div>
       <div>
         <MoreIcon_ @click="showMore" />
