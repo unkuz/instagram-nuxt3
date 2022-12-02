@@ -77,39 +77,6 @@ const isSelect = (select) => currentSelect === select
           class="aspect-square w-full cursor-pointer overflow-hidden object-cover duration-500 hover:scale-110"
         />
       </div>
-
-      <img
-        src="/personal/271827299_648555502866475_6120779624187626708_n.jpg"
-        class="aspect-square w-full object-cover"
-      />
-      <img
-        src="/personal/271827299_648555502866475_6120779624187626708_n.jpg"
-        class="aspect-square w-full object-cover"
-      />
-      <img
-        src="/personal/285912787_394288332653847_7603823348223049999_n.jpg"
-        class="aspect-square w-full object-cover"
-      />
-      <img
-        src="/personal/286080936_5042279369231267_5247065737773824167_n.jpg"
-        class="aspect-square w-full object-cover"
-      />
-      <img
-        src="/personal/286156153_1180787169352168_8777747362582813059_n.jpg"
-        class="aspect-square w-full object-cover"
-      />
-      <img
-        src="/personal/268574545_1103358217107085_3927417365605344326_n.jpg"
-        class="aspect-square w-full object-cover"
-      />
-      <img
-        src="/personal/271238677_756369618655591_3676421268791785883_n.jpg"
-        class="aspect-square w-full object-cover"
-      />
-      <img
-        src="/personal/287753802_729800381685105_8924137175535988756_n.jpg"
-        class="aspect-square w-full object-cover"
-      />
     </div>
     <Modal v-if="isShowFollowing" />
   </div>
