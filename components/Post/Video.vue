@@ -94,7 +94,7 @@ onMounted(() => {
   <div ref="containerRef" class="group relative min-w-full overflow-hidden">
     <video
       ref="videoRef"
-      class="video block w-full bg-black"
+      class="video block w-full"
       :src="video.src"
       type="video/mp4"
       playsinline
