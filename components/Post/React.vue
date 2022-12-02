@@ -7,7 +7,6 @@ import { useTimeLineStore } from '@@/store'
 import clsx from 'classnames'
 import { stopOtherVideoPlaying } from '~~/helpers'
 import UnlikeIcon from '@@/components/Atom/UnlikeIcon.vue'
-import PlusOne from './PlusOne.vue'
 
 interface IProps {
   hasLiked: boolean
@@ -33,7 +32,6 @@ const timelineStore = useTimeLineStore()
     <div class="flex h-full w-full items-center space-x-[10px]">
       <div @click="timelineStore.setToggleLike(id)" class="relative">
         <div v-if="hasLiked">
-          <PlusOne />
           <UnlikeIcon />
         </div>
         <div v-else>
