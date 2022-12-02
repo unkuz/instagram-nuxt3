@@ -1,5 +1,38 @@
 export const timeLine = [
   {
+    created_at: '2022-12-02 19:50',
+    id: '45gffdafffsdsf',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [
+        {
+          id: 1,
+          src: `/video/Y2Mate.is - Alok x Sigala x Ellie Goulding - All By Myself-nr-UpcnFqSg-720p-1660090313515.mp4`,
+        },
+      ],
+    },
+    user: {
+      id: 'Diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 1090,
+    has_liked: true,
+    caption_text: `Alok x Sigala x Ellie Goulding - All By Myself`,
+    is_seen: true,
+    tags: ['Diversity', 'Alok', '😂😂😂'],
+    is_saved: true,
+  },
+  {
     created_at: '2022-11-29 22:05',
     id: '45gffdafffs',
     location: {
