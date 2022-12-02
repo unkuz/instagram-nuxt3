@@ -48,7 +48,7 @@ useWindowResizeCallback(calcLeftSuggestion)
         <Stories :stories="stories" />
         <Post v-for="i in timeline" :key="i.id" v-bind="i" />
       </div>
-      <div class="fixed top-[84px] hidden w-[293px] bg-white text-sm lg:block" ref="rightRef">
+      <div class="fixed top-[93px] hidden w-[293px] bg-white text-sm lg:block" ref="rightRef">
         <Suggestions :suggestion="suggestion" />
       </div>
     </div>
