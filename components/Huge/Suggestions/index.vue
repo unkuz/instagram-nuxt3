@@ -4,7 +4,7 @@ import { TSuggestion } from '@@/models'
 import { useAuthStore } from '@@/store'
 import { SizeAvatarEnum } from '@@/type'
 import Item from './Item.vue'
-import Button from '@@/components/Atom/Button.vue';
+import Button from '@@/components/Atom/Button.vue'
 
 interface IProps {
   suggestion: TSuggestion[]
@@ -28,7 +28,7 @@ const authorText = 'cuzknothz'
         <p class="text-gray-600">cuzknothz</p>
       </div>
       <NuxtLink to="/login">
-        <Button class="py-[5px] [&>span]:text-[#ff48a3] bg-[#fae1da] " text="Log out"/>
+        <Button class="bg-[#fae1da] text-[.8rem] [&>span]:text-[#ff48a3]" text="Log out" />
       </NuxtLink>
     </div>
     <div class="flex h-[11px] items-center justify-between text-sm text-gray-600">
