@@ -1972,12 +1972,12 @@
     unimport "^0.6.7"
     untyped "^0.5.0"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.0.1-rc.0-27828744.aa9aec1":
-  version "3.0.1-rc.0-27828744.aa9aec1"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.0.1-rc.0-27828744.aa9aec1.tgz#a1ec33011b174bb2c1bd30f0bfdd9bf4be461672"
-  integrity sha512-3rfeJTugvUAINUEEZWDIeFB6QFuZoqSgrklxqQI2b3QZ30LUxSR8ADRetRjLZHOS2CUSoY260bJWTzGcYLFgOQ==
+"@nuxt/kit@npm:@nuxt/kit-edge@3.0.1-rc.0-27833302.52421a9":
+  version "3.0.1-rc.0-27833302.52421a9"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.0.1-rc.0-27833302.52421a9.tgz#ecabc249239c678556c21b3e6d636ccf84702ce2"
+  integrity sha512-GOaHQ1tuB74sIYcT8aMGPE/XXNiFl2jAwLZbygvFL7gcT/xyav97Bs7lsEi/zadyvmpjvIyk3jnzx4+UrQ00cw==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.0.1-rc.0-27828744.aa9aec1"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.0.1-rc.0-27833302.52421a9"
     c12 "^1.0.1"
     consola "^2.15.3"
     defu "^6.1.1"
@@ -2080,10 +2080,10 @@
     unimport "^0.6.8"
     untyped "^0.5.0"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.0.1-rc.0-27828744.aa9aec1":
-  version "3.0.1-rc.0-27828744.aa9aec1"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.0.1-rc.0-27828744.aa9aec1.tgz#96ddb329e92491942a929fe5c8ce0a3a1020599f"
-  integrity sha512-AnKyMEjwZMPaejlfko4ab3Fcy29V8Rk/7TPmBkbJwV5ecTOLDk6oI8/QZjfZVXvYNAv/WBtHogs/tMzxkxad3g==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.0.1-rc.0-27833302.52421a9":
+  version "3.0.1-rc.0-27833302.52421a9"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.0.1-rc.0-27833302.52421a9.tgz#2ad72a4575ec77b464ee6ff15997ffa3d4975a13"
+  integrity sha512-Bb48Nw9yqOEERkC4ox6/m+z9/ceuYs3+wv4flKjNjgIfwhOtAmRNBVBTwsEJQ1vB1sKl4N8/Cyaara1V8jVi9A==
   dependencies:
     c12 "^1.0.1"
     create-require "^1.1.1"
@@ -2094,7 +2094,7 @@
     postcss-import-resolver "^2.0.0"
     scule "^1.0.0"
     std-env "^3.3.1"
-    ufo "^1.0.0"
+    ufo "^1.0.1"
     unimport "^1.0.1"
     untyped "^1.0.0"
 
@@ -2124,13 +2124,13 @@
     rc9 "^2.0.0"
     std-env "^3.3.1"
 
-"@nuxt/test-utils-edge@3.0.1-rc.0-27828744.aa9aec1":
-  version "3.0.1-rc.0-27828744.aa9aec1"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.0.1-rc.0-27828744.aa9aec1.tgz#b5b223cb38d9d2fb90b2dfecc311392002050553"
-  integrity sha512-35wa82d0jVzeXzdamfy7S39CDRyK742m/dS6H7epTD6M000IUSTS7Hrd1X+hMP1/oHvaG9Azk1aa1Mf6EQ5YXg==
+"@nuxt/test-utils-edge@3.0.1-rc.0-27833302.52421a9":
+  version "3.0.1-rc.0-27833302.52421a9"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.0.1-rc.0-27833302.52421a9.tgz#7649c206cf6ef856359010a100ddb6a003f3a788"
+  integrity sha512-vomfswUhg//GVDqnqc/EObgeVsmRYphDYnsDuw4Jcc3wHJ2JW/8FFT9t0qn0a/lLegqryCoo6ratNQj6R30/nQ==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.0.1-rc.0-27828744.aa9aec1"
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.0.1-rc.0-27828744.aa9aec1"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.0.1-rc.0-27833302.52421a9"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.0.1-rc.0-27833302.52421a9"
     consola "^2.15.3"
     defu "^6.1.1"
     execa "^6.1.0"
@@ -2393,49 +2393,49 @@
     estree-walker "^2.0.2"
     picomatch "^2.3.1"
 
-"@sentry/core@7.22.0":
-  version "7.22.0"
-  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-7.22.0.tgz#8e50f288e5e8fcaa2774daffd2487e042a392893"
-  integrity sha512-qYJiJrL1mfQQln84mNunBRUkXq7xDGQQoNh4Sz9VYP5698va51zmS5BLYRCZ5CkPwRYNuhUqlUXN7bpYGYOOIA==
+"@sentry/core@7.23.0":
+  version "7.23.0"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-7.23.0.tgz#d320b2b6e5620b41f345bc01d69b547cdf28f78d"
+  integrity sha512-oNLGsscSdMs1urCbpwe868NsoJWyeTOQXOm5w2e78yE7G6zm2Ra473NQio3lweaEvjQgSGpFyEfAn/3ubZbtPw==
   dependencies:
-    "@sentry/types" "7.22.0"
-    "@sentry/utils" "7.22.0"
+    "@sentry/types" "7.23.0"
+    "@sentry/utils" "7.23.0"
     tslib "^1.9.3"
 
-"@sentry/node@^7.22.0":
-  version "7.22.0"
-  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-7.22.0.tgz#d575481e56d3326ad457378db5ab7cc804b712fd"
-  integrity sha512-jKhxqKsbEEaY/g3FTzpj1fwukN0IkNv4V+0Fl+t/EmSNUL/7q5FMmDBa+fFQuQzwps8UEpzqPOzMSRapVsoP0w==
+"@sentry/node@^7.23.0":
+  version "7.23.0"
+  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-7.23.0.tgz#a9573a1a93994b6dc7ed3539c27cb8faf7bacfb2"
+  integrity sha512-w6J+5YRsQEn55508yQYT43ahMP5IHruxq8XnFqYMFZvRohVxrZ1qTz7AMoSgc8fDcHr+LKhs1PxJIqqNwkWrFA==
   dependencies:
-    "@sentry/core" "7.22.0"
-    "@sentry/types" "7.22.0"
-    "@sentry/utils" "7.22.0"
+    "@sentry/core" "7.23.0"
+    "@sentry/types" "7.23.0"
+    "@sentry/utils" "7.23.0"
     cookie "^0.4.1"
     https-proxy-agent "^5.0.0"
     lru_map "^0.3.3"
     tslib "^1.9.3"
 
-"@sentry/tracing@^7.22.0":
-  version "7.22.0"
-  resolved "https://registry.yarnpkg.com/@sentry/tracing/-/tracing-7.22.0.tgz#ec29325ee2c5959670097c104e47a78797cef17b"
-  integrity sha512-s68aSnrRaWQ+Z5oG9ozIegUkofZy9PwicuXYEPA8K/R30F1CVpHvDZ/3KlFnByl+aXTbAyLBQzN2sAObB5g4pQ==
+"@sentry/tracing@^7.23.0":
+  version "7.23.0"
+  resolved "https://registry.yarnpkg.com/@sentry/tracing/-/tracing-7.23.0.tgz#9b6c5d3761d7664b6e40c476912281589d7cbe43"
+  integrity sha512-sbwvf6gjLgUTkBwZQOV7RkZPah7KnnpeVcwnNl+vigq6FNgNtejz53FFCo6t4mNGZSerfWbEy/c3C1LMX9AaXw==
   dependencies:
-    "@sentry/core" "7.22.0"
-    "@sentry/types" "7.22.0"
-    "@sentry/utils" "7.22.0"
+    "@sentry/core" "7.23.0"
+    "@sentry/types" "7.23.0"
+    "@sentry/utils" "7.23.0"
     tslib "^1.9.3"
 
-"@sentry/types@7.22.0":
-  version "7.22.0"
-  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-7.22.0.tgz#58e4ce77b523048e0f31e2ea4b597946d76f6079"
-  integrity sha512-LhCL+wb1Jch+OesB2CIt6xpfO1Ab6CRvoNYRRzVumWPLns1T3ZJkarYfhbLaOEIb38EIbPgREdxn2AJT560U4Q==
+"@sentry/types@7.23.0":
+  version "7.23.0"
+  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-7.23.0.tgz#5d2ce94d81d7c1fad702645306f3c0932708cad5"
+  integrity sha512-fZ5XfVRswVZhKoCutQ27UpIHP16tvyc6ws+xq+njHv8Jg8gFBCoOxlJxuFhegD2xxylAn1aiSHNAErFWdajbpA==
 
-"@sentry/utils@7.22.0":
-  version "7.22.0"
-  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-7.22.0.tgz#fb46dc2761e2d44cf70bc3e1fba61d55852904b5"
-  integrity sha512-1GiNw1opIngxg0nktCTc9wibh4/LV12kclrnB9dAOHrqazZXHXZRAkjqrhQphKcMpT+3By91W6EofjaDt5a/hg==
+"@sentry/utils@7.23.0":
+  version "7.23.0"
+  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-7.23.0.tgz#5f38640fe49f5abac88f048b92d3e83375d7ddf7"
+  integrity sha512-ad/XXH03MfgDH/7N7FjKEOVaKrfQWdMaE0nCxZCr2RrvlitlmGQmPpms95epr1CpzSU3BDRImlILx6+TlrXOgg==
   dependencies:
-    "@sentry/types" "7.22.0"
+    "@sentry/types" "7.23.0"
     tslib "^1.9.3"
 
 "@sidvind/better-ajv-errors@^2.0.0":
@@ -10161,6 +10161,11 @@ ufo@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ufo/-/ufo-1.0.0.tgz#eb64f4c8797d6aa6c710a836abab0bade9d11ca6"
   integrity sha512-DRty0ZBNlJ2R59y4mEupJRKLbkLQsc4qtxjpQv78AwEDuBkaUogMc2LkeqW3HddFlw6NwnXYfdThEZOiNgkmmQ==
+
+ufo@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/ufo/-/ufo-1.0.1.tgz#64ed43b530706bda2e4892f911f568cf4cf67d29"
+  integrity sha512-boAm74ubXHY7KJQZLlXrtMz52qFvpsbOxDcZOnw/Wf+LS4Mmyu7JxmzD4tDLtUQtmZECypJ0FrCz4QIe6dvKRA==
 
 ultrahtml@^1.0.0:
   version "1.0.3"
