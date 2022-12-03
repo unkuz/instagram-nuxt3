@@ -113,6 +113,40 @@ export const timeLine = [
     is_saved: true,
   },
   {
+    created_at: '2022-12-29 9:55',
+    id: '45gffdafffsdsdfsdfsdfsdfsf',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [
+        {
+          id: 1,
+          src: `/video/Y2Mate.is - Cryex & MC Livid - Streetcode [Official Videoclip]-RAECCHne0CA-720p-1660140455600.mp4`,
+        },
+      ],
+    },
+    user: {
+      id: 'APEX Records',
+      username: 'APEX Records',
+      full_name: 'APEX Records',
+      profile_pic_url: '/image/apex.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 2356,
+    has_liked: true,
+    caption_text: `Cryex & MC Livid - Streetcode [Official Videoclip]
+`,
+    is_seen: true,
+    tags: ['APEX'],
+    is_saved: true,
+  },
+  {
     created_at: '2022-11-29 22:05',
     id: '45gffdaffs',
     location: {
