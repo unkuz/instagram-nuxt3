@@ -21,7 +21,7 @@
     "@types/uuid": "^9.0.0",
     "autoprefixer": "^10.4.13",
     "nuxt": "^3.0.0",
-    "nuxt-icon": "^0.1.7",
+    "nuxt-icon": "^0.1.8",
     "nuxt-ionic": "^0.7.0",
     "nuxt-typed-router": "^1.2.3",
     "postcss": "^8.4.19",
