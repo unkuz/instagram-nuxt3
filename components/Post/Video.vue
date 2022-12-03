@@ -91,7 +91,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="containerRef" class="group relative min-w-full overflow-hidden">
+  <div ref="containerRef" class="group relative flex min-w-full items-center overflow-hidden">
     <video
       ref="videoRef"
       class="video block w-full"
