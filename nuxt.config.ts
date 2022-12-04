@@ -33,7 +33,6 @@ export default defineNuxtConfig({
   image: {
     presets: {},
   },
-
   vite: {
     plugins: [svgLoader({})],
   },
