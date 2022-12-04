@@ -132,7 +132,7 @@ const mediaArr = computed<
             </div>
             <div
               :class="
-                clsx('w-full overflow-x-hidden overflow-y-scroll py-[10px]', {
+                clsx('w-full overflow-y-scroll py-[10px] overflow-x-hidden', {
                   'flex items-center justify-center': !hasComment,
                 })
               "
