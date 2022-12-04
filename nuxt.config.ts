@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@pinia/nuxt',
     '@nuxt/image-edge',
+    '@pinia-plugin-persistedstate/nuxt',
   ],
   app: {
     head: {
@@ -41,5 +42,11 @@ export default defineNuxtConfig({
   algolia: {
     apiKey: 'MY_API_KEY',
     applicationId: 'MY_APPLICATION_ID',
+  },
+  piniaPersistedstate: {
+    cookieOptions: {
+      sameSite: 'strict',
+    },
+    storage: 'cookies',
   },
 })
