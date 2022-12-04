@@ -58,8 +58,8 @@ const timelineStore = useTimeLineStore()
       <SaveIcon_
         @click="timelineStore.setToggleSave(id)"
         :class="
-          clsx('[&>path]:stroke-black dark:[&>path]:stroke-white', {
-            '[&>path]:fill-c11 [&>path]:stroke-c11': hasSaved,
+          clsx(' dark:[&>path]:stroke-white', {
+            '[&>path]:fill-c11 [&>path]:stroke-c11 dark:[&>path]:stroke-c11': hasSaved,
           })
         "
       />
