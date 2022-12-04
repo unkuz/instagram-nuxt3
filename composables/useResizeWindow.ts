@@ -1,4 +1,8 @@
+import { useGlobalStore } from '~~/store'
+
 export function useResizeWindow() {
+  const globalStore = useGlobalStore()
+
   const width = ref<number>(0)
   const height = ref<number>(0)
 
@@ -12,6 +16,10 @@ export function useResizeWindow() {
     window.addEventListener('resize', resize)
     width.value = window.innerWidth
     height.value = window.innerHeight
+  })
+
+  watch([width, height], () => {
+    globalStore.setClientSize(width.value, height.value)
   })
 
   onBeforeUnmount(() => {
