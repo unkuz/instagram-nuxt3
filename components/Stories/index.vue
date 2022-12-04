@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { IStory } from '@@/models'
-import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import Story from './Story.vue'
 
