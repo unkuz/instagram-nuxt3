@@ -37,7 +37,7 @@ useClickOutSide(moreRef, () => {
         ref="moreRef"
       >
         <div
-          class="flex h-[60px] items-center justify-between rounded-[0.8rem] bg-white px-[20px] sm:px-[30px]"
+          class="flex h-[60px] items-center justify-between rounded-[0.8rem] bg-c1 px-[20px] sm:px-[30px]"
         >
           <div class="flex items-center space-x-[20px]">
             <Avatar
@@ -51,7 +51,7 @@ useClickOutSide(moreRef, () => {
           </div>
           <div class="flex items-center space-x-[20px]">
             <div
-              class="flex h-[30px] w-[90px] cursor-pointer items-center justify-center space-x-[5px] rounded-full bg-blue-500 sm:h-[35px] sm:w-[100px]"
+              class="flex h-[30px] w-[90px] cursor-pointer items-center justify-center space-x-[5px] rounded-full bg-c7 sm:h-[35px] sm:w-[100px]"
             >
               <span>+</span>
               <span>Add</span>
@@ -59,11 +59,11 @@ useClickOutSide(moreRef, () => {
             <div>></div>
           </div>
         </div>
-        <div class="mt-[10px] overflow-hidden rounded-[0.8rem] bg-white">
+        <div class="mt-[10px] overflow-hidden rounded-[0.8rem] bg-c1">
           <div
             v-for="(i, idx) in options"
             :key="idx"
-            class="flex h-[60px] cursor-pointer items-center border-b-[1px] border-black/10 px-[30px] text-fuchsia-400 last:border-b-0 hover:bg-blue-300"
+            class="flex h-[60px] cursor-pointer items-center border-b-[1px] border-black/10 px-[30px] text-fuchsia-400 last:border-b-0 hover:c18"
           >
             {{ i.name }}
           </div>

@@ -45,7 +45,7 @@ const send = async () => {
       <Emoji v-if="isShowEmoji" @emoji-add="emojiAdd" />
       <div
         @click="toggleShowEmoji"
-        class="cursor-pointer text-[0.8rem] font-[500] text-[#00aeff] active:text-[#8bff48]"
+        class="cursor-pointer text-[0.8rem] font-[500] text-c7 active:text-c12"
       >
         Emoji
       </div>
@@ -60,10 +60,7 @@ const send = async () => {
     >
       {{ commentValueText }}
     </textarea>
-    <div
-      @click="send"
-      class="cursor-pointer text-[0.8rem] font-[500] text-[#00aeff] active:text-[#8bff48]"
-    >
+    <div @click="send" class="cursor-pointer text-[0.8rem] font-[500] text-c7 active:text-c12">
       Send
     </div>
   </div>

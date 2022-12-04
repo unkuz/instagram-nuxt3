@@ -8,7 +8,7 @@ useLockScroll()
 <template>
   <div
     v-once
-    class="fixed top-0 left-0 z-20 flex h-screen w-full flex-col items-center justify-center space-y-[50px] bg-white duration-75"
+    class="fixed top-0 left-0 z-20 flex h-screen w-full flex-col items-center justify-center space-y-[50px] bg-c1 duration-75"
   >
     <div class="w-[100px] md:w-[150px]"><Logo /></div>
   </div>

@@ -23,7 +23,7 @@ useDoubleClick(imageRef, () => {}, toggleLike)
   <div class="min-w-full">
     <img
       ref="imageRef"
-      class="max-h-[60vh] min-h-full min-w-full bg-black object-contain"
+      class="max-h-[60vh] min-h-full min-w-full bg-c2 object-contain"
       draggable="false"
       :src="src"
       alt=""

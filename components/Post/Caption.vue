@@ -17,7 +17,7 @@ const hasCaptionOrTag = computed<boolean>(() => {
 
 <template>
   <div>
-    <div class="inline-block bg-[#000000] px-[10px] py-[1px] text-[#ffffff] shadow-md">
+    <div class="inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md">
       {{ userName }}
     </div>
     <div class="mt-[5px] py-[5px]" v-if="hasCaptionOrTag">

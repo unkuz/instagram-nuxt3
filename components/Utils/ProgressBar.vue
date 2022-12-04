@@ -11,5 +11,5 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="progressBarRef" class="fixed top-0 left-0 z-50 h-[3px] w-0 bg-black"></div>
+  <div ref="progressBarRef" class="fixed top-0 left-0 z-50 h-[3px] w-0 bg-c2"></div>
 </template>

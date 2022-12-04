@@ -48,8 +48,8 @@ const timelineStore = useTimeLineStore()
         v-for="(_i, idx) in mediaArr"
         :key="idx"
         :class="
-          clsx('h-[6px] w-[6px]  rounded-[50%]  bg-[#b9b9b9]', {
-            'bg-blue-500': currentIdx === idx,
+          clsx('h-[6px] w-[6px]  rounded-[50%]  bg-c3', {
+            'bg-c7': currentIdx === idx,
           })
         "
       ></div>
@@ -59,7 +59,7 @@ const timelineStore = useTimeLineStore()
         @click="timelineStore.setToggleSave(id)"
         :class="
           clsx('', {
-            '[&>path]:fill-[#ff8800] [&>path]:stroke-[#ff8800]': hasSaved,
+            '[&>path]:fill-c11 [&>path]:stroke-c11': hasSaved,
           })
         "
       />

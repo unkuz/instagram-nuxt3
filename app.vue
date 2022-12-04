@@ -58,7 +58,7 @@ onMounted(() => {
   <!-- <NuxtErrorBoundary > -->
   <div
     :class="
-      clsx('scroll-smooth font-quicksan selection:bg-[#000000] selection:text-white', {
+      clsx('scroll-smooth font-quicksan selection:bg-c2 selection:text-c1', {
         dark: isDarkMode,
       })
     "

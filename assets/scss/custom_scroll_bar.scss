@@ -3,15 +3,15 @@
   @apply h-[6px] w-[6px];
 }
 ::-webkit-scrollbar-track {
-  @apply bg-[#fff];
+  @apply bg-c1;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-[#00b3ff];
+  @apply bg-sc-thumb;
 }
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-[#ff0088];
+  @apply bg-sc-thumb-hover;
 }
 /* Custom ScrollBar FireFox */
 :root {
-  @apply scrollbar-thin scrollbar-track-[#fff] scrollbar-thumb-[#00b3ff];
+  @apply scrollbar-thin scrollbar-track-c1 scrollbar-thumb-sc-thumb;
 }

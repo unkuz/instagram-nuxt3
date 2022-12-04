@@ -97,9 +97,7 @@ const togglePlay = () => {
         >
           <svg
             aria-label="Play"
-            class="cursor-pointer"
-            color="#ffffff"
-            fill="#ffffff"
+            class="cursor-pointer fill-c1 text-c1"
             role="img"
             viewBox="0 0 24 24"
           >

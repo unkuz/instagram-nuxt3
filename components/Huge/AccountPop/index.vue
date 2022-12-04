@@ -19,12 +19,12 @@ const handleSelect = (section: SECTION) => {
   <div>
     <Arrow />
     <div
-      class="shadow-custom absolute -right-[40px] top-[35px] z-20 flex w-[230px] flex-col rounded-md border-[1px] border-gray-200 bg-white text-sm"
+      class="shadow-custom absolute -right-[40px] top-[35px] z-20 flex w-[230px] flex-col rounded-md border-[1px] border-c4 bg-c1 text-sm"
     >
       <NuxtLink to="/cuzknothz/">
         <div
           @click="handleSelect(SECTION.SELF)"
-          class="z-50 flex h-[37px] cursor-pointer items-center justify-start space-x-[12px] py-[8px] px-[16px] hover:bg-gray-300"
+          class="z-50 flex h-[37px] cursor-pointer items-center justify-start space-x-[12px] py-[8px] px-[16px] hover:bg-c4"
         >
           <ProfileIcon_ />
           <span>Profile</span>
@@ -32,11 +32,11 @@ const handleSelect = (section: SECTION) => {
       </NuxtLink>
       <hr />
       <div
-        class="z-50 flex h-[37px] cursor-pointer items-center justify-start space-x-[12px] py-[8px] px-[16px] hover:bg-gray-300"
+        class="z-50 flex h-[37px] cursor-pointer items-center justify-start space-x-[12px] py-[8px] px-[16px] hover:bg-c4"
       >
         <span>Dark mode</span>
         <span>
-          <div class="relative h-[20px] w-[35px] rounded-[25px] border-[1px] border-black/20">
+          <div class="relative h-[20px] w-[35px] rounded-[25px] border-[1px] border-c4">
             <div class="absolute aspect-square h-full rounded-[50%] bg-green-400"></div>
           </div>
         </span>
@@ -45,7 +45,7 @@ const handleSelect = (section: SECTION) => {
       <NuxtLink to="/login/">
         <div
           @click="handleSelect(SECTION.SELF)"
-          class="flex h-[37px] cursor-pointer justify-center px-[16px] py-[8px] hover:bg-gray-300"
+          class="flex h-[37px] cursor-pointer justify-center px-[16px] py-[8px] hover:bg-c4"
         >
           Log out
         </div>

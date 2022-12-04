@@ -21,9 +21,9 @@ const handleSelect = (section: SECTION) => {
   <div
     :class="
       clsx(
-        'fixed bottom-0 z-10 h-[65px] w-full border-t-[1px] border-gray-200 bg-white md:hidden',
+        'fixed bottom-0 z-10 h-[65px] w-full border-t-[1px] border-c4 bg-c1 md:hidden',
         {
-          'border-none bg-black': isReelsSelect,
+          'border-none bg-c2': isReelsSelect,
         }
       )
     "

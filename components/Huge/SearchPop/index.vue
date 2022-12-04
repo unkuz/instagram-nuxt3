@@ -16,7 +16,7 @@ useClickOutSide(searchResultRef, () => {
       <Arrow />
     </div>
     <div
-      class="shadow-custom absolute right-1/2 top-[55px] z-20 flex h-[350px] w-[375px] translate-x-1/2 items-center overflow-scroll rounded-md border-[1px] border-gray-200 bg-white"
+      class="shadow-custom absolute right-1/2 top-[55px] z-20 flex h-[350px] w-[375px] translate-x-1/2 items-center overflow-scroll rounded-md border-[1px] border-c4 bg-c1"
     >
       <p class="w-full text-center text-sm">No results found.</p>
     </div>

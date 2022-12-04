@@ -113,15 +113,15 @@ onMounted(() => {
           )
         "
       >
-        <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-[#cfc3c3c7]" />
+        <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-c4" />
       </div>
     </div>
     <div
       :class="
         clsx(
-          'absolute bottom-0  h-[4px] w-full cursor-pointer  bg-transparent hover:bg-[#45ff2077] [&>div]:bg-[#5cff1c]',
+          'absolute bottom-0  h-[4px] w-full cursor-pointer  bg-transparent hover:bg-c16 [&>div]:bg-c15',
           {
-            'h-[8px] [&>div]:bg-[#1cbfff]': isFullScreen,
+            'h-[8px] [&>div]:bg-c14': isFullScreen,
           }
         )
       "
@@ -132,7 +132,7 @@ onMounted(() => {
       <div title="Full screen">
         <ExpandIcon_
           @click="toggleFullScreen"
-          class="hidden w-[20px] cursor-pointer fill-white text-white group-hover:block"
+          class="hidden w-[20px] cursor-pointer fill-c1 text-c1 group-hover:block"
         />
       </div>
     </div>
