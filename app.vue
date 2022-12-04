@@ -7,6 +7,7 @@ import { usePrelude, useResizeWindow, useScroll } from '@@/composables'
 import { SECTION } from '@@/constants'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
 import { tagDev } from './utils'
+import clsx from 'classnames'
 
 const darkMode = ref(true)
 
@@ -51,20 +52,17 @@ if (process.client) {
 onMounted(() => {
   tagDev()
 })
-
-watch(isDarkMode, (value) => {
-  const htmlElement = document.querySelector('html')!
-  if (value) {
-    htmlElement.classList.add('dark')
-  } else {
-    htmlElement.classList.remove('dark')
-  }
-})
 </script>
 
 <template>
   <!-- <NuxtErrorBoundary > -->
-  <div class="scroll-smooth font-quicksan selection:bg-[#000000] selection:text-white">
+  <div
+    :class="
+      clsx('scroll-smooth font-quicksan selection:bg-[#000000] selection:text-white', {
+        dark: isDarkMode,
+      })
+    "
+  >
     <NuxtLayout>
       <Prelude v-if="isShowPrelude" />
       <!-- <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" /> -->
