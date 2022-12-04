@@ -48,8 +48,8 @@ const timelineStore = useTimeLineStore()
         v-for="(_i, idx) in mediaArr"
         :key="idx"
         :class="
-          clsx('h-[6px] w-[6px]  rounded-[50%]  bg-c3', {
-            'bg-c7': currentIdx === idx,
+          clsx('h-[6px] w-[6px]  rounded-[50%]  bg-c3 dark:bg-c1', {
+            'bg-c7 dark:bg-c7': currentIdx === idx,
           })
         "
       ></div>

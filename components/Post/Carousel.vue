@@ -2,11 +2,12 @@
 import ArrowIcon_ from '@@/assets/svg/arrow_icon.svg'
 import { useCarousel } from '@@/composables'
 import { gsap } from 'gsap'
+import { stopOtherVideoPlaying } from '~~/helpers'
 import Image from './Image.vue'
 import Like from './Like.vue'
+import Save from './Save.vue'
 import Unlike from './Unlike.vue'
 import Video from './Video.vue'
-import Save from './Save.vue'
 
 interface IProps {
   images: any
@@ -31,7 +32,7 @@ const { next, prev, current } = useCarousel(containerMediaRef)
 
 watch(current, (idx) => {
   emit('currentIndexCarousel', idx)
-
+  stopOtherVideoPlaying()
   if (containerMediaRef.value) {
     gsap.to(containerMediaRef.value, {
       height: containerMediaRef.value.children[idx].children[0].clientHeight,
@@ -53,7 +54,7 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
     </div>
     <div
       v-if="isShowPre"
-      class="-translate-y-1/ absolute left-5 top-[50%] h-[22px] w-[22px]"
+      class="absolute left-0 top-[50%] flex h-[100px] w-[60px] -translate-y-1/2 items-center justify-center"
       @click="prev"
     >
       <ArrowIcon_ class="rotate-180 opacity-80" />
@@ -61,7 +62,7 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
 
     <div
       v-if="isShowNext"
-      class="absolute right-5 top-[50%] h-[22px] w-[22px] -translate-y-1/2"
+      class="absolute right-0 top-[50%] flex h-[100px] w-[60px] -translate-y-1/2 items-center justify-center"
       @click="next"
     >
       <ArrowIcon_ class="opacity-80" />
