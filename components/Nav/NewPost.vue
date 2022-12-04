@@ -11,7 +11,7 @@ defineProps<IconProps>()
 
 <template>
     <IconBase>
-        <NewPostIcon_ v-if="isSelect" />
-        <NewPostIconSelected_ v-else />
+        <NewPostIcon_ v-if="isSelect"  class="dark:fill-c1"/>
+        <NewPostIconSelected_ v-else  class="dark:fill-c1"/>
     </IconBase>
 </template>

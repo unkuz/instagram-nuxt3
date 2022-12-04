@@ -12,7 +12,7 @@ defineProps<IconProps>()
 
 <template>
   <IconBase>
-    <ExploreIcon_ v-if="isSelect" />
-    <ExploreIconSelected_ v-else />
+    <ExploreIcon_ v-if="isSelect" class="dark:fill-c1"/>
+    <ExploreIconSelected_ v-else  class="dark:fill-c1"/>
   </IconBase>
 </template>

@@ -30,12 +30,12 @@ const handleInputSearch = (e: Event) => {
   <div
     ref="searchRef"
     @click="searchStore.setIsFocus(true)"
-    class="relative flex h-[36px] w-[268px] cursor-text items-center rounded-md bg-c4 px-[16px]"
+    class="relative flex h-[36px] w-[268px] cursor-text items-center rounded-md bg-c4 px-[16px] dark:bg-c23"
   >
     <SearchIcon v-show="!isSearchActive" />
     <span
       v-show="!isSearchActive && !isSearchHaveValue"
-      class="absolute top-1/2 left-[60px] -translate-y-1/2 text-sm"
+      class="absolute top-1/2 left-[60px] -translate-y-1/2 text-sm dark:text-c1"
       >Search</span
     >
     <input

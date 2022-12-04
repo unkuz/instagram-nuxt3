@@ -39,10 +39,14 @@ module.exports = {
         c16: '#45ff2077',
         c17: '#cc00ff',
         c18: '#1bb7ff',
+        'back-drop':'#fff',
         // dark
         c19: '#121212',
         c20: '#414143',
-        c21: '#D8D8D8',
+        c21: '#A1ABBA',
+        c22: '#E8E8E8',
+        c23: '#2B2D30',
+
       },
     },
     fontFamily: {

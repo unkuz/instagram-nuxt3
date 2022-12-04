@@ -12,8 +12,8 @@ defineProps<IconProps>()
 
 <template>
   <IconBase>
-    <MessageIcon_ v-if="isSelect" />
-    <MessageIconSelected_ v-else />
+    <MessageIcon_ v-if="isSelect" class="dark:fill-c1" />
+    <MessageIconSelected_ v-else class="dark:fill-c1" />
     <div
       v-show="hasNew"
       class="absolute -bottom-[1px] -right-[1px] h-[7px] w-[7px] animate-pulse rounded-[50%] bg-red-600"

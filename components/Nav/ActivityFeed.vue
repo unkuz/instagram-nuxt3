@@ -12,7 +12,7 @@ defineProps<IconProps>()
 
 <template>
   <IconBase>
-    <ActivityFeedIcon_ v-if="isSelect" />
-    <ActivityFeedIconSelected_ v-else />
+    <ActivityFeedIcon_ v-if="isSelect" class="dark:fill-c1" />
+    <ActivityFeedIconSelected_ v-else class="dark:fill-c1" />
   </IconBase>
 </template>
