@@ -6,10 +6,8 @@ import Prelude from '@@/components/Utils/Prelude.vue'
 import { usePrelude, useResizeWindow, useScroll } from '@@/composables'
 import { SECTION } from '@@/constants'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
-import { tagDev } from './utils'
 import clsx from 'classnames'
-
-const darkMode = ref(true)
+import { tagDev } from './utils'
 
 useHead({
   title: 'Instagram',
@@ -37,7 +35,6 @@ useScroll()
 
 watch([width, height], () => {
   globalStore.setClientSize(width.value, height.value)
-  darkMode.value = !darkMode.value
 })
 
 if (process.client) {
