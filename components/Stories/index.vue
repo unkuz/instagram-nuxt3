@@ -62,7 +62,7 @@ const [container] = useKeenSlider({
 <template>
   <div
     v-cloak
-    class="relative flex h-[119px] w-full items-center border-0 border-gray-200 shadow-gray-200 md:mb-[24px] md:border-[1px] md:shadow-sm"
+    class="relative flex h-[119px] w-full items-center border-0 border-c4 shadow-c4 dark:border-c20 dark:shadow-none md:mb-[24px] md:border-[1px] md:shadow-sm"
   >
     <div ref="container" class="keen-slider h-full pt-[20px]">
       <div class="keen-slider__slide" v-for="i in stories" :key="i.id">

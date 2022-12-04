@@ -63,7 +63,7 @@ onMounted(() => {
       })
     "
   >
-    <div class="dark:bg-c19 dark:text-white">
+    <div class="dark:bg-c19 dark:text-c21">
       <NuxtLayout>
         <Prelude v-if="isShowPrelude" />
         <!-- <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" /> -->

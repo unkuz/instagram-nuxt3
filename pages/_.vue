@@ -42,7 +42,7 @@ useWindowResizeCallback(calcLeftSuggestion)
 </script>
 
 <template>
-  <div class="dark:bg-black/20">
+  <div>
     <div class="relative flex w-full justify-center lg:block">
       <div class="inline-flex w-full flex-col items-center md:w-[614px] lg:block" ref="leftRef">
         <Stories :stories="stories" />

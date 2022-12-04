@@ -42,6 +42,7 @@ module.exports = {
         // dark
         c19: '#121212',
         c20: '#414143',
+        c21: '#D8D8D8',
       },
     },
     fontFamily: {
