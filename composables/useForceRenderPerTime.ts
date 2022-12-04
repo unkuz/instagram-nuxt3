@@ -7,7 +7,7 @@ export const useForceRenderTimer = (time: number = 1000) => {
       key.value++
     }, time)
   })
-  onUnmounted(() => {
+  onBeforeUnmount(() => {
     clearInterval(timer.value)
   })
 

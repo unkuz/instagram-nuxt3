@@ -46,7 +46,7 @@ onMounted(() => {
   })
 })
 
-onUnmounted(() => {
+onBeforeUnmount(() => {
   postStore.clearFiles()
 })
 

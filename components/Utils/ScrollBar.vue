@@ -44,7 +44,7 @@ const mouseDown = (e: MouseEvent) => {
   startY.value = e.clientY
 }
 
-onUnmounted(() => {
+onBeforeUnmount(() => {
   window.removeEventListener('scroll', position)
   window.removeEventListener('resize', position)
   window.removeEventListener('mousemove', mouseMove)

@@ -9,7 +9,7 @@ export function useWindowResizeCallback(callback: Function) {
     window.addEventListener('scroll', resize)
   })
 
-  onUnmounted(() => {
+  onBeforeUnmount(() => {
     window.removeEventListener('resize', resize)
     window.removeEventListener('scroll', resize)
   })

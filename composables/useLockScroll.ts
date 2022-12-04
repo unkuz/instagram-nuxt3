@@ -10,7 +10,7 @@ export function useLockScroll() {
     document.body.style.width = `${window.innerWidth - scrollBarW}px`
   })
 
-  onUnmounted(() => {
+  onBeforeUnmount(() => {
     document.body.style.overflow = originalStyle
     document.body.style.width = `auto`
   })

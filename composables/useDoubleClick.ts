@@ -27,7 +27,7 @@ export const useDoubleClick = (
     }
   })
 
-  onUnmounted(() => {
+  onBeforeUnmount(() => {
     if (refElement.value) {
       refElement.value.removeEventListener('click', _click)
       refElement.value.removeEventListener('dblclick', _dbclick)

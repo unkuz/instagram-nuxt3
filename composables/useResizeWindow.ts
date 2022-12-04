@@ -14,7 +14,7 @@ export function useResizeWindow() {
     height.value = window.innerHeight
   })
 
-  onUnmounted(() => {
+  onBeforeUnmount(() => {
     window.removeEventListener('resize', resize)
   })
   return { width, height }

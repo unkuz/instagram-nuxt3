@@ -61,7 +61,7 @@ watch(isVideoPlay, () => {
   }
 })
 
-onUnmounted(() => {
+onBeforeUnmount(() => {
   window.removeEventListener('timeupdate', updateTime)
   window.removeEventListener('keypress', keyCodeBehaviour)
 })

@@ -21,7 +21,7 @@ export function useCenterElement(
     position()
   })
 
-  onUnmounted(() => {
+  onBeforeUnmount(() => {
     window.removeEventListener('scroll', position)
     window.removeEventListener('resize', position)
   })

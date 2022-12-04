@@ -12,7 +12,7 @@ export const useModalPosition = () => {
     window.addEventListener('scroll', position)
   })
 
-  onUnmounted(() => {
+  onBeforeUnmount(() => {
     window.removeEventListener('scroll', position)
   })
   return { x, y }

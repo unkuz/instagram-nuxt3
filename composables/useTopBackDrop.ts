@@ -10,7 +10,7 @@ export function useTopBackDrop(refElement: Ref<HTMLDivElement | null>) {
     window.addEventListener('scroll', handleScroll)
   })
 
-  onUnmounted(() => {
+  onBeforeUnmount(() => {
     window.removeEventListener('scroll', handleScroll)
   })
 }

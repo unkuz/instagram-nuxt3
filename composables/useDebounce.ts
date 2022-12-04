@@ -10,7 +10,7 @@ export function useDebounce(input: Ref<string>, delayTimeSecond: number) {
     }, delayTimeSecond * 1000)
   })
 
-  onUnmounted(() => {
+  onBeforeUnmount(() => {
     clearTimeout(timer)
   })
   return value

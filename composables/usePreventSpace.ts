@@ -9,7 +9,7 @@ export const usePreventSpace = () => {
     addEventListener('keydown', space)
   })
 
-  onUnmounted(() => {
+  onBeforeUnmount(() => {
     removeEventListener('keydown', space)
   })
 }
