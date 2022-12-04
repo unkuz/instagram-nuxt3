@@ -12,7 +12,7 @@ defineProps<IconProps>()
 
 <template>
   <IconBase>
-    <HomeIcon_ v-if="isSelect" />
-    <HomeIconSelected_ v-else />
+    <HomeIcon_ v-if="isSelect" class="dark:fill-c1" />
+    <HomeIconSelected_ v-else  class="dark:fill-c1"/>
   </IconBase>
 </template>

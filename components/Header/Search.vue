@@ -30,12 +30,12 @@ const handleInputSearch = (e: Event) => {
   <div
     ref="searchRef"
     @click="searchStore.setIsFocus(true)"
-    class="relative flex h-[36px] w-[268px] cursor-text items-center rounded-md bg-gray-200 px-[16px]"
+    class="relative flex h-[36px] w-[268px] cursor-text items-center rounded-md bg-c4 px-[16px] dark:bg-c23"
   >
     <SearchIcon v-show="!isSearchActive" />
     <span
       v-show="!isSearchActive && !isSearchHaveValue"
-      class="absolute top-1/2 left-[60px] -translate-y-1/2 text-sm"
+      class="absolute top-1/2 left-[60px] -translate-y-1/2 text-sm dark:text-c1"
       >Search</span
     >
     <input
@@ -45,7 +45,7 @@ const handleInputSearch = (e: Event) => {
       @input="handleInputSearch"
       :class="
         clsx(
-          'absolute top-1/2  left-1/2 h-[30px] w-[90%] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-[#09f] focus:outline-none',
+          'absolute top-1/2  left-1/2 h-[30px] w-[90%] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-c7 focus:outline-none',
           {
             'w-[72%]': !isSearchActive,
           }

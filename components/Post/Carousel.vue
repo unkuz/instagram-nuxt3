@@ -68,15 +68,15 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
     </div>
     <div
       v-show="totalMedia > 1"
-      class="absolute top-[20px] right-[20px] flex min-w-[40px] justify-center rounded-full bg-black/50 px-[8px] py-[3px] text-[0.8rem] text-white"
+      class="absolute top-[20px] right-[20px] flex min-w-[40px] justify-center rounded-full bg-c2 px-[8px] py-[3px] text-[0.8rem] text-c1"
     >
       {{ `${current + 1}/${totalMedia}` }}
     </div>
     <div v-show="initShowLikeSaved">
       <Unlike v-if="hasLiked" />
       <Like v-else />
-      <Save v-if="hasSaved" className="[&>path]:fill-[#ff8800] [&>path]:stroke-[#ff8800]" />
-      <Save v-else className="[&>path]:fill-[#fff0] [&>path]:stroke-[#000000]" />
+      <Save v-if="hasSaved" className="[&>path]:fill-c11 [&>path]:stroke-c11" />
+      <Save v-else className="[&>path]:fill-c2 [&>path]:stroke-c2" />
     </div>
   </div>
 </template>

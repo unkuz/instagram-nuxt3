@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { SECTION } from '@@/constants'
 import { useGlobalStore } from '@@/store'
+import InstagramLogo_ from '@@/assets/svg/instagram_logo.svg'
 
 const globalStore = useGlobalStore()
 
@@ -11,12 +12,9 @@ const handleSelect = (section: SECTION) => {
 
 <template>
   <NuxtLink to="/">
-    <div
+    <InstagramLogo_
       @click="handleSelect(SECTION.HOME)"
-      class="mt-[7px] h-[29px] w-[103px] cursor-pointer select-none bg-cover bg-center"
-      :style="{
-        backgroundImage: `url(${'/icon/1b47f9d0e595.png'})`,
-      }"
-    ></div>
+      class="mt-[7px] h-[29px] w-[103px] cursor-pointer fill-black dark:fill-white"
+    />
   </NuxtLink>
 </template>

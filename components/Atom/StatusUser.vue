@@ -11,8 +11,8 @@ defineProps<IProps>()
 <template>
   <div
     :class="
-      clsx('h-[6px] w-[6px] rounded-[50%] bg-[#b7ff00]', {
-        'bg-[#ffffff]': !isActive,
+      clsx('h-[6px] w-[6px] rounded-[50%] bg-c6', {
+        'bg-c1': !isActive,
       })
     "
   ></div>

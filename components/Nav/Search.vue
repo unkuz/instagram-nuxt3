@@ -12,7 +12,7 @@ defineProps<IconProps>()
 
 <template>
   <IconBase>
-    <SearchIcon_ v-if="isSelect" />
-    <SearchiconSelected_ v-else />
+    <SearchIcon_ v-if="isSelect" class="dark:fill-c1" />
+    <SearchiconSelected_ v-else class="dark:fill-c1" />
   </IconBase>
 </template>

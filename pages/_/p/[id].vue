@@ -92,12 +92,12 @@ const mediaArr = computed<
   <div>
     <BackDrop>
       <div
-        class="flex h-[100vh] translate-y-[100vh] scale-0 flex-col overflow-scroll bg-white opacity-0 md:h-[80vh] xl:h-[550px] xl:flex-row xl:overflow-auto"
+        class="flex h-[100vh] translate-y-[100vh] scale-0 flex-col overflow-scroll bg-c1 opacity-0 md:h-[80vh] xl:h-[550px] xl:flex-row xl:overflow-auto"
         ref="postRef"
       >
         <div class="flex w-full cursor-pointer justify-end md:hidden" @click="router.back">X</div>
         <div class="w-full md:h-full md:w-[80vw] xl:w-[700px]">
-          <article class="w-full border-gray-200 shadow-gray-200 md:border-[1px] md:shadow-sm">
+          <article class="w-full border-c4 shadow-c4 md:border-[1px] md:shadow-sm">
             <Head :avatar="profilePicUrl" :userName="userName" />
             <Carousel
               :images="images"
@@ -116,7 +116,7 @@ const mediaArr = computed<
                 :hasSaved="isSaved"
               />
               <LikeCommentCount :likeCount="likeCount" :commentCount="commentCount" />
-              <div class="m-[8px_0px_5px_0px] h-[18px] text-[0.8rem] text-gray-400">
+              <div class="m-[8px_0px_5px_0px] h-[18px] text-[0.8rem] text-c3">
                 {{ moment(createdAt).fromNow() }}
               </div>
             </div>

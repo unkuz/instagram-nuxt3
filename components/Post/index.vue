@@ -84,7 +84,7 @@ const scrollToComment = () => {
 <template>
   <article
     ref="postRef"
-    class="mb-[24px] w-full border-gray-200 shadow-gray-200 md:border-[1px] md:shadow-sm"
+    class="mb-[24px] w-full border-c4 shadow-c4 dark:border-c20 dark:shadow-none md:border-[1px] md:shadow-sm"
   >
     <Head :avatar="user.profile_pic_url" :userName="user.username" />
     <Carousel
@@ -109,7 +109,7 @@ const scrollToComment = () => {
         @scrollToComment="scrollToComment"
       />
       <Caption :userName="user.username" :captionContent="caption_text" :tags="tags" />
-      <div class="m-[0px_0px_0px_0px] h-[18px] text-[0.8rem] text-gray-400" :key="key">
+      <div class="m-[0px_0px_0px_0px] h-[18px] text-[0.8rem] text-c4 dark:text-c21" :key="key">
         {{ moment(created_at).fromNow() }}
       </div>
       <div class="mt-[5px] w-full" ref="commentRef">

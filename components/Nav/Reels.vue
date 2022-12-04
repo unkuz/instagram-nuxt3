@@ -9,5 +9,5 @@ defineProps<IconProps>()
 </script>
 
 <template>
-  <IconBase> <Reelicon_ /></IconBase>
+  <IconBase> <Reelicon_  class="dark:fill-c1"/></IconBase>
 </template>

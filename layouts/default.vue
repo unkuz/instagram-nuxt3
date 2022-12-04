@@ -16,7 +16,7 @@ const isShowNavBarBottom = computed(
     <Header />
     <Extension />
     <div
-      class="mx-auto mt-[50px] w-full overflow-hidden sm:mt-[84px] sm:overflow-visible lg:w-[935px]"
+      class="mx-auto w-full overflow-hidden dark:text-white sm:overflow-visible sm:pt-[84px] lg:w-[935px]"
     >
       <slot />
     </div>

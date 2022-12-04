@@ -29,14 +29,14 @@ const toggleFollow = () => (isFollow.value = !isFollow.value)
           {{ name }}
         </p>
       </NuxtLink>
-      <p class="text-[0.8rem] text-gray-600">Suggested for you</p>
+      <p class="text-[0.8rem] text-c3 dark:text-c21">Suggested for you</p>
     </div>
     <div
       class="flex w-[55px] cursor-pointer justify-end text-[0.8rem] font-[500]"
       @click="toggleFollow"
     >
-      <Button v-if="isFollow" text="Unfollow" className="[&>span]:text-[#ff48a3] bg-[#fae1da]" />
-      <Button v-else text="Follow" className="[&>span]:text-[#1da0f6] bg-[#dff1fc]" />
+      <Button v-if="isFollow" text="Unfollow" className="[&>span]:text-c9 bg-c8 " />
+      <Button v-else text="Follow" className="[&>span]:text-c7 bg-c10" />
     </div>
   </div>
 </template>

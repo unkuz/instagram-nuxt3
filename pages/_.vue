@@ -42,13 +42,13 @@ useWindowResizeCallback(calcLeftSuggestion)
 </script>
 
 <template>
-  <div class="dark:bg-black/20">
+  <div>
     <div class="relative flex w-full justify-center lg:block">
       <div class="inline-flex w-full flex-col items-center md:w-[614px] lg:block" ref="leftRef">
         <Stories :stories="stories" />
         <Post v-for="i in timeline" :key="i.id" v-bind="i" />
       </div>
-      <div class="fixed top-[93px] hidden w-[293px] bg-white text-sm lg:block" ref="rightRef">
+      <div class="fixed top-[93px] hidden w-[293px] text-sm lg:block" ref="rightRef">
         <Suggestions :suggestion="suggestion" />
       </div>
     </div>

@@ -25,14 +25,14 @@ const authorText = 'cuzknothz'
       <Avatar :size="M" :url="avatar" />
       <div class="-ml-[70px]">
         <p class="cursor-pointer font-medium">cuzknothz</p>
-        <p class="text-gray-600">cuzknothz</p>
+        <p class="text-c3 dark:text-c21">cuzknothz</p>
       </div>
       <NuxtLink to="/login">
-        <Button class="bg-[#fae1da] text-[.8rem] [&>span]:text-[#ff48a3]" text="Log out" />
+        <Button class="bg-c8 text-[.8rem] [&>span]:text-c9" text="Log out" />
       </NuxtLink>
     </div>
-    <div class="flex h-[11px] items-center justify-between text-sm text-gray-600">
-      <div class="text-gray-600">Suggestions for you</div>
+    <div class="flex h-[11px] items-center justify-between text-sm text-c3 dark:text-c21">
+      <div>Suggestions for you</div>
       <NuxtLink to="/explore/people">
         <div class="cursor-pointer">See All</div>
       </NuxtLink>
@@ -46,8 +46,8 @@ const authorText = 'cuzknothz'
         :id="id"
       />
     </div>
-    <div class="mt-[10px] text-[0.85rem]">
-      <div class="flex justify-center text-gray-600">
+    <div class="mt-[10px] text-[0.85rem] text-c3 dark:text-c21">
+      <div class="flex justify-center">
         <span
           v-for="(i, idx) in ['About', 'Help', 'Press', 'API', 'Jobs', 'Privacy Terms']"
           :key="idx"
@@ -55,7 +55,7 @@ const authorText = 'cuzknothz'
           >{{ i }}</span
         >
       </div>
-      <div class="mb-[13px] flex justify-center text-gray-600">
+      <div class="mb-[13px] flex justify-center">
         <span
           v-for="(i, idx) in ['Location', 'Top accounts', 'Hashtags', 'Language']"
           :key="idx"
@@ -69,7 +69,7 @@ const authorText = 'cuzknothz'
       <div>© 2022 Instagram clone by</div>
       <NuxtLink to="https://github.com/cuzknothz" target="_blank">
         <div
-          class="cursor-pointer select-none font-august text-[1.25rem] uppercase tracking-wider text-black drop-shadow-md"
+          class="cursor-pointer select-none font-august text-[1.25rem] uppercase tracking-wider text-c2 drop-shadow-md dark:text-c1"
         >
           {{ authorText }}
         </div>
