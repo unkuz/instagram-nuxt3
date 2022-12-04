@@ -3,9 +3,6 @@ import { useFps, useNetwork } from '@vueuse/core'
 import { useThemeStore } from '@@/store'
 
 const themeStore = useThemeStore()
-
-const isDarkMode = computed<boolean>(() => themeStore.darkMode)
-
 const fps = useFps()
 </script>
 
@@ -15,9 +12,6 @@ const fps = useFps()
       <div>FPS :</div>
       <div>{{ fps }}</div>
     </div>
-    <div @click="themeStore.toggleDarkMode" class="flex items-center justify-center">
-      <span v-if="isDarkMode">Dark</span>
-      <span v-else>Normal</span>
-    </div>
+    <div class="flex items-center justify-center"></div>
   </div>
 </template>
