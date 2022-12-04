@@ -39,6 +39,9 @@ module.exports = {
         c16: '#45ff2077',
         c17: '#cc00ff',
         c18: '#1bb7ff',
+        // dark
+        c19: '#121212',
+        c20: '#414143',
       },
     },
     fontFamily: {

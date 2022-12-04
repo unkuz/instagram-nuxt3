@@ -58,19 +58,21 @@ onMounted(() => {
   <!-- <NuxtErrorBoundary > -->
   <div
     :class="
-      clsx('scroll-smooth font-quicksan selection:bg-c2 selection:text-c1', {
+      clsx('dark scroll-smooth font-quicksan selection:bg-c2 selection:text-c1 ', {
         dark: isDarkMode,
       })
     "
   >
-    <NuxtLayout>
-      <Prelude v-if="isShowPrelude" />
-      <!-- <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" /> -->
-      <Loading />
-      <NuxtPage />
-    </NuxtLayout>
-    <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
-    <More v-if="isShowMore" />
+    <div class="dark:bg-c19 dark:text-white">
+      <NuxtLayout>
+        <Prelude v-if="isShowPrelude" />
+        <!-- <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" /> -->
+        <Loading />
+        <NuxtPage />
+      </NuxtLayout>
+      <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
+      <More v-if="isShowMore" />
+    </div>
   </div>
   <!-- </NuxtErrorBoundary> -->
 </template>
