@@ -42,7 +42,7 @@ const setExpand = (section: InboxTypeEnum) => {
                 <DownIcon_
                   :class="
                     clsx('w-[16px] origin-center [&>path]:fill-[#fff]', {
-                      'rotate-180-css': !isExpand(InboxTypeEnum.UnRead),
+                      'rotate-180': !isExpand(InboxTypeEnum.UnRead),
                     })
                   "
                 />
@@ -113,8 +113,7 @@ const setExpand = (section: InboxTypeEnum) => {
             <div class="h-[30px] w-[30px] rounded-[10px] bg-purple-500"></div>
           </div>
           <p class="mt-[10px] text-[0.8rem] line-clamp-5">
-            Hello everybody !🍕🍕🍕 <br />
-            Our company looking JavaScript Developer
+            <br />
           </p>
         </div>
         <div class="mt-[10px] flex flex-col gap-[10px]">
@@ -127,9 +126,3 @@ const setExpand = (section: InboxTypeEnum) => {
     </div>
   </div>
 </template>
-
-<style lang="css" scoped>
-.rotate-180-css {
-  rotate: 180deg;
-}
-</style>
