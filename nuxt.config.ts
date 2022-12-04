@@ -27,6 +27,21 @@ export default defineNuxtConfig({
         'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
       title: 'Instagram',
     },
+    keepalive: true,
+    rootId: '__nuxt',
+    rootTag: 'div',
+  },
+  appConfig: {
+    analyze: {
+      analyzerMode: 'static',
+    },
+  },
+  buildDir: '.nuxt',
+  builder: 'vite',
+  debug: true,
+  devServer: {
+    host: 'localhost',
+    port: 3000,
   },
   ssr: true,
   css: ['@/assets/scss/index.scss'],
