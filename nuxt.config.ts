@@ -23,6 +23,9 @@ export default defineNuxtConfig({
         { hid: 'apple-touch-icon', rel: 'apple-touch-icon', href: '/icon-192x192.png' },
         { rel: 'manifest', href: '/manifest.json' },
       ],
+      viewport:
+        'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
+      title: 'Instagram',
     },
   },
   ssr: true,
