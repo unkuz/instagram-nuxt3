@@ -16,7 +16,7 @@ const explore = computed(() => exploreStore.list)
 </script>
 
 <template>
-  <div class="mb-[84px]">
+  <div class="mb-[84px] pt-[20px]">
     <div v-for="(i, idx) in _.chunk(_.shuffle(explore), 3)" :key="idx">
       <Explore :cluster="i" />
     </div>
