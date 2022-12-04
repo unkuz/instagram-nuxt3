@@ -7789,10 +7789,10 @@ nuxi@3.0.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxt-graphql-client@^0.2.17:
-  version "0.2.17"
-  resolved "https://registry.yarnpkg.com/nuxt-graphql-client/-/nuxt-graphql-client-0.2.17.tgz#e01935c420ea2a19d28ba3144da63b0c2724d751"
-  integrity sha512-IyWVVCUKJfPXQVFiiQVw1kuyHAOjZ076xKtSspk4qR3U1WBBse1s3N3oEQVbgYnvjuhi/LLSWHeTTg+4Q/GMkw==
+nuxt-graphql-client@^0.2.19:
+  version "0.2.19"
+  resolved "https://registry.yarnpkg.com/nuxt-graphql-client/-/nuxt-graphql-client-0.2.19.tgz#a99541265004005d7ba4b71d0abc4127d4b85664"
+  integrity sha512-5lt4svDCYAw2WHLtILEWyXdXOmCI7lJZOsn25hJ5uAyjWwmqlvH9kw/+Q5lKCIyRrFDU/mp9oaElsYO8WVnRpg==
   dependencies:
     "@graphql-codegen/cli" "npm:graphql-codegen-cli-nuxt@latest"
     "@graphql-codegen/typescript" "^2.8.1"
@@ -9228,6 +9228,13 @@ rxjs@^7.5.5, rxjs@^7.5.7:
   version "7.5.7"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.5.7.tgz#2ec0d57fdc89ece220d2e702730ae8f1e49def39"
   integrity sha512-z9MzKh/UcOqB3i20H6rtrlaE/CgjLOvheWK/9ILrbhROGTweAi1BaFsTT9FbwZi5Trr1qNRs+MXkhmR06awzQA==
+  dependencies:
+    tslib "^2.1.0"
+
+rxjs@^7.6.0:
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.6.0.tgz#361da5362b6ddaa691a2de0b4f2d32028f1eb5a2"
+  integrity sha512-DDa7d8TFNUalGC9VqXvQ1euWNN7sc63TrUCuM9J998+ViviahMIjKSOU7rfcgFOF+FCD71BhDRv4hrFz+ImDLQ==
   dependencies:
     tslib "^2.1.0"
 
