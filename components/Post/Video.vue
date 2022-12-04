@@ -91,10 +91,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="containerRef" class="group relative flex min-w-full items-center overflow-hidden">
+  <div
+    ref="containerRef"
+    class="group relative flex min-w-full items-center justify-center overflow-hidden"
+  >
     <video
       ref="videoRef"
-      class="video block w-full"
+      class="video block max-h-[800px] w-full"
       :src="video.src"
       type="video/mp4"
       playsinline

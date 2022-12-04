@@ -1,5 +1,38 @@
 export const timeLine = [
   {
+    created_at: '2022-12-04 18:50',
+    id: '45gffdafffsdsf',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [
+        {
+          id: 1,
+          src: `/video/Y2Mate.is - Dirty Palm - ID's of 2022 (Instagram Reels)-VhkF_5bHSMo-720p-1660257104228.mp4`,
+        },
+      ],
+    },
+    user: {
+      id: 'Diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 2090,
+    has_liked: true,
+    caption_text: `Dirty Palm - ID's of 2022 (Instagram Reels)`,
+    is_seen: true,
+    tags: ['Dirty Palm'],
+    is_saved: true,
+  },
+  {
     created_at: '2022-12-02 19:50',
     id: '45gffdafffsdsf',
     location: {
