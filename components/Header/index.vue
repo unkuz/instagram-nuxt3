@@ -23,13 +23,13 @@ const accountPopRef = ref<HTMLDivElement | null>(null)
 const activityFeedPopRef = ref<HTMLDivElement | null>(null)
 const isShowProfile = ref<boolean>(false)
 
-useClickOutSide(accountPopRef, () => {
-  isShowProfile.value = false
-})
+// useClickOutSide(accountPopRef, () => {
+//   isShowProfile.value = false
+// })
 
-useClickOutSide(activityFeedPopRef, () => {
-  isShowProfile.value = false
-})
+// useClickOutSide(activityFeedPopRef, () => {
+//   isShowProfile.value = false
+// })
 
 const handleSelect = (section: SECTION) => {
   globalStore.setSection(section)
@@ -84,7 +84,7 @@ const handleSelect = (section: SECTION) => {
             <ActivityFeedPop v-show="section === SECTION.ACTIVITYFEED" />
           </div>
         </div>
-        <div v-show="!isMobile" class="relative mr-0" @click="isShowProfile = !isShowProfile">
+        <div v-show="!isMobile" class="relative mr-0" @click="isShowProfile = true">
           <SelfAvatar :isSelect="section === SECTION.SELF" />
           <div ref="accountPopRef">
             <AccountPop v-show="isShowProfile" />

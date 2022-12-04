@@ -3,15 +3,23 @@ import ProfileIcon_ from '@@/assets/svg/profile.svg'
 import Arrow from '@@/components/Utils/Arrow.vue'
 import { useClickOutSide } from '@@/composables'
 import { SECTION } from '@@/constants'
-import { useGlobalStore } from '@@/store'
+import { useGlobalStore, useThemeStore } from '@@/store'
 
 const globalStore = useGlobalStore()
 const accountPopRef = ref<HTMLDivElement | null>(null)
+const themeStore = useThemeStore()
+
+const isDarkMode = computed<boolean>(() => themeStore.darkMode)
 
 useClickOutSide(accountPopRef, () => {})
 
 const handleSelect = (section: SECTION) => {
   globalStore.setSection(section)
+}
+
+const toggleDarkMode = () => {
+  console.log('HEHE')
+  themeStore.toggleDarkMode()
 }
 </script>
 
@@ -27,7 +35,7 @@ const handleSelect = (section: SECTION) => {
           class="z-50 flex h-[37px] cursor-pointer items-center justify-start space-x-[12px] py-[8px] px-[16px] hover:bg-c4"
         >
           <ProfileIcon_ />
-          <span>Profile</span>
+          <span>Profile hehe</span>
         </div>
       </NuxtLink>
       <hr />
@@ -35,7 +43,7 @@ const handleSelect = (section: SECTION) => {
         class="z-50 flex h-[37px] cursor-pointer items-center justify-start space-x-[12px] py-[8px] px-[16px] hover:bg-c4"
       >
         <span>Dark mode</span>
-        <span>
+        <span @click="toggleDarkMode">
           <div class="relative h-[20px] w-[35px] rounded-[25px] border-[1px] border-c4">
             <div class="absolute aspect-square h-full rounded-[50%] bg-green-400"></div>
           </div>

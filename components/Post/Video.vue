@@ -93,7 +93,7 @@ onMounted(() => {
 <template>
   <div
     ref="containerRef"
-    class="group relative flex min-w-full items-center justify-center overflow-hidden"
+    class="group relative flex min-w-full items-center justify-center overflow-hidden bg-c2 dark:bg-c1"
   >
     <video
       ref="videoRef"
@@ -135,7 +135,7 @@ onMounted(() => {
       <div title="Full screen">
         <ExpandIcon_
           @click="toggleFullScreen"
-          class="hidden w-[20px] cursor-pointer fill-c1 text-c1 group-hover:block"
+          class="hidden w-[20px] cursor-pointer fill-c1 text-c1 group-hover:block dark:fill-black"
         />
       </div>
     </div>
