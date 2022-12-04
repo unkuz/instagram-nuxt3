@@ -60,6 +60,7 @@
     "vee-validate": "^4.7.3",
     "video.js": "^7.20.3",
     "vite-svg-loader": "^3.6.0",
+    "vue-lottie": "^0.2.1",
     "yarn": "^1.22.19"
   }
 }

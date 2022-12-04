@@ -7112,6 +7112,11 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+lottie-web@^5.1.9:
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.10.0.tgz#72563f22efdcf2b8f7e8359743514930ebaf5f8c"
+  integrity sha512-q2hfqKrGXNkwjSSZjKxf3fWMi0e3ZBc03qBkVWoGbwUJ7BcG+9YXjMPtmmhitzk8Nc6VQ5PRnh9yInPdfq0PZg==
+
 loupe@^2.3.1:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/loupe/-/loupe-2.3.4.tgz#7e0b9bffc76f148f9be769cb1321d3dcf3cb25f3"
@@ -10693,6 +10698,13 @@ vue-instantsearch@^4.3.2:
   dependencies:
     instantsearch.js "^4.47.0"
     mitt "^2.1.0"
+
+vue-lottie@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/vue-lottie/-/vue-lottie-0.2.1.tgz#f9f62c34a276e6834255406118fb05b51f765e4b"
+  integrity sha512-zInUX69Ij8MhVR3XArpu4PqqBoufwKxS5UMutWCPm59VUaB5H6GtnaIzf9M+l6aYU+Kr8gF/W9dzWLgRuU6V+Q==
+  dependencies:
+    lottie-web "^5.1.9"
 
 vue-router@^4.1.6:
   version "4.1.6"
