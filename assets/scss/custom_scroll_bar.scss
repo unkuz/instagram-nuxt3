@@ -1,19 +1,17 @@
 /* Custom ScrollBar Chrome Opera */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  @apply h-[6px] w-[6px];
 }
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  @apply bg-[#fff];
 }
 ::-webkit-scrollbar-thumb {
-  background: #00b3ff;
+  @apply bg-[#00b3ff];
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff0088;
+  @apply bg-[#ff0088];
 }
 /* Custom ScrollBar FireFox */
 :root {
-  scrollbar-color: #00b3ff #ffffff;
-  scrollbar-width: thin;
+  @apply scrollbar-thin scrollbar-track-[#fff] scrollbar-thumb-[#00b3ff];
 }
