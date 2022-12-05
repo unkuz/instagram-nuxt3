@@ -23,11 +23,11 @@ const circleRef = ref<HTMLDivElement | null>(null)
 
 <template>
   <div
-    class="absolute top-[35px] -left-[62px] w-[200px] -translate-x-1/2 bg-red-100 py-[20px] text-[0.7rem]"
+    class="absolute top-[35px] -left-[62px] w-[200px] -translate-x-1/2 border-[1px] border-c4 bg-c1 py-[20px] text-[0.7rem] dark:border-c20 dark:bg-c19"
   >
     <div class="flex w-full cursor-pointer select-none justify-center">
       <div
-        class="relative h-[20px] w-[40px] overflow-hidden rounded-[10px] bg-[#000]"
+        class="relative h-[20px] w-[40px] overflow-hidden rounded-[10px] bg-c2 dark:bg-c1"
         @click="themeStore.toggleDarkMode"
       >
         <div
@@ -38,12 +38,12 @@ const circleRef = ref<HTMLDivElement | null>(null)
           "
         >
           <div
-            class="absolute top-1/2 h-[15px] w-[15px] -translate-y-1/2 translate-x-0 rounded-[50%] bg-[#ff7300]"
+            class="absolute top-1/2 h-[15px] w-[15px] -translate-y-1/2 translate-x-0 rounded-[50%] bg-c11"
           ></div>
           <div
             :class="
               clsx(
-                'absolute top-1/2 h-[15px] w-[15px] -translate-y-[calc(50%+2px)] -translate-x-[8px] scale-0 rounded-[50%] bg-[#000] duration-200',
+                'absolute top-1/2 h-[15px] w-[15px] -translate-y-[calc(50%+3px)] -translate-x-[8px] scale-0 rounded-[50%] bg-c2 duration-75 dark:bg-c1',
                 {
                   '!scale-100': isDarkMode,
                 }
