@@ -8,4 +8,5 @@ export const APP_API = {
   suggestions: {
     list: 'https://mocki.io/v1/5e99de01-56f3-46a5-a0a0-477dcfd34beb',
   },
+  
 }
