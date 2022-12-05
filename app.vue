@@ -38,7 +38,7 @@ useResizeWindow()
     "
   >
     <Head>
-      <Meta name="theme-color" :content="isDarkMode ? 'black' : 'white'" />
+      <Meta name="theme-color" :content="isDarkMode ? '#121212' : '#fff'" />
     </Head>
     <div class="min-h-screen dark:bg-c19 dark:text-c21">
       <NuxtLayout>
