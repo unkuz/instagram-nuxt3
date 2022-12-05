@@ -69,7 +69,7 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
     </div>
     <div
       v-show="totalMedia > 1"
-      class="absolute top-[20px] right-[20px] flex min-w-[40px] justify-center rounded-full bg-c2 px-[8px] py-[3px] text-[0.8rem] text-c1"
+      class="absolute top-[20px] right-[20px] flex min-w-[40px] justify-center rounded-full bg-c2 dark:bg-c1 dark:text-c2 px-[8px] py-[3px] text-[0.75rem] text-c1 font-[600]"
     >
       {{ `${current + 1}/${totalMedia}` }}
     </div>
