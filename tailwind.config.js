@@ -40,7 +40,7 @@ module.exports = {
         c17: '#cc00ff',
         c18: '#1bb7ff',
         'back-drop': '#fff',
-        // dark
+        // dark theme
         c19: '#121212',
         c20: '#414143',
         c21: '#A1ABBA',
