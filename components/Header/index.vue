@@ -59,7 +59,7 @@ const handleSelect = (section: SECTION) => {
       <div class="flex w-full items-center gap-[22px] md:w-auto lg:w-full">
         <Logo />
         <div @click="toggleShowExtension">
-          <Flashicon_ class="cursor-pointer dark:[&>path]:fill-white" />
+          <Flashicon_ class="animate-pulse cursor-pointer dark:[&>path]:fill-white" />
         </div>
         <div class="relative" ref="extensionRef">
           <div @click="toggleShowExtension"></div>
