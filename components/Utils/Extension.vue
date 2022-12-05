@@ -1,24 +1,9 @@
 <script setup lang="ts">
-import { useThemeStore } from '~~/store'
-import { gsap } from 'gsap'
 import clsx from 'classnames'
+import { useThemeStore } from '~~/store'
 
 const themeStore = useThemeStore()
 const isDarkMode = computed(() => themeStore.darkMode)
-
-const circleRef = ref<HTMLDivElement | null>(null)
-
-// watch(isDarkMode, (value) => {
-//   if (value) {
-//     gsap.to(circleRef.value, {
-//       translateX: 20,
-//     })
-//   } else {
-//     gsap.to(circleRef.value, {
-//       translateX: 2.5,
-//     })
-//   }
-// })
 </script>
 
 <template>
