@@ -37,6 +37,9 @@ useResizeWindow()
       })
     "
   >
+    <Head>
+      <Meta name="theme-color" :content="isDarkMode ? 'black' : 'white'" />
+    </Head>
     <div class="min-h-screen dark:bg-c19 dark:text-c21">
       <NuxtLayout>
         <Prelude v-if="isShowPrelude" />
