@@ -35,20 +35,9 @@ const toggleDarkMode = () => {
           class="z-50 flex h-[37px] cursor-pointer items-center justify-start space-x-[12px] py-[8px] px-[16px] hover:bg-c4"
         >
           <ProfileIcon_ />
-          <span>Profile hehe</span>
+          <span>Profile</span>
         </div>
       </NuxtLink>
-      <hr />
-      <div
-        class="z-50 flex h-[37px] cursor-pointer items-center justify-start space-x-[12px] py-[8px] px-[16px] hover:bg-c4"
-      >
-        <span>Dark mode</span>
-        <span @click="toggleDarkMode">
-          <div class="relative h-[20px] w-[35px] rounded-[25px] border-[1px] border-c4">
-            <div class="absolute aspect-square h-full rounded-[50%] bg-green-400"></div>
-          </div>
-        </span>
-      </div>
       <hr />
       <NuxtLink to="/login/">
         <div
