@@ -13,7 +13,7 @@ import FindPeople from '../Nav/FindPeople.vue'
 import Messenger from '../Nav/Messenger.vue'
 import NewPost from '../Nav/NewPost.vue'
 import SelfAvatar from '../Nav/SelfAvatar.vue'
-import Extension from '@@/components/Utils/Extensiton.vue'
+import Extension from '~~/components/Utils/Extension.vue'
 import Flashicon_ from '@@/assets/svg/flash_icon.svg'
 import { useClickOutSide } from '@@/composables'
 

@@ -1,0 +1,57 @@
+<script setup lang="ts">
+import { useThemeStore } from '~~/store'
+import { gsap } from 'gsap'
+import clsx from 'classnames'
+
+const themeStore = useThemeStore()
+const isDarkMode = computed(() => themeStore.darkMode)
+
+const circleRef = ref<HTMLDivElement | null>(null)
+
+// watch(isDarkMode, (value) => {
+//   if (value) {
+//     gsap.to(circleRef.value, {
+//       translateX: 20,
+//     })
+//   } else {
+//     gsap.to(circleRef.value, {
+//       translateX: 2.5,
+//     })
+//   }
+// })
+</script>
+
+<template>
+  <div
+    class="absolute top-[35px] -left-[62px] w-[200px] -translate-x-1/2 bg-red-100 py-[20px] text-[0.7rem]"
+  >
+    <div class="flex w-full cursor-pointer select-none justify-center">
+      <div
+        class="relative h-[20px] w-[40px] overflow-hidden rounded-[10px] bg-[#000]"
+        @click="themeStore.toggleDarkMode"
+      >
+        <div
+          :class="
+            clsx('relative top-1/2 -translate-y-1/2 translate-x-[2.5px] duration-200', {
+              'translate-x-[23px]': isDarkMode,
+            })
+          "
+        >
+          <div
+            class="absolute top-1/2 h-[15px] w-[15px] -translate-y-1/2 translate-x-0 rounded-[50%] bg-[#ff7300]"
+          ></div>
+          <div
+            :class="
+              clsx(
+                'absolute top-1/2 h-[15px] w-[15px] -translate-y-[calc(50%+2px)] -translate-x-[8px] scale-0 rounded-[50%] bg-[#000] duration-200',
+                {
+                  '!scale-100': isDarkMode,
+                }
+              )
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
