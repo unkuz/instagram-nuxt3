@@ -18,3 +18,6 @@ export * from './useFetchCamel'
 export * from './useForceRenderPerTime'
 export * from './useScroll'
 export * from './useSignature'
+export * from './useScrollBarTheme'
+export * from './useWatchWithMounted'
+

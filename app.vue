@@ -3,7 +3,13 @@ import Loading from '@@/components/Atom/Loading.vue'
 import NewPost from '@@/components/Huge/NewPost/index.vue'
 import More from '@@/components/Utils/More.vue'
 import Prelude from '@@/components/Utils/Prelude.vue'
-import { usePrelude, useResizeWindow, useScroll, useSignature } from '@@/composables'
+import {
+  usePrelude,
+  useResizeWindow,
+  useScroll,
+  useSignature,
+  useScrollBarTheme,
+} from '@@/composables'
 import { SECTION } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
@@ -23,6 +29,7 @@ const section = computed<SECTION>(() => globalStore.section)
 const isMobile = computed<boolean>(() => globalStore.getIsMobile)
 const isShowMore = computed<boolean>(() => moreStore.isShow)
 
+useScrollBarTheme()
 useScroll()
 useSignature()
 useResizeWindow()
@@ -53,3 +60,4 @@ useResizeWindow()
   </div>
   <!-- </NuxtErrorBoundary> -->
 </template>
+
