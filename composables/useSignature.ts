@@ -1,7 +1,7 @@
-import { tagDev } from '@@/utils'
+import { signature } from '@@/utils'
 
 export const useSignature = () => {
   onMounted(() => {
-    tagDev()
+    signature()
   })
 }
