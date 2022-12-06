@@ -10,8 +10,8 @@
   "devDependencies": {
     "@nuxt/image": "^0.7.1",
     "@nuxt/image-edge": "1.0.0-27827328.bc9ddc0",
-    "@nuxt/test-utils-edge": "3.0.1-rc.0-27833302.52421a9",
-    "@nuxtjs/html-validator": "^1.2.1",
+    "@nuxt/test-utils-edge": "3.0.1-rc.0-27838776.d0c0cd7",
+    "@nuxtjs/html-validator": "^1.2.3",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/supabase": "^0.3.0",
     "@nuxtjs/tailwindcss": "^6.1.3",
@@ -29,7 +29,7 @@
     "prettier": "^2.8.0",
     "prettier-plugin-tailwindcss": "^0.2.0",
     "tailwind-scrollbar": "^2.0.1",
-    "vitest": "^0.25.3"
+    "vitest": "^0.25.4"
   },
   "dependencies": {
     "@nuxtjs/algolia": "^1.3.1",
@@ -41,7 +41,7 @@
     "@videojs-player/vue": "^1.0.0",
     "@vueuse/core": "^9.6.0",
     "add": "^2.0.6",
-    "axios": "^1.2.0",
+    "axios": "^1.2.1",
     "camelcase-keys": "^8.0.2",
     "classnames": "^2.3.2",
     "file-saver": "^2.0.5",
@@ -50,7 +50,7 @@
     "lodash": "^4.17.21",
     "magic-regexp": "^0.6.1",
     "moment": "^2.29.4",
-    "nuxt-graphql-client": "^0.2.19",
+    "nuxt-graphql-client": "^0.2.20",
     "pinia": "^2.0.27",
     "postcss-custom-properties": "^12.1.11",
     "rxjs": "^7.6.0",
