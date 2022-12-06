@@ -1972,12 +1972,12 @@
     unimport "^0.6.7"
     untyped "^0.5.0"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.0.1-rc.0-27833302.52421a9":
-  version "3.0.1-rc.0-27833302.52421a9"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.0.1-rc.0-27833302.52421a9.tgz#ecabc249239c678556c21b3e6d636ccf84702ce2"
-  integrity sha512-GOaHQ1tuB74sIYcT8aMGPE/XXNiFl2jAwLZbygvFL7gcT/xyav97Bs7lsEi/zadyvmpjvIyk3jnzx4+UrQ00cw==
+"@nuxt/kit@npm:@nuxt/kit-edge@3.0.1-rc.0-27838776.d0c0cd7":
+  version "3.0.1-rc.0-27838776.d0c0cd7"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.0.1-rc.0-27838776.d0c0cd7.tgz#21770755ca8409353e95c9731ede52eb3ee1f1b7"
+  integrity sha512-cSsElkR8L/AMU6oFAS51oPdDFt4Tz0mnaY94C7eqysqUO2WfZPsbQRMfIID2KqE+g9j3HU0aq4Ilv1i/pvK8Hw==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.0.1-rc.0-27833302.52421a9"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.0.1-rc.0-27838776.d0c0cd7"
     c12 "^1.0.1"
     consola "^2.15.3"
     defu "^6.1.1"
@@ -2080,10 +2080,10 @@
     unimport "^0.6.8"
     untyped "^0.5.0"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.0.1-rc.0-27833302.52421a9":
-  version "3.0.1-rc.0-27833302.52421a9"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.0.1-rc.0-27833302.52421a9.tgz#2ad72a4575ec77b464ee6ff15997ffa3d4975a13"
-  integrity sha512-Bb48Nw9yqOEERkC4ox6/m+z9/ceuYs3+wv4flKjNjgIfwhOtAmRNBVBTwsEJQ1vB1sKl4N8/Cyaara1V8jVi9A==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.0.1-rc.0-27838776.d0c0cd7":
+  version "3.0.1-rc.0-27838776.d0c0cd7"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.0.1-rc.0-27838776.d0c0cd7.tgz#32cdc7b3dc4ea3d8f00c49c9062e4703ea8fb92f"
+  integrity sha512-ntE7sUeaafRdvCGZ54v5arSTsXvtp7TZExBJ8tgaA7hJS/G2mfflVzVICS7aXAIvALLQqTx/FKObC3dyvUpBXw==
   dependencies:
     c12 "^1.0.1"
     create-require "^1.1.1"
@@ -2124,13 +2124,13 @@
     rc9 "^2.0.0"
     std-env "^3.3.1"
 
-"@nuxt/test-utils-edge@3.0.1-rc.0-27833302.52421a9":
-  version "3.0.1-rc.0-27833302.52421a9"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.0.1-rc.0-27833302.52421a9.tgz#7649c206cf6ef856359010a100ddb6a003f3a788"
-  integrity sha512-vomfswUhg//GVDqnqc/EObgeVsmRYphDYnsDuw4Jcc3wHJ2JW/8FFT9t0qn0a/lLegqryCoo6ratNQj6R30/nQ==
+"@nuxt/test-utils-edge@3.0.1-rc.0-27838776.d0c0cd7":
+  version "3.0.1-rc.0-27838776.d0c0cd7"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.0.1-rc.0-27838776.d0c0cd7.tgz#2c85871a0a2e6ee50ff8832e5b507630c0302f94"
+  integrity sha512-LHgU3ez1yXzJTMJh32mViZhCatjPowYT9mOXtyCRtZWsu1HGW8ODoSkDGAo9te+jy+EmaQlry+bDBLYyOSjohg==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.0.1-rc.0-27833302.52421a9"
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.0.1-rc.0-27833302.52421a9"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.0.1-rc.0-27838776.d0c0cd7"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.0.1-rc.0-27838776.d0c0cd7"
     consola "^2.15.3"
     defu "^6.1.1"
     execa "^6.1.0"
@@ -2197,16 +2197,17 @@
     storyblok-algolia-indexer "^1.0.3"
     vue-instantsearch "^4.3.2"
 
-"@nuxtjs/html-validator@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/html-validator/-/html-validator-1.2.1.tgz#7da4809437fdcc6af18ebbf3d048f45ebb396d61"
-  integrity sha512-DuzD4cEJYwmBYvDgcPGgO90dAPiyk9Zyk8G44wdjNvzXHzxa5n1HfDPZ63O/+U3VSgxgUBeeYRPjSZhI//FjhA==
+"@nuxtjs/html-validator@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/html-validator/-/html-validator-1.2.3.tgz#3d411a0f68595d6ebe16d207bd20da3100792da2"
+  integrity sha512-SDoqoi3QqcaoFl8yW5Kdqon5rbAgUWZu1cDUEZR85WBl3T2BddXJazrkIg7gq0r2G/hrxSVDHUtaVYvKhq+ILw==
   dependencies:
     "@nuxt/kit" "^3.0.0"
     chalk "^5.1.2"
-    html-validate "7.8.0"
+    html-validate "~7.10.1"
     pathe "^1.0.0"
     prettier "^2.7.1"
+    std-env "^3.3.1"
 
 "@nuxtjs/pwa@^3.3.5":
   version "3.3.5"
@@ -3431,10 +3432,10 @@ axios@^0.25.0:
   dependencies:
     follow-redirects "^1.14.7"
 
-axios@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.2.0.tgz#1cb65bd75162c70e9f8d118a905126c4a201d383"
-  integrity sha512-zT7wZyNYu3N5Bu0wuZ6QccIf93Qk1eV8LOewxgjOZFd2DenOs98cJ7+Y6703d0wkaXGY6/nZd4EweJaHz9uzQw==
+axios@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.2.1.tgz#44cf04a3c9f0c2252ebd85975361c026cb9f864a"
+  integrity sha512-I88cFiGu9ryt/tfVEi4kX2SITsvDddTajXTOFmt2uK1ZVA8LytjtdeyefdQWEf5PU8w+4SSJDoYnggflB5tW4A==
   dependencies:
     follow-redirects "^1.15.0"
     form-data "^4.0.0"
@@ -5930,10 +5931,10 @@ html-tags@^3.1.0:
   resolved "https://registry.npmjs.org/html-tags/-/html-tags-3.2.0.tgz"
   integrity sha512-vy7ClnArOZwCnqZgvv+ddgHgJiAFXe3Ge9ML5/mBctVJoUoYPCdxVucOywjDARn6CVoh3dRSFdPHy2sX80L0Wg==
 
-html-validate@7.8.0:
-  version "7.8.0"
-  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-7.8.0.tgz#a147cb79b6155737e602e983467025b515c68731"
-  integrity sha512-r9KxbC6ztQ5F266KEykWj2DtjlAEOYhCcZCwIP6Zme3odLJxeGAzoOQfrSW4x/RGJruzfbYzNUw+XH7+pPRBeQ==
+html-validate@~7.10.1:
+  version "7.10.1"
+  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-7.10.1.tgz#8ac955e1f93206164822225c9b4772dae08d303e"
+  integrity sha512-2MjthTcMfqAZ8V1YyXshINGsdmPKc3RW9IKJ3kgfjXq59BuvSVM+vBhfOu0dJvlpRVH117vZ5JImYNsMfca3nA==
   dependencies:
     "@babel/code-frame" "^7.10.0"
     "@html-validate/stylish" "^3.0.0"
@@ -7802,10 +7803,10 @@ nuxi@3.0.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxt-graphql-client@^0.2.19:
-  version "0.2.19"
-  resolved "https://registry.yarnpkg.com/nuxt-graphql-client/-/nuxt-graphql-client-0.2.19.tgz#a99541265004005d7ba4b71d0abc4127d4b85664"
-  integrity sha512-5lt4svDCYAw2WHLtILEWyXdXOmCI7lJZOsn25hJ5uAyjWwmqlvH9kw/+Q5lKCIyRrFDU/mp9oaElsYO8WVnRpg==
+nuxt-graphql-client@^0.2.20:
+  version "0.2.20"
+  resolved "https://registry.yarnpkg.com/nuxt-graphql-client/-/nuxt-graphql-client-0.2.20.tgz#a35a0e6596069153e2ac489f1f7af6b600ea8064"
+  integrity sha512-jGGZnd22t6ohFVst8Fsr0UGyHm3SBEqqkPyC0kJJSQCfX3etC/ok37uiekwFY01Wqfl6bVRH08I7bejBaN8XyA==
   dependencies:
     "@graphql-codegen/cli" "npm:graphql-codegen-cli-nuxt@latest"
     "@graphql-codegen/typescript" "^2.8.1"
@@ -10602,10 +10603,10 @@ vite@~3.2.4:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vitest@^0.25.3:
-  version "0.25.3"
-  resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.25.3.tgz#4e5ed481e4da6a0ce014bdb71dfc9661fd62b722"
-  integrity sha512-/UzHfXIKsELZhL7OaM2xFlRF8HRZgAHtPctacvNK8H4vOcbJJAMEgbWNGSAK7Y9b1NBe5SeM7VTuz2RsTHFJJA==
+vitest@^0.25.4:
+  version "0.25.4"
+  resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.25.4.tgz#11134b4c9199ed64bd5cc2945d98435381c50ef9"
+  integrity sha512-v/qoSEYPrf8qa1CbKIKYK+1GGmPPEJyXFbkuD6jhh080cfNBsuUDAdMu6hV2h9Uv34EMiUrVETL/wB+EHxFtbA==
   dependencies:
     "@types/chai" "^4.3.3"
     "@types/chai-subset" "^1.3.3"
@@ -10616,7 +10617,7 @@ vitest@^0.25.3:
     debug "^4.3.4"
     local-pkg "^0.4.2"
     source-map "^0.6.1"
-    strip-literal "^0.4.2"
+    strip-literal "^1.0.0"
     tinybench "^2.3.1"
     tinypool "^0.3.0"
     tinyspy "^1.0.2"
