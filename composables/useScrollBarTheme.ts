@@ -13,7 +13,6 @@ export const useScrollBarTheme = () => {
   })
 
   const checkIsCurrentHasStyle = (headTag: HTMLHeadElement) => {
-    console.log('VCL')
     const lastElIdx = headTag.childNodes.length - 1
     console.log('headTag.childNodes', headTag.childNodes)
     return (headTag.childNodes[lastElIdx] as any)?.localName === 'style' &&
