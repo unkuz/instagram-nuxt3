@@ -7,7 +7,7 @@ type TState = IStateStore<IAuthData>
 export const useAuthStore = defineStore('auth', {
   state: (): TState => ({
     data: {
-      isLogin: true,
+      isLogin: false,
       userName: 'cuzknothz',
       avatar: '/image/91480011.jpg',
       coverImg: '/image/efc566f3-c275-44b3-a1a9-4eb8a361f626.jpg',

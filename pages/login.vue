@@ -1,4 +1,17 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useAuthStore } from '@@/store'
+import { watchArray } from '@vueuse/shared'
+
+const authStore = useAuthStore()
+
+const isLogin = computed<boolean>(() => authStore.data.isLogin)
+
+useWatchWithMounted(isLogin, () => {
+  if (isLogin) {
+    navigateTo('/')
+  }
+})
+</script>
 
 <template>
   <div class="flex h-screen w-screen items-center justify-center text-[0.8rem]">

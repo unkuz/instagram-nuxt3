@@ -7,6 +7,10 @@ import { IStory, ITimeLine, TSuggestion } from '@@/models'
 import { useStoriesStore, useSuggestionStore, useTimeLineStore } from '@@/store'
 import { useFetchCamel, useWindowResizeCallback } from '~~/composables'
 
+definePageMeta({
+  middleware: ['basic'],
+})
+
 const rightRef = ref<HTMLElement | null>(null)
 const leftRef = ref<HTMLElement | null>(null)
 const storiesStore = useStoriesStore()

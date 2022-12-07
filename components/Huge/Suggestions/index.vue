@@ -28,9 +28,11 @@ const authorText = 'cuzknothz'
         <p class="cursor-pointer font-medium">cuzknothz</p>
         <p class="text-c3 dark:text-c21">cuzknothz</p>
       </div>
-      <NuxtLink to="/login">
-        <Button class="bg-c8 text-[.8rem] [&>span]:text-c9" text="Log out" />
-      </NuxtLink>
+      <div @click="authStore.data.isLogin = false">
+        <NuxtLink to="/login">
+          <Button class="bg-c8 text-[.8rem] [&>span]:text-c9" text="Log out" />
+        </NuxtLink>
+      </div>
     </div>
     <div class="flex h-[11px] items-center justify-between text-sm text-c3 dark:text-c21">
       <div>Suggestions for you</div>
@@ -78,4 +80,3 @@ const authorText = 'cuzknothz'
     </div>
   </div>
 </template>
-
