@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import Avatar from '@@/components/Atom/Avatar.vue'
+import Button from '@@/components/Atom/Button.vue'
 import { TSuggestion } from '@@/models'
 import { useAuthStore } from '@@/store'
 import { SizeAvatarEnum } from '@@/type'
+import { getCurrentYear } from '@@/utils'
 import Item from './Item.vue'
-import Button from '@@/components/Atom/Button.vue'
 
 interface IProps {
   suggestion: TSuggestion[]
@@ -66,7 +67,7 @@ const authorText = 'cuzknothz'
     </div>
 
     <div class="flex flex-col items-center gap-[5px] text-[0.8rem]">
-      <div>© 2022 Instagram clone by</div>
+      <div>© <span v-html="getCurrentYear()"></span> Instagram clone by</div>
       <NuxtLink to="https://github.com/cuzknothz" target="_blank">
         <div
           class="cursor-pointer select-none font-august text-[1.25rem] uppercase tracking-wider text-c2 drop-shadow-md dark:text-c1"
@@ -77,3 +78,4 @@ const authorText = 'cuzknothz'
     </div>
   </div>
 </template>
+
