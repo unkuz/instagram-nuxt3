@@ -13,12 +13,14 @@ export const useScrollBarTheme = () => {
   })
 
   const checkIsCurrentHasStyle = (headTag: HTMLHeadElement) => {
-    const lastElIdx = headTag.childNodes.length - 1
-    console.log('headTag.childNodes', headTag.childNodes)
-    return (headTag.childNodes[lastElIdx] as any)?.localName === 'style' &&
-      (headTag.childNodes[lastElIdx] as any).attributes[0]?.name === CUZ
-      ? true
-      : false
+    let result: boolean = false
+    headTag.childNodes.forEach(({ localName, attributes }: any) => {
+      if (localName === 'style' && attributes[0]?.name === CUZ) {
+        return (result = true)
+      }
+      result = false
+    })
+    return result
   }
 
   const makeStyle = () => {
@@ -31,10 +33,12 @@ export const useScrollBarTheme = () => {
       headTag.appendChild(el)
     } else {
       if (checkIsCurrentHasStyle(headTag)) {
-        const elNeedRm = headTag.lastChild
-        if (elNeedRm) {
-          headTag.removeChild(elNeedRm)
-        }
+        headTag.childNodes.forEach((i: any) => {
+          const { localName, attributes } = i
+          if (localName === 'style' && attributes[0]?.name === CUZ) {
+            return headTag.removeChild(i)
+          }
+        })
       }
     }
   }
