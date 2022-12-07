@@ -9,6 +9,7 @@ import {
   useScroll,
   useSignature,
   useScrollBarTheme,
+  useAuthBasic,
 } from '@@/composables'
 import { SECTION } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
@@ -33,6 +34,7 @@ useScrollBarTheme()
 useScroll()
 useSignature()
 useResizeWindow()
+useAuthBasic()
 </script>
 
 <template>
@@ -60,4 +62,3 @@ useResizeWindow()
   </div>
   <!-- </NuxtErrorBoundary> -->
 </template>
-

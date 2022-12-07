@@ -2,19 +2,23 @@
 import { useAuthStore } from '@@/store'
 import { watchArray } from '@vueuse/shared'
 
+definePageMeta({
+  layout: 'empty',
+})
+
 const authStore = useAuthStore()
 
 const isLogin = computed<boolean>(() => authStore.data.isLogin)
 
 useWatchWithMounted(isLogin, () => {
-  if (isLogin) {
+  if (isLogin.value) {
     navigateTo('/')
   }
 })
 </script>
 
 <template>
-  <div class="flex h-screen w-screen items-center justify-center text-[0.8rem]">
+  <div class="flex h-screen w-full items-center justify-center text-[0.8rem]">
     <div class="flex h-[400px] w-[600px] overflow-hidden rounded-2xl border-[1px] border-gray-300">
       <div class="flex-[1]"></div>
       <div class="mx-[20px] h-full w-full flex-[1] pb-[50px]">

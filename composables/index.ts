@@ -20,4 +20,4 @@ export * from './useScroll'
 export * from './useSignature'
 export * from './useScrollBarTheme'
 export * from './useWatchWithMounted'
-
+export * from './useAuthBasic'
