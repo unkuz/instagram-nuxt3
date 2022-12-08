@@ -34,7 +34,7 @@ useScrollBarTheme()
 useScroll()
 useSignature()
 useResizeWindow()
-useAuthBasic()
+// useAuthBasic()
 </script>
 
 <template>
