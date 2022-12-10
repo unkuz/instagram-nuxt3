@@ -97,7 +97,7 @@ onMounted(() => {
   >
     <video
       ref="videoRef"
-      class="video block max-h-[800px] w-full"
+      class="video block max-h-[100vh] w-full"
       :src="video.src"
       type="video/mp4"
       playsinline
