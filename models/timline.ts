@@ -70,3 +70,5 @@ export interface FriendshipStatus {
   following: boolean
   outgoing_request: boolean
 }
+
+.
