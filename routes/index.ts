@@ -1,6 +1,3 @@
 export enum APP_ROUTES {
-    HOME = '/_',
+  HOME = '/_',
 }
-
-
-.
