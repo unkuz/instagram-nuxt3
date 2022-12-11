@@ -2,7 +2,7 @@
 import { useClickOutSide, useLockScroll } from '@@/composables'
 import { useMoreStore } from '@@/store'
 import { gsap } from 'gsap'
-import Avatar from '@@/components/Atom/Avatar.vue'
+import Avatar from '@@/components/Atoms/Avatar.vue'
 import BackDrop from './BackDrop.vue'
 
 const options = [

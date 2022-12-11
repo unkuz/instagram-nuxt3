@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useAuthStore } from '@@/store'
 import { SizeAvatarEnum } from '@@/type'
-import Avatar from '../Atom/Avatar.vue'
+import Avatar from '../Atoms/Avatar.vue'
 
 interface IconProps {
   isSelect: boolean

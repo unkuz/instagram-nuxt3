@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Loading from '@@/components/Atom/Loading.vue'
+import Loading from '@@/components/Atoms/Loading.vue'
 import NewPost from '@@/components/Huge/NewPost/index.vue'
 import More from '@@/components/Utils/More.vue'
 import Prelude from '@@/components/Utils/Prelude.vue'

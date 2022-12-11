@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Avatar from '@@/components/Atom/Avatar.vue'
+import Avatar from '@@/components/Atoms/Avatar.vue'
 import { SizeAvatarEnum } from '@@/type'
 import moment from 'moment'
 import { useForceRenderTimer } from '@@/composables'

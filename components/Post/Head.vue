@@ -2,7 +2,7 @@
 import MoreIcon_ from '@@/assets/svg/more_icon.svg'
 import { useMoreStore } from '@@/store'
 import { SizeAvatarEnum } from '@@/type'
-import Avatar from '@@/components/Atom/Avatar.vue'
+import Avatar from '@@/components/Atoms/Avatar.vue'
 
 const moreStore = useMoreStore()
 const { S } = SizeAvatarEnum

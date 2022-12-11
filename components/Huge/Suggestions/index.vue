@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import Avatar from '@@/components/Atom/Avatar.vue'
-import Button from '@@/components/Atom/Button.vue'
+import Avatar from '@@/components/Atoms/Avatar.vue'
+import Button from '@@/components/Atoms/Button.vue'
 import { TSuggestion } from '@@/models'
 import { useAuthStore } from '@@/store'
 import { SizeAvatarEnum } from '@@/type'

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { SizeAvatarEnum } from '@@/type'
 import { stopOtherVideoPlaying } from '~~/helpers'
-import Avatar from '@@/components/Atom/Avatar.vue'
+import Avatar from '@@/components/Atoms/Avatar.vue'
 
 const { M } = SizeAvatarEnum
 

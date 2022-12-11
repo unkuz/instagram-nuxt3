@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import DownIcon_ from '@@/assets/svg/down_icon_458438i.svg'
-import Avatar from '@@/components/Atom/Avatar.vue'
-import StatusUser from '@@/components/Atom/StatusUser.vue'
+import Avatar from '@@/components/Atoms/Avatar.vue'
+import StatusUser from '@@/components/Atoms/StatusUser.vue'
 import Search from '@@/components/Huge/Inbox/Search/index.vue'
 import { SizeAvatarEnum } from '@@/type'
 
