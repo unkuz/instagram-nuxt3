@@ -45,4 +45,3 @@ export const useTypedRouter = (): {
     routes: routesList,
   } as any
 }
-.
