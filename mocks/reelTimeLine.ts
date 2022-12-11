@@ -1,7 +1,54 @@
 export const timeLine = [
   {
+    created_at: '2022-12-11 22:30',
+    id: '590328904asfk',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [
+      {
+        text: 'So glad to be back on Diversity with this Euphoric Hardstyle track 💜 Hope you guys enjoy it 🥰',
+        created_at: '2021-12-11 22:50',
+        user: {
+          pk: 20433830474,
+          username: 'Voldex',
+          full_name: 'Voldex ',
+          is_private: false,
+          profile_pic_url: '/timeline/dsfsdfdf45.jpg',
+        },
+        comment_like_count: 1,
+        reply: [],
+      },
+    ],
+    carousel_media: {
+      images: [],
+      videos: [
+        {
+          id: 1,
+          src: `/video/Voldex - Love You Anyway-UJn3vP5xzW8-720p-1656735840743.mp4`,
+        },
+      ],
+    },
+    user: {
+      id: 'Diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 3500,
+    has_liked: true,
+    caption_text: `Voldex - Love You Anyway`,
+    is_seen: true,
+    tags: ['Voldex '],
+    is_saved: true,
+  },
+  {
     created_at: '2022-12-04 18:50',
-    id: '45gffdafffsdsf',
+    id: '6452783sdfkaf',
     location: {
       short_name: 'Copenhagen',
     },
@@ -318,7 +365,6 @@ export const timeLine = [
     tags: ['Happy Hardcore'],
     is_saved: false,
   },
-
   {
     created_at: '2022-11-18 9:24',
     id: '4234gfdsdafglk',
@@ -595,7 +641,6 @@ export const timeLine = [
     tags: ['Jade Key'],
     is_saved: true,
   },
-
   {
     created_at: '2022-11-04 21:54',
     id: '14914460045549322344gffdsafdsffdsgsdfaasdfsdfsdfsdfsdfsdf',
@@ -717,7 +762,6 @@ export const timeLine = [
     tags: ['Gotez', 'Talking Head', 'Spinin Record', 'Diversity'],
     is_saved: true,
   },
-
   {
     created_at: '2022-10-29 21:54',
     id: '1491423423446004554932gfdsg',
@@ -1068,7 +1112,6 @@ APEX Records`,
     tags: ['kristenstewartonly'],
     is_saved: true,
   },
-
   {
     created_at: '2022-10-01 21:54',
     id: 'CXWGjIlI2342345DX',
