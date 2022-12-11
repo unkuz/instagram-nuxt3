@@ -9,7 +9,6 @@ import React from '@@/components/Post/React.vue'
 import BackDrop from '@@/components/Utils/BackDrop.vue'
 import { useClickOutSide, useLockScroll } from '@@/composables'
 import { usePostDetailStore } from '@@/store'
-import clsx from 'classnames'
 import { gsap } from 'gsap'
 import moment from 'moment'
 import { ITimeLine } from '~~/models'
@@ -133,11 +132,12 @@ const mediaArr = computed<
               <Caption :userName="userName" :captionContent="captiontext" :tags="tags" />
             </div>
             <div
-              :class="
-                clsx('w-full overflow-y-scroll py-[10px] overflow-x-hidden', {
+              :class="[
+                'w-full overflow-y-scroll py-[10px] overflow-x-hidden',
+                {
                   'flex items-center justify-center': !hasComment,
-                })
-              "
+                },
+              ]"
             >
               <template v-if="hasComment">
                 <IndividualComment v-for="(i, idx) in comments" :comment="i" :key="idx" />

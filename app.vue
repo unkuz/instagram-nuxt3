@@ -7,14 +7,12 @@ import {
   usePrelude,
   useResizeWindow,
   useScroll,
-  useSignature,
   useScrollBarTheme,
-  useAuthBasic,
+  useSignature,
 } from '@@/composables'
 import { SECTION } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
-import clsx from 'classnames'
 
 if (process.client) {
   window.addEventListener('load', registerSeviceWorkerPWA)
@@ -40,11 +38,12 @@ useResizeWindow()
 <template>
   <!-- <NuxtErrorBoundary > -->
   <div
-    :class="
-      clsx('scroll-smooth font-quicksan selection:bg-c2 selection:text-c1 ', {
+    :class="[
+      'scroll-smooth font-quicksan selection:bg-c2 selection:text-c1 dark:selection:bg-c1 dark:selection:text-c2',
+      {
         'dark ': isDarkMode,
-      })
-    "
+      },
+    ]"
   >
     <Head>
       <Meta name="theme-color" :content="isDarkMode ? '#121212' : '#fff'" />

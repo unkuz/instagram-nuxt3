@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import clsx from 'classnames'
 import MenuIcon_ from '@@/assets/svg/menu_icon.svg'
 import MutedIcon_ from '@@/assets/svg/muted_icon.svg'
 import PauseIcon_ from '@@/assets/svg/pause_icon.svg'
@@ -8,7 +7,6 @@ import PlayIcon__ from '@@/assets/svg/play_original_icon.svg'
 import UnMutedIcon_ from '@@/assets/svg/un_muted_icon.svg'
 import BackDrop from '@@/components/Utils/BackDrop.vue'
 import { useClickOutSide, useLockScroll } from '@@/composables'
-import { NullLiteral } from '@babel/types'
 
 const router = useRouter()
 const barRef = ref<HTMLDivElement | null>(null)
@@ -98,14 +96,12 @@ const togglePlay = () => {
         <div
           @click="togglePlay"
           ref="bigPlayIcon"
-          :class="
-            clsx(
-              'absolute top-1/2 left-1/2 h-[100px] w-[100px] origin-center -translate-x-1/2 -translate-y-1/2 scale-100 opacity-100 duration-500',
-              {
-                'scale-0 opacity-0': isVideoPlay,
-              }
-            )
-          "
+          :class="[
+            'absolute top-1/2 left-1/2 h-[100px] w-[100px] origin-center -translate-x-1/2 -translate-y-1/2 scale-100 opacity-100 duration-500',
+            {
+              'scale-0 opacity-0': isVideoPlay,
+            },
+          ]"
         >
           <PlayIcon_ />
         </div>

@@ -6,7 +6,6 @@ import Search from '@@/components/Nav/Search.vue'
 import SelfAvatar from '@@/components/Nav/SelfAvatar.vue'
 import { SECTION } from '@@/constants'
 import { useGlobalStore } from '@@/store'
-import clsx from 'classnames'
 
 const globalStore = useGlobalStore()
 const isMobile = computed(() => globalStore.getIsMobile)
@@ -19,14 +18,12 @@ const handleSelect = (section: SECTION) => {
 
 <template>
   <div
-    :class="
-      clsx(
-        'fixed bottom-0 z-10 h-[65px] w-full border-t-[1px] border-c4 bg-c1 dark:border-none dark:bg-c2 md:hidden',
-        {
-          'border-none bg-c2': isReelsSelect,
-        }
-      )
-    "
+    :class="[
+      'fixed bottom-0 z-10 h-[65px] w-full border-t-[1px] border-c4 bg-c1 dark:border-none dark:bg-c2 md:hidden',
+      {
+        'border-none bg-c2': isReelsSelect,
+      },
+    ]"
   >
     <div class="mt-3 flex items-center justify-around">
       <div @click="handleSelect(SECTION.HOME)">

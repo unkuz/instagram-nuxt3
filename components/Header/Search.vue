@@ -2,7 +2,6 @@
 import SearchIcon from '@@/assets/svg/search_icon_2367fdg.svg'
 import { useClickOutSide } from '@@/composables'
 import { useSearchStore } from '@@/store'
-import clsx from 'classnames'
 
 const searchStore = useSearchStore()
 const searchRef = ref<HTMLInputElement | null>(null)
@@ -43,14 +42,12 @@ const handleInputSearch = (e: Event) => {
       ref="inputSearch"
       :value="searchValue"
       @input="handleInputSearch"
-      :class="
-        clsx(
-          'absolute top-1/2  left-1/2 h-[30px] w-[90%] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-c7 focus:outline-none',
-          {
-            'w-[72%]': !isSearchActive,
-          }
-        )
-      "
+      :class="[
+        'absolute top-1/2  left-1/2 h-[30px] w-[90%] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-c7 focus:outline-none',
+        {
+          'w-[72%]': !isSearchActive,
+        },
+      ]"
     />
   </div>
 </template>

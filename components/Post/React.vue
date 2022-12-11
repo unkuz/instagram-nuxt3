@@ -3,10 +3,9 @@ import LikeIcon_ from '@@/assets/svg/like_icon.svg'
 import SaveIcon_ from '@@/assets/svg/save_icon.svg'
 import ShareIcon_ from '@@/assets/svg/share_icon.svg'
 import ViewPostIcon_ from '@@/assets/svg/view_post_icon.svg'
-import { useTimeLineStore } from '@@/store'
-import clsx from 'classnames'
-import { stopOtherVideoPlaying } from '~~/helpers'
 import UnlikeIcon from '@@/components/Atom/UnlikeIcon.vue'
+import { useTimeLineStore } from '@@/store'
+import { stopOtherVideoPlaying } from '~~/helpers'
 
 interface IProps {
   hasLiked: boolean
@@ -23,11 +22,12 @@ const timelineStore = useTimeLineStore()
 
 <template>
   <div
-    :class="
-      clsx('mt-[5px] grid h-[35px] grid-cols-3', {
+    :class="[
+      'mt-[5px] grid h-[35px] grid-cols-3',
+      {
         'grid-cols-2': mediaArr.length < 2,
-      })
-    "
+      },
+    ]"
   >
     <div class="flex h-full w-full items-center space-x-[10px]">
       <div @click="timelineStore.setToggleLike(id)" class="relative">
@@ -47,21 +47,23 @@ const timelineStore = useTimeLineStore()
       <div
         v-for="(_i, idx) in mediaArr"
         :key="idx"
-        :class="
-          clsx('h-[6px] w-[6px]  rounded-[50%]  bg-c3 dark:bg-c1', {
+        :class="[
+          'h-[6px] w-[6px]  rounded-[50%]  bg-c3 dark:bg-c1',
+          {
             'bg-c7 dark:bg-c7': currentIdx === idx,
-          })
-        "
+          },
+        ]"
       ></div>
     </div>
     <div class="flex h-full w-full items-center justify-end">
       <SaveIcon_
         @click="timelineStore.setToggleSave(id)"
-        :class="
-          clsx(' dark:[&>path]:stroke-white', {
+        :class="[
+          ' dark:[&>path]:stroke-white',
+          {
             '[&>path]:fill-c11 [&>path]:stroke-c11 dark:[&>path]:stroke-c11': hasSaved,
-          })
-        "
+          },
+        ]"
       />
     </div>
   </div>

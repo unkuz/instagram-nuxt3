@@ -3,7 +3,6 @@ import BackDrop from '@@/components/Utils/BackDrop.vue'
 import { useClickOutSide, useLockScroll } from '@@/composables'
 import { SECTION } from '@@/constants'
 import { useGlobalStore, usePostStore } from '@@/store'
-import clsx from 'classnames'
 
 const postStore = usePostStore()
 const globalStore = useGlobalStore()
@@ -82,9 +81,7 @@ const handleSlide = (indicator: 1 | -1) => {
           ref="boxRef"
           class="absolute top-1/2 right-1/2 z-10 flex translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-xl border-[1px] border-gray-300"
         >
-          <div
-            :class="clsx('relative w-[300px] bg-white text-[0.9rem]', { 'w-[500px]': isHasFile })"
-          >
+          <div :class="['relative w-[300px] bg-white text-[0.9rem]', { 'w-[500px]': isHasFile }]">
             <div class="absolute right-[12px] top-[12px]">
               <div
                 class="relative h-[18px] w-[18px] cursor-pointer rounded-full bg-gray-600"
@@ -124,11 +121,12 @@ const handleSlide = (indicator: 1 | -1) => {
                 <div
                   v-for="(i, idx) in postFiles"
                   :key="idx"
-                  :class="
-                    clsx('h-[6px] w-[6px] rounded-[50%] bg-white ', {
+                  :class="[
+                    'h-[6px] w-[6px] rounded-[50%] bg-white ',
+                    {
                       'bg-[#0c8aff]': currentImageSlideIdx === idx,
-                    })
-                  "
+                    },
+                  ]"
                 ></div>
               </div>
               <div
@@ -139,15 +137,13 @@ const handleSlide = (indicator: 1 | -1) => {
             </div>
             <div
               @click="handleUpload"
-              :class="
-                clsx(
-                  'flex h-[200px] w-full flex-col items-center justify-center space-x-[10px] border-t-0 border-gray-300',
-                  {
-                    'absolute bottom-[20px] right-[20px] flex aspect-square h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-[50%] bg-black/20':
-                      isHasFile,
-                  }
-                )
-              "
+              :class="[
+                'flex h-[200px] w-full flex-col items-center justify-center space-x-[10px] border-t-0 border-gray-300',
+                {
+                  'absolute bottom-[20px] right-[20px] flex aspect-square h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-[50%] bg-black/20':
+                    isHasFile,
+                },
+              ]"
             >
               <svg
                 v-if="isHasFile"

@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { useAuthStore } from '@@/store'
 import { SizeAvatarEnum } from '@@/type'
-import clsx from 'classnames'
 import Avatar from '../Atom/Avatar.vue'
 
 interface IconProps {
@@ -18,7 +17,7 @@ const { T } = SizeAvatarEnum
 
 <template>
   <div class="select-none">
-    <div :class="clsx('rounded-full  p-[1px]  hover:cursor-pointer', { 'bg-c2': isSelect })">
+    <div :class="['rounded-full  p-[1px]  hover:cursor-pointer', { 'bg-c2': isSelect }]">
       <div class="rounded-[50%] bg-c1 p-[1px] dark:bg-c2"><Avatar :size="T" :url="avatar" /></div>
     </div>
   </div>

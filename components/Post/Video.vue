@@ -3,7 +3,6 @@ import ExpandIcon_ from '@@/assets/svg/full_screen.svg'
 import PlayIcon_ from '@@/assets/svg/play_icon.svg'
 import { useDoubleClick, usePercentVideo } from '@@/composables'
 import { useTimeLineStore } from '@@/store'
-import clsx from 'classnames'
 import { gsap } from 'gsap'
 import { stopOtherVideoPlaying } from '~~/helpers'
 
@@ -107,27 +106,23 @@ onMounted(() => {
 
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
-        :class="
-          clsx(
-            'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-100 opacity-100  duration-200',
-            {
-              'scale-0 opacity-0': isVideoPlay,
-            }
-          )
-        "
+        :class="[
+          'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-100 opacity-100  duration-200',
+          {
+            'scale-0 opacity-0': isVideoPlay,
+          },
+        ]"
       >
         <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-c4" />
       </div>
     </div>
     <div
-      :class="
-        clsx(
-          'absolute bottom-0  h-[4px] w-full cursor-pointer  bg-transparent hover:bg-c16 [&>div]:bg-c15',
-          {
-            'h-[8px] [&>div]:bg-c14': isFullScreen,
-          }
-        )
-      "
+      :class="[
+        'absolute bottom-0  h-[4px] w-full cursor-pointer  bg-transparent hover:bg-c16 [&>div]:bg-c15',
+        {
+          'h-[8px] [&>div]:bg-c14': isFullScreen,
+        },
+      ]"
     >
       <div ref="progressBarRef" class="h-full w-0"></div>
     </div>

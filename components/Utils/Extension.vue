@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import clsx from 'classnames'
 import { useThemeStore } from '~~/store'
 
 const themeStore = useThemeStore()
@@ -16,24 +15,23 @@ const isDarkMode = computed(() => themeStore.darkMode)
         @click="themeStore.toggleDarkMode"
       >
         <div
-          :class="
-            clsx('relative top-1/2 -translate-y-1/2 translate-x-[2.5px] duration-200', {
+          :class="[
+            'relative top-1/2 -translate-y-1/2 translate-x-[2.5px] duration-200',
+            {
               'translate-x-[23px]': isDarkMode,
-            })
-          "
+            },
+          ]"
         >
           <div
             class="absolute top-1/2 h-[15px] w-[15px] -translate-y-1/2 translate-x-0 rounded-[50%] bg-c11"
           ></div>
           <div
-            :class="
-              clsx(
-                'absolute top-1/2 h-[15px] w-[15px] -translate-y-[calc(50%+3px)] -translate-x-[8px] scale-0 rounded-[50%] bg-c2 duration-75 dark:bg-c1',
-                {
-                  '!scale-100': isDarkMode,
-                }
-              )
-            "
+            :class="[
+              'absolute top-1/2 h-[15px] w-[15px] -translate-y-[calc(50%+3px)] -translate-x-[8px] scale-0 rounded-[50%] bg-c2 duration-75 dark:bg-c1',
+              {
+                '!scale-100': isDarkMode,
+              },
+            ]"
           ></div>
         </div>
       </div>

@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import Header from '@@/components/Header/index.vue'
 import { useGlobalStore } from '@@/store'
-import clsx from 'classnames'
 import Navbarbottom from './navbarbottom.vue'
 
 const globalStore = useGlobalStore()
@@ -12,11 +11,12 @@ const isMobile = computed(() => globalStore.getIsMobile)
   <div>
     <Header v-if="!isMobile" />
     <div
-      :class="
-        clsx('mx-auto w-full text-[0.8rem] md:mt-[84px] lg:w-[605px]', {
+      :class="[
+        'mx-auto w-full text-[0.8rem] md:mt-[84px] lg:w-[605px]',
+        {
           'mt-0': isMobile,
-        })
-      "
+        },
+      ]"
     >
       <slot />
     </div>

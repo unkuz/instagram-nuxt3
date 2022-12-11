@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import Search from '@@/components/Huge/Inbox/Search/index.vue'
 import DownIcon_ from '@@/assets/svg/down_icon_458438i.svg'
-import clsx from 'classnames'
 import Avatar from '@@/components/Atom/Avatar.vue'
-import { SizeAvatarEnum } from '@@/type'
 import StatusUser from '@@/components/Atom/StatusUser.vue'
+import Search from '@@/components/Huge/Inbox/Search/index.vue'
+import { SizeAvatarEnum } from '@@/type'
 
 const { S, T, M } = SizeAvatarEnum
 
@@ -40,11 +39,12 @@ const setExpand = (section: InboxTypeEnum) => {
               <span>Unread</span>
               <span>
                 <DownIcon_
-                  :class="
-                    clsx('w-[16px] origin-center [&>path]:fill-[#fff]', {
+                  :class="[
+                    'w-[16px] origin-center [&>path]:fill-[#fff]',
+                    {
                       'rotate-180': !isExpand(InboxTypeEnum.UnRead),
-                    })
-                  "
+                    },
+                  ]"
                 />
               </span>
             </div>
