@@ -15,3 +15,4 @@ export enum POP_SECTION {
   ACTIVITY = 'ACTIVITY',
   SELF = 'SELF',
 }
+.
