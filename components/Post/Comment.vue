@@ -2,7 +2,6 @@
 import Emoji from '@@/components/Utils/Emoji.vue'
 import { useClickOutSide } from '@@/composables'
 import { useAuthStore, usePostDetailStore } from '@@/store'
-import { v4 as uuidv4 } from 'uuid'
 
 interface IProps {
   id: string
@@ -28,12 +27,11 @@ useClickOutSide(emojiRef, () => {
 const toggleShowEmoji = () => (isShowEmoji.value = !isShowEmoji.value)
 
 const send = async () => {
-  const idGen = uuidv4()
   await viewPostDetailStore.comment(id, {
     text: commentValueText.value,
     userName: authStore.data.userName,
     userImg: authStore.data.avatar,
-    id: idGen,
+    id: Math.random() * 10000,
   })
   commentValueText.value = ''
 }

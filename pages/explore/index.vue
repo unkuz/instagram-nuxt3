@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import Explore from '@@/components/Explore/index.vue'
 import { useExploreStore } from '@@/store'
-import _ from 'lodash'
 import { APP_API } from '~~/apis'
 import { IStory, ITimeLine } from '~~/models'
 
@@ -17,7 +16,7 @@ const explore = computed(() => exploreStore.list)
 
 <template>
   <div class="mb-[84px] pt-[20px]">
-    <div v-for="(i, idx) in _.chunk(_.shuffle(explore), 3)" :key="idx">
+    <div v-for="(i, idx) in _chunk(_shuffle(explore), 3)" :key="idx">
       <Explore :cluster="i" />
     </div>
     <NuxtChild />

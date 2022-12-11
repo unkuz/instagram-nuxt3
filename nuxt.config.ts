@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/image-edge',
     '@pinia-plugin-persistedstate/nuxt',
+    'nuxt-lodash',
   ],
   app: {
     head: {
@@ -65,5 +66,16 @@ export default defineNuxtConfig({
       sameSite: 'strict',
     },
     storage: 'cookies',
+  },
+  lodash: {
+    prefix: '_',
+    prefixSkip: ['string'],
+    upperAfterPrefix: false,
+    exclude: ['map'],
+    alias: [
+      ['camelCase', 'stringToCamelCase'], // => stringToCamelCase
+      ['kebabCase', 'stringToKebab'], // => stringToKebab
+      ['isDate', 'isLodashDate'], // => _isLodashDate
+    ],
   },
 })
