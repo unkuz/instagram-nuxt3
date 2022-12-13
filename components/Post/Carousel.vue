@@ -54,7 +54,7 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
     </div>
     <div
       v-if="isShowPre"
-      class="absolute left-0 top-[50%] flex h-[100px] w-[60px] -translate-y-1/2 items-center justify-center"
+      class="absolute left-0 top-[50%] flex h-[80px] w-[80px] rounded-[50%] -translate-y-1/2 items-center justify-center "
       @click="prev"
     >
       <ArrowIcon_ class="rotate-180 opacity-80" />
@@ -62,7 +62,7 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
 
     <div
       v-if="isShowNext"
-      class="absolute right-0 top-[50%] flex h-[100px] w-[60px] -translate-y-1/2 items-center justify-center"
+      class="absolute right-0 top-[50%] flex h-[80px] w-[80px] -translate-y-1/2 items-center justify-center  rounded-[50%]"
       @click="next"
     >
       <ArrowIcon_ class="opacity-80" />
