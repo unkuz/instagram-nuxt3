@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import IndividualComment from '@@/components/Post/IndividualComment.vue'
+import IndividualComment from './IndividualComment.vue'
 import { useForceRenderTimer } from '@@/composables'
 import moment from 'moment'
 import Caption from './Caption.vue'
