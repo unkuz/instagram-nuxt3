@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { APP_API } from '@@/apis'
 import Suggestions from '@@/components/Huge/Suggestions/index.vue'
-import Post from '@@/components/Post/index.vue'
+import Post from '@@/components/Organisms/Post/index.vue'
 import Stories from '@@/components/Stories/index.vue'
 import { IStory, ITimeLine, TSuggestion } from '@@/models'
 import { useStoriesStore, useSuggestionStore, useTimeLineStore } from '@@/store'
