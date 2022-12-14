@@ -49,9 +49,7 @@ const timelineStore = useTimeLineStore()
         :key="idx"
         :class="[
           'h-[6px] w-[6px]  rounded-[50%]  bg-c3 dark:bg-c1',
-          {
-            'bg-c7 dark:bg-c7': currentIdx === idx,
-          },
+          currentIdx === idx ? 'bg-c7 dark:bg-c7' : 'bg-c3 dark:bg-c1',
         ]"
       ></div>
     </div>
