@@ -6,7 +6,6 @@ import { useSearchStore } from '@@/store'
 const searchStore = useSearchStore()
 const searchRef = ref<HTMLInputElement | null>(null)
 const inputSearch = ref<HTMLInputElement | null>(null)
-const searchValue = computed<string>(() => searchStore.value)
 const isSearchActive = computed<boolean>(() => searchStore.isFocus)
 const isSearchHaveValue = computed<boolean>(() => searchStore.getIsSearchHaveValue)
 
@@ -19,10 +18,6 @@ watch(isSearchActive, (state) => {
 useClickOutSide(searchRef, () => {
   searchStore.setIsFocus(false)
 })
-
-const handleInputSearch = (e: Event) => {
-  searchStore.setValue((e.target as HTMLInputElement).value)
-}
 </script>
 
 <template>
@@ -40,8 +35,7 @@ const handleInputSearch = (e: Event) => {
     <input
       type="text"
       ref="inputSearch"
-      :value="searchValue"
-      @input="handleInputSearch"
+      v-model="searchStore.value"
       :class="[
         'absolute top-1/2  left-1/2 h-[30px] w-[90%] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-c7 focus:outline-none',
         {

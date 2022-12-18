@@ -13,6 +13,7 @@ import { useFetchCamel, useWindowResizeCallback } from '~~/composables'
 
 const rightRef = ref<HTMLElement | null>(null)
 const leftRef = ref<HTMLElement | null>(null)
+
 const storiesStore = useStoriesStore()
 const timeLineStore = useTimeLineStore()
 const suggestionStore = useSuggestionStore()
