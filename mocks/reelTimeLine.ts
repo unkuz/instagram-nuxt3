@@ -1,7 +1,54 @@
 export const timeLine = [
   {
+    created_at: '2022-12-19 23:45',
+    id: '590328904aswsfk',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [
+      {
+        text: 'Loved the new intro, looked really great! <3',
+        created_at: '2022-12-19 23:45',
+        user: {
+          pk: 20433830474,
+          username: 'Colors are Great',
+          full_name: 'Colors are Great ',
+          is_private: false,
+          profile_pic_url: '/timeline/asff3yr.jpg',
+        },
+        comment_like_count: 1,
+        reply: [],
+      },
+    ],
+    carousel_media: {
+      images: [],
+      videos: [
+        {
+          id: 1,
+          src: `/video/Y2Mate.is - KLYDIX - Lunar Fairy-myPNmfYFtRQ-720p-1655963245423.mp4`,
+        },
+      ],
+    },
+    user: {
+      id: 'Diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 2560,
+    has_liked: true,
+    caption_text: `KLYDIX - Lunar Fairy`,
+    is_seen: true,
+    tags: ['KLYDIX ', 'Lunar Fairy'],
+    is_saved: true,
+  },
+  {
     created_at: '2022-12-11 22:30',
-    id: '590328904asfk',
+    id: '590328904awetesfk',
     location: {
       short_name: 'Copenhagen',
     },
