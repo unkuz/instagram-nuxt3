@@ -2,7 +2,6 @@ import { useThemeStore } from '~~/store'
 import { useWatchWithMounted } from './useWatchWithMounted'
 
 export const useScrollBarTheme = () => {
-  const CUZ = '__cuzknothz'
   const themeStore = useThemeStore()
 
   const styleCss = computed(() => {
@@ -15,7 +14,7 @@ export const useScrollBarTheme = () => {
   const checkIsCurrentHasStyle = (headTag: HTMLHeadElement) => {
     let result: boolean = false
     headTag.childNodes.forEach(({ localName, attributes }: any) => {
-      if (localName === 'style' && attributes[0]?.name === CUZ) {
+      if (localName === 'style' && attributes[0]?.name === '__cuzknothz') {
         return (result = true)
       }
       result = false
@@ -28,14 +27,14 @@ export const useScrollBarTheme = () => {
 
     if (themeStore.darkMode) {
       let el = document.createElement('style')
-      el.setAttribute(CUZ, CUZ)
+      el.setAttribute('__cuzknothz', '__cuzknothz')
       el.appendChild(document.createTextNode(styleCss.value))
       headTag.appendChild(el)
     } else {
       if (checkIsCurrentHasStyle(headTag)) {
         headTag.childNodes.forEach((i: any) => {
           const { localName, attributes } = i
-          if (localName === 'style' && attributes[0]?.name === CUZ) {
+          if (localName === 'style' && attributes[0]?.name === '__cuzknothz') {
             return headTag.removeChild(i)
           }
         })
