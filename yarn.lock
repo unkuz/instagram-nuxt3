@@ -2108,30 +2108,6 @@
     unimport "^0.6.7"
     untyped "^0.5.0"
 
-"@nuxt/kit@^3.0.0-rc.9":
-  version "3.0.0-rc.10"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.0.0-rc.10.tgz#d61f47584ca4491a881cd7e7500cb71e9e2a3524"
-  integrity sha512-sJEuvM6JTOWULRTLN0R4vZZYxus0ylevrCUELnez3GHedeDPopFrjFd8G+pZWTid9wix4SS3izWBvOJx9mLGlQ==
-  dependencies:
-    "@nuxt/schema" "3.0.0-rc.10"
-    c12 "^0.2.12"
-    consola "^2.15.3"
-    defu "^6.1.0"
-    globby "^13.1.2"
-    hash-sum "^2.0.0"
-    ignore "^5.2.0"
-    jiti "^1.15.0"
-    knitwork "^0.1.2"
-    lodash.template "^4.5.0"
-    mlly "^0.5.14"
-    pathe "^0.3.7"
-    pkg-types "^0.3.5"
-    scule "^0.3.2"
-    semver "^7.3.7"
-    unctx "^2.0.2"
-    unimport "^0.6.7"
-    untyped "^0.5.0"
-
 "@nuxt/kit@npm:@nuxt/kit-edge@3.0.1-rc.0-27857531.faf2607":
   version "3.0.1-rc.0-27857531.faf2607"
   resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.0.1-rc.0-27857531.faf2607.tgz#7cf846187c9c5634f20321cd1951eb2aad863dba"
@@ -2187,23 +2163,6 @@
     ufo "^1.0.0"
     unimport "^1.0.1"
     untyped "^1.0.0"
-
-"@nuxt/schema@3.0.0-rc.10":
-  version "3.0.0-rc.10"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema/-/schema-3.0.0-rc.10.tgz#70b9f49484950e0a88325246e4d2eab772675804"
-  integrity sha512-mHb+5qp3H07QvASA/fGEnUWx4S3plBt6nqZmPewxDuBys2au/PCBJBQiwKioBLgQvFPqysirScpLYPFKy3qdJw==
-  dependencies:
-    c12 "^0.2.12"
-    create-require "^1.1.1"
-    defu "^6.1.0"
-    jiti "^1.15.0"
-    pathe "^0.3.7"
-    pkg-types "^0.3.5"
-    postcss-import-resolver "^2.0.0"
-    scule "^0.3.2"
-    std-env "^3.2.1"
-    ufo "^0.8.5"
-    unimport "^0.6.7"
 
 "@nuxt/schema@3.0.0-rc.11":
   version "3.0.0-rc.11"
@@ -3790,20 +3749,6 @@ bytes@3.1.2:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.2.tgz#8b0beeb98605adf1b128fa4386403c009e0221a5"
   integrity sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==
 
-c12@^0.2.12:
-  version "0.2.12"
-  resolved "https://registry.yarnpkg.com/c12/-/c12-0.2.12.tgz#fa6cfebff3553e139f323dab8ac8ae8e5eebc237"
-  integrity sha512-Oq+XDrx2luek30VrWU0QXrvPbILAp8fDVgprRvhP4WL4CZaSqE7CNHIhq1R824YSkMVUOfMjsZFRcVqs7I2Xxg==
-  dependencies:
-    defu "^6.1.0"
-    dotenv "^16.0.2"
-    gittar "^0.1.1"
-    jiti "^1.15.0"
-    mlly "^0.5.14"
-    pathe "^0.3.7"
-    pkg-types "^0.3.5"
-    rc9 "^1.2.2"
-
 c12@^0.2.13:
   version "0.2.13"
   resolved "https://registry.yarnpkg.com/c12/-/c12-0.2.13.tgz#c5eb795684cfecdbc5f0d31bb13df6f2f0913420"
@@ -3991,6 +3936,11 @@ chalk@^5.1.2:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.1.2.tgz#d957f370038b75ac572471e83be4c5ca9f8e8c45"
   integrity sha512-E5CkT4jWURs1Vy5qGJye+XwCkNj7Od3Af7CP6SujMetSMkLs8Do2RWJK5yx1wamHV/op8Rz+9rltjaTQWDnEFQ==
+
+chalk@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.2.0.tgz#249623b7d66869c673699fb66d65723e54dfcfb3"
+  integrity sha512-ree3Gqw/nazQAPuJJEy+avdl7QfZMcUvmHIKgEZkGL+xOBzRvup5Hxo6LHuMceSxOabuJLJm5Yp/92R9eMmMvA==
 
 change-case-all@1.0.14:
   version "1.0.14"
@@ -8078,18 +8028,18 @@ nuxt-lodash@^2.4.1:
     "@types/lodash-es" "^4.17.6"
     lodash-es "^4.17.21"
 
-nuxt-typed-router@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-1.2.3.tgz#ab17fe5ed2ffa1b0d6078996ef06c05f84f9b0c9"
-  integrity sha512-rKNUU+emFLjvOr/k/dJB1G/b6zw/9D2xzA8hMoRNsGlR1UA1bGn5I4eblEWxc/2i1BR2DDQ8C0jpsspFpsusFA==
+nuxt-typed-router@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-1.2.5.tgz#321d6a2f3efbe29c11f5a75d615461648e6b9ace"
+  integrity sha512-2EQZza6dY+b51ib88eeJXJcK0976N0PbsnKEVd7UOldct8cyx7XcAlCQCAmkbd+yChCUZlpBXdaZhkq+nvVPfw==
   dependencies:
-    "@nuxt/kit" "^3.0.0-rc.9"
-    chalk "^4.1.2"
+    "@nuxt/kit" "3.0.0"
+    chalk "^5.2.0"
     lodash-es "^4.17.21"
     log-symbols "^5.1.0"
     mkdirp "^1.0.4"
-    pathe "^0.2.0"
-    prettier "^2.7.1"
+    pathe "1.0.0"
+    prettier "2.8.1"
 
 nuxt@^3.0.0:
   version "3.0.0"
@@ -8493,6 +8443,11 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
+pathe@1.0.0, pathe@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/pathe/-/pathe-1.0.0.tgz#135fc11464fc57c84ef93d5c5ed21247e24571df"
+  integrity sha512-nPdMG0Pd09HuSsr7QOKUXO2Jr9eqaDiZvDwdyIhNG5SHYujkQHYKDfGQkulBxvbDHz8oHLsTgKN86LSwYzSHAg==
+
 pathe@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/pathe/-/pathe-0.2.0.tgz"
@@ -8507,11 +8462,6 @@ pathe@^0.3.8:
   version "0.3.8"
   resolved "https://registry.yarnpkg.com/pathe/-/pathe-0.3.8.tgz#3584f03fda1981a6efe8bc24623d82cbb4219acb"
   integrity sha512-c71n61F1skhj/jzZe+fWE9XDoTYjWbUwIKVwFftZ5IOgiX44BVkTkD+/803YDgR50tqeO4eXWxLyVHBLWQAD1g==
-
-pathe@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/pathe/-/pathe-1.0.0.tgz#135fc11464fc57c84ef93d5c5ed21247e24571df"
-  integrity sha512-nPdMG0Pd09HuSsr7QOKUXO2Jr9eqaDiZvDwdyIhNG5SHYujkQHYKDfGQkulBxvbDHz8oHLsTgKN86LSwYzSHAg==
 
 pathval@^1.1.1:
   version "1.1.1"
@@ -9014,15 +8964,15 @@ prettier-plugin-tailwindcss@^0.2.1:
   resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.2.1.tgz#989b35afd86c550cb671da69891aba4f4a051159"
   integrity sha512-aIO8IguumORyRsmT+E7JfJ3A9FEoyhqZR7Au7TBOege3VZkgMvHJMkufeYp4zjnDK2iq4ktkvGMNOQR9T8lisQ==
 
+prettier@2.8.1, prettier@^2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.1.tgz#4e1fd11c34e2421bc1da9aea9bd8127cd0a35efc"
+  integrity sha512-lqGoSJBQNJidqCHE80vqZJHWHRFoNYsSpP9AjFhlhi9ODCJA541svILes/+/1GM3VaL/abZi7cpFzOpdR9UPKg==
+
 prettier@^2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
   integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
-
-prettier@^2.8.1:
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.1.tgz#4e1fd11c34e2421bc1da9aea9bd8127cd0a35efc"
-  integrity sha512-lqGoSJBQNJidqCHE80vqZJHWHRFoNYsSpP9AjFhlhi9ODCJA541svILes/+/1GM3VaL/abZi7cpFzOpdR9UPKg==
 
 pretty-bytes@^6.0.0:
   version "6.0.0"
@@ -10783,10 +10733,10 @@ videojs-vtt.js@^0.15.4:
   dependencies:
     global "^4.3.1"
 
-vite-node@0.26.1:
-  version "0.26.1"
-  resolved "https://registry.yarnpkg.com/vite-node/-/vite-node-0.26.1.tgz#1aaade8f64fa9b7234bd7eef020338297e742aa3"
-  integrity sha512-5FJSKZZJz48zFRKHE55WyevZe61hLMQEsqGn+ungfd60kxEztFybZ3yG9ToGFtOWNCCy7Vn5EVuXD8bdeHOSdw==
+vite-node@0.26.2:
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/vite-node/-/vite-node-0.26.2.tgz#2624236b9d68ea62c753572ee465fe4fa0657572"
+  integrity sha512-4M/zlatItZAyvrQG+82zQBhgDjRZRhVJYFW4T9wcAKh7eMmSiPOVSeI5zsV9UzHXgCcIDKX0o0r3s4OxExTHqg==
   dependencies:
     debug "^4.3.4"
     mlly "^1.0.0"
@@ -10872,10 +10822,10 @@ vite@~3.2.4:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vitest@^0.26.1:
-  version "0.26.1"
-  resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.26.1.tgz#cdad665fdfb5c403f4feda8a7b2a6393b0ed4ea4"
-  integrity sha512-qTLRnjYmjmJpHlLUtErxtlRqGCe8WItFhGXKklpWivu7CLP9KXN9iTezROe+vf51Kb+BB/fzxK6fUG9DvFGL5Q==
+vitest@^0.26.2:
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.26.2.tgz#c1647e41d5619d1d059ff65d9c00672261ccac30"
+  integrity sha512-Jvqxh6SDy9SsuslkDjts0iDewDIdq4rveEt69YgDuAb1tVDGV0lDepVaeAFraoySWqneJmOt4TngFFNhlw7GfA==
   dependencies:
     "@types/chai" "^4.3.4"
     "@types/chai-subset" "^1.3.3"
@@ -10891,7 +10841,7 @@ vitest@^0.26.1:
     tinypool "^0.3.0"
     tinyspy "^1.0.2"
     vite "^3.0.0 || ^4.0.0"
-    vite-node "0.26.1"
+    vite-node "0.26.2"
 
 vm2@^3.9.8:
   version "3.9.11"
