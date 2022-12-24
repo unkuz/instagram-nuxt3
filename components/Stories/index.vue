@@ -2,12 +2,15 @@
 import { IStory } from '@@/models'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import Story from './Story.vue'
+import { useGlobalStore } from '@@/store'
 
 interface IProps {
   stories: Array<IStory>
 }
 
 defineProps<IProps>()
+
+const globalStore = useGlobalStore()
 
 const [container] = useKeenSlider({
   breakpoints: {
@@ -56,17 +59,31 @@ const [container] = useKeenSlider({
     spacing: 0,
   },
 })
+
+const isMobile = computed(() => globalStore.getIsMobile)
 </script>
 
 <template>
   <div
-    v-cloak
-    class="relative flex h-[119px] w-full items-center border-0 border-c4 shadow-c4 dark:border-none dark:shadow-none md:mb-[24px] md:border-[1px] md:shadow-sm"
+    :class="[
+      ' h-[119px] w-full bg-transparent p-0  shadow-none shadow-c4 dark:bg-transparent md:mb-[24px] md:bg-c4 md:p-[1px] md:shadow-sm',
+      {
+        'clip-path': !isMobile,
+      },
+    ]"
   >
-    <div ref="container" class="keen-slider h-full pt-[20px]">
-      <div class="keen-slider__slide" v-for="i in stories" :key="i.id">
-        <Story v-bind="i" />
+    <div v-cloak class="clip-path relative flex h-full w-full items-center bg-white dark:bg-c19">
+      <div ref="container" class="keen-slider h-full pt-[20px]">
+        <div class="keen-slider__slide" v-for="i in stories" :key="i.id">
+          <Story v-bind="i" />
+        </div>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.clip-path {
+  clip-path: polygon(2% 0, 100% 0, 100% 90%, 98% 100%, 0 100%, 0 10%);
+}
+</style>
