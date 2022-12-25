@@ -29,7 +29,7 @@ const timelineStore = useTimeLineStore()
       },
     ]"
   >
-    <div class="flex h-full w-full items-center space-x-[10px]">
+    <div class="flex h-full w-full items-center gap-[12px] md:gap-[10px]">
       <div @click="timelineStore.setToggleLike(id)" class="relative">
         <div v-if="hasLiked">
           <UnlikeIcon />
