@@ -12,6 +12,10 @@ export default defineNuxtConfig({
     '@nuxt/image-edge',
     '@pinia-plugin-persistedstate/nuxt',
     'nuxt-lodash',
+    // 'nuxt-security',
+    // '@nuxtjs/fontaine',
+    // '@sidebase/nuxt-auth',
+    // '@morev/vue-transitions/nuxt',
   ],
   app: {
     head: {
