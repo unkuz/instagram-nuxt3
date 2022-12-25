@@ -84,40 +84,42 @@ const scrollToComment = () => {
 <template>
   <article
     ref="postRef"
-    class="mb-[24px] w-full border-c4 shadow-c4 dark:border-none dark:shadow-none md:border-[1px] md:shadow-sm"
+    class="mb-[24px] w-full bg-transparent p-[1px] shadow-c4 dark:shadow-none md:bg-c4 md:shadow-sm md:clip-path-cuzknothz2 dark:md:bg-transparent"
   >
-    <Head :avatar="user.profile_pic_url" :userName="user.username" />
-    <Carousel
-      :images="carousel_media.images"
-      :videos="carousel_media.videos"
-      :hasSaved="is_saved"
-      @currentIndexCarousel="setCurrent($event)"
-      :hasLiked="has_liked"
-      :id="id"
-    />
-    <div class="px-[16px] text-xs md:text-sm">
-      <React
-        :currentIdx="currentIdx"
-        :hasLiked="has_liked"
-        :mediaArr="mediaArr"
-        :id="id"
+    <div class="h-full w-full bg-c1 dark:bg-c19 md:clip-path-cuzknothz2">
+      <Head :avatar="user.profile_pic_url" :userName="user.username" />
+      <Carousel
+        :images="carousel_media.images"
+        :videos="carousel_media.videos"
         :hasSaved="is_saved"
+        @currentIndexCarousel="setCurrent($event)"
+        :hasLiked="has_liked"
+        :id="id"
       />
-      <LikeCommentCount
-        :likeCount="like_count"
-        :commentCount="comments.length"
-        @scrollToComment="scrollToComment"
-      />
-      <Caption :userName="user.username" :captionContent="caption_text" :tags="tags" />
-      <div class="m-[0px_0px_0px_0px] h-[18px] text-[0.8rem] text-c3 dark:text-c21" :key="key">
-        {{ moment(created_at).fromNow() }}
+      <div class="px-[16px] text-xs md:text-sm">
+        <React
+          :currentIdx="currentIdx"
+          :hasLiked="has_liked"
+          :mediaArr="mediaArr"
+          :id="id"
+          :hasSaved="is_saved"
+        />
+        <LikeCommentCount
+          :likeCount="like_count"
+          :commentCount="comments.length"
+          @scrollToComment="scrollToComment"
+        />
+        <Caption :userName="user.username" :captionContent="caption_text" :tags="tags" />
+        <div class="m-[0px_0px_0px_0px] h-[18px] text-[0.8rem] text-c3 dark:text-c21" :key="key">
+          {{ moment(created_at).fromNow() }}
+        </div>
+        <div class="mt-[5px] w-full" ref="commentRef">
+          <IndividualComment v-for="(i, idx) in comments" :comment="i" :key="idx" />
+        </div>
+        <ClientOnly>
+          <Comment :id="id" />
+        </ClientOnly>
       </div>
-      <div class="mt-[5px] w-full" ref="commentRef">
-        <IndividualComment v-for="(i, idx) in comments" :comment="i" :key="idx" />
-      </div>
-      <ClientOnly>
-        <Comment :id="id" />
-      </ClientOnly>
     </div>
   </article>
 </template>

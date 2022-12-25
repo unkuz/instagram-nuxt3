@@ -38,7 +38,7 @@ const send = async () => {
 </script>
 
 <template>
-  <div class="flex w-full items-center justify-between sm:mb-[5px]">
+  <div class="flex w-full items-center justify-between">
     <div class="relative" ref="emojiRef">
       <Emoji v-if="isShowEmoji" @emoji-add="emojiAdd" />
       <div @click="toggleShowEmoji" class="cursor-pointer text-[0.8rem] font-[500]">

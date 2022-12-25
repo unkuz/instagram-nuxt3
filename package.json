@@ -27,6 +27,7 @@
     "postcss": "^8.4.20",
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",
+    "tailwind-clip-path": "^1.0.0",
     "tailwind-scrollbar": "^2.0.1",
     "vitest": "^0.26.2"
   },
@@ -38,7 +39,7 @@
     "@sentry/tracing": "^7.28.1",
     "@twicpics/components": "^0.14.2",
     "@videojs-player/vue": "^1.0.0",
-    "@vueuse/core": "^9.8.2",
+    "@vueuse/core": "^9.9.0",
     "add": "^2.0.6",
     "axios": "^1.2.1",
     "camelcase-keys": "^8.0.2",
@@ -47,7 +48,7 @@
     "keen-slider": "^6.8.5",
     "magic-regexp": "^0.6.1",
     "moment": "^2.29.4",
-    "nuxt-graphql-client": "^0.2.23",
+    "nuxt-graphql-client": "^0.2.24",
     "pinia": "^2.0.28",
     "postcss-custom-properties": "^12.1.11",
     "rxjs": "^7.8.0",
@@ -55,7 +56,7 @@
     "tailwind-scrollbar-hide": "^1.1.7",
     "vee-validate": "^4.7.3",
     "video.js": "^7.20.3",
-    "vite-svg-loader": "^3.6.0",
+    "vite-svg-loader": "^4.0.0",
     "vue-lottie": "^0.2.1",
     "yarn": "^1.22.19"
   }

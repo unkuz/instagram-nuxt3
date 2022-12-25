@@ -49,6 +49,20 @@ module.exports = {
         c24: '#00ccff',
         c25: '#16ff01',
       },
+      clipPath: {
+        cuzknothz: 'polygon(12px 0, 100% 0, 100% 90%, 98% 100%, 0 100%, 0 12px)',
+        cuzknothz2: 'polygon(12px 0, 100% 0, 100% 100%, 0 100%, 0 12px)',
+      },
+      keyframes: {
+        'pulse-cuz': {
+          '50%': {
+            opacity: '0.7',
+          },
+        },
+      },
+      animation: {
+        play: 'pulse-cuz 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
     },
     fontFamily: {
       august: ['august'],
@@ -59,5 +73,6 @@ module.exports = {
     require('tailwind-scrollbar-hide'),
     require('@tailwindcss/line-clamp'),
     require('tailwind-scrollbar'),
+    require('tailwind-clip-path'),
   ],
 }

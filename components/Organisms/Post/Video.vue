@@ -108,7 +108,7 @@ onMounted(() => {
       <div
         :class="[
           'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-200',
-          isVideoPlay ? 'scale-0 opacity-0' : 'scale-100 opacity-100',
+          isVideoPlay ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100',
         ]"
       >
         <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-c4" />
