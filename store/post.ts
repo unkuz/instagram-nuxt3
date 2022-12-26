@@ -2,12 +2,12 @@ import { defineStore } from 'pinia'
 
 export const usePostStore = defineStore('postStore', {
   state: () => ({
-    files: [] as File[],
+    files: [] as FileList[],
     listBlobs: [] as string[],
   }),
   getters: {},
   actions: {
-    setFiles(files: File[]) {
+    setFiles(files: FileList) {
       this.files = [...this.files, ...Array.from(files)]
       this.listBlobs = this.files.map((i) => URL.createObjectURL(i))
     },

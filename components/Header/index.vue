@@ -3,7 +3,7 @@ import Logo from '@@/components/Header/Logo.vue'
 import Search from '@@/components/Header/Search.vue'
 import HomeIcon from '@@/components/Nav/HomeIcon.vue'
 import Reels from '@@/components/Nav/Reels.vue'
-import { SECTION } from '@@/constants/section'
+import { SectionEnum } from '@@/constants/section'
 import { useGlobalStore, useSearchStore, useThemeStore } from '@@/store'
 import AccountPop from '../Huge/AccountPop/index.vue'
 import ActivityFeedPop from '../Huge/ActivityFeedPop/index.vue'
@@ -21,7 +21,7 @@ const globalStore = useGlobalStore()
 const searchStore = useSearchStore()
 const themeStore = useThemeStore()
 const isShowSearchToolkit = computed<boolean>(() => searchStore.getIsShowSearchToolkit)
-const section = computed<SECTION>(() => globalStore.section)
+const section = computed<SectionEnum>(() => globalStore.section)
 const isMobile = computed<boolean>(() => globalStore.getIsMobile)
 const accountPopRef = ref<HTMLDivElement | null>(null)
 const activityFeedPopRef = ref<HTMLDivElement | null>(null)
@@ -44,9 +44,7 @@ useClickOutSide(extensionRef, () => (showExtension.value = false))
 //   isShowProfile.value = false
 // })
 
-const handleSelect = (section: SECTION) => {
-  globalStore.setSection(section)
-}
+const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
 </script>
 
 <template>
@@ -75,37 +73,37 @@ const handleSelect = (section: SECTION) => {
       <div
         class="flex h-full w-full flex-row-reverse items-center justify-start space-x-[22px] md:w-auto md:flex-row md:justify-end md:first:mr-6 lg:w-full"
       >
-        <div v-show="!isMobile" @click="handleSelect(SECTION.HOME)">
+        <div v-show="!isMobile" @click="handleSelect(SectionEnum.HOME)">
           <NuxtLink to="/">
-            <HomeIcon :isSelect="section === SECTION.HOME" />
+            <HomeIcon :isSelect="section === SectionEnum.HOME" />
           </NuxtLink>
         </div>
-        <div class="ml-[22px] md:ml-0" @click="handleSelect(SECTION.MESSENGER)">
+        <div class="ml-[22px] md:ml-0" @click="handleSelect(SectionEnum.MESSENGER)">
           <NuxtLink to="/inbox/">
-            <Messenger :isSelect="section === SECTION.MESSENGER" :hasNew="true" />
+            <Messenger :isSelect="section === SectionEnum.MESSENGER" :hasNew="true" />
           </NuxtLink>
         </div>
-        <div v-show="!isMobile" @click="handleSelect(SECTION.REELS)">
+        <div v-show="!isMobile" @click="handleSelect(SectionEnum.REELS)">
           <NuxtLink to="/reels">
             <Reels :isSelect="false" />
           </NuxtLink>
         </div>
-        <div @click="handleSelect(SECTION.NEW_POST)" class="relative">
-          <NewPost :isSelect="section === SECTION.NEW_POST" />
+        <div @click="handleSelect(SectionEnum.NEW_POST)" class="relative">
+          <NewPost :isSelect="section === SectionEnum.NEW_POST" />
         </div>
-        <div v-show="!isMobile" @click="handleSelect(SECTION.FINDPEOPLE)">
+        <div v-show="!isMobile" @click="handleSelect(SectionEnum.FINDPEOPLE)">
           <NuxtLink to="/explore/">
-            <FindPeople :isSelect="section === SECTION.FINDPEOPLE" />
+            <FindPeople :isSelect="section === SectionEnum.FINDPEOPLE" />
           </NuxtLink>
         </div>
-        <div v-show="!isMobile" class="relative" @click="handleSelect(SECTION.ACTIVITYFEED)">
-          <ActivityFeed :isSelect="section === SECTION.ACTIVITYFEED" />
+        <div v-show="!isMobile" class="relative" @click="handleSelect(SectionEnum.ACTIVITYFEED)">
+          <ActivityFeed :isSelect="section === SectionEnum.ACTIVITYFEED" />
           <div ref="activityFeedPopRef">
-            <ActivityFeedPop v-show="section === SECTION.ACTIVITYFEED" />
+            <ActivityFeedPop v-show="section === SectionEnum.ACTIVITYFEED" />
           </div>
         </div>
         <div v-show="!isMobile" class="relative mr-0" @click="isShowProfile = true">
-          <SelfAvatar :isSelect="section === SECTION.SELF" />
+          <SelfAvatar :isSelect="section === SectionEnum.SELF" />
           <div ref="accountPopRef">
             <AccountPop v-show="isShowProfile" />
           </div>
@@ -114,3 +112,4 @@ const handleSelect = (section: SECTION) => {
     </div>
   </header>
 </template>
+

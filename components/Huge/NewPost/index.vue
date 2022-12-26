@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import BackDrop from '@@/components/Utils/BackDrop.vue'
 import { useClickOutSide, useLockScroll } from '@@/composables'
-import { SECTION } from '@@/constants'
+import { SectionEnum } from '@@/constants'
 import { useGlobalStore, usePostStore } from '@@/store'
 
 const postStore = usePostStore()
@@ -11,8 +11,8 @@ const containerPreviewRef = ref<HTMLDivElement | null>(null)
 const boxRef = ref<HTMLDivElement | null>(null)
 const startPointX = ref<number>(0)
 
-const postFiles = computed<File[]>(() => postStore.files)
-const listBolbs = computed<Blob[]>(() => postStore.listBlobs)
+const postFiles = computed<FileList[]>(() => postStore.files)
+const listBolbs = computed<BlobList[]>(() => postStore.listBlobs)
 const isHasFile = computed<boolean>(() => Array.from(postFiles.value).length > 0)
 
 useLockScroll()
@@ -41,7 +41,7 @@ watch(listBolbs, () => {
 
 onMounted(() => {
   inputFileRef.value?.addEventListener('change', (event) => {
-    postStore.setFiles((<HTMLInputElement>event.target).files)
+    postStore.setFiles((event.target as HTMLInputElement).files!)
   })
 })
 
@@ -50,11 +50,11 @@ onBeforeUnmount(() => {
 })
 
 useClickOutSide(boxRef, () => {
-  globalStore.setSection(SECTION.HOME)
+  globalStore.setSection(SectionEnum.HOME)
 })
 
 const closePostBox = () => {
-  globalStore.setSection(SECTION.HOME)
+  globalStore.setSection(SectionEnum.HOME)
 }
 
 const handleUpload = () => {

@@ -1,11 +1,11 @@
 import { defineStore } from 'pinia'
 import { MOBILE_BREAK_POINT } from '@@/constants'
-import { SECTION } from '@@/constants'
+import { SectionEnum } from '@@/constants'
 import { ScrollTypeEnum } from '~~/type'
 
 interface IState {
-  section: SECTION
-  prevSection: SECTION
+  section: SectionEnum
+  prevSection: SectionEnum
   clientWidth: number
   clientHeight: number
   transition: boolean
@@ -14,8 +14,8 @@ interface IState {
 
 export const useGlobalStore = defineStore('globalStore', {
   state: (): IState => ({
-    section: SECTION.HOME,
-    prevSection: SECTION.NONE,
+    section: SectionEnum.HOME,
+    prevSection: SectionEnum.NONE,
     clientWidth: 0,
     clientHeight: 0,
     transition: false,
@@ -24,13 +24,13 @@ export const useGlobalStore = defineStore('globalStore', {
   getters: {
     getIsMobile: (state) => state.clientWidth < MOBILE_BREAK_POINT,
     getIsMobileAndSelectNewPost: (state) =>
-      state.clientWidth < MOBILE_BREAK_POINT && state.section === SECTION.NEW_POST,
+      state.clientWidth < MOBILE_BREAK_POINT && state.section === SectionEnum.NEW_POST,
     getIsShowHeader: (state) => {
       return state.scroll === ScrollTypeEnum.UP
     },
   },
   actions: {
-    setSection(section: SECTION) {
+    setSection(section: SectionEnum) {
       this.prevSection = this.section
       this.section = section
     },

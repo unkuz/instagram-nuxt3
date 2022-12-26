@@ -2,7 +2,7 @@
 import ProfileIcon_ from '@@/assets/svg/profile.svg'
 import Arrow from '@@/components/Utils/Arrow.vue'
 import { useClickOutSide } from '@@/composables'
-import { SECTION } from '@@/constants'
+import { SectionEnum } from '@@/constants'
 import { useGlobalStore, useThemeStore } from '@@/store'
 
 const globalStore = useGlobalStore()
@@ -13,7 +13,7 @@ const isDarkMode = computed<boolean>(() => themeStore.darkMode)
 
 useClickOutSide(accountPopRef, () => {})
 
-const handleSelect = (section: SECTION) => {
+const handleSelect = (section: SectionEnum) => {
   globalStore.setSection(section)
 }
 
@@ -31,7 +31,7 @@ const toggleDarkMode = () => {
     >
       <NuxtLink to="/cuzknothz/">
         <div
-          @click="handleSelect(SECTION.SELF)"
+          @click="handleSelect(SectionEnum.SELF)"
           class="z-50 flex h-[37px] cursor-pointer items-center justify-start space-x-[12px] py-[8px] px-[16px] hover:bg-c4"
         >
           <ProfileIcon_ />
@@ -41,7 +41,7 @@ const toggleDarkMode = () => {
       <hr />
       <NuxtLink to="/login/">
         <div
-          @click="handleSelect(SECTION.SELF)"
+          @click="handleSelect(SectionEnum.SELF)"
           class="flex h-[37px] cursor-pointer justify-center px-[16px] py-[8px] hover:bg-c4"
         >
           Log out

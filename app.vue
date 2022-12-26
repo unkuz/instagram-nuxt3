@@ -10,7 +10,7 @@ import {
   useScrollBarTheme,
   useSignature,
 } from '@@/composables'
-import { SECTION } from '@@/constants'
+import { SectionEnum } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
 
@@ -20,7 +20,7 @@ const themeStore = useThemeStore()
 const { isShowPrelude } = usePrelude()
 
 const isDarkMode = computed<boolean>(() => themeStore.darkMode)
-const section = computed<SECTION>(() => globalStore.section)
+const section = computed<SectionEnum>(() => globalStore.section)
 const isMobile = computed<boolean>(() => globalStore.getIsMobile)
 const isShowMore = computed<boolean>(() => moreStore.isShow)
 
@@ -52,7 +52,7 @@ useResizeWindow()
         <Loading />
         <NuxtPage />
       </NuxtLayout>
-      <NewPost v-if="section === SECTION.NEW_POST && !isMobile" />
+      <NewPost v-if="section === SectionEnum.NEW_POST && !isMobile" />
       <More v-if="isShowMore" />
     </div>
   </div>

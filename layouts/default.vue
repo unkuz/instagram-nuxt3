@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import Header from '@@/components/Header/index.vue'
-import { SECTION } from '@@/constants/section'
+import { SectionEnum } from '@@/constants/section'
 import { useGlobalStore } from '@@/store'
 import Navbarbottom from './navbarbottom.vue'
 import Extension from '@@/components/Extension/index.vue'
 
 const globalStore = useGlobalStore()
 const isShowNavBarBottom = computed(
-  () => !(globalStore.getIsMobile && globalStore.section === SECTION.MESSENGER)
+  () => !(globalStore.getIsMobile && globalStore.section === SectionEnum.MESSENGER)
 )
 </script>
 

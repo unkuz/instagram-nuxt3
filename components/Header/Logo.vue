@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { SECTION } from '@@/constants'
+import { SectionEnum } from '@@/constants'
 import { useGlobalStore } from '@@/store'
 import InstagramLogo_ from '@@/assets/svg/instagram_logo.svg'
 
 const globalStore = useGlobalStore()
 
-const handleSelect = (section: SECTION) => {
+const handleSelect = (section: SectionEnum) => {
   globalStore.setSection(section)
 }
 </script>
@@ -13,7 +13,7 @@ const handleSelect = (section: SECTION) => {
 <template>
   <NuxtLink to="/">
     <InstagramLogo_
-      @click="handleSelect(SECTION.HOME)"
+      @click="handleSelect(SectionEnum.HOME)"
       class="mt-[7px] h-[29px] w-[103px] cursor-pointer fill-black dark:fill-white"
     />
   </NuxtLink>
