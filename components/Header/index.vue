@@ -16,6 +16,7 @@ import SelfAvatar from '../Nav/SelfAvatar.vue'
 import Extension from '~~/components/Utils/Extension.vue'
 import Flashicon_ from '@@/assets/svg/flash_icon.svg'
 import { useClickOutSide } from '@@/composables'
+import DarkMode from '../Utils/DarkMode.vue'
 
 const globalStore = useGlobalStore()
 const searchStore = useSearchStore()
@@ -59,6 +60,7 @@ const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
         <div @click="toggleShowExtension">
           <Flashicon_ class="cursor-pointer dark:[&>path]:fill-white" />
         </div>
+        <DarkMode />
         <div class="relative" ref="extensionRef">
           <div @click="toggleShowExtension"></div>
           <div><Extension v-if="showExtension" /></div>
@@ -112,4 +114,3 @@ const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
     </div>
   </header>
 </template>
-
