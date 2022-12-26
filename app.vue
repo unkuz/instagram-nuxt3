@@ -14,10 +14,6 @@ import { SECTION } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
 
-if (process.client) {
-  window.addEventListener('load', registerSeviceWorkerPWA)
-}
-
 const globalStore = useGlobalStore()
 const moreStore = useMoreStore()
 const themeStore = useThemeStore()
@@ -28,6 +24,7 @@ const section = computed<SECTION>(() => globalStore.section)
 const isMobile = computed<boolean>(() => globalStore.getIsMobile)
 const isShowMore = computed<boolean>(() => moreStore.isShow)
 
+registerSeviceWorkerPWA()
 useScrollBarTheme()
 useScroll()
 useSignature()
@@ -61,3 +58,4 @@ useResizeWindow()
   </div>
   <!-- </NuxtErrorBoundary> -->
 </template>
+
