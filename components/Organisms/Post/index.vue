@@ -84,9 +84,9 @@ const scrollToComment = () => {
 <template>
   <article
     ref="postRef"
-    class="mb-[24px] w-full bg-transparent p-[1px] shadow-c4 dark:shadow-none md:bg-c4 md:shadow-sm md:clip-path-cuzknothz2 dark:md:bg-transparent"
+    class="mb-[24px] w-full bg-transparent p-[1px] shadow-c4 dark:shadow-none md:bg-c4 md:shadow-sm md:clip-path-cuzknothz dark:md:bg-transparent"
   >
-    <div class="h-full w-full bg-c1 dark:bg-c19 md:clip-path-cuzknothz2">
+    <div class="h-full w-full bg-c1 dark:bg-c19 md:clip-path-cuzknothz">
       <Head :avatar="user.profile_pic_url" :userName="user.username" />
       <Carousel
         :images="carousel_media.images"
