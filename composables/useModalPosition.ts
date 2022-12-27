@@ -14,6 +14,7 @@ export const useModalPosition = () => {
 
   onBeforeUnmount(() => {
     window.removeEventListener('scroll', position)
-  })
+  }) 
+  
   return { x, y }
 }

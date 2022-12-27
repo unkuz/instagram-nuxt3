@@ -1,7 +1,5 @@
 export function useWindowResizeCallback(callback: Function) {
-  const resize = (_e: Event) => {
-    callback()
-  }
+  const resize = () => callback()
 
   onMounted(() => {
     callback()
@@ -14,3 +12,4 @@ export function useWindowResizeCallback(callback: Function) {
     window.removeEventListener('scroll', resize)
   })
 }
+

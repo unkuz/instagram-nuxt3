@@ -6,24 +6,30 @@ export function useResizeWindow() {
   const width = ref<number>(0)
   const height = ref<number>(0)
 
-  const resize = (e: UIEvent) => {
-    const target = e.target as Window
-    width.value = target.innerWidth
-    height.value = target.innerHeight
+  const resize = () => {
+    width.value = window.innerWidth
+    height.value = window.innerHeight
   }
 
   onMounted(() => {
+    resize()
     window.addEventListener('resize', resize)
-    width.value = window.innerWidth
-    height.value = window.innerHeight
   })
 
-  watch([width, height], () => {
-    globalStore.setClientSize(width.value, height.value)
-  })
+  watch(
+    [width, height],
+    ([width, height]) => {
+      globalStore.setClientSize(width, height)
+    },
+    {
+      immediate: true,
+    }
+  )
 
   onBeforeUnmount(() => {
     window.removeEventListener('resize', resize)
   })
+
   return { width, height }
 }
+

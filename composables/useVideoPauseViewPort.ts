@@ -6,7 +6,7 @@ export const useVideoPauseViewPort = (videoRef: Ref<HTMLVideoElement | null>) =>
 
   const check = () => {
     const rect = videoRef.value!.getBoundingClientRect()
-
+    
     const condition =
       rect.bottom > 0 &&
       rect.right > 0 &&
@@ -18,6 +18,7 @@ export const useVideoPauseViewPort = (videoRef: Ref<HTMLVideoElement | null>) =>
       currentVideoStore.setReady()
     }
   }
+
   onMounted(() => {
     addEventListener('scroll', check)
   })
