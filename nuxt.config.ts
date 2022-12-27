@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     // '@nuxtjs/fontaine',
     // '@sidebase/nuxt-auth',
     // '@morev/vue-transitions/nuxt',
+    '@nuxtjs/i18n',
   ],
   app: {
     head: {
