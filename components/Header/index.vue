@@ -60,7 +60,7 @@ const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
         <div @click="toggleShowExtension">
           <Flashicon_ class="cursor-pointer dark:[&>path]:fill-white" />
         </div>
-        <DarkMode />
+        <!-- <DarkMode /> -->
         <div class="relative" ref="extensionRef">
           <div @click="toggleShowExtension"></div>
           <div><Extension v-if="showExtension" /></div>
