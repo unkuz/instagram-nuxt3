@@ -29,12 +29,12 @@
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",
     "tailwind-clip-path": "^1.0.0",
-    "tailwind-scrollbar": "^2.0.1",
+    "tailwind-scrollbar": "^2.1.0",
     "vitest": "^0.26.2"
   },
   "dependencies": {
     "@morev/vue-transitions": "^2.3.5",
-    "@nuxtjs/algolia": "^1.3.1",
+    "@nuxtjs/algolia": "^1.4.0",
     "@nuxtjs/fontaine": "^0.2.3",
     "@nuxtjs/i18n": "^7.3.0",
     "@nuxtjs/robots": "^3.0.0",

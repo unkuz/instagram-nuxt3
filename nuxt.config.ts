@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     // '@nuxtjs/fontaine',
     // '@sidebase/nuxt-auth',
     // '@morev/vue-transitions/nuxt',
-    '@nuxtjs/i18n',
+    // '@nuxtjs/i18n',
   ],
   app: {
     head: {
@@ -44,7 +44,7 @@ export default defineNuxtConfig({
   },
   buildDir: '.nuxt',
   builder: 'vite',
-  debug: true,
+  //   debug: true,
   devServer: {
     host: 'localhost',
     port: 3000,
