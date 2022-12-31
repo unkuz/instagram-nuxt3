@@ -22,7 +22,7 @@ const authorText = 'cuzknothz'
 
 <template>
   <div class="select-none" draggable="false">
-    <div class="mt-[18px] mb-[22px] flex h-[56px] items-center justify-between">
+    <div class="mt-[26px] mb-[22px] flex h-[56px] items-center justify-between">
       <Avatar :size="M" :url="avatar" />
       <div class="-ml-[70px]">
         <p class="cursor-pointer font-medium">cuzknothz</p>

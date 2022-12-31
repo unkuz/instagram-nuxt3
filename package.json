@@ -47,6 +47,7 @@
     "add": "^2.0.6",
     "axios": "^1.2.2",
     "camelcase-keys": "^8.0.2",
+    "devtools-detect": "^4.0.1",
     "file-saver": "^2.0.5",
     "gsap": "^3.11.4",
     "keen-slider": "^6.8.5",

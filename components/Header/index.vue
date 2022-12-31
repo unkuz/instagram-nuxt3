@@ -4,7 +4,7 @@ import Search from '@@/components/Header/Search.vue'
 import HomeIcon from '@@/components/Nav/HomeIcon.vue'
 import Reels from '@@/components/Nav/Reels.vue'
 import { SectionEnum } from '@@/constants/section'
-import { useGlobalStore, useSearchStore, useThemeStore } from '@@/store'
+import { useAuthStore, useGlobalStore, useSearchStore, useThemeStore } from '@@/store'
 import AccountPop from '../Huge/AccountPop/index.vue'
 import ActivityFeedPop from '../Huge/ActivityFeedPop/index.vue'
 import SearchPop from '../Huge/SearchPop/index.vue'
@@ -17,8 +17,10 @@ import Extension from '~~/components/Utils/Extension.vue'
 import Flashicon_ from '@@/assets/svg/flash_icon.svg'
 import { useClickOutSide } from '@@/composables'
 import DarkMode from '../Utils/DarkMode.vue'
+import LoginIcon_ from '@@/assets/svg/login.svg'
 
 const globalStore = useGlobalStore()
+const authStore = useAuthStore()
 const searchStore = useSearchStore()
 const themeStore = useThemeStore()
 const isShowSearchToolkit = computed<boolean>(() => searchStore.getIsShowSearchToolkit)
@@ -34,6 +36,8 @@ const showExtension = ref<boolean>(false)
 const toggleShowExtension = () => {
   showExtension.value = !showExtension.value
 }
+
+const isLogin = computed<boolean>(() => authStore.data.isLogin)
 
 useClickOutSide(extensionRef, () => (showExtension.value = false))
 
@@ -67,12 +71,13 @@ const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
         </div>
       </div>
       <div
-        class="relative hidden w-full items-center justify-center md:ml-[65px] md:flex md:w-auto lg:ml-0 lg:w-full"
+        class="relative hidden w-full items-center justify-center md:flex md:w-auto lg:ml-0 lg:w-full"
       >
         <Search />
         <SearchPop v-if="isShowSearchToolkit" />
       </div>
       <div
+        v-if="isLogin"
         class="flex h-full w-full flex-row-reverse items-center justify-start space-x-[22px] md:w-auto md:flex-row md:justify-end md:first:mr-6 lg:w-full"
       >
         <div v-show="!isMobile" @click="handleSelect(SectionEnum.HOME)">
@@ -110,6 +115,9 @@ const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
             <AccountPop v-show="isShowProfile" />
           </div>
         </div>
+      </div>
+      <div v-else class="flex h-full w-full items-center justify-end">
+        <NuxtLink to="/login"> <LoginIcon_ /></NuxtLink>
       </div>
     </div>
   </header>

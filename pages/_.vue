@@ -4,7 +4,7 @@ import Suggestions from '@@/components/Huge/Suggestions/index.vue'
 import Post from '@@/components/Organisms/Post/index.vue'
 import Stories from '@@/components/Stories/index.vue'
 import { IStory, ITimeLine, TSuggestion } from '@@/models'
-import { useStoriesStore, useSuggestionStore, useTimeLineStore } from '@@/store'
+import { useAuthStore, useStoriesStore, useSuggestionStore, useTimeLineStore } from '@@/store'
 import { useFetchCamel, useWindowResizeCallback } from '~~/composables'
 
 // definePageMeta({
@@ -17,6 +17,9 @@ const leftRef = ref<HTMLElement | null>(null)
 const storiesStore = useStoriesStore()
 const timeLineStore = useTimeLineStore()
 const suggestionStore = useSuggestionStore()
+const authStore = useAuthStore()
+
+const isLogin = computed<boolean>(() => authStore.data.isLogin)
 
 const { data: _timeline } = await useFetch<ITimeLine[]>(APP_API.timeLine.list)
 const { data: _stories } = await useFetch<IStory[]>(APP_API.stories.list)
@@ -50,11 +53,21 @@ useWindowResizeCallback(calcLeftSuggestion)
   <div>
     <div class="relative flex w-full justify-center lg:block">
       <div class="inline-flex w-full flex-col items-center md:w-[614px] lg:block" ref="leftRef">
-        <Stories :stories="stories" />
+        <Stories v-if="isLogin" :stories="stories" />
         <Post v-for="i in timeline" :key="i.id" v-bind="i" />
       </div>
-      <div class="fixed top-[93px] hidden w-[293px] text-sm lg:block" ref="rightRef">
-        <Suggestions :suggestion="suggestion" />
+      <div class="fixed top-[84px] hidden w-[293px] text-sm lg:block" ref="rightRef">
+        <Suggestions v-if="isLogin" :suggestion="suggestion" />
+        <div class="h-[500px]" v-else>
+          <ins
+            class="adsbygoogle"
+            style="display: block"
+            data-ad-client="ca-pub-1817809598132751"
+            data-ad-slot="9199689868"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+        </div>
       </div>
     </div>
     <NuxtPage />

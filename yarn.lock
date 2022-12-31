@@ -4991,6 +4991,11 @@ devalue@^2.0.1:
   resolved "https://registry.yarnpkg.com/devalue/-/devalue-2.0.1.tgz#5d368f9adc0928e47b77eea53ca60d2f346f9762"
   integrity sha512-I2TiqT5iWBEyB8GRfTDP0hiLZ0YeDJZ+upDxjBfOC2lebO5LezQMv7QvIUTzdb64jQyAKLf1AHADtGN+jw6v8Q==
 
+devtools-detect@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/devtools-detect/-/devtools-detect-4.0.1.tgz#2f3795b9339d25a5413107eb1b606ea9933e1b0a"
+  integrity sha512-Bfd5XzZhZ/oDqrLMD4F6fAE0QFUsoBbgEEhUjY6pYJ63xmzhg5NCzhxBz8hsx7ge8Nh0bxhtdU/naYeARUZyWg==
+
 dfa@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/dfa/-/dfa-1.2.0.tgz#96ac3204e2d29c49ea5b57af8d92c2ae12790657"

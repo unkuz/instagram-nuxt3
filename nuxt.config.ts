@@ -32,6 +32,17 @@ export default defineNuxtConfig({
       viewport:
         'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
       title: 'Instagram',
+      script: [
+        // <script src="https://myawesome-lib.js"></script>
+        {
+          src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1817809598132751',
+          crossorigin: 'anonymous',
+          async: true,
+        },
+        {
+          src: '/ads.js',
+        },
+      ],
     },
     keepalive: true,
     rootId: '__nuxt',
