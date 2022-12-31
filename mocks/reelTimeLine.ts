@@ -1,6 +1,40 @@
 export const timeLine = [
   {
     created_at: '2022-12-31 10:20',
+    id: '45gffdafsdsdfffdfs',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [
+        {
+          id: 1,
+          src: `/video/Y2Mate.is - Seeb x Emelie Hollow - Safe Zone-1Tr-PfuFdZ4-720p-1656161086002.mp4`,
+        },
+      ],
+    },
+    user: {
+      id: 'Diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 2_3323_32,
+    has_liked: false,
+    caption_text: `Y2Mate.is - Seeb x Emelie Hollow - Safe Zone
+                `,
+    is_seen: true,
+    tags: ['Diversity','🙄'],
+    is_saved: false,
+  },
+  {
+    created_at: '2022-12-31 10:20',
     id: '45gffdafsdsdffs',
     location: {
       short_name: 'Copenhagen',
