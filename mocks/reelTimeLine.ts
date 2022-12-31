@@ -1,4 +1,38 @@
 export const timeLine = [
+    {
+        created_at: '2022-12-31 10:20',
+        id: '45gffdafffs',
+        location: {
+          short_name: 'Copenhagen',
+        },
+        comments: [],
+        carousel_media: {
+          images: [],
+          videos: [
+            {
+              id: 1,
+              src: `/video/Crystal Rock x Anastasia Rose x Lucky Twice - Lucky.mp4`,
+            },
+          ],
+        },
+        user: {
+          id: 'Diversity',
+          username: 'Diversity',
+          full_name: 'Diversity',
+          profile_pic_url: '/image/91480011.jpg',
+          friendship_status: {
+            following: true,
+            outgoing_request: false,
+          },
+        },
+        like_count: 2000,
+        has_liked: false,
+        caption_text: `Crystal Rock x Anastasia Rose x Lucky Twice - Lucky
+        `,
+        is_seen: true,
+        tags: ['Diversity', 'Crystal Rock','Anastasia Rose','Lucky Twice'],
+        is_saved: false,
+      },
   {
     created_at: '2022-11-29 22:05',
     id: '45gffdafffs',
