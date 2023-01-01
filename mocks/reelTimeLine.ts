@@ -1,6 +1,39 @@
 export const timeLine = [
   {
     created_at: '2023-01-01 17:20',
+    id: '45gffdafsdsdfffdfffddfddfs',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [
+        {
+          id: 1,
+          src: '/video/Aden Foyer - The Ballet Girl (Official Lyric Video)-V8Qbp6TFg6s-720p-1654734723973.mp4',
+        },
+      ],
+    },
+    user: {
+      id: 'Aden Foyer',
+      username: 'Aden Foyer',
+      full_name: 'Aden Foyer',
+      profile_pic_url: '/timeline/jonas_aden.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 4650,
+    has_liked: true,
+    caption_text: `Aden Foyer - The Ballet Girl (Official Lyric Video)`,
+    is_seen: true,
+    tags: ['Jonas Aden'],
+    is_saved: true,
+  },
+  {
+    created_at: '2023-01-01 17:20',
     id: '45gffdafsdsdfffffddfddfs',
     location: {
       short_name: 'Copenhagen',

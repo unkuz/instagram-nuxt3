@@ -1,6 +1,6 @@
 export const APP_API = {
   timeLine: {
-    list: 'https://mocki.io/v1/73ebf6cd-2277-4b71-a9a5-f7badf4c8a1a',
+    list: 'https://mocki.io/v1/7397e98a-d487-4750-8328-9964734219fd',
   },
   stories: {
     list: 'https://mocki.io/v1/5e99de01-56f3-46a5-a0a0-477dcfd34beb',
