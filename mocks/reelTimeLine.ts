@@ -17,7 +17,12 @@ export const timeLine = [
           src: '/image/56893748fgasdf.jpg',
         },
       ],
-      videos: [],
+      videos: [
+        {
+          id: 1,
+          src: '/video/348975638fsdkj.mp4',
+        },
+      ],
     },
     user: {
       id: 'cuzknothz',
