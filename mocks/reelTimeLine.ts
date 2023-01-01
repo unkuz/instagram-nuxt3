@@ -1,5 +1,42 @@
 export const timeLine = [
   {
+    created_at: '2023-01-01 17:20',
+    id: '45gffdafsdsdfffffddfddfs',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [
+        {
+          id: 1,
+          src: '/image/358947895sdgdgs.jpg',
+        },
+        {
+          id: 2,
+          src: '/image/56893748fgasdf.jpg',
+        },
+      ],
+      videos: [],
+    },
+    user: {
+      id: 'cuzknothz',
+      username: 'cuzknothz',
+      full_name: 'cuzknothz',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 10,
+    has_liked: false,
+    caption_text: `Nice 😍. Falling in luv with NANI Serum Skin =))`,
+    is_seen: true,
+    tags: [''],
+    is_saved: false,
+  },
+  {
     created_at: '2022-12-31 10:20',
     id: '45gffdafsdsdfffdfs',
     location: {
@@ -30,7 +67,7 @@ export const timeLine = [
     caption_text: `Y2Mate.is - Seeb x Emelie Hollow - Safe Zone
                 `,
     is_seen: true,
-    tags: ['Diversity','🙄'],
+    tags: ['Diversity', '🙄'],
     is_saved: false,
   },
   {
