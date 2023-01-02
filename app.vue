@@ -36,26 +36,27 @@ useResizeWindow()
   <!-- <NuxtErrorBoundary > -->
   <div
     :class="[
-      'scroll-smooth font-quicksan selection:bg-c2 selection:text-c1 dark:selection:bg-c1 dark:selection:text-c2',
+      'scroll-smooth font-quicksan',
       {
         'dark ': isDarkMode,
       },
     ]"
   >
-    <Head>
-      <Meta name="theme-color" :content="isDarkMode ? '#121212' : '#fff'" />
-    </Head>
-    <div class="min-h-screen dark:bg-c19 dark:text-c21">
-      <NuxtLayout>
-        <Prelude v-if="isShowPrelude" />
-        <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" />
-        <Loading />
-        <NuxtPage />
-      </NuxtLayout>
-      <NewPost v-if="section === SectionEnum.NEW_POST && !isMobile" />
-      <More v-if="isShowMore" />
+    <div class="selection:bg-c2 selection:text-c1 dark:selection:bg-c1 dark:selection:text-c2">
+      <Head>
+        <Meta name="theme-color" :content="isDarkMode ? '#121212' : '#fff'" />
+      </Head>
+      <div class="min-h-screen dark:bg-c19 dark:text-c21">
+        <NuxtLayout>
+          <Prelude v-if="isShowPrelude" />
+          <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" />
+          <Loading />
+          <NuxtPage />
+        </NuxtLayout>
+        <NewPost v-if="section === SectionEnum.NEW_POST && !isMobile" />
+        <More v-if="isShowMore" />
+      </div>
     </div>
   </div>
   <!-- </NuxtErrorBoundary> -->
 </template>
-

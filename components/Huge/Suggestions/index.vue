@@ -21,7 +21,7 @@ const authorText = 'cuzknothz'
 </script>
 
 <template>
-  <div class="select-none" draggable="false">
+  <div>
     <div class="mt-[26px] mb-[22px] flex h-[56px] items-center justify-between">
       <Avatar :size="M" :url="avatar" />
       <div class="-ml-[70px]">
@@ -68,11 +68,11 @@ const authorText = 'cuzknothz'
       </div>
     </div>
 
-    <div class="flex flex-col items-center gap-[5px] text-[0.8rem]">
+    <div class="flex select-none flex-col items-center gap-[5px] text-[0.8rem]">
       <div>© <span v-html="getCurrentYear()"></span> Instagram clone by</div>
       <NuxtLink to="https://github.com/cuzknothz" target="_blank">
         <div
-          class="cursor-pointer select-none font-august text-[1.25rem] uppercase tracking-wider text-c2 drop-shadow-md dark:text-c1"
+          class="cursor-pointer font-august text-[1.25rem] uppercase tracking-wider text-c2 drop-shadow-md dark:text-c1"
         >
           {{ authorText }}
         </div>
