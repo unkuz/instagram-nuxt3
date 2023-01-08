@@ -11,6 +11,10 @@ export const timeLine = [
       videos: [
         {
           id: 1,
+          src: '/video/Y2Mate.is - Aden Foyer - The Ballet Girl (Official Music Video)-EzQ-KpvHm60-720p-1654057266391.mp4',
+        },
+        {
+          id: 2,
           src: '/video/Aden Foyer - The Ballet Girl (Official Lyric Video)-V8Qbp6TFg6s-720p-1654734723973.mp4',
         },
       ],
