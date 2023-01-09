@@ -35,8 +35,8 @@ const toggleFollow = () => (isFollow.value = !isFollow.value)
       class="flex w-[55px] cursor-pointer justify-end text-[0.8rem] font-[500]"
       @click="toggleFollow"
     >
-      <Button v-if="isFollow" text="Unfollow" className="[&>span]:text-c9 bg-c8 " />
-      <Button v-else text="Follow" className="[&>span]:text-c7 bg-c10" />
+      <Button v-if="isFollow" text="Unfollow" class="[&>span]:text-c9 bg-c8 " />
+      <Button v-else text="Follow" class="[&>span]:text-c7 bg-c10" />
     </div>
   </div>
 </template>

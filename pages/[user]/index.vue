@@ -18,8 +18,6 @@ const isShowFollowers = computed(() => profileStore.isShowFollowers)
 const currentSelect = computed(() => profileStore.select)
 const avatar = computed(() => authStore.data.avatar)
 const coverImg = computed(() => authStore.data.coverImg)
-
-const isSelect = (select) => currentSelect === select
 </script>
 
 <template>
@@ -32,7 +30,7 @@ const isSelect = (select) => currentSelect === select
       <Avatar
         :size="L"
         :url="avatar"
-        className="absolute top-[67%] left-1/2 -translate-x-1/2 border-[5px] border-c1 md:top-[60%] md:left-[3%] md:h-[140px] md:w-[140px] md:translate-x-0"
+        class="absolute top-[67%] left-1/2 -translate-x-1/2 border-[5px] border-c1 md:top-[60%] md:left-[3%] md:h-[140px] md:w-[140px] md:translate-x-0"
       />
     </div>
     <div>

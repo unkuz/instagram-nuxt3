@@ -42,7 +42,7 @@ useClickOutSide(moreRef, () => {
           <div class="flex items-center space-x-[20px]">
             <Avatar
               url="/personal/284244344_5311122635605193_5864440318105391567_n.jpg"
-              className="w-[45px]"
+              class="w-[45px]"
             />
             <div>
               <p>Joe Biden</p>

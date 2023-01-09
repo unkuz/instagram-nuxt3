@@ -6,10 +6,9 @@ const { T, S, M, L } = SizeAvatarEnum
 interface IProps {
   url: string
   size?: SizeAvatarEnum
-  className?: string
 }
 
-const { size, url, className } = defineProps<IProps>()
+const { size, url } = defineProps<IProps>()
 </script>
 <template>
   <div
@@ -21,7 +20,6 @@ const { size, url, className } = defineProps<IProps>()
         'h-[56px] w-[56px]': size === M,
         'h-[130px] w-[130px]': size === L,
       },
-      className,
     ]"
     :style="{ backgroundImage: `url(${url})` }"
   ></div>
