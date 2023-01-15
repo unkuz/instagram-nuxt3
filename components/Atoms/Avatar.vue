@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { SizeAvatarEnum } from '@@/type'
+import { QUALITY_IMAGE } from '@@/configs'
 
 const { T, S, M, L } = SizeAvatarEnum
 
@@ -22,6 +23,6 @@ const { size, url } = defineProps<IProps>()
       },
     ]"
     :src="url"
-    quality="50"
+    :quality="QUALITY_IMAGE.AVATAR"
   />
 </template>
