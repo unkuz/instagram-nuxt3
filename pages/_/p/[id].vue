@@ -66,7 +66,7 @@ const setCurrent = (value: number) => (currentIdx.value = value)
 
 useClickOutSide(postRef, () => {
   router.back()
-})
+}) 
 
 onMounted(() => {
   const topH = rightSectionRef.value?.children[0].children[0].clientHeight!
@@ -91,7 +91,7 @@ const mediaArr = computed<
   <div>
     <BackDrop>
       <div
-        class="flex h-[100vh] translate-y-[100vh] scale-0 flex-col overflow-scroll bg-c1 opacity-0 dark:bg-c19 md:h-[80vh] xl:h-[550px] xl:flex-row xl:overflow-auto"
+        class="flex h-[100vh] translate-y-[100vh] scale-0 flex-col overflow-scroll bg-c1 opacity-0 dark:bg-c19 md:h-[80vh] xl:h-[80%] xl:w-[80%] xl:flex-row xl:overflow-auto"
         ref="postRef"
       >
         <div class="flex w-full cursor-pointer justify-end md:hidden" @click="router.back">X</div>

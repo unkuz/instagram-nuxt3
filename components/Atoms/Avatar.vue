@@ -11,9 +11,9 @@ interface IProps {
 const { size, url } = defineProps<IProps>()
 </script>
 <template>
-  <div
+  <nuxt-img
     :class="[
-      'cursor-pointer rounded-[50%] bg-cover bg-center',
+      'cursor-pointer rounded-[50%] bg-cover bg-center select-none non-drag',
       {
         'h-[24px] w-[24px]': size === T,
         'h-[32px] w-[32px]': size === S,
@@ -21,6 +21,6 @@ const { size, url } = defineProps<IProps>()
         'h-[130px] w-[130px]': size === L,
       },
     ]"
-    :style="{ backgroundImage: `url(${url})` }"
-  ></div>
+    :src="url"
+  />
 </template>

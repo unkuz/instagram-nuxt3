@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@nuxt/image": "^0.7.1",
-    "@nuxt/image-edge": "1.0.0-27840416.dc1ed65",
+    "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
     "@nuxt/test-utils-edge": "3.0.1-rc.0-27894335.0db3c63",
     "@nuxtjs/html-validator": "^1.2.3",
     "@nuxtjs/pwa": "^3.3.5",
@@ -17,7 +17,7 @@
     "@nuxtjs/tailwindcss": "^6.2.0",
     "@nuxtjs/web-vitals": "^0.2.2",
     "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
-    "@sidebase/nuxt-auth": "^0.3.3", 
+    "@sidebase/nuxt-auth": "^0.3.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "autoprefixer": "^10.4.13",
     "nuxt": "^3.0.0",

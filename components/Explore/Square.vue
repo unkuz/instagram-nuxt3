@@ -19,7 +19,7 @@ defineProps<IProps>()
       },
     ]"
   >
-    <img
+    <nuxt-img
       v-if="!!img"
       :src="img"
       :alt="img"

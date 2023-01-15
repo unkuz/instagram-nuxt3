@@ -1,6 +1,7 @@
 @import './custom-scroll-bar';
 @import './font-face';
 @import './keen-slider';
+@import './custom';
 
 * {
   -webkit-tap-highlight-color: transparent;
@@ -9,3 +10,4 @@
 html {
   @apply text-[15px];
 }
+

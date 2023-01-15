@@ -70,7 +70,7 @@ const coverImg = computed(() => authStore.data.coverImg)
     </div>
     <div class="mt-[20px] grid grid-cols-3 gap-[5px]">
       <div class="overflow-hidden">
-        <img
+        <nuxt-img
           src="/personal/284244344_5311122635605193_5864440318105391567_n.jpg"
           class="aspect-square w-full cursor-pointer overflow-hidden object-cover duration-500 hover:scale-110"
         />

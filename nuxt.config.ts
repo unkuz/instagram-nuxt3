@@ -94,4 +94,5 @@ export default defineNuxtConfig({
       ['isDate', 'isLodashDate'], // => _isLodashDate
     ],
   },
+  image: {},
 })

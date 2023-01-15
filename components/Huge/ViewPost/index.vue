@@ -40,7 +40,7 @@ onMounted(() => {
         class="flex h-screen scale-0 overflow-hidden bg-fuchsia-300 opacity-0 duration-500 md:h-[800px] md:w-full xl:w-[1000px]"
       >
         <div class="hidden md:block md:flex-1">
-          <img
+          <nuxt-img
             src="/personal/285912787_394288332653847_7603823348223049999_n.jpg"
             alt=""
             class="h-full w-full object-cover object-center"
