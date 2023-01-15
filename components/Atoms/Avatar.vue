@@ -13,7 +13,7 @@ const { size, url } = defineProps<IProps>()
 <template>
   <nuxt-img
     :class="[
-      'cursor-pointer rounded-[50%] bg-cover bg-center select-none non-drag',
+      'non-drag cursor-pointer select-none rounded-[50%] bg-cover bg-center',
       {
         'h-[24px] w-[24px]': size === T,
         'h-[32px] w-[32px]': size === S,
@@ -22,5 +22,6 @@ const { size, url } = defineProps<IProps>()
       },
     ]"
     :src="url"
+    quality="50"
   />
 </template>

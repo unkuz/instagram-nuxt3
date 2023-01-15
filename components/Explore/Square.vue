@@ -24,6 +24,7 @@ defineProps<IProps>()
       :src="img"
       :alt="img"
       class="h-full w-full object-cover duration-150 group-hover:scale-110"
+      quality="50"
     />
     <div class="absolute top-1 right-1 sm:top-4 sm:right-4">
       <ReelIcon_ class="w-[20px] sm:w-[24px]" />
