@@ -60,7 +60,8 @@ useHead({
       </div>
     </div>
     <ClientOnly>
-      <Vue3Lottie :animationData="Luv" class="absolute inset-0 -z-10 h-full w-full"> </Vue3Lottie>
+      <Vue3Lottie :animationData="Luv" class="pointer-events-none absolute inset-0 h-full w-full">
+      </Vue3Lottie>
     </ClientOnly>
   </div>
   <!-- </NuxtErrorBoundary> -->
