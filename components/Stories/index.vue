@@ -55,6 +55,8 @@ const [container] = useKeenSlider({
   slides: {
     spacing: 0,
   },
+  dragSpeed: 1.2,
+  renderMode: 'performance',
 })
 </script>
 
