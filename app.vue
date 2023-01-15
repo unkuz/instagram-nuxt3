@@ -30,6 +30,10 @@ useScroll()
 useSignature()
 useResizeWindow()
 // useAuthBasic()
+
+useHead({
+  meta: [{ name: 'theme-color', content: isDarkMode.value ? '#121212' : '#fff' }],
+})
 </script>
 
 <template>
@@ -43,9 +47,6 @@ useResizeWindow()
     ]"
   >
     <div class="selection:bg-c2 selection:text-c1 dark:selection:bg-c1 dark:selection:text-c2">
-      <Head>
-        <Meta name="theme-color" :content="isDarkMode ? '#121212' : '#fff'" />
-      </Head>
       <div class="min-h-screen dark:bg-c19 dark:text-c21">
         <NuxtLayout>
           <Prelude v-if="isShowPrelude" />
@@ -60,3 +61,4 @@ useResizeWindow()
   </div>
   <!-- </NuxtErrorBoundary> -->
 </template>
+
