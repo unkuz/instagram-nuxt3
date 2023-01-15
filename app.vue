@@ -13,6 +13,7 @@ import {
 import { SectionEnum } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
+import Luv from '@@/lotties/lf20_5vy0an4n.json'
 
 const globalStore = useGlobalStore()
 const moreStore = useMoreStore()
@@ -58,7 +59,9 @@ useHead({
         <More v-if="isShowMore" />
       </div>
     </div>
+    <ClientOnly>
+      <Vue3Lottie :animationData="Luv" class="absolute inset-0 -z-10 h-full w-full"> </Vue3Lottie>
+    </ClientOnly>
   </div>
   <!-- </NuxtErrorBoundary> -->
 </template>
-
