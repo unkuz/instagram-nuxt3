@@ -2140,7 +2140,7 @@
   resolved "https://registry.npmjs.org/@nuxt/devalue/-/devalue-2.0.0.tgz"
   integrity sha512-YBI/6o2EBz02tdEJRBK8xkt3zvOFOWlLBf7WKYGBsSYSRtjjgrqPe2skp6VLLmKx5WbHHDNcW+6oACaurxGzeA==
 
-"@nuxt/image-edge@^1.0.0-27840416.dc1ed65":
+"@nuxt/image-edge@1.0.0-27840416.dc1ed65":
   version "1.0.0-27840416.dc1ed65"
   resolved "https://registry.yarnpkg.com/@nuxt/image-edge/-/image-edge-1.0.0-27840416.dc1ed65.tgz#63c25df44062ee99af614fccc46f8bb2d62dd668"
   integrity sha512-r+lRkdAeB49wCpYmZAHWrhXNtjTSt3kz8MuPoVPpZB40FOVEpPCIQF8dBI5tXM19YOg76yFCdvpt1TFq3irA7g==
@@ -9214,10 +9214,10 @@ pinia@>=2.0.27:
     "@vue/devtools-api" "^6.4.5"
     vue-demi "*"
 
-pinia@^2.0.28:
-  version "2.0.28"
-  resolved "https://registry.yarnpkg.com/pinia/-/pinia-2.0.28.tgz#887c982d854972042d9bdfd5bc4fad3b9d6ab02a"
-  integrity sha512-YClq9DkqCblq9rlyUual7ezMu/iICWdBtfJrDt4oWU9Zxpijyz7xB2xTwx57DaBQ96UGvvTMORzALr+iO5PVMw==
+pinia@^2.0.29:
+  version "2.0.29"
+  resolved "https://registry.yarnpkg.com/pinia/-/pinia-2.0.29.tgz#b7e672980fdb14e03839e8139ce55ca97843679d"
+  integrity sha512-5z/KpFecq/cIgfeTnulJXldiLcTITRkTe3N58RKYSj0Pc1EdR6oyCdnf5A9jLoVwBqX5LtHhd0kGlpzWvk9oiQ==
   dependencies:
     "@vue/devtools-api" "^6.4.5"
     vue-demi "*"

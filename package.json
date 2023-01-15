@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@nuxt/image": "^0.7.1",
-    "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
+    "@nuxt/image-edge": "1.0.0-27840416.dc1ed65",
     "@nuxt/test-utils-edge": "3.0.1-rc.0-27894335.0db3c63",
     "@nuxtjs/html-validator": "^1.2.3",
     "@nuxtjs/pwa": "^3.3.5",
@@ -55,7 +55,7 @@
     "moment": "^2.29.4",
     "nuxt-graphql-client": "^0.2.24",
     "nuxt-security": "^0.10.0",
-    "pinia": "^2.0.28",
+    "pinia": "^2.0.29",
     "postcss-custom-properties": "^12.1.11",
     "rxjs": "^7.8.0",
     "sass": "^1.57.1",
