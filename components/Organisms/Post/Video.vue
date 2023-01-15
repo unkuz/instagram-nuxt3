@@ -5,6 +5,7 @@ import { useDoubleClick, usePercentVideo } from '@@/composables'
 import { useTimeLineStore } from '@@/store'
 import { gsap } from 'gsap'
 import { stopOtherVideoPlaying } from '~~/helpers'
+import LoadingIcon_ from '@@/assets/svg/Dual Ring-1s-200px.svg'
 
 interface IProps {
   video: any
@@ -18,6 +19,7 @@ const containerRef = ref<HTMLVideoElement | null>(null)
 const progressBarRef = ref<HTMLDivElement | null>(null)
 const isVideoPlay = ref<boolean>(false)
 const isFullScreen = ref<boolean>(false)
+const isLoading = ref<boolean>(true)
 
 const togglePlay = () => {
   if (videoRef.value) {
@@ -61,12 +63,25 @@ const scrub = (e: MouseEvent) => {
   videoRef.value!.currentTime = scrubTime
 }
 
+let timerLoadingCheck: NodeJS.Timer
+
 onMounted(() => {
   videoRef.value!.addEventListener('timeupdate', updateTime)
   progressBarRef.value!.parentElement!.addEventListener('click', scrub)
+
+  timerLoadingCheck = setInterval(() => {
+    if (videoRef.value) {
+      const { readyState } = videoRef.value
+      isLoading.value = readyState <= 2
+    }
+  }, 100)
+  videoRef.value!.addEventListener('loadeddata', (e) => {
+    console.log('HEHE', e)
+  })
 })
 
 onBeforeUnmount(() => {
+  clearInterval(timerLoadingCheck)
   progressBarRef.value!.parentElement!.removeEventListener('click', scrub)
 })
 
@@ -103,6 +118,9 @@ onMounted(() => {
       crossorigin="anonymous"
       loop
     />
+    <div class="absolute inset-0 flex items-center justify-center bg-c20/40" v-show="isLoading">
+      <LoadingIcon_ class="w-[60px] !bg-transparent" />
+    </div>
 
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
