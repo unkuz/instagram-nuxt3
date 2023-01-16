@@ -68,17 +68,13 @@ export interface IProps {
 }
 
 const props = defineProps<IProps>()
-const isShowComment = ref<boolean>(true)
-const commentRef = ref<HTMLDivElement | null>(null)
-const currentIdx = ref<number>(0)
-const setCurrent = (value: number) => (currentIdx.value = value)
-const mediaArr = computed(() => props.carousel_media.images.concat(props.carousel_media.videos))
-
+let isShowComment = $ref(true)
+const commentRef = $ref<HTMLDivElement | null>(null)
+let currentIdx = $ref<number>(0)
+const setCurrent = (value: number) => (currentIdx = value)
+const mediaArr = $computed(() => props.carousel_media.images.concat(props.carousel_media.videos))
 const { key } = useForceRenderTimer()
-
-const scrollToComment = () => {
-  isShowComment.value = true
-}
+const scrollToComment = () => (isShowComment = true)
 </script>
 
 <template>
@@ -123,3 +119,4 @@ const scrollToComment = () => {
     </div>
   </article>
 </template>
+

@@ -13,17 +13,17 @@ enum InboxTypeEnum {
   AllMessages,
 }
 
-const leftExpan = ref<InboxTypeEnum | null>(InboxTypeEnum.UnRead)
+let leftExpan = $ref<InboxTypeEnum | null>(InboxTypeEnum.UnRead)
 
 const isExpand = (section: InboxTypeEnum) => {
-  return leftExpan.value === section
+  return leftExpan === section
 }
 
 const setExpand = (section: InboxTypeEnum) => {
-  if (leftExpan.value === section) {
-    leftExpan.value = null
+  if (leftExpan === section) {
+    leftExpan = null
   } else {
-    leftExpan.value = section
+    leftExpan = section
   }
 }
 </script>

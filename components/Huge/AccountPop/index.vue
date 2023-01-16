@@ -3,23 +3,15 @@ import ProfileIcon_ from '@@/assets/svg/profile.svg'
 import Arrow from '@@/components/Utils/Arrow.vue'
 import { useClickOutSide } from '@@/composables'
 import { SectionEnum } from '@@/constants'
-import { useGlobalStore, useThemeStore } from '@@/store'
+import { useGlobalStore } from '@@/store'
 
 const globalStore = useGlobalStore()
 const accountPopRef = ref<HTMLDivElement | null>(null)
-const themeStore = useThemeStore()
-
-const isDarkMode = computed<boolean>(() => themeStore.darkMode)
 
 useClickOutSide(accountPopRef, () => {})
 
 const handleSelect = (section: SectionEnum) => {
   globalStore.setSection(section)
-}
-
-const toggleDarkMode = () => {
-  console.log('HEHE')
-  themeStore.toggleDarkMode()
 }
 </script>
 

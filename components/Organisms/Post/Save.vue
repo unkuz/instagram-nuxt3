@@ -7,16 +7,16 @@ interface IProps {
 }
 defineProps<IProps>()
 
-const unlikeRef = ref<HTMLDivElement | null>(null)
+let unlikeRef = $ref<HTMLDivElement | null>(null)
 
 onMounted(() => {
   const tl = gsap.timeline()
-  tl.to(unlikeRef.value, {
+  tl.to(unlikeRef, {
     scale: 4,
     duration: 0.5,
     ease: Elastic.easeOut.config(1, 0.3),
   })
-  tl.to(unlikeRef.value, {
+  tl.to(unlikeRef, {
     display: 'none',
     duration: 0,
   })
@@ -28,3 +28,4 @@ onMounted(() => {
     <SaveIcon_ :class="className" />
   </div>
 </template>
+

@@ -6,27 +6,27 @@ import { useGlobalStore, usePostStore } from '@@/store'
 
 const postStore = usePostStore()
 const globalStore = useGlobalStore()
-const inputFileRef = ref<HTMLInputElement | null>(null)
-const containerPreviewRef = ref<HTMLDivElement | null>(null)
+let inputFileRef = $ref<HTMLInputElement | null>(null)
+let containerPreviewRef = $ref<HTMLDivElement | null>(null)
 const boxRef = ref<HTMLDivElement | null>(null)
-const startPointX = ref<number>(0)
+let startPointX = $ref(0)
 
-const postFiles = computed<FileList[]>(() => postStore.files)
+const postFiles = $computed<FileList[]>(() => postStore.files)
 const listBolbs = computed<BlobList[]>(() => postStore.listBlobs)
 const isHasFile = computed<boolean>(() => Array.from(postFiles.value).length > 0)
 
 useLockScroll()
 
 const currentImageSlideIdx = computed<number>(() => {
-  if (!startPointX.value) {
+  if (!startPointX) {
     return 0
   } else {
-    return -startPointX.value / 500
+    return -startPointX / 500
   }
 })
 
 watch(listBolbs, () => {
-  containerPreviewRef.value!.innerHTML = ''
+  containerPreviewRef!.innerHTML = ''
   listBolbs.value.forEach((i: Blob) => {
     const image = document.createElement('img')
     image.src = String(i)
@@ -35,12 +35,12 @@ watch(listBolbs, () => {
       height: '750px',
       objectFit: 'cover',
     })
-    containerPreviewRef.value?.appendChild(image)
+    containerPreviewRef?.appendChild(image)
   })
 })
 
 onMounted(() => {
-  inputFileRef.value?.addEventListener('change', (event) => {
+  inputFileRef?.addEventListener('change', (event) => {
     postStore.setFiles((event.target as HTMLInputElement).files!)
   })
 })
@@ -58,17 +58,15 @@ const closePostBox = () => {
 }
 
 const handleUpload = () => {
-  if (inputFileRef.value) {
-    inputFileRef.value.value = ''
+  if (inputFileRef) {
+    inputFileRef.value = ''
   }
-  inputFileRef.value?.click()
+  inputFileRef?.click()
 }
 
 const handleSlide = (indicator: 1 | -1) => {
-  containerPreviewRef.value!.style.transform = `translateX(${
-    startPointX.value + 500 * indicator
-  }px)`
-  startPointX.value += indicator * 500
+  containerPreviewRef!.style.transform = `translateX(${startPointX + 500 * indicator}px)`
+  startPointX += indicator * 500
 }
 </script>
 
@@ -193,3 +191,4 @@ const handleSlide = (indicator: 1 | -1) => {
     </BackDrop>
   </div>
 </template>
+

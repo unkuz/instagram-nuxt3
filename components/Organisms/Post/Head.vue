@@ -14,10 +14,7 @@ interface IProps {
 
 defineProps<IProps>()
 
-const showMore = (e: MouseEvent) => {
-  e.stopPropagation()
-  moreStore.setShow()
-}
+const showMore = () => moreStore.setShow()
 </script>
 
 <template>
@@ -32,8 +29,9 @@ const showMore = (e: MouseEvent) => {
         </div>
       </div>
       <div>
-        <MoreIcon_ @click="showMore" class="fill-c2 dark:fill-c1" />
+        <MoreIcon_ @click.stop="showMore" class="fill-c2 dark:fill-c1" />
       </div>
     </div>
   </div>
 </template>
+

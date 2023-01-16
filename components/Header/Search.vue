@@ -1,17 +1,17 @@
 <script lang="ts" setup>
-import SearchIcon from '@@/assets/svg/search_icon_2367fdg.svg'
-import { useClickOutSide } from '@@/composables'
-import { useSearchStore } from '@@/store'
+import SearchIcon from '@@/assets/svg/search_icon_2367fdg.svg';
+import { useClickOutSide } from '@@/composables';
+import { useSearchStore } from '@@/store';
 
 const searchStore = useSearchStore()
 const searchRef = ref<HTMLInputElement | null>(null)
-const inputSearch = ref<HTMLInputElement | null>(null)
-const isSearchActive = computed<boolean>(() => searchStore.isFocus)
-const isSearchHaveValue = computed<boolean>(() => searchStore.getIsSearchHaveValue)
+const inputSearch = $ref<HTMLInputElement | null>(null)
+const isSearchActive = computed(() => searchStore.isFocus)
+const isSearchHaveValue = $computed(() => searchStore.getIsSearchHaveValue)
 
 watch(isSearchActive, (state) => {
   if (state) {
-    inputSearch.value?.focus()
+    inputSearch?.focus()
   }
 })
 
@@ -45,3 +45,4 @@ useClickOutSide(searchRef, () => {
     />
   </div>
 </template>
+

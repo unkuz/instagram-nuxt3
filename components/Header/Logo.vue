@@ -5,9 +5,7 @@ import InstagramLogo_ from '@@/assets/svg/instagram_logo.svg'
 
 const globalStore = useGlobalStore()
 
-const handleSelect = (section: SectionEnum) => {
-  globalStore.setSection(section)
-}
+const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
 </script>
 
 <template>
@@ -18,3 +16,4 @@ const handleSelect = (section: SectionEnum) => {
     />
   </NuxtLink>
 </template>
+

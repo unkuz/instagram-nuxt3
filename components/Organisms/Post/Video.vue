@@ -15,11 +15,11 @@ interface IProps {
 const props = defineProps<IProps>()
 const timelineStore = useTimeLineStore()
 const videoRef = ref<HTMLVideoElement | null>(null)
-const containerRef = ref<HTMLVideoElement | null>(null)
-const progressBarRef = ref<HTMLDivElement | null>(null)
-const isVideoPlay = ref<boolean>(false)
-const isFullScreen = ref<boolean>(false)
-const isLoading = ref<boolean>(true)
+const containerRef = $ref<HTMLVideoElement | null>(null)
+const progressBarRef = $ref<HTMLDivElement | null>(null)
+let isVideoPlay = $ref(false)
+let isFullScreen = $ref(false)
+let isLoading = $ref(true)
 
 const togglePlay = () => {
   if (videoRef.value) {
@@ -40,7 +40,7 @@ const { percent } = usePercentVideo(videoRef)
 
 const updateTime = () => {
   if (videoRef.value) {
-    isVideoPlay.value = !videoRef.value.paused
+    isVideoPlay = !videoRef.value.paused
   }
 }
 
@@ -50,8 +50,8 @@ const play = () => {
 }
 
 watch(percent, () => {
-  const { clientWidth: widthParent } = progressBarRef.value!.parentElement!
-  gsap.to(progressBarRef.value!, {
+  const { clientWidth: widthParent } = progressBarRef!.parentElement!
+  gsap.to(progressBarRef!, {
     width: percent.value * widthParent,
     duration: 0,
   })
@@ -59,7 +59,7 @@ watch(percent, () => {
 
 const scrub = (e: MouseEvent) => {
   const scrubTime =
-    (e.offsetX / progressBarRef.value!.parentElement!.offsetWidth) * videoRef.value!!.duration
+    (e.offsetX / progressBarRef!.parentElement!.offsetWidth) * videoRef.value!!.duration
   videoRef.value!.currentTime = scrubTime
 }
 
@@ -67,19 +67,19 @@ let timerLoadingCheck: NodeJS.Timer
 
 onMounted(() => {
   videoRef.value!.addEventListener('timeupdate', updateTime)
-  progressBarRef.value!.parentElement!.addEventListener('click', scrub)
+  progressBarRef!.parentElement!.addEventListener('click', scrub)
 
   timerLoadingCheck = setInterval(() => {
     if (videoRef.value) {
       const { readyState } = videoRef.value
-      isLoading.value = readyState <= 2
+      isLoading = readyState <= 2
     }
   }, 100)
 })
 
 onBeforeUnmount(() => {
   clearInterval(timerLoadingCheck)
-  progressBarRef.value!.parentElement!.removeEventListener('click', scrub)
+  progressBarRef!.parentElement!.removeEventListener('click', scrub)
 })
 
 const toggleFullScreen = (e: MouseEvent) => {
@@ -87,16 +87,12 @@ const toggleFullScreen = (e: MouseEvent) => {
   if (document.fullscreenElement) {
     return document.exitFullscreen()
   }
-  containerRef.value!.requestFullscreen()
+  containerRef!.requestFullscreen()
 }
 
 onMounted(() => {
-  containerRef.value!.addEventListener('fullscreenchange', (e) => {
-    if (document.fullscreenElement) {
-      isFullScreen.value === true
-    } else {
-      isFullScreen.value === false
-    }
+  containerRef!.addEventListener('fullscreenchange', (e) => {
+    isFullScreen = document.fullscreenElement ? true : false
   })
 })
 </script>
@@ -149,3 +145,4 @@ onMounted(() => {
     </div>
   </div>
 </template>
+

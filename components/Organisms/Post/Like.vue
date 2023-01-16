@@ -2,16 +2,16 @@
 import { Elastic, gsap } from 'gsap'
 import LikeIcon_ from '@@/assets/svg/heart_break_icon.svg'
 
-const likeRef = ref<HTMLDivElement | null>(null)
+let likeRef = $ref<HTMLDivElement | null>(null)
 
 onMounted(() => {
   const tl = gsap.timeline()
-  tl.to(likeRef.value, {
+  tl.to(likeRef, {
     scale: 4,
     duration: 0.5,
     ease: Elastic.easeOut.config(1, 0.3),
   })
-  tl.to(likeRef.value, {
+  tl.to(likeRef, {
     display: 'none',
     duration: 0,
   })
@@ -23,3 +23,4 @@ onMounted(() => {
     <LikeIcon_ />
   </div>
 </template>
+
