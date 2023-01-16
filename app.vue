@@ -4,11 +4,11 @@ import NewPost from '@@/components/Huge/NewPost/index.vue'
 import More from '@@/components/Utils/More.vue'
 import Prelude from '@@/components/Utils/Prelude.vue'
 import {
-usePrelude,
-useResizeWindow,
-useScroll,
-useScrollBarTheme,
-useSignature,
+  usePrelude,
+  useResizeWindow,
+  useScroll,
+  useScrollBarTheme,
+  useSignature,
 } from '@@/composables'
 import { SectionEnum } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
@@ -62,4 +62,3 @@ useHead({
     </ClientOnly> -->
   </div>
 </template>
-

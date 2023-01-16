@@ -65,8 +65,10 @@ const scrub = (e: MouseEvent) => {
 }
 
 onMounted(() => {
-  videoRef!.addEventListener('timeupdate', updateTime)
-  progressBarRef.value!.parentElement!.addEventListener('click', scrub)
+  if (videoRef) {
+    videoRef!.addEventListener('timeupdate', updateTime)
+    progressBarRef.value!.parentElement!.addEventListener('click', scrub)
+  }
 })
 
 onBeforeUnmount(() => {
@@ -139,4 +141,3 @@ onMounted(() => {
     </div>
   </div>
 </template>
-

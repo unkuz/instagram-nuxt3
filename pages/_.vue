@@ -7,19 +7,15 @@ import { IStory, ITimeLine, TSuggestion } from '@@/models'
 import { useAuthStore, useStoriesStore, useSuggestionStore, useTimeLineStore } from '@@/store'
 import { useFetchCamel, useWindowResizeCallback } from '@@/composables'
 
-// definePageMeta({
-//   middleware: ['basic'],
-// })
-
-const rightRef = ref<HTMLElement | null>(null)
-const leftRef = ref<HTMLElement | null>(null)
+const rightRef = $ref<HTMLElement | null>(null)
+const leftRef = $ref<HTMLElement | null>(null)
 
 const storiesStore = useStoriesStore()
 const timeLineStore = useTimeLineStore()
 const suggestionStore = useSuggestionStore()
 const authStore = useAuthStore()
 
-const isLogin = computed<boolean>(() => authStore.data.isLogin)
+const isLogin = $computed(() => authStore.data.isLogin)
 
 const { data: _timeline } = await useFetch<ITimeLine[]>(APP_API.timeLine.list)
 const { data: _stories } = await useFetch<IStory[]>(APP_API.stories.list)
@@ -30,20 +26,18 @@ storiesStore.save(_stories.value ?? [])
 timeLineStore.save(_timeline.value ?? [])
 suggestionStore.save(_suggestions.value ?? [])
 
-const timeline = computed(() => timeLineStore.data)
-const stories = computed(() => storiesStore.data)
-const suggestion = computed<TSuggestion[]>(() => suggestionStore.data)
+const timeline = $computed(() => timeLineStore.data)
+const stories = $computed(() => storiesStore.data)
+const suggestion = $computed<TSuggestion[]>(() => suggestionStore.data)
 
 const calcLeftSuggestion = () => {
-  if (rightRef.value && leftRef.value && leftRef.value.getClientRects()[0]) {
-    rightRef.value.style.left = `${
-      leftRef.value?.getClientRects()[0].left + leftRef.value.clientWidth! + 28
-    }px`
+  if (rightRef && leftRef && leftRef.getClientRects()[0]) {
+    rightRef.style.left = `${leftRef?.getClientRects()[0].left + leftRef.clientWidth! + 28}px`
   }
 }
 
 onMounted(() => {
-  leftRef.value && calcLeftSuggestion()
+  leftRef && calcLeftSuggestion()
 })
 
 useWindowResizeCallback(calcLeftSuggestion)

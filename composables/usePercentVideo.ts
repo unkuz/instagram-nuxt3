@@ -7,9 +7,10 @@ export const usePercentVideo = (videoRef: HTMLVideoElement | null) => {
   }
 
   onMounted(() => {
-    videoRef!.addEventListener('timeupdate', updateTime)
+    if (videoRef) {
+      videoRef.addEventListener('timeupdate', updateTime)
+    }
   })
 
   return { percent }
 }
-

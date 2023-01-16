@@ -68,15 +68,17 @@ const scrub = (e: MouseEvent) => {
 let timerLoadingCheck: NodeJS.Timer
 
 onMounted(() => {
-  videoRef!.addEventListener('timeupdate', updateTime)
-  progressBarRef!.parentElement!.addEventListener('click', scrub)
+  if (videoRef) {
+    videoRef.addEventListener('timeupdate', updateTime)
+    progressBarRef!.parentElement!.addEventListener('click', scrub)
 
-  timerLoadingCheck = setInterval(() => {
-    if (videoRef) {
-      const { readyState } = videoRef
-      isLoading = readyState <= 2
-    }
-  }, 100)
+    timerLoadingCheck = setInterval(() => {videoRef!.addEventListener
+      if (videoRef) {
+        const { readyState } = videoRef
+        isLoading = readyState <= 2
+      }
+    }, 100)
+  }
 })
 
 onBeforeUnmount(() => {
@@ -147,4 +149,3 @@ onMounted(() => {
     </div>
   </div>
 </template>
-
