@@ -4,14 +4,16 @@ import svgLoader from 'vite-svg-loader'
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
-    // '@twicpics/components/nuxt3',
-    'magic-regexp/nuxt',
-    // '@nuxtjs/algolia',
-    'nuxt-icon',
     '@pinia/nuxt',
-    '@nuxt/image-edge',
     '@pinia-plugin-persistedstate/nuxt',
+    '@nuxt/image-edge',
+    'magic-regexp/nuxt',
+    'nuxt-icon',
     'nuxt-lodash',
+    '@nuxtjs/fontaine',
+    // 'nuxt-security',
+    // '@nuxtjs/algolia',
+    // '@twicpics/components/nuxt3',
     // 'nuxt-security',
     // '@nuxtjs/fontaine',
     // '@sidebase/nuxt-auth',
@@ -95,6 +97,15 @@ export default defineNuxtConfig({
   },
   experimental: {
     reactivityTransform: true,
+  },
+  security: {
+    requestSizeLimiter: {
+      value: {
+        maxRequestSizeInBytes: 3000000,
+        maxUploadFileRequestInBytes: 9000000,
+      },
+      route: '/upload-file',
+    },
   },
 })
 

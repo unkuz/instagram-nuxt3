@@ -38,7 +38,6 @@ useHead({
 </script>
 
 <template>
-  <!-- <NuxtErrorBoundary > -->
   <div
     :class="[
       'scroll-smooth font-quicksan',
@@ -64,6 +63,5 @@ useHead({
       </Vue3Lottie>
     </ClientOnly> -->
   </div>
-  <!-- </NuxtErrorBoundary> -->
 </template>
 

@@ -3,3 +3,4 @@ definePageMeta({
   middleware: ['cuzknothz'],
 })
 </script>
+<template></template>
