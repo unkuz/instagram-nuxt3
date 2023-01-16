@@ -24,24 +24,21 @@ const containerMediaRef = $ref<HTMLDivElement | null>(null)
 
 const { next, prev, current } = useCarousel(containerMediaRef)
 
-const isShowPre = $computed(() => current !== 0)
-const isShowNext = $computed(() => current !== props.images.concat(props.videos).length - 1)
+const isShowPre = $computed(() => current.value !== 0)
+const isShowNext = $computed(() => current.value !== props.images.concat(props.videos).length - 1)
 const totalMedia = $computed<number>(() => props.images.concat(props.videos).length)
 
-watch(
-  () => current,
-  (idx) => {
-    emit('currentIndexCarousel', idx)
+watch(current, (idx) => {
+  emit('currentIndexCarousel', idx)
 
-    stopOtherVideoPlaying()
-    if (containerMediaRef) {
-      gsap.to(containerMediaRef, {
-        height: containerMediaRef.children[idx].children[0].clientHeight,
-        duration: 0,
-      })
-    }
+  stopOtherVideoPlaying()
+  if (containerMediaRef) {
+    gsap.to(containerMediaRef, {
+      height: containerMediaRef.children[idx].children[0].clientHeight,
+      duration: 0,
+    })
   }
-)
+})
 
 watch([() => props.hasSaved, () => props.hasLiked], () => {
   initShowLikeSaved = true
@@ -83,4 +80,3 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
     </div>
   </div>
 </template>
-

@@ -12,4 +12,3 @@ export function useWindowResizeCallback(callback: Function) {
     window.removeEventListener('scroll', resize)
   })
 }
-

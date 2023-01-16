@@ -13,7 +13,7 @@ const options = [
   { name: 'Send Profile To...' },
 ]
 
-const moreRef = $ref<HTMLDivElement | null>(null)
+const moreRef = ref<HTMLDivElement | null>(null)
 const moreStore = useMoreStore()
 useLockScroll()
 
@@ -78,4 +78,3 @@ useClickOutSide(moreRef, () => {
     </BackDrop>
   </div>
 </template>
-

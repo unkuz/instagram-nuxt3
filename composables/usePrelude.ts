@@ -5,5 +5,5 @@ export const usePrelude = () => {
     document.fonts.ready.then(() => (isShowPrelude = false))
   })
 
-  return { isShowPrelude: $$(isShowPrelude) }
+  return $$({ isShowPrelude })
 }

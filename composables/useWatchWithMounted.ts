@@ -1,6 +1,6 @@
 import { Ref } from 'vue'
 
-export const useWatchWithMounted = (dependency: Ref<number | string | boolean > | Function, callback: Function) => {
+export const useWatchWithMounted = (dependency: Ref<any>, callback: Function) => {
   onMounted(() => {
     callback()
   })

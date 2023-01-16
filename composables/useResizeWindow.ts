@@ -3,13 +3,15 @@ import { useGlobalStore } from '@@/store'
 export function useResizeWindow() {
   const globalStore = useGlobalStore()
 
-  let width = $ref(0)
-  let height = $ref(0)
+  const dimension = reactive({
+    width: 0,
+    height: 0,
+  })
 
   const resize = () => {
     const { innerWidth, innerHeight } = window
-    width = innerWidth
-    height = innerHeight
+    dimension.width = innerWidth
+    dimension.height = innerHeight
   }
 
   onMounted(() => {
@@ -18,8 +20,8 @@ export function useResizeWindow() {
   })
 
   watch(
-    [() => width, () => height],
-    ([width, height]) => {
+    dimension,
+    ({ width, height }) => {
       globalStore.setClientSize(width, height)
     },
     {
@@ -31,6 +33,5 @@ export function useResizeWindow() {
     window.removeEventListener('resize', resize)
   })
 
-  return { width, height }
+  return { width: dimension.width, height: dimension.height }
 }
-

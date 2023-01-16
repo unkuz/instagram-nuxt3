@@ -6,7 +6,7 @@ import { SectionEnum } from '@@/constants'
 import { useGlobalStore } from '@@/store'
 
 const globalStore = useGlobalStore()
-const accountPopRef = $ref<HTMLDivElement | null>(null)
+const accountPopRef = ref<HTMLDivElement | null>(null)
 
 useClickOutSide(accountPopRef, () => {})
 

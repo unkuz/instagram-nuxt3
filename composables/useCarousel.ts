@@ -2,7 +2,7 @@ import { useWindowResizeCallback } from '@@/composables'
 import { gsap } from 'gsap'
 
 export const useCarousel = (containerMediaRef: HTMLDivElement | null) => {
-  let current = $ref<number>(0)
+  let current = $ref(0)
 
   const transition = () => {
     if (containerMediaRef) {
@@ -22,7 +22,7 @@ export const useCarousel = (containerMediaRef: HTMLDivElement | null) => {
       if (current === containerMediaRef.childElementCount - 1) {
         return
       }
-      current += 1
+      current++
     }
   }
 
@@ -30,9 +30,8 @@ export const useCarousel = (containerMediaRef: HTMLDivElement | null) => {
     if (current === 0) {
       return
     }
-    current -= 1
+    current--
   }
 
-  return { next, prev, current }
+  return { next, prev, current: $$(current) }
 }
-
