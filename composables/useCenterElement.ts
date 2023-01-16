@@ -1,4 +1,3 @@
-
 export function useCenterElement(
   refElement: HTMLDivElement | null,
   refFile: HTMLDivElement | null

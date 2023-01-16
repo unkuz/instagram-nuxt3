@@ -14,7 +14,7 @@ interface IProps {
 
 const props = defineProps<IProps>()
 const timelineStore = useTimeLineStore()
-const videoRef = ref<HTMLVideoElement | null>(null)
+const videoRef = $ref<HTMLVideoElement | null>(null)
 const containerRef = $ref<HTMLVideoElement | null>(null)
 const progressBarRef = $ref<HTMLDivElement | null>(null)
 let isVideoPlay = $ref(false)
@@ -22,11 +22,11 @@ let isFullScreen = $ref(false)
 let isLoading = $ref(true)
 
 const togglePlay = () => {
-  if (videoRef.value) {
-    if (videoRef.value.paused) {
+  if (videoRef) {
+    if (videoRef.paused) {
       return play()
     }
-    videoRef.value.pause()
+    videoRef.pause()
   }
 }
 
@@ -39,39 +39,41 @@ useDoubleClick(videoRef, togglePlay, toggleLike)
 const { percent } = usePercentVideo(videoRef)
 
 const updateTime = () => {
-  if (videoRef.value) {
-    isVideoPlay = !videoRef.value.paused
+  if (videoRef) {
+    isVideoPlay = !videoRef.paused
   }
 }
 
 const play = () => {
   stopOtherVideoPlaying()
-  videoRef.value && videoRef.value.play()
+  videoRef && videoRef.play()
 }
 
-watch(percent, () => {
-  const { clientWidth: widthParent } = progressBarRef!.parentElement!
-  gsap.to(progressBarRef!, {
-    width: percent.value * widthParent,
-    duration: 0,
-  })
-})
+watch(
+  () => percent,
+  () => {
+    const { clientWidth: widthParent } = progressBarRef!.parentElement!
+    gsap.to(progressBarRef!, {
+      width: percent * widthParent,
+      duration: 0,
+    })
+  }
+)
 
 const scrub = (e: MouseEvent) => {
-  const scrubTime =
-    (e.offsetX / progressBarRef!.parentElement!.offsetWidth) * videoRef.value!!.duration
-  videoRef.value!.currentTime = scrubTime
+  const scrubTime = (e.offsetX / progressBarRef!.parentElement!.offsetWidth) * videoRef!!.duration
+  videoRef!.currentTime = scrubTime
 }
 
 let timerLoadingCheck: NodeJS.Timer
 
 onMounted(() => {
-  videoRef.value!.addEventListener('timeupdate', updateTime)
+  videoRef!.addEventListener('timeupdate', updateTime)
   progressBarRef!.parentElement!.addEventListener('click', scrub)
 
   timerLoadingCheck = setInterval(() => {
-    if (videoRef.value) {
-      const { readyState } = videoRef.value
+    if (videoRef) {
+      const { readyState } = videoRef
       isLoading = readyState <= 2
     }
   }, 100)

@@ -13,18 +13,18 @@ interface IProps {
 
 const props = defineProps<IProps>()
 const timelineStore = useTimeLineStore()
-const videoRef = ref<HTMLVideoElement | null>(null)
+const videoRef = $ref<HTMLVideoElement | null>(null)
 const containerRef = ref<HTMLVideoElement | null>(null)
 const progressBarRef = ref<HTMLDivElement | null>(null)
 const isVideoPlay = ref<boolean>(false)
 const isFullScreen = ref<boolean>(false)
 
 const togglePlay = () => {
-  if (videoRef.value) {
-    if (videoRef.value.paused) {
+  if (videoRef) {
+    if (videoRef.paused) {
       return play()
     }
-    videoRef.value.pause()
+    videoRef.pause()
   }
 }
 
@@ -37,32 +37,35 @@ useDoubleClick(videoRef, togglePlay, toggleLike)
 const { percent } = usePercentVideo(videoRef)
 
 const updateTime = () => {
-  if (videoRef.value) {
-    isVideoPlay.value = !videoRef.value.paused
+  if (videoRef) {
+    isVideoPlay.value = !videoRef.paused
   }
 }
 
 const play = () => {
   stopOtherVideoPlaying()
-  videoRef.value && videoRef.value.play()
+  videoRef && videoRef.play()
 }
 
-watch(percent, () => {
-  const { clientWidth: widthParent } = progressBarRef.value!.parentElement!
-  gsap.to(progressBarRef.value!, {
-    width: percent.value * widthParent,
-    duration: 0,
-  })
-})
+watch(
+  () => percent,
+  () => {
+    const { clientWidth: widthParent } = progressBarRef.value!.parentElement!
+    gsap.to(progressBarRef.value!, {
+      width: percent * widthParent,
+      duration: 0,
+    })
+  }
+)
 
 const scrub = (e: MouseEvent) => {
   const scrubTime =
-    (e.offsetX / progressBarRef.value!.parentElement!.offsetWidth) * videoRef.value!!.duration
-  videoRef.value!.currentTime = scrubTime
+    (e.offsetX / progressBarRef.value!.parentElement!.offsetWidth) * videoRef!!.duration
+  videoRef!.currentTime = scrubTime
 }
 
 onMounted(() => {
-  videoRef.value!.addEventListener('timeupdate', updateTime)
+  videoRef!.addEventListener('timeupdate', updateTime)
   progressBarRef.value!.parentElement!.addEventListener('click', scrub)
 })
 
@@ -136,3 +139,4 @@ onMounted(() => {
     </div>
   </div>
 </template>
+

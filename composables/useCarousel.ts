@@ -15,7 +15,7 @@ export const useCarousel = (containerMediaRef: HTMLDivElement | null) => {
 
   useWindowResizeCallback(transition)
 
-  watch(current, transition)
+  watch(() => current, transition)
 
   const next = () => {
     if (containerMediaRef) {
