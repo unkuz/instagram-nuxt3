@@ -4,7 +4,8 @@ import PlayIcon_ from '@@/assets/svg/play_icon.svg'
 import { useDoubleClick, usePercentVideo } from '@@/composables'
 import { useTimeLineStore } from '@@/store'
 import { gsap } from 'gsap'
-import { stopOtherVideoPlaying } from '@@/helpers'
+import { stopOtherVideoPlaying } from '~~/helpers'
+import LoadingIcon_ from '@@/assets/svg/Dual Ring-1s-200px.svg'
 
 interface IProps {
   video: any
@@ -13,18 +14,19 @@ interface IProps {
 
 const props = defineProps<IProps>()
 const timelineStore = useTimeLineStore()
-const videoRef = $ref<HTMLVideoElement | null>(null)
+const videoRef = ref<HTMLVideoElement | null>(null)
 const containerRef = ref<HTMLVideoElement | null>(null)
 const progressBarRef = ref<HTMLDivElement | null>(null)
 const isVideoPlay = ref<boolean>(false)
 const isFullScreen = ref<boolean>(false)
+const isLoading = ref<boolean>(true)
 
 const togglePlay = () => {
-  if (videoRef) {
-    if (videoRef.paused) {
+  if (videoRef.value) {
+    if (videoRef.value.paused) {
       return play()
     }
-    videoRef.pause()
+    videoRef.value.pause()
   }
 }
 
@@ -37,41 +39,46 @@ useDoubleClick(videoRef, togglePlay, toggleLike)
 const { percent } = usePercentVideo(videoRef)
 
 const updateTime = () => {
-  if (videoRef) {
-    isVideoPlay.value = !videoRef.paused
+  if (videoRef.value) {
+    isVideoPlay.value = !videoRef.value.paused
   }
 }
 
 const play = () => {
   stopOtherVideoPlaying()
-  videoRef && videoRef.play()
+  videoRef.value && videoRef.value.play()
 }
 
-watch(
-  () => percent,
-  () => {
-    const { clientWidth: widthParent } = progressBarRef.value!.parentElement!
-    gsap.to(progressBarRef.value!, {
-      width: percent * widthParent,
-      duration: 0,
-    })
-  }
-)
+watch(percent, () => {
+  const { clientWidth: widthParent } = progressBarRef.value!.parentElement!
+  gsap.to(progressBarRef.value!, {
+    width: percent.value * widthParent,
+    duration: 0,
+  })
+})
 
 const scrub = (e: MouseEvent) => {
   const scrubTime =
-    (e.offsetX / progressBarRef.value!.parentElement!.offsetWidth) * videoRef!!.duration
-  videoRef!.currentTime = scrubTime
+    (e.offsetX / progressBarRef.value!.parentElement!.offsetWidth) * videoRef.value!!.duration
+  videoRef.value!.currentTime = scrubTime
 }
 
+let timerLoadingCheck: NodeJS.Timer
+
 onMounted(() => {
-  if (videoRef) {
-    videoRef!.addEventListener('timeupdate', updateTime)
-    progressBarRef.value!.parentElement!.addEventListener('click', scrub)
-  }
+  videoRef.value!.addEventListener('timeupdate', updateTime)
+  progressBarRef.value!.parentElement!.addEventListener('click', scrub)
+
+  timerLoadingCheck = setInterval(() => {
+    if (videoRef.value) {
+      const { readyState } = videoRef.value
+      isLoading.value = readyState <= 2
+    }
+  }, 100)
 })
 
 onBeforeUnmount(() => {
+  clearInterval(timerLoadingCheck)
   progressBarRef.value!.parentElement!.removeEventListener('click', scrub)
 })
 
@@ -108,14 +115,15 @@ onMounted(() => {
       crossorigin="anonymous"
       loop
     />
+    <div class="absolute inset-0 flex items-center justify-center bg-c20/40" v-show="isLoading">
+      <LoadingIcon_ class="w-[10%] !bg-transparent" />
+    </div>
 
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
         :class="[
-          'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-100 opacity-100  duration-200',
-          {
-            'scale-0 opacity-0': isVideoPlay,
-          },
+          'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-200',
+          isVideoPlay ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100',
         ]"
       >
         <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-c4" />

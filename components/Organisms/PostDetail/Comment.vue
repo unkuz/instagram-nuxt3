@@ -9,36 +9,32 @@ interface IProps {
 
 const { id } = defineProps<IProps>()
 
-const emojiRef = $ref<HTMLDivElement | null>(null)
-const isShowEmoji = ref<boolean>(false)
-const textBoxRef = ref<HTMLTextAreaElement | null>(null)
-const commentValueText = ref<string>('')
+const emojiRef = ref<HTMLDivElement | null>(null)
+let isShowEmoji = $ref(false)
+const textBoxRef = $ref<HTMLTextAreaElement | null>(null)
+let commentValueText = $ref('')
 const viewPostDetailStore = usePostDetailStore()
 const authStore = useAuthStore()
 
-const emojiAdd = (value: string) => {
-  commentValueText.value += value
-}
+const emojiAdd = (value: string) => (commentValueText += value)
 
-useClickOutSide(emojiRef, () => {
-  isShowEmoji.value = false
-})
+useClickOutSide(emojiRef, () => (isShowEmoji = false))
 
-const toggleShowEmoji = () => (isShowEmoji.value = !isShowEmoji.value)
+const toggleShowEmoji = () => (isShowEmoji = !isShowEmoji)
 
 const send = async () => {
   await viewPostDetailStore.comment(id, {
-    text: commentValueText.value,
+    text: commentValueText,
     userName: authStore.data.userName,
     userImg: authStore.data.avatar,
     id: Math.random() * 10000,
   })
-  commentValueText.value = ''
+  commentValueText = ''
 }
 </script>
 
 <template>
-  <div class="flex w-full items-center justify-between sm:mb-[5px]">
+  <div class="flex w-full items-center justify-between">
     <div class="relative" ref="emojiRef">
       <Emoji v-if="isShowEmoji" @emoji-add="emojiAdd" />
       <div @click="toggleShowEmoji" class="cursor-pointer text-[0.8rem] font-[500]">
@@ -85,3 +81,4 @@ const send = async () => {
     </div>
   </div>
 </template>
+

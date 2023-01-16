@@ -1,14 +1,16 @@
-export const usePercentVideo = (videoRef: HTMLVideoElement | null) => {
-  let percent = $ref<number>(0)
+import { Ref } from "vue"
+
+export const usePercentVideo = (videoRef: Ref<HTMLVideoElement | null>) => {
+  const percent = ref<number>(0)
 
   const updateTime = () => {
-    if (videoRef?.currentTime && videoRef?.duration)
-      percent = videoRef.currentTime / videoRef.duration
+    if (videoRef.value?.currentTime && videoRef.value?.duration)
+      percent.value = videoRef.value.currentTime / videoRef.value.duration
   }
 
   onMounted(() => {
-    if (videoRef) {
-      videoRef.addEventListener('timeupdate', updateTime)
+    if (videoRef.value) {
+      videoRef.value.addEventListener('timeupdate', updateTime)
     }
   })
 
