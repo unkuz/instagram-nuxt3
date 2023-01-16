@@ -8693,10 +8693,10 @@ nuxt-security@^0.10.0:
     pathe "^1.0.0"
     xss "^1.0.14"
 
-nuxt-typed-router@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-2.0.0.tgz#2097c636cc1d54d64cb9bf71f79581d08b84ffb1"
-  integrity sha512-GiRMVqgALFL1RcNhOaiOr/EIp5A2vbtKD3k0LWQXERBkQVUX8NVR0F9Y9jkKdJroXt4fTNdx/Wt4LrMLYsPMZw==
+nuxt-typed-router@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-2.0.1.tgz#8a651ca4962181e18a80bd24a0f530b96528620b"
+  integrity sha512-Qakx+a7ofesWUHs3gIIoYqIXM1okbTQdjFZFVzRHJaejy3p8au/uHOS0AjXoxAd984Phrj3mgtNN/RQB2k9KaQ==
   dependencies:
     "@nuxt/kit" "3.0.0"
     chalk "^5.2.0"
