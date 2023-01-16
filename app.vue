@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import Loading from '@@/components/Atoms/Loading.vue'
 import NewPost from '@@/components/Huge/NewPost/index.vue'
+import Cookie from '@@/components/Utils/Cookie.vue'
 import More from '@@/components/Utils/More.vue'
 import Prelude from '@@/components/Utils/Prelude.vue'
 import {
@@ -60,5 +61,6 @@ useHead({
       <Vue3Lottie :animationData="Luv" class="pointer-events-none absolute inset-0 h-full w-full">
       </Vue3Lottie>
     </ClientOnly> -->
+    <Cookie />
   </div>
 </template>
