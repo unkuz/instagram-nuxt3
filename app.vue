@@ -20,10 +20,10 @@ const moreStore = useMoreStore()
 const themeStore = useThemeStore()
 const { isShowPrelude } = usePrelude()
 
-const isDarkMode = computed<boolean>(() => themeStore.darkMode)
-const section = computed<SectionEnum>(() => globalStore.section)
-const isMobile = computed<boolean>(() => globalStore.getIsMobile)
-const isShowMore = computed<boolean>(() => moreStore.isShow)
+const isDarkMode = $computed(() => themeStore.darkMode)
+const section = $computed(() => globalStore.section)
+const isMobile = $computed<boolean>(() => globalStore.getIsMobile)
+const isShowMore = $computed<boolean>(() => moreStore.isShow)
 
 registerSeviceWorkerPWA()
 useScrollBarTheme()
@@ -33,7 +33,7 @@ useResizeWindow()
 // useAuthBasic()
 
 useHead({
-  meta: [{ name: 'theme-color', content: isDarkMode.value ? '#121212' : '#fff' }],
+  meta: [{ name: 'theme-color', content: isDarkMode ? '#121212' : '#fff' }],
 })
 </script>
 
@@ -59,10 +59,11 @@ useHead({
         <More v-if="isShowMore" />
       </div>
     </div>
-    <ClientOnly>
+    <!-- <ClientOnly>
       <Vue3Lottie :animationData="Luv" class="pointer-events-none absolute inset-0 h-full w-full">
       </Vue3Lottie>
-    </ClientOnly>
+    </ClientOnly> -->
   </div>
   <!-- </NuxtErrorBoundary> -->
 </template>
+

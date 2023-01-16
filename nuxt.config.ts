@@ -95,4 +95,8 @@ export default defineNuxtConfig({
     ],
   },
   image: {},
+  experimental: {
+    reactivityTransform: true,
+  },
 })
+
