@@ -4,9 +4,9 @@ import svgLoader from 'vite-svg-loader'
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
-    '@twicpics/components/nuxt3',
+    // '@twicpics/components/nuxt3',
     'magic-regexp/nuxt',
-    '@nuxtjs/algolia',
+    // '@nuxtjs/algolia',
     'nuxt-icon',
     '@pinia/nuxt',
     '@nuxt/image-edge',
@@ -33,7 +33,6 @@ export default defineNuxtConfig({
         'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
       title: 'Instagram',
       script: [
-        // <script src="https://myawesome-lib.js"></script>
         {
           src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1817809598132751',
           crossorigin: 'anonymous',
@@ -68,15 +67,15 @@ export default defineNuxtConfig({
   vite: {
     plugins: [svgLoader({})],
   },
-  twicpics: {
-    domain: `https://<your-domain>.twic.pics`,
-    anticipation: 0.5,
-    step: 50,
-  },
-  algolia: {
-    apiKey: 'MY_API_KEY',
-    applicationId: 'MY_APPLICATION_ID',
-  },
+  // twicpics: {
+  //   domain: `https://<your-domain>.twic.pics`,
+  //   anticipation: 0.5,
+  //   step: 50,
+  // },
+  // algolia: {
+  //   apiKey: 'MY_API_KEY',
+  //   applicationId: 'MY_APPLICATION_ID',
+  // },
   piniaPersistedstate: {
     cookieOptions: {
       sameSite: 'strict',
@@ -94,7 +93,6 @@ export default defineNuxtConfig({
       ['isDate', 'isLodashDate'], // => _isLodashDate
     ],
   },
-  image: {},
   experimental: {
     reactivityTransform: true,
   },
