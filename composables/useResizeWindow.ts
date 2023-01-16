@@ -3,12 +3,13 @@ import { useGlobalStore } from '@@/store'
 export function useResizeWindow() {
   const globalStore = useGlobalStore()
 
-  const width = ref<number>(0)
-  const height = ref<number>(0)
+  let width = $ref(0)
+  let height = $ref(0)
 
   const resize = () => {
-    width.value = window.innerWidth
-    height.value = window.innerHeight
+    const { innerWidth, innerHeight } = window
+    width = innerWidth
+    height = innerHeight
   }
 
   onMounted(() => {
@@ -17,7 +18,7 @@ export function useResizeWindow() {
   })
 
   watch(
-    [width, height],
+    [() => width, () => height],
     ([width, height]) => {
       globalStore.setClientSize(width, height)
     },

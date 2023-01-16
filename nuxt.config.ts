@@ -20,9 +20,6 @@ export default defineNuxtConfig({
     // '@morev/vue-transitions/nuxt',
     // '@nuxtjs/i18n',
   ],
-  alias: {
-    '@@': '/<rootDir>',
-  },
   app: {
     head: {
       meta: [
