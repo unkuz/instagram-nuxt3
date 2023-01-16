@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Luv from '@@/lotties/lf20_5vy0an4n.json'
+import Luv from '~~/lotties/luv.lotties.json'
 </script>
 <template>
   <div>

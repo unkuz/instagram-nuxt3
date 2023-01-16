@@ -4,16 +4,15 @@ import NewPost from '@@/components/Huge/NewPost/index.vue'
 import More from '@@/components/Utils/More.vue'
 import Prelude from '@@/components/Utils/Prelude.vue'
 import {
-  usePrelude,
-  useResizeWindow,
-  useScroll,
-  useScrollBarTheme,
-  useSignature,
+usePrelude,
+useResizeWindow,
+useScroll,
+useScrollBarTheme,
+useSignature,
 } from '@@/composables'
 import { SectionEnum } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
-import Luv from '@@/lotties/lf20_5vy0an4n.json'
 
 const globalStore = useGlobalStore()
 const moreStore = useMoreStore()
@@ -22,15 +21,14 @@ const { isShowPrelude } = usePrelude()
 
 const isDarkMode = $computed(() => themeStore.darkMode)
 const section = $computed(() => globalStore.section)
-const isMobile = $computed<boolean>(() => globalStore.getIsMobile)
-const isShowMore = $computed<boolean>(() => moreStore.isShow)
+const isMobile = $computed(() => globalStore.getIsMobile)
+const isShowMore = $computed(() => moreStore.isShow)
 
 registerSeviceWorkerPWA()
 useScrollBarTheme()
 useScroll()
 useSignature()
 useResizeWindow()
-// useAuthBasic()
 
 useHead({
   meta: [{ name: 'theme-color', content: isDarkMode ? '#121212' : '#fff' }],
