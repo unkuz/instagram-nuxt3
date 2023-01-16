@@ -8679,10 +8679,10 @@ nuxt-lodash@^2.4.1:
     "@types/lodash-es" "^4.17.6"
     lodash-es "^4.17.21"
 
-nuxt-security@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/nuxt-security/-/nuxt-security-0.10.0.tgz#3913492685a63fcc9ebd09c192d68e6917392ad9"
-  integrity sha512-+wAnVnDcuOxzMsCd8fCmMCFULUmdzWICNEiggq/+F8fDmc5bs1v5JjbIttGIeV6FLL2Kpz3HfKuYfzCRBgRdQA==
+nuxt-security@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/nuxt-security/-/nuxt-security-0.10.1.tgz#e03a749c851e710f3c05cdc631c7db8f3886ff8e"
+  integrity sha512-Aqz+LM7pWAEismEJqhSPkihX+njX1bIJd62ygJfQuwyWWDD3EuUHJR5BxuPNd8KakT9MNhtM3AZ7bg0g/gqyqg==
   dependencies:
     "@nozomuikuta/h3-cors" "^0.1.5"
     "@nuxt/kit" "^3.0.0"
@@ -8693,10 +8693,10 @@ nuxt-security@^0.10.0:
     pathe "^1.0.0"
     xss "^1.0.14"
 
-nuxt-typed-router@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-2.0.1.tgz#8a651ca4962181e18a80bd24a0f530b96528620b"
-  integrity sha512-Qakx+a7ofesWUHs3gIIoYqIXM1okbTQdjFZFVzRHJaejy3p8au/uHOS0AjXoxAd984Phrj3mgtNN/RQB2k9KaQ==
+nuxt-typed-router@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-2.0.2.tgz#229839e4467b84892e17345fc9381f964004d531"
+  integrity sha512-9M9+iqKV3SkM9qeqh1vYnr2oPtK1Zypf97qFaB1Qs05fjtsrRF9re62U2JCiO5Q7KGieT/H+CCFyX/O6yby/hg==
   dependencies:
     "@nuxt/kit" "3.0.0"
     chalk "^5.2.0"
