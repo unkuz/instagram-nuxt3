@@ -1,9 +1,9 @@
-export function useClickOutSide(ref: HTMLDivElement | null, callback: Function) {
-  const listener = (e: MouseEvent | TouchEvent) => {
-    console.log('HEHE')
-    e.stopPropagation()
-    console.log('REF', ref)
-    if (!ref || ref.contains(e.target as HTMLElement)) {
+import { Ref } from 'vue'
+
+export function useClickOutSide(ref: Ref<HTMLDivElement | null>, callback: Function) {
+  const listener = (event: MouseEvent | TouchEvent) => {
+    event.stopPropagation()
+    if (!ref.value || ref.value.contains(event.target as HTMLElement)) {
       return
     }
     callback()
@@ -19,4 +19,3 @@ export function useClickOutSide(ref: HTMLDivElement | null, callback: Function) 
     window.removeEventListener('touchstart', listener)
   })
 }
-
