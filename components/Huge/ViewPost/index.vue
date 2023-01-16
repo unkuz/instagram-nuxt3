@@ -5,7 +5,7 @@ import { useViewPostStore } from '@@/store'
 
 const viewPostStore = useViewPostStore()
 
-const viewPostRef = ref<HTMLDivElement | null>(null)
+const viewPostRef = $ref<HTMLDivElement | null>(null)
 const commentHeadingRef = ref<HTMLDivElement | null>(null)
 const commentRef = ref<HTMLDivElement | null>(null)
 const commentContainerRef = ref<HTMLDivElement | null>(null)
@@ -23,11 +23,11 @@ const calcHeightComment = () => {
 useWindowResizeCallback(calcHeightComment)
 
 onMounted(() => {
-  viewPostRef.value!.style.transform = 'scale(0)'
-  viewPostRef.value!.style.opacity = '0'
+  viewPostRef!.style.transform = 'scale(0)'
+  viewPostRef!.style.opacity = '0'
   setTimeout(() => {
-    viewPostRef.value!.style.transform = 'scale(1)'
-    viewPostRef.value!.style.opacity = '1'
+    viewPostRef!.style.transform = 'scale(1)'
+    viewPostRef!.style.opacity = '1'
   }, 200)
 })
 </script>
@@ -118,3 +118,4 @@ onMounted(() => {
     </BackDrop>
   </div>
 </template>
+

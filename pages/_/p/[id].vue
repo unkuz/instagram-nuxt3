@@ -15,8 +15,10 @@ import { ITimeLine } from '@@/models'
 
 useLockScroll()
 
+const postRef = $ref<HTMLDivElement | null>(null)
+
 onMounted(() => {
-  gsap.to(postRef.value, {
+  gsap.to(postRef, {
     translateY: 0,
     duration: 0.3,
     opacity: 1,
@@ -24,12 +26,11 @@ onMounted(() => {
   })
 })
 
-const postRef = ref<HTMLDivElement | null>(null)
-const rightSectionRef = ref<HTMLDivElement | null>(null)
+const rightSectionRef = $ref<HTMLDivElement | null>(null)
 const route = useRoute()
 const router = useRouter()
 const postDetailStore = usePostDetailStore()
-const currentIdx = ref<number>(0)
+let currentIdx = $ref(0)
 
 const { data: _timeline } = await useFetch<ITimeLine[]>(
   'https://mocki.io/v1/bbd9ad8d-fbd8-4d95-a9ac-ee6416513aae'
@@ -37,52 +38,42 @@ const { data: _timeline } = await useFetch<ITimeLine[]>(
 
 postDetailStore.setPostDetail(route.params.id as string)
 
-const profilePicUrl = computed<string>(() => postDetailStore.post.user.profile_pic_url)
+const profilePicUrl = $computed<string>(() => postDetailStore.post.user.profile_pic_url)
 const images = computed<
   {
     id: string
     src: string
   }[]
 >(() => postDetailStore.post.carousel_media.images)
-const userName = computed<string>(() => postDetailStore.post.user.username)
-const videos = computed<
-  {
-    id: string
-    src: string
-  }[]
->(() => postDetailStore.post.carousel_media.videos)
-const hasLiked = computed<boolean>(() => postDetailStore.post.has_liked)
-const id = computed<string>(() => postDetailStore.post.id)
-const likeCount = computed<number>(() => postDetailStore.post.like_count)
-const createdAt = computed<string>(() => postDetailStore.post.created_at)
-const commentCount = computed(() => postDetailStore.post.comments.length)
-const captiontext = computed<string>(() => postDetailStore.post.caption_text)
-const tags = computed<string[]>(() => postDetailStore.post.tags)
-const comments = computed(() => postDetailStore.post.comments)
-const hasComment = computed<boolean>(() => postDetailStore.post.comments.length > 0)
-const isSaved = computed<boolean>(() => postDetailStore.post.is_saved)
+const userName = $computed<string>(() => postDetailStore.post.user.username)
+const videos = $computed(() => postDetailStore.post.carousel_media.videos)
+const hasLiked = $computed<boolean>(() => postDetailStore.post.has_liked)
+const id = $computed<string>(() => postDetailStore.post.id)
+const likeCount = $computed<number>(() => postDetailStore.post.like_count)
+const createdAt = $computed<string>(() => postDetailStore.post.created_at)
+const commentCount = $computed(() => postDetailStore.post.comments.length)
+const captiontext = $computed<string>(() => postDetailStore.post.caption_text)
+const tags = $computed<string[]>(() => postDetailStore.post.tags)
+const comments = $computed(() => postDetailStore.post.comments)
+const hasComment = $computed<boolean>(() => postDetailStore.post.comments.length > 0)
+const isSaved = $computed<boolean>(() => postDetailStore.post.is_saved)
 
-const setCurrent = (value: number) => (currentIdx.value = value)
+const setCurrent = (value: number) => (currentIdx = value)
 
 useClickOutSide(postRef, () => {
   router.back()
-}) 
+})
 
 onMounted(() => {
-  const topH = rightSectionRef.value?.children[0].children[0].clientHeight!
-  const bottomH = rightSectionRef.value?.children[1].clientHeight!
+  const topH = rightSectionRef?.children[0].children[0].clientHeight!
+  const bottomH = rightSectionRef?.children[1].clientHeight!
 
-  Object.assign((rightSectionRef.value?.children[0].children[1] as HTMLDivElement).style, {
+  Object.assign((rightSectionRef?.children[0].children[1] as HTMLDivElement).style, {
     height: `${535 - topH - bottomH}px`,
   })
 })
 
-const mediaArr = computed<
-  {
-    id: string
-    src: string
-  }[]
->(() =>
+const mediaArr = $computed(() =>
   postDetailStore.post.carousel_media.images.concat(postDetailStore.post.carousel_media.videos)
 )
 </script>
@@ -155,3 +146,4 @@ const mediaArr = computed<
     </BackDrop>
   </div>
 </template>
+

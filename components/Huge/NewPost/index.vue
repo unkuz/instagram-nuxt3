@@ -8,7 +8,7 @@ const postStore = usePostStore()
 const globalStore = useGlobalStore()
 let inputFileRef = $ref<HTMLInputElement | null>(null)
 let containerPreviewRef = $ref<HTMLDivElement | null>(null)
-const boxRef = ref<HTMLDivElement | null>(null)
+const boxRef = $ref<HTMLDivElement | null>(null)
 let startPointX = $ref(0)
 
 const postFiles = $computed<FileList[]>(() => postStore.files)

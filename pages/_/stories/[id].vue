@@ -9,13 +9,13 @@ import BackDrop from '@@/components/Utils/BackDrop.vue'
 import { useClickOutSide, useLockScroll } from '@@/composables'
 
 const router = useRouter()
-const barRef = ref<HTMLDivElement | null>(null)
-const containerBar = ref<HTMLDivElement | null>(null)
-const videoRef = ref<HTMLDivElement | null>(null)
-const bigPlayIcon = ref<HTMLDivElement | null>(null)
-const mediaContainerRef = ref<HTMLDivElement | null>(null)
-const isVideoPlay = ref<boolean>(false)
-const isVideoMuted = ref<boolean>(true)
+const barRef = $ref<HTMLDivElement | null>(null)
+const containerBar = $ref<HTMLDivElement | null>(null)
+const videoRef = $ref<HTMLVideoElement | null>(null)
+const bigPlayIcon = $ref<HTMLDivElement | null>(null)
+const mediaContainerRef = $ref<HTMLDivElement | null>(null)
+let isVideoPlay = $ref(false)
+let isVideoMuted = $ref(true)
 
 useLockScroll()
 
@@ -23,7 +23,7 @@ useClickOutSide(mediaContainerRef, () => {
   router.back()
 })
 
-const keyCodeBehaviour = (e) => {
+const keyCodeBehaviour = (e: KeyboardEvent) => {
   if (e.charCode === 32) {
     togglePlay()
   }
@@ -36,26 +36,24 @@ const keyCodeBehaviour = (e) => {
 }
 
 const updateTime = () => {
-  Object.assign(barRef.value.style, {
-    width: `${
-      (videoRef.value.currentTime * containerBar.value.clientWidth) / videoRef.value.duration
-    }px`,
+  Object.assign(barRef!.style, {
+    width: `${(videoRef!.currentTime * containerBar!.clientWidth) / videoRef!.duration}px`,
   })
-  isVideoPlay.value = !videoRef.value.paused
-  isVideoMuted.value = videoRef.value.muted
+  isVideoPlay = !videoRef!.paused
+  isVideoMuted = videoRef!.muted
 }
 
 onMounted(() => {
-  videoRef.value.play()
-  videoRef.value.addEventListener('timeupdate', updateTime)
+  videoRef!.play()
+  videoRef!.addEventListener('timeupdate', updateTime)
   window.addEventListener('keypress', keyCodeBehaviour)
 })
 
 watch(isVideoPlay, () => {
-  if (isVideoPlay.value) {
-    bigPlayIcon.value.style.opacity = '0'
+  if (isVideoPlay) {
+    bigPlayIcon!.style.opacity = '0'
   } else {
-    bigPlayIcon.value.style.opacity = '1'
+    bigPlayIcon!.style.opacity = '1'
   }
 })
 
@@ -65,17 +63,11 @@ onBeforeUnmount(() => {
 })
 
 const toggleMuted = () => {
-  isVideoMuted.value = !isVideoMuted.value
-  videoRef.value.muted = !videoRef.value.muted
+  isVideoMuted = !isVideoMuted
+  videoRef!.muted = !videoRef!.muted
 }
 
-const togglePlay = () => {
-  if (videoRef.value.paused) {
-    videoRef.value.play()
-  } else {
-    videoRef.value.pause()
-  }
-}
+const togglePlay = () => (videoRef!.paused ? videoRef!.play() : videoRef!.pause())
 </script>
 
 <template>
@@ -137,3 +129,4 @@ const togglePlay = () => {
     </BackDrop>
   </div>
 </template>
+

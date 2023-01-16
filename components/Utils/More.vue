@@ -13,12 +13,12 @@ const options = [
   { name: 'Send Profile To...' },
 ]
 
-const moreRef = ref<HTMLDivElement | null>(null)
+const moreRef = $ref<HTMLDivElement | null>(null)
 const moreStore = useMoreStore()
 useLockScroll()
 
 onMounted(() => {
-  gsap.to(moreRef.value, {
+  gsap.to(moreRef, {
     bottom: 0,
     duration: 0.2,
   })
@@ -63,7 +63,7 @@ useClickOutSide(moreRef, () => {
           <div
             v-for="(i, idx) in options"
             :key="idx"
-            class="flex h-[60px] cursor-pointer items-center border-b-[1px] border-black/10 px-[30px] text-fuchsia-400 last:border-b-0 hover:c18"
+            class="hover:c18 flex h-[60px] cursor-pointer items-center border-b-[1px] border-black/10 px-[30px] text-fuchsia-400 last:border-b-0"
           >
             {{ i.name }}
           </div>
@@ -78,3 +78,4 @@ useClickOutSide(moreRef, () => {
     </BackDrop>
   </div>
 </template>
+

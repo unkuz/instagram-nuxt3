@@ -26,10 +26,10 @@ const section = $computed(() => globalStore.section)
 const isMobile = $computed<boolean>(() => globalStore.getIsMobile)
 const accountPopRef = $ref<HTMLDivElement | null>(null)
 const activityFeedPopRef = $ref<HTMLDivElement | null>(null)
-const extensionRef = ref<HTMLDivElement | null>(null)
-const isShowProfile = $ref<boolean>(false)
+const extensionRef = $ref<HTMLDivElement | null>(null)
+let isShowProfile = $ref(false)
 
-let showExtension = $ref<boolean>(false)
+let showExtension = $ref(false)
 
 const toggleShowExtension = () => {
   showExtension = !showExtension

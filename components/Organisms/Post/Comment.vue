@@ -9,7 +9,7 @@ interface IProps {
 
 const { id } = defineProps<IProps>()
 
-const emojiRef = ref<HTMLDivElement | null>(null)
+const emojiRef = $ref<HTMLDivElement | null>(null)
 let isShowEmoji = $ref(false)
 const textBoxRef = $ref<HTMLTextAreaElement | null>(null)
 let commentValueText = $ref('')

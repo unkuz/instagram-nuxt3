@@ -2,10 +2,10 @@
 import BackDrop from '@@/components/Utils/BackDrop.vue'
 import { useWindowResizeCallback, useLockScroll } from '@@/composables'
 
-const viewPostRef = ref<HTMLDivElement | null>(null)
-const commentHeadingRef = ref<HTMLDivElement | null>(null)
-const commentRef = ref<HTMLDivElement | null>(null)
-const commentContainerRef = ref<HTMLDivElement | null>(null)
+const viewPostRef = $ref<HTMLDivElement | null>(null)
+const commentHeadingRef = $ref<HTMLDivElement | null>(null)
+const commentRef = $ref<HTMLDivElement | null>(null)
+const commentContainerRef = $ref<HTMLDivElement | null>(null)
 const router = useRouter()
 
 useLockScroll()
@@ -14,8 +14,8 @@ useClickOutSide(viewPostRef, () => {
   router.back()
 })
 const calcHeightComment = () => {
-  commentRef.value!.style.height = `${
-    commentContainerRef.value!.clientHeight - commentHeadingRef.value!.clientHeight
+  commentRef!.style.height = `${
+    commentContainerRef!.clientHeight - commentHeadingRef!.clientHeight
   }px`
 }
 

@@ -8,7 +8,7 @@ const barRef = ref<HTMLDivElement | null>(null)
 const containerBar = ref<HTMLDivElement | null>(null)
 const videoRef = ref<HTMLVideoElement | null>(null)
 const bigPlayIcon = ref<HTMLDivElement | null>(null)
-const mediaContainerRef = ref<HTMLDivElement | null>(null)
+const mediaContainerRef = $ref<HTMLDivElement | null>(null)
 const isVideoPlay = ref<boolean>(false)
 const isVideoMuted = ref<boolean>(true)
 

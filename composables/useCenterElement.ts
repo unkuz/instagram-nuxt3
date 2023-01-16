@@ -1,13 +1,12 @@
-import { Ref } from 'vue'
 
 export function useCenterElement(
-  refElement: Ref<HTMLDivElement | null>,
-  refFile: Ref<HTMLDivElement | null>
+  refElement: HTMLDivElement | null,
+  refFile: HTMLDivElement | null
 ) {
   const position = () => {
-    Object.assign(refElement.value!.style, {
-      top: `${window.scrollY + window.innerHeight / 2 - refElement.value!.clientHeight / 2}px`,
-      left: `${window.innerWidth / 2 - refElement.value!.clientWidth / 2}px`,
+    Object.assign(refElement!.style, {
+      top: `${window.scrollY + window.innerHeight / 2 - refElement!.clientHeight / 2}px`,
+      left: `${window.innerWidth / 2 - refElement!.clientWidth / 2}px`,
     })
   }
 
@@ -26,3 +25,4 @@ export function useCenterElement(
     window.removeEventListener('resize', position)
   })
 }
+
