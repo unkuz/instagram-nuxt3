@@ -1,11 +1,10 @@
 export const usePrelude = () => {
-  const isShowPrelude = ref<boolean>(true)
+  let isShowPrelude = $ref(true)
 
   onMounted(() => {
-    document.fonts.ready.then(() => {
-      isShowPrelude.value = false
-    })
+    document.fonts.ready.then(() => (isShowPrelude = false))
   })
 
   return { isShowPrelude }
 }
+
