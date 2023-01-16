@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import ArrowIcon_ from '@@/assets/svg/arrow_icon.svg'
 import { useCarousel } from '@@/composables'
-import { gsap } from 'gsap'
 import { stopOtherVideoPlaying } from '@@/helpers'
+import { gsap } from 'gsap'
 import Image from './Image.vue'
 import Like from './Like.vue'
 import Save from './Save.vue'
@@ -20,24 +20,28 @@ interface IProps {
 let initShowLikeSaved = $ref(false)
 const props = defineProps<IProps>()
 const emit = defineEmits(['currentIndexCarousel'])
-const containerMediaRef = ref<HTMLDivElement | null>(null)
-
-const isShowPre = $computed(() => current.value !== 0)
-const isShowNext = $computed(() => current.value !== props.images.concat(props.videos).length - 1)
-const totalMedia = $computed<number>(() => props.images.concat(props.videos).length)
+const containerMediaRef = $ref<HTMLDivElement | null>(null)
 
 const { next, prev, current } = useCarousel(containerMediaRef)
 
-watch(current, (idx) => {
-  emit('currentIndexCarousel', idx)
-  stopOtherVideoPlaying()
-  if (containerMediaRef.value) {
-    gsap.to(containerMediaRef.value, {
-      height: containerMediaRef.value.children[idx].children[0].clientHeight,
-      duration: 0,
-    })
+const isShowPre = $computed(() => current !== 0)
+const isShowNext = $computed(() => current !== props.images.concat(props.videos).length - 1)
+const totalMedia = $computed<number>(() => props.images.concat(props.videos).length)
+
+watch(
+  () => current,
+  (idx) => {
+    emit('currentIndexCarousel', idx)
+
+    stopOtherVideoPlaying()
+    if (containerMediaRef) {
+      gsap.to(containerMediaRef, {
+        height: containerMediaRef.children[idx].children[0].clientHeight,
+        duration: 0,
+      })
+    }
   }
-})
+)
 
 watch([() => props.hasSaved, () => props.hasLiked], () => {
   initShowLikeSaved = true

@@ -17,32 +17,33 @@ interface IProps {
   hasSaved: boolean
 }
 
-const initShowLikeSaved = ref<boolean>(false)
+let initShowLikeSaved = $ref(false)
 const props = defineProps<IProps>()
 const emit = defineEmits(['currentIndexCarousel'])
-const containerMediaRef = ref<HTMLDivElement | null>(null)
-
-const isShowPre = computed<boolean>(() => current.value !== 0)
-const isShowNext = computed<boolean>(
-  () => current.value !== props.images.concat(props.videos).length - 1
-)
-const totalMedia = computed<number>(() => props.images.concat(props.videos).length)
+const containerMediaRef = $ref<HTMLDivElement | null>(null)
 
 const { next, prev, current } = useCarousel(containerMediaRef)
 
-watch(current, (idx) => {
-  emit('currentIndexCarousel', idx)
-  stopOtherVideoPlaying()
-  if (containerMediaRef.value) {
-    gsap.to(containerMediaRef.value, {
-      height: containerMediaRef.value.children[idx].children[0].clientHeight,
-      duration: 0,
-    })
+const isShowPre = computed<boolean>(() => current !== 0)
+const isShowNext = computed<boolean>(() => current !== props.images.concat(props.videos).length - 1)
+const totalMedia = computed<number>(() => props.images.concat(props.videos).length)
+
+watch(
+  () => current,
+  (idx) => {
+    emit('currentIndexCarousel', idx)
+    stopOtherVideoPlaying()
+    if (containerMediaRef) {
+      gsap.to(containerMediaRef, {
+        height: containerMediaRef.children[idx].children[0].clientHeight,
+        duration: 0,
+      })
+    }
   }
-})
+)
 
 watch([() => props.hasSaved, () => props.hasLiked], () => {
-  initShowLikeSaved.value = true
+  initShowLikeSaved = true
 })
 </script>
 
@@ -54,7 +55,7 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
     </div>
     <div
       v-if="isShowPre"
-      class="absolute left-0 top-[50%] flex h-[80px] w-[80px] rounded-[50%] -translate-y-1/2 items-center justify-center "
+      class="absolute left-0 top-[50%] flex h-[80px] w-[80px] -translate-y-1/2 items-center justify-center rounded-[50%]"
       @click="prev"
     >
       <ArrowIcon_ class="rotate-180 opacity-80" />
@@ -62,7 +63,7 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
 
     <div
       v-if="isShowNext"
-      class="absolute right-0 top-[50%] flex h-[80px] w-[80px] -translate-y-1/2 items-center justify-center  rounded-[50%]"
+      class="absolute right-0 top-[50%] flex h-[80px] w-[80px] -translate-y-1/2 items-center justify-center rounded-[50%]"
       @click="next"
     >
       <ArrowIcon_ class="opacity-80" />
@@ -81,3 +82,4 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
     </div>
   </div>
 </template>
+
