@@ -68,6 +68,16 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [svgLoader({})],
+    // build: {
+    //   rollupOptions: {
+    //     output: {
+    //       manualChunks(id) {
+    //         const seprateModule = firebaseModules.find((module) => id.includes(module))
+    //         if (seprateModule) return seprateModule
+    //       },
+    //     },
+    //   },
+    // },
   },
   // twicpics: {
   //   domain: `https://<your-domain>.twic.pics`,
@@ -99,4 +109,3 @@ export default defineNuxtConfig({
     reactivityTransform: true,
   },
 })
-
