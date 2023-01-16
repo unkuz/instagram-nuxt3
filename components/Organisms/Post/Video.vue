@@ -114,12 +114,13 @@ onMounted(() => {
       playsinline
       crossorigin="anonymous"
       loop
+      preload="metadata"
     />
     <div class="absolute inset-0 flex items-center justify-center bg-c20/40" v-show="isLoading">
       <LoadingIcon_ class="w-[10%] !bg-transparent" />
     </div>
 
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div v-show="!isLoading" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
         :class="[
           'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-200',
