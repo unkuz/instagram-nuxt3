@@ -1,10 +1,14 @@
 <script lang="ts" setup>
+import Flashicon_ from '@@/assets/svg/flash_icon.svg'
+import LoginIcon_ from '@@/assets/svg/login.svg'
 import Logo from '@@/components/Header/Logo.vue'
 import Search from '@@/components/Header/Search.vue'
 import HomeIcon from '@@/components/Nav/HomeIcon.vue'
 import Reels from '@@/components/Nav/Reels.vue'
+import { useClickOutSide } from '@@/composables'
 import { SectionEnum } from '@@/constants/section'
-import { useAuthStore, useGlobalStore, useSearchStore, useThemeStore } from '@@/store'
+import { useAuthStore, useGlobalStore, useSearchStore } from '@@/store'
+import Extension from '~~/components/Utils/Extension.vue'
 import AccountPop from '../Huge/AccountPop/index.vue'
 import ActivityFeedPop from '../Huge/ActivityFeedPop/index.vue'
 import SearchPop from '../Huge/SearchPop/index.vue'
@@ -13,41 +17,27 @@ import FindPeople from '../Nav/FindPeople.vue'
 import Messenger from '../Nav/Messenger.vue'
 import NewPost from '../Nav/NewPost.vue'
 import SelfAvatar from '../Nav/SelfAvatar.vue'
-import Extension from '~~/components/Utils/Extension.vue'
-import Flashicon_ from '@@/assets/svg/flash_icon.svg'
-import { useClickOutSide } from '@@/composables'
-import DarkMode from '../Utils/DarkMode.vue'
-import LoginIcon_ from '@@/assets/svg/login.svg'
 
 const globalStore = useGlobalStore()
 const authStore = useAuthStore()
 const searchStore = useSearchStore()
-const themeStore = useThemeStore()
-const isShowSearchToolkit = computed<boolean>(() => searchStore.getIsShowSearchToolkit)
-const section = computed<SectionEnum>(() => globalStore.section)
-const isMobile = computed<boolean>(() => globalStore.getIsMobile)
-const accountPopRef = ref<HTMLDivElement | null>(null)
-const activityFeedPopRef = ref<HTMLDivElement | null>(null)
+const isShowSearchToolkit = $computed(() => searchStore.getIsShowSearchToolkit)
+const section = $computed(() => globalStore.section)
+const isMobile = $computed<boolean>(() => globalStore.getIsMobile)
+const accountPopRef = $ref<HTMLDivElement | null>(null)
+const activityFeedPopRef = $ref<HTMLDivElement | null>(null)
 const extensionRef = ref<HTMLDivElement | null>(null)
-const isShowProfile = ref<boolean>(false)
+const isShowProfile = $ref<boolean>(false)
 
-const showExtension = ref<boolean>(false)
+let showExtension = $ref<boolean>(false)
 
 const toggleShowExtension = () => {
-  showExtension.value = !showExtension.value
+  showExtension = !showExtension
 }
 
 const isLogin = computed<boolean>(() => authStore.data.isLogin)
 
-useClickOutSide(extensionRef, () => (showExtension.value = false))
-
-// useClickOutSide(accountPopRef, () => {
-//   isShowProfile.value = false
-// })
-
-// useClickOutSide(activityFeedPopRef, () => {
-//   isShowProfile.value = false
-// })
+useClickOutSide(extensionRef, () => (showExtension = false))
 
 const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
 </script>
@@ -122,3 +112,4 @@ const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
     </div>
   </header>
 </template>
+

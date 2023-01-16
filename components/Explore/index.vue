@@ -6,7 +6,7 @@ interface IProps {
 }
 defineProps<IProps>()
 
-const random = ref(Math.random())
+const random = $ref(Math.random())
 </script>
 
 <template>

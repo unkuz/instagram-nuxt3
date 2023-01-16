@@ -1,8 +1,6 @@
 <script lang="ts" setup>
-import { useFps, useNetwork } from '@vueuse/core'
-import { useThemeStore } from '@@/store'
+import { useFps } from '@vueuse/core';
 
-const themeStore = useThemeStore()
 const fps = useFps()
 </script>
 
