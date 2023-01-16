@@ -11,7 +11,7 @@ import { useClickOutSide, useLockScroll } from '@@/composables'
 import { usePostDetailStore } from '@@/store'
 import { gsap } from 'gsap'
 import moment from 'moment'
-import { ITimeLine } from '~~/models'
+import { ITimeLine } from '@@/models'
 
 useLockScroll()
 

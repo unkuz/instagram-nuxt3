@@ -1,4 +1,4 @@
-import { useThemeStore } from '~~/store'
+import { useThemeStore } from '@@/store'
 import { useWatchWithMounted } from './useWatchWithMounted'
 
 export const useScrollBarTheme = () => {

@@ -12,8 +12,8 @@ const boxRef = ref<HTMLDivElement | null>(null)
 let startPointX = $ref(0)
 
 const postFiles = $computed<FileList[]>(() => postStore.files)
-const listBolbs = computed<BlobList[]>(() => postStore.listBlobs)
-const isHasFile = computed<boolean>(() => Array.from(postFiles.value).length > 0)
+const listBolbs = computed(() => postStore.listBlobs)
+const isHasFile = $computed(() => Array.from(postStore.files).length > 0)
 
 useLockScroll()
 
@@ -27,7 +27,7 @@ const currentImageSlideIdx = computed<number>(() => {
 
 watch(listBolbs, () => {
   containerPreviewRef!.innerHTML = ''
-  listBolbs.value.forEach((i: Blob) => {
+  listBolbs.value.forEach((i: any) => {
     const image = document.createElement('img')
     image.src = String(i)
     Object.assign(image.style, {

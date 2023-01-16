@@ -5,7 +5,7 @@ import Post from '@@/components/Organisms/Post/index.vue'
 import Stories from '@@/components/Stories/index.vue'
 import { IStory, ITimeLine, TSuggestion } from '@@/models'
 import { useAuthStore, useStoriesStore, useSuggestionStore, useTimeLineStore } from '@@/store'
-import { useFetchCamel, useWindowResizeCallback } from '~~/composables'
+import { useFetchCamel, useWindowResizeCallback } from '@@/composables'
 
 // definePageMeta({
 //   middleware: ['basic'],

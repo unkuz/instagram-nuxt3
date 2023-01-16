@@ -1,4 +1,4 @@
-import { useAuthStore } from '~~/store'
+import { useAuthStore } from '@@/store'
 import { useWatchWithMounted } from '@@/composables'
 
 export const useAuthBasic = () => {

@@ -2,7 +2,7 @@
 import ArrowIcon_ from '@@/assets/svg/arrow_icon.svg'
 import { useCarousel } from '@@/composables'
 import { gsap } from 'gsap'
-import { stopOtherVideoPlaying } from '~~/helpers'
+import { stopOtherVideoPlaying } from '@@/helpers'
 import Image from './Image.vue'
 import Like from './Like.vue'
 import Save from './Save.vue'

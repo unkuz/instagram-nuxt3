@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { MOBILE_BREAK_POINT } from '@@/constants'
 import { SectionEnum } from '@@/constants'
-import { ScrollTypeEnum } from '~~/type'
+import { ScrollTypeEnum } from '@@/type'
 
 interface IState {
   section: SectionEnum

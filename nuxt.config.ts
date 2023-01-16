@@ -20,6 +20,9 @@ export default defineNuxtConfig({
     // '@morev/vue-transitions/nuxt',
     // '@nuxtjs/i18n',
   ],
+  alias: {
+    '@@': '/<rootDir>',
+  },
   app: {
     head: {
       meta: [
@@ -97,15 +100,6 @@ export default defineNuxtConfig({
   },
   experimental: {
     reactivityTransform: true,
-  },
-  security: {
-    requestSizeLimiter: {
-      value: {
-        maxRequestSizeInBytes: 3000000,
-        maxUploadFileRequestInBytes: 9000000,
-      },
-      route: '/upload-file',
-    },
   },
 })
 

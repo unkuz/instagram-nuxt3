@@ -5,7 +5,7 @@ import ShareIcon_ from '@@/assets/svg/share_icon.svg'
 import ViewPostIcon_ from '@@/assets/svg/view_post_icon.svg'
 import UnlikeIcon from '@@/components/Atoms/UnlikeIcon.vue'
 import { useTimeLineStore } from '@@/store'
-import { stopOtherVideoPlaying } from '~~/helpers'
+import { stopOtherVideoPlaying } from '@@/helpers'
 
 interface IProps {
   hasLiked: boolean

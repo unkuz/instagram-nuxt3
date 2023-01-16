@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import Explore from '@@/components/Explore/index.vue'
 import { useExploreStore } from '@@/store'
-import { APP_API } from '~~/apis'
-import { IStory, ITimeLine } from '~~/models'
+import { APP_API } from '@@/apis'
+import { IStory, ITimeLine } from '@@/models'
 
 const exploreStore = useExploreStore()
 

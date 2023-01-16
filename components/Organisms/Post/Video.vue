@@ -4,7 +4,7 @@ import PlayIcon_ from '@@/assets/svg/play_icon.svg'
 import { useDoubleClick, usePercentVideo } from '@@/composables'
 import { useTimeLineStore } from '@@/store'
 import { gsap } from 'gsap'
-import { stopOtherVideoPlaying } from '~~/helpers'
+import { stopOtherVideoPlaying } from '@@/helpers'
 import LoadingIcon_ from '@@/assets/svg/Dual Ring-1s-200px.svg'
 
 interface IProps {
