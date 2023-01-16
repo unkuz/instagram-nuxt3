@@ -13,6 +13,7 @@ import {
 } from '@@/composables'
 import { SectionEnum } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
+// import Luv from '@@/lotties/luv.lotties.json'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
 
 const globalStore = useGlobalStore()

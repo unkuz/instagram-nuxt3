@@ -50,7 +50,7 @@ useWindowResizeCallback(calcLeftSuggestion)
         <Stories v-if="isLogin" :stories="stories" />
         <Post v-for="i in timeline" :key="i.id" v-bind="i" />
       </div>
-      <div class="fixed top-[84px] hidden w-[293px] text-sm lg:block" ref="rightRef">
+      <div class="fixed left-0 top-[84px] hidden w-[293px] text-sm lg:block" ref="rightRef">
         <Suggestions v-if="isLogin" :suggestion="suggestion" />
         <div class="h-[500px]" v-else>
           <ins
