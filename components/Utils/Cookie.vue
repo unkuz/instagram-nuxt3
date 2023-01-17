@@ -5,7 +5,7 @@ import { gsap } from 'gsap'
 
 const containerRef = $ref<HTMLDivElement | null>(null)
 
-let tl = gsap.timeline({})
+let tl: TimelineLite = gsap.timeline({})
 
 const animate = () =>
     tl.to(containerRef, {

@@ -1,4 +1,4 @@
-export const emoji = [
+export const EMOJI = Object.freeze([
     {
         label: 'Most Popular',
         icons: [
@@ -246,4 +246,4 @@ export const emoji = [
             '💤',
         ],
     },
-]
+])
