@@ -24,7 +24,7 @@ export default defineNuxtConfig({
         // '@sidebase/nuxt-auth',
         // '@morev/vue-transitions/nuxt',
     ],
-    extends: ['nuxt-seo-kit'],
+    // extends: ['nuxt-seo-kit'],
     app: {
         head: {
             meta: [
@@ -76,7 +76,9 @@ export default defineNuxtConfig({
         presets: {},
     },
     vite: {
-        plugins: [svgLoader({}), eslintPlugin()],
+        plugins: [svgLoader({})
+          // , eslintPlugin()
+        ],
         // build: {
         //   rollupOptions: {
         //     output: {
