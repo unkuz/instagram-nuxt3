@@ -118,7 +118,7 @@ const scrollToComment = () => (isShowComment = true)
                 >
                     {{ moment(created_at).fromNow() }}
                 </div>
-                <div ref="commentRef" class="mt-[5px] w-full">
+                <div ref="commentRef" class="mt-[15px] w-full">
                     <IndividualComment
                         v-for="(i, idx) in comments"
                         :key="idx"

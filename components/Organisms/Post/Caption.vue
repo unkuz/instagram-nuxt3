@@ -22,9 +22,9 @@ const hasCaptionOrTag = computed<boolean>(() => {
         >
             {{ userName }}
         </div>
-        <div v-if="hasCaptionOrTag" class="mt-[5px] py-[5px]">
-            <div>{{ captionContent }}</div>
-            <div class="mt-[5px] flex flex-wrap gap-[8px]">
+        <div v-if="hasCaptionOrTag" class="mt-[5px] py-[5px] text-[0.85rem]">
+            <p>{{ captionContent }}</p>
+            <div class="mt-[3px] flex flex-wrap gap-[8px]">
                 <NuxtLink
                     v-for="(i, idx) in tags"
                     :key="idx"

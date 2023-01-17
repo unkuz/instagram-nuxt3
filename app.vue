@@ -62,12 +62,12 @@ useHead({
                 </NuxtLayout>
                 <NewPost v-if="section === SectionEnum.NEW_POST && !isMobile" />
                 <More v-if="isShowMore" />
+                <Cookie />
             </div>
         </div>
         <!-- <ClientOnly>
       <Vue3Lottie :animationData="Luv" class="pointer-events-none absolute inset-0 h-full w-full">
       </Vue3Lottie>
     </ClientOnly> -->
-        <Cookie />
     </div>
 </template>
