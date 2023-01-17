@@ -92,7 +92,7 @@ const scrollToComment = () => (isShowComment = true)
                 :videos="carousel_media.videos"
                 :has-saved="is_saved"
                 :has-liked="has_liked"
-                @currentIndexCarousel="setCurrent($event)"
+                @current-index-carousel="setCurrent($event)"
             />
             <div class="px-[16px] text-xs md:text-sm">
                 <React

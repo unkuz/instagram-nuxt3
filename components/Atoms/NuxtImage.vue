@@ -1,6 +1,4 @@
-<script setup lang="ts">
-const props = defineProps()
-</script>
+<script setup lang="ts"></script>
 <template>
-    <nuxt-img v-bind="props" />
+    <nuxt-img />
 </template>

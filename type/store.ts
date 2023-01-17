@@ -1,5 +1,5 @@
 export interface IStateStore<T> {
     data: T
     hasErr: boolean
-    errors: {}
+    errors: Record<string, string>
 }

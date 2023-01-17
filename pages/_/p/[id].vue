@@ -111,7 +111,7 @@ const mediaArr = $computed(() =>
                             :videos="videos"
                             :has-liked="hasLiked"
                             :has-saved="isSaved"
-                            @currentIndexCarousel="setCurrent($event)"
+                            @current-index-carousel="setCurrent($event)"
                         />
                         <div class="px-[16px] text-xs md:text-sm">
                             <React

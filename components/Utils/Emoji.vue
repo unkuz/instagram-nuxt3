@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import { emoji } from '@@/constants'
+
+defineEmits(['emoji-add'])
 </script>
 
 <template>
