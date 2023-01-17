@@ -5,7 +5,7 @@ export enum STATUS_CHAT {
     SELECT = 'SELECT',
 }
 
-export const useChatStore = defineStore('chatStore', {
+export const useChatStore = defineStore('chat', {
     state: () => ({
         statusMobile: STATUS_CHAT.NONE,
         isShowDetailChat: false,

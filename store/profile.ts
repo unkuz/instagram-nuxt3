@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { SELECT_TYPE } from '@@/constants/screens/account'
 
-export const useProfileStore = defineStore('profileStore', {
+export const useProfileStore = defineStore('profile', {
     state: () => ({
         select: SELECT_TYPE.ALL,
         isShowFollowing: false,

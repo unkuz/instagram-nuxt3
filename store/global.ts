@@ -11,7 +11,7 @@ interface IState {
     scroll: ScrollTypeEnum
 }
 
-export const useGlobalStore = defineStore('globalStore', {
+export const useGlobalStore = defineStore('global', {
     state: (): IState => ({
         section: SectionEnum.HOME,
         prevSection: SectionEnum.NONE,
