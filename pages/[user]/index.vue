@@ -55,10 +55,7 @@ const coverImg = computed(() => authStore.data.coverImg)
         <div class="mt-[20px] flex flex-col items-center justify-center">
             <div>fhdskjafkjsdf</div>
             <div>🍕🤣🤣🤣😂😂</div>
-            <div>
-                ฮาโลวีนน็อคภูมิทัศน์คอนเทนเนอร์
-                คาร์โก้สะบึมบ๊อกซ์เทควันโดวานิลลา
-            </div>
+            <div></div>
         </div>
         <div class="mt-[20px] flex justify-around">
             <div @click="profileStore.setSelect(SELECT_TYPE.ALL)">
