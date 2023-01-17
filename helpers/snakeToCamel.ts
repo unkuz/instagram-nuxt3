@@ -1,3 +1,3 @@
-import camelcaseKeys from "camelcase-keys";
+import camelcaseKeys from 'camelcase-keys'
 
-export const snakeToCamel = (value: any) => camelcaseKeys(value, { deep: true });
+export const snakeToCamel = (value: any) => camelcaseKeys(value, { deep: true })

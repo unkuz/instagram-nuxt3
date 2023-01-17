@@ -1,16 +1,16 @@
 export const useForceRenderTimer = (time = 1000) => {
-  const timer = ref<NodeJS.Timer>();
-  const key = ref<number>(0);
+    const timer = ref<NodeJS.Timer>()
+    const key = ref<number>(0)
 
-  onMounted(() => {
-    timer.value = setInterval(() => {
-      key.value++;
-    }, time);
-  });
+    onMounted(() => {
+        timer.value = setInterval(() => {
+            key.value++
+        }, time)
+    })
 
-  onBeforeUnmount(() => {
-    clearInterval(timer.value);
-  });
+    onBeforeUnmount(() => {
+        clearInterval(timer.value)
+    })
 
-  return { key };
-};
+    return { key }
+}

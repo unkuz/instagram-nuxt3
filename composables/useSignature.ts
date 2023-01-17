@@ -1,3 +1,3 @@
-import { signature } from "@@/utils";
+import { signature } from '@@/utils'
 
-export const useSignature = () => signature();
+export const useSignature = () => signature()

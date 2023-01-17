@@ -1,5 +1,5 @@
 <template>
-  <div>FOLLOWER</div>
+    <div>FOLLOWER</div>
 </template>
 
 <script setup lang="ts"></script>

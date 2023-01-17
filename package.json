@@ -23,11 +23,15 @@
     "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
     "@sidebase/nuxt-auth": "^0.3.4",
     "@tailwindcss/line-clamp": "^0.4.2",
-    "@typescript-eslint/eslint-plugin": "^5.48.2",
-    "@typescript-eslint/parser": "^5.48.2",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "@vue/eslint-config-standard": "^8.0.1",
     "@vueuse/nuxt": "^9.10.0",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.9.0",
     "nuxt": "^3.0.0",
     "nuxt-icon": "^0.2.5",
@@ -80,4 +84,3 @@
     "yarn": "^1.22.19"
   }
 }
-

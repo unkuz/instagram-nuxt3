@@ -1,18 +1,18 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia'
 
 interface IStateStore {
-  darkMode: boolean
+    darkMode: boolean
 }
 
-export const useThemeStore = defineStore("theme", {
-  state: (): IStateStore => ({
-    darkMode: false
-  }),
-  getters: {},
-  actions: {
-    toggleDarkMode () {
-      this.darkMode = !this.darkMode;
-    }
-  },
-  persist: true
-});
+export const useThemeStore = defineStore('theme', {
+    state: (): IStateStore => ({
+        darkMode: false,
+    }),
+    getters: {},
+    actions: {
+        toggleDarkMode() {
+            this.darkMode = !this.darkMode
+        },
+    },
+    persist: true,
+})

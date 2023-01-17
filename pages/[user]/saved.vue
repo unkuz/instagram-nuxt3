@@ -1,5 +1,5 @@
 <template>
-  <div>SAVED</div>
+    <div>SAVED</div>
 </template>
 
 <script setup lang="ts"></script>

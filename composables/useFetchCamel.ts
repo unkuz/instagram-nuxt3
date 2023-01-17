@@ -1,7 +1,7 @@
-import { snakeToCamel } from "@@/helpers";
+import { snakeToCamel } from '@@/helpers'
 
 export const useFetchCamel = async (url: string) => {
-  const { data, ...other } = await useFetch(url);
+    const { data, ...other } = await useFetch(url)
 
-  return { data: snakeToCamel(data), ...other };
-};
+    return { data: snakeToCamel(data), ...other }
+}

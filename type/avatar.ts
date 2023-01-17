@@ -1,6 +1,6 @@
 export enum SizeAvatarEnum {
-  T,
-  S,
-  M,
-  L,
+    T,
+    S,
+    M,
+    L,
 }

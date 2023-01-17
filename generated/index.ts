@@ -4,5 +4,5 @@
  * ---------------------
  * */
 
-export * from "./__routes";
-export * from "./__useTypedRouter";
+export * from './__routes'
+export * from './__useTypedRouter'

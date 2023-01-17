@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Inbox from "@@/components/Huge/Inbox/index.vue";
+import Inbox from '@@/components/Huge/Inbox/index.vue'
 </script>
 
 <template>
-  <Inbox />
+    <Inbox />
 </template>
 
 <style scoped></style>

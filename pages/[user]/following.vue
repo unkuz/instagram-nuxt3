@@ -1,5 +1,5 @@
 <template>
-  <div>FOLLOWING</div>
+    <div>FOLLOWING</div>
 </template>
 
 <script setup lang="ts"></script>

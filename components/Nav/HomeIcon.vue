@@ -1,18 +1,18 @@
 <script lang="ts" setup>
-import HomeIcon_ from "@@/assets/svg/home_icon.svg";
-import HomeIconSelected_ from "@@/assets/svg/home_icon_selected.svg";
-import IconBase from "@@/components/Nav/IconBase.vue";
+import HomeIcon_ from '@@/assets/svg/home_icon.svg'
+import HomeIconSelected_ from '@@/assets/svg/home_icon_selected.svg'
+import IconBase from '@@/components/Nav/IconBase.vue'
 
 interface IconProps {
-  isSelect: boolean
+    isSelect: boolean
 }
 
-defineProps<IconProps>();
+defineProps<IconProps>()
 </script>
 
 <template>
-  <IconBase>
-    <HomeIcon_ v-if="isSelect" class="dark:fill-c1" />
-    <HomeIconSelected_ v-else class="dark:fill-c1" />
-  </IconBase>
+    <IconBase>
+        <HomeIcon_ v-if="isSelect" class="dark:fill-c1" />
+        <HomeIconSelected_ v-else class="dark:fill-c1" />
+    </IconBase>
 </template>

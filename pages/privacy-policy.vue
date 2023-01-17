@@ -1,6 +1,2 @@
-<script lang="ts" setup>
-
-</script>
-<template>
-  PRIVACY-POLICY
-</template>
+<script lang="ts" setup></script>
+<template>PRIVACY-POLICY</template>
