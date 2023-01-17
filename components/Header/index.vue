@@ -24,18 +24,16 @@ const searchStore = useSearchStore()
 const isShowSearchToolkit = $computed(() => searchStore.getIsShowSearchToolkit)
 const section = $computed(() => globalStore.section)
 const isMobile = $computed<boolean>(() => globalStore.getIsMobile)
-const accountPopRef = $ref<HTMLDivElement | null>(null)
+const accountPopRef = $ref<HTMLDivElement>()
 const activityFeedPopRef = $ref<HTMLDivElement | null>(null)
 const extensionRef = ref<HTMLDivElement | null>(null)
 const isShowProfile = $ref(false)
 
 let showExtension = $ref(false)
 
-const toggleShowExtension = () => {
-    showExtension = !showExtension
-}
+const toggleShowExtension = () => (showExtension = !showExtension)
 
-const isLogin = computed<boolean>(() => authStore.data.isLogin)
+const isLogin = computed(() => authStore.data.isLogin)
 
 useClickOutSide(extensionRef, () => (showExtension = false))
 

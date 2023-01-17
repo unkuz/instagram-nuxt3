@@ -1,13 +1,13 @@
 <script lang="ts" setup>
+import { useForceRenderTimer } from '@@/composables'
 import moment from 'moment'
-import IndividualComment from './IndividualComment.vue'
 import Caption from './Caption.vue'
 import Carousel from './Carousel.vue'
 import Comment from './Comment.vue'
 import Head from './Head.vue'
+import IndividualComment from './IndividualComment.vue'
 import LikeCommentCount from './LikeCommentCount.vue'
 import React from './React.vue'
-import { useForceRenderTimer } from '@@/composables'
 
 export interface IProps {
     created_at: string
@@ -68,7 +68,6 @@ export interface IProps {
 }
 
 const props = defineProps<IProps>()
-let isShowComment = $ref(true)
 const commentRef = $ref<HTMLDivElement | null>(null)
 let currentIdx = $ref<number>(0)
 const setCurrent = (value: number) => (currentIdx = value)

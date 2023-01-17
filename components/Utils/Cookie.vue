@@ -4,11 +4,14 @@ import Button from '@@/components/Atoms/Button.vue'
 import { gsap } from 'gsap'
 
 const containerRef = $ref<HTMLDivElement | null>(null)
+
 let tl = gsap.timeline({})
 
 const animate = () =>
     tl.to(containerRef, {
+        bottom: -100,
         opacity: 0,
+        duration: 1,
     })
 
 const acceptCookieUse = () => {
@@ -16,14 +19,16 @@ const acceptCookieUse = () => {
     console.log('HEHE')
 }
 
-onMounted(() => {
+onMounted(() =>
     tl.to(containerRef, {
         height: 'auto',
         duration: 1,
         bottom: '40px',
-        delay: 2,
+        delay: 1,
     })
-})
+)
+
+onBeforeUnmount(() => tl.kill())
 </script>
 <template>
     <div
