@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import ReelIcon_ from '@@/assets/svg/reel_icon.svg'
-import { QUALITY_IMAGE } from '@@/configs'
+import ReelIcon_ from "@@/assets/svg/reel_icon.svg";
+import { QUALITY_IMAGE } from "@@/configs";
 
 interface IProps {
   img: string | undefined
   isBig?: boolean
 }
 
-withDefaults(defineProps<IProps>(), { isBig: false })
+withDefaults(defineProps<IProps>(), { isBig: false });
 </script>
 
 <template>
@@ -30,7 +30,6 @@ withDefaults(defineProps<IProps>(), { isBig: false })
     <div class="absolute top-1 right-1 sm:top-4 sm:right-4">
       <ReelIcon_ class="w-[20px] sm:w-[24px]" />
     </div>
-    <div class="absolute inset-0 hidden bg-black/20 group-hover:block"></div>
+    <div class="absolute inset-0 hidden bg-black/20 group-hover:block" />
   </div>
 </template>
-

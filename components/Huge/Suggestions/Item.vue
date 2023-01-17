@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import Avatar from '@@/components/Atoms/Avatar.vue'
-import Button from '@@/components/Atoms/Button.vue'
-import { SizeAvatarEnum } from '@@/type'
+import Avatar from "@@/components/Atoms/Avatar.vue";
+import Button from "@@/components/Atoms/Button.vue";
+import { SizeAvatarEnum } from "@@/type";
 
-const { S } = SizeAvatarEnum
+const { S } = SizeAvatarEnum;
 
 interface IProps {
   avatar: string
@@ -11,10 +11,10 @@ interface IProps {
   id: string
 }
 
-defineProps<IProps>()
+defineProps<IProps>();
 
-const isFollow = ref<boolean>(false)
-const toggleFollow = () => (isFollow.value = !isFollow.value)
+const isFollow = ref<boolean>(false);
+const toggleFollow = () => (isFollow.value = !isFollow.value);
 </script>
 
 <template>
@@ -29,7 +29,9 @@ const toggleFollow = () => (isFollow.value = !isFollow.value)
           {{ name }}
         </p>
       </NuxtLink>
-      <p class="text-[0.8rem] text-c3 dark:text-c21">Suggested for you</p>
+      <p class="text-[0.8rem] text-c3 dark:text-c21">
+        Suggested for you
+      </p>
     </div>
     <div
       class="flex w-[55px] cursor-pointer justify-end text-[0.8rem] font-[500]"

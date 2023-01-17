@@ -1,20 +1,20 @@
 <script lang="ts" setup>
-import MoreIcon_ from '@@/assets/svg/more_icon.svg'
-import { useMoreStore } from '@@/store'
-import { SizeAvatarEnum } from '@@/type'
-import Avatar from '@@/components/Atoms/Avatar.vue'
+import MoreIcon_ from "@@/assets/svg/more_icon.svg";
+import { useMoreStore } from "@@/store";
+import { SizeAvatarEnum } from "@@/type";
+import Avatar from "@@/components/Atoms/Avatar.vue";
 
-const moreStore = useMoreStore()
-const { S } = SizeAvatarEnum
+const moreStore = useMoreStore();
+const { S } = SizeAvatarEnum;
 
 interface IProps {
   avatar: string
   userName: string
 }
 
-defineProps<IProps>()
+defineProps<IProps>();
 
-const showMore = () => moreStore.setShow()
+const showMore = () => moreStore.setShow();
 </script>
 
 <template>
@@ -29,9 +29,8 @@ const showMore = () => moreStore.setShow()
         </div>
       </div>
       <div>
-        <MoreIcon_ @click.stop="showMore" class="fill-c2 dark:fill-c1" />
+        <MoreIcon_ class="fill-c2 dark:fill-c1" @click.stop="showMore" />
       </div>
     </div>
   </div>
 </template>
-

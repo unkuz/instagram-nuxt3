@@ -4,8 +4,8 @@ interface IProps {
 }
 
 withDefaults(defineProps<IProps>(), {
-  isActive: false,
-})
+  isActive: false
+});
 </script>
 
 <template>
@@ -16,6 +16,5 @@ withDefaults(defineProps<IProps>(), {
         'bg-c1': !isActive,
       },
     ]"
-  ></div>
+  />
 </template>
-

@@ -1,23 +1,23 @@
 <script lang="ts" setup>
-import PostIcon_ from '@@/assets/svg/post_icon.svg'
-import PostIconSelected_ from '@@/assets/svg/post_icon_selected.svg'
-import ReelIcon_ from '@@/assets/svg/reel_icon.svg'
-import TagIcon_ from '@@/assets/svg/tag_icon.svg'
-import TagIconSelected_ from '@@/assets/svg/tag_icon_selected.svg'
-import Modal from '@@/components/Huge/Profile/Modal.vue'
-import Avatar from '@@/components/Atoms/Avatar.vue'
-import { SELECT_TYPE } from '@@/constants/screens/account'
-import { useAuthStore, useProfileStore } from '@@/store'
-import { SizeAvatarEnum } from '@@/type'
+import PostIcon_ from "@@/assets/svg/post_icon.svg";
+import PostIconSelected_ from "@@/assets/svg/post_icon_selected.svg";
+import ReelIcon_ from "@@/assets/svg/reel_icon.svg";
+import TagIcon_ from "@@/assets/svg/tag_icon.svg";
+import TagIconSelected_ from "@@/assets/svg/tag_icon_selected.svg";
+import Modal from "@@/components/Huge/Profile/Modal.vue";
+import Avatar from "@@/components/Atoms/Avatar.vue";
+import { SELECT_TYPE } from "@@/constants/screens/account";
+import { useAuthStore, useProfileStore } from "@@/store";
+import { SizeAvatarEnum } from "@@/type";
 
-const { L } = SizeAvatarEnum
-const profileStore = useProfileStore()
-const authStore = useAuthStore()
-const isShowFollowing = computed(() => profileStore.isShowFollowing)
-const isShowFollowers = computed(() => profileStore.isShowFollowers)
-const currentSelect = computed(() => profileStore.select)
-const avatar = computed(() => authStore.data.avatar)
-const coverImg = computed(() => authStore.data.coverImg)
+const { L } = SizeAvatarEnum;
+const profileStore = useProfileStore();
+const authStore = useAuthStore();
+const isShowFollowing = computed(() => profileStore.isShowFollowing);
+const isShowFollowers = computed(() => profileStore.isShowFollowers);
+const currentSelect = computed(() => profileStore.select);
+const avatar = computed(() => authStore.data.avatar);
+const coverImg = computed(() => authStore.data.coverImg);
 </script>
 
 <template>
@@ -26,7 +26,7 @@ const coverImg = computed(() => authStore.data.coverImg)
       <div
         class="absolute h-full w-full cursor-pointer bg-cover bg-center object-cover"
         :style="{ backgroundImage: `url(${coverImg})` }"
-      ></div>
+      />
       <Avatar
         :size="L"
         :url="avatar"
@@ -39,12 +39,13 @@ const coverImg = computed(() => authStore.data.coverImg)
       >
         <div>Cuzknothz</div>
         <div class="flex space-x-[20px]">
-          <span>96 posts</span
-          ><span @click="profileStore.setIsShowFollowing(true)" class="cursor-pointer"
-            >38.8k followers</span
-          ><span @click="profileStore.setIsShowFollowing(true)" class="cursor-pointer"
-            >150 following</span
-          >
+          <span>96 posts</span><span
+            class="cursor-pointer"
+            @click="profileStore.setIsShowFollowing(true)"
+          >38.8k followers</span><span
+            class="cursor-pointer"
+            @click="profileStore.setIsShowFollowing(true)"
+          >150 following</span>
         </div>
       </div>
     </div>
@@ -60,7 +61,7 @@ const coverImg = computed(() => authStore.data.coverImg)
       </div>
       <div @click="profileStore.setSelect(SELECT_TYPE.REELS)">
         <ReelIcon_ v-if="currentSelect == SELECT_TYPE.REELS" />
-        <ReelIcon_ class="color-[#00aeff] fill-[#00aeff]" v-else />
+        <ReelIcon_ v-else class="color-[#00aeff] fill-[#00aeff]" />
       </div>
 
       <div @click="profileStore.setSelect(SELECT_TYPE.TAG)">

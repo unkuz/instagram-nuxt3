@@ -1,13 +1,13 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-export const useViewPostStore = defineStore('viewPostStore', {
+export const useViewPostStore = defineStore("viewPostStore", {
   state: () => ({
-    isShow: false,
+    isShow: false
   }),
   getters: {},
   actions: {
-    setIsShow(value: boolean) {
-      this.isShow = value
-    },
-  },
-})
+    setIsShow (value: boolean) {
+      this.isShow = value;
+    }
+  }
+});

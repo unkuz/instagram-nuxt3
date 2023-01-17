@@ -1,22 +1,22 @@
 <script lang="ts" setup>
-import { useDoubleClick } from '@@/composables'
-import { useTimeLineStore } from '@@/store'
+import { useDoubleClick } from "@@/composables";
+import { useTimeLineStore } from "@@/store";
 
 interface IProps {
   src: string
   idPost: string
 }
 
-const props = defineProps<IProps>()
+const props = defineProps<IProps>();
 
-const timelineStore = useTimeLineStore()
-const imageRef = ref<HTMLImageElement | null>(null)
+const timelineStore = useTimeLineStore();
+const imageRef = ref<HTMLImageElement | null>(null);
 
 const toggleLike = () => {
-  timelineStore.setToggleLike(props.idPost)
-}
+  timelineStore.setToggleLike(props.idPost);
+};
 
-useDoubleClick(imageRef, () => {}, toggleLike)
+useDoubleClick(imageRef, () => {}, toggleLike);
 </script>
 
 <template>

@@ -1,11 +1,11 @@
-import { useGlobalStore } from '@@/store'
-export function deboundRoute(url: string) {
-  const globalStore = useGlobalStore()
-  const router = useRouter()
+import { useGlobalStore } from "@@/store";
+export function deboundRoute (url: string) {
+  const globalStore = useGlobalStore();
+  const router = useRouter();
 
   // globalStore.setTransition(true)
   // setTimeout(() => {
-  router.push(url)
+  router.push(url);
 
   // // }, TIMMING_PAGE_TRANSITION / 2)
   // setTimeout(() => {

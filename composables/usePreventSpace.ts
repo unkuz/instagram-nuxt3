@@ -1,15 +1,15 @@
 export const usePreventSpace = () => {
   const space = (e: KeyboardEvent) => {
     if (e.keyCode === 32 && e.target === document.body) {
-      e.preventDefault()
+      e.preventDefault();
     }
-  }
+  };
 
   onMounted(() => {
-    addEventListener('keydown', space)
-  })
+    addEventListener("keydown", space);
+  });
 
   onBeforeUnmount(() => {
-    removeEventListener('keydown', space)
-  })
-}
+    removeEventListener("keydown", space);
+  });
+};

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-    
+
 </script>
 <template>
-    PRIVACY-POLICY
+  PRIVACY-POLICY
 </template>

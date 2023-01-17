@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import Header from '@@/components/Header/index.vue'
-import { useGlobalStore } from '@@/store'
-import Navbarbottom from './navbarbottom.vue'
+import Navbarbottom from "./navbarbottom.vue";
+import Header from "@@/components/Header/index.vue";
+import { useGlobalStore } from "@@/store";
 
-const globalStore = useGlobalStore()
-const isMobile = computed(() => globalStore.getIsMobile)
+const globalStore = useGlobalStore();
+const isMobile = computed(() => globalStore.getIsMobile);
 </script>
 
 <template>

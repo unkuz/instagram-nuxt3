@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import SearchIcon_ from '@@/assets/svg/search_icon.svg'
-import SearchiconSelected_ from '@@/assets/svg/search_icon_selected.svg'
-import IconBase from '@@/components/Nav/IconBase.vue'
+import SearchIcon_ from "@@/assets/svg/search_icon.svg";
+import SearchiconSelected_ from "@@/assets/svg/search_icon_selected.svg";
+import IconBase from "@@/components/Nav/IconBase.vue";
 
 interface IconProps {
   isSelect: boolean
 }
 
-defineProps<IconProps>()
+defineProps<IconProps>();
 </script>
 
 <template>

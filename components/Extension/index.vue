@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { useFps } from '@vueuse/core';
+import { useFps } from "@vueuse/core";
 
-const fps = useFps()
+const fps = useFps();
 </script>
 
 <template>
@@ -10,6 +10,6 @@ const fps = useFps()
       <div>FPS :</div>
       <div>{{ fps }}</div>
     </div>
-    <div class="flex items-center justify-center"></div>
+    <div class="flex items-center justify-center" />
   </div>
 </template>

@@ -3,9 +3,9 @@
 </template>
 
 <script setup lang="ts">
-const router = useRouter()
+const router = useRouter();
 
-const tag = router.currentRoute.value.params.id
+const tag = router.currentRoute.value.params.id;
 </script>
 
 <style scoped></style>

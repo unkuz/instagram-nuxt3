@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import Avatar from '@@/components/Atoms/Avatar.vue'
-import { SizeAvatarEnum } from '@@/type'
-import moment from 'moment'
-import { useForceRenderTimer } from '@@/composables'
+import moment from "moment";
+import Avatar from "@@/components/Atoms/Avatar.vue";
+import { SizeAvatarEnum } from "@@/type";
+import { useForceRenderTimer } from "@@/composables";
 
 interface IProps {
   comment: any
 }
-defineProps<IProps>()
+defineProps<IProps>();
 
-const { key } = useForceRenderTimer()
-const { S } = SizeAvatarEnum
+const { key } = useForceRenderTimer();
+const { S } = SizeAvatarEnum;
 </script>
 
 <template>
-  <div class="mb-[10px]" :id="`post_detail_${comment.id}`">
+  <div :id="`post_detail_${comment.id}`" class="mb-[10px]">
     <div class="relative my-[5px] rounded-md">
       <div class="mx-[10px] flex items-center gap-[10px]">
         <NuxtLink :to="`/${comment.user.username}`">
@@ -27,7 +27,7 @@ const { S } = SizeAvatarEnum
             {{ comment.user.username }}
           </p>
         </NuxtLink>
-        <p class="text-[0.7rem] text-c3" :key="key">
+        <p :key="key" class="text-[0.7rem] text-c3">
           {{ moment(comment.created_at).fromNow() }}
         </p>
       </div>
@@ -38,10 +38,12 @@ const { S } = SizeAvatarEnum
             <span>{{ comment.comment_like_count }}</span>
             <span class="cursor-pointer">Like</span>
           </div>
-          <p class="cursor-pointer text-c13">Reply</p>
+          <p class="cursor-pointer text-c13">
+            Reply
+          </p>
         </div>
       </div>
-      <div class="absolute top-0 left-0 h-full w-[3px] -translate-x-[0px] bg-c14"></div>
+      <div class="absolute top-0 left-0 h-full w-[3px] -translate-x-[0px] bg-c14" />
     </div>
     <div
       v-for="({ user, created_at, text, comment_like_count }, idx) in comment.reply"
@@ -59,7 +61,9 @@ const { S } = SizeAvatarEnum
             {{ user.username }}
           </p>
         </NuxtLink>
-        <p class="text-[0.7rem] text-[#666]" :key="key">{{ moment(created_at).fromNow() }}</p>
+        <p :key="key" class="text-[0.7rem] text-[#666]">
+          {{ moment(created_at).fromNow() }}
+        </p>
       </div>
       <div class="ml-[52px] -translate-y-[3px] pr-[10px]">
         <p>{{ text }}</p>
@@ -68,10 +72,12 @@ const { S } = SizeAvatarEnum
             <span>{{ comment_like_count }}</span>
             <span class="cursor-pointer">Like</span>
           </div>
-          <p class="cursor-pointer text-c13">Reply</p>
+          <p class="cursor-pointer text-c13">
+            Reply
+          </p>
         </div>
       </div>
-      <div class="absolute top-0 left-0 h-full w-[3px] -translate-x-[0px] bg-c12"></div>
+      <div class="absolute top-0 left-0 h-full w-[3px] -translate-x-[0px] bg-c12" />
     </div>
   </div>
 </template>

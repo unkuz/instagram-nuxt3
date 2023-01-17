@@ -1,35 +1,35 @@
 <script lang="ts" setup>
-import BackDrop from '@@/components/Utils/BackDrop.vue'
-import { useWindowResizeCallback } from '@@/composables'
-import { useViewPostStore } from '@@/store'
+import BackDrop from "@@/components/Utils/BackDrop.vue";
+import { useWindowResizeCallback } from "@@/composables";
+import { useViewPostStore } from "@@/store";
 
-const viewPostStore = useViewPostStore()
+const viewPostStore = useViewPostStore();
 
-const viewPostRef = ref<HTMLDivElement | null>(null)
-const commentHeadingRef = ref<HTMLDivElement | null>(null)
-const commentRef = ref<HTMLDivElement | null>(null)
-const commentContainerRef = ref<HTMLDivElement | null>(null)
+const viewPostRef = ref<HTMLDivElement | null>(null);
+const commentHeadingRef = ref<HTMLDivElement | null>(null);
+const commentRef = ref<HTMLDivElement | null>(null);
+const commentContainerRef = ref<HTMLDivElement | null>(null);
 
 useClickOutSide(viewPostRef, () => {
-  viewPostStore.setIsShow(false)
-})
+  viewPostStore.setIsShow(false);
+});
 
 const calcHeightComment = () => {
   commentRef.value!.style.height = `${
     commentContainerRef.value!.clientHeight - commentHeadingRef.value!.clientHeight
-  }px`
-}
+  }px`;
+};
 
-useWindowResizeCallback(calcHeightComment)
+useWindowResizeCallback(calcHeightComment);
 
 onMounted(() => {
-  viewPostRef.value!.style.transform = 'scale(0)'
-  viewPostRef.value!.style.opacity = '0'
+  viewPostRef.value!.style.transform = "scale(0)";
+  viewPostRef.value!.style.opacity = "0";
   setTimeout(() => {
-    viewPostRef.value!.style.transform = 'scale(1)'
-    viewPostRef.value!.style.opacity = '1'
-  }, 200)
-})
+    viewPostRef.value!.style.transform = "scale(1)";
+    viewPostRef.value!.style.opacity = "1";
+  }, 200);
+});
 </script>
 
 <template>
@@ -50,8 +50,10 @@ onMounted(() => {
           <div ref="commentHeadingRef" class="h-[60px] border-b-[1px] border-gray-300">
             <div class="mx-[16px] flex h-full items-center justify-between">
               <div class="flex items-center space-x-[10px]">
-                <div class="h-[40px] w-[40px] rounded-[50%] bg-black"></div>
-                <p class="cursor-pointer">cuzknothz</p>
+                <div class="h-[40px] w-[40px] rounded-[50%] bg-black" />
+                <p class="cursor-pointer">
+                  cuzknothz
+                </p>
               </div>
               <div>
                 <svg
@@ -64,9 +66,9 @@ onMounted(() => {
                   viewBox="0 0 24 24"
                   width="24"
                 >
-                  <circle cx="12" cy="12" r="1.5"></circle>
-                  <circle cx="6" cy="12" r="1.5"></circle>
-                  <circle cx="18" cy="12" r="1.5"></circle>
+                  <circle cx="12" cy="12" r="1.5" />
+                  <circle cx="6" cy="12" r="1.5" />
+                  <circle cx="18" cy="12" r="1.5" />
                 </svg>
               </div>
             </div>
@@ -78,7 +80,7 @@ onMounted(() => {
               class="mb-[10px] flex w-full items-center justify-between"
             >
               <div class="flex">
-                <div class="mr-[18px] aspect-square h-[40px] w-[40px] rounded-[50%] bg-black"></div>
+                <div class="mr-[18px] aspect-square h-[40px] w-[40px] rounded-[50%] bg-black" />
                 <div>
                   <div class="">
                     <span class="mr-[4px]">cuzknothz</span>
@@ -108,7 +110,7 @@ onMounted(() => {
                 >
                   <path
                     d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"
-                  ></path>
+                  />
                 </svg>
               </div>
             </div>
@@ -118,4 +120,3 @@ onMounted(() => {
     </BackDrop>
   </div>
 </template>
-

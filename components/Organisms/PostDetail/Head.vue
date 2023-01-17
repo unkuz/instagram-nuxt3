@@ -1,23 +1,23 @@
 <script lang="ts" setup>
-import MoreIcon_ from '@@/assets/svg/more_icon.svg'
-import { useMoreStore } from '@@/store'
-import { SizeAvatarEnum } from '@@/type'
-import Avatar from '@@/components/Atoms/Avatar.vue'
+import MoreIcon_ from "@@/assets/svg/more_icon.svg";
+import { useMoreStore } from "@@/store";
+import { SizeAvatarEnum } from "@@/type";
+import Avatar from "@@/components/Atoms/Avatar.vue";
 
-const moreStore = useMoreStore()
-const { S } = SizeAvatarEnum
+const moreStore = useMoreStore();
+const { S } = SizeAvatarEnum;
 
 interface IProps {
   avatar: string
   userName: string
 }
 
-defineProps<IProps>()
+defineProps<IProps>();
 
 const showMore = (e: MouseEvent) => {
-  e.stopPropagation()
-  moreStore.setShow()
-}
+  e.stopPropagation();
+  moreStore.setShow();
+};
 </script>
 
 <template>
@@ -32,7 +32,7 @@ const showMore = (e: MouseEvent) => {
         </div>
       </div>
       <div>
-        <MoreIcon_ @click="showMore" class="fill-c2 dark:fill-c1" />
+        <MoreIcon_ class="fill-c2 dark:fill-c1" @click="showMore" />
       </div>
     </div>
   </div>

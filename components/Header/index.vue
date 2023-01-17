@@ -1,45 +1,45 @@
 <script lang="ts" setup>
-import Flashicon_ from '@@/assets/svg/flash_icon.svg'
-import LoginIcon_ from '@@/assets/svg/login.svg'
-import Logo from '@@/components/Header/Logo.vue'
-import Search from '@@/components/Header/Search.vue'
-import HomeIcon from '@@/components/Nav/HomeIcon.vue'
-import Reels from '@@/components/Nav/Reels.vue'
-import { useClickOutSide } from '@@/composables'
-import { SectionEnum } from '@@/constants/section'
-import { useAuthStore, useGlobalStore, useSearchStore } from '@@/store'
-import Extension from '@@/components/Utils/Extension.vue'
-import AccountPop from '../Huge/AccountPop/index.vue'
-import ActivityFeedPop from '../Huge/ActivityFeedPop/index.vue'
-import SearchPop from '../Huge/SearchPop/index.vue'
-import ActivityFeed from '../Nav/ActivityFeed.vue'
-import FindPeople from '../Nav/FindPeople.vue'
-import Messenger from '../Nav/Messenger.vue'
-import NewPost from '../Nav/NewPost.vue'
-import SelfAvatar from '../Nav/SelfAvatar.vue'
+import AccountPop from "../Huge/AccountPop/index.vue";
+import ActivityFeedPop from "../Huge/ActivityFeedPop/index.vue";
+import SearchPop from "../Huge/SearchPop/index.vue";
+import ActivityFeed from "../Nav/ActivityFeed.vue";
+import FindPeople from "../Nav/FindPeople.vue";
+import Messenger from "../Nav/Messenger.vue";
+import NewPost from "../Nav/NewPost.vue";
+import SelfAvatar from "../Nav/SelfAvatar.vue";
+import Flashicon_ from "@@/assets/svg/flash_icon.svg";
+import LoginIcon_ from "@@/assets/svg/login.svg";
+import Logo from "@@/components/Header/Logo.vue";
+import Search from "@@/components/Header/Search.vue";
+import HomeIcon from "@@/components/Nav/HomeIcon.vue";
+import Reels from "@@/components/Nav/Reels.vue";
+import { useClickOutSide } from "@@/composables";
+import { SectionEnum } from "@@/constants/section";
+import { useAuthStore, useGlobalStore, useSearchStore } from "@@/store";
+import Extension from "@@/components/Utils/Extension.vue";
 
-const globalStore = useGlobalStore()
-const authStore = useAuthStore()
-const searchStore = useSearchStore()
-const isShowSearchToolkit = $computed(() => searchStore.getIsShowSearchToolkit)
-const section = $computed(() => globalStore.section)
-const isMobile = $computed<boolean>(() => globalStore.getIsMobile)
-const accountPopRef = $ref<HTMLDivElement | null>(null)
-const activityFeedPopRef = $ref<HTMLDivElement | null>(null)
-const extensionRef = ref<HTMLDivElement | null>(null)
-let isShowProfile = $ref(false)
+const globalStore = useGlobalStore();
+const authStore = useAuthStore();
+const searchStore = useSearchStore();
+const isShowSearchToolkit = $computed(() => searchStore.getIsShowSearchToolkit);
+const section = $computed(() => globalStore.section);
+const isMobile = $computed<boolean>(() => globalStore.getIsMobile);
+const accountPopRef = $ref<HTMLDivElement | null>(null);
+const activityFeedPopRef = $ref<HTMLDivElement | null>(null);
+const extensionRef = ref<HTMLDivElement | null>(null);
+const isShowProfile = $ref(false);
 
-let showExtension = $ref(false)
+let showExtension = $ref(false);
 
 const toggleShowExtension = () => {
-  showExtension = !showExtension
-}
+  showExtension = !showExtension;
+};
 
-const isLogin = computed<boolean>(() => authStore.data.isLogin)
+const isLogin = computed<boolean>(() => authStore.data.isLogin);
 
-useClickOutSide(extensionRef, () => (showExtension = false))
+useClickOutSide(extensionRef, () => (showExtension = false));
 
-const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
+const handleSelect = (section: SectionEnum) => globalStore.setSection(section);
 </script>
 
 <template>
@@ -55,8 +55,8 @@ const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
           <Flashicon_ class="cursor-pointer dark:[&>path]:fill-white" />
         </div>
         <!-- <DarkMode /> -->
-        <div class="relative" ref="extensionRef">
-          <div @click="toggleShowExtension"></div>
+        <div ref="extensionRef" class="relative">
+          <div @click="toggleShowExtension" />
           <div><Extension v-if="showExtension" /></div>
         </div>
       </div>
@@ -72,44 +72,45 @@ const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
       >
         <div v-show="!isMobile" @click="handleSelect(SectionEnum.HOME)">
           <NuxtLink to="/">
-            <HomeIcon :isSelect="section === SectionEnum.HOME" />
+            <HomeIcon :is-select="section === SectionEnum.HOME" />
           </NuxtLink>
         </div>
         <div class="ml-[22px] md:ml-0" @click="handleSelect(SectionEnum.MESSENGER)">
           <NuxtLink to="/inbox/">
-            <Messenger :isSelect="section === SectionEnum.MESSENGER" :hasNew="true" />
+            <Messenger :is-select="section === SectionEnum.MESSENGER" :has-new="true" />
           </NuxtLink>
         </div>
         <div v-show="!isMobile" @click="handleSelect(SectionEnum.REELS)">
           <NuxtLink to="/reels">
-            <Reels :isSelect="false" />
+            <Reels :is-select="false" />
           </NuxtLink>
         </div>
-        <div @click="handleSelect(SectionEnum.NEW_POST)" class="relative">
-          <NewPost :isSelect="section === SectionEnum.NEW_POST" />
+        <div class="relative" @click="handleSelect(SectionEnum.NEW_POST)">
+          <NewPost :is-select="section === SectionEnum.NEW_POST" />
         </div>
         <div v-show="!isMobile" @click="handleSelect(SectionEnum.FINDPEOPLE)">
           <NuxtLink to="/explore/">
-            <FindPeople :isSelect="section === SectionEnum.FINDPEOPLE" />
+            <FindPeople :is-select="section === SectionEnum.FINDPEOPLE" />
           </NuxtLink>
         </div>
         <div v-show="!isMobile" class="relative" @click="handleSelect(SectionEnum.ACTIVITYFEED)">
-          <ActivityFeed :isSelect="section === SectionEnum.ACTIVITYFEED" />
+          <ActivityFeed :is-select="section === SectionEnum.ACTIVITYFEED" />
           <div ref="activityFeedPopRef">
             <ActivityFeedPop v-show="section === SectionEnum.ACTIVITYFEED" />
           </div>
         </div>
         <div v-show="!isMobile" class="relative mr-0" @click="isShowProfile = true">
-          <SelfAvatar :isSelect="section === SectionEnum.SELF" />
+          <SelfAvatar :is-select="section === SectionEnum.SELF" />
           <div ref="accountPopRef">
             <AccountPop v-show="isShowProfile" />
           </div>
         </div>
       </div>
       <div v-else class="flex h-full w-full items-center justify-end">
-        <NuxtLink to="/login"> <LoginIcon_ /></NuxtLink>
+        <NuxtLink to="/login">
+          <LoginIcon_ />
+        </NuxtLink>
       </div>
     </div>
   </header>
 </template>
-

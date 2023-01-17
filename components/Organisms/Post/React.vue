@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import LikeIcon_ from '@@/assets/svg/like_icon.svg'
-import SaveIcon_ from '@@/assets/svg/save_icon.svg'
-import ShareIcon_ from '@@/assets/svg/share_icon.svg'
-import ViewPostIcon_ from '@@/assets/svg/view_post_icon.svg'
-import UnlikeIcon from '@@/components/Atoms/UnlikeIcon.vue'
-import { useTimeLineStore } from '@@/store'
-import { stopOtherVideoPlaying } from '@@/helpers'
+import LikeIcon_ from "@@/assets/svg/like_icon.svg";
+import SaveIcon_ from "@@/assets/svg/save_icon.svg";
+import ShareIcon_ from "@@/assets/svg/share_icon.svg";
+import ViewPostIcon_ from "@@/assets/svg/view_post_icon.svg";
+import UnlikeIcon from "@@/components/Atoms/UnlikeIcon.vue";
+import { useTimeLineStore } from "@@/store";
+import { stopOtherVideoPlaying } from "@@/helpers";
 
 interface IProps {
   hasLiked: boolean
@@ -15,9 +15,9 @@ interface IProps {
   hasSaved: boolean
 }
 
-defineProps<IProps>()
+defineProps<IProps>();
 
-const timelineStore = useTimeLineStore()
+const timelineStore = useTimeLineStore();
 </script>
 
 <template>
@@ -30,7 +30,7 @@ const timelineStore = useTimeLineStore()
     ]"
   >
     <div class="flex h-full w-full items-center gap-[12px] md:gap-[10px]">
-      <div @click="timelineStore.setToggleLike(id)" class="relative">
+      <div class="relative" @click="timelineStore.setToggleLike(id)">
         <div v-if="hasLiked">
           <UnlikeIcon />
         </div>
@@ -39,7 +39,7 @@ const timelineStore = useTimeLineStore()
         </div>
       </div>
       <NuxtLink :to="`/_/p/${id}`">
-        <ViewPostIcon_ @click="stopOtherVideoPlaying" class="fill-c2 dark:fill-c1" />
+        <ViewPostIcon_ class="fill-c2 dark:fill-c1" @click="stopOtherVideoPlaying" />
       </NuxtLink>
       <ShareIcon_ class="fill-c2 dark:fill-c1" />
     </div>
@@ -51,17 +51,17 @@ const timelineStore = useTimeLineStore()
           'h-[6px] w-[6px]  rounded-[50%]  ',
           currentIdx === idx ? 'bg-c7 dark:bg-c7' : 'bg-c3 dark:bg-c1',
         ]"
-      ></div>
+      />
     </div>
     <div class="flex h-full w-full items-center justify-end">
       <SaveIcon_
-        @click="timelineStore.setToggleSave(id)"
         :class="[
           ' dark:[&>path]:stroke-white',
           {
             '[&>path]:fill-c11 [&>path]:stroke-c11 dark:[&>path]:stroke-c11': hasSaved,
           },
         ]"
+        @click="timelineStore.setToggleSave(id)"
       />
     </div>
   </div>

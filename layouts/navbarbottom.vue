@@ -1,19 +1,19 @@
 <script lang="ts" setup>
-import ActivityFeed from '@@/components/Nav/ActivityFeed.vue'
-import HomeIcon from '@@/components/Nav/HomeIcon.vue'
-import Reels from '@@/components/Nav/Reels.vue'
-import Search from '@@/components/Nav/Search.vue'
-import SelfAvatar from '@@/components/Nav/SelfAvatar.vue'
-import { SectionEnum } from '@@/constants'
-import { useGlobalStore } from '@@/store'
+import ActivityFeed from "@@/components/Nav/ActivityFeed.vue";
+import HomeIcon from "@@/components/Nav/HomeIcon.vue";
+import Reels from "@@/components/Nav/Reels.vue";
+import Search from "@@/components/Nav/Search.vue";
+import SelfAvatar from "@@/components/Nav/SelfAvatar.vue";
+import { SectionEnum } from "@@/constants";
+import { useGlobalStore } from "@@/store";
 
-const globalStore = useGlobalStore()
-const isMobile = computed(() => globalStore.getIsMobile)
-const section = computed(() => globalStore.section)
-const isReelsSelect = computed(() => globalStore.section === SectionEnum.REELS && isMobile)
+const globalStore = useGlobalStore();
+const isMobile = computed(() => globalStore.getIsMobile);
+const section = computed(() => globalStore.section);
+const isReelsSelect = computed(() => globalStore.section === SectionEnum.REELS && isMobile);
 const handleSelect = (section: SectionEnum) => {
-  globalStore.setSection(section)
-}
+  globalStore.setSection(section);
+};
 </script>
 
 <template>
@@ -28,27 +28,27 @@ const handleSelect = (section: SectionEnum) => {
     <div class="mt-3 flex items-center justify-around">
       <div @click="handleSelect(SectionEnum.HOME)">
         <NuxtLink to="/">
-          <HomeIcon :isSelect="section === SectionEnum.HOME" />
+          <HomeIcon :is-select="section === SectionEnum.HOME" />
         </NuxtLink>
       </div>
       <div @click="handleSelect(SectionEnum.SEARCH)">
         <NuxtLink to="/explore/">
-          <Search :isSelect="section === SectionEnum.SEARCH" />
+          <Search :is-select="section === SectionEnum.SEARCH" />
         </NuxtLink>
       </div>
       <div @click="handleSelect(SectionEnum.REELS)">
         <NuxtLink to="/reels/">
-          <Reels :isSelect="section === SectionEnum.REELS" />
+          <Reels :is-select="section === SectionEnum.REELS" />
         </NuxtLink>
       </div>
       <div @click="handleSelect(SectionEnum.ACTIVITYFEED)">
         <NuxtLink to="/activity-feed">
-          <ActivityFeed :isSelect="section === SectionEnum.ACTIVITYFEED" />
+          <ActivityFeed :is-select="section === SectionEnum.ACTIVITYFEED" />
         </NuxtLink>
       </div>
       <div @click="handleSelect(SectionEnum.SELF)">
         <NuxtLink to="/cuzknothz/">
-          <SelfAvatar :isSelect="section === SectionEnum.SELF" />
+          <SelfAvatar :is-select="section === SectionEnum.SELF" />
         </NuxtLink>
       </div>
     </div>

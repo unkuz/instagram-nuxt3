@@ -1,21 +1,21 @@
 <script lang="ts" setup>
-import { Elastic, gsap } from 'gsap'
-import LikeIcon_ from '@@/assets/svg/heart_break_icon.svg'
+import { Elastic, gsap } from "gsap";
+import LikeIcon_ from "@@/assets/svg/heart_break_icon.svg";
 
-const likeRef = ref<HTMLDivElement | null>(null)
+const likeRef = ref<HTMLDivElement | null>(null);
 
 onMounted(() => {
-  const tl = gsap.timeline()
+  const tl = gsap.timeline();
   tl.to(likeRef.value, {
     scale: 4,
     duration: 0.5,
-    ease: Elastic.easeOut.config(1, 0.3),
-  })
+    ease: Elastic.easeOut.config(1, 0.3)
+  });
   tl.to(likeRef.value, {
-    display: 'none',
-    duration: 0,
-  })
-})
+    display: "none",
+    duration: 0
+  });
+});
 </script>
 
 <template>

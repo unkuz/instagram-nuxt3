@@ -1,23 +1,23 @@
 <script lang="ts" setup>
-import Avatar from '@@/components/Atoms/Avatar.vue'
-import Button from '@@/components/Atoms/Button.vue'
-import { TSuggestion } from '@@/models'
-import { useAuthStore } from '@@/store'
-import { SizeAvatarEnum } from '@@/type'
-import { getCurrentYear } from '@@/utils'
-import Item from './Item.vue'
+import Item from "./Item.vue";
+import Avatar from "@@/components/Atoms/Avatar.vue";
+import Button from "@@/components/Atoms/Button.vue";
+import { TSuggestion } from "@@/models";
+import { useAuthStore } from "@@/store";
+import { SizeAvatarEnum } from "@@/type";
+import { getCurrentYear } from "@@/utils";
 
 interface IProps {
   suggestion: TSuggestion[]
 }
 
-defineProps<IProps>()
+defineProps<IProps>();
 
-const authStore = useAuthStore()
-const avatar = computed(() => authStore.data.avatar)
+const authStore = useAuthStore();
+const avatar = computed(() => authStore.data.avatar);
 
-const { M } = SizeAvatarEnum
-const authorText = 'cuzknothz'
+const { M } = SizeAvatarEnum;
+const authorText = "cuzknothz";
 </script>
 
 <template>
@@ -25,8 +25,12 @@ const authorText = 'cuzknothz'
     <div class="mt-[26px] mb-[22px] flex h-[56px] items-center justify-between">
       <Avatar :size="M" :url="avatar" />
       <div class="-ml-[70px]">
-        <p class="cursor-pointer font-medium">cuzknothz</p>
-        <p class="text-c3 dark:text-c21">cuzknothz</p>
+        <p class="cursor-pointer font-medium">
+          cuzknothz
+        </p>
+        <p class="text-c3 dark:text-c21">
+          cuzknothz
+        </p>
       </div>
       <div @click="authStore.data.isLogin = false">
         <NuxtLink to="/login">
@@ -37,16 +41,18 @@ const authorText = 'cuzknothz'
     <div class="flex h-[11px] items-center justify-between text-sm text-c3 dark:text-c21">
       <div>Suggestions for you</div>
       <NuxtLink to="/explore/people">
-        <div class="cursor-pointer">See All</div>
+        <div class="cursor-pointer">
+          See All
+        </div>
       </NuxtLink>
     </div>
     <div class="mt-[8px] w-full">
       <Item
         v-for="{ name, avatar, id } in suggestion"
+        :id="id"
         :key="id"
         :name="name"
         :avatar="avatar"
-        :id="id"
       />
     </div>
     <div class="mt-[10px] text-[0.85rem] text-c3 dark:text-c21">
@@ -55,21 +61,19 @@ const authorText = 'cuzknothz'
           v-for="(i, idx) in ['About', 'Help', 'Press', 'API', 'Jobs', 'Privacy Terms']"
           :key="idx"
           class="cursor-not-allowed after:content-['.'] last:after:content-['']"
-          >{{ i }}</span
-        >
+        >{{ i }}</span>
       </div>
       <div class="mb-[13px] flex justify-center">
         <span
           v-for="(i, idx) in ['Location', 'Top accounts', 'Hashtags', 'Language']"
           :key="idx"
           class="cursor-not-allowed after:content-['.'] last:after:content-['']"
-          >{{ i }}</span
-        >
+        >{{ i }}</span>
       </div>
     </div>
 
     <div class="flex select-none flex-col items-center gap-[5px] text-[0.8rem]">
-      <div>© <span v-html="getCurrentYear()"></span> Instagram clone by</div>
+      <div>© <span v-html="getCurrentYear()" /> Instagram clone by</div>
       <NuxtLink to="https://github.com/cuzknothz" target="_blank">
         <div
           class="cursor-pointer font-august text-[1.25rem] uppercase tracking-wider text-c2 drop-shadow-md dark:text-c1"

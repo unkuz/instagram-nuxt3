@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import CookieIcon_ from '@@/assets/svg/cookie.svg'
-import Button from '@@/components/Atoms/Button.vue'
+import CookieIcon_ from "@@/assets/svg/cookie.svg";
+import Button from "@@/components/Atoms/Button.vue";
 const acceptCookieUse = () => {
-  console.log('HEHE')
-}
+  console.log("HEHE");
+};
 </script>
 <template>
   <div
@@ -17,14 +17,15 @@ const acceptCookieUse = () => {
         }}
       </p>
       <div class="mt-[10px] flex w-full items-center justify-between">
-        <NuxtLink to="/privacy-policy" class="cursor-pointer">Privacy Policy</NuxtLink>
+        <NuxtLink to="/privacy-policy" class="cursor-pointer">
+          Privacy Policy
+        </NuxtLink>
         <Button
-          @click="acceptCookieUse"
           text="OK"
           class="rounded-[0.25rem] select-none bg-[#00ddb3] px-[32px] py-[8px] leading-[0.8rem] text-c1"
-        ></Button>
+          @click="acceptCookieUse"
+        />
       </div>
     </div>
   </div>
 </template>
-

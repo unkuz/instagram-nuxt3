@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import { useGlobalStore } from '@@/store'
+import { useGlobalStore } from "@@/store";
 </script>
 
 <template>
   <div>
     <div
       class="absolute inset-0 z-40 flex items-center justify-center bg-violet-200 transition"
-    ></div>
+    />
   </div>
 </template>
 <style scoped>

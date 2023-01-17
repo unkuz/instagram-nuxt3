@@ -1,43 +1,43 @@
 <script lang="ts" setup>
-import Emoji from '@@/components/Utils/Emoji.vue'
-import { useClickOutSide } from '@@/composables'
-import { useAuthStore, usePostDetailStore } from '@@/store'
+import Emoji from "@@/components/Utils/Emoji.vue";
+import { useClickOutSide } from "@@/composables";
+import { useAuthStore, usePostDetailStore } from "@@/store";
 
 interface IProps {
   id: string
 }
 
-const { id } = defineProps<IProps>()
+const { id } = defineProps<IProps>();
 
-const emojiRef = ref<HTMLDivElement | null>(null)
-let isShowEmoji = $ref(false)
-const textBoxRef = $ref<HTMLTextAreaElement | null>(null)
-let commentValueText = $ref('')
-const viewPostDetailStore = usePostDetailStore()
-const authStore = useAuthStore()
+const emojiRef = ref<HTMLDivElement | null>(null);
+let isShowEmoji = $ref(false);
+const textBoxRef = $ref<HTMLTextAreaElement | null>(null);
+let commentValueText = $ref("");
+const viewPostDetailStore = usePostDetailStore();
+const authStore = useAuthStore();
 
-const emojiAdd = (value: string) => (commentValueText += value)
+const emojiAdd = (value: string) => (commentValueText += value);
 
-useClickOutSide(emojiRef, () => (isShowEmoji = false))
+useClickOutSide(emojiRef, () => (isShowEmoji = false));
 
-const toggleShowEmoji = () => (isShowEmoji = !isShowEmoji)
+const toggleShowEmoji = () => (isShowEmoji = !isShowEmoji);
 
 const send = async () => {
   await viewPostDetailStore.comment(id, {
     text: commentValueText,
     userName: authStore.data.userName,
     userImg: authStore.data.avatar,
-    id: Math.random() * 10000,
-  })
-  commentValueText = ''
-}
+    id: Math.random() * 10000
+  });
+  commentValueText = "";
+};
 </script>
 
 <template>
   <div class="flex w-full items-center justify-between">
-    <div class="relative" ref="emojiRef">
+    <div ref="emojiRef" class="relative">
       <Emoji v-if="isShowEmoji" @emoji-add="emojiAdd" />
-      <div @click="toggleShowEmoji" class="cursor-pointer text-[0.8rem] font-[500]">
+      <div class="cursor-pointer text-[0.8rem] font-[500]" @click="toggleShowEmoji">
         <svg width="24" height="24" viewBox="0 0 24 24">
           <g
             fill="none"
@@ -55,16 +55,16 @@ const send = async () => {
       </div>
     </div>
     <textarea
-      @keyup.enter="send"
       ref="textBoxRef"
+      v-model="commentValueText"
       rows="1"
       spellcheck="false"
       class="m-auto my-[10px] block h-[38px] w-[83%] cursor-text resize-none rounded-[5px] border-[1px] border-c4 bg-transparent p-[5px] shadow-sm shadow-c4 placeholder:text-center placeholder:text-[0.8rem] focus:outline-none dark:border-c20 dark:shadow-none lg:w-[88%]"
-      v-model="commentValueText"
+      @keyup.enter="send"
     >
       {{ commentValueText }}
     </textarea>
-    <div @click="send" class="cursor-pointer text-[0.8rem] font-[500]">
+    <div class="cursor-pointer text-[0.8rem] font-[500]" @click="send">
       <svg width="24" height="24" viewBox="0 0 24 24">
         <g
           fill="none"
@@ -81,4 +81,3 @@ const send = async () => {
     </div>
   </div>
 </template>
-

@@ -1,40 +1,40 @@
 <script lang="ts" setup>
-import { useClickOutSide, useLockScroll } from '@@/composables'
-import { useMoreStore } from '@@/store'
-import { gsap } from 'gsap'
-import Avatar from '@@/components/Atoms/Avatar.vue'
-import BackDrop from './BackDrop.vue'
+import { gsap } from "gsap";
+import BackDrop from "./BackDrop.vue";
+import { useClickOutSide, useLockScroll } from "@@/composables";
+import { useMoreStore } from "@@/store";
+import Avatar from "@@/components/Atoms/Avatar.vue";
 
 const options = [
-  { name: 'Block' },
-  { name: 'Unfollow' },
-  { name: 'Report' },
-  { name: 'Ignore Friend Recomandation' },
-  { name: 'Send Profile To...' },
-]
+  { name: "Block" },
+  { name: "Unfollow" },
+  { name: "Report" },
+  { name: "Ignore Friend Recomandation" },
+  { name: "Send Profile To..." }
+];
 
-const moreRef = ref<HTMLDivElement | null>(null)
-const moreStore = useMoreStore()
-useLockScroll()
+const moreRef = ref<HTMLDivElement | null>(null);
+const moreStore = useMoreStore();
+useLockScroll();
 
 onMounted(() => {
   gsap.to(moreRef, {
     bottom: 0,
-    duration: 0.2,
-  })
-})
+    duration: 0.2
+  });
+});
 
 useClickOutSide(moreRef, () => {
-  moreStore.setHidden()
-})
+  moreStore.setHidden();
+});
 </script>
 
 <template>
   <div class="z-50">
     <BackDrop>
       <div
-        class="fixed right-1/2 -bottom-[100%] z-20 w-[85%] translate-x-1/2 text-[0.8rem] sm:w-[400px]"
         ref="moreRef"
+        class="fixed right-1/2 -bottom-[100%] z-20 w-[85%] translate-x-1/2 text-[0.8rem] sm:w-[400px]"
       >
         <div
           class="flex h-[60px] items-center justify-between rounded-[0.8rem] bg-c1 px-[20px] sm:px-[30px]"
@@ -69,8 +69,8 @@ useClickOutSide(moreRef, () => {
           </div>
         </div>
         <div
-          @click="moreStore.setHidden()"
           class="mt-[10px] flex h-[45px] cursor-pointer items-center justify-center rounded-[0.8rem] bg-white px-[30px] active:bg-blue-300 sm:h-[50px]"
+          @click="moreStore.setHidden()"
         >
           Done
         </div>

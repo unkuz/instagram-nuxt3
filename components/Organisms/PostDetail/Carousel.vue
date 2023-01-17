@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import ArrowIcon_ from '@@/assets/svg/arrow_icon.svg'
-import { useCarousel } from '@@/composables'
-import { gsap } from 'gsap'
-import { stopOtherVideoPlaying } from '@@/helpers'
-import Image from './Image.vue'
-import Like from './Like.vue'
-import Save from './Save.vue'
-import Unlike from './Unlike.vue'
-import Video from './Video.vue'
+import { gsap } from "gsap";
+import Image from "./Image.vue";
+import Like from "./Like.vue";
+import Save from "./Save.vue";
+import Unlike from "./Unlike.vue";
+import Video from "./Video.vue";
+import { stopOtherVideoPlaying } from "@@/helpers";
+import { useCarousel } from "@@/composables";
+import ArrowIcon_ from "@@/assets/svg/arrow_icon.svg";
 
 interface IProps {
   images: any
@@ -17,41 +17,41 @@ interface IProps {
   hasSaved: boolean
 }
 
-let initShowLikeSaved = $ref(false)
-const props = defineProps<IProps>()
-const emit = defineEmits(['currentIndexCarousel'])
-const containerMediaRef = $ref<HTMLDivElement | null>(null)
+let initShowLikeSaved = $ref(false);
+const props = defineProps<IProps>();
+const emit = defineEmits(["currentIndexCarousel"]);
+const containerMediaRef = $ref<HTMLDivElement | null>(null);
 
-const { next, prev, current } = useCarousel(containerMediaRef)
+const { next, prev, current } = useCarousel(containerMediaRef);
 
-const isShowPre = computed<boolean>(() => current !== 0)
-const isShowNext = computed<boolean>(() => current !== props.images.concat(props.videos).length - 1)
-const totalMedia = computed<number>(() => props.images.concat(props.videos).length)
+const isShowPre = computed<boolean>(() => current !== 0);
+const isShowNext = computed<boolean>(() => current !== props.images.concat(props.videos).length - 1);
+const totalMedia = computed<number>(() => props.images.concat(props.videos).length);
 
 watch(
   () => current,
   (idx) => {
-    emit('currentIndexCarousel', idx)
-    stopOtherVideoPlaying()
+    emit("currentIndexCarousel", idx);
+    stopOtherVideoPlaying();
     if (containerMediaRef) {
       gsap.to(containerMediaRef, {
         height: containerMediaRef.children[idx].children[0].clientHeight,
-        duration: 0,
-      })
+        duration: 0
+      });
     }
   }
-)
+);
 
 watch([() => props.hasSaved, () => props.hasLiked], () => {
-  initShowLikeSaved = true
-})
+  initShowLikeSaved = true;
+});
 </script>
 
 <template>
   <div class="relative overflow-hidden">
-    <div class="inline-flex min-w-full select-none" ref="containerMediaRef">
-      <Image v-for="i in images" :key="i.id" :src="i.src" :idPost="id" />
-      <Video v-for="(video, idx) in videos" :key="idx" :video="video" :idPost="id" />
+    <div ref="containerMediaRef" class="inline-flex min-w-full select-none">
+      <Image v-for="i in images" :key="i.id" :src="i.src" :id-post="id" />
+      <Video v-for="(video, idx) in videos" :key="idx" :video="video" :id-post="id" />
     </div>
     <div
       v-if="isShowPre"
@@ -77,9 +77,8 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
     <div v-show="initShowLikeSaved">
       <Unlike v-if="hasLiked" />
       <Like v-else />
-      <Save v-if="hasSaved" className="[&>path]:fill-c11 [&>path]:stroke-c11" />
-      <Save v-else className="[&>path]:fill-c2 [&>path]:stroke-c2" />
+      <Save v-if="hasSaved" class-name="[&>path]:fill-c11 [&>path]:stroke-c11" />
+      <Save v-else class-name="[&>path]:fill-c2 [&>path]:stroke-c2" />
     </div>
   </div>
 </template>
-

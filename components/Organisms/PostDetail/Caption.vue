@@ -5,14 +5,14 @@ interface IProps {
   tags: Array<string>
 }
 
-const { captionContent, tags } = defineProps<IProps>()
+const { captionContent, tags } = defineProps<IProps>();
 
 const hasCaptionOrTag = computed<boolean>(() => {
-  if (captionContent.trim() === '' || tags.length === 0) {
-    return false
+  if (captionContent.trim() === "" || tags.length === 0) {
+    return false;
   }
-  return true
-})
+  return true;
+});
 </script>
 
 <template>
@@ -20,11 +20,13 @@ const hasCaptionOrTag = computed<boolean>(() => {
     <div class="inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md dark:bg-c1 dark:text-c2">
       {{ userName }}
     </div>
-    <div class="mt-[5px] py-[5px]" v-if="hasCaptionOrTag">
+    <div v-if="hasCaptionOrTag" class="mt-[5px] py-[5px]">
       <div>{{ captionContent }}</div>
       <div class="mt-[5px] flex flex-wrap gap-[8px]">
-        <NuxtLink :to="`/explore/tags/${i}`" v-for="(i, idx) in tags" :key="idx">
-          <div class="text-purple-500" title="tag">{{ `#${i}` }}</div>
+        <NuxtLink v-for="(i, idx) in tags" :key="idx" :to="`/explore/tags/${i}`">
+          <div class="text-purple-500" title="tag">
+            {{ `#${i}` }}
+          </div>
         </NuxtLink>
       </div>
     </div>

@@ -1,7 +1,6 @@
-import { defineStore } from 'pinia'
-import { MOBILE_BREAK_POINT } from '@@/constants'
-import { SectionEnum } from '@@/constants'
-import { ScrollTypeEnum } from '@@/type'
+import { defineStore } from "pinia";
+import { MOBILE_BREAK_POINT, SectionEnum } from "@@/constants";
+import { ScrollTypeEnum } from "@@/type";
 
 interface IState {
   section: SectionEnum
@@ -12,37 +11,37 @@ interface IState {
   scroll: ScrollTypeEnum
 }
 
-export const useGlobalStore = defineStore('globalStore', {
+export const useGlobalStore = defineStore("globalStore", {
   state: (): IState => ({
     section: SectionEnum.HOME,
     prevSection: SectionEnum.NONE,
     clientWidth: 0,
     clientHeight: 0,
     transition: false,
-    scroll: ScrollTypeEnum.NONE,
+    scroll: ScrollTypeEnum.NONE
   }),
   getters: {
-    getIsMobile: (state) => state.clientWidth < MOBILE_BREAK_POINT,
-    getIsMobileAndSelectNewPost: (state) =>
+    getIsMobile: state => state.clientWidth < MOBILE_BREAK_POINT,
+    getIsMobileAndSelectNewPost: state =>
       state.clientWidth < MOBILE_BREAK_POINT && state.section === SectionEnum.NEW_POST,
     getIsShowHeader: (state) => {
-      return state.scroll === ScrollTypeEnum.UP
-    },
+      return state.scroll === ScrollTypeEnum.UP;
+    }
   },
   actions: {
-    setSection(section: SectionEnum) {
-      this.prevSection = this.section
-      this.section = section
+    setSection (section: SectionEnum) {
+      this.prevSection = this.section;
+      this.section = section;
     },
-    setClientSize(width: number, height: number) {
-      this.clientWidth = width
-      this.clientHeight = height
+    setClientSize (width: number, height: number) {
+      this.clientWidth = width;
+      this.clientHeight = height;
     },
-    setTransition(transition: boolean) {
-      this.transition = transition
+    setTransition (transition: boolean) {
+      this.transition = transition;
     },
-    setScroll(value: ScrollTypeEnum) {
-      this.scroll = value
-    },
-  },
-})
+    setScroll (value: ScrollTypeEnum) {
+      this.scroll = value;
+    }
+  }
+});

@@ -1,104 +1,104 @@
 <script lang="ts" setup>
-import ExpandIcon_ from '@@/assets/svg/full_screen.svg'
-import PlayIcon_ from '@@/assets/svg/play_icon.svg'
-import { useDoubleClick, usePercentVideo } from '@@/composables'
-import { useTimeLineStore } from '@@/store'
-import { gsap } from 'gsap'
-import { stopOtherVideoPlaying } from '~~/helpers'
-import LoadingIcon_ from '@@/assets/svg/Dual Ring-1s-200px.svg'
+import { gsap } from "gsap";
+import ExpandIcon_ from "@@/assets/svg/full_screen.svg";
+import PlayIcon_ from "@@/assets/svg/play_icon.svg";
+import { useDoubleClick, usePercentVideo } from "@@/composables";
+import { useTimeLineStore } from "@@/store";
+import { stopOtherVideoPlaying } from "~~/helpers";
+import LoadingIcon_ from "@@/assets/svg/Dual Ring-1s-200px.svg";
 
 interface IProps {
   video: any
   idPost: string
 }
 
-const props = defineProps<IProps>()
-const timelineStore = useTimeLineStore()
-const videoRef = ref<HTMLVideoElement | null>(null)
-const containerRef = ref<HTMLVideoElement | null>(null)
-const progressBarRef = ref<HTMLDivElement | null>(null)
-const isVideoPlay = ref<boolean>(false)
-const isFullScreen = ref<boolean>(false)
-const isLoading = ref<boolean>(true)
+const props = defineProps<IProps>();
+const timelineStore = useTimeLineStore();
+const videoRef = ref<HTMLVideoElement | null>(null);
+const containerRef = ref<HTMLVideoElement | null>(null);
+const progressBarRef = ref<HTMLDivElement | null>(null);
+const isVideoPlay = ref<boolean>(false);
+const isFullScreen = ref<boolean>(false);
+const isLoading = ref<boolean>(true);
 
 const togglePlay = () => {
   if (videoRef.value) {
     if (videoRef.value.paused) {
-      return play()
+      return play();
     }
-    videoRef.value.pause()
+    videoRef.value.pause();
   }
-}
+};
 
 const toggleLike = () => {
-  timelineStore.setToggleLike(props.idPost)
-}
+  timelineStore.setToggleLike(props.idPost);
+};
 
-useDoubleClick(videoRef, togglePlay, toggleLike)
+useDoubleClick(videoRef, togglePlay, toggleLike);
 
-const { percent } = usePercentVideo(videoRef)
+const { percent } = usePercentVideo(videoRef);
 
 const updateTime = () => {
   if (videoRef.value) {
-    isVideoPlay.value = !videoRef.value.paused
+    isVideoPlay.value = !videoRef.value.paused;
   }
-}
+};
 
 const play = () => {
-  stopOtherVideoPlaying()
-  videoRef.value && videoRef.value.play()
-}
+  stopOtherVideoPlaying();
+  videoRef.value && videoRef.value.play();
+};
 
 watch(percent, () => {
-  const { clientWidth: widthParent } = progressBarRef.value!.parentElement!
+  const { clientWidth: widthParent } = progressBarRef.value!.parentElement!;
   gsap.to(progressBarRef.value!, {
     width: percent.value * widthParent,
-    duration: 0,
-  })
-})
+    duration: 0
+  });
+});
 
 const scrub = (e: MouseEvent) => {
   const scrubTime =
-    (e.offsetX / progressBarRef.value!.parentElement!.offsetWidth) * videoRef.value!!.duration
-  videoRef.value!.currentTime = scrubTime
-}
+    (e.offsetX / progressBarRef.value!.parentElement!.offsetWidth) * videoRef.value!.duration;
+  videoRef.value!.currentTime = scrubTime;
+};
 
-let timerLoadingCheck: NodeJS.Timer
+let timerLoadingCheck: NodeJS.Timer;
 
 onMounted(() => {
-  videoRef.value!.addEventListener('timeupdate', updateTime)
-  progressBarRef.value!.parentElement!.addEventListener('click', scrub)
+  videoRef.value!.addEventListener("timeupdate", updateTime);
+  progressBarRef.value!.parentElement!.addEventListener("click", scrub);
 
   timerLoadingCheck = setInterval(() => {
     if (videoRef.value) {
-      const { readyState } = videoRef.value
-      isLoading.value = readyState <= 2
+      const { readyState } = videoRef.value;
+      isLoading.value = readyState <= 2;
     }
-  }, 100)
-})
+  }, 100);
+});
 
 onBeforeUnmount(() => {
-  clearInterval(timerLoadingCheck)
-  progressBarRef.value!.parentElement!.removeEventListener('click', scrub)
-})
+  clearInterval(timerLoadingCheck);
+  progressBarRef.value!.parentElement!.removeEventListener("click", scrub);
+});
 
 const toggleFullScreen = (e: MouseEvent) => {
-  e.preventDefault()
+  e.preventDefault();
   if (document.fullscreenElement) {
-    return document.exitFullscreen()
+    return document.exitFullscreen();
   }
-  containerRef.value!.requestFullscreen()
-}
+  containerRef.value!.requestFullscreen();
+};
 
 onMounted(() => {
-  containerRef.value!.addEventListener('fullscreenchange', (e) => {
+  containerRef.value!.addEventListener("fullscreenchange", (e) => {
     if (document.fullscreenElement) {
-      isFullScreen.value === true
+      isFullScreen.value === true;
     } else {
-      isFullScreen.value === false
+      isFullScreen.value === false;
     }
-  })
-})
+  });
+});
 </script>
 
 <template>
@@ -116,7 +116,7 @@ onMounted(() => {
       loop
       preload="metadata"
     />
-    <div class="absolute inset-0 flex items-center justify-center bg-c20/40" v-show="isLoading">
+    <div v-show="isLoading" class="absolute inset-0 flex items-center justify-center bg-c20/40">
       <LoadingIcon_ class="w-[10%] !bg-transparent" />
     </div>
 
@@ -127,7 +127,7 @@ onMounted(() => {
           isVideoPlay ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100',
         ]"
       >
-        <PlayIcon_ @click="play" class="!aspect-square !h-[80px] fill-c4" />
+        <PlayIcon_ class="!aspect-square !h-[80px] fill-c4" @click="play" />
       </div>
     </div>
     <div
@@ -138,13 +138,13 @@ onMounted(() => {
         },
       ]"
     >
-      <div ref="progressBarRef" class="h-full w-0"></div>
+      <div ref="progressBarRef" class="h-full w-0" />
     </div>
     <div class="absolute bottom-[10px] right-[10px] flex gap-[15px]">
       <div title="Full screen">
         <ExpandIcon_
-          @click="toggleFullScreen"
           class="hidden w-[20px] cursor-pointer fill-c1 text-c1 group-hover:block dark:fill-black"
+          @click="toggleFullScreen"
         />
       </div>
     </div>

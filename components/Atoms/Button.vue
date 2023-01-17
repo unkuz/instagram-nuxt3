@@ -4,17 +4,16 @@ interface IProps {
 }
 
 withDefaults(defineProps<IProps>(), {
-  text: '',
-})
+  text: ""
+});
 
-const emit = defineEmits(['click'])
+const emit = defineEmits(["click"]);
 </script>
 <template>
   <div
-    @click="emit('click')"
     class="inline-block cursor-pointer rounded-[10px] bg-c5 py-[3px] px-[10px]"
+    @click="emit('click')"
   >
     <span>{{ text }}</span>
   </div>
 </template>
-

@@ -1,9 +1,9 @@
 export const usePrelude = () => {
-  let isShowPrelude = $ref(true)
+  let isShowPrelude = $ref(true);
 
   onMounted(() => {
-    document.fonts.ready.then(() => (isShowPrelude = false))
-  })
+    document.fonts.ready.then(() => (isShowPrelude = false));
+  });
 
-  return $$({ isShowPrelude })
-}
+  return $$({ isShowPrelude });
+};

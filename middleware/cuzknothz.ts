@@ -1,3 +1,3 @@
-import { APP_ROUTES } from '@@/routes'
+import { APP_ROUTES } from "@@/routes";
 
-export default defineNuxtRouteMiddleware(() => navigateTo(APP_ROUTES.HOME))
+export default defineNuxtRouteMiddleware(() => navigateTo(APP_ROUTES.HOME));

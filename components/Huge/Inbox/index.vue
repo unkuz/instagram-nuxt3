@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import DownIcon_ from '@@/assets/svg/down_icon_458438i.svg'
-import Avatar from '@@/components/Atoms/Avatar.vue'
-import StatusUser from '@@/components/Atoms/StatusUser.vue'
-import Search from '@@/components/Huge/Inbox/Search/index.vue'
-import { SizeAvatarEnum } from '@@/type'
+import DownIcon_ from "@@/assets/svg/down_icon_458438i.svg";
+import Avatar from "@@/components/Atoms/Avatar.vue";
+import StatusUser from "@@/components/Atoms/StatusUser.vue";
+import Search from "@@/components/Huge/Inbox/Search/index.vue";
+import { SizeAvatarEnum } from "@@/type";
 
-const { S, T, M } = SizeAvatarEnum
+const { S, T, M } = SizeAvatarEnum;
 
 enum InboxTypeEnum {
   UnRead,
@@ -13,19 +13,19 @@ enum InboxTypeEnum {
   AllMessages,
 }
 
-let leftExpan = $ref<InboxTypeEnum | null>(InboxTypeEnum.UnRead)
+let leftExpan = $ref<InboxTypeEnum | null>(InboxTypeEnum.UnRead);
 
 const isExpand = (section: InboxTypeEnum) => {
-  return leftExpan === section
-}
+  return leftExpan === section;
+};
 
 const setExpand = (section: InboxTypeEnum) => {
   if (leftExpan === section) {
-    leftExpan = null
+    leftExpan = null;
   } else {
-    leftExpan = section
+    leftExpan = section;
   }
-}
+};
 </script>
 
 <template>
@@ -57,8 +57,10 @@ const setExpand = (section: InboxTypeEnum) => {
               <Avatar :size="S" url="/image/91480011.jpg" />
               <div class="flex-1">
                 <div class="flex items-center gap-[5px]">
-                  <div class="line-clamp-1">underfined</div>
-                  <StatusUser :isActive="true" />
+                  <div class="line-clamp-1">
+                    underfined
+                  </div>
+                  <StatusUser :is-active="true" />
                 </div>
 
                 <div class="line-clamp-2">
@@ -67,7 +69,9 @@ const setExpand = (section: InboxTypeEnum) => {
                   placeat nobis veritatis quas quibusdam officia illum fugiat voluptatem?
                 </div>
               </div>
-              <p class="text-[0.7rem]">12:30</p>
+              <p class="text-[0.7rem]">
+                12:30
+              </p>
             </div>
           </div>
         </div>
@@ -84,7 +88,7 @@ const setExpand = (section: InboxTypeEnum) => {
             class="flex-1 bg-transparent focus:outline-none"
             type="text"
             value="Fantastic? 😂😁😁😀"
-          />
+          >
           <div class="flex items-center justify-between">
             <div>Emoji</div>
             <div>Attachment</div>
@@ -100,27 +104,31 @@ const setExpand = (section: InboxTypeEnum) => {
             <Avatar :size="S" url="/image/91480011.jpg" />
             <div>
               <div class="flex items-center gap-[5px]">
-                <p class="line-clamp-1">Lorem,</p>
-                <StatusUser :isActive="false" />
+                <p class="line-clamp-1">
+                  Lorem,
+                </p>
+                <StatusUser :is-active="false" />
               </div>
-              <div class="line-clamp-1">+39271649815729</div>
+              <div class="line-clamp-1">
+                +39271649815729
+              </div>
             </div>
           </div>
           <div class="mt-[10px] flex justify-between">
-            <div class="h-[30px] w-[30px] rounded-[10px] bg-purple-500"></div>
-            <div class="h-[30px] w-[30px] rounded-[10px] bg-purple-500"></div>
-            <div class="h-[30px] w-[30px] rounded-[10px] bg-purple-500"></div>
-            <div class="h-[30px] w-[30px] rounded-[10px] bg-purple-500"></div>
+            <div class="h-[30px] w-[30px] rounded-[10px] bg-purple-500" />
+            <div class="h-[30px] w-[30px] rounded-[10px] bg-purple-500" />
+            <div class="h-[30px] w-[30px] rounded-[10px] bg-purple-500" />
+            <div class="h-[30px] w-[30px] rounded-[10px] bg-purple-500" />
           </div>
           <p class="mt-[10px] text-[0.8rem] line-clamp-5">
-            <br />
+            <br>
           </p>
         </div>
         <div class="mt-[10px] flex flex-col gap-[10px]">
-          <div class="h-[60px] w-full rounded-[10px] bg-gray-400"></div>
-          <div class="h-[60px] w-full rounded-[10px] bg-gray-400"></div>
-          <div class="h-[60px] w-full rounded-[10px] bg-gray-400"></div>
-          <div class="h-[60px] w-full rounded-[10px] bg-gray-400"></div>
+          <div class="h-[60px] w-full rounded-[10px] bg-gray-400" />
+          <div class="h-[60px] w-full rounded-[10px] bg-gray-400" />
+          <div class="h-[60px] w-full rounded-[10px] bg-gray-400" />
+          <div class="h-[60px] w-full rounded-[10px] bg-gray-400" />
         </div>
       </div>
     </div>

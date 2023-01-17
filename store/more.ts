@@ -1,17 +1,17 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-export const useMoreStore = defineStore('more', {
+export const useMoreStore = defineStore("more", {
   state: () => ({ isShow: false }),
   getters: {},
   actions: {
-    setHidden() {
-      this.isShow = false
+    setHidden () {
+      this.isShow = false;
     },
-    toggleSHow() {
-      this.isShow = !this.isShow
+    toggleSHow () {
+      this.isShow = !this.isShow;
     },
-    setShow() {
-      this.isShow = true
-    },
-  },
-})
+    setShow () {
+      this.isShow = true;
+    }
+  }
+});

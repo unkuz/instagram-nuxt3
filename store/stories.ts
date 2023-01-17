@@ -1,5 +1,5 @@
-import { defineStore } from 'pinia'
-import { IStory } from '@@/models'
+import { defineStore } from "pinia";
+import { IStory } from "@@/models";
 
 interface IState {
   data: IStory[]
@@ -7,16 +7,16 @@ interface IState {
   errors: Record<string, string>
 }
 
-export const useStoriesStore = defineStore('stories', {
+export const useStoriesStore = defineStore("stories", {
   state: () => ({
     data: [] as IStory[],
     hasErr: false,
-    errors: {},
+    errors: {}
   }),
   getters: {},
   actions: {
-    save(_data: IStory[]) {
-      this.data = _data
-    },
-  },
-})
+    save (_data: IStory[]) {
+      this.data = _data;
+    }
+  }
+});

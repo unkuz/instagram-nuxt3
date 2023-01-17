@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { SizeAvatarEnum } from '@@/type'
-import { QUALITY_IMAGE } from '@@/configs'
+import { SizeAvatarEnum } from "@@/type";
+import { QUALITY_IMAGE } from "@@/configs";
 
-const { T, S, M, L } = SizeAvatarEnum
+const { T, S, M, L } = SizeAvatarEnum;
 
 interface IProps {
   url: string
@@ -10,7 +10,7 @@ interface IProps {
   quality?: number
 }
 
-defineProps<IProps>()
+defineProps<IProps>();
 </script>
 <template>
   <nuxt-img
@@ -27,4 +27,3 @@ defineProps<IProps>()
     :quality="quality"
   />
 </template>
-

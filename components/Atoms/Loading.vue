@@ -1,13 +1,13 @@
 <script setup>
-import LoadingIcon_ from '@@/assets/svg/Ripple-1s-200px.svg';
-import BackDrop from '@@/components/Utils/BackDrop.vue';
+import LoadingIcon_ from "@@/assets/svg/Ripple-1s-200px.svg";
+import BackDrop from "@@/components/Utils/BackDrop.vue";
 
-const nuxtApp = useNuxtApp()
+const nuxtApp = useNuxtApp();
 
-let isShow = $ref(false)
+let isShow = $ref(false);
 
-nuxtApp.hook('page:start', () => (isShow = true))
-nuxtApp.hook('page:finish', () => (isShow = false))
+nuxtApp.hook("page:start", () => (isShow = true));
+nuxtApp.hook("page:finish", () => (isShow = false));
 </script>
 <template>
   <div v-show="isShow">
@@ -16,4 +16,3 @@ nuxtApp.hook('page:finish', () => (isShow = false))
     </BackDrop>
   </div>
 </template>
-

@@ -1,11 +1,11 @@
-import { Ref } from 'vue'
+import { Ref } from "vue";
 
 export const useWatchWithMounted = (dependency: Ref<any>, callback: Function) => {
   onMounted(() => {
-    callback()
-  })
+    callback();
+  });
 
   watch(dependency, () => {
-    callback()
-  })
-}
+    callback();
+  });
+};
