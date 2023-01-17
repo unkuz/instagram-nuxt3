@@ -2863,6 +2863,17 @@
   resolved "https://registry.yarnpkg.com/@twicpics/components/-/components-0.14.2.tgz#64c3d3b252488a896b8e9a75223e88d81f0e24a7"
   integrity sha512-6b1P8cZI10xriUR3lT7h7TEnAFnn1j/7xrXkOlbRp1TvSzGnqeEqKNMryvmjoNcUm7DDtdODY4dMecI5S6QOBw==
 
+"@types/@sidebase/nuxt-auth":
+  version "0.3.4"
+  resolved "https://codeload.github.com/sidebase/nuxt-auth/tar.gz/1d30d6e7c3a515beb748fee3a02bbcf9652e3bac"
+  dependencies:
+    "@nuxt/kit" "^3.0.0"
+    defu "^6.1.1"
+    next-auth "4.18.0"
+    nitropack "^1.0.0"
+    requrl "^3.0.2"
+    ufo "^1.0.1"
+
 "@types/cacheable-request@^6.0.1":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@types/cacheable-request/-/cacheable-request-6.0.2.tgz#c324da0197de0a98a2312156536ae262429ff6b9"

@@ -10,10 +10,7 @@ interface IProps {
   quality?: number
 }
 
-withDefaults(defineProps<IProps>(), {
-  size: S,
-  quality: QUALITY_IMAGE.AVATAR,
-})
+defineProps<IProps>()
 </script>
 <template>
   <nuxt-img
