@@ -7,7 +7,7 @@ const acceptCookieUse = () => {
 </script>
 <template>
     <div
-        class="fixed bottom-[40px] left-[40px] hidden w-[240px] rounded-[0.5rem] bg-c1 p-[40px_24px_24px_24px] shadow-md xl:block"
+        class="fixed bottom-[40px] left-[40px] hidden w-[240px] rounded-[0.5rem] bg-c1 p-[40px_24px_24px_24px] shadow-md md:block"
     >
         <CookieIcon_ class="absolute -top-[23px] right-1/2 translate-x-1/2" />
         <div class="text-[0.8rem]">
