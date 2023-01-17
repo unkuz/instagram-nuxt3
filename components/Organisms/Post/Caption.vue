@@ -2,7 +2,7 @@
 interface IProps {
   userName: string
   captionContent: string
-  tags: Array<string>
+  tags: string[]
 }
 
 const { captionContent, tags } = defineProps<IProps>()
@@ -30,3 +30,4 @@ const hasCaptionOrTag = computed<boolean>(() => {
     </div>
   </div>
 </template>
+

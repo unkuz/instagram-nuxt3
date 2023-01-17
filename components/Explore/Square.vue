@@ -7,7 +7,7 @@ interface IProps {
   isBig?: boolean
 }
 
-defineProps<IProps>()
+withDefaults(defineProps<IProps>(), { isBig: false })
 </script>
 
 <template>
@@ -33,3 +33,4 @@ defineProps<IProps>()
     <div class="absolute inset-0 hidden bg-black/20 group-hover:block"></div>
   </div>
 </template>
+

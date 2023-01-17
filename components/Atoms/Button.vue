@@ -1,9 +1,11 @@
 <script setup lang="ts">
 interface IProps {
-  text: string
+  text?: string
 }
 
-defineProps<IProps>()
+withDefaults(defineProps<IProps>(), {
+  text: '',
+})
 
 const emit = defineEmits(['click'])
 </script>
@@ -15,3 +17,4 @@ const emit = defineEmits(['click'])
     <span>{{ text }}</span>
   </div>
 </template>
+

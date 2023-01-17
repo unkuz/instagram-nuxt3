@@ -3,7 +3,9 @@ interface IProps {
   isActive?: boolean
 }
 
-defineProps<IProps>()
+withDefaults(defineProps<IProps>(), {
+  isActive: false,
+})
 </script>
 
 <template>
@@ -16,3 +18,4 @@ defineProps<IProps>()
     ]"
   ></div>
 </template>
+

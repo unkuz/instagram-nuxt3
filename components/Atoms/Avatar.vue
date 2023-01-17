@@ -7,9 +7,13 @@ const { T, S, M, L } = SizeAvatarEnum
 interface IProps {
   url: string
   size?: SizeAvatarEnum
+  quality?: number
 }
 
-const { size, url } = defineProps<IProps>()
+withDefaults(defineProps<IProps>(), {
+  size: S,
+  quality: QUALITY_IMAGE.AVATAR,
+})
 </script>
 <template>
   <nuxt-img
@@ -23,6 +27,7 @@ const { size, url } = defineProps<IProps>()
       },
     ]"
     :src="url"
-    :quality="QUALITY_IMAGE.AVATAR"
+    :quality="quality"
   />
 </template>
+
