@@ -12,6 +12,9 @@ export default defineNuxtConfig({
     'nuxt-lodash',
     '@nuxtjs/fontaine',
     '@sidebase/nuxt-auth',
+    '@nuxtjs/i18n',
+    '@nuxt/content',
+    '@nuxtjs/device',
     // 'nuxt-security',
     // '@nuxtjs/algolia',
     // '@twicpics/components/nuxt3',
@@ -19,8 +22,8 @@ export default defineNuxtConfig({
     // '@nuxtjs/fontaine',
     // '@sidebase/nuxt-auth',
     // '@morev/vue-transitions/nuxt',
-    // '@nuxtjs/i18n',
   ],
+  extends: ['nuxt-seo-kit'],
   app: {
     head: {
       meta: [
@@ -127,6 +130,12 @@ export default defineNuxtConfig({
       // Whether to allow access to 404 pages without authentication. Set this to `false` to force users to sign-in before seeing `404` pages. Setting this to false may lead to vue-router problems (as the target page does not exist)
       allow404WithoutAuth: true,
     },
+  },
+  i18n: {
+    /* module options */
+  },
+  content: {
+    // https://content.nuxtjs.org/api/configuration
   },
 })
 
