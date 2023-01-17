@@ -76,9 +76,8 @@ export default defineNuxtConfig({
         presets: {},
     },
     vite: {
-        plugins: [svgLoader({})
-          // , eslintPlugin()
-        ],
+        // plugins: [svgLoader({}), eslintPlugin()],
+        plugins: [svgLoader({})],
         // build: {
         //   rollupOptions: {
         //     output: {

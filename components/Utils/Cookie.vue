@@ -1,13 +1,31 @@
 <script setup lang="ts">
 import CookieIcon_ from '@@/assets/svg/cookie.svg'
 import Button from '@@/components/Atoms/Button.vue'
+import { gsap } from 'gsap'
+
+const containerRef = $ref<HTMLDivElement | null>(null)
+let tl = gsap.timeline({})
+
+const animate = () =>
+    tl.to(containerRef, {
+        opacity: 0,
+    })
+
 const acceptCookieUse = () => {
+    animate()
     console.log('HEHE')
 }
+
+onMounted(() => {
+    tl.to(containerRef, {
+        height: 'auto',
+    })
+})
 </script>
 <template>
     <div
-        class="fixed bottom-[40px] left-[40px] hidden w-[240px] rounded-[0.5rem] bg-c1 p-[40px_24px_24px_24px] shadow-md md:block"
+        ref="containerRef"
+        class="fixed bottom-[40px] left-[40px] hidden h-0 w-[240px] rounded-[0.5rem] bg-c1 p-[40px_24px_24px_24px] shadow-md md:block"
     >
         <CookieIcon_ class="absolute -top-[23px] right-1/2 translate-x-1/2" />
         <div class="text-[0.8rem]">
@@ -18,7 +36,7 @@ const acceptCookieUse = () => {
             </p>
             <div class="mt-[10px] flex w-full items-center justify-between">
                 <NuxtLink to="/privacy-policy" class="cursor-pointer">
-                    Privacy Policy
+                    <span @click="animate">Privacy Policy</span>
                 </NuxtLink>
                 <Button
                     text="OK"
