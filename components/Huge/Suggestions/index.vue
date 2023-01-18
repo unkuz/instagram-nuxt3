@@ -6,6 +6,7 @@ import { TSuggestion } from '@@/models'
 import { useAuthStore } from '@@/store'
 import { SizeAvatarEnum } from '@@/type'
 import { getCurrentYear } from '@@/utils'
+import { GITHUB_AUTHOR_LINK } from '@@/configs'
 
 interface IProps {
     suggestion: TSuggestion[]
@@ -91,7 +92,7 @@ const authorText = 'cuzknothz'
             class="flex select-none flex-col items-center gap-[5px] text-[0.8rem]"
         >
             <div>© <span v-html="getCurrentYear()" /> Instagram clone by</div>
-            <NuxtLink to="https://github.com/cuzknothz" target="_blank">
+            <NuxtLink :to="GITHUB_AUTHOR_LINK" target="_blank">
                 <div
                     class="cursor-pointer font-august text-[1.25rem] uppercase tracking-wider text-c2 drop-shadow-md dark:text-c1"
                 >

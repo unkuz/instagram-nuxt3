@@ -45,7 +45,9 @@ export default defineNuxtConfig({
             title: 'Instagram',
             script: [
                 {
-                    src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1817809598132751',
+                    src: `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${
+                        import.meta.env.GOOGLE_ADSENSE_CLIENT_CA_PUB
+                    }`,
                     crossorigin: 'anonymous',
                     async: true,
                 },
