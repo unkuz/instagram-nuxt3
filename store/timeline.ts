@@ -36,5 +36,22 @@ export const useTimeLineStore = defineStore('timeline', {
                 }
             })
         },
+        comment(id, { text, userName, userImg, id: commentId }) {
+            const idx = this.data.findIndex((i) => i.id === id)
+            this.data[idx].comments.unshift({
+                text,
+                created_at: new Date().getTime(),
+                user: {
+                    pk: '',
+                    username: userName,
+                    full_name: '',
+                    is_private: '',
+                    profile_pic_url: userImg,
+                },
+                comment_like_count: 0,
+                reply: [],
+                id: commentId,
+            })
+        },
     },
 })

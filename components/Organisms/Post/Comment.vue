@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import Emoji from '@@/components/Utils/Emoji.vue'
 import { useClickOutSide } from '@@/composables'
-import { useAuthStore, usePostDetailStore } from '@@/store'
+import { useAuthStore, usePostDetailStore, useTimeLineStore } from '@@/store'
 
 interface IProps {
     id: string
@@ -14,6 +14,7 @@ let isShowEmoji = $ref(false)
 const textBoxRef = $ref<HTMLTextAreaElement | null>(null)
 let commentValueText = $ref('')
 const viewPostDetailStore = usePostDetailStore()
+const timeLineStore = useTimeLineStore()
 const authStore = useAuthStore()
 
 const emojiAdd = (value: string) => (commentValueText += value)
@@ -23,7 +24,7 @@ useClickOutSide(emojiRef, () => (isShowEmoji = false))
 const toggleShowEmoji = () => (isShowEmoji = !isShowEmoji)
 
 const send = async () => {
-    await viewPostDetailStore.comment(id, {
+    await timeLineStore.comment(id, {
         text: commentValueText,
         userName: authStore.data.userName,
         userImg: authStore.data.avatar,
