@@ -1,14 +1,14 @@
 export const timeLine = [
     {
-        created_at: '2023-01-15 13:20',
+        created_at: '2023-01-18 9:20',
         id: '283975891eytru',
         location: {
             short_name: 'Copenhagen',
         },
         comments: [
             {
-                text: 'My new track No Stopping Love is out now on NCS and I wanted to show you guys the lyric video of the track! Hope you like it!',
-                created_at: '2022-12-19 23:45',
+                text: 'Ayee thanks for the upload man!',
+                created_at: '2022-01-18 15:30',
                 user: {
                     pk: 20433830474,
                     username: 'DirtyPalm',
@@ -25,7 +25,7 @@ export const timeLine = [
             videos: [
                 {
                     id: 2,
-                    src: '/video/Dirty Palm - No Stopping Love (Lyrics)-oFAwKSMWSzA-720p-1657457147293.mp4',
+                    src: '/video/Dirty Palm & Conor Ross - Flowers (ft. Chandler Blasé).mp4',
                 },
             ],
         },
@@ -41,9 +41,9 @@ export const timeLine = [
         },
         like_count: 4650,
         has_liked: true,
-        caption_text: 'Dirty Palm - No Stopping Love',
+        caption_text: 'Dirty Palm & Conor Ross - Flowers ',
         is_seen: true,
-        tags: ['Dirty Palm', 'No Stopping Love'],
+        tags: ['Dirty Palm', 'Flowers'],
         is_saved: true,
     },
 ]

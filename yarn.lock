@@ -4093,10 +4093,10 @@ axios@^0.25.0:
   dependencies:
     follow-redirects "^1.14.7"
 
-axios@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.2.2.tgz#72681724c6e6a43a9fea860fc558127dbe32f9f1"
-  integrity sha512-bz/J4gS2S3I7mpN/YZfGFTqhXTYzRho8Ay38w2otuuDR322KzFIWm/4W2K6gIwvWaws5n+mnb7D1lN9uD+QH6Q==
+axios@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.2.3.tgz#31a3d824c0ebf754a004b585e5f04a5f87e6c4ff"
+  integrity sha512-pdDkMYJeuXLZ6Xj/Q5J3Phpe+jbGdsSzlQaFVkMQzRUL05+6+tetX8TV3p4HrU4kzuO9bt+io/yGQxuyxA/xcw==
   dependencies:
     follow-redirects "^1.15.0"
     form-data "^4.0.0"
@@ -10435,10 +10435,10 @@ nuxt-simple-sitemap@^0.5.9:
     sitemap "^7.1.1"
     ufo "^1.0.1"
 
-nuxt-typed-router@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-2.0.2.tgz#229839e4467b84892e17345fc9381f964004d531"
-  integrity sha512-9M9+iqKV3SkM9qeqh1vYnr2oPtK1Zypf97qFaB1Qs05fjtsrRF9re62U2JCiO5Q7KGieT/H+CCFyX/O6yby/hg==
+nuxt-typed-router@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-2.0.3.tgz#125297e963c51592d4af819198b202c8ec736a3f"
+  integrity sha512-seJ8hJ7EwDkXal64USkXMd7ilPko4d1mLKigiSshbqwpvVtDpHtUxFZB4S2aB6mxqmNHjZKoSB8gl3I6m9rPsw==
   dependencies:
     "@nuxt/kit" "3.0.0"
     chalk "^5.2.0"
