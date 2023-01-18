@@ -21,7 +21,6 @@ const { section, getIsMobile: isMobile } = storeToRefs(useGlobalStore())
 const { isShow: isShowMore } = storeToRefs(useMoreStore())
 const { darkMode: isDarkMode } = storeToRefs(useThemeStore())
 const { isShowPrelude } = usePrelude()
-console.log('import.meta.env.VITE_TEST_VAR', import.meta.env.VITE_TEST_VAR)
 
 registerSeviceWorkerPWA()
 useScrollBarTheme()
@@ -39,7 +38,7 @@ useHead({
         :class="[
             'scroll-smooth font-quicksan',
             {
-                'dark ': isDarkMode,
+                ' dark ': isDarkMode,
             },
         ]"
     >

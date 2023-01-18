@@ -88,6 +88,9 @@ export default defineNuxtConfig({
         //     },
         //   },
         // },
+        build: {
+            chunkSizeWarningLimit: 1600,
+        },
     },
     // twicpics: {
     //   domain: `https://<your-domain>.twic.pics`,
