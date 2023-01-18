@@ -13,7 +13,7 @@ import {
 } from '@@/composables'
 import { SectionEnum } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
-// import Luv from '@@/lotties/luv.lotties.json'
+import Luv from '@@/lotties/luv.lotties.json'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
 import { storeToRefs } from 'pinia'
 
@@ -63,8 +63,11 @@ useHead({
             </div>
         </div>
         <!-- <ClientOnly>
-      <Vue3Lottie :animationData="Luv" class="pointer-events-none absolute inset-0 h-full w-full">
-      </Vue3Lottie>
-    </ClientOnly> -->
+            <Vue3Lottie
+                :animationData="Luv"
+                class="pointer-events-none fixed inset-0 h-full w-full"
+            >
+            </Vue3Lottie>
+        </ClientOnly> -->
     </div>
 </template>

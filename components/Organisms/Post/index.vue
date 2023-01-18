@@ -75,7 +75,6 @@ const mediaArr = $computed(() =>
     props.carousel_media.images.concat(props.carousel_media.videos)
 )
 const { key } = useForceRenderTimer()
-const scrollToComment = () => (isShowComment = true)
 </script>
 
 <template>
@@ -104,7 +103,6 @@ const scrollToComment = () => (isShowComment = true)
                 <LikeCommentCount
                     :like-count="like_count"
                     :comment-count="comments.length"
-                    @scrollToComment="scrollToComment"
                 />
                 <Caption
                     :user-name="user.username"
@@ -113,7 +111,7 @@ const scrollToComment = () => (isShowComment = true)
                 />
                 <div
                     :key="key"
-                    class="m-[0px_0px_0px_0px] h-[18px] text-[0.8rem] text-c3 dark:text-c21"
+                    class="m-[0px_0px_0px_0px] h-[18px] text-c3 dark:text-c21 md:text-[0.8rem]"
                 >
                     {{ moment(created_at).fromNow() }}
                 </div>

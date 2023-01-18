@@ -14,7 +14,7 @@ const { S } = SizeAvatarEnum
 </script>
 
 <template>
-    <div :id="`post_detail_${comment.id}`" class="mb-[10px] text-[0.85rem]">
+    <div :id="`post_detail_${comment.id}`" class="mb-[10px] md:text-[0.85rem]">
         <div class="relative my-[4px] rounded-md">
             <div class="mx-[10px] flex items-center gap-[10px]">
                 <NuxtLink :to="`/${comment.user.username}`">
@@ -27,7 +27,7 @@ const { S } = SizeAvatarEnum
                         {{ comment.user.username }}
                     </p>
                 </NuxtLink>
-                <p :key="key" class="text-[0.8rem] text-c3">
+                <p :key="key" class="text-[0.8rem] text-c3 dark:text-c21">
                     {{ moment(comment.created_at).fromNow() }}
                 </p>
             </div>
@@ -63,7 +63,7 @@ const { S } = SizeAvatarEnum
                         {{ user.username }}
                     </p>
                 </NuxtLink>
-                <p :key="key" class="text-[0.8rem] text-[#666]">
+                <p :key="key" class="text-[0.8rem] text-c3 dark:text-c21">
                     {{ moment(created_at).fromNow() }}
                 </p>
             </div>
