@@ -15,7 +15,7 @@ import { ITimeLine } from '@@/models'
 
 useLockScroll()
 
-const postRef = $ref<HTMLDivElement | null>(null)
+const postRef = ref<HTMLDivElement | null>(null)
 
 onMounted(() => {
     gsap.to(postRef, {
@@ -47,20 +47,20 @@ const images = computed<
         src: string
     }[]
 >(() => postDetailStore.post.carousel_media.images)
-const userName = $computed<string>(() => postDetailStore.post.user.username)
+const userName = $computed(() => postDetailStore.post.user.username)
 const videos = $computed(() => postDetailStore.post.carousel_media.videos)
-const hasLiked = $computed<boolean>(() => postDetailStore.post.has_liked)
-const id = $computed<string>(() => postDetailStore.post.id)
-const likeCount = $computed<number>(() => postDetailStore.post.like_count)
-const createdAt = $computed<string>(() => postDetailStore.post.created_at)
+const hasLiked = $computed(() => postDetailStore.post.has_liked)
+const id = $computed(() => postDetailStore.post.id)
+const likeCount = $computed(() => postDetailStore.post.like_count)
+const createdAt = $computed(() => postDetailStore.post.created_at)
 const commentCount = $computed(() => postDetailStore.post.comments.length)
-const captiontext = $computed<string>(() => postDetailStore.post.caption_text)
-const tags = $computed<string[]>(() => postDetailStore.post.tags)
+const captiontext = $computed(() => postDetailStore.post.caption_text)
+const tags = $computed(() => postDetailStore.post.tags)
 const comments = $computed(() => postDetailStore.post.comments)
-const hasComment = $computed<boolean>(
+const hasComment = $computed(
     () => postDetailStore.post.comments.length > 0
 )
-const isSaved = $computed<boolean>(() => postDetailStore.post.is_saved)
+const isSaved = $computed(() => postDetailStore.post.is_saved)
 
 const setCurrent = (value: number) => (currentIdx = value)
 

@@ -8,7 +8,7 @@ definePageMeta({
 
 const authStore = useAuthStore()
 
-const isLogin = computed<boolean>(() => authStore.data.isLogin)
+const isLogin = computed(() => authStore.data.isLogin)
 
 useWatchWithMounted(isLogin, () => {
     if (isLogin.value) {

@@ -15,16 +15,12 @@ import { SectionEnum } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
 // import Luv from '@@/lotties/luv.lotties.json'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
+import { storeToRefs } from 'pinia'
 
-const globalStore = useGlobalStore()
-const moreStore = useMoreStore()
-const themeStore = useThemeStore()
+const { section, getIsMobile: isMobile } = storeToRefs(useGlobalStore())
+const { isShow: isShowMore } = storeToRefs(useMoreStore())
+const { darkMode: isDarkMode } = storeToRefs(useThemeStore())
 const { isShowPrelude } = usePrelude()
-
-const isDarkMode = $computed(() => themeStore.darkMode)
-const section = $computed(() => globalStore.section)
-const isMobile = $computed(() => globalStore.getIsMobile)
-const isShowMore = $computed(() => moreStore.isShow)
 
 registerSeviceWorkerPWA()
 useScrollBarTheme()
