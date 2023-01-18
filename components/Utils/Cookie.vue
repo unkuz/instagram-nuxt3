@@ -1,9 +1,13 @@
 <script setup lang="ts">
+import {CSSProperties} from 'vue'
 import CookieIcon_ from '@@/assets/svg/cookie.svg'
 import Button from '@@/components/Atoms/Button.vue'
 import { gsap } from 'gsap'
 
 const containerRef = $ref<HTMLDivElement | null>(null)
+const style = computed<CSSProperties>(()=>({
+
+}))
 
 let tl: TimelineLite = gsap.timeline({})
 
