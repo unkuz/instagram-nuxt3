@@ -1,37 +1,38 @@
-import { gsap } from 'gsap'
 import { useWindowResizeCallback } from '@@/composables'
+import { gsap } from 'gsap'
+import { Ref } from 'vue'
 
-export const useCarousel = (containerMediaRef: HTMLDivElement | null) => {
-    let current = $ref(0)
+export const useCarousel = (containerMediaRef: Ref<HTMLDivElement | null>) => {
+  const current = ref<number>(0)
 
-    const transition = () => {
-        if (containerMediaRef) {
-            gsap.to(containerMediaRef, {
-                translateX: -containerMediaRef.offsetWidth * current,
-                duration: 0.2,
-            })
-        }
+  const transition = () => {
+    if (containerMediaRef.value) {
+      gsap.to(containerMediaRef.value, {
+        translateX: -containerMediaRef.value.offsetWidth * current.value,
+        duration: 0.2,
+      })
     }
+  }
 
-    useWindowResizeCallback(transition)
+  useWindowResizeCallback(transition)
 
-    watch(() => current, transition)
+  watch(current, transition)
 
-    const next = () => {
-        if (containerMediaRef) {
-            if (current === containerMediaRef.childElementCount - 1) {
-                return
-            }
-            current++
-        }
+  const next = () => {
+    if (containerMediaRef.value) {
+      if (current.value === containerMediaRef.value.childElementCount - 1) {
+        return
+      }
+      current.value += 1
     }
+  }
 
-    const prev = () => {
-        if (current === 0) {
-            return
-        }
-        current--
+  const prev = () => {
+    if (current.value === 0) {
+      return
     }
+    current.value -= 1
+  }
 
-    return { next, prev, current: $$(current) }
+  return { next, prev, current }
 }

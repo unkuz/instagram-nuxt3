@@ -24,6 +24,10 @@ export const timeLine = [
             images: [],
             videos: [
                 {
+                    id: 1,
+                    src: '/video/Dirty Palm & Conor Ross - Flowers (ft. Chandler Blasé).mp4',
+                },
+                {
                     id: 2,
                     src: '/video/Dirty Palm & Conor Ross - Flowers (ft. Chandler Blasé).mp4',
                 },

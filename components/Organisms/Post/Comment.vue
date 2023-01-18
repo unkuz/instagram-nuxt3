@@ -42,19 +42,10 @@ const send = async () => {
                 class="cursor-pointer text-[0.8rem] font-[500]"
                 @click="toggleShowEmoji"
             >
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <g
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                    >
+                <svg width="28" height="28" viewBox="0 0 24 24">
+                    <g fill="currentColor">
                         <path
-                            d="m9.5 7.5l-2 2a4.95 4.95 0 1 0 7 7l2-2a4.95 4.95 0 1 0-7-7Zm4.5-1v10m-4-9v10"
-                        />
-                        <path
-                            d="m16 7l1-5l1.37.68A3 3 0 0 0 19.7 3H21v1.3c0 .46.1.92.32 1.33L22 7l-5 1m-9 9l-1 5l-1.37-.68A3 3 0 0 0 4.3 21H3v-1.3a3 3 0 0 0-.32-1.33L2 17l5-1"
+                            d="M4 12a8 8 0 1 1 16 0a8 8 0 0 1-16 0zm8-10C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2zM9.757 13.1a1 1 0 1 0-1.514 1.307C9.053 15.344 10.283 16 12 16c1.716 0 2.947-.656 3.757-1.593a1 1 0 0 0-1.514-1.307c-.419.485-1.091.9-2.243.9s-1.824-.415-2.243-.9zM8 10a1 1 0 0 1 1-1h.01a1 1 0 0 1 0 2H9a1 1 0 0 1-1-1zm7-1a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H15z"
                         />
                     </g>
                 </svg>
@@ -73,17 +64,14 @@ const send = async () => {
         >
         <div class="cursor-pointer text-[0.8rem] font-[500]" @click="send">
             <svg width="24" height="24" viewBox="0 0 24 24">
-                <g
+                <path
                     fill="none"
                     stroke="currentColor"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                >
-                    <circle cx="12" cy="12" r="10" />
-                    <circle cx="12" cy="12" r="6" />
-                    <circle cx="12" cy="12" r="2" />
-                </g>
+                    d="m6 12l-3 9l18-9L3 3l3 9zm0 0h6"
+                />
             </svg>
         </div>
     </div>

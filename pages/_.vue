@@ -22,7 +22,7 @@ const authStore = useAuthStore()
 
 const isLogin = $computed(() => authStore.data.isLogin)
 
-const { data: _timeline } = await useFetch<ITimeLine[]>(APP_API.timeLine.list)
+// const { data: _timeline } = await useFetch<ITimeLine[]>(APP_API.timeLine.list)
 const { data: _stories } = await useFetch<IStory[]>(APP_API.stories.list)
 const { data: _suggestions } = await useFetch<IStory[]>(
     APP_API.suggestions.list
@@ -30,7 +30,7 @@ const { data: _suggestions } = await useFetch<IStory[]>(
 const { data: _timelinez } = await useFetchCamel(APP_API.timeLine.list)
 
 storiesStore.save(_stories.value ?? [])
-timeLineStore.save(_timeline.value ?? [])
+// timeLineStore.save(_timeline.value ?? [])
 suggestionStore.save(_suggestions.value ?? [])
 
 const timeline = $computed(() => timeLineStore.data)

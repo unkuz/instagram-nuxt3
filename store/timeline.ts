@@ -1,12 +1,13 @@
 import { defineStore } from 'pinia'
 import { ITimeLine } from '@@/models'
 import { IStateStore } from '@@/type'
+import {timeLine} from '@/mocks/reelTimeLine'
 
 type TState = IStateStore<ITimeLine[]>
 
 export const useTimeLineStore = defineStore('timeline', {
     state: (): TState => ({
-        data: [],
+        data: [...timeLine],
         hasErr: false,
         errors: {},
     }),
