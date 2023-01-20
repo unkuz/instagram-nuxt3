@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { SizeAvatarEnum } from '@@/type'
-import { QUALITY_IMAGE } from '@@/configs'
+import { SizeAvatarEnum } from '@@/type';
 
 const { T, S, M, L } = SizeAvatarEnum
 
