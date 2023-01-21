@@ -39,12 +39,15 @@ const { S } = SizeAvatarEnum
             <div class="ml-[52px] -translate-y-[3px] pr-[10px]">
                 <p>{{ comment.text }}</p>
                 <div class="flex gap-[20px] text-[0.8rem]">
-                    <div class="flex items-end gap-[5px] font-[550] text-c13">
+                    <div class="flex items-end gap-[5px] font-[550]">
                         <span
                             class="align-bottom text-[0.9rem] leading-[1.05rem]"
                             >{{ comment.comment_like_count }}</span
                         >
-                        <span class="cursor-pointer" title="Like">
+                        <span
+                            class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1"
+                            title="Like"
+                        >
                             <svg width="18" height="18" viewBox="0 0 24 24">
                                 <g>
                                     <path
@@ -55,8 +58,14 @@ const { S } = SizeAvatarEnum
                         </span>
                     </div>
                     <div class="flex items-end gap-[5px]">
-                        <span class="align-bottom text-[0.9rem] leading-[1.05rem]">{{ '0' }}</span>
-                        <span class="cursor-pointer text-c13" title="Reply">
+                        <span
+                            class="align-bottom text-[0.9rem] leading-[1.05rem]"
+                            >{{ '0' }}</span
+                        >
+                        <span
+                            class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1"
+                            title="Reply"
+                        >
                             <svg width="18" height="18" viewBox="0 0 24 24">
                                 <g>
                                     <path
