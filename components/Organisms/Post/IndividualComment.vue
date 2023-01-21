@@ -79,9 +79,7 @@ const { S } = SizeAvatarEnum
                     </div>
                 </div>
             </div>
-            <div
-                class="absolute top-0 left-0 h-[85%] w-[3px] -translate-x-[0px] bg-c14"
-            />
+            <div class="absolute top-0 left-0 h-[85%] w-[3px] -translate-x-[0px] bg-c14" />
         </div>
         <div
             v-for="(
