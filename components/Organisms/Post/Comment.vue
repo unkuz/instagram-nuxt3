@@ -5,9 +5,11 @@ import { useAuthStore, usePostDetailStore, useTimeLineStore } from '@@/store'
 
 interface IProps {
     id: string
+    currentReplyCommentId: string
 }
 
-const { id } = defineProps<IProps>()
+const props = defineProps<IProps>()
+const emit = defineEmits(['rm-current-reply-comment-id'])
 
 const emojiRef = ref<HTMLDivElement | null>(null)
 let isShowEmoji = $ref(false)
@@ -17,6 +19,19 @@ const viewPostDetailStore = usePostDetailStore()
 const timeLineStore = useTimeLineStore()
 const authStore = useAuthStore()
 
+watch(
+    () => props.currentReplyCommentId,
+    (val) => {
+        if (val) {
+            const findNickNameCommentReply = timeLineStore.data
+                .find(({ id }) => id === props.id)!
+                .comments.find(({ id }) => id === val)!.user.username
+            commentValueText = '@' + `${findNickNameCommentReply}` + ' '
+            textBoxRef?.focus()
+        }
+    }
+)
+
 const emojiAdd = (value: string) => (commentValueText += value)
 
 useClickOutSide(emojiRef, () => (isShowEmoji = false))
@@ -24,12 +39,16 @@ useClickOutSide(emojiRef, () => (isShowEmoji = false))
 const toggleShowEmoji = () => (isShowEmoji = !isShowEmoji)
 
 const send = async () => {
-    await timeLineStore.comment(id, {
+    await timeLineStore.comment(props.id, {
         text: commentValueText,
         userName: authStore.data.userName,
         userImg: authStore.data.avatar,
         id: Math.random() * 10000,
+        commentReplyId: props.currentReplyCommentId,
     })
+    if (props.currentReplyCommentId) {
+        emit('rm-current-reply-comment-id')
+    }
     commentValueText = ''
 }
 </script>

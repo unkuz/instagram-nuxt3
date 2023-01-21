@@ -23,6 +23,7 @@ export interface Comment {
     user: User
     comment_like_count: number
     reply: Reply[]
+    id: string
 }
 
 export interface User {

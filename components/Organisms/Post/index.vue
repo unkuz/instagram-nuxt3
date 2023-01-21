@@ -69,6 +69,9 @@ export interface IProps {
 
 const props = defineProps<IProps>()
 const commentRef = $ref<HTMLDivElement | null>(null)
+let currentReplyCommentId = ref('')
+const reply = (commentId: string) => (currentReplyCommentId.value = commentId)
+
 let currentIdx = $ref<number>(0)
 const setCurrent = (value: number) => (currentIdx = value)
 const mediaArr = $computed(() =>
@@ -120,9 +123,15 @@ const { key } = useForceRenderTimer()
                         v-for="(i, idx) in comments"
                         :key="idx"
                         :comment="i"
+                        :postId="id"
+                        @reply="reply"
                     />
                 </div>
-                <Comment :id="id" />
+                <Comment
+                    :id="id"
+                    @rm-current-reply-comment-id="currentReplyCommentId = ''"
+                    :currentReplyCommentId="currentReplyCommentId"
+                />
             </div>
         </div>
     </article>

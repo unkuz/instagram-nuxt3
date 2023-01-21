@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ITimeLine } from '@@/models'
 import { IStateStore } from '@@/type'
-import {timeLine} from '@/mocks/reelTimeLine'
+import { timeLine } from '@/mocks/reelTimeLine'
 
 type TState = IStateStore<ITimeLine[]>
 
@@ -37,9 +37,13 @@ export const useTimeLineStore = defineStore('timeline', {
                 }
             })
         },
-        comment(id, { text, userName, userImg, id: commentId }) {
+        comment(
+            id,
+            { text, userName, userImg, id: commentId, commentReplyId }
+        ) {
             const idx = this.data.findIndex((i) => i.id === id)
-            this.data[idx].comments.unshift({
+
+            const data = {
                 text,
                 created_at: new Date().getTime(),
                 user: {
@@ -52,7 +56,16 @@ export const useTimeLineStore = defineStore('timeline', {
                 comment_like_count: 0,
                 reply: [],
                 id: commentId,
-            })
+            }
+
+            if (commentReplyId) {
+                const idxCmRep = this.data[idx].comments.findIndex(
+                    (i) => i.id === commentReplyId
+                )
+                this.data[idx].comments[idxCmRep].reply.push(data)
+            } else {
+                this.data[idx].comments.unshift(data)
+            }
         },
     },
 })
