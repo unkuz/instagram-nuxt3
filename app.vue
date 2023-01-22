@@ -45,9 +45,9 @@ useHead({
         <div
             class="selection:bg-c2 selection:text-c1 dark:selection:bg-c1 dark:selection:text-c2"
         >
+            <Prelude v-if="isShowPrelude" />
             <div class="min-h-screen dark:bg-c19 dark:text-c21">
                 <NuxtLayout>
-                    <Prelude v-if="isShowPrelude" />
                     <NuxtLoadingIndicator
                         color="#7fccff"
                         :height="3"
