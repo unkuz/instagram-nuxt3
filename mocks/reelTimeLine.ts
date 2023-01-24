@@ -25,9 +25,10 @@ export const timeLine = [
                 outgoing_request: false,
             },
         },
-        like_count: 5089,
+        like_count: 973,
         has_liked: false,
-        caption_text: `🔊 Krewella - Alive (Aleficent & MØTHRA Cover)
+        caption_text: `
+        🔊 Krewella - Alive (Aleficent & MØTHRA Cover)
 
         ✨ Follow Diversity's Playlists on Spotify:
         ➥ https://divr.link/SpotifyPlaylists
