@@ -40,7 +40,7 @@ onBeforeUnmount(() => tl.kill())
         <div class="text-[0.8rem]">
             <p>
                 {{
-                    "We care about your data, and we'd love to use cookies to make your experience better."
+                    "We care about your data, and we'd love to use cookies to make your experience better 💦"
                 }}
             </p>
             <div class="mt-[10px] flex w-full items-center justify-between">
