@@ -34,7 +34,7 @@ const authorText = 'cuzknothz'
             <div @click="authStore.data.isLogin = false">
                 <NuxtLink to="/login">
                     <Button
-                        class="bg-c8 text-[.8rem] [&>span]:text-c9"
+                        class="bg-c8 py-[5px] text-[.8rem] [&>span]:text-c9"
                         text="Log out"
                     />
                 </NuxtLink>
@@ -57,10 +57,10 @@ const authorText = 'cuzknothz'
                 :avatar="avatar"
             />
         </div>
-        <div class="mt-[10px] text-[0.85rem] text-c3 dark:text-c21">
+        <div class="mt-[10px] text-[0.85rem] text-c3 dark:text-c21" v-once>
             <div class="flex justify-center">
                 <span
-                    v-for="(i, idx) in [
+                    v-for="(i, idx) of [
                         'About',
                         'Help',
                         'Press',
@@ -75,7 +75,7 @@ const authorText = 'cuzknothz'
             </div>
             <div class="mb-[13px] flex justify-center">
                 <span
-                    v-for="(i, idx) in [
+                    v-for="(i, idx) of [
                         'Location',
                         'Top accounts',
                         'Hashtags',

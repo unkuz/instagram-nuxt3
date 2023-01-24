@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import {CSSProperties} from 'vue'
+import { CSSProperties } from 'vue'
 import CookieIcon_ from '@@/assets/svg/cookie.svg'
 import Button from '@@/components/Atoms/Button.vue'
 import { gsap } from 'gsap'
 
 const containerRef = $ref<HTMLDivElement | null>(null)
-const style = computed<CSSProperties>(()=>({
-
-}))
+const style = computed<CSSProperties>(() => ({}))
 
 let tl: TimelineLite = gsap.timeline({})
 
@@ -20,7 +18,6 @@ const animate = () =>
 
 const acceptCookieUse = () => {
     animate()
-    console.log('HEHE')
 }
 
 onMounted(() =>
@@ -52,7 +49,7 @@ onBeforeUnmount(() => tl.kill())
                 </NuxtLink>
                 <Button
                     text="OK"
-                    class="select-none rounded-[0.25rem] bg-[#00ddb3] px-[32px] py-[8px] leading-[0.8rem] text-c1 hover:bg-c15"
+                    class="select-none bg-[#00ddb3] px-[28px] py-[10px] leading-[0.8rem] text-c1 duration-500 hover:bg-c15"
                     @click="acceptCookieUse"
                 />
             </div>
