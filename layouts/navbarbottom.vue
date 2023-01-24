@@ -1,48 +1,60 @@
 <script lang="ts" setup>
-import ActivityFeed from '~~/components/Nav/ActivityFeed.vue'
-import HomeIcon from '~~/components/Nav/HomeIcon.vue'
-import Search from '~~/components/Nav/Search.vue'
-import SelfAvatar from '~~/components/Nav/SelfAvatar.vue'
-import { SECTION } from '~~/constants/section'
-import { useGlobalStore } from '~~/store/global'
-import Reels from '../components/Nav/Reels.vue'
+import ActivityFeed from '@@/components/Nav/ActivityFeed.vue'
+import HomeIcon from '@@/components/Nav/HomeIcon.vue'
+import Reels from '@@/components/Nav/Reels.vue'
+import Search from '@@/components/Nav/Search.vue'
+import SelfAvatar from '@@/components/Nav/SelfAvatar.vue'
+import { SectionEnum } from '@@/constants'
+import { useGlobalStore } from '@@/store'
 
 const globalStore = useGlobalStore()
-const router = useRouter()
 const isMobile = computed(() => globalStore.getIsMobile)
-const section = computed(() => globalStore.getSection)
-const isReelsSelect = computed(() => globalStore.getSection === SECTION.REELS && isMobile)
-const isMoblieAndSelectReels = computed(
-  () => globalStore.getIsMobile && globalStore.getSection === SECTION.REELS
+const section = computed(() => globalStore.section)
+const isReelsSelect = computed(
+    () => globalStore.section === SectionEnum.REELS && isMobile
 )
-const handleSelect = (section: SECTION, url?: string) => {
-  globalStore.setSection(section)
-  router.push(url)
+const handleSelect = (section: SectionEnum) => {
+    globalStore.setSection(section)
 }
 </script>
 
 <template>
-  <div
-    :class="`fixed bottom-0 z-10 h-[65px] w-full border-t-[1px] border-gray-200  ${
-      isReelsSelect ? 'border-none bg-black' : 'bg-white'
-    } md:hidden`"
-  >
-    <div class="mt-3 flex items-center justify-around">
-      <div @click="handleSelect(SECTION.HOME, '/')">
-        <HomeIcon :isSelect="section === SECTION.HOME" />
-      </div>
-      <div @click="handleSelect(SECTION.SEARCH, '/explore/')">
-        <Search :isSelect="section === SECTION.SEARCH" />
-      </div>
-      <div @click="handleSelect(SECTION.REELS, '/reels/')">
-        <Reels :isSelect="section === SECTION.REELS" />
-      </div>
-      <div @click="handleSelect(SECTION.ACTIVITYFEED, '/activity-feed')">
-        <ActivityFeed :isSelect="section === SECTION.ACTIVITYFEED" />
-      </div>
-      <div @click="handleSelect(SECTION.SELF, '/cuzknothz/')">
-        <SelfAvatar :isSelect="section === SECTION.SELF" />
-      </div>
+    <div
+        :class="[
+            'fixed bottom-0 z-10 h-[65px] w-full border-t-[1px] border-c4 bg-c1 dark:border-none dark:bg-c2 md:hidden',
+            {
+                'border-none bg-c2': isReelsSelect,
+            },
+        ]"
+    >
+        <div class="mt-3 flex items-center justify-around">
+            <div @click="handleSelect(SectionEnum.HOME)">
+                <NuxtLink to="/">
+                    <HomeIcon :is-select="section === SectionEnum.HOME" />
+                </NuxtLink>
+            </div>
+            <div @click="handleSelect(SectionEnum.SEARCH)">
+                <NuxtLink to="/explore/">
+                    <Search :is-select="section === SectionEnum.SEARCH" />
+                </NuxtLink>
+            </div>
+            <div @click="handleSelect(SectionEnum.REELS)">
+                <NuxtLink to="/reels/">
+                    <Reels :is-select="section === SectionEnum.REELS" />
+                </NuxtLink>
+            </div>
+            <div @click="handleSelect(SectionEnum.ACTIVITYFEED)">
+                <NuxtLink to="/activity-feed">
+                    <ActivityFeed
+                        :is-select="section === SectionEnum.ACTIVITYFEED"
+                    />
+                </NuxtLink>
+            </div>
+            <div @click="handleSelect(SectionEnum.SELF)">
+                <NuxtLink to="/cuzknothz/">
+                    <SelfAvatar :is-select="section === SectionEnum.SELF" />
+                </NuxtLink>
+            </div>
+        </div>
     </div>
-  </div>
 </template>

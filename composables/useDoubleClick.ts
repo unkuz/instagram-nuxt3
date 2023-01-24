@@ -1,27 +1,36 @@
-import { Ref } from 'nuxt/dist/app/compat/capi'
+import { Ref } from 'vue'
 
-export const useDoubleClick = (ref: Ref<HTMLElement>, click: () => void, dblclick: () => void) => {
-  let timer
+export const useDoubleClick = (
+    refElement: Ref<HTMLElement | null>,
+    click: () => void,
+    dblclick: () => void
+) => {
+    let timer = ref<any>(null)
 
-  const _click = (event) => {
-    if (event.detail === 1) {
-      timer = setTimeout(() => {
-        click()
-      }, 200)
+    const _click = (event: MouseEvent) => {
+        if (event.detail === 1) {
+            timer = setTimeout(() => {
+                click()
+            }, 200)
+        }
     }
-  }
 
-  const _dbclick = (event) => {
-    clearTimeout(timer)
-    dblclick()
-  }
+    const _dbclick = (event: MouseEvent) => {
+        clearTimeout(timer)
+        dblclick()
+    }
 
-  onMounted(() => {
-    ref.value.addEventListener('click', _click)
-    ref.value.addEventListener('dblclick', _dbclick)
-  })
-  onUnmounted(() => {
-    ref.value.removeEventListener('click', _click)
-    ref.value.removeEventListener('dblclick', _dbclick)
-  })
+    onMounted(() => {
+        if (refElement.value) {
+            refElement.value.addEventListener('click', _click)
+            refElement.value.addEventListener('dblclick', _dbclick)
+        }
+    })
+
+    onBeforeUnmount(() => {
+        if (refElement.value) {
+            refElement.value.removeEventListener('click', _click)
+            refElement.value.removeEventListener('dblclick', _dbclick)
+        }
+    })
 }

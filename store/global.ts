@@ -1,47 +1,48 @@
 import { defineStore } from 'pinia'
-import { MOBILE_BREAK_POINT } from '~~/constants/responsive'
-import { SECTION } from '~~/constants/section'
+import { MOBILE_BREAK_POINT, SectionEnum } from '@@/constants'
+import { ScrollTypeEnum } from '@@/type'
 
-interface GlobalState {
-  section: SECTION
-  prevSection: SECTION
-  clientWidth: number
-  clientHeight: number
-  transition: boolean
+interface IState {
+    section: SectionEnum
+    prevSection: SectionEnum
+    clientWidth: number
+    clientHeight: number
+    transition: boolean
+    scroll: ScrollTypeEnum
 }
 
-const state = (): GlobalState => ({
-  section: SECTION.HOME,
-  prevSection: SECTION.NONE,
-  clientWidth: 0,
-  clientHeight: 0,
-  transition: false,
-})
-const getters = {
-  getSection: (state: GlobalState) => state.section,
-  getClientWidth: (state: GlobalState) => state.clientWidth,
-  getClientHeight: (state: GlobalState) => state.clientHeight,
-  getIsMobile: (state: GlobalState) => state.clientWidth < MOBILE_BREAK_POINT,
-  getIsTransition: (state: GlobalState) => state.transition,
-  getIsMobileAndSelectNewPost: (state: GlobalState) =>
-    state.clientWidth < MOBILE_BREAK_POINT && state.section === SECTION.NEW_POST,
-}
-const actions = {
-  setSection(section: SECTION) {
-    this.prevSection = this.section
-    this.section = section
-  },
-  setClientSize(width: number, height: number) {
-    this.clientWidth = width
-    this.clientHeight = height
-  },
-  setTransition(transition: boolean) {
-    this.transition = transition
-  },
-}
-
-export const useGlobalStore = defineStore('globalStore', {
-  state,
-  getters,
-  actions,
+export const useGlobalStore = defineStore('global', {
+    state: (): IState => ({
+        section: SectionEnum.HOME,
+        prevSection: SectionEnum.NONE,
+        clientWidth: 0,
+        clientHeight: 0,
+        transition: false,
+        scroll: ScrollTypeEnum.NONE,
+    }),
+    getters: {
+        getIsMobile: (state) => state.clientWidth < MOBILE_BREAK_POINT,
+        getIsMobileAndSelectNewPost: (state) =>
+            state.clientWidth < MOBILE_BREAK_POINT &&
+            state.section === SectionEnum.NEW_POST,
+        getIsShowHeader: (state) => {
+            return state.scroll === ScrollTypeEnum.UP
+        },
+    },
+    actions: {
+        setSection(section: SectionEnum) {
+            this.prevSection = this.section
+            this.section = section
+        },
+        setClientSize(width: number, height: number) {
+            this.clientWidth = width
+            this.clientHeight = height
+        },
+        setTransition(transition: boolean) {
+            this.transition = transition
+        },
+        setScroll(value: ScrollTypeEnum) {
+            this.scroll = value
+        },
+    },
 })

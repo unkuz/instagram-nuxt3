@@ -1,3 +1,6 @@
 {
-    "nuxt.isNuxtApp": false
+    "nuxt.isNuxtApp": false,
+    "workbench.colorCustomizations": {
+      
+    },
 }

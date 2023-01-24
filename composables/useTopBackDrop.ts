@@ -1,14 +1,16 @@
-export function useTopBackDrop(refElement: any) {
-  const handleScroll = () => {
-    refElement.value.style.top = `${window.scrollY}px`
-  }
+import { Ref } from 'vue'
 
-  onMounted(() => {
-    handleScroll()
-    window.addEventListener('scroll', handleScroll)
-  })
+export function useTopBackDrop(refElement: Ref<HTMLDivElement | null>) {
+    const handleScroll = () => {
+        refElement.value!.style.top = `${window.scrollY}px`
+    }
 
-  onUnmounted(() => {
-    window.removeEventListener('scroll', handleScroll)
-  })
+    onMounted(() => {
+        handleScroll()
+        window.addEventListener('scroll', handleScroll)
+    })
+
+    onBeforeUnmount(() => {
+        window.removeEventListener('scroll', handleScroll)
+    })
 }

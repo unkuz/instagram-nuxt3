@@ -1,21 +1,37 @@
+import { useGlobalStore } from '@@/store'
+
 export function useResizeWindow() {
-  const width = ref(0)
-  const height = ref(0)
+    const globalStore = useGlobalStore()
 
-  const resize = (e:UIEvent) => {
-    const target = e.target as Window
-    width.value = target.innerWidth 
-    height.value = target.innerHeight
-  }
+    const dimension = reactive({
+        width: 0,
+        height: 0,
+    })
 
-  onMounted(() => {
-    window.addEventListener('resize', resize)
-    width.value = window.innerWidth
-    height.value = window.innerHeight
-  })
+    const resize = () => {
+        const { innerWidth, innerHeight } = window
+        dimension.width = innerWidth
+        dimension.height = innerHeight
+    }
 
-  onUnmounted(() => {
-    window.removeEventListener('resize', resize)
-  })
-  return { width, height }
+    onMounted(() => {
+        resize()
+        window.addEventListener('resize', resize)
+    })
+
+    watch(
+        dimension,
+        ({ width, height }) => {
+            globalStore.setClientSize(width, height)
+        },
+        {
+            immediate: true,
+        }
+    )
+
+    onBeforeUnmount(() => {
+        window.removeEventListener('resize', resize)
+    })
+
+    return { width: dimension.width, height: dimension.height }
 }

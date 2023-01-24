@@ -1,12 +1,20 @@
+import { getScrollbarWidth } from '@@/utils'
+
 export function useLockScroll() {
-  let originalStyle: string = ''
+    let overflow = ''
 
-  onBeforeMount(() => {
-    originalStyle = window.getComputedStyle(document.body).overflow
-    document.body.style.overflow = 'hidden'
-  })
+    onMounted(() => {
+        const htmlEl = document.getElementsByTagName('html')[0]
+        const scrollBarW = getScrollbarWidth()
+        overflow = window.getComputedStyle(document.body).overflow
 
-  onUnmounted(() => {
-    document.body.style.overflow = originalStyle
-  })
+        htmlEl.style.overflow = 'hidden'
+        htmlEl.style.width = `${window.innerWidth - scrollBarW}px`
+    })
+
+    onBeforeUnmount(() => {
+        const htmlEl = document.getElementsByTagName('html')[0]
+        htmlEl.style.overflow = overflow
+        htmlEl.style.width = 'auto'
+    })
 }

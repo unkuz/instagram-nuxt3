@@ -1,0 +1,17 @@
+/* Custom ScrollBar Chrome Opera */
+::-webkit-scrollbar {
+  @apply h-[6px] w-[6px];
+}
+::-webkit-scrollbar-track {
+  @apply bg-c1;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-sc-thumb;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-sc-thumb-hover;
+}
+/* Custom ScrollBar FireFox */
+:root {
+  @apply scrollbar-thin scrollbar-track-c1 scrollbar-thumb-sc-thumb;
+}

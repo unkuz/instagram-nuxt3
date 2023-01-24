@@ -1,3 +1,3 @@
 <script lang="ts" setup></script>
 
-<template><div>COOL</div></template>
+<template><div>404</div></template>

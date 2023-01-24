@@ -1,21 +1,11 @@
 import { defineStore } from 'pinia'
 
-const state = () => ({
-  isShowStory: false,
-})
-
-const getters = {
-  getIsShowStory: (state) => state.isShowStory,
-}
-
-const actions = {
-  setIsShowStory(value) {
-    this.isShowStory = value
-  },
-}
-
 export const useStoryStore = defineStore('story', {
-  state,
-  getters,
-  actions,
+    state: () => ({ isShowStory: false }),
+    getters: {},
+    actions: {
+        setIsShowStory(value: boolean) {
+            this.isShowStory = value
+        },
+    },
 })

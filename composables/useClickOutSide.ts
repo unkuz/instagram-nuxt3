@@ -1,19 +1,26 @@
-export function useClickOutSide(ref: any, callback: Function) {
-  const listener = (event: MouseEvent) => {
-    event.stopPropagation()
-    if (!ref.value || ref.value.contains(event.target)) {
-      return
+import { Ref } from 'vue'
+
+export function useClickOutSide(
+    ref: Ref<HTMLDivElement | null>,
+    callback: () => void
+) {
+    const listener = (e: MouseEvent | TouchEvent) => {
+        e.stopPropagation()
+        const el = unref(ref)
+
+        if (!el || el.contains(e.target as HTMLElement)) {
+            return
+        }
+        callback()
     }
-    callback()
-  }
 
-  onMounted(() => {
-    window.addEventListener('mousedown', listener)
-    window.addEventListener('touchstart', listener)
-  })
+    onMounted(() => {
+        window.addEventListener('mousedown', listener)
+        window.addEventListener('touchstart', listener)
+    })
 
-  onUnmounted(() => {
-    window.removeEventListener('mousedown', listener)
-    window.removeEventListener('touchstart', listener)
-  })
+    onBeforeUnmount(() => {
+        window.removeEventListener('mousedown', listener)
+        window.removeEventListener('touchstart', listener)
+    })
 }
