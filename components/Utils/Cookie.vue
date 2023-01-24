@@ -49,7 +49,7 @@ onBeforeUnmount(() => tl.kill())
                 </NuxtLink>
                 <Button
                     text="OK"
-                    class="select-none bg-[#00ddb3] px-[28px] py-[10px] leading-[0.8rem] text-c1 duration-500 hover:bg-c15"
+                    class="select-none bg-[#00ddb3] px-[20px] py-[6px]  text-c1 duration-500 hover:bg-c15 text-[0.8rem]"
                     @click="acceptCookieUse"
                 />
             </div>
