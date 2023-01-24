@@ -1,36 +1,17 @@
 export const timeLine = [
     {
-        created_at: '2023-01-18 9:20',
-        id: '283975891eytru',
+        created_at: '2022-11-29 22:05',
+        id: '45gffdafffs',
         location: {
             short_name: 'Copenhagen',
         },
-        comments: [
-            {
-                text: 'Ayee thanks for the upload man!',
-                created_at: '2022-01-18 15:30',
-                user: {
-                    pk: 20433830474,
-                    username: 'DirtyPalm',
-                    full_name: 'Dirty Palm',
-                    is_private: false,
-                    profile_pic_url: '/timeline/jksadf.jpg',
-                },
-                comment_like_count: 1,
-                reply: [],
-                id: '485798iewt',
-            },
-        ],
+        comments: [],
         carousel_media: {
             images: [],
             videos: [
                 {
                     id: 1,
-                    src: '/video/Dirty Palm & Conor Ross - Flowers (ft. Chandler Blasé).mp4',
-                },
-                {
-                    id: 2,
-                    src: '/video/Dirty Palm & Conor Ross - Flowers (ft. Chandler Blasé).mp4',
+                    src: `/video/Aleficent & MØTHRA - Alive.mp4`,
                 },
             ],
         },
@@ -44,11 +25,87 @@ export const timeLine = [
                 outgoing_request: false,
             },
         },
-        like_count: 4650,
-        has_liked: true,
-        caption_text: 'Dirty Palm & Conor Ross - Flowers ',
+        like_count: 5089,
+        has_liked: false,
+        caption_text: `🔊 Krewella - Alive (Aleficent & MØTHRA Cover)
+
+        ✨ Follow Diversity's Playlists on Spotify:
+        ➥ https://divr.link/SpotifyPlaylists
+        
+        🎧 Stream/Download:
+        ➥ https://themiracle.media/mrce154
+        
+        🎵 Genre: Future Bounce
+        Playlist: http://diversity.moe/FutureBounce
+        
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        
+        ⭐️ Aleficent
+        https://open.spotify.com/artist/5iYPN...
+        
+        ⭐️ MØTHRA
+        https://open.spotify.com/artist/4Tmti...
+        
+        💽 Label: The Miracle Media
+        https://themiracle.media
+        
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        
+        🎨 Artwork by Liang Xing
+        https://www.pixiv.net/users/15387072
+        http://liang-xing.deviantart.com/
+        https://twitter.com/liangxing719
+        https://www.patreon.com/liangxing
+        🖼️ Animated by Diversity
+        
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        
+        ✏️ Lyrics
+        Let's make this fleeting moment last forever
+        So tell me, what you waitin' for?
+        I'm gonna keep it frozen here forever
+        There's no regretting anymore
+        It's worth to wait, even so far away
+        I'm making the night mine until the day I die
+        No light to break when you're hangin' by fate
+        You know what it feels like when you're dancing blind
+        All alone just the beat inside my soul
+        Take me home where my dreams are made of gold
+        In the zone where the beat is uncontrolled
+        I know what it feels like
+        Come on, make me feel alive!
+        
+        Meet me under shining lights
+        I've been waiting right here all my life
+        Feelings you can't deny that you're living
+        Open up your eyes
+        And I just wanna sink into your crazy laughter
+        Come on make me feel until the pain don't matter
+        Every second here makes my heart beat faster
+        Finally think I found what I'm chasing after
+        All alone just the beat inside my soul
+        Take me home where my dreams are made of gold
+        In the zone where the beat is uncontrolled
+        I know what it feels like
+        Come on, make me feel alive!
+        
+        All alone just the beat inside my soul
+        Take me home where my dreams are made of gold
+        In the zone where the beat is uncontrolled
+        I know what it feels like
+        Come on, make me feel alive!
+        
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        
+        🌸 Diversity
+        http://diversity.moe/follow
+        
+        📄 Submit your music:
+        http://diversity.moe/demo
+        
+        ✉️ For business inquiries and other issues please contact: hello@divergemusic.group`,
         is_seen: true,
-        tags: ['Dirty Palm', 'Flowers'],
-        is_saved: true,
+        tags: ['Diversity', 'Future Bounce'],
+        is_saved: false,
     },
 ]
