@@ -1,7 +1,7 @@
 export const timeLine = [
     {
-        created_at: '2022-11-29 22:05',
-        id: '45gffdafffs',
+        created_at: '2022-12-31 10:20',
+        id: '45gffdafffddds',
         location: {
             short_name: 'Copenhagen',
         },
@@ -11,7 +11,7 @@ export const timeLine = [
             videos: [
                 {
                     id: 1,
-                    src: `/video/Aleficent & MØTHRA - Alive.mp4`,
+                    src: `/video/Crystal Rock x Anastasia Rose x Lucky Twice - Lucky.mp4`,
                 },
             ],
         },
@@ -25,88 +25,119 @@ export const timeLine = [
                 outgoing_request: false,
             },
         },
-        like_count: 973,
+        like_count: 2000,
         has_liked: false,
-        caption_text: `
-        🔊 Krewella - Alive (Aleficent & MØTHRA Cover)
+        caption_text: `🔊 Lucky by Lucky Twice, Crystal Rock, Anastasia Rose
 
         ✨ Follow Diversity's Playlists on Spotify:
         ➥ https://divr.link/SpotifyPlaylists
         
         🎧 Stream/Download:
-        ➥ https://themiracle.media/mrce154
+        ➥ https://lnk.to/LuckyRRT
         
-        🎵 Genre: Future Bounce
-        Playlist: http://diversity.moe/FutureBounce
+        🎵 Genre: House
+        Playlist: http://diversity.moe/House
         
-        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        🌸 Crystal Rock
+        https://www.instagram.com/crystal_rock/
+        https://www.facebook.com/CrystalRockO...
         
-        ⭐️ Aleficent
-        https://open.spotify.com/artist/5iYPN...
+        🌸 Anastasia Rose
+        https://www.facebook.com/AnastasiaRos...
+        https://www.instagram.com/anastasia_r...
         
-        ⭐️ MØTHRA
-        https://open.spotify.com/artist/4Tmti...
-        
-        💽 Label: The Miracle Media
-        https://themiracle.media
-        
-        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        
-        🎨 Artwork by Liang Xing
-        https://www.pixiv.net/users/15387072
-        http://liang-xing.deviantart.com/
-        https://twitter.com/liangxing719
-        https://www.patreon.com/liangxing
-        🖼️ Animated by Diversity
-        
-        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        💽 Label: SME
         
         ✏️ Lyrics
-        Let's make this fleeting moment last forever
-        So tell me, what you waitin' for?
-        I'm gonna keep it frozen here forever
-        There's no regretting anymore
-        It's worth to wait, even so far away
-        I'm making the night mine until the day I die
-        No light to break when you're hangin' by fate
-        You know what it feels like when you're dancing blind
-        All alone just the beat inside my soul
-        Take me home where my dreams are made of gold
-        In the zone where the beat is uncontrolled
-        I know what it feels like
-        Come on, make me feel alive!
+        I'm so lucky lucky
+        I'm so lucky lucky
+        I'm so lovely lovely
+        I'm so lovely lovely
         
-        Meet me under shining lights
-        I've been waiting right here all my life
-        Feelings you can't deny that you're living
-        Open up your eyes
-        And I just wanna sink into your crazy laughter
-        Come on make me feel until the pain don't matter
-        Every second here makes my heart beat faster
-        Finally think I found what I'm chasing after
-        All alone just the beat inside my soul
-        Take me home where my dreams are made of gold
-        In the zone where the beat is uncontrolled
-        I know what it feels like
-        Come on, make me feel alive!
+        You can fool yourself
+        I promise it will help
+        Now every single day
+        I just wanna hear you saying
         
-        All alone just the beat inside my soul
-        Take me home where my dreams are made of gold
-        In the zone where the beat is uncontrolled
-        I know what it feels like
-        Come on, make me feel alive!
+        I'm so lucky lucky
+        I'm so lucky lucky
+        I'm so lovely lovely
+        I'm so lovely lovely
         
-        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        You can fool yourself
+        I promise it will help
+        Now every single day
+        I just wanna hear you saying
         
-        🌸 Diversity
+        I'm so lucky lucky
+        I'm so lovely lovely
+        
+        You can fool yourself
+        I promise it will help
+        Now every single day
+        I just wanna hear you saying
+        
+        Even though you said
+        It would never end it's over
+        You were smiling on my arm
+        Now you're crying on my shoulder
+        
+        There's nothing you can do
+        To keep it out
+        There's nothing you can do
+        Just scream and shout, saying:
+        
+        I'm so lucky lucky
+        I'm so lucky lucky
+        I'm so lovely lovely
+        I'm so lovely lovely
+        
+        You can fool yourself
+        I promise it will help
+        Now every single day
+        I just wanna hear you saying
+        
+        I'm so lucky lucky
+        I'm so lucky lucky
+        I'm so lovely lovely
+        I'm so lovely lovely
+        
+        You can fool yourself
+        I promise it will help
+        Now every single day
+        I just wanna hear you saying
+        
+        I'm so lucky lucky
+        I'm so lovely lovely
+        
+        You can fool yourself
+        I promise it will help
+        Now every single day
+        I just wanna hear you saying
+        
+        I'm so lucky lucky
+        I'm so lucky lucky
+        I'm so lovely lovely
+        I'm so lovely lovely
+        
+        You can fool yourself
+        I promise it will help
+        Now every single day
+        I just wanna hear you saying
+        
+        🎨 Artwork by ohisashiburi
+        https://www.pixiv.net/users/1079073
+        
+        ⭐️ Diversity
         http://diversity.moe/follow
         
         📄 Submit your music:
         http://diversity.moe/demo
         
-        ✉️ For business inquiries and other issues please contact: hello@divergemusic.group`,
+        ✏️ For business inquiries and other issues please contact: hello@divergemusic.group
+            `,
         is_seen: true,
-        tags: ['Diversity', 'Future Bounce'],
+        tags: ['Diversity', 'Crystal Rock', 'Anastasia Rose', 'Lucky Twice'],
         is_saved: false,
     },
 ]
