@@ -10988,7 +10988,7 @@ nuxt-unhead@^1.2.0:
     fast-glob "^3.2.12"
     pathe "^1.1.0"
 
-nuxt@^3.1.0:
+nuxt@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-3.1.0.tgz#13f50d27639fbe5eb5553e0d3dd2d25d21a02dd8"
   integrity sha512-0UjSx3XMXqdVWVUygUn5FPWtC2KdAq5E6mxmG4KVsD5wicq2mKoA7dApGHFV7NqknaCA4vBdtalyoytHn5zhSQ==
