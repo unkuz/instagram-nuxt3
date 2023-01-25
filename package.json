@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "@morev/vue-transitions": "^2.3.6",
+    "@nuxt/ufo": "^0.5.4",
     "@nuxtjs/algolia": "^1.5.0",
     "@nuxtjs/fontaine": "^0.2.4",
     "@nuxtjs/i18n": "^7.3.1",

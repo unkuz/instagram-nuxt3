@@ -2546,6 +2546,11 @@
     ofetch "^1.0.0"
     pathe "^1.0.0"
 
+"@nuxt/ufo@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@nuxt/ufo/-/ufo-0.5.4.tgz#2e1428e2c947cc559d566c27786525bf0f40fbc8"
+  integrity sha512-JZOGDlt2BvLCBmLhrchhRJ6tP9PBfSWLdsHC+JVJ5Qp8/hT/2u61cSsLS30zUOwcPRaQ3y2oHNkEiKJ5v90iEQ==
+
 "@nuxt/ui-templates@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@nuxt/ui-templates/-/ui-templates-1.1.0.tgz#ac2ae0cca5d78cc9cc61d369676b88a0fd60ce97"
