@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { TIME_DURATION_SLASH } from '@@/configs';
-import HeartFly from '@@/lotties/heart-fly.lotties.json';
-import Luv from '@@/lotties/luv.lotties.json';
-import { useSlashStore } from '@@/store';
+import { TIME_DURATION_SLASH } from '@@/configs'
+import HeartFly from '@@/lotties/heart-fly.lotties.json'
+import Luv from '@@/lotties/luv.lotties.json'
+import { useSlashStore } from '@@/store'
 
 const slashStore = useSlashStore()
 
