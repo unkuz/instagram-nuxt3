@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { gsap } from 'gsap'
+import LoadingIcon_ from '@@/assets/svg/Dual Ring-1s-200px.svg'
 import ExpandIcon_ from '@@/assets/svg/full_screen.svg'
 import PlayIcon_ from '@@/assets/svg/play_icon.svg'
 import { useDoubleClick, usePercentVideo } from '@@/composables'
 import { useTimeLineStore } from '@@/store'
+import { gsap } from 'gsap'
 import { stopOtherVideoPlaying } from '~~/helpers'
-import LoadingIcon_ from '@@/assets/svg/Dual Ring-1s-200px.svg'
 
 interface IProps {
     video: any
@@ -15,19 +15,19 @@ interface IProps {
 const props = defineProps<IProps>()
 const timelineStore = useTimeLineStore()
 const videoRef = ref<HTMLVideoElement | null>(null)
-const containerRef = ref<HTMLVideoElement | null>(null)
-const progressBarRef = ref<HTMLDivElement | null>(null)
-const isVideoPlay = ref<boolean>(false)
-const isFullScreen = ref<boolean>(false)
-const isLoading = ref<boolean>(true)
+let containerRef = $ref<HTMLVideoElement | null>(null)
+let progressBarRef = $ref<HTMLDivElement | null>(null)
+let isVideoPlay = $ref(false)
+let isFullScreen = $ref(false)
+let isLoading = $ref(true)
+
+const play = () => {
+    stopOtherVideoPlaying()
+    videoRef.value!.play()
+}
 
 const togglePlay = () => {
-    if (videoRef.value) {
-        if (videoRef.value.paused) {
-            return play()
-        }
-        videoRef.value.pause()
-    }
+    videoRef.value!.paused ? play() : videoRef.value!.pause()
 }
 
 const toggleLike = () => {
@@ -38,28 +38,19 @@ useDoubleClick(videoRef, togglePlay, toggleLike)
 
 const { percent } = usePercentVideo(videoRef)
 
-const updateTime = () => {
-    if (videoRef.value) {
-        isVideoPlay.value = !videoRef.value.paused
-    }
-}
-
-const play = () => {
-    stopOtherVideoPlaying()
-    videoRef.value && videoRef.value.play()
-}
+const updateTime = () => (isVideoPlay = !videoRef.value!.paused)
 
 watch(percent, () => {
-    const { clientWidth: widthParent } = progressBarRef.value!.parentElement!
-    gsap.to(progressBarRef.value!, {
-        width: percent.value * widthParent,
+    const { clientWidth: widthParent } = progressBarRef!.parentElement!
+    gsap.to(progressBarRef!, {
+        width: unref(percent) * widthParent,
         duration: 0,
     })
 })
 
 const scrub = (e: MouseEvent) => {
     const scrubTime =
-        (e.offsetX / progressBarRef.value!.parentElement!.offsetWidth) *
+        (e.offsetX / progressBarRef!.parentElement!.offsetWidth) *
         videoRef.value!.duration
     videoRef.value!.currentTime = scrubTime
 }
@@ -67,37 +58,25 @@ const scrub = (e: MouseEvent) => {
 let timerLoadingCheck: NodeJS.Timer
 
 onMounted(() => {
-    videoRef.value!.addEventListener('timeupdate', updateTime)
-    progressBarRef.value!.parentElement!.addEventListener('click', scrub)
-
     timerLoadingCheck = setInterval(() => {
-        if (videoRef.value) {
-            const { readyState } = videoRef.value
-            isLoading.value = readyState <= 2
-        }
+        const { readyState } = videoRef.value!
+        isLoading = readyState <= 2
     }, 100)
 })
 
 onBeforeUnmount(() => {
     clearInterval(timerLoadingCheck)
-    progressBarRef.value!.parentElement!.removeEventListener('click', scrub)
 })
 
-const toggleFullScreen = (e: MouseEvent) => {
-    e.preventDefault()
-    if (document.fullscreenElement) {
-        return document.exitFullscreen()
-    }
-    containerRef.value!.requestFullscreen()
+const toggleFullScreen = () => {
+    document.fullscreenElement
+        ? document.exitFullscreen()
+        : containerRef!.requestFullscreen()
 }
 
 onMounted(() => {
-    containerRef.value!.addEventListener('fullscreenchange', (e) => {
-        if (document.fullscreenElement) {
-            isFullScreen.value === true
-        } else {
-            isFullScreen.value === false
-        }
+    containerRef!.addEventListener('fullscreenchange', (e) => {
+        isFullScreen = !!document.fullscreenElement
     })
 })
 </script>
@@ -115,6 +94,7 @@ onMounted(() => {
             playsinline
             crossorigin="anonymous"
             loop
+            @timeupdate="updateTime"
             preload="metadata"
         />
         <div
@@ -143,6 +123,7 @@ onMounted(() => {
             </div>
         </div>
         <div
+            @click="scrub"
             :class="[
                 'absolute bottom-0  h-[4px] w-full cursor-pointer  bg-transparent hover:bg-c16 [&>div]:bg-c15',
                 {
@@ -156,7 +137,7 @@ onMounted(() => {
             <div title="Full screen">
                 <ExpandIcon_
                     class="hidden w-[20px] cursor-pointer fill-c1 text-c1 group-hover:block dark:fill-black"
-                    @click="toggleFullScreen"
+                    @click.stop.prevent="toggleFullScreen"
                 />
             </div>
         </div>

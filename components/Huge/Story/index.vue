@@ -5,12 +5,12 @@ import { useStoryStore } from '@@/store'
 
 const storyStore = useStoryStore()
 const barRef = ref<HTMLDivElement | null>(null)
-const containerBar = ref<HTMLDivElement | null>(null)
+const containerBar = $ref<HTMLDivElement | null>(null)
 const videoRef = ref<HTMLVideoElement | null>(null)
 const bigPlayIcon = ref<HTMLDivElement | null>(null)
-const mediaContainerRef = $ref<HTMLDivElement | null>(null)
-const isVideoPlay = ref<boolean>(false)
-const isVideoMuted = ref<boolean>(true)
+const mediaContainerRef = ref<HTMLDivElement | null>(null)
+let isVideoPlay = $ref(false)
+let isVideoMuted = $ref(true)
 
 useClickOutSide(mediaContainerRef, () => {
     storyStore.setIsShowStory(false)
@@ -27,12 +27,12 @@ const keyCodeBehaviour = (e: KeyboardEvent) => {
 const updateTime = () => {
     Object.assign(barRef.value!.style, {
         width: `${
-            (videoRef.value!.currentTime * containerBar.value!.clientWidth) /
+            (videoRef.value!.currentTime * containerBar!.clientWidth) /
             videoRef.value!.duration
         }px`,
     })
-    isVideoPlay.value = !videoRef.value!.paused
-    isVideoMuted.value = videoRef.value!.muted
+    isVideoPlay = !videoRef.value!.paused
+    isVideoMuted = videoRef.value!.muted
 }
 
 onMounted(() => {
@@ -42,7 +42,7 @@ onMounted(() => {
 })
 
 watch(isVideoPlay, () => {
-    if (isVideoPlay.value) {
+    if (isVideoPlay) {
         bigPlayIcon.value!.style.opacity = '0'
     } else {
         bigPlayIcon.value!.style.opacity = '1'
@@ -55,7 +55,7 @@ onBeforeUnmount(() => {
 })
 
 const toggleMuted = () => {
-    isVideoMuted.value = !isVideoMuted.value
+    isVideoMuted = !isVideoMuted
     videoRef.value!.muted = !videoRef.value!.muted
 }
 

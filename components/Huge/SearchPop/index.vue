@@ -2,11 +2,11 @@
 import Arrow from '@@/components/Utils/Arrow.vue'
 import { useClickOutSide } from '@@/composables'
 
-const searchResultRef = $ref<HTMLDivElement | null>(null)
-const isShow = ref<boolean>(true)
+const searchResultRef = ref<HTMLDivElement | null>(null)
+let isShow = $ref(true)
 
 useClickOutSide(searchResultRef, () => {
-    isShow.value = false
+    isShow = false
 })
 </script>
 

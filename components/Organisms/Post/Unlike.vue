@@ -3,9 +3,9 @@ import { Elastic, gsap } from 'gsap'
 import UnlikeIcon_ from '@@/assets/svg/unlike_icon.svg'
 
 const unlikeRef = $ref<HTMLDivElement | null>(null)
+let tl = gsap.timeline({})
 
 onMounted(() => {
-    const tl = gsap.timeline()
     tl.to(unlikeRef, {
         scale: 4,
         duration: 0.5,
@@ -16,6 +16,7 @@ onMounted(() => {
         duration: 0,
     })
 })
+onBeforeUnmount(() => tl.kill())
 </script>
 
 <template>

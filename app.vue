@@ -5,21 +5,20 @@ import Cookie from '@@/components/Utils/Cookie.vue'
 import More from '@@/components/Utils/More.vue'
 import Prelude from '@@/components/Utils/Prelude.vue'
 import {
-    usePrelude,
-    useResizeWindow,
-    useScroll,
-    useScrollBarTheme,
-    useSignature,
+usePrelude,
+useResizeWindow,
+useScroll,
+useScrollBarTheme,
+useSignature,
 } from '@@/composables'
 import { SectionEnum } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
-import Luv from '@@/lotties/luv.lotties.json'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
 import { storeToRefs } from 'pinia'
 
-const { section, getIsMobile: isMobile } = storeToRefs(useGlobalStore())
-const { isShow: isShowMore } = storeToRefs(useMoreStore())
-const { darkMode: isDarkMode } = storeToRefs(useThemeStore())
+const { section, getIsMobile: isMobile } = $(storeToRefs(useGlobalStore()))
+const { isShow: isShowMore } = $(storeToRefs(useMoreStore()))
+const { darkMode: isDarkMode } = $(storeToRefs(useThemeStore()))
 const { isShowPrelude } = usePrelude()
 
 registerSeviceWorkerPWA()
@@ -38,7 +37,7 @@ useHead({
         :class="[
             'scroll-smooth font-quicksan',
             {
-                ' dark ': isDarkMode,
+                'dark ': isDarkMode,
             },
         ]"
     >

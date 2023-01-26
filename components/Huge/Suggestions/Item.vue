@@ -13,8 +13,8 @@ interface IProps {
 
 defineProps<IProps>()
 
-const isFollow = ref<boolean>(false)
-const toggleFollow = () => (isFollow.value = !isFollow.value)
+let isFollow = $ref(false)
+const toggleFollow = () => (isFollow = !isFollow)
 </script>
 
 <template>
@@ -34,7 +34,7 @@ const toggleFollow = () => (isFollow.value = !isFollow.value)
             <p class="text-[0.8rem] text-c3 dark:text-c21">Suggested for you</p>
         </div>
         <div
-            class="flex w-[55px] cursor-pointer justify-end text-[0.8rem] font-[500]"
+            class="flex w-[55px] cursor-pointer justify-end text-[0.8rem] font-[500] [&>div]:px-[6px]"
             @click="toggleFollow"
         >
             <Button

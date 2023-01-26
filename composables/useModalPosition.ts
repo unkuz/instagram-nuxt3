@@ -1,10 +1,10 @@
 export const useModalPosition = () => {
-    const x = ref<number>(0)
-    const y = ref<number>(0)
+    let x = $ref(0)
+    let y = $ref(0)
 
     const position = () => {
-        x.value = window.innerWidth / 2
-        y.value = window.scrollY + window.innerHeight / 2
+        x = window.innerWidth / 2
+        y = window.scrollY + window.innerHeight / 2
     }
 
     onMounted(() => {
@@ -16,5 +16,5 @@ export const useModalPosition = () => {
         window.removeEventListener('scroll', position)
     })
 
-    return { x, y }
+    return $$({ x, y })
 }

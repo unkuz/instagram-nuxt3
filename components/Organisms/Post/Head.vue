@@ -15,6 +15,7 @@ interface IProps {
 defineProps<IProps>()
 
 const showMore = () => moreStore.setShow()
+
 </script>
 
 <template>
