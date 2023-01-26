@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 definePageMeta({
-    middleware: ['cuzknothz'],
+  middleware: ['cuzknothz'],
 })
 </script>
 <template />

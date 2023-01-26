@@ -1,5 +1,5 @@
 export interface TSuggestion {
-    name: string
-    avatar: string
-    id: string
+  name: string
+  avatar: string
+  id: string
 }

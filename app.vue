@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import Loading from '@@/components/Atoms/Loading.vue'
 import NewPost from '@@/components/Huge/NewPost/index.vue'
+import Slash from '@@/components/Molecules/Slash.vue'
 import Cookie from '@@/components/Utils/Cookie.vue'
 import More from '@@/components/Utils/More.vue'
 import Prelude from '@@/components/Utils/Prelude.vue'
@@ -28,44 +29,41 @@ useSignature()
 useResizeWindow()
 
 useHead({
-    meta: [{ name: 'theme-color', content: isDarkMode ? '#121212' : '#fff' }],
+  meta: [{ name: 'theme-color', content: isDarkMode ? '#121212' : '#fff' }],
 })
 </script>
 
 <template>
+  <div
+    :class="[
+      'scroll-smooth font-quicksan',
+      {
+        'dark ': isDarkMode,
+      },
+    ]"
+  >
     <div
-        :class="[
-            'scroll-smooth font-quicksan',
-            {
-                'dark ': isDarkMode,
-            },
-        ]"
+      class="selection:bg-c2 selection:text-c1 dark:selection:bg-c1 dark:selection:text-c2"
     >
-        <div
-            class="selection:bg-c2 selection:text-c1 dark:selection:bg-c1 dark:selection:text-c2"
-        >
-            <Prelude v-if="isShowPrelude" />
-            <div class="min-h-screen dark:bg-c19 dark:text-c21">
-                <NuxtLayout>
-                    <NuxtLoadingIndicator
-                        color="#7fccff"
-                        :height="3"
-                        :duration="500"
-                    />
-                    <Loading />
-                    <NuxtPage />
-                </NuxtLayout>
-                <NewPost v-if="section === SectionEnum.NEW_POST && !isMobile" />
-                <More v-if="isShowMore" />
-                <Cookie />
-            </div>
-        </div>
-        <!-- <ClientOnly>
+      <Prelude v-if="isShowPrelude" />
+      <div class="min-h-screen dark:bg-c19 dark:text-c21">
+        <NuxtLayout>
+          <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" />
+          <Loading />
+          <NuxtPage />
+        </NuxtLayout>
+        <NewPost v-if="section === SectionEnum.NEW_POST && !isMobile" />
+        <More v-if="isShowMore" />
+        <Cookie />
+      </div>
+    </div>
+    <Slash />
+    <!-- <ClientOnly>
             <Vue3Lottie
                 :animationData="Luv"
                 class="pointer-events-none fixed inset-0 h-full w-full"
             >
             </Vue3Lottie>
         </ClientOnly> -->
-    </div>
+  </div>
 </template>
