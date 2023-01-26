@@ -61,7 +61,7 @@
     "@twicpics/components": "^0.15.0",
     "@vueuse/core": "^9.11.1",
     "add": "^2.0.6",
-    "axios": "^1.2.4",
+    "axios": "^1.2.5",
     "camelcase-keys": "^8.0.2",
     "gsap": "^3.11.4",
     "keen-slider": "^6.8.5",
