@@ -23,7 +23,7 @@ const acceptCookieUse = () => {
 
 useWindowResizeCallback(() => {
   Object.assign(containerRef!.style, {
-    bottom: largerThanSm ? '40px' : '100px',
+    bottom: largerThanSm ? '40px' : '85px',
   })
 })
 </script>
