@@ -5236,6 +5236,11 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
+disable-devtool@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/disable-devtool/-/disable-devtool-0.3.1.tgz#543b1a98ee06133fa3f023fa1e2ae4ea3aaea4e4"
+  integrity sha512-Y8SNB7CI78udHvfFSr46oLo6D4SSMX0sKZI879rNQLza7CR3KzgdHK8I/Q55YiI7vR6wCYNJZKTglod1nC21mg==
+
 dlv@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/dlv/-/dlv-1.1.3.tgz#5c198a8a11453596e751494d49874bc7732f2e79"
