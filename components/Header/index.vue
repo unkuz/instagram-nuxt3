@@ -42,7 +42,7 @@ const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
 
 <template>
   <header
-    class="fixed top-0 left-0 z-10 h-[60px] w-screen border-c4 bg-c1 shadow-c4 dark:border-none dark:bg-c19 dark:shadow-none md:border-b-[1px] md:shadow-sm"
+    class="fixed top-0 left-0 z-10 h-[60px] w-screen border-c4 bg-c1 dark:border-none dark:bg-c19 md:border-b-[1px]"
   >
     <div
       class="mx-[20px] grid h-full grid-cols-2 md:flex md:justify-between lg:mx-auto lg:grid lg:w-[935px] lg:grid-cols-3"

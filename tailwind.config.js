@@ -23,7 +23,7 @@ module.exports = {
         c1: '#fff',
         c2: '#000',
         c3: '#646D79',
-        c4: '#E5E7EB',
+        c4: '#f0f2f7',
         'sc-thumb': '#00b3ff',
         'sc-thumb-hover': '#ff0088',
         c5: '#95C0E7',
