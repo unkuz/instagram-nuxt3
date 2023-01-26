@@ -16,32 +16,32 @@ import { TypedRouter, RouteListDecl } from './typed-router'
  * ```
  */
 export const useTypedRouter = (): {
-    /** Export of $router with type check */
-    router: TypedRouter
-    /** Contains a typed dictionnary of all your route names (for syntax sugar) */
-    routes: RouteListDecl
+  /** Export of $router with type check */
+  router: TypedRouter
+  /** Contains a typed dictionnary of all your route names (for syntax sugar) */
+  routes: RouteListDecl
 } => {
-    const { $router } = useNuxtApp()
+  const { $router } = useNuxtApp()
 
-    const routesList = {
-        user: 'user',
-        '': { pId: '_-p-id', storiesId: '_-stories-id' },
-        directInbox: 'direct-inbox',
-        error404: 'error-404',
-        explore: { pId: 'explore-p-id' },
-        index: 'index',
-        login: 'login',
-        moment: 'moment',
-        pPostId: 'p-postId',
-        reels: 'reels',
-        spline: 'spline',
-        storiesUserStoryId: 'stories-user-storyId',
-        storiesUser: 'stories-user',
-        swiper: 'swiper',
-    }
+  const routesList = {
+    user: 'user',
+    '': { pId: '_-p-id', storiesId: '_-stories-id' },
+    directInbox: 'direct-inbox',
+    error404: 'error-404',
+    explore: { pId: 'explore-p-id' },
+    index: 'index',
+    login: 'login',
+    moment: 'moment',
+    pPostId: 'p-postId',
+    reels: 'reels',
+    spline: 'spline',
+    storiesUserStoryId: 'stories-user-storyId',
+    storiesUser: 'stories-user',
+    swiper: 'swiper',
+  }
 
-    return {
-        router: $router,
-        routes: routesList,
-    } as any
+  return {
+    router: $router,
+    routes: routesList,
+  } as any
 }

@@ -1,5 +1,5 @@
 <script lang="ts" setup></script>
 
 <template>
-    <div>POST</div>
+  <div>POST</div>
 </template>

@@ -1,9 +1,9 @@
 <template>
-    <div class=""><button @click="handleError">Clear errors</button></div>
+  <div class=""><button @click="handleError">Clear errors</button></div>
 </template>
 <script setup>
 const props = defineProps({
-    error: Object,
+  error: Object,
 })
 const handleError = () => clearError({ redirect: '/' })
 </script>

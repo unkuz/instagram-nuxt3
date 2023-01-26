@@ -1,5 +1,5 @@
 <template>
-    <div>TAGS {{ tag }}</div>
+  <div>TAGS {{ tag }}</div>
 </template>
 
 <script setup lang="ts">

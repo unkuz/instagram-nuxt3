@@ -3,7 +3,7 @@ import Inbox from '@@/components/Huge/Inbox/index.vue'
 </script>
 
 <template>
-    <Inbox />
+  <Inbox />
 </template>
 
 <style scoped></style>
