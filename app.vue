@@ -6,11 +6,10 @@ import Cookie from '@@/components/Utils/Cookie.vue'
 import More from '@@/components/Utils/More.vue'
 import Prelude from '@@/components/Utils/Prelude.vue'
 import {
-usePrelude,
-useResizeWindow,
-useScroll,
-useScrollBarTheme,
-useSignature,
+  usePrelude,
+  useResizeWindow,
+  useScroll,
+  useScrollBarTheme,
 } from '@@/composables'
 import { SectionEnum } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
@@ -25,7 +24,6 @@ const { isShowPrelude } = usePrelude()
 registerSeviceWorkerPWA()
 useScrollBarTheme()
 useScroll()
-useSignature()
 useResizeWindow()
 
 useHead({
@@ -41,6 +39,7 @@ useHead({
         'dark ': isDarkMode,
       },
     ]"
+    v-signature
   >
     <div
       class="selection:bg-c2 selection:text-c1 dark:selection:bg-c1 dark:selection:text-c2"

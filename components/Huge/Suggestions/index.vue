@@ -32,7 +32,7 @@ const authorText = 'cuzknothz'
       <div @click="authStore.data.isLogin = false">
         <NuxtLink to="/login">
           <Button
-            class="bg-c8 py-[6px] text-[.8rem] [&>span]:text-c9"
+            class="bg-c15 py-[6px] text-[.8rem] text-c1"
             text="Log out"
           />
         </NuxtLink>
