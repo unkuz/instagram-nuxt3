@@ -31,10 +31,7 @@ const authorText = 'cuzknothz'
       </div>
       <div @click="authStore.data.isLogin = false">
         <NuxtLink to="/login">
-          <Button
-            class="bg-c8 py-[6px] text-[.8rem] [&>span]:text-c9"
-            text="Log out"
-          />
+          <Button class="bg-c15 py-[6px] text-[.8rem] text-c1" text="Log out" />
         </NuxtLink>
       </div>
     </div>
@@ -90,12 +87,19 @@ const authorText = 'cuzknothz'
       <div>
         © <span> {{ getCurrentYear() }}</span> Instagram clone by
       </div>
-      <NuxtLink :to="GITHUB_AUTHOR_LINK" target="_blank">
+      <NuxtLink
+        :to="GITHUB_AUTHOR_LINK"
+        target="_blank"
+        class="relative overflow-hidden"
+      >
         <div
           class="cursor-pointer font-august text-[1.25rem] uppercase tracking-wider text-c2 drop-shadow-md dark:text-c1"
         >
           {{ authorText }}
         </div>
+        <!-- <div
+          class="absolute top-[6px] h-[4px] w-[35px] rotate-[60deg] animate-cuzknothz bg-c1 dark:bg-c19"
+        ></div> -->
       </NuxtLink>
     </div>
   </div>

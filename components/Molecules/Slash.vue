@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { TIME_DURATION_SLASH } from '@@/configs'
+import HeartFly from '@@/lotties/heart-fly.lotties.json'
 import Luv from '@@/lotties/luv.lotties.json'
 import { useSlashStore } from '@@/store'
 
@@ -15,6 +16,7 @@ const mapData = (animation: string | null) => {
   }
   const data: TData = {
     luv: Luv,
+    'heart-fly': HeartFly,
   }
   return data[`${animation}`]
 }
@@ -36,7 +38,8 @@ onBeforeUnmount(() => clearTimeout(timer))
   <ClientOnly v-if="showSlash">
     <Vue3Lottie
       :animationData="mapData(animation)"
-      class="pointer-events-none fixed inset-0 h-full w-full"
+      class="pointer-events-none fixed inset-0 h-screen w-screen"
+      :loop="false"
     >
     </Vue3Lottie>
   </ClientOnly>

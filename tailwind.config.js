@@ -23,7 +23,7 @@ module.exports = {
         c1: '#fff',
         c2: '#000',
         c3: '#646D79',
-        c4: '#E5E7EB',
+        c4: '#f0f2f7',
         'sc-thumb': '#00b3ff',
         'sc-thumb-hover': '#ff0088',
         c5: '#95C0E7',
@@ -56,14 +56,23 @@ module.exports = {
         cuzknothz2: 'polygon(12px 0, 100% 0, 100% 100%, 0 100%, 0 12px)',
       },
       keyframes: {
-        'pulse-cuz': {
+        'play-kf': {
           '50%': {
             opacity: '0.7',
           },
         },
+        'cuzknothz-kf': {
+          '0%': {
+            left: '-30px',
+          },
+          '100%': {
+            left: '53px',
+          },
+        },
       },
       animation: {
-        play: 'pulse-cuz 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        play: 'play-kf 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        cuzknothz: 'cuzknothz-kf 1s linear 4s infinite',
       },
     },
     fontFamily: {
