@@ -1,5 +1,5 @@
 export const QUALITY_IMAGE = Object.freeze({
-  AVATAR: 80,
+  AVATAR: 50,
   EXPLORE: 50,
 })
 
