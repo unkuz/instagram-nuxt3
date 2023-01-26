@@ -1846,7 +1846,7 @@
   resolved "https://registry.yarnpkg.com/@nozomuikuta/h3-cors/-/h3-cors-0.1.8.tgz#1e50e8d43e7198b532f7c04c19324407a59f510d"
   integrity sha512-qWe2mUfnjxaBwTYKNM/9GrGK0nciyynn5Lk/sv8wYpKbloaoJFB98onBWMTotV5e/l8CCoelsr1oz4qYb7FdHg==
 
-"@nuxt/content@^2.3.0":
+"@nuxt/content@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@nuxt/content/-/content-2.4.0.tgz#9a40923d7c3c8527291b1f787b89bcfa580b503c"
   integrity sha512-yqb0Z9Hah5TNV3srLaumHPABHNH/uwx3UT0AL74EnKHS5A+KqB5zYGGwzorrPU/+3g0WR0088VyD9RjDYbJm8A==
@@ -5235,11 +5235,6 @@ dir-glob@^3.0.1:
   integrity sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==
   dependencies:
     path-type "^4.0.0"
-
-disable-devtool@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/disable-devtool/-/disable-devtool-0.3.1.tgz#543b1a98ee06133fa3f023fa1e2ae4ea3aaea4e4"
-  integrity sha512-Y8SNB7CI78udHvfFSr46oLo6D4SSMX0sKZI879rNQLza7CR3KzgdHK8I/Q55YiI7vR6wCYNJZKTglod1nC21mg==
 
 dlv@^1.1.3:
   version "1.1.3"
