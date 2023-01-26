@@ -7,7 +7,7 @@ interface IProps {
 
 const { captionContent, tags } = defineProps<IProps>()
 
-const hasCaptionOrTag = computed<boolean>(() => {
+const hasCaptionOrTag = $computed(() => {
     if (captionContent.trim() === '' || tags.length === 0) {
         return false
     }

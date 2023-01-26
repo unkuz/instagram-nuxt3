@@ -3,15 +3,15 @@ import { ScrollTypeEnum } from '@@/type'
 
 export const useScroll = () => {
     const globalStore = useGlobalStore()
-    const oldScrollY = ref(0)
+    let oldScrollY = $ref(0)
 
     const controlDirection = () => {
-        if (window.scrollY > oldScrollY.value) {
+        if (window.scrollY > oldScrollY) {
             globalStore.setScroll(ScrollTypeEnum.DOWN)
         } else {
             globalStore.setScroll(ScrollTypeEnum.UP)
         }
-        oldScrollY.value = window.scrollY
+        oldScrollY = window.scrollY
     }
 
     onMounted(() => {

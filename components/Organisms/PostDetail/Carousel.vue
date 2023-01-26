@@ -20,13 +20,13 @@ interface IProps {
 let initShowLikeSaved = $ref(false)
 const props = defineProps<IProps>()
 const emit = defineEmits(['currentIndexCarousel'])
-const containerMediaRef = $ref<HTMLDivElement | null>(null)
+const containerMediaRef = ref<HTMLDivElement | null>(null)
 
 const { next, prev, current } = useCarousel(containerMediaRef)
 
-const isShowPre = computed<boolean>(() => current !== 0)
+const isShowPre = computed<boolean>(() => unref(current) !== 0)
 const isShowNext = computed<boolean>(
-    () => current !== props.images.concat(props.videos).length - 1
+    () => unref(current) !== props.images.concat(props.videos).length - 1
 )
 const totalMedia = computed<number>(
     () => props.images.concat(props.videos).length
@@ -37,9 +37,9 @@ watch(
     (idx) => {
         emit('currentIndexCarousel', idx)
         stopOtherVideoPlaying()
-        if (containerMediaRef) {
-            gsap.to(containerMediaRef, {
-                height: containerMediaRef.children[idx].children[0]
+        if (containerMediaRef.value) {
+            gsap.to(containerMediaRef.value, {
+                height: containerMediaRef.value.children[unref(idx)].children[0]
                     .clientHeight,
                 duration: 0,
             })

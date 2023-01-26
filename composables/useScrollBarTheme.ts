@@ -1,14 +1,19 @@
 import { useWatchWithMounted } from './useWatchWithMounted'
 import { useThemeStore } from '@@/store'
+import { storeToRefs } from 'pinia'
 
 export const useScrollBarTheme = () => {
-    const themeStore = useThemeStore()
+    const { darkMode } = $(storeToRefs(useThemeStore()))
 
     const styleCss = computed(() => {
         return `
 ::-webkit-scrollbar-track {
   background: #121212;
-}`
+}
+:root {
+  --scrollbar-track: #121212 !important;
+}
+`
     })
 
     const checkIsCurrentHasStyle = (headTag: HTMLHeadElement) => {
@@ -27,8 +32,7 @@ export const useScrollBarTheme = () => {
 
     const makeStyle = () => {
         const headTag = document.getElementsByTagName('head')[0]
-
-        if (themeStore.darkMode) {
+        if (darkMode) {
             const el = document.createElement('style')
             el.setAttribute('__cuzknothz', '__cuzknothz')
             el.appendChild(document.createTextNode(styleCss.value))
@@ -46,5 +50,5 @@ export const useScrollBarTheme = () => {
         }
     }
 
-    useWatchWithMounted(() => themeStore.darkMode, makeStyle)
+    useWatchWithMounted(() => darkMode, makeStyle)
 }

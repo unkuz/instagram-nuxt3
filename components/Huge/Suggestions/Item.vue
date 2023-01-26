@@ -13,8 +13,8 @@ interface IProps {
 
 defineProps<IProps>()
 
-const isFollow = ref<boolean>(false)
-const toggleFollow = () => (isFollow.value = !isFollow.value)
+let isFollow = $ref(false)
+const toggleFollow = () => (isFollow = !isFollow)
 </script>
 
 <template>

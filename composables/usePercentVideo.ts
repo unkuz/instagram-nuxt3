@@ -4,17 +4,15 @@ export const usePercentVideo = (videoRef: Ref<HTMLVideoElement | null>) => {
     let percent = $ref(0)
 
     const updateTime = () => {
-        const el = unref(videoRef)
+        const videoEl = unref(videoRef)
 
-        if (el?.currentTime && el?.duration) {
-            percent = el.currentTime / el.duration
-        }
+        percent = videoEl!.currentTime / videoEl!.duration
     }
 
     onMounted(() => {
-        if (videoRef.value) {
-            videoRef.value.addEventListener('timeupdate', updateTime)
-        }
+        const videoEl = unref(videoRef)
+
+        videoEl!.addEventListener('timeupdate', updateTime)
     })
 
     return $$({ percent })

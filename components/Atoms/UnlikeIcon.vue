@@ -6,17 +6,15 @@ const unlikeIconRef = $ref<HTMLElement>()
 const tl = gsap.timeline()
 
 onMounted(() => {
-    if (unlikeIconRef) {
-        tl.to(unlikeIconRef, {
-            scale: 1.5,
-            duration: 0.1,
-        })
+    tl.to(unlikeIconRef!, {
+        scale: 1.5,
+        duration: 0.1,
+    })
 
-        tl.to(unlikeIconRef, {
-            scale: 1,
-            duration: 0.1,
-        })
-    }
+    tl.to(unlikeIconRef!, {
+        scale: 1,
+        duration: 0.1,
+    })
 })
 
 onBeforeUnmount(() => {

@@ -1,8 +1,5 @@
 export function useWindowResizeCallback(callback: Function) {
-    const resize = () => {
-        callback()
-        console.log('HEHE')
-    }
+    const resize = () => callback()
 
     onMounted(() => {
         callback()
