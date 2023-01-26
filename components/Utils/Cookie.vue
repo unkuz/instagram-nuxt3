@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { CSSProperties } from 'vue'
 import CookieIcon_ from '@@/assets/svg/cookie.svg'
 import Button from '@@/components/Atoms/Button.vue'
-import { gsap } from 'gsap'
-import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { useWindowResizeCallback } from '@@/composables'
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import { CSSProperties } from 'vue'
 
 const containerRef = $ref<HTMLDivElement | null>(null)
 const style = computed<CSSProperties>(() => ({}))
@@ -12,37 +11,27 @@ const breakpoints = useBreakpoints(breakpointsTailwind)
 
 const largerThanSm = $(breakpoints.greater('md')) // only larger than sm
 
-let tl: TimelineLite = gsap.timeline({})
-
 const animateOut = () =>
-  tl.to(containerRef, {
-    bottom: -100,
+  Object.assign(containerRef!.style, {
+    bottom: '-100px',
     opacity: 0,
-    duration: 1,
   })
 
 const acceptCookieUse = () => {
   animateOut()
 }
 
-const animateIn = () => {
-  tl.to(containerRef, {
-    height: 'auto',
-    duration: 1,
-    bottom: largerThanSm ? 40 : 100,
-    delay: 1,
+useWindowResizeCallback(() => {
+  Object.assign(containerRef!.style, {
+    bottom: largerThanSm ? '40px' : '100px',
   })
-}
-
-onMounted(animateIn)
-
-onBeforeUnmount(() => tl.kill())
+})
 </script>
 <template>
   <div
     ref="containerRef"
     :class="[
-      'fixed -bottom-[100px] left-[40px] right-[40px] h-0 rounded-[0.5rem] bg-c1 dark:bg-c2 dark:text-c1  p-[40px_24px_20px_24px] shadow-md md:right-0 md:w-[290px]',
+      'fixed -bottom-[100px] left-[40px] right-[40px] rounded-[0.5rem]  bg-c1 p-[40px_24px_20px_24px] shadow-md duration-1000  dark:bg-c2 dark:text-c1 md:right-0 md:w-[290px]',
     ]"
   >
     <CookieIcon_ class="absolute -top-[23px] right-1/2 translate-x-1/2" />

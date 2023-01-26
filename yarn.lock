@@ -1176,14 +1176,14 @@
     tslib "^2.4.0"
     unixify "^1.0.0"
 
-"@graphql-tools/delegate@9.0.22":
-  version "9.0.22"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/delegate/-/delegate-9.0.22.tgz#12f27ef76c5add456fa8797a496bb7dc82071771"
-  integrity sha512-dWJGMN8V7KORtbI8eDAjHYTWiMyis/md27M6pPhrlYVlcsDk3U0jbNdgkswBBUEBvqumPRCv8pVOxKcLS4caKA==
+"@graphql-tools/delegate@9.0.23":
+  version "9.0.23"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/delegate/-/delegate-9.0.23.tgz#5233c9648acf2b26744ebbdc91e84b45facd1b42"
+  integrity sha512-pTmC2ZUGRp/j4bwQRccZV+J2ETMeHYF9RmEXHHdj0S7/LOpyfFE3mGvRV2+n6MzXpPCPp+mh037LWF+q4wLcJw==
   dependencies:
     "@graphql-tools/batch-execute" "8.5.15"
     "@graphql-tools/executor" "0.0.12"
-    "@graphql-tools/schema" "9.0.13"
+    "@graphql-tools/schema" "9.0.14"
     "@graphql-tools/utils" "9.1.4"
     dataloader "2.1.0"
     tslib "~2.4.0"
@@ -1314,19 +1314,19 @@
     tslib "^2.4.0"
 
 "@graphql-tools/load@^7.5.5":
-  version "7.8.9"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/load/-/load-7.8.9.tgz#5f4e523095b6154bac43e6a01acb6b043e9afaca"
-  integrity sha512-/eHRv6OCTI/Ir5XcbtSx0XbW3zOQVscp2MZQFGZKDzqCcGD+NVy4mLCoBwR/OsOUpvWAwMnc+Llb4SDKAYGmjQ==
+  version "7.8.10"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/load/-/load-7.8.10.tgz#c62ccc850e6f846e8214f1ae05e675a864d79b80"
+  integrity sha512-Mc1p7ZSxrW5yGG3BLQnhiL8RPG0HdxFVoHV7fpx2adp4o1V7BzDjKRSbCnAxShA1wA4n8wbA+n7NTC0edi4eNA==
   dependencies:
-    "@graphql-tools/schema" "9.0.13"
+    "@graphql-tools/schema" "9.0.14"
     "@graphql-tools/utils" "9.1.4"
     p-limit "3.1.0"
     tslib "^2.4.0"
 
-"@graphql-tools/merge@8.3.15", "@graphql-tools/merge@^8.2.6":
-  version "8.3.15"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-8.3.15.tgz#9b24ee5e9c36074684515c7d1587cd3e200c8a8f"
-  integrity sha512-hYYOlsqkUlL6oOo7zzuk6hIv7xQzy+x21sgK84d5FWaiWYkLYh9As8myuDd9SD5xovWWQ9m/iRhIOVDEMSyEKA==
+"@graphql-tools/merge@8.3.16", "@graphql-tools/merge@^8.2.6":
+  version "8.3.16"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-8.3.16.tgz#fede610687b148e34ff861e8b038dcd71e20039b"
+  integrity sha512-In0kcOZcPIpYOKaqdrJ3thdLPE7TutFnL9tbrHUy2zCinR2O/blpRC48jPckcs0HHrUQ0pGT4HqvzMkZUeEBAw==
   dependencies:
     "@graphql-tools/utils" "9.1.4"
     tslib "^2.4.0"
@@ -1347,11 +1347,11 @@
     tslib "^2.4.0"
 
 "@graphql-tools/prisma-loader@^7.2.7":
-  version "7.2.54"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/prisma-loader/-/prisma-loader-7.2.54.tgz#b82d2193c198928f1d914dc088977fd6c502a4c9"
-  integrity sha512-OoH0JdMQ49IQwiZ8EKOE6sZX4oN5EQwToFnR+ptN5u4ukb4ignyZTrgePFmqOGgj7zyPzisxsWIUXD9szFXXNA==
+  version "7.2.55"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/prisma-loader/-/prisma-loader-7.2.55.tgz#facaef00cfe962050258f6d2535e9fa3af7be7b4"
+  integrity sha512-cEZ/0SdcJy7hra9JrH29coD3jrNIIcjkzis8RhsZJl/jDH/wpLQDX1mhg4jvm/j9NhVVV+ZPC8wuujuxf2M3Dw==
   dependencies:
-    "@graphql-tools/url-loader" "7.17.3"
+    "@graphql-tools/url-loader" "7.17.4"
     "@graphql-tools/utils" "9.1.4"
     "@types/js-yaml" "^4.0.0"
     "@types/json-stable-stringify" "^1.0.32"
@@ -1380,12 +1380,12 @@
     "@graphql-tools/utils" "9.1.4"
     tslib "^2.4.0"
 
-"@graphql-tools/schema@9.0.13", "@graphql-tools/schema@^9.0.0":
-  version "9.0.13"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-9.0.13.tgz#56b994777df29ac36586a3200fb6397abf7b9d83"
-  integrity sha512-guRA3fwAtv+M1Kh930P4ydH9aKJTWscIkhVFcWpj/cnjYYxj88jkEJ15ZNiJX/2breNY+sbVgmlgLKb6aXi/Jg==
+"@graphql-tools/schema@9.0.14", "@graphql-tools/schema@^9.0.0":
+  version "9.0.14"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-9.0.14.tgz#9a658ab82d5a7d4db73f68a44900d4c88a98f0bc"
+  integrity sha512-U6k+HY3Git+dsOEhq+dtWQwYg2CAgue8qBvnBXoKu5eEeH284wymMUoNm0e4IycOgMCJANVhClGEBIkLRu3FQQ==
   dependencies:
-    "@graphql-tools/merge" "8.3.15"
+    "@graphql-tools/merge" "8.3.16"
     "@graphql-tools/utils" "9.1.4"
     tslib "^2.4.0"
     value-or-promise "1.0.12"
@@ -1400,18 +1400,18 @@
     tslib "^2.4.0"
     value-or-promise "1.0.11"
 
-"@graphql-tools/url-loader@7.17.3", "@graphql-tools/url-loader@^7.13.2", "@graphql-tools/url-loader@^7.9.7":
-  version "7.17.3"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/url-loader/-/url-loader-7.17.3.tgz#5c3270208e5cb039f65d7ef390af93bbc5c76408"
-  integrity sha512-NY/NQpuf29gjt19XExjRyTj3z44Ohc2OwQZIR/RqHYn+cbdMeXIgJqV5vbPOCN8Umjmm5yVb7kP6oKNGjyeBvw==
+"@graphql-tools/url-loader@7.17.4", "@graphql-tools/url-loader@^7.13.2", "@graphql-tools/url-loader@^7.9.7":
+  version "7.17.4"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/url-loader/-/url-loader-7.17.4.tgz#4c25fde9223f761ce502c809fa585b152982e2e0"
+  integrity sha512-nB2fhkn4LTYjU2qoTOBZYmWQRVYsCI0K2LScwD49QVMNAPWthg/lHao4hFUe70aTInT8oquvl8d0rIb7fRWOvA==
   dependencies:
     "@ardatan/sync-fetch" "0.0.1"
-    "@graphql-tools/delegate" "9.0.22"
+    "@graphql-tools/delegate" "9.0.23"
     "@graphql-tools/executor-graphql-ws" "0.0.7"
     "@graphql-tools/executor-http" "0.1.1"
     "@graphql-tools/executor-legacy-ws" "0.0.6"
     "@graphql-tools/utils" "9.1.4"
-    "@graphql-tools/wrap" "9.3.1"
+    "@graphql-tools/wrap" "9.3.2"
     "@types/ws" "^8.0.0"
     "@whatwg-node/fetch" "^0.6.0"
     isomorphic-ws "5.0.0"
@@ -1440,13 +1440,13 @@
   dependencies:
     tslib "^2.4.0"
 
-"@graphql-tools/wrap@9.3.1":
-  version "9.3.1"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/wrap/-/wrap-9.3.1.tgz#d0718d87080e7a54655d629a78b08c9d39f314ea"
-  integrity sha512-uzY1HKc7qMErWL3ybv8bFG3hI1rTJPVYQ8WeJkCF/r/+aHEkUj0Bo2PYZrZTX1UIr3Tb4P5GyhqYBgZOXraZjw==
+"@graphql-tools/wrap@9.3.2":
+  version "9.3.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/wrap/-/wrap-9.3.2.tgz#3372986214e2e83636e7382500f3c87e79bc26d1"
+  integrity sha512-jqBMJZyKFATxWA3alPhGRWh/ZluaPWrXFumXRaqAwK9QdCAxM24jG8Kmy3FrTfeyxNqDyzDlHZobtwwDKurm5g==
   dependencies:
-    "@graphql-tools/delegate" "9.0.22"
-    "@graphql-tools/schema" "9.0.13"
+    "@graphql-tools/delegate" "9.0.23"
+    "@graphql-tools/schema" "9.0.14"
     "@graphql-tools/utils" "9.1.4"
     tslib "^2.4.0"
     value-or-promise "1.0.12"
@@ -2855,6 +2855,11 @@
   integrity sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==
   dependencies:
     "@types/ms" "*"
+
+"@types/dom-speech-recognition@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@types/dom-speech-recognition/-/dom-speech-recognition-0.0.1.tgz#e326761a04b4a49c0eec2ac7948afc1c6aa12baa"
+  integrity sha512-udCxb8DvjcDKfk1WTBzDsxFbLgYxmQGKrE/ricoMqHRNjSlSUCcamVTA5lIQqzY10mY5qCY0QDwBfFEwhfoDPw==
 
 "@types/eslint@^8.4.5":
   version "8.4.10"
@@ -7393,14 +7398,15 @@ instantsearch.css@^7.4.5:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.4.5.tgz#2a521aa634329bf1680f79adf87c79d67669ec8d"
   integrity sha512-iIGBYjCokU93DDB8kbeztKtlu4qVEyTg1xvS6iSO1YvqRwkIZgf0tmsl/GytsLdZhuw8j4wEaeYsCzNbeJ/zEQ==
 
-instantsearch.js@^4.50.0:
-  version "4.50.0"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.50.0.tgz#621d26748e80facac1fe8f75c64968fdca74c6aa"
-  integrity sha512-xFh6O+SUQUSmcs8ycB2z2mdHyITD34Bx4iWuogmo8qxkLz2+7wMQeDgdOBjM198XHOzOOzmBpAcaZhiMEOMV0A==
+instantsearch.js@4.50.1:
+  version "4.50.1"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.50.1.tgz#3494865c727b27f8587b287a7e41669dc2c2c7d4"
+  integrity sha512-vLO1wxaJqrumryn1/4+6opSze04m6cPj2vYQtGlrYFMtVmYhrI42VXR0llNxgzSv6VJLEROjOxEj6iI3gfWaIw==
   dependencies:
     "@algolia/events" "^4.0.1"
     "@algolia/ui-components-highlight-vdom" "^1.2.1"
     "@algolia/ui-components-shared" "^1.2.1"
+    "@types/dom-speech-recognition" "^0.0.1"
     "@types/google.maps" "^3.45.3"
     "@types/hogan.js" "^3.0.0"
     "@types/qs" "^6.5.3"
@@ -8635,19 +8641,20 @@ mdast-squeeze-paragraphs@^5.0.0:
     unist-util-visit "^4.0.0"
 
 mdast-util-definitions@^5.0.0:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/mdast-util-definitions/-/mdast-util-definitions-5.1.1.tgz#2c1d684b28e53f84938bb06317944bee8efa79db"
-  integrity sha512-rQ+Gv7mHttxHOBx2dkF4HWTg+EE+UR78ptQWDylzPKaQuVGdG4HIoY3SrS/pCp80nZ04greFvXbVFHT+uf0JVQ==
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/mdast-util-definitions/-/mdast-util-definitions-5.1.2.tgz#9910abb60ac5d7115d6819b57ae0bcef07a3f7a7"
+  integrity sha512-8SVPMuHqlPME/z3gqVwWY4zVXn8lqKv/pAhC57FuJ40ImXyBpmO5ukh98zB2v7Blql2FiHjHv9LVztSIqjY+MA==
   dependencies:
     "@types/mdast" "^3.0.0"
     "@types/unist" "^2.0.0"
     unist-util-visit "^4.0.0"
 
 mdast-util-find-and-replace@^2.0.0:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/mdast-util-find-and-replace/-/mdast-util-find-and-replace-2.2.1.tgz#249901ef43c5f41d6e8a8d446b3b63b17e592d7c"
-  integrity sha512-SobxkQXFAdd4b5WmEakmkVoh18icjQRxGy5OWTCzgsLRm1Fu/KCtwD1HIQSsmq5ZRjVH0Ehwg6/Fn3xIUk+nKw==
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/mdast-util-find-and-replace/-/mdast-util-find-and-replace-2.2.2.tgz#cc2b774f7f3630da4bd592f61966fecade8b99b1"
+  integrity sha512-MTtdFRz/eMDHXzeK6W3dO7mXUlF82Gom4y0oOgvHhh/HXZAGvIQDUvQ0SuUx+j2tv44b8xTHOm8K/9OoRFnXKw==
   dependencies:
+    "@types/mdast" "^3.0.0"
     escape-string-regexp "^5.0.0"
     unist-util-is "^5.0.0"
     unist-util-visit-parents "^5.0.0"
@@ -11452,9 +11459,9 @@ rollup@^2.77.2, rollup@^2.79.1:
     fsevents "~2.3.2"
 
 rollup@^3.10.1, rollup@^3.7.0:
-  version "3.10.1"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.10.1.tgz#56278901ed11fc2898421e8e3e2c8155bc7b40b4"
-  integrity sha512-3Er+yel3bZbZX1g2kjVM+FW+RUWDxbG87fcqFM5/9HbPCTpbVp6JOLn7jlxnNlbu7s/N/uDA4EV/91E2gWnxzw==
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.11.0.tgz#89c487441b18b7c689a0c9aa4221e03b87535461"
+  integrity sha512-+uWPPkpWQ2H3Qi7sNBcRfhhHJyUNgBYhG4wKe5wuGRj2m55kpo+0p5jubKNBjQODyPe6tSBE3tNpdDwEisQvAQ==
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -13132,9 +13139,9 @@ vite-node@0.28.2, vite-node@^0.28.2:
     vite "^3.0.0 || ^4.0.0"
 
 vite-plugin-checker@^0.5.4:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/vite-plugin-checker/-/vite-plugin-checker-0.5.4.tgz#db0f4d1889d0baa13fda106228f531f9f991601b"
-  integrity sha512-T6y+OHXqwOjGrCErbhzg5x79NQZV46cgLwYTxuMQnDzAfA6skh2i8PIHcKks8ZlxopzbkvMb5vwc2DpNXiHJdg==
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/vite-plugin-checker/-/vite-plugin-checker-0.5.5.tgz#164159c129231e9d23507735f5b1cdce5fbda8da"
+  integrity sha512-BLaRlBmiVn3Fg/wR9A0+YNwgXVteFJaH8rCIiIgYQcQ50jc3oVe2m8i0xxG5geq36UttNJsAj7DpDelN7/KjOg==
   dependencies:
     "@babel/code-frame" "^7.12.13"
     ansi-escapes "^4.3.0"
@@ -13142,6 +13149,7 @@ vite-plugin-checker@^0.5.4:
     chokidar "^3.5.1"
     commander "^8.0.0"
     fast-glob "^3.2.7"
+    fs-extra "^11.1.0"
     lodash.debounce "^4.0.8"
     lodash.pick "^4.4.0"
     npm-run-path "^4.0.1"
@@ -13304,11 +13312,11 @@ vue-i18n@^8.27.2:
   integrity sha512-C5GZjs1tYlAqjwymaaCPDjCyGo10ajUphiwA922jKt9n7KPpqR7oM1PCwYzhB/E7+nT3wfdG3oRre5raIT1rKA==
 
 vue-instantsearch@^4.3.2:
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/vue-instantsearch/-/vue-instantsearch-4.8.0.tgz#83de7a8c563f088a3d88dca707b296aa2add616c"
-  integrity sha512-VKQ118TPBdRYDL6ogJ7gMd5u5MYASsdQGlGdMxGYA+Gn8zwAz9KWlfxXiExCr/BnEc7ZsjEBwun0hMfze9Ns8Q==
+  version "4.8.1"
+  resolved "https://registry.yarnpkg.com/vue-instantsearch/-/vue-instantsearch-4.8.1.tgz#bf7d756ae32e967d892a0e048cbdf8704e87ba89"
+  integrity sha512-epRwT1ATTvH8LnOfUltMgr5UsWX4pQKAHIbkAGn3i0yQSyocUm3scnwIfEDhM3IFEnDCs3UjMd1cKvzqa5XwIw==
   dependencies:
-    instantsearch.js "^4.50.0"
+    instantsearch.js "4.50.1"
     mitt "^2.1.0"
 
 vue-router@^4.1.6:
