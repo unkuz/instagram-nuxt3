@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import moment from 'moment'
-import Avatar from '@@/components/Atoms/Avatar.vue'
-import { SizeAvatarEnum } from '@@/type'
-import { useForceRenderTimer } from '@@/composables'
+import Avatar from '@@/components/Atoms/Avatar.vue';
+import { useForceRenderTimer } from '@@/composables';
+import { SizeAvatarEnum } from '@@/type';
+import moment from 'moment';
 
 interface IProps {
   comment: any
   postId: number | string
 }
-const props = defineProps<IProps>()
+defineProps<IProps>()
 
 const { key } = useForceRenderTimer()
 const { S } = SizeAvatarEnum
@@ -39,11 +39,8 @@ const { S } = SizeAvatarEnum
       </div>
       <div class="ml-[52px] -translate-y-[3px] pr-[10px]">
         <p>{{ comment.text }}</p>
-        <div class="flex gap-[20px] text-[0.8rem]">
+        <div class="inline-flex gap-[20px] rounded py-[2px] text-[0.8rem]">
           <div class="flex items-end gap-[5px] font-[550]">
-            <span class="align-bottom text-[0.9rem] leading-[1.05rem]">{{
-              comment.comment_like_count
-            }}</span>
             <span
               class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1"
               title="Like"
@@ -56,11 +53,11 @@ const { S } = SizeAvatarEnum
                 </g>
               </svg>
             </span>
+            <span class="align-bottom text-[0.9rem]">{{
+              comment.comment_like_count
+            }}</span>
           </div>
           <div class="flex items-end gap-[5px]">
-            <span class="align-bottom text-[0.9rem] leading-[1.05rem]">{{
-              '0'
-            }}</span>
             <span
               class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1"
               title="Reply"
@@ -74,6 +71,7 @@ const { S } = SizeAvatarEnum
                 </g>
               </svg>
             </span>
+            <span class="align-bottom text-[0.9rem]">{{ '0' }}</span>
           </div>
         </div>
       </div>

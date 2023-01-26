@@ -58,12 +58,5 @@ useHead({
       </div>
     </div>
     <Slash />
-    <!-- <ClientOnly>
-            <Vue3Lottie
-                :animationData="Luv"
-                class="pointer-events-none fixed inset-0 h-full w-full"
-            >
-            </Vue3Lottie>
-        </ClientOnly> -->
   </div>
 </template>
