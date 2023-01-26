@@ -6,3 +6,5 @@ export const QUALITY_IMAGE = Object.freeze({
 export const MAX_SUGGESTION_PEOPLE_FOLLOW = 7
 
 export const GITHUB_AUTHOR_LINK = 'https://github.com/cuzknothz'
+
+export const TIME_DURATION_SLASH = 4000

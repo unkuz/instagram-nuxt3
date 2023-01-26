@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { ITimeLine } from '@@/models'
 import { IStateStore } from '@@/type'
 import { timeLine } from '@/mocks/reelTimeLine'
+import { useSlashStore } from '@@/store'
 
 type TState = IStateStore<ITimeLine[]>
 
@@ -17,21 +18,26 @@ export const useTimeLineStore = defineStore('timeline', {
       this.data = data
     },
     setToggleLike(id: string) {
+      const slashStore = useSlashStore()
+
       this.data.forEach((i: ITimeLine) => {
         if (i.id === id) {
-          setTimeout(() => {
-            i.has_liked = !i.has_liked
-            i.like_count = i.has_liked ? i.like_count + 1 : i.like_count - 1
-          }, 500)
+          if (i.has_liked) {
+            i.has_liked = false
+            slashStore.setHideSlash()
+          } else {
+            i.has_liked = true
+            slashStore.setShowAnimation('luv')
+          }
+
+          i.like_count = i.has_liked ? i.like_count + 1 : i.like_count - 1
         }
       })
     },
     setToggleSave(id: string) {
       this.data.forEach((i: ITimeLine) => {
         if (i.id === id) {
-          setTimeout(() => {
-            i.is_saved = !i.is_saved
-          }, 500)
+          i.is_saved = !i.is_saved
         }
       })
     },

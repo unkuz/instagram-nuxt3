@@ -1,15 +1,16 @@
 <script lang="ts" setup>
 import Loading from '@@/components/Atoms/Loading.vue'
 import NewPost from '@@/components/Huge/NewPost/index.vue'
+import Slash from '@@/components/Molecules/Slash.vue'
 import Cookie from '@@/components/Utils/Cookie.vue'
 import More from '@@/components/Utils/More.vue'
 import Prelude from '@@/components/Utils/Prelude.vue'
 import {
-  usePrelude,
-  useResizeWindow,
-  useScroll,
-  useScrollBarTheme,
-  useSignature,
+usePrelude,
+useResizeWindow,
+useScroll,
+useScrollBarTheme,
+useSignature,
 } from '@@/composables'
 import { SectionEnum } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
@@ -56,6 +57,7 @@ useHead({
         <Cookie />
       </div>
     </div>
+    <Slash />
     <!-- <ClientOnly>
             <Vue3Lottie
                 :animationData="Luv"

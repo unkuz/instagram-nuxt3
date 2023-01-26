@@ -4,8 +4,8 @@ import SaveIcon_ from '@@/assets/svg/save_icon.svg'
 import ShareIcon_ from '@@/assets/svg/share_icon.svg'
 import ViewPostIcon_ from '@@/assets/svg/view_post_icon.svg'
 import UnlikeIcon from '@@/components/Atoms/UnlikeIcon.vue'
-import { useTimeLineStore } from '@@/store'
 import { stopOtherVideoPlaying } from '@@/helpers'
+import { useSlashStore, useTimeLineStore } from '@@/store'
 
 interface IProps {
   hasLiked: boolean
@@ -18,6 +18,11 @@ interface IProps {
 defineProps<IProps>()
 
 const timelineStore = useTimeLineStore()
+const slashStore = useSlashStore()
+
+const likeUnLike = (idPost: string) => {
+  timelineStore.setToggleLike(idPost)
+}
 </script>
 
 <template>
@@ -30,7 +35,7 @@ const timelineStore = useTimeLineStore()
     ]"
   >
     <div class="flex h-full w-full items-center gap-[12px] md:gap-[10px]">
-      <div class="relative" @click="timelineStore.setToggleLike(id)">
+      <div class="relative" @click="likeUnLike(id)">
         <div v-if="hasLiked">
           <UnlikeIcon />
         </div>
