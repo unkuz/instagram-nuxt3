@@ -20,8 +20,6 @@ const timeLineStore = useTimeLineStore()
 const suggestionStore = useSuggestionStore()
 const authStore = useAuthStore()
 
-const isLogin = $computed(() => authStore.data.isLogin)
-
 // const { data: _timeline } = await useFetch<ITimeLine[]>(APP_API.timeLine.list)
 const { data: _stories } = await useFetch<IStory[]>(APP_API.stories.list)
 const { data: _suggestions } = await useFetch<IStory[]>(APP_API.stories.list)
@@ -56,15 +54,15 @@ useWindowResizeCallback(calcLeftSuggestion)
         ref="leftRef"
         class="inline-flex w-full flex-col items-center md:w-[614px] lg:block"
       >
-        <Stories v-if="isLogin" :stories="stories" />
+        <Stories :stories="stories" />
         <Post v-for="i in timeline" :key="i.id" v-bind="i" />
       </div>
       <div
         ref="rightRef"
         class="fixed left-0 top-[84px] hidden w-[293px] text-sm lg:block"
       >
-        <Suggestions v-if="isLogin" />
-        <div v-else class="h-[500px]">
+        <Suggestions />
+        <!-- <div v-else class="h-[500px]">
           <ins
             class="adsbygoogle"
             style="display: block"
@@ -73,7 +71,7 @@ useWindowResizeCallback(calcLeftSuggestion)
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
-        </div>
+        </div> -->
       </div>
     </div>
     <NuxtPage />
