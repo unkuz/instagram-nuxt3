@@ -23,6 +23,7 @@
     "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
     "@sidebase/nuxt-auth": "0.4.0-alpha.4",
     "@tailwindcss/line-clamp": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.9",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "@vue/eslint-config-standard": "^8.0.1",
