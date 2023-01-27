@@ -3,6 +3,7 @@ import Explore from '@@/components/Explore/index.vue'
 import { useExploreStore } from '@@/store'
 import { APP_API } from '@@/apis'
 import { IStory, ITimeLine } from '@@/models'
+import ErrorPage from '@@/components/Utils/ErrorPage.vue'
 
 const exploreStore = useExploreStore()
 
@@ -21,7 +22,7 @@ const explore = computed(() => exploreStore.list)
     <div
       class="flex h-[calc(100vh-84px)] w-full items-center justify-center text-[0.85rem]"
     >
-      Oops Something went wrong. (╯°□°）╯︵ ┻━┻.
+      <ErrorPage />
     </div>
     <!-- <div v-for="(i, idx) in _chunk(_shuffle(explore), 3)" :key="idx">
       <Explore :cluster="i" />
