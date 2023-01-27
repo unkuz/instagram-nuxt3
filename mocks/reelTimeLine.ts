@@ -12,6 +12,7 @@ export const timeLine = [
         {
           id: 1,
           src: `/video/Crystal Rock x Anastasia Rose x Lucky Twice - Lucky.mp4`,
+          poster: '/video/poster/hehe.png',
         },
       ],
     },

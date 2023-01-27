@@ -56,13 +56,13 @@ const [container] = useKeenSlider({
     spacing: 0,
   },
   dragSpeed: 1.2,
-  renderMode: 'performance',
+  renderMode: 'precision',
 })
 </script>
 
 <template>
   <div
-    class="h-[119px] w-full overflow-hidden bg-transparent p-0 shadow-none shadow-c4 dark:bg-transparent md:mb-[24px] md:bg-c4 md:p-[1px] md:shadow-sm md:clip-path-cuzknothz"
+    class="h-[119px] w-full overflow-hidden bg-transparent p-0 dark:bg-transparent md:mb-[24px] md:bg-c4 md:p-[1px] md:clip-path-cuzknothz"
   >
     <div
       v-cloak

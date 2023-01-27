@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { APP_API } from '@@/apis'
 import { IStory, ITimeLine } from '@@/models'
+import ErrorPage from '~~/components/Utils/ErrorPage.vue'
 
 const { data: _timeline } = await useFetch<ITimeLine[]>(APP_API.timeLine.list)
 const { data: _stories } = await useFetch<IStory[]>(APP_API.stories.list)
@@ -11,7 +12,12 @@ const { data: _timelinez } = await useFetchCamel(APP_API.timeLine.list)
 </script>
 
 <template>
-  <div>
+  <div
+    class="flex h-[calc(100vh-84px)] w-full items-center justify-center text-[0.85rem]"
+  >
+    <ErrorPage />
+  </div>
+  <!-- <div>
     <div
       class="flex h-screen w-full snap-y snap-mandatory flex-col overflow-y-scroll scrollbar-hide"
     >
@@ -115,5 +121,5 @@ const { data: _timelinez } = await useFetchCamel(APP_API.timeLine.list)
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>

@@ -33,8 +33,6 @@ let showExtension = $ref(false)
 
 const toggleShowExtension = () => (showExtension = !showExtension)
 
-const isLogin = computed(() => authStore.data.isLogin)
-
 useClickOutSide(extensionRef, () => (showExtension = false))
 
 const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
@@ -65,7 +63,6 @@ const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
         <SearchPop v-if="isShowSearchToolkit" />
       </div>
       <div
-        v-if="isLogin"
         class="flex h-full w-full flex-row-reverse items-center justify-start space-x-[22px] md:w-auto md:flex-row md:justify-end md:first:mr-6 lg:w-full"
       >
         <div v-show="!isMobile" @click="handleSelect(SectionEnum.HOME)">
@@ -118,11 +115,11 @@ const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
           </div>
         </div>
       </div>
-      <div v-else class="flex h-full w-full items-center justify-end">
+      <!-- <div v-else class="flex h-full w-full items-center justify-end">
         <NuxtLink to="/login">
           <LoginIcon_ />
         </NuxtLink>
-      </div>
+      </div> -->
     </div>
   </header>
 </template>

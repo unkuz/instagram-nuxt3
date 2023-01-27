@@ -96,6 +96,7 @@ onMounted(() => {
       loop
       @timeupdate="updateTime"
       preload="metadata"
+      :poster="video.poster"
     />
     <div
       v-show="isLoading"
