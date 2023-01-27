@@ -28,8 +28,7 @@ export const timeLine = [
     },
     like_count: 2000,
     has_liked: false,
-    caption_text: 
-`🔊 Lucky by Lucky Twice, Crystal Rock, Anastasia Rose
+    caption_text: `🔊 Lucky by Lucky Twice, Crystal Rock, Anastasia Rose
 ✨ Follow Diversity's Playlists on Spotify:
 ➥ https://divr.link/SpotifyPlaylists
 
