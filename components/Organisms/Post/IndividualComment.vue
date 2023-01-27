@@ -3,6 +3,7 @@ import Avatar from '@@/components/Atoms/Avatar.vue'
 import { useForceRenderTimer } from '@@/composables'
 import { SizeAvatarEnum } from '@@/type'
 import moment from 'moment'
+import TagName from '~~/components/Atoms/TagName.vue'
 
 interface IProps {
   comment: any
@@ -24,11 +25,7 @@ const { S } = SizeAvatarEnum
         </NuxtLink>
         <div class="flex items-end gap-[10px]">
           <NuxtLink :to="`/${comment.user.username}`">
-            <p
-              class="inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md line-clamp-1 dark:bg-c1 dark:text-c2"
-            >
-              {{ comment.user.username }}
-            </p>
+            <TagName :name="comment.user.username" />
           </NuxtLink>
           <p
             :key="key"
@@ -92,11 +89,7 @@ const { S } = SizeAvatarEnum
           <Avatar :url="user.profile_pic_url" :size="S" />
         </NuxtLink>
         <NuxtLink :to="`/${user.username}`">
-          <p
-            class="inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md line-clamp-1 dark:bg-c1 dark:text-c2"
-          >
-            {{ user.username }}
-          </p>
+          <TagName :name="comment.user.username" />
         </NuxtLink>
         <p :key="key" class="text-[0.8rem] text-c3 dark:text-c21">
           {{ moment(created_at).fromNow() }}

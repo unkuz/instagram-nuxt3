@@ -14,7 +14,7 @@ const largerThanSm = $(breakpoints.greater('md')) // only larger than sm
 const animateOut = () =>
   Object.assign(containerRef!.style, {
     bottom: '-100px',
-    opacity: 0,
+    display: 'none',
   })
 
 const acceptCookieUse = () => {

@@ -9,7 +9,7 @@ withDefaults(defineProps<IProps>(), {
 </script>
 <template>
   <div
-    class="inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md dark:bg-c1 dark:text-c2 text-[.875rem]"
+    class="inline-block bg-c2 px-[8px] md:py-[1px] py-[2px] text-c1 shadow-md dark:bg-c1 dark:text-c2 md:text-[.875rem] text-[.8rem]"
   >
     {{ name }}
   </div>
