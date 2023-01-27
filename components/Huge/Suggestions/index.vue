@@ -1,28 +1,67 @@
 <script lang="ts" setup>
-import Item from './Item.vue'
 import Avatar from '@@/components/Atoms/Avatar.vue'
 import Button from '@@/components/Atoms/Button.vue'
-import { TSuggestion } from '@@/models'
-import { useAuthStore } from '@@/store'
+import { GITHUB_AUTHOR_LINK, MAX_SUGGESTION_PEOPLE_FOLLOW } from '@@/configs'
+import { useAuthStore, useSuggestionStore } from '@@/store'
 import { SizeAvatarEnum } from '@@/type'
 import { getCurrentYear } from '@@/utils'
-import { GITHUB_AUTHOR_LINK } from '@@/configs'
+import Item from './Item.vue'
 
-interface IProps {
-  suggestion: TSuggestion[]
-}
+const sugestionStore = useSuggestionStore()
+let timer: NodeJS.Timer
+let timer2: NodeJS.Timer
 
-defineProps<IProps>()
-
+let maxSuggestionPeopleFollow = $ref(MAX_SUGGESTION_PEOPLE_FOLLOW)
+const suggestion = $computed(() =>
+  sugestionStore.data.slice(0, maxSuggestionPeopleFollow)
+)
 const authStore = useAuthStore()
-const avatar = computed(() => authStore.data.avatar)
+const avatar = $computed(() => authStore.data.avatar)
+const sugestionRef = $ref<HTMLDivElement | null>(null)
+
+let isIntersecting = $ref(false)
 
 const { M } = SizeAvatarEnum
 const authorText = 'cuzknothz'
+
+// onMounted(() => {
+//   let observer = new IntersectionObserver(
+//     (entries) => {
+//       entries.forEach((entry) => {
+//         isIntersecting = entry.isIntersecting
+//       })
+//     },
+//     {
+//       threshold: 1,
+//       rootMargin: '0px 0px -100px 0px',
+//     }
+//   )
+//   observer.observe(sugestionRef!)
+// })
+
+// watchEffect(() => {
+//   if (!isIntersecting) {
+//     timer = setInterval(() => {
+//       maxSuggestionPeopleFollow--
+//     }, 0)
+//     clearInterval(timer2)
+//   } else {
+//     timer2 = setInterval(() => {
+//       maxSuggestionPeopleFollow++
+//     }, 500)
+//     clearInterval(timer2)
+//     return clearInterval(timer)
+//   }
+// })
+
+// onBeforeUnmount(() => {
+//   clearInterval(timer)
+//   clearInterval(timer2)
+// })
 </script>
 
 <template>
-  <div>
+  <div ref="sugestionRef">
     <div class="mt-[26px] mb-[22px] flex h-[56px] items-center justify-between">
       <Avatar :size="M" :url="avatar" />
       <div class="-ml-[70px]">
@@ -43,7 +82,7 @@ const authorText = 'cuzknothz'
         <div class="cursor-pointer">See All</div>
       </NuxtLink>
     </div>
-    <div class="mt-[8px] w-full">
+    <div class="mt-[8px] h-auto w-full duration-1000">
       <Item
         v-for="{ name, avatar, id } in suggestion"
         :id="id"

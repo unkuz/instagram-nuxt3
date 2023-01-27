@@ -24,9 +24,7 @@ const isLogin = $computed(() => authStore.data.isLogin)
 
 // const { data: _timeline } = await useFetch<ITimeLine[]>(APP_API.timeLine.list)
 const { data: _stories } = await useFetch<IStory[]>(APP_API.stories.list)
-const { data: _suggestions } = await useFetch<IStory[]>(
-  APP_API.suggestions.list
-)
+const { data: _suggestions } = await useFetch<IStory[]>(APP_API.stories.list)
 const { data: _timelinez } = await useFetchCamel(APP_API.timeLine.list)
 
 storiesStore.save(_stories.value ?? [])
@@ -35,7 +33,6 @@ suggestionStore.save(_suggestions.value ?? [])
 
 const timeline = $computed(() => timeLineStore.data)
 const stories = $computed(() => storiesStore.data)
-const suggestion = $computed<TSuggestion[]>(() => suggestionStore.data)
 
 const calcLeftSuggestion = () => {
   if (rightRef && leftRef && leftRef.getClientRects()[0]) {
@@ -66,7 +63,7 @@ useWindowResizeCallback(calcLeftSuggestion)
         ref="rightRef"
         class="fixed left-0 top-[84px] hidden w-[293px] text-sm lg:block"
       >
-        <Suggestions v-if="isLogin" :suggestion="suggestion" />
+        <Suggestions v-if="isLogin" />
         <div v-else class="h-[500px]">
           <ins
             class="adsbygoogle"
