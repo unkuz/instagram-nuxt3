@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TagName from '~~/components/Atoms/TagName.vue'
+import { REGEX } from '@@/utils'
 
 interface IProps {
   userName: string
@@ -8,6 +9,16 @@ interface IProps {
 }
 
 const { captionContent, tags } = defineProps<IProps>()
+
+// const captionContentAfter = computed(() => {
+//   const arr = [...captionContent.matchAll(REGEX.url)]
+//   console.log({arr});
+// })
+
+// onMounted(()=>{
+//     const arr = [...captionContent.matchAll(REGEX.url)]
+//   console.log({arr});
+// })
 
 const hasCaptionOrTag = $computed(() => {
   if (captionContent.trim() === '' || tags.length === 0) {
