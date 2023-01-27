@@ -18,7 +18,7 @@
     "@nuxtjs/html-validator": "^1.2.3",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/supabase": "^0.3.0",
-    "@nuxtjs/tailwindcss": "^6.2.0",
+    "@nuxtjs/tailwindcss": "^6.3.0",
     "@nuxtjs/web-vitals": "^0.2.2",
     "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
     "@sidebase/nuxt-auth": "0.4.0-alpha.3",

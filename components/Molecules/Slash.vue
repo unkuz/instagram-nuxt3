@@ -38,7 +38,7 @@ onBeforeUnmount(() => clearTimeout(timer))
   <ClientOnly v-if="showSlash">
     <Vue3Lottie
       :animationData="mapData(animation)"
-      class="pointer-events-none fixed inset-0 h-screen w-screen"
+      class="pointer-events-none fixed inset-0 z-50 !h-screen !w-screen [&>svg]:scale-125"
       :loop="false"
     >
     </Vue3Lottie>
