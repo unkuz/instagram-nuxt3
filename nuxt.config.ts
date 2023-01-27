@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     'nuxt-icon',
     'nuxt-lodash',
     '@nuxtjs/fontaine',
+    // 'nuxt-logrocket',
     // '@sidebase/nuxt-auth',
     // '@nuxtjs/i18n',
     // '@nuxt/content',
