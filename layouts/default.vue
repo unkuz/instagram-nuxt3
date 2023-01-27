@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import Navbarbottom from './navbarbottom.vue'
-import Header from '@@/components/Header/index.vue'
+import Header from '@@/components/Molecules/Header/index.vue'
 import { SectionEnum } from '@@/constants/section'
 import { useGlobalStore } from '@@/store'
-import Extension from '@@/components/Extension/index.vue'
+import Navbarbottom from './navbarbottom.vue'
 
 const globalStore = useGlobalStore()
 const isShowNavBarBottom = computed(

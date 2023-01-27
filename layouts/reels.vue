@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import Navbarbottom from './navbarbottom.vue'
-import Header from '@@/components/Header/index.vue'
+import Header from '@@/components/Molecules/Header/index.vue'
 import { useGlobalStore } from '@@/store'
 
 const globalStore = useGlobalStore()
