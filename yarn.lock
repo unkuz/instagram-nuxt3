@@ -1846,12 +1846,12 @@
   resolved "https://registry.yarnpkg.com/@nozomuikuta/h3-cors/-/h3-cors-0.1.8.tgz#1e50e8d43e7198b532f7c04c19324407a59f510d"
   integrity sha512-qWe2mUfnjxaBwTYKNM/9GrGK0nciyynn5Lk/sv8wYpKbloaoJFB98onBWMTotV5e/l8CCoelsr1oz4qYb7FdHg==
 
-"@nuxt/content@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@nuxt/content/-/content-2.4.0.tgz#9a40923d7c3c8527291b1f787b89bcfa580b503c"
-  integrity sha512-yqb0Z9Hah5TNV3srLaumHPABHNH/uwx3UT0AL74EnKHS5A+KqB5zYGGwzorrPU/+3g0WR0088VyD9RjDYbJm8A==
+"@nuxt/content@^2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@nuxt/content/-/content-2.4.1.tgz#b302fb2762d869b9413721e53ea745371faa1004"
+  integrity sha512-p9QWo/Erl75inMPZd+9ez9F60Mgua+vQK55R4QOgnBv2EbtVGM0wAm159u5WBHw0k6VbrT/ULvwQf+xMOHQ+kg==
   dependencies:
-    "@nuxt/kit" "3.1.0"
+    "@nuxt/kit" "3.1.1"
     consola "^2.15.3"
     defu "^6.1.2"
     destr "^1.2.2"
@@ -2633,49 +2633,49 @@
     estree-walker "^2.0.2"
     picomatch "^2.3.1"
 
-"@sentry/core@7.33.0":
-  version "7.33.0"
-  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-7.33.0.tgz#7cba1670c041fae02794729b74e9fb9d1f519755"
-  integrity sha512-mrSgUnXjxHVi0cVea1lv7gC/Y66ya2a3atCHaPEij/+l+3APg5d0Ixt1zMx5YllMiZKf6wpxlZ0uwXcqdAAw+w==
+"@sentry/core@7.34.0":
+  version "7.34.0"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-7.34.0.tgz#bfda8d386cf7343200aa9fb7a7a26e99b839fc0c"
+  integrity sha512-J1oxsYZX1N0tkEcaHt/uuDqk6zOnaivyampp+EvBsUMCdemjg7rwKvawlRB0ZtBEQu3HAhi8zecm03mlpWfCDw==
   dependencies:
-    "@sentry/types" "7.33.0"
-    "@sentry/utils" "7.33.0"
+    "@sentry/types" "7.34.0"
+    "@sentry/utils" "7.34.0"
     tslib "^1.9.3"
 
-"@sentry/node@^7.33.0":
-  version "7.33.0"
-  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-7.33.0.tgz#d5c7c7094543dd9819422dfc69952ed40416bfab"
-  integrity sha512-isQVF9LLSG4EZLHiSJ3chgK6f3ZBdGxm8fX6YGm8HWz07CubJddes3yBPLPRNXrRLd7X3SK8pPcK5oc3LIKqAw==
+"@sentry/node@^7.34.0":
+  version "7.34.0"
+  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-7.34.0.tgz#acf51e40b1ecbd91d7bf2df55c47ae1b30c39b40"
+  integrity sha512-VM4XeydRdgeaNTRe8kwqYg2oNPddVyY74PlCFEFnPEN1NccycNuwiFno68kNrApeqxxLlTTmzkJy0BWo16x2Yg==
   dependencies:
-    "@sentry/core" "7.33.0"
-    "@sentry/types" "7.33.0"
-    "@sentry/utils" "7.33.0"
+    "@sentry/core" "7.34.0"
+    "@sentry/types" "7.34.0"
+    "@sentry/utils" "7.34.0"
     cookie "^0.4.1"
     https-proxy-agent "^5.0.0"
     lru_map "^0.3.3"
     tslib "^1.9.3"
 
-"@sentry/tracing@^7.33.0":
-  version "7.33.0"
-  resolved "https://registry.yarnpkg.com/@sentry/tracing/-/tracing-7.33.0.tgz#58accaaf8b1c2a9dcdedd97938e712bf09ed9070"
-  integrity sha512-MtcKyW/QJgXGrHf5+205xnIIl7yIT99MzuTkuKzQwmnmy/siD3U0X8RoCaGLzj6kkSIu4m7vyQZoyd3J+5D8lw==
+"@sentry/tracing@^7.34.0":
+  version "7.34.0"
+  resolved "https://registry.yarnpkg.com/@sentry/tracing/-/tracing-7.34.0.tgz#bc084389cad4f1e8520311ac195b070eced72b40"
+  integrity sha512-JtfSWBfcWslfIujcpGEPF5oOiAOCd5shMoWYrdTvCfruHhYjp4w5kv/ndkvq2EpFkcQYhdmtQEytXEO8IJIqRw==
   dependencies:
-    "@sentry/core" "7.33.0"
-    "@sentry/types" "7.33.0"
-    "@sentry/utils" "7.33.0"
+    "@sentry/core" "7.34.0"
+    "@sentry/types" "7.34.0"
+    "@sentry/utils" "7.34.0"
     tslib "^1.9.3"
 
-"@sentry/types@7.33.0":
-  version "7.33.0"
-  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-7.33.0.tgz#7d4893a783360a868382e5194b50dbf034ba23c0"
-  integrity sha512-5kkmYjtBWSbPxfYGiXdZFPS6xpFBNlXvDqeX4NpCFXz6/LiEDn6tZ61kuCSFb8MZlyqyCX5WsP3aiI2FJfpGIA==
+"@sentry/types@7.34.0":
+  version "7.34.0"
+  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-7.34.0.tgz#e0dc6a927dd13e4cacbca7bfee67a088885e8309"
+  integrity sha512-K+OeHIrl35PSYn6Zwqe4b8WWyAJQoI5NeWxHVkM7oQTGJ1YLG4BvLsR+UiUXnKdR5krE4EDtEA5jLsDlBEyPvw==
 
-"@sentry/utils@7.33.0":
-  version "7.33.0"
-  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-7.33.0.tgz#e6910139328b49b9cc21186521bdb10390dfd915"
-  integrity sha512-msp02GV1gOfaN5FjKjWxI00rtbYLXEE5cTGldhs/Dt9KI63dDk1nwPDkSLhg6joqRItAq0thlBh6un717HdWbg==
+"@sentry/utils@7.34.0":
+  version "7.34.0"
+  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-7.34.0.tgz#32fb6db8b352477d219ddff8200372959c68b445"
+  integrity sha512-VIHHXEBw0htzqxnU8A7WkXKvmsG2pZVqHlAn0H9W/yyFQtXMuP1j1i0NsjADB/3JXUKK83kTNWGzScXvp0o+Jg==
   dependencies:
-    "@sentry/types" "7.33.0"
+    "@sentry/types" "7.34.0"
     tslib "^1.9.3"
 
 "@shuding/opentype.js@1.4.0-beta.0":
@@ -9762,7 +9762,7 @@ nuxt-lodash@^2.4.1:
     "@types/lodash-es" "^4.17.6"
     lodash-es "^4.17.21"
 
-nuxt-og-image@^1.1.1:
+nuxt-og-image@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/nuxt-og-image/-/nuxt-og-image-1.3.0.tgz#17900fbfa9506eda6fb14df62d5b25b92338457a"
   integrity sha512-lwp0fR3pScOWXtFG9Z2Ui6bmrx/aqWnpMIZJGiaiBlY8VRISkTnUAsh/Z3p+0pNMyB6DDcCUTZtY4y99gl/S2Q==
@@ -9815,18 +9815,18 @@ nuxt-security@^0.10.1:
     pathe "^1.0.0"
     xss "^1.0.14"
 
-nuxt-seo-kit@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/nuxt-seo-kit/-/nuxt-seo-kit-1.0.1.tgz#f7a19302ebaac9c4942da4224a7f7670583a1ff9"
-  integrity sha512-E+LYQjPNFQEtNm5i+wfeB13uyMTLqnia1X2vc51BCrHNZHXc2YkzkhVkfY+okAAsJ0bDbpKXrY0rY003CaKtUw==
+nuxt-seo-kit@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/nuxt-seo-kit/-/nuxt-seo-kit-1.1.2.tgz#f3feade8e10fac6e848c6d60e9c4fc54ac5d07e8"
+  integrity sha512-lhVxy6ZO0LfqFvV+ZxOGVX3z/JrMaU0ek4/AnWhIDWpmPUv30Ij5nAIsYBNSaL8arhAGOMYUWSarcQKs/ydRKA==
   dependencies:
-    "@nuxt/kit" "^3.1.0"
+    "@nuxt/kit" "^3.1.1"
     defu "^6.1.2"
     nuxt-link-checker "^1.0.0"
-    nuxt-og-image "^1.1.1"
+    nuxt-og-image "^1.3.0"
     nuxt-schema-org "2.1.0"
     nuxt-simple-robots "^1.0.0"
-    nuxt-simple-sitemap "^1.0.3"
+    nuxt-simple-sitemap "^1.0.5"
     nuxt-unhead "^1.2.0"
     ufo "^1.0.1"
 
@@ -9838,7 +9838,7 @@ nuxt-simple-robots@^1.0.0:
     "@nuxt/kit" "3.0.0"
     pathe "^1.1.0"
 
-nuxt-simple-sitemap@^1.0.3:
+nuxt-simple-sitemap@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nuxt-simple-sitemap/-/nuxt-simple-sitemap-1.0.5.tgz#2003fb9ca32cf079a314a93cb4b76fa4e1d94773"
   integrity sha512-XAaQt7rQGCnYck+xVnkeNTIKLOa6Wgy1/Fb1dUyI38zyXjMZOA3Q4uFT3jeDp8ldByE/Zgck6xCRGJrtkkiLjw==

@@ -8,6 +8,7 @@ interface IProps {
   comment: any
   postId: number | string
 }
+
 defineProps<IProps>()
 
 const { key } = useForceRenderTimer()
