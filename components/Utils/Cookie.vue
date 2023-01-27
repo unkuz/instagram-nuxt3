@@ -3,23 +3,38 @@ import CookieIcon_ from '@@/assets/svg/cookie.svg'
 import Button from '@@/components/Atoms/Button.vue'
 import { useWindowResizeCallback } from '@@/composables'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { CSSProperties } from 'vue'
+import { gsap } from 'gsap'
 
 const containerRef = $ref<HTMLDivElement | null>(null)
-const style = computed<CSSProperties>(() => ({}))
 const breakpoints = useBreakpoints(breakpointsTailwind)
 
-const largerThanSm = $(breakpoints.greater('md')) // only larger than sm
+let tl = gsap.timeline({})
 
-const animateOut = () =>
-  Object.assign(containerRef!.style, {
-    bottom: '-100px',
+const largerThanSm = $(breakpoints.greater('md'))
+
+const animationOut = () => {
+  tl.to(containerRef, {
+    bottom: -200,
+    duration: 0.5,
     display: 'none',
   })
+}
+
+const animationIn = () => {
+  tl.to(containerRef, {
+    bottom: largerThanSm ? 40 : 85,
+    delay: 1,
+    duration: 0.5,
+  })
+}
 
 const acceptCookieUse = () => {
-  animateOut()
+  animationOut()
 }
+
+onMounted(() => {
+  animationIn()
+})
 
 useWindowResizeCallback(() => {
   Object.assign(containerRef!.style, {
@@ -31,7 +46,7 @@ useWindowResizeCallback(() => {
   <div
     ref="containerRef"
     :class="[
-      'fixed -bottom-[100px] left-[20px] right-[20px]  rounded-[0.5rem] bg-c1 p-[40px_24px_20px_24px]  shadow-md duration-1000 dark:bg-c2 dark:text-c1  md:left-[40px] md:right-[40px]  md:w-[290px]',
+      'fixed -bottom-[200px] left-[20px] right-[20px]  rounded-[0.5rem] bg-c1 p-[40px_24px_20px_24px]  shadow-md dark:bg-c2 dark:text-c1  md:left-[40px] md:right-[40px]  md:w-[290px]',
     ]"
   >
     <CookieIcon_ class="absolute -top-[23px] right-1/2 translate-x-1/2" />
@@ -43,7 +58,7 @@ useWindowResizeCallback(() => {
       </p>
       <div class="mt-[10px] flex w-full items-center justify-between">
         <NuxtLink to="/privacy-policy" class="cursor-pointer">
-          <span class="text-c9 dark:text-c14" @click="animateOut"
+          <span class="text-c9 dark:text-c14" @click="animationOut"
             >Privacy Policy</span
           >
         </NuxtLink>
