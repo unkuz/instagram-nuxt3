@@ -33,7 +33,6 @@ let showExtension = $ref(false)
 
 const toggleShowExtension = () => (showExtension = !showExtension)
 
-
 useClickOutSide(extensionRef, () => (showExtension = false))
 
 const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
