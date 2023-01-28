@@ -33,6 +33,7 @@ const [container] = useKeenSlider({
         type="video/mp4"
         playsinline
         crossorigin="anonymous"
+        preload="metadata"
       />
     </div>
   </div>
