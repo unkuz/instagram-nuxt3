@@ -21,7 +21,7 @@ const handleSelect = (section: SectionEnum) => {
 <template>
   <div
     :class="[
-      'fixed bottom-0 z-10 h-[65px] w-full border-t-[1px] border-c4 bg-c1 dark:border-none dark:bg-c2 md:hidden',
+      'fixed bottom-0 z-10 h-[65px] w-full border-t-[1px] border-c4 bg-c1 dark:border-none dark:bg-c19 md:hidden',
       {
         'border-none bg-c2': isReelsSelect,
       },
