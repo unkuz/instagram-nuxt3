@@ -18,9 +18,7 @@ const explore = computed(() => exploreStore.list)
 
 <template>
   <div class="mb-[84px] pt-[20px]">
-    <div
-      class="flex h-[calc(100vh-84px)] w-full items-center justify-center text-[0.85rem]"
-    >
+    <div>
       <ErrorPage />
     </div>
     <!-- <div v-for="(i, idx) in _chunk(_shuffle(explore), 3)" :key="idx">

@@ -14,9 +14,5 @@ const { data: _timelinez } = await useFetchCamel(APP_API.timeLine.list)
 
 <template>
   <!-- <Inbox /> -->
-  <div
-    class="flex h-[calc(100vh-84px)] w-full items-center justify-center text-[0.85rem]"
-  >
-    <ErrorPage />
-  </div>
+  <div><ErrorPage /></div>
 </template>
