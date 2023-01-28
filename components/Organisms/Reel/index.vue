@@ -21,7 +21,7 @@ const videoRefs = $ref<HTMLVideoElement[]>([])
 
 onMounted(() => {
   document.onkeydown = (e) => {
-    switch (String(e.key).toLowerCase()) {
+    switch (e.key.toLowerCase()) {
       case 'arrowup':
         slider.value!.prev()
         break
@@ -33,7 +33,6 @@ onMounted(() => {
         break
       case 'l':
         console.log('L')
-      // right arrow
     }
   }
 })
