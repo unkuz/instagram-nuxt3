@@ -46,8 +46,6 @@ onMounted(() => {
           currentVideoOnScreen = entry.target as HTMLVideoElement
           currentVideoOnScreen.currentTime = 0
           currentVideoOnScreen.play()
-          //   ;(entry.target as HTMLVideoElement).currentTime = 0
-          //   ;(entry.target as HTMLVideoElement).play()
         } else {
           ;(entry.target as HTMLVideoElement).pause()
         }
@@ -87,7 +85,6 @@ onBeforeUnmount(() => {
           src="/video/242322324_812426336116660_1281566458903572911_n.mp4"
           autoplay
           loop
-          muted
           type="video/mp4"
           playsinline
           crossorigin="anonymous"
