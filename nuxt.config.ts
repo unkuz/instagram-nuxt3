@@ -55,7 +55,7 @@ export default defineNuxtConfig({
         },
       ],
     },
-    keepalive: true,
+    keepalive: false,
     rootId: '__nuxt',
     rootTag: 'div',
   },
