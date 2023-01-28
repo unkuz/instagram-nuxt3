@@ -101,7 +101,7 @@ const hiddenHeader = $(
         </div>
         <div v-show="!isMobile" @click="handleSelect(SectionEnum.REELS)">
           <NuxtLink to="/reels">
-            <Reels :is-select="false" />
+            <Reels :is-select="section === SectionEnum.REELS" />
           </NuxtLink>
         </div>
         <div class="relative" @click="handleSelect(SectionEnum.NEW_POST)">
