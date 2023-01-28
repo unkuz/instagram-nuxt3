@@ -3,7 +3,7 @@ import CookieIcon_ from '@@/assets/svg/cookie.svg'
 import Button from '@@/components/Atoms/Button.vue'
 import { useWindowResizeCallback } from '@@/composables'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-const { $gsap } = useNuxtApp()
+import { gsap } from 'gsap'
 
 const containerRef = $ref<HTMLDivElement | null>(null)
 const breakpoints = useBreakpoints(breakpointsTailwind)
@@ -11,7 +11,7 @@ const breakpoints = useBreakpoints(breakpointsTailwind)
 const largerThanSm = $(breakpoints.greater('md'))
 
 const animateOut = () =>
-  $gsap.to(containerRef, { bottom: -200, display: 'none', duration: 1 })
+  gsap.to(containerRef, { bottom: -200, display: 'none', duration: 1 })
 
 const animateIn = () => {
   Object.assign(containerRef!.style, {
