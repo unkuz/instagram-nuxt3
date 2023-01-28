@@ -45,4 +45,5 @@ export const useGlobalStore = defineStore('global', {
       this.scroll = value
     },
   },
+  persist: true,
 })

@@ -10,6 +10,7 @@ import {
   useResizeWindow,
   useScroll,
   useScrollBarTheme,
+  useWatchRouteSetSection,
 } from '@@/composables'
 import { SectionEnum } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
@@ -25,6 +26,7 @@ registerSeviceWorkerPWA()
 useScrollBarTheme()
 useScroll()
 useResizeWindow()
+useWatchRouteSetSection()
 
 useHead({
   meta: [{ name: 'theme-color', content: isDarkMode ? '#121212' : '#fff' }],

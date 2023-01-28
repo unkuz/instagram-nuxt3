@@ -8,9 +8,9 @@ import { SectionEnum } from '@@/constants'
 import { useGlobalStore } from '@@/store'
 
 const globalStore = useGlobalStore()
-const isMobile = computed(() => globalStore.getIsMobile)
-const section = computed(() => globalStore.section)
-const isReelsSelect = computed(
+const isMobile = $computed(() => globalStore.getIsMobile)
+const section = $computed(() => globalStore.section)
+const isReelsSelect = $computed(
   () => globalStore.section === SectionEnum.REELS && isMobile
 )
 const handleSelect = (section: SectionEnum) => {
