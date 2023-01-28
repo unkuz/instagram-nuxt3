@@ -24,7 +24,7 @@ const ok = () => {
 onMounted(() => {
   tl.to(containerRef, {
     bottom: 40,
-    opacity: 1,
+    ease: 'elastic.out(1, 0.5)',
     duration: 1,
   })
 })
@@ -33,22 +33,22 @@ onMounted(() => {
   <div
     ref="containerRef"
     :class="[
-      'fixed right-0 -bottom-[300px] hidden cursor-help rounded-[0.5rem] bg-c1 p-[40px_24px_20px_24px] shadow-md  dark:bg-c2  dark:text-c1 md:right-[40px]   md:block  md:w-[290px]',
+      'fixed right-0 -bottom-[300px] hidden cursor-help rounded-[0.5rem] bg-c1 p-[40px_24px_20px_24px] shadow-md  dark:bg-c2  dark:text-c1 md:right-[40px]   md:block  md:w-[280px]',
     ]"
   >
     <KeyboardIcon_
       class="absolute -top-[23px] right-1/2 w-[65px] origin-center translate-x-1/2 -rotate-[20deg] dark:fill-c1"
     />
     <div class="text-[0.8rem]">
-      <p class="mt-[5px] text-center text-[.85rem] font-[600]">
-        {{ 'Introducing keyboard shortcuts!' }}
+      <p class="mt-[15px] text-center text-[0.85rem]">
+        <span>{{ 'Keyboard shortcuts! ヾ(⌐■_■)ノ♪' }}</span>
       </p>
       <p
-        class="mt-[5px] flex items-center gap-[20px] first:mt-[10px]"
+        class="mt-[5px] flex items-center gap-[15px] first:mt-[20px]"
         v-for="({ icon, content }, idx) in intructionMap"
         :key="idx"
       >
-        <span><component :is="icon" /></span>{{ content }}
+        <span><component :is="icon" class="w-[20px]" /></span>{{ content }}
       </p>
 
       <div class="flex w-full justify-end">

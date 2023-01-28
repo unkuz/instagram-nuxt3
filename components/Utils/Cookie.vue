@@ -11,14 +11,9 @@ const breakpoints = useBreakpoints(breakpointsTailwind)
 const largerThanSm = $(breakpoints.greater('md'))
 
 let tl: TimelineLite = gsap.timeline({})
+
 const animateOut = () => {
   tl.reverse()
-}
-
-const animateIn = () => {
-  Object.assign(containerRef!.style, {
-    bottom: largerThanSm ? '40px' : '85px',
-  })
 }
 
 const acceptCookieUse = () => {
@@ -29,14 +24,12 @@ onMounted(() => {
   const TIME_DELAY_START_APPARENT = 2500
   setTimeout(() => {
     tl.to(containerRef, {
-      bottom: 40,
-      ease: 'back.out(1.7)',
+      bottom: largerThanSm ? 40 : 85,
+      ease: 'elastic.out(1, 0.5)',
       duration: 1,
     })
   }, TIME_DELAY_START_APPARENT)
 })
-
-useWindowResizeCallback(animateIn, false)
 </script>
 <template>
   <div
