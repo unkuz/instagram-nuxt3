@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Navbarbottom from './navbarbottom.vue'
+import NavBarBottom from '@@/components/Molecules/NavBarBottom.vue'
 import Header from '@@/components/Molecules/Header/index.vue'
 import { useGlobalStore } from '@@/store'
 
@@ -20,6 +20,6 @@ const isMobile = computed(() => globalStore.getIsMobile)
     >
       <slot />
     </div>
-    <Navbarbottom />
+    <NavBarBottom />
   </div>
 </template>
