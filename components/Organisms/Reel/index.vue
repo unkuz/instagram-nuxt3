@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useKeenSlider } from 'keen-slider/vue.es'
 import ReelKeyBoardShortcut from '@@/components/Utils/ReelKeyBoardShortcut.vue'
+import { useIdle } from '@vueuse/core'
 
 const [container, slider] = useKeenSlider({
   slides: {
@@ -14,8 +15,17 @@ const [container, slider] = useKeenSlider({
   },
 })
 
+const { idle } = useIdle(2000)
 let observer: IntersectionObserver
 let currentVideoOnScreen = $ref<HTMLVideoElement>()
+
+watch(idle, (val) => {
+  if (val) {
+    currentVideoOnScreen!.pause()
+  } else {
+    currentVideoOnScreen!.play()
+  }
+})
 
 const videoRefs = $ref<HTMLVideoElement[]>([])
 

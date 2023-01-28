@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import LoadingIcon_ from '@@/assets/svg/Dual Ring-1s-200px.svg'
+import LoadingIcon_ from '@@/assets/svg/loading_34295aioi.svg'
 import ExpandIcon_ from '@@/assets/svg/full_screen.svg'
 import PlayIcon_ from '@@/assets/svg/play_icon.svg'
 import { useDoubleClick, usePercentVideo } from '@@/composables'
@@ -102,7 +102,7 @@ onMounted(() => {
       v-show="isLoading"
       class="absolute inset-0 flex items-center justify-center bg-c20/40"
     >
-      <LoadingIcon_ class="w-[10%] !bg-transparent" />
+      <LoadingIcon_ class="w-[10%] !bg-transparent invert" />
     </div>
 
     <div
