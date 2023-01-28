@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Navbarbottom from './navbarbottom.vue'
+import NavBarBottom from '@@/components/Molecules/NavBarBottom.vue'
 </script>
 
 <template>
@@ -7,6 +7,6 @@ import Navbarbottom from './navbarbottom.vue'
     <div class="mx-auto mt-[50px] w-full sm:mt-[84px] lg:w-[935px]">
       <slot />
     </div>
-    <Navbarbottom />
+    <NavBarBottom />
   </div>
 </template>

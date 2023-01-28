@@ -20,5 +20,3 @@ const { data: _timelinez } = await useFetchCamel(APP_API.timeLine.list)
     <ErrorPage />
   </div>
 </template>
-
-<style scoped></style>

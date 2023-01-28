@@ -10,4 +10,3 @@ import Arrow from '@@/components/Utils/Arrow.vue'
     />
   </div>
 </template>
-<style scoped></style>

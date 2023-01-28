@@ -1,16 +1,16 @@
 <script lang="ts" setup>
 import { APP_API } from '@@/apis'
 import Suggestions from '@@/components/Huge/Suggestions/index.vue'
-import Post from '@@/components/Organisms/Post/index.vue'
 import Stories from '@@/components/Molecules/Stories/index.vue'
-import { IStory, ITimeLine, TSuggestion } from '@@/models'
+import Post from '@@/components/Organisms/Post/index.vue'
+import { useFetchCamel, useWindowResizeCallback } from '@@/composables'
+import { IStory } from '@@/models'
 import {
   useAuthStore,
   useStoriesStore,
   useSuggestionStore,
   useTimeLineStore,
 } from '@@/store'
-import { useFetchCamel, useWindowResizeCallback } from '@@/composables'
 
 const rightRef = $ref<HTMLElement | null>(null)
 const leftRef = $ref<HTMLElement | null>(null)
@@ -62,16 +62,6 @@ useWindowResizeCallback(calcLeftSuggestion)
         class="fixed left-0 top-[84px] hidden w-[293px] text-sm lg:block"
       >
         <Suggestions />
-        <!-- <div v-else class="h-[500px]">
-          <ins
-            class="adsbygoogle"
-            style="display: block"
-            data-ad-client="ca-pub-1817809598132751"
-            data-ad-slot="9199689868"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          />
-        </div> -->
       </div>
     </div>
     <NuxtPage />

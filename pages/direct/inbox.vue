@@ -5,5 +5,3 @@ import Inbox from '@@/components/Huge/Inbox/index.vue'
 <template>
   <Inbox />
 </template>
-
-<style scoped></style>

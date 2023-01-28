@@ -2,7 +2,7 @@
 import Header from '@@/components/Molecules/Header/index.vue'
 import { SectionEnum } from '@@/constants/section'
 import { useGlobalStore } from '@@/store'
-import Navbarbottom from './navbarbottom.vue'
+import NavBarBottom from '@@/components/Molecules/NavBarBottom.vue'
 
 const globalStore = useGlobalStore()
 const isShowNavBarBottom = computed(
@@ -20,6 +20,6 @@ const isShowNavBarBottom = computed(
     >
       <slot />
     </div>
-    <Navbarbottom v-if="isShowNavBarBottom" />
+    <NavBarBottom v-if="isShowNavBarBottom" />
   </div>
 </template>
