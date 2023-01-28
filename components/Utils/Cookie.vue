@@ -3,35 +3,38 @@ import CookieIcon_ from '@@/assets/svg/cookie.svg'
 import Button from '@@/components/Atoms/Button.vue'
 import { useWindowResizeCallback } from '@@/composables'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { CSSProperties } from 'vue'
+const { $gsap } = useNuxtApp()
 
 const containerRef = $ref<HTMLDivElement | null>(null)
-const style = computed<CSSProperties>(() => ({}))
 const breakpoints = useBreakpoints(breakpointsTailwind)
 
-const largerThanSm = $(breakpoints.greater('md')) // only larger than sm
+const largerThanSm = $(breakpoints.greater('md'))
 
 const animateOut = () =>
+  $gsap.to(containerRef, { bottom: -200, display: 'none', duration: 1 })
+
+const animateIn = () => {
   Object.assign(containerRef!.style, {
-    bottom: '-100px',
-    display: 'none',
+    bottom: largerThanSm ? '40px' : '85px',
   })
+}
 
 const acceptCookieUse = () => {
   animateOut()
 }
 
-useWindowResizeCallback(() => {
-  Object.assign(containerRef!.style, {
-    bottom: largerThanSm ? '40px' : '85px',
-  })
+onMounted(() => {
+  const TIME_DELAY_START_APPARENT = 3000
+  setTimeout(animateIn, TIME_DELAY_START_APPARENT)
 })
+
+useWindowResizeCallback(animateIn, false)
 </script>
 <template>
   <div
     ref="containerRef"
     :class="[
-      'fixed -bottom-[100px] left-[20px] right-[20px]  rounded-[0.5rem] bg-c1 p-[40px_24px_20px_24px]  shadow-md duration-1000 dark:bg-c2 dark:text-c1  md:left-[40px] md:right-[40px]  md:w-[290px]',
+      'fixed -bottom-[200px] left-[20px] right-[20px]  rounded-[0.5rem] bg-c1 p-[40px_24px_20px_24px]  shadow-md duration-1000 dark:bg-c2 dark:text-c1  md:left-[40px] md:right-[40px]  md:w-[290px]',
     ]"
   >
     <CookieIcon_ class="absolute -top-[23px] right-1/2 translate-x-1/2" />
