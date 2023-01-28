@@ -58,7 +58,6 @@ onMounted(() => {
         } else {
           ;(entry.target as HTMLVideoElement).pause()
         }
-        console.log('ENTRY', entry)
       })
     },
     {
