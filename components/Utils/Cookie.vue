@@ -24,7 +24,7 @@ const acceptCookieUse = () => {
 }
 
 onMounted(() => {
-  const TIME_DELAY_START_APPARENT = 3000
+  const TIME_DELAY_START_APPARENT = 2500
   setTimeout(animateIn, TIME_DELAY_START_APPARENT)
 })
 
