@@ -14,12 +14,14 @@ const scrollToComment = () => {
 </script>
 
 <template>
-  <div class="mb-[5px] flex h-[18px] cursor-pointer gap-[5px] text-[0.85rem]">
-    <span class="select-none text-red-400"
+  <div
+    class="mb-[5px] flex h-[18px] cursor-pointer select-none gap-[5px] text-[0.85rem]"
+  >
+    <span class="text-red-400"
       ><span>{{ format(likeCount) }}</span> <span>likes</span></span
     >
     <span>|</span>
-    <span class="select-none text-fuchsia-400" @click="scrollToComment">
+    <span class="text-fuchsia-400" @click="scrollToComment">
       <span>{{ format(commentCount) }}</span> <span>comments</span>
     </span>
   </div>
