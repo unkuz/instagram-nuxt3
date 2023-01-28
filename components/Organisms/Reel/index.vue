@@ -17,7 +17,7 @@ const [container] = useKeenSlider({
 <template>
   <div
     ref="container"
-    class="keen-slider flex flex-col !flex-nowrap items-center"
+    class="keen-slider flex h-[calc(100vh-65px)] flex-col !flex-nowrap items-center md:h-[calc(100vh-84px)]"
   >
     <div
       v-for="(_i, idx) in 2"
@@ -25,7 +25,7 @@ const [container] = useKeenSlider({
       class="keen-slider__slide !w-auto cursor-grab active:cursor-grabbing"
     >
       <video
-        class="h-[calc(100vh-65px)] w-auto object-cover md:h-[calc(100vh-104px)]"
+        class="h-[calc(100vh-65px)] w-auto object-cover md:h-[calc(100vh-114px)]"
         src="/video/242322324_812426336116660_1281566458903572911_n.mp4"
         autoplay
         loop
