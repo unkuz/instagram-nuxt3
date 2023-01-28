@@ -2,6 +2,7 @@
 import { useKeenSlider } from 'keen-slider/vue.es'
 import ReelKeyBoardShortcut from '@@/components/Utils/ReelKeyBoardShortcut.vue'
 import { useIdle } from '@vueuse/core'
+import { TIME_IDLE_REELS } from '@@/configs';
 
 const [container, slider] = useKeenSlider({
   slides: {
@@ -15,7 +16,7 @@ const [container, slider] = useKeenSlider({
   },
 })
 
-const { idle } = useIdle(2000)
+const { idle } = useIdle(TIME_IDLE_REELS)
 let observer: IntersectionObserver
 let currentVideoOnScreen = $ref<HTMLVideoElement>()
 
