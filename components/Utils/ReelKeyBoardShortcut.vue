@@ -46,7 +46,7 @@ onBeforeUnmount(() => {
     ]"
   >
     <KeyboardIcon_
-      class="absolute -top-[23px] right-1/2 w-[65px] origin-center translate-x-1/2 -rotate-[20deg] dark:fill-c1"
+      class="absolute -top-[23px] right-1/2 w-[65px] origin-center translate-x-1/2 -rotate-[20deg] dark:fill-c1 hover:rotate-0 duration-500"
     />
     <div class="text-[0.8rem]">
       <p class="mt-[15px] mb-[10px] text-center text-[0.85rem]">
