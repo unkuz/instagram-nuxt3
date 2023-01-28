@@ -1829,10 +1829,10 @@
   resolved "https://registry.yarnpkg.com/@nozomuikuta/h3-cors/-/h3-cors-0.1.8.tgz#1e50e8d43e7198b532f7c04c19324407a59f510d"
   integrity sha512-qWe2mUfnjxaBwTYKNM/9GrGK0nciyynn5Lk/sv8wYpKbloaoJFB98onBWMTotV5e/l8CCoelsr1oz4qYb7FdHg==
 
-"@nuxt/content@^2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@nuxt/content/-/content-2.4.1.tgz#b302fb2762d869b9413721e53ea745371faa1004"
-  integrity sha512-p9QWo/Erl75inMPZd+9ez9F60Mgua+vQK55R4QOgnBv2EbtVGM0wAm159u5WBHw0k6VbrT/ULvwQf+xMOHQ+kg==
+"@nuxt/content@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@nuxt/content/-/content-2.4.2.tgz#d297385aa2a060de22e070f902390833f2a202ed"
+  integrity sha512-Nz2ZcC7R505UY5NQN+WE1pZ4ie8PBBr12qJHFAZqhWCXenzsdb87p48fvr6Zhlj8CyCTQqWg0B2fs7Lyg/CKwg==
   dependencies:
     "@nuxt/kit" "3.1.1"
     consola "^2.15.3"
