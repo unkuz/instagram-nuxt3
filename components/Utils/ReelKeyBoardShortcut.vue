@@ -40,11 +40,11 @@ onMounted(() => {
       class="absolute -top-[23px] right-1/2 w-[65px] origin-center translate-x-1/2 -rotate-[20deg] dark:fill-c1"
     />
     <div class="text-[0.8rem]">
-      <p class="mt-[15px] text-center text-[0.85rem]">
+      <p class="mt-[15px] text-center text-[0.85rem] mb-[10px]">
         <span>{{ 'Keyboard shortcuts! ヾ(⌐■_■)ノ♪' }}</span>
       </p>
       <p
-        class="mt-[5px] flex items-center gap-[15px] first:mt-[20px]"
+        class="flex items-center gap-[15px]"
         v-for="({ icon, content }, idx) in intructionMap"
         :key="idx"
       >
