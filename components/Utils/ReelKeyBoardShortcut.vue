@@ -28,6 +28,8 @@ onMounted(() => {
     duration: 1,
   })
 })
+
+onBeforeUnmount(() => tl.kill())
 </script>
 <template>
   <div
@@ -40,7 +42,7 @@ onMounted(() => {
       class="absolute -top-[23px] right-1/2 w-[65px] origin-center translate-x-1/2 -rotate-[20deg] dark:fill-c1"
     />
     <div class="text-[0.8rem]">
-      <p class="mt-[15px] text-center text-[0.85rem] mb-[10px]">
+      <p class="mt-[15px] mb-[10px] text-center text-[0.85rem]">
         <span>{{ 'Keyboard shortcuts! ヾ(⌐■_■)ノ♪' }}</span>
       </p>
       <p
