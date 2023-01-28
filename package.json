@@ -77,7 +77,7 @@
     "rxjs": "^7.8.0",
     "sass": "^1.57.1",
     "tailwind-scrollbar-hide": "^1.1.7",
-    "three": "0.149.0",
+    "three": "0.134",
     "troisjs": "^0.3.4",
     "vee-validate": "^4.7.3",
     "vite-svg-loader": "^4.0.0",
