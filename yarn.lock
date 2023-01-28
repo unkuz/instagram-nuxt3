@@ -9553,7 +9553,7 @@ nuxt-logrocket@^2.0.4:
     defu "^6.1.1"
     logrocket "^3.0.1"
 
-nuxt-og-image@^1.3.1:
+nuxt-og-image@^1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/nuxt-og-image/-/nuxt-og-image-1.3.2.tgz#a9c7f1a34d0df22e1a1ff73f7bc3281294a7f8ca"
   integrity sha512-dCxEz1bK7aqC++1aADfeTx+xj++HrAIXM9J/qbYbz0v9yCmEbPQ/mMtna/g1rSl92xyE0lLTu2QjcKY8nEfgtQ==
@@ -9606,18 +9606,18 @@ nuxt-security@^0.10.1:
     pathe "^1.0.0"
     xss "^1.0.14"
 
-nuxt-seo-kit@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/nuxt-seo-kit/-/nuxt-seo-kit-1.1.3.tgz#30f6bfa8fb5657bc994a72a2a01eec5b2ae98fa7"
-  integrity sha512-+Rjn6cVuHKfMkEWVk4nIPLAylZ/wR6f/YZrCv7nzsmORhHRVgomlRo/6tpO9tnpeh1jaJr72wCARLKqmrj3xfw==
+nuxt-seo-kit@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/nuxt-seo-kit/-/nuxt-seo-kit-1.1.4.tgz#afc5c1cbb40061c3af16fb519f318c54d376858e"
+  integrity sha512-iybGwXJyja5dShLUjKKNhBIvdlp7arA8WKAKsmdA3P7NYbM50osm5coghXUFU9wr2hmimHAjrBkln0RgTVHbhg==
   dependencies:
     "@nuxt/kit" "^3.1.1"
     defu "^6.1.2"
     nuxt-link-checker "^1.0.1"
-    nuxt-og-image "^1.3.1"
+    nuxt-og-image "^1.3.2"
     nuxt-schema-org "2.1.0"
     nuxt-simple-robots "^1.0.0"
-    nuxt-simple-sitemap "^1.0.5"
+    nuxt-simple-sitemap "^1.0.6"
     nuxt-unhead "^1.2.0"
     ufo "^1.0.1"
 
@@ -9629,14 +9629,14 @@ nuxt-simple-robots@^1.0.0:
     "@nuxt/kit" "3.0.0"
     pathe "^1.1.0"
 
-nuxt-simple-sitemap@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/nuxt-simple-sitemap/-/nuxt-simple-sitemap-1.0.5.tgz#2003fb9ca32cf079a314a93cb4b76fa4e1d94773"
-  integrity sha512-XAaQt7rQGCnYck+xVnkeNTIKLOa6Wgy1/Fb1dUyI38zyXjMZOA3Q4uFT3jeDp8ldByE/Zgck6xCRGJrtkkiLjw==
+nuxt-simple-sitemap@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/nuxt-simple-sitemap/-/nuxt-simple-sitemap-1.0.6.tgz#da9afa576341823e9613f463433c89e970abd09d"
+  integrity sha512-CHMrS1Z34+vlb3nW0KJ7zaR5e+J56QTWaVrkKbkwwHVqJpM9hxO60dJ0bNG8RP/Fl9lbMf/OdqN4ypV0PKYPuw==
   dependencies:
-    "@nuxt/kit" "3.0.0"
+    "@nuxt/kit" "3.1.1"
     chalk "^5.2.0"
-    defu "^6.1.1"
+    defu "^6.1.2"
     escape-string-regexp "^5.0.0"
     knitwork "^1.0.0"
     pathe "^1.1.0"
@@ -10280,6 +10280,16 @@ postcss-custom-properties@^13.1.0:
   version "13.1.0"
   resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-13.1.0.tgz#b6f0ae00381f636932b8ce35ac77b406659dedb8"
   integrity sha512-O0Lg0CuHwADctEMBgGtaeams7eFES8pXo/9zBClTbRVdU3LFAkFluw1l9eYnJ3rtidp80EGbAIuiisEIu1Z+uA==
+  dependencies:
+    "@csstools/cascade-layer-name-parser" "^1.0.0"
+    "@csstools/css-parser-algorithms" "^2.0.0"
+    "@csstools/css-tokenizer" "^2.0.0"
+    postcss-value-parser "^4.2.0"
+
+postcss-custom-properties@^13.1.1:
+  version "13.1.1"
+  resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-13.1.1.tgz#1d7b7d589124c3f5dfe9d255aba5ac15e9bd017c"
+  integrity sha512-FK4dBiHdzWOosLu3kEAHaYpfcrnMfVV4nP6PT6EFIfWXrtHH9LY8idfTYnEDpq/vgE33mr8ykhs7BjlgcT9agg==
   dependencies:
     "@csstools/cascade-layer-name-parser" "^1.0.0"
     "@csstools/css-parser-algorithms" "^2.0.0"
@@ -12212,10 +12222,10 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==
 
-three@0.134:
-  version "0.134.0"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.134.0.tgz#d7ad4d85d050da0861bf39749b06ddfb5f17157f"
-  integrity sha512-LbBerg7GaSPjYtTOnu41AMp7tV6efUNR3p4Wk5NzkSsNTBuA5mDGOfwwZL1jhhVMLx9V20HolIUo0+U3AXehbg==
+three@0.149.0:
+  version "0.149.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.149.0.tgz#a9cf78b17d02f063ffe6dfca1e300eff2eab2927"
+  integrity sha512-tohpUxPDht0qExRLDTM8sjRLc5d9STURNrdnK3w9A+V4pxaTBfKWWT/IqtiLfg23Vfc3Z+ImNfvRw1/0CtxrkQ==
 
 through2@^4.0.2:
   version "4.0.2"
