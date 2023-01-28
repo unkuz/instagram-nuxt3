@@ -77,9 +77,8 @@ const send = async () => {
       spellcheck="false"
       class="m-auto my-[10px] block h-[38px] w-[83%] cursor-text resize-none rounded-[5px] border-[1px] border-c4 bg-transparent p-[5px] shadow-sm shadow-c4 placeholder:text-center placeholder:text-[0.8rem] focus:outline-none dark:border-c20 dark:shadow-none lg:w-[88%]"
       @keyup.enter="send"
-    >
-      {{ commentValueText }}
-    </textarea>
+    />
+
     <div class="cursor-pointer text-[0.8rem] font-[500]" @click="send">
       <svg width="24" height="24" viewBox="0 0 24 24">
         <path

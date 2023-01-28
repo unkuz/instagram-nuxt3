@@ -151,8 +151,7 @@ export default defineNuxtConfig({
     public: {
       siteUrl: 'https://instagram-clone-nuxt3.vercel.app/',
       siteName: 'Instagram',
-      siteDescription:
-        'Instagram Clone By Cuzknothz',
+      siteDescription: 'Instagram Clone By Cuzknothz',
       language: 'en-AU',
       titleSeparator: '|',
     },

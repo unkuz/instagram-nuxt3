@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import Error_lottie from '@@/lotties/error.lotties.json'
+import { useLockScroll } from '@@/composables'
+
+// useLockScroll()
 </script>
 <template>
   <div>
