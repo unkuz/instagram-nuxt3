@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import KeyboardIcon_ from '@@/assets/svg/keyboard.svg'
-import Button from '@@/components/Atoms/Button.vue'
-import KbUpIcon_ from '@@/assets/svg/kb_up.svg'
 import KbDownIcon_ from '@@/assets/svg/kb_down.svg'
 import KbLIcon_ from '@@/assets/svg/kb_l.svg'
 import KbMIcon_ from '@@/assets/svg/kb_m.svg'
+import KbUpIcon_ from '@@/assets/svg/kb_up.svg'
+import KeyboardIcon_ from '@@/assets/svg/keyboard.svg'
+import Button from '@@/components/Atoms/Button.vue'
+import { TIME_DELAY_START_APPARENT_TOOLTIP } from '@@/configs'
 import { gsap } from 'gsap'
 
 const intructionMap = [
@@ -16,20 +17,26 @@ const intructionMap = [
 
 const containerRef = $ref<HTMLDivElement | null>(null)
 let tl: TimelineLite = gsap.timeline({})
+let timer: NodeJS.Timer
 
 const ok = () => {
   tl.reverse()
 }
 
 onMounted(() => {
-  tl.to(containerRef, {
-    bottom: 40,
-    ease: 'elastic.out(1, 0.5)',
-    duration: 1,
-  })
+  timer = setTimeout(() => {
+    tl.to(containerRef, {
+      bottom: 40,
+      ease: 'elastic.out(1, 0.5)',
+      duration: 1,
+    })
+  }, TIME_DELAY_START_APPARENT_TOOLTIP)
 })
 
-onBeforeUnmount(() => tl.kill())
+onBeforeUnmount(() => {
+  tl.kill()
+  clearTimeout(timer)
+})
 </script>
 <template>
   <div
