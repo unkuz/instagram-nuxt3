@@ -13,6 +13,9 @@ const [container, slider] = useKeenSlider({
   },
 })
 
+let observer: IntersectionObserver
+let currentVideoOnScreen = $ref<HTMLVideoElement>()
+
 const videoRefs = $ref<HTMLVideoElement[]>([])
 
 onMounted(() => {
@@ -25,14 +28,44 @@ onMounted(() => {
         slider.value!.next()
         break
       case 'm':
-        console.log('M')
-        // left arrow
+        currentVideoOnScreen!.muted = !currentVideoOnScreen?.muted
         break
       case 'l':
         console.log('L')
       // right arrow
     }
   }
+})
+
+onMounted(() => {
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          currentVideoOnScreen = entry.target as HTMLVideoElement
+          currentVideoOnScreen.currentTime = 0
+          currentVideoOnScreen.play()
+          //   ;(entry.target as HTMLVideoElement).currentTime = 0
+          //   ;(entry.target as HTMLVideoElement).play()
+        } else {
+          ;(entry.target as HTMLVideoElement).pause()
+        }
+        console.log('ENTRY', entry)
+      })
+    },
+    {
+      threshold: 1,
+    }
+  )
+  videoRefs.forEach((videoEl) => {
+    observer.observe(videoEl)
+  })
+})
+
+onBeforeUnmount(() => {
+  videoRefs.forEach((videoEl) => {
+    observer.unobserve(videoEl)
+  })
 })
 </script>
 
