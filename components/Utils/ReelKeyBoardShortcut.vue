@@ -5,6 +5,7 @@ import KbUpIcon_ from '@@/assets/svg/kb_up.svg'
 import KbDownIcon_ from '@@/assets/svg/kb_down.svg'
 import KbLIcon_ from '@@/assets/svg/kb_l.svg'
 import KbMIcon_ from '@@/assets/svg/kb_m.svg'
+import { gsap } from 'gsap'
 
 const intructionMap = [
   { icon: KbUpIcon_, content: 'Go to previous video' },
@@ -12,12 +13,31 @@ const intructionMap = [
   { icon: KbLIcon_, content: 'Like / Unlike video' },
   { icon: KbMIcon_, content: 'Mute / Unmute video ' },
 ]
+
+const containerRef = $ref<HTMLDivElement | null>(null)
+
+
+const ok = () => {
+  gsap.to(containerRef, {
+    bottom: -300,
+    opacity: 0,
+    duration: 1,
+  })
+}
+
+onMounted(() => {
+  gsap.to(containerRef, {
+    bottom: 40,
+    opacity: 1,
+    duration: 1,
+  })
+})
 </script>
 <template>
   <div
     ref="containerRef"
     :class="[
-      'fixed right-0 cursor-help bottom-[40px] rounded-[0.5rem] bg-c1 p-[40px_24px_20px_24px]  shadow-md  dark:bg-c2 dark:text-c1   md:right-[40px]  md:w-[290px]',
+      'fixed right-0 bottom-[40px] hidden cursor-help rounded-[0.5rem] bg-c1 p-[40px_24px_20px_24px] shadow-md  dark:bg-c2  dark:text-c1 md:right-[40px]   md:block  md:w-[290px]',
     ]"
   >
     <KeyboardIcon_
@@ -38,6 +58,7 @@ const intructionMap = [
       <div class="flex w-full justify-end">
         <Button
           text="OK"
+          @click="ok"
           class="select-none bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500"
         />
       </div>
