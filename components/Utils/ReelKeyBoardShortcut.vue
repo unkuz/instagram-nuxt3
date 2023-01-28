@@ -7,13 +7,36 @@ import KeyboardIcon_ from '@@/assets/svg/keyboard.svg'
 import Button from '@@/components/Atoms/Button.vue'
 import { TIME_DELAY_START_APPARENT_TOOLTIP } from '@@/configs'
 import { gsap } from 'gsap'
+import { IActiveKey } from '../Organisms/Reel/index.vue'
 
-const intructionMap = [
-  { icon: KbUpIcon_, content: 'Go to previous video' },
-  { icon: KbDownIcon_, content: 'Go to next video' },
-  { icon: KbLIcon_, content: 'Like / Unlike video' },
-  { icon: KbMIcon_, content: 'Mute / Unmute video ' },
-]
+interface IProps {
+  activeKey: IActiveKey
+}
+
+const props = defineProps<IProps>()
+
+const intructionMap = reactive([
+  {
+    icon: KbUpIcon_,
+    content: 'Go to previous video',
+    isPress: props.activeKey.up,
+  },
+  {
+    icon: KbDownIcon_,
+    content: 'Go to next video',
+    isPress: props.activeKey.down,
+  },
+  {
+    icon: KbLIcon_,
+    content: 'Like / Unlike video',
+    isPress: props.activeKey.l,
+  },
+  {
+    icon: KbMIcon_,
+    content: 'Mute / Unmute video',
+    isPress: props.activeKey.m,
+  },
+])
 
 const containerRef = $ref<HTMLDivElement | null>(null)
 let tl: TimelineLite = gsap.timeline({})
@@ -46,7 +69,7 @@ onBeforeUnmount(() => {
     ]"
   >
     <KeyboardIcon_
-      class="absolute -top-[23px] right-1/2 w-[65px] origin-center translate-x-1/2 -rotate-[20deg] dark:fill-c1 hover:rotate-0 duration-500"
+      class="absolute -top-[23px] right-1/2 w-[65px] origin-center translate-x-1/2 -rotate-[20deg] duration-500 hover:rotate-0 dark:fill-c1"
     />
     <div class="text-[0.8rem]">
       <p class="mt-[15px] mb-[10px] text-center text-[0.85rem]">
@@ -54,10 +77,19 @@ onBeforeUnmount(() => {
       </p>
       <p
         class="flex items-center gap-[15px]"
-        v-for="({ icon, content }, idx) in intructionMap"
+        v-for="({ icon, content, isPress }, idx) in intructionMap"
         :key="idx"
       >
-        <span><component :is="icon" class="w-[20px]" /></span>{{ content }}
+        <span
+          ><component
+            :is="icon"
+            :class="[
+              'w-[20px]',
+              {
+                'fill-c11': isPress,
+              },
+            ]" /></span
+        >{{ content }}
       </p>
 
       <div class="flex w-full justify-end">

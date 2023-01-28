@@ -1,8 +1,16 @@
 <script setup lang="ts">
-import { useKeenSlider } from 'keen-slider/vue.es'
 import ReelKeyBoardShortcut from '@@/components/Utils/ReelKeyBoardShortcut.vue'
+import { TIME_IDLE_REELS } from '@@/configs'
 import { useIdle } from '@vueuse/core'
-import { TIME_IDLE_REELS } from '@@/configs';
+import { useKeenSlider } from 'keen-slider/vue.es'
+
+export interface IActiveKey {
+  up: boolean
+  down: boolean
+  m: boolean
+  l: boolean
+}
+
 
 const [container, slider] = useKeenSlider({
   slides: {
@@ -16,9 +24,18 @@ const [container, slider] = useKeenSlider({
   },
 })
 
-const { idle } = useIdle(TIME_IDLE_REELS)
+const videoRefs = $ref<HTMLVideoElement[]>([])
 let observer: IntersectionObserver
 let currentVideoOnScreen = $ref<HTMLVideoElement>()
+const { idle } = useIdle(TIME_IDLE_REELS)
+
+let activeKey = reactive<IActiveKey>({
+  up: false,
+  down: false,
+  m: false,
+  l: false,
+})
+
 
 watch(idle, (val) => {
   if (val) {
@@ -28,24 +45,43 @@ watch(idle, (val) => {
   }
 })
 
-const videoRefs = $ref<HTMLVideoElement[]>([])
+
 
 onMounted(() => {
   document.onkeydown = (e) => {
     switch (e.key.toLowerCase()) {
       case 'arrowup':
+        activeKey.up = true
         slider.value!.prev()
         break
       case 'arrowdown':
+        activeKey.down = true
         slider.value!.next()
         break
       case 'm':
+        activeKey.m = true
         currentVideoOnScreen!.muted = !currentVideoOnScreen?.muted
         break
       case 'l':
+        activeKey.l = true
         console.log('L')
     }
   }
+//   document.onkeyup = (e) => {
+//     switch (e.key.toLowerCase()) {
+//       case 'arrowup':
+//         activeKey.up = false
+//         break
+//       case 'arrowdown':
+//         activeKey.down = false
+//         break
+//       case 'm':
+//         activeKey.m = false
+//         break
+//       case 'l':
+//         activeKey.l = false
+//     }
+//   }
 })
 
 onMounted(() => {
@@ -101,6 +137,6 @@ onBeforeUnmount(() => {
         />
       </div>
     </div>
-    <ReelKeyBoardShortcut />
+    <ReelKeyBoardShortcut :active-key="activeKey" />
   </div>
 </template>
