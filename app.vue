@@ -49,6 +49,8 @@ useHead({
         <NuxtLayout>
           <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" />
           <Loading />
+          <SeoKit />
+          <OgImageScreenshot />
           <NuxtPage />
         </NuxtLayout>
         <NewPost v-if="section === SectionEnum.NEW_POST && !isMobile" />

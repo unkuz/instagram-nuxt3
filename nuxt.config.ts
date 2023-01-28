@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     // '@sidebase/nuxt-auth',
     // '@morev/vue-transitions/nuxt',
   ],
-  // extends: ['nuxt-seo-kit'],
+  extends: ['nuxt-seo-kit'],
   app: {
     head: {
       meta: [
@@ -147,4 +147,14 @@ export default defineNuxtConfig({
   // content: {
   //     // https://content.nuxtjs.org/api/configuration
   // },
+  runtimeConfig: {
+    public: {
+      siteUrl: 'https://instagram-clone-nuxt3.vercel.app/',
+      siteName: 'Instagram',
+      siteDescription:
+        'Instagram Clone By Cuzknothz',
+      language: 'en-AU',
+      titleSeparator: '|',
+    },
+  },
 })
