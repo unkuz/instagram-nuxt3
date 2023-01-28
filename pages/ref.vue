@@ -11,5 +11,3 @@ onMounted(() => {
   console.log('ITEM REF LISR', itemRefs.value)
 })
 </script>
-
-<style scoped></style>
