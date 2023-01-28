@@ -10,10 +10,9 @@ const breakpoints = useBreakpoints(breakpointsTailwind)
 
 const largerThanSm = $(breakpoints.greater('md'))
 
+let tl: TimelineLite = gsap.timeline({})
 const animateOut = () => {
-  let tl: TimelineLite = gsap.timeline({})
-  tl.to(containerRef, { bottom: -200, duration: 1 })
-  tl.to(containerRef, { display: 'none', duration: 0 })
+  tl.reverse()
 }
 
 const animateIn = () => {
@@ -28,7 +27,13 @@ const acceptCookieUse = () => {
 
 onMounted(() => {
   const TIME_DELAY_START_APPARENT = 2500
-  setTimeout(animateIn, TIME_DELAY_START_APPARENT)
+  setTimeout(() => {
+    tl.to(containerRef, {
+      bottom: 40,
+      ease: 'back.out(1.7)',
+      duration: 1,
+    })
+  }, TIME_DELAY_START_APPARENT)
 })
 
 useWindowResizeCallback(animateIn, false)
@@ -37,7 +42,7 @@ useWindowResizeCallback(animateIn, false)
   <div
     ref="containerRef"
     :class="[
-      'fixed -bottom-[200px] left-[20px] right-[20px] rounded-[0.5rem] bg-c1 p-[40px_24px_20px_24px] shadow-md  duration-1000  dark:bg-c2 dark:text-c1  md:left-[40px] md:right-[40px]  md:w-[290px]',
+      'fixed -bottom-[200px] left-[20px] right-[20px] rounded-[0.5rem] bg-c1 p-[40px_24px_20px_24px] shadow-md   dark:bg-c2 dark:text-c1  md:left-[40px] md:right-[40px]  md:w-[290px]',
     ]"
   >
     <CookieIcon_ class="absolute -top-[23px] right-1/2 translate-x-1/2" />
