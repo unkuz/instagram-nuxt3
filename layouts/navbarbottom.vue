@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import ActivityFeed from '@@/components/Nav/ActivityFeed.vue'
-import HomeIcon from '@@/components/Nav/HomeIcon.vue'
-import Reels from '@@/components/Nav/Reels.vue'
-import Search from '@@/components/Nav/Search.vue'
-import SelfAvatar from '@@/components/Nav/SelfAvatar.vue'
+import ActivityFeed from '@@/components/Atoms/Nav/ActivityFeed.vue'
+import HomeIcon from '@@/components/Atoms/Nav/HomeIcon.vue'
+import Reels from '@@/components/Atoms/Nav/Reels.vue'
+import Search from '@@/components/Atoms/Nav/Search.vue'
+import SelfAvatar from '@@/components/Atoms/Nav/SelfAvatar.vue'
 import { SectionEnum } from '@@/constants'
 import { useGlobalStore } from '@@/store'
 
