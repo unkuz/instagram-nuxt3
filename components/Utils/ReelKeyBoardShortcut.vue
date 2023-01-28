@@ -15,18 +15,14 @@ const intructionMap = [
 ]
 
 const containerRef = $ref<HTMLDivElement | null>(null)
-
+let tl: TimelineLite = gsap.timeline({})
 
 const ok = () => {
-  gsap.to(containerRef, {
-    bottom: -300,
-    opacity: 0,
-    duration: 1,
-  })
+  tl.reverse()
 }
 
 onMounted(() => {
-  gsap.to(containerRef, {
+  tl.to(containerRef, {
     bottom: 40,
     opacity: 1,
     duration: 1,
@@ -37,11 +33,11 @@ onMounted(() => {
   <div
     ref="containerRef"
     :class="[
-      'fixed right-0 bottom-[40px] hidden cursor-help rounded-[0.5rem] bg-c1 p-[40px_24px_20px_24px] shadow-md  dark:bg-c2  dark:text-c1 md:right-[40px]   md:block  md:w-[290px]',
+      'fixed right-0 -bottom-[300px] hidden cursor-help rounded-[0.5rem] bg-c1 p-[40px_24px_20px_24px] shadow-md  dark:bg-c2  dark:text-c1 md:right-[40px]   md:block  md:w-[290px]',
     ]"
   >
     <KeyboardIcon_
-      class="absolute -top-[23px] right-1/2 w-[65px] origin-center translate-x-1/2 -rotate-[20deg]"
+      class="absolute -top-[23px] right-1/2 w-[65px] origin-center translate-x-1/2 -rotate-[20deg] dark:fill-c1"
     />
     <div class="text-[0.8rem]">
       <p class="mt-[5px] text-center text-[.85rem] font-[600]">
