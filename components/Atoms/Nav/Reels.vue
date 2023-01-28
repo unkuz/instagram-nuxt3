@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Reelicon_ from '@@/assets/svg/reel_icon.svg'
+import ReelIcon_ from '@@/assets/svg/reel_icon.svg'
 import IconBase from './IconBase.vue'
 
 interface IconProps {
@@ -9,5 +9,5 @@ defineProps<IconProps>()
 </script>
 
 <template>
-  <IconBase> <Reelicon_ class="dark:fill-c1" /></IconBase>
+  <IconBase> <ReelIcon_ :class="['dark:fill-c1']" /></IconBase>
 </template>
