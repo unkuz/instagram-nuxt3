@@ -15,8 +15,7 @@ const percentProgress = $computed(() => {
 })
 
 const scrub = (e: MouseEvent) => {
-  const scrubTime = e.offsetX / progressBarRef!.parentElement!.offsetWidth
-  emit('setCurentTime', scrubTime)
+  emit('setCurentTime', e.offsetX / progressBarRef!.parentElement!.offsetWidth)
 }
 
 watch(
@@ -27,8 +26,6 @@ watch(
     })
   }
 )
-
-const scub = () => {}
 </script>
 <template>
   <div>

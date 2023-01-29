@@ -2,5 +2,7 @@
 import LoadingIcon_ from '@@/assets/svg/loading_34295aioi.svg'
 </script>
 <template>
-  <div><LoadingIcon_ class="w-[10%] !bg-transparent invert" /></div>
+  <div class="absolute inset-0 flex items-center justify-center bg-c20/40">
+    <LoadingIcon_ class="w-[10%] !bg-transparent invert" />
+  </div>
 </template>

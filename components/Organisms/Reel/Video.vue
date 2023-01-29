@@ -42,6 +42,6 @@ watch(buffered, (val) => {
     />
     <Mute @click="muted = !muted" :isMute="muted" :buffered="buffered" />
     <Pause @click="playing = true" :class="[playing ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100']" />
-    <Loading v-if="waiting" class="absolute bottom-1/2 right-1/2 translate-x-1/2 translate-y-1/2 scale-[3]" />
+    <Loading v-if="waiting" />
   </div>
 </template>
