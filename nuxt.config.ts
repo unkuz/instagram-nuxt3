@@ -4,6 +4,7 @@ import VueTypeImports from 'vite-plugin-vue-type-imports'
 import eslintPlugin from 'vite-plugin-eslint'
 
 export default defineNuxtConfig({
+  srcDir: './',
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
