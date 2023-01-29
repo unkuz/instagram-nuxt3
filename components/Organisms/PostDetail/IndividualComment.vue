@@ -41,11 +41,7 @@ const { S } = SizeAvatarEnum
       </div>
       <div class="absolute top-0 left-0 h-full w-[3px] -translate-x-[0px] bg-c14" />
     </div>
-    <div
-      v-for="({ user, created_at, text, comment_like_count }, idx) in comment.reply"
-      :key="idx"
-      class="relative my-[5px] ml-[42px] rounded-md"
-    >
+    <div v-for="({ user, created_at, text, comment_like_count }, idx) in comment.reply" :key="idx" class="relative my-[5px] ml-[42px] rounded-md">
       <div class="mx-[10px] flex items-center gap-[10px]">
         <NuxtLink :to="`/${user.username}`">
           <Avatar :url="user.profile_pic_url" :size="S" />

@@ -49,16 +49,8 @@ const toggleFullScreen = () => {
       :poster="video.poster"
     />
     <Loading v-show="waiting" />
-    <PauseIcon_
-      v-show="!waiting"
-      @click="playing = true"
-      :class="[playing ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100']"
-    />
-    <ProgressVideoBar
-      :currentTime="currentTime"
-      :duration="duration"
-      @setCurentTime="(val) => (currentTime = val * duration)"
-    />
+    <PauseIcon_ v-show="!waiting" @click="playing = true" :class="[playing ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100']" />
+    <ProgressVideoBar :currentTime="currentTime" :duration="duration" @setCurentTime="(val) => (currentTime = val * duration)" />
     <div class="absolute bottom-[10px] right-[10px] flex gap-[15px]">
       <div title="Full screen">
         <ExpandIcon_

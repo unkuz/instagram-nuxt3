@@ -110,15 +110,8 @@ onBeforeUnmount(() => {
 
 <template>
   <div>
-    <div
-      ref="container"
-      class="keen-slider flex h-[calc(100vh-65px)] flex-col !flex-nowrap items-center md:h-[calc(100vh-84px)]"
-    >
-      <div
-        v-for="(i, idx) in reels"
-        :key="idx"
-        class="keen-slider__slide flex !w-auto items-start justify-center bg-c19 md:bg-transparent"
-      >
+    <div ref="container" class="keen-slider flex h-[calc(100vh-65px)] flex-col !flex-nowrap items-center md:h-[calc(100vh-84px)]">
+      <div v-for="(i, idx) in reels" :key="idx" class="keen-slider__slide flex !w-auto items-start justify-center bg-c19 md:bg-transparent">
         <div ref="containvideoRefs">
           <Video v-bind="i" />
         </div>

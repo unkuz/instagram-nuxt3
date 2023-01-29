@@ -48,11 +48,7 @@ const { S } = SizeAvatarEnum
             <span class="align-bottom text-[0.9rem]">{{ comment.comment_like_count }}</span>
           </div>
           <div class="flex items-end gap-[5px]">
-            <span
-              class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1"
-              title="Reply"
-              @click="$emit('reply', comment.id)"
-            >
+            <span class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1" title="Reply" @click="$emit('reply', comment.id)">
               <svg width="18" height="18" viewBox="0 0 24 24">
                 <g>
                   <path
@@ -67,11 +63,7 @@ const { S } = SizeAvatarEnum
       </div>
       <div class="absolute top-0 left-0 h-[85%] w-[3px] -translate-x-[0px] bg-c14" />
     </div>
-    <div
-      v-for="({ user, created_at, text, comment_like_count }, idx) in comment.reply"
-      :key="idx"
-      class="relative my-[4px] ml-[42px] rounded-md"
-    >
+    <div v-for="({ user, created_at, text, comment_like_count }, idx) in comment.reply" :key="idx" class="relative my-[4px] ml-[42px] rounded-md">
       <div class="mx-[10px] flex items-center gap-[10px]">
         <NuxtLink :to="`/${user.username}`">
           <Avatar :url="user.profile_pic_url" :size="S" />
@@ -100,11 +92,7 @@ const { S } = SizeAvatarEnum
           </div>
           <div class="flex items-end gap-[5px]">
             <span class="align-bottom text-[0.9rem] leading-[1.05rem]">{{ '0' }}</span>
-            <span
-              class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1"
-              title="Reply"
-              @click="$emit('reply', comment.id)"
-            >
+            <span class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1" title="Reply" @click="$emit('reply', comment.id)">
               <svg width="18" height="18" viewBox="0 0 24 24">
                 <g>
                   <path

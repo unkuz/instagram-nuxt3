@@ -32,11 +32,7 @@ watch(buffered, (val) => {})
       @click="playing = !playing"
     />
 
-    <ProgressVideoBar
-      :currentTime="currentTime"
-      :duration="duration"
-      @setCurentTime="(val) => (currentTime = val * duration)"
-    />
+    <ProgressVideoBar :currentTime="currentTime" :duration="duration" @setCurentTime="(val) => (currentTime = val * duration)" />
     <Mute @click="muted = !muted" :isMute="muted" :buffered="buffered" />
     <Pause @click="playing = true" :class="[playing ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100']" />
     <Loading v-if="waiting" />

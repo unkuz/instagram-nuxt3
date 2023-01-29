@@ -46,11 +46,7 @@ onMounted(() => {
         <NuxtLink to="/privacy-policy" class="cursor-pointer">
           <span class="text-c9 dark:text-c14" @click="animateOut">Privacy Policy</span>
         </NuxtLink>
-        <Button
-          text="OK"
-          class="select-none bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500"
-          @click="acceptCookieUse"
-        />
+        <Button text="OK" class="select-none bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500" @click="acceptCookieUse" />
       </div>
     </div>
   </div>

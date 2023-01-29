@@ -31,10 +31,7 @@ const toggleFollow = () => (isFollow = !isFollow)
       </NuxtLink>
       <p class="text-[0.8rem] text-c3 dark:text-c21">Suggested for you</p>
     </div>
-    <div
-      class="flex w-[55px] cursor-pointer justify-end text-[0.8rem] font-[500] [&>div]:px-[6px]"
-      @click="toggleFollow"
-    >
+    <div class="flex w-[55px] cursor-pointer justify-end text-[0.8rem] font-[500] [&>div]:px-[6px]" @click="toggleFollow">
       <Button v-if="isFollow" text="Unfollow" class="bg-c8 !py-[4px] !px-[8px] text-c9" />
       <Button v-else text="Follow" class="bg-c10 !py-[4px] !px-[8px] text-c7" />
     </div>

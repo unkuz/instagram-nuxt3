@@ -12,6 +12,6 @@ const { data: _timelinez } = await useFetchCamel(APP_API.timeLine.list)
 
 <template>
   <div>
-    <Reel class="text-[.8rem]"  />
+    <Reel class="text-[.8rem]" />
   </div>
 </template>

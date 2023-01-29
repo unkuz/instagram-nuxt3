@@ -21,12 +21,6 @@ useDoubleClick(imageRef, () => {}, toggleLike)
 
 <template>
   <div class="min-w-full">
-    <nuxt-img
-      ref="imageRef"
-      class="max-h-[60vh] min-h-full min-w-full bg-c2 object-contain"
-      draggable="false"
-      :src="src"
-      alt=""
-    />
+    <nuxt-img ref="imageRef" class="max-h-[60vh] min-h-full min-w-full bg-c2 object-contain" draggable="false" :src="src" alt="" />
   </div>
 </template>

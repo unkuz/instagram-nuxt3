@@ -71,9 +71,7 @@ onMounted(() => {
   })
 })
 
-const mediaArr = $computed(() =>
-  postDetailStore.post.carousel_media.images.concat(postDetailStore.post.carousel_media.videos)
-)
+const mediaArr = $computed(() => postDetailStore.post.carousel_media.images.concat(postDetailStore.post.carousel_media.videos))
 </script>
 
 <template>
@@ -96,13 +94,7 @@ const mediaArr = $computed(() =>
               @current-index-carousel="setCurrent($event)"
             />
             <div class="px-[16px] text-xs md:text-sm">
-              <React
-                :id="id"
-                :current-idx="currentIdx"
-                :has-liked="hasLiked"
-                :media-arr="mediaArr"
-                :has-saved="isSaved"
-              />
+              <React :id="id" :current-idx="currentIdx" :has-liked="hasLiked" :media-arr="mediaArr" :has-saved="isSaved" />
               <LikeCommentCount :like-count="likeCount" :comment-count="commentCount" />
               <div class="m-[8px_0px_5px_0px] h-[18px] text-[0.8rem] text-c3">
                 {{ moment(createdAt).fromNow() }}

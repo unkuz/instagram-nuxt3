@@ -59,11 +59,7 @@ const { key } = useForceRenderTimer()
             <div ref="commentRef" class="mt-[15px] w-full">
               <IndividualComment v-for="(j, idx) in i.comments" :key="idx" :comment="j" :postId="i.id" @reply="reply" />
             </div>
-            <Comment
-              :id="i.id"
-              @rm-current-reply-comment-id="currentReplyCommentId = ''"
-              :currentReplyCommentId="currentReplyCommentId"
-            />
+            <Comment :id="i.id" @rm-current-reply-comment-id="currentReplyCommentId = ''" :currentReplyCommentId="currentReplyCommentId" />
           </div>
         </div></article
     ></template>

@@ -6,9 +6,7 @@ defineEmits(['emoji-add'])
 
 <template>
   <div>
-    <div
-      class="absolute -top-[310px] -left-[16px] h-[300px] overflow-y-scroll border-[1px] border-c4 bg-c1 dark:border-c20 dark:bg-c19"
-    >
+    <div class="absolute -top-[310px] -left-[16px] h-[300px] overflow-y-scroll border-[1px] border-c4 bg-c1 dark:border-c20 dark:bg-c19">
       <div v-for="({ label, icons }, idx) in EMOJI" :key="idx">
         <p class="mt-[10px] h-[20px] pl-[10px] text-[0.8rem] font-[500]">
           {{ label }}

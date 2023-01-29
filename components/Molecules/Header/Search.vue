@@ -30,11 +30,7 @@ useClickOutSide(searchRef, () => {
     @click="searchStore.setIsFocus(true)"
   >
     <SearchIcon v-show="!isSearchActive" class="[&>path]:stroke-black [&>path]:dark:stroke-white" />
-    <span
-      v-show="!isSearchActive && !isSearchHaveValue"
-      class="absolute top-1/2 left-[45px] -translate-y-1/2 text-sm dark:text-c1"
-      >Search</span
-    >
+    <span v-show="!isSearchActive && !isSearchHaveValue" class="absolute top-1/2 left-[45px] -translate-y-1/2 text-sm dark:text-c1">Search</span>
     <input
       ref="inputSearch"
       v-model="searchStore.value"
