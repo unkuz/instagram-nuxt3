@@ -36,12 +36,8 @@ const likeUnLike = (idPost: string) => {
   >
     <div class="flex h-full w-full items-center gap-[12px] md:gap-[10px]">
       <div class="relative" @click="likeUnLike(id)">
-        <div v-if="hasLiked">
-          <UnlikeIcon />
-        </div>
-        <div v-else>
-          <LikeIcon_ class="fill-c2 dark:fill-c1" />
-        </div>
+        <UnlikeIcon v-if="hasLiked" />
+        <LikeIcon_ v-else class="fill-c2 dark:fill-c1" />
       </div>
       <NuxtLink :to="`/_/p/${id}`">
         <ViewPostIcon_ class="fill-c2 dark:fill-c1" @click="stopOtherVideoPlaying" />

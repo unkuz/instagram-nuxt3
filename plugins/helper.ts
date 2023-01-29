@@ -1,11 +1,10 @@
-import { urlify } from '@@/helpers'
-import { gsap } from 'gsap'
+import { formatNum, urlify } from '@@/helpers'
 
 export default defineNuxtPlugin(() => {
   return {
     provide: {
-      urlify: (text: string) => urlify(text),
+      urlify: (val: string) => urlify(val),
+      formatNum: (val: number | bigint) => formatNum(val),
     },
-    gsap,
   }
 })

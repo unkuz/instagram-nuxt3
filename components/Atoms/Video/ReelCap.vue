@@ -16,7 +16,7 @@ defineProps<IProps>()
   <div class="absolute bottom-[60px] left-[10px] right-[100px] duration-200 md:bottom-[50px]">
     <div class="flex items-center gap-[20px]">
       <Avatar :size="SizeAvatarEnum.S" :url="user.profile_pic_url" />
-      <TagName :name="user.full_name" class="max-w-[150px] line-clamp-1" />
+      <TagName :name="user.full_name" class="max-w-[150px] line-clamp-1 !bg-c1 !text-c2" />
       <Button text="Follow" class="select-none bg-c9 px-[15px] py-[6px] text-[0.8rem] text-c1 duration-500" />
     </div>
     <p

@@ -7,6 +7,7 @@ import { useReelStore } from '@@/store'
 import { IActiveKey } from '@@/type'
 import Video from './Video.vue'
 import ReelCap from '~~/components/Atoms/Video/ReelCap.vue'
+import ReelAction from '~~/components/Atoms/ReelAction.vue'
 
 const reelStore = useReelStore()
 
@@ -123,6 +124,7 @@ onBeforeUnmount(() => {
           <Video v-bind="i" />
         </div>
         <ReelCap :user="i.user" :caption="i.caption_text" />
+        <ReelAction :totalLike="i.like_count" :totalComment="i.total_comment" />
       </div>
     </div>
     <ReelKeyBoardShortcut :active-key="activeKey" />

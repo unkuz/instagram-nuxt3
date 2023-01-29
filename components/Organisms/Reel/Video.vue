@@ -37,7 +37,7 @@ watch(buffered, (val) => {})
       :duration="duration"
       @setCurentTime="(val) => (currentTime = val * duration)"
     />
-    <Mute @click="muted = !muted" :isMute="muted" :buffered="buffered" />
+    <!-- <Mute @click="muted = !muted" :isMute="muted" :buffered="buffered" /> -->
     <Pause @click="playing = true" :class="[playing ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100']" />
     <Loading v-if="waiting" />
   </div>
