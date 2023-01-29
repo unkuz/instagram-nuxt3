@@ -4,7 +4,7 @@ import Suggestions from '@@/components/Huge/Suggestions/index.vue'
 import Stories from '@@/components/Molecules/Stories/index.vue'
 import Post from '@@/components/Organisms/Post/index.vue'
 import { useFetchCamel, useWindowResizeCallback } from '@@/composables'
-import { IStory } from '@@/models'
+import { IStory, ITimeLine } from '@@/models'
 import {
   useAuthStore,
   useStoriesStore,
@@ -20,13 +20,12 @@ const timeLineStore = useTimeLineStore()
 const suggestionStore = useSuggestionStore()
 const authStore = useAuthStore()
 
-// const { data: _timeline } = await useFetch<ITimeLine[]>(APP_API.timeLine.list)
-const { data: _stories } = await useFetch<IStory[]>(APP_API.stories.list)
-const { data: _suggestions } = await useFetch<IStory[]>(APP_API.stories.list)
-const { data: _timelinez } = await useFetchCamel(APP_API.timeLine.list)
+const { data: _timeline } = await useLazyFetch<ITimeLine[]>(APP_API.timeLine.list)
+const { data: _stories } = await useLazyFetch<IStory[]>(APP_API.stories.list)
+const { data: _suggestions } = await useLazyFetch<IStory[]>(APP_API.stories.list)
 
 storiesStore.save(_stories.value ?? [])
-// timeLineStore.save(_timeline.value ?? [])
+timeLineStore.save(_timeline.value ?? [])
 suggestionStore.save(_suggestions.value ?? [])
 
 const timeline = $computed(() => timeLineStore.data)
