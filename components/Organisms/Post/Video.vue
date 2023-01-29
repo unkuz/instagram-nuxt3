@@ -5,7 +5,8 @@ import Loading from '@@/components/Atoms/Video/Loading.vue'
 import { useDoubleClick, usePercentVideo } from '@@/composables'
 import { useTimeLineStore } from '@@/store'
 import { gsap } from 'gsap'
-import { stopOtherVideoPlaying } from '~~/helpers'
+import { stopOtherVideoPlaying } from '@@/helpers'
+import PauseIcon_ from '@@/components/Atoms/Video/Pause.vue'
 
 interface IProps {
   video: any
@@ -95,16 +96,12 @@ onMounted(() => {
       <Loading />
     </div>
 
-    <div v-show="!isLoading" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <div
-        :class="[
-          'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-200',
-          isVideoPlay ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100',
-        ]"
-      >
-        <PlayIcon_ class="!aspect-square !h-[80px] fill-c4" @click="play" />
-      </div>
-    </div>
+    <PauseIcon_
+      v-show="!isLoading"
+      @click="play"
+      :class="[isVideoPlay ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100']"
+    />
+
     <div
       @click="scrub"
       :class="['absolute bottom-0  h-[4px] w-full cursor-pointer  bg-transparent hover:bg-c16 [&>div]:bg-c15']"

@@ -3,6 +3,7 @@ import { useMediaControls } from '@vueuse/core'
 import ProgressVideoBar from '@@/components/Atoms/Video/ProgressVideoBar.vue'
 import Loading from '@@/components/Atoms/Video/Loading.vue'
 import Mute from '@@/components/Atoms/Video/Mute.vue'
+import Pause from '@@/components/Atoms/Video/Pause.vue'
 
 interface IProps {
   src: string
@@ -31,17 +32,16 @@ watch(buffered, (val) => {
       playsinline
       crossorigin="anonymous"
       preload="metadata"
+      @click="playing = !playing"
     />
-    <div class="absolute bottom-1/2 right-1/2 translate-x-1/2 translate-y-1/2" @click="playing = !playing">
-      <span v-if="playing"> ||</span>
-      <span v-else> play</span>
-    </div>
+
     <ProgressVideoBar
       :currentTime="currentTime"
       :duration="duration"
       @setCurentTime="(val) => (currentTime = val * duration)"
     />
     <Mute @click="muted = !muted" :isMute="muted" :buffered="buffered" />
+    <Pause @click="playing = true" :class="[playing ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100']" />
     <Loading v-if="waiting" class="absolute bottom-1/2 right-1/2 translate-x-1/2 translate-y-1/2 scale-[3]" />
   </div>
 </template>
