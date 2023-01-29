@@ -26,9 +26,9 @@ const { data: _suggestions } = await useLazyFetch<IStory[]>(
   APP_API.stories.list
 )
 
-storiesStore.save(_stories.value ?? [])
-timeLineStore.save(_timeline.value ?? [])
-suggestionStore.save(_suggestions.value ?? [])
+storiesStore.save(_stories.value)
+timeLineStore.save(_timeline.value)
+suggestionStore.save(_suggestions.value)
 
 const calcLeftSuggestion = () => {
   if (rightRef && leftRef && leftRef.getClientRects()[0]) {

@@ -16,8 +16,10 @@ export const useSuggestionStore = defineStore('suggestion', {
   }),
   getters: {},
   actions: {
-    save(data: TSuggestion[]) {
-      this.data = data.slice(0, MAX_SUGGESTION_PEOPLE_FOLLOW)
+    save(data: TSuggestion[] | null) {
+      if (data) {
+        this.data = data.slice(0, MAX_SUGGESTION_PEOPLE_FOLLOW)
+      }
     },
   },
 })

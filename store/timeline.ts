@@ -14,8 +14,10 @@ export const useTimeLineStore = defineStore('timeline', {
   }),
   getters: {},
   actions: {
-    save(data: ITimeLine[]) {
-      this.data = data
+    save(data: ITimeLine[] | null) {
+      if (data) {
+        this.data = data
+      }
     },
     setToggleLike(id: string) {
       const slashStore = useSlashStore()

@@ -15,8 +15,10 @@ export const useStoriesStore = defineStore('stories', {
   }),
   getters: {},
   actions: {
-    save(_data: IStory[]) {
-      this.data = _data
+    save(data: IStory[] | null) {
+      if (data) {
+        this.data = data
+      }
     },
   },
 })
