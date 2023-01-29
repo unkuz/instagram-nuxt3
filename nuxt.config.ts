@@ -1,10 +1,8 @@
 import { defineNuxtConfig } from 'nuxt/config'
-import svgLoader from 'vite-svg-loader'
 import VueTypeImports from 'vite-plugin-vue-type-imports'
-import eslintPlugin from 'vite-plugin-eslint'
+import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
-  srcDir: './',
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
