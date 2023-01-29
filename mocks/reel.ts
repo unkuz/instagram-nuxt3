@@ -1,30 +1,6 @@
 export const mock_reel = [
   {
     user: {
-      id: 'catsinweek',
-      username: 'catsinweek',
-      full_name: 'catsinweek',
-      profile_pic_url: '/video/reel/291441225_976597883018854_538597834691101463_n.jpg',
-      friendship_status: {
-        following: true,
-        outgoing_request: false,
-      },
-    },
-    caption_text: '',
-    like_count: 1_487_141,
-    total_comment: 7_345,
-    media: {
-      video: [
-        {
-          id: 1,
-          src: `/video/reel/catsinweek_316385117_844286030057945_6903257225358079322_n.mp4`,
-          poster: '/video/poster/hehe.png',
-        },
-      ],
-    },
-  },
-  {
-    user: {
       id: 'himesanze',
       username: 'himesanze',
       full_name: 'himesanze',
@@ -90,6 +66,30 @@ export const mock_reel = [
         {
           id: 1,
           src: `/video/reel/schnauzers.are.awesome_274344673_1377451732755040_906737582616983792_n.mp4`,
+          poster: '/video/poster/hehe.png',
+        },
+      ],
+    },
+  },
+  {
+    user: {
+      id: 'catsinweek',
+      username: 'catsinweek',
+      full_name: 'catsinweek',
+      profile_pic_url: '/video/reel/291441225_976597883018854_538597834691101463_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    caption_text: '',
+    like_count: 1_487_141,
+    total_comment: 7_345,
+    media: {
+      video: [
+        {
+          id: 1,
+          src: `/video/reel/catsinweek_316385117_844286030057945_6903257225358079322_n.mp4`,
           poster: '/video/poster/hehe.png',
         },
       ],
