@@ -8,6 +8,7 @@ import Button from '@@/components/Atoms/Button.vue'
 import { TIME_DELAY_START_APPARENT_TOOLTIP } from '@@/configs'
 import { gsap } from 'gsap'
 import { IActiveKey } from '@@/type'
+import KbSpaceIcon_ from '@@/assets/svg/kb_space.svg'
 
 interface IProps {
   activeKey: IActiveKey

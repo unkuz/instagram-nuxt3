@@ -41,6 +41,7 @@ watch(idle, (val) => {
 
 onMounted(() => {
   document.onkeydown = (e) => {
+    console.log('E', e)
     switch (e.key.toLowerCase()) {
       case 'arrowup':
         activeKey.up = true
@@ -57,6 +58,9 @@ onMounted(() => {
       case 'l':
         activeKey.l = true
         console.log('L')
+        break
+      case ' ':
+        slider.value!.next()
     }
   }
   //   document.onkeyup = (e) => {
