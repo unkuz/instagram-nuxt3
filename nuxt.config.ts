@@ -1,5 +1,6 @@
 import { defineNuxtConfig } from 'nuxt/config'
 import svgLoader from 'vite-svg-loader'
+import VueTypeImports from 'vite-plugin-vue-type-imports'
 import eslintPlugin from 'vite-plugin-eslint'
 
 export default defineNuxtConfig({
@@ -77,7 +78,7 @@ export default defineNuxtConfig({
   },
   vite: {
     // plugins: [svgLoader({}), eslintPlugin()],
-    plugins: [svgLoader({})],
+    plugins: [svgLoader({}), VueTypeImports()],
     // build: {
     //   rollupOptions: {
     //     output: {
