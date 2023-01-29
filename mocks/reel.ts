@@ -10,7 +10,7 @@ export const mock_reel = [
         outgoing_request: false,
       },
     },
-    caption_text: '',
+    caption_text: 'wwwwwww 🤣',
     like_count: 52_869,
     total_comment: 578,
     media: {
@@ -34,7 +34,9 @@ export const mock_reel = [
         outgoing_request: false,
       },
     },
-    caption_text: '',
+    caption_text: `I’m only fluent in english 🫠
+
+    excuse the pronunciations`,
     like_count: 256_907,
     total_comment: 1208,
     media: {
@@ -58,7 +60,20 @@ export const mock_reel = [
         outgoing_request: false,
       },
     },
-    caption_text: '',
+    caption_text: `My daddy said I look very cool in these. What do you think? 🤔🦇
+    🎥 Video by 👇
+    @hemmys_way
+    (DM for credit or removal/ No copyright intended/ All right's® are reserved & belongs to their respective owners)
+    
+    if you’d like to see more schnauzer posts kindly follow us⤵️
+    
+    Follow @schnauzers.are.awesome
+    Follow @schnauzers.are.awesome
+    Follow @schnauzers.are.awesome
+    
+    - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    #schnauzerlove #schnauzerpuppy #schnauzers #schnauzerlovers #schnauzersofinstagram #schnauzerworld #schnauzermini #schnauzergram #schnauzerofinstagram #schnauzersrule #schnauzer #schnauzer_of_instagram #schnauzeroftheday #schnauzerlover #schnauzerlife #schnauzer_lovers`,
     like_count: 46_906,
     total_comment: 298,
     media: {
@@ -82,7 +97,7 @@ export const mock_reel = [
         outgoing_request: false,
       },
     },
-    caption_text: '',
+    caption_text: '🥰',
     like_count: 1_487_141,
     total_comment: 7_345,
     media: {
@@ -106,7 +121,9 @@ export const mock_reel = [
         outgoing_request: false,
       },
     },
-    caption_text: '',
+    caption_text: `Full white setup ☁️ ~
+    •
+    finally changed my pink keyboard and mouse to white ones! I’m so happy of how cute my setup looks now! so clean & peaceful 💘`,
     like_count: 256_907,
     total_comment: 1208,
     media: {
@@ -130,7 +147,7 @@ export const mock_reel = [
         outgoing_request: false,
       },
     },
-    caption_text: '',
+    caption_text: '😂',
     like_count: 256_907,
     total_comment: 1208,
     media: {
