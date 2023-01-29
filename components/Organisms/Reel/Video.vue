@@ -16,15 +16,14 @@ const { playing, currentTime, duration, volume, muted, buffered, waiting } = use
   src: props.src,
 })
 
-watch(buffered, (val) => {
-})
+watch(buffered, (val) => {})
 </script>
 
 <template>
   <div class="relative">
     <video
       ref="video"
-      class="h-[calc(100vh-65px)] md:h-[calc(100vh-114px)] md:max-w-[60vw] xl:max-w-[50vw] 2xl:max-w-[40vw] bg-c19"
+      class="h-[calc(100vh-65px)] w-auto bg-c19 md:h-[calc(100vh-114px)] md:w-[80vw] lg:w-[60vw] xl:w-[50vw]"
       autoplay
       loop
       type="video/mp4"
