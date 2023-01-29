@@ -20,7 +20,7 @@ defineProps<IProps>()
       <Button text="Follow" class="select-none bg-c9 px-[15px] py-[6px] text-[0.8rem] text-c1 duration-500" />
     </div>
     <p
-      class="mt-[10px] whitespace-pre-line line-clamp-1 md:mt-[20px] [&>a]:text-c7 dark:[&>a]:text-c15"
+      class="mt-[10px] whitespace-pre-line line-clamp-1 md:mt-[20px] [&>a]:text-c7 dark:[&>a]:text-c15 text-c1"
       v-html="$urlify(caption)"
     />
   </div>
