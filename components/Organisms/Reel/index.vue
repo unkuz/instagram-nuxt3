@@ -27,7 +27,7 @@ const [container, slider] = useKeenSlider({
 const videoRefs = $ref<HTMLVideoElement[]>([])
 let observer: IntersectionObserver
 let currentVideoOnScreen = $ref<HTMLVideoElement>()
-const { idle } = useIdle(TIME_IDLE_REELS)
+// const { idle } = useIdle(TIME_IDLE_REELS)
 
 let activeKey = reactive<IActiveKey>({
   up: false,
@@ -36,13 +36,13 @@ let activeKey = reactive<IActiveKey>({
   l: false,
 })
 
-watch(idle, (val) => {
-  if (val) {
-    currentVideoOnScreen!.pause()
-  } else {
-    currentVideoOnScreen!.play()
-  }
-})
+// watch(idle, (val) => {
+//   if (val) {
+//     currentVideoOnScreen!.pause()
+//   } else {
+//     currentVideoOnScreen!.play()
+//   }
+// })
 
 onMounted(() => {
   document.onkeydown = (e) => {
