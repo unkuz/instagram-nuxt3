@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useMediaControls } from '@vueuse/core'
 import ProgressVideoBar from '@@/components/Atoms/Video/ProgressVideoBar.vue'
+import Loading from '@@/components/Atoms/Video/Loading.vue'
 import Mute from '@@/components/Atoms/Video/Mute.vue'
 
 interface IProps {
@@ -10,7 +11,7 @@ const props = defineProps<IProps>()
 
 const video = ref<HTMLVideoElement>()
 
-const { playing, currentTime, duration, volume, muted, buffered } = useMediaControls(video, {
+const { playing, currentTime, duration, volume, muted, buffered, waiting } = useMediaControls(video, {
   src: props.src,
 })
 
@@ -41,5 +42,6 @@ watch(buffered, (val) => {
       @setCurentTime="(val) => (currentTime = val * duration)"
     />
     <Mute @click="muted = !muted" :isMute="muted" :buffered="buffered" />
+    <Loading v-if="waiting" class="absolute bottom-1/2 right-1/2 translate-x-1/2 translate-y-1/2 scale-[3]" />
   </div>
 </template>
