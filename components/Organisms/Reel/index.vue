@@ -4,13 +4,7 @@ import { TIME_IDLE_REELS } from '@@/configs'
 import { useIdle } from '@vueuse/core'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import { useReelStore } from '@@/store'
-
-export interface IActiveKey {
-  up: boolean
-  down: boolean
-  m: boolean
-  l: boolean
-}
+import { IActiveKey } from '@@/type'
 
 const reelStore = useReelStore()
 

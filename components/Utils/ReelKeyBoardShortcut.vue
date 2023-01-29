@@ -7,7 +7,7 @@ import KeyboardIcon_ from '@@/assets/svg/keyboard.svg'
 import Button from '@@/components/Atoms/Button.vue'
 import { TIME_DELAY_START_APPARENT_TOOLTIP } from '@@/configs'
 import { gsap } from 'gsap'
-import { IActiveKey } from '../Organisms/Reel/index.vue'
+import { IActiveKey } from '@@/type'
 
 interface IProps {
   activeKey: IActiveKey
@@ -92,7 +92,7 @@ onBeforeUnmount(() => {
         <Button
           text="OK"
           @click="ok"
-          class="select-none bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500"
+          class="select-none bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:bg-c17"
         />
       </div>
     </div>
