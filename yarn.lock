@@ -1987,12 +1987,12 @@
     unimport "^2.0.1"
     untyped "^1.2.2"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.1.2-rc.0-27915324.b8f6243":
-  version "3.1.2-rc.0-27915324.b8f6243"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.1.2-rc.0-27915324.b8f6243.tgz#420cb6c6b5df51ce9d328a8c52c8141ded3e8a0e"
-  integrity sha512-RxooZNNQRMPL8+z5DWo7ZMJVHw2qVp4wYx7ER8t116s8qIqi6mxcm0GlnlwaqOxVgB42yWL7HiQS2FNGa0ajKQ==
+"@nuxt/kit@npm:@nuxt/kit-edge@3.1.2-rc.0-27916704.aa646f0":
+  version "3.1.2-rc.0-27916704.aa646f0"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.1.2-rc.0-27916704.aa646f0.tgz#12a33abe2be6b44bd646fe1d5a184c1afaa6f543"
+  integrity sha512-GXoKN5UWZYGm+0T5yaxqV2cETg5sYzJO5jZGgWDcbHijSdcaSIiTg2KSGbYX9UqjjHNwwShMBmOyYplQLIxkWQ==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.1.2-rc.0-27915324.b8f6243"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.1.2-rc.0-27916704.aa646f0"
     c12 "^1.1.0"
     consola "^2.15.3"
     defu "^6.1.2"
@@ -2081,10 +2081,10 @@
     unimport "^2.0.1"
     untyped "^1.2.2"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.1.2-rc.0-27915324.b8f6243":
-  version "3.1.2-rc.0-27915324.b8f6243"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.1.2-rc.0-27915324.b8f6243.tgz#10474b5cc8760da0252975c6024b02fd94530096"
-  integrity sha512-r16CPDkJuU2LOy+7QTWYlUhf3NjYDM83S88fhFk2qMigWN6zLkDafW0F0zhDdm6tN95Ui+V9BeYNlckG5+x2eQ==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.1.2-rc.0-27916704.aa646f0":
+  version "3.1.2-rc.0-27916704.aa646f0"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.1.2-rc.0-27916704.aa646f0.tgz#4cbfb3ed6ae7a89ba6c6b0390170af8fbf079e6c"
+  integrity sha512-4SuaREHvm6WNLuWpcVPTW/r9Tb/ijBgmXvKpQ5z2bvgJNW3GAQ5a6smySz5lXn4u4LlcwjJSEFnfG+jWLf7qUQ==
   dependencies:
     c12 "^1.1.0"
     create-require "^1.1.1"
@@ -2126,13 +2126,13 @@
     rc9 "^2.0.0"
     std-env "^3.3.1"
 
-"@nuxt/test-utils-edge@3.1.2-rc.0-27915324.b8f6243":
-  version "3.1.2-rc.0-27915324.b8f6243"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.1.2-rc.0-27915324.b8f6243.tgz#0c8d1c0cbd37455e84df47027d9b40b54e909a20"
-  integrity sha512-NW8CO0PfTQVcqo4Ri/mUcucZaQaXLhrznr6QqgKRQFO1LlbamswYF/y81963vmvFiX0/7WffREbsJdKrQlK4fQ==
+"@nuxt/test-utils-edge@3.1.2-rc.0-27916704.aa646f0":
+  version "3.1.2-rc.0-27916704.aa646f0"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.1.2-rc.0-27916704.aa646f0.tgz#f99d8f88756dc1a5473992a253015767175af133"
+  integrity sha512-nUNRCuTFOP+fd+b3F47+OzYGxGQvtzT0pOCeRq7Oov/qUTuW9mpBWzPLNgocV7PgBPhrlmskrFjnUTrvTQ73yQ==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.1.2-rc.0-27915324.b8f6243"
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.1.2-rc.0-27915324.b8f6243"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.1.2-rc.0-27916704.aa646f0"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.1.2-rc.0-27916704.aa646f0"
     consola "^2.15.3"
     defu "^6.1.2"
     execa "^6.1.0"
@@ -8414,7 +8414,7 @@ macos-release@^2.5.0:
   resolved "https://registry.yarnpkg.com/macos-release/-/macos-release-2.5.0.tgz#067c2c88b5f3fb3c56a375b2ec93826220fa1ff2"
   integrity sha512-EIgv+QZ9r+814gjJj0Bt5vSLJLzswGmSUbUpbi9AIr/fsN2IWFBl2NucV9PAiek+U1STK468tEkxmVYUtuAN3g==
 
-magic-regexp@^0.6.0, magic-regexp@^0.6.1:
+magic-regexp@^0.6.0:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/magic-regexp/-/magic-regexp-0.6.1.tgz#4244f13a11f40665c5efba1ae187b2866de696bf"
   integrity sha512-favamdJyxp0Erq1Tc+iGCCVByrmai6h7nSNjmXowoPZgF4onxQzb4n3cw6+ZHtc0bjnV8zNAseUvR/BKfbH0/Q==
@@ -8424,6 +8424,17 @@ magic-regexp@^0.6.0, magic-regexp@^0.6.1:
     mlly "^0.5.16"
     ufo "^0.8.6"
     unplugin "^0.10.2"
+
+magic-regexp@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/magic-regexp/-/magic-regexp-0.6.2.tgz#cd2e8195e7b9bb8a8ddae06a21bf4a80b8647628"
+  integrity sha512-TU7mogmbA7W9YjGybLmCBJU6C2IGgLgRfr76ILmgWlM/fNGrYOxrZC9AeKzii/DCyFddgBB3t9B6BLzUHrxwxg==
+  dependencies:
+    estree-walker "^3.0.1"
+    magic-string "^0.27.0"
+    mlly "^1.0.0"
+    ufo "^1.0.0"
+    unplugin "^1.0.0"
 
 magic-string@^0.25.3, magic-string@^0.25.7:
   version "0.25.9"
