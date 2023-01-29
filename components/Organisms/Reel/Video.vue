@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useMediaControls } from '@vueuse/core'
-import ProgressVideoBar from '~~/components/Atoms/Video/ProgressVideoBar.vue.js'
+import ProgressVideoBar from '~~/components/Atoms/Video/ProgressVideoBar.vue'
 
 interface IProps {
   src: string
