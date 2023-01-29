@@ -3,13 +3,12 @@ import { APP_API } from '@@/apis'
 import Suggestions from '@@/components/Huge/Suggestions/index.vue'
 import Stories from '@@/components/Molecules/Stories/index.vue'
 import Post from '@@/components/Organisms/Post/index.vue'
-import { useFetchCamel, useWindowResizeCallback } from '@@/composables'
+import { useWindowResizeCallback } from '@@/composables'
 import { IStory, ITimeLine } from '@@/models'
 import {
-  useAuthStore,
-  useStoriesStore,
-  useSuggestionStore,
-  useTimeLineStore,
+useStoriesStore,
+useSuggestionStore,
+useTimeLineStore
 } from '@@/store'
 
 const rightRef = $ref<HTMLElement | null>(null)
@@ -18,18 +17,18 @@ const leftRef = $ref<HTMLElement | null>(null)
 const storiesStore = useStoriesStore()
 const timeLineStore = useTimeLineStore()
 const suggestionStore = useSuggestionStore()
-const authStore = useAuthStore()
 
-const { data: _timeline } = await useLazyFetch<ITimeLine[]>(APP_API.timeLine.list)
+const { data: _timeline } = await useLazyFetch<ITimeLine[]>(
+  APP_API.timeLine.list
+)
 const { data: _stories } = await useLazyFetch<IStory[]>(APP_API.stories.list)
-const { data: _suggestions } = await useLazyFetch<IStory[]>(APP_API.stories.list)
+const { data: _suggestions } = await useLazyFetch<IStory[]>(
+  APP_API.stories.list
+)
 
 storiesStore.save(_stories.value ?? [])
 timeLineStore.save(_timeline.value ?? [])
 suggestionStore.save(_suggestions.value ?? [])
-
-const timeline = $computed(() => timeLineStore.data)
-const stories = $computed(() => storiesStore.data)
 
 const calcLeftSuggestion = () => {
   if (rightRef && leftRef && leftRef.getClientRects()[0]) {
@@ -53,8 +52,8 @@ useWindowResizeCallback(calcLeftSuggestion)
         ref="leftRef"
         class="inline-flex w-full flex-col items-center md:w-[614px] lg:block"
       >
-        <Stories :stories="stories" />
-        <Post v-for="i in timeline" :key="i.id" v-bind="i" />
+        <Stories />
+        <Post />
       </div>
       <div
         ref="rightRef"

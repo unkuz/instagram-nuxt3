@@ -1,13 +1,10 @@
 <script lang="ts" setup>
-import { useKeenSlider } from 'keen-slider/vue.es'
-import Story from './Story.vue'
-import { IStory } from '@@/models'
+import { useStoriesStore } from '@@/store';
+import { useKeenSlider } from 'keen-slider/vue.es';
+import Story from './Story.vue';
 
-interface IProps {
-  stories: Array<IStory>
-}
-
-defineProps<IProps>()
+const storiesStore = useStoriesStore()
+const stories = $computed(() => storiesStore.data)
 
 const [container] = useKeenSlider({
   breakpoints: {
