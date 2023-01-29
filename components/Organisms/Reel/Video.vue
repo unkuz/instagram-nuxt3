@@ -23,7 +23,7 @@ watch(buffered, (val) => {})
   <div class="relative">
     <video
       ref="video"
-      class="h-[calc(100vh-65px)] w-auto bg-c19 md:h-[calc(100vh-114px)] md:w-[100vw]"
+      class="h-[calc(100vh-65px)] w-auto bg-c19 md:h-[calc(100vh-114px)] md:w-[100vw] md:bg-c2"
       autoplay
       loop
       type="video/mp4"

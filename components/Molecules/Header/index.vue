@@ -68,7 +68,6 @@ const hiddenHeader = $(
         <div @click="toggleShowExtension">
           <Flashicon_ class="cursor-pointer dark:[&>path]:fill-white" />
         </div>
-        <!-- <DarkMode /> -->
         <div ref="extensionRef" class="relative">
           <div @click="toggleShowExtension" />
           <div><Extension v-if="showExtension" /></div>
