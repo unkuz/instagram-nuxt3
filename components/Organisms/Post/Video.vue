@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import LoadingIcon_ from '@@/assets/svg/loading_34295aioi.svg'
 import ExpandIcon_ from '@@/assets/svg/full_screen.svg'
 import PlayIcon_ from '@@/assets/svg/play_icon.svg'
+import Loading from '@@/components/Atoms/Video/Loading.vue'
 import { useDoubleClick, usePercentVideo } from '@@/composables'
 import { useTimeLineStore } from '@@/store'
 import { gsap } from 'gsap'
@@ -92,7 +92,7 @@ onMounted(() => {
       :poster="video.poster"
     />
     <div v-show="isLoading" class="absolute inset-0 flex items-center justify-center bg-c20/40">
-      <LoadingIcon_ class="w-[10%] !bg-transparent invert" />
+      <Loading />
     </div>
 
     <div v-show="!isLoading" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
