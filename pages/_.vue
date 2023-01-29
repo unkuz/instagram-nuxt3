@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { APP_API } from '@@/apis'
 import Suggestions from '@@/components/Huge/Suggestions/index.vue'
-import Stories from '@@/components/Molecules/Stories/StoriesContainer.vue'
+import Stories from '@@/components/Molecules/Stories/Stories.vue'
 import Post from '@@/components/Organisms/Post/index.vue'
 import { useWindowResizeCallback } from '@@/composables'
 import { IStory, ITimeLine } from '@@/models'
