@@ -13,7 +13,7 @@ interface IProps {
 defineProps<IProps>()
 </script>
 <template>
-  <div class="absolute bottom-[60px] left-[10px] right-[10px] duration-200 md:bottom-[50px]">
+  <div class="absolute bottom-[60px] left-[10px] right-[100px] duration-200 md:bottom-[50px]">
     <div class="flex items-center gap-[20px]">
       <Avatar :size="SizeAvatarEnum.S" :url="user.profile_pic_url" />
       <TagName :name="user.full_name" class="max-w-[150px] line-clamp-1" />
