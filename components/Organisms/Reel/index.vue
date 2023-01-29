@@ -11,17 +11,13 @@ export interface IActiveKey {
   l: boolean
 }
 
-
 const [container, slider] = useKeenSlider({
   slides: {
     perView: 1,
   },
-  dragSpeed: 0.3,
+  dragSpeed: 2,
   renderMode: 'precision',
   vertical: true,
-  defaultAnimation: {
-    duration: 1,
-  },
 })
 
 const videoRefs = $ref<HTMLVideoElement[]>([])
@@ -36,7 +32,6 @@ let activeKey = reactive<IActiveKey>({
   l: false,
 })
 
-
 watch(idle, (val) => {
   if (val) {
     currentVideoOnScreen!.pause()
@@ -44,8 +39,6 @@ watch(idle, (val) => {
     currentVideoOnScreen!.play()
   }
 })
-
-
 
 onMounted(() => {
   document.onkeydown = (e) => {
@@ -67,21 +60,21 @@ onMounted(() => {
         console.log('L')
     }
   }
-//   document.onkeyup = (e) => {
-//     switch (e.key.toLowerCase()) {
-//       case 'arrowup':
-//         activeKey.up = false
-//         break
-//       case 'arrowdown':
-//         activeKey.down = false
-//         break
-//       case 'm':
-//         activeKey.m = false
-//         break
-//       case 'l':
-//         activeKey.l = false
-//     }
-//   }
+  //   document.onkeyup = (e) => {
+  //     switch (e.key.toLowerCase()) {
+  //       case 'arrowup':
+  //         activeKey.up = false
+  //         break
+  //       case 'arrowdown':
+  //         activeKey.down = false
+  //         break
+  //       case 'm':
+  //         activeKey.m = false
+  //         break
+  //       case 'l':
+  //         activeKey.l = false
+  //     }
+  //   }
 })
 
 onMounted(() => {
@@ -122,7 +115,7 @@ onBeforeUnmount(() => {
       <div
         v-for="(_i, idx) in 2"
         :key="idx"
-        class="keen-slider__slide !w-auto cursor-grab duration-500 active:cursor-grabbing"
+        class="keen-slider__slide !w-auto cursor-grab active:cursor-grabbing"
       >
         <video
           ref="videoRefs"
