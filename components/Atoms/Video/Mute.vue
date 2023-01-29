@@ -10,7 +10,9 @@ interface IProps {
 defineProps<IProps>()
 </script>
 <template>
-  <div class="absolute bottom-[30px] right-[40px] inline-block cursor-pointer invert md:bottom-[40px] md:right-[40px] dark:[&>svg]:invert">
+  <div
+    class="absolute bottom-[30px] right-[40px] inline-block cursor-pointer invert md:bottom-[40px] md:right-[40px] dark:[&>svg]:invert"
+  >
     <SoundOffIcon_ v-if="isMute" />
     <SoundOnIcon_ v-else />
   </div>

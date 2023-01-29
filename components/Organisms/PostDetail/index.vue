@@ -82,7 +82,10 @@ const scrollToComment = () => {
 </script>
 
 <template>
-  <article ref="postRef" class="mb-[24px] w-full border-c4 shadow-c4 dark:border-none dark:shadow-none md:border-[1px] md:shadow-sm">
+  <article
+    ref="postRef"
+    class="mb-[24px] w-full border-c4 shadow-c4 dark:border-none dark:shadow-none md:border-[1px] md:shadow-sm"
+  >
     <Head :avatar="user.profile_pic_url" :user-name="user.username" />
     <Carousel
       :id="id"

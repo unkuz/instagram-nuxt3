@@ -82,16 +82,32 @@ const handleSlide = (indicator: 1 | -1) => {
           <div :class="['relative w-[300px] bg-white text-[0.9rem]', { 'w-[500px]': isHasFile }]">
             <div class="absolute right-[12px] top-[12px]">
               <div class="relative h-[18px] w-[18px] cursor-pointer rounded-full bg-gray-600" @click="closePostBox">
-                <div class="absolute top-1/2 left-1/2 h-[8px] w-[2px] -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white" />
-                <div class="absolute top-1/2 left-1/2 h-[8px] w-[2px] -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-white" />
+                <div
+                  class="absolute top-1/2 left-1/2 h-[8px] w-[2px] -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white"
+                />
+                <div
+                  class="absolute top-1/2 left-1/2 h-[8px] w-[2px] -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-white"
+                />
               </div>
             </div>
-            <div class="flex h-[42px] w-full items-center justify-center border-b-[1px] border-gray-300">Create new post</div>
+            <div class="flex h-[42px] w-full items-center justify-center border-b-[1px] border-gray-300">
+              Create new post
+            </div>
             <!-- <textarea v-show="isHasFile" class="w-full" />
         <span data-lexical-text="true">asdfdsfaa</span> -->
             <div class="relative w-full">
-              <div class="absolute left-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer text-white" @click="handleSlide(1)">previous</div>
-              <div class="absolute right-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer text-white" @click="handleSlide(-1)">next</div>
+              <div
+                class="absolute left-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer text-white"
+                @click="handleSlide(1)"
+              >
+                previous
+              </div>
+              <div
+                class="absolute right-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer text-white"
+                @click="handleSlide(-1)"
+              >
+                next
+              </div>
               <div class="absolute bottom-[15px] left-1/2 z-10 flex -translate-x-1/2 justify-between space-x-[4px]">
                 <div
                   v-for="(i, idx) in postFiles"
@@ -104,7 +120,11 @@ const handleSlide = (indicator: 1 | -1) => {
                   ]"
                 />
               </div>
-              <div v-show="isHasFile" ref="containerPreviewRef" class="inline-flex h-[750px] w-full items-center bg-black duration-100" />
+              <div
+                v-show="isHasFile"
+                ref="containerPreviewRef"
+                class="inline-flex h-[750px] w-full items-center bg-black duration-100"
+              />
             </div>
             <div
               :class="[

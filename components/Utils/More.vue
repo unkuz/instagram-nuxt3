@@ -5,7 +5,13 @@ import { useClickOutSide, useLockScroll } from '@@/composables'
 import { useMoreStore } from '@@/store'
 import Avatar from '@@/components/Atoms/Avatar.vue'
 
-const options = [{ name: 'Block' }, { name: 'Unfollow' }, { name: 'Report' }, { name: 'Ignore Friend Recomandation' }, { name: 'Send Profile To...' }]
+const options = [
+  { name: 'Block' },
+  { name: 'Unfollow' },
+  { name: 'Report' },
+  { name: 'Ignore Friend Recomandation' },
+  { name: 'Send Profile To...' },
+]
 
 const moreRef = ref<HTMLDivElement | null>(null)
 const moreStore = useMoreStore()
@@ -36,7 +42,9 @@ useClickOutSide(moreRef, () => {
             </div>
           </div>
           <div class="flex items-center space-x-[20px]">
-            <div class="flex h-[30px] w-[90px] cursor-pointer items-center justify-center space-x-[5px] rounded-full bg-c7 sm:h-[35px] sm:w-[100px]">
+            <div
+              class="flex h-[30px] w-[90px] cursor-pointer items-center justify-center space-x-[5px] rounded-full bg-c7 sm:h-[35px] sm:w-[100px]"
+            >
               <span>+</span>
               <span>Add</span>
             </div>

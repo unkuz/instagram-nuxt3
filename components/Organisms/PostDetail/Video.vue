@@ -102,7 +102,15 @@ onMounted(() => {
 
 <template>
   <div ref="containerRef" class="group relative flex min-w-full items-center justify-center overflow-hidden bg-c2">
-    <video ref="videoRef" class="video block max-h-[100vh] w-full" :src="video.src" type="video/mp4" playsinline crossorigin="anonymous" loop />
+    <video
+      ref="videoRef"
+      class="video block max-h-[100vh] w-full"
+      :src="video.src"
+      type="video/mp4"
+      playsinline
+      crossorigin="anonymous"
+      loop
+    />
     <div v-show="isLoading" class="absolute inset-0 flex items-center justify-center bg-c20/40">
       <LoadingIcon_ class="w-[10%] !bg-transparent" />
     </div>
@@ -129,7 +137,10 @@ onMounted(() => {
     </div>
     <div class="absolute bottom-[10px] right-[10px] flex gap-[15px]">
       <div title="Full screen">
-        <ExpandIcon_ class="hidden w-[20px] cursor-pointer fill-c1 text-c1 group-hover:block dark:fill-black" @click="toggleFullScreen" />
+        <ExpandIcon_
+          class="hidden w-[20px] cursor-pointer fill-c1 text-c1 group-hover:block dark:fill-black"
+          @click="toggleFullScreen"
+        />
       </div>
     </div>
   </div>

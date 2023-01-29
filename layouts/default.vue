@@ -14,15 +14,26 @@ const smallerThanMd = $(breakpoints.smallerOrEqual('md'))
 const noNeedPadingTop = $(
   computed(() => {
     return (
-      [SectionEnum.MESSENGER, SectionEnum.REELS, SectionEnum.SEARCH, SectionEnum.ACTIVITYFEED, SectionEnum.SELF].includes(globalStore.section) &&
-      smallerThanMd
+      [
+        SectionEnum.MESSENGER,
+        SectionEnum.REELS,
+        SectionEnum.SEARCH,
+        SectionEnum.ACTIVITYFEED,
+        SectionEnum.SELF,
+      ].includes(globalStore.section) && smallerThanMd
     )
   })
 )
 
 const deskTopNodNeedPading = $(
   computed(() => {
-    return [SectionEnum.MESSENGER, SectionEnum.REELS, SectionEnum.SEARCH, SectionEnum.ACTIVITYFEED, SectionEnum.SELF].includes(globalStore.section)
+    return [
+      SectionEnum.MESSENGER,
+      SectionEnum.REELS,
+      SectionEnum.SEARCH,
+      SectionEnum.ACTIVITYFEED,
+      SectionEnum.SELF,
+    ].includes(globalStore.section)
   })
 )
 </script>

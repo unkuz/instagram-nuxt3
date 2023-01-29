@@ -90,7 +90,11 @@ onBeforeUnmount(() => {
       </p>
 
       <div class="flex w-full justify-end">
-        <Button text="OK" @click="ok" class="select-none bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:bg-c17" />
+        <Button
+          text="OK"
+          @click="ok"
+          class="select-none bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:bg-c17"
+        />
       </div>
     </div>
   </div>

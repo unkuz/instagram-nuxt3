@@ -4,7 +4,13 @@
  * ---------------------
  * */
 
-import type { NavigationFailure, RouteLocation, RouteLocationNormalizedLoaded, RouteLocationOptions, RouteQueryAndHash } from 'vue-router'
+import type {
+  NavigationFailure,
+  RouteLocation,
+  RouteLocationNormalizedLoaded,
+  RouteLocationOptions,
+  RouteQueryAndHash,
+} from 'vue-router'
 import type { TypedRouteList } from './__routes'
 
 export type RouteListDecl = {
@@ -65,7 +71,9 @@ type TypedLocationAsRelativeRaw<T extends TypedRouteList> = {
   params?: TypedRouteParams[T]
 }
 
-type TypedRouteLocationRaw<T extends TypedRouteList> = RouteQueryAndHash & TypedLocationAsRelativeRaw<T> & RouteLocationOptions
+type TypedRouteLocationRaw<T extends TypedRouteList> = RouteQueryAndHash &
+  TypedLocationAsRelativeRaw<T> &
+  RouteLocationOptions
 
 export interface TypedRouter {
   /**

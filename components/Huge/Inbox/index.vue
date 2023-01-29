@@ -50,7 +50,10 @@ const setExpand = (section: InboxTypeEnum) => {
             </div>
           </div>
           <div v-show="isExpand(InboxTypeEnum.UnRead)">
-            <div v-for="i in 2" class="relative mb-[10px] flex justify-between gap-[10px] rounded-[10px] bg-[#4f4f4f7c] p-[8px] shadow-xl last:mb-0">
+            <div
+              v-for="i in 2"
+              class="relative mb-[10px] flex justify-between gap-[10px] rounded-[10px] bg-[#4f4f4f7c] p-[8px] shadow-xl last:mb-0"
+            >
               <Avatar :size="S" url="/image/91480011.jpg" />
               <div class="flex-1">
                 <div class="flex items-center gap-[5px]">
@@ -59,8 +62,9 @@ const setExpand = (section: InboxTypeEnum) => {
                 </div>
 
                 <div class="line-clamp-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa assumenda, excepturi vel non facere commodi delectus ipsam explicabo
-                  quaerat rem aspernatur placeat nobis veritatis quas quibusdam officia illum fugiat voluptatem?
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa assumenda, excepturi vel non facere
+                  commodi delectus ipsam explicabo quaerat rem aspernatur placeat nobis veritatis quas quibusdam officia
+                  illum fugiat voluptatem?
                 </div>
               </div>
               <p class="text-[0.7rem]">12:30</p>
