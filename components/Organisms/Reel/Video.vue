@@ -40,6 +40,5 @@ watch(buffered, (val) => {})
     <Mute @click="muted = !muted" :isMute="muted" :buffered="buffered" />
     <Pause @click="playing = true" :class="[playing ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100']" />
     <Loading v-if="waiting" />
-    <ReelCap :user="props.user" :caption="props.caption_text" />
   </div>
 </template>

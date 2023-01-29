@@ -6,6 +6,7 @@ import { useKeenSlider } from 'keen-slider/vue.es'
 import { useReelStore } from '@@/store'
 import { IActiveKey } from '@@/type'
 import Video from './Video.vue'
+import ReelCap from '~~/components/Atoms/Video/ReelCap.vue'
 
 const reelStore = useReelStore()
 
@@ -121,6 +122,7 @@ onBeforeUnmount(() => {
         <div ref="containvideoRefs">
           <Video v-bind="i" />
         </div>
+        <ReelCap :user="i.user" :caption="i.caption_text" />
       </div>
     </div>
     <ReelKeyBoardShortcut :active-key="activeKey" />
