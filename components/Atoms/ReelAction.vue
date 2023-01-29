@@ -12,19 +12,19 @@ defineProps<IProps>()
 const hasLiked = ref(true)
 </script>
 <template>
-  <div class="absolute bottom-[15px] right-[30px] flex flex-col gap-[20px] duration-200 md:bottom-[80px]">
+  <div class="absolute bottom-[15px] right-[30px] flex flex-col gap-[20px] duration-200 md:bottom-[80px] text-c1">
     <div class="flex flex-col items-center gap-[5px]">
       <UnlikeIcon v-if="hasLiked" />
-      <LikeIcon_ v-else class="fill-c2 dark:fill-c1" />
+      <LikeIcon_ v-else class="!fill-c1" />
       <span>{{ $formatNum(totalLike) }}</span>
     </div>
     <div class="flex flex-col items-center gap-[5px]">
-      <ViewPostIcon_ class="fill-c2 dark:fill-c1" />
+      <ViewPostIcon_ class="!fill-c1" />
       <span>{{ $formatNum(totalComment) }}</span>
     </div>
 
     <div class="flex flex-col items-center gap-[5px]">
-      <ShareIcon_ class="fill-c2 dark:fill-c1" /> <span>{{ 0 }}</span>
+      <ShareIcon_ class="!fill-c1" /> <span>{{ 0 }}</span>
     </div>
   </div>
 </template>
