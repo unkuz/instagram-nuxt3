@@ -17,7 +17,6 @@ const { playing, currentTime, duration, volume, muted, buffered, waiting } = use
 })
 
 watch(buffered, (val) => {
-  console.log('VAL', val)
 })
 </script>
 
