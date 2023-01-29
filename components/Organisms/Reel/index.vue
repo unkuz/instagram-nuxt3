@@ -58,7 +58,7 @@ onMounted(() => {
         activeKey.l = true
         break
       case ' ':
-        slider.value!.next()
+        currentVideoOnScreen!.paused ? currentVideoOnScreen!.play() : currentVideoOnScreen!.pause()
     }
   }
   //   document.onkeyup = (e) => {
