@@ -9,7 +9,10 @@ self.addEventListener('activate', () => {
 })
 
 // Navigation route are handled by network first strategy
-workbox.routing.registerRoute(({ request }) => request.mode === 'navigate', new workbox.strategies.NetworkFirst({ cacheName: 'navigation' }))
+workbox.routing.registerRoute(
+  ({ request }) => request.mode === 'navigate',
+  new workbox.strategies.NetworkFirst({ cacheName: 'navigation' })
+)
 
 // CSS are handled by a Stale While Revalidate strategy
 workbox.routing.registerRoute(

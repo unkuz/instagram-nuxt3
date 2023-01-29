@@ -23,7 +23,10 @@ const coverImg = computed(() => authStore.data.coverImg)
 <template>
   <div class="relative mb-[65px] text-sm">
     <div class="relative h-[250px]">
-      <div class="absolute h-full w-full cursor-pointer bg-cover bg-center object-cover" :style="{ backgroundImage: `url(${coverImg})` }" />
+      <div
+        class="absolute h-full w-full cursor-pointer bg-cover bg-center object-cover"
+        :style="{ backgroundImage: `url(${coverImg})` }"
+      />
       <Avatar
         :size="L"
         :url="avatar"
@@ -34,7 +37,8 @@ const coverImg = computed(() => authStore.data.coverImg)
       <div class="mt-[50px] flex flex-col items-center duration-500 md:ml-[180px] md:mt-[5px] md:block">
         <div>Cuzknothz</div>
         <div class="flex space-x-[20px]">
-          <span>96 posts</span><span class="cursor-pointer" @click="profileStore.setIsShowFollowing(true)">38.8k followers</span
+          <span>96 posts</span
+          ><span class="cursor-pointer" @click="profileStore.setIsShowFollowing(true)">38.8k followers</span
           ><span class="cursor-pointer" @click="profileStore.setIsShowFollowing(true)">150 following</span>
         </div>
       </div>
