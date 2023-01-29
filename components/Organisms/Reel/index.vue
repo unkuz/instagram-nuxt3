@@ -121,11 +121,11 @@ onBeforeUnmount(() => {
           { caption_text, like_count, media, total_comment, user }, idx
         ) in reels"
         :key="idx"
-        class="keen-slider__slide !w-auto cursor-grab active:cursor-grabbing"
+        class="keen-slider__slide flex !w-auto cursor-grab items-center justify-center bg-c19 active:cursor-grabbing md:bg-transparent"
       >
         <video
           ref="videoRefs"
-          class="h-[calc(100vh-65px)] w-auto object-cover md:h-[calc(100vh-114px)]"
+          class="h-[calc(100vh-65px)] md:h-[calc(100vh-114px)] 2xl:max-w-[40vw] xl:max-w-[50vw] md:max-w-[60vw]"
           :src="media.video[0].src"
           autoplay
           loop
