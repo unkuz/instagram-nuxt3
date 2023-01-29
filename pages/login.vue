@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useAuthStore } from '@@/store';
-import ErrorPage from '~~/components/Utils/ErrorPage.vue';
+import { useAuthStore } from '@@/store'
+import ErrorPage from '~~/components/Utils/ErrorPage.vue'
 
 definePageMeta({
   layout: 'empty',
@@ -18,9 +18,7 @@ useWatchWithMounted(isLogin, () => {
 </script>
 
 <template>
-  <div
-    class="flex h-[calc(100vh-84px)] w-full items-center justify-center text-[0.85rem]"
-  >
+  <div>
     <ErrorPage />
   </div>
 </template>

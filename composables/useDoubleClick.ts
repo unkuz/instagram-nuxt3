@@ -1,10 +1,6 @@
 import { Ref } from 'vue'
 
-export const useDoubleClick = (
-  refElement: Ref<HTMLElement | null>,
-  click: () => void,
-  dblclick: () => void
-) => {
+export const useDoubleClick = (refElement: Ref<HTMLElement | null>, click: () => void, dblclick: () => void) => {
   let timer = ref<any>(null)
 
   const _click = (event: MouseEvent) => {

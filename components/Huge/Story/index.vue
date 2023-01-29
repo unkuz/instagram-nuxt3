@@ -26,10 +26,7 @@ const keyCodeBehaviour = (e: KeyboardEvent) => {
 
 const updateTime = () => {
   Object.assign(barRef.value!.style, {
-    width: `${
-      (videoRef.value!.currentTime * containerBar!.clientWidth) /
-      videoRef.value!.duration
-    }px`,
+    width: `${(videoRef.value!.currentTime * containerBar!.clientWidth) / videoRef.value!.duration}px`,
   })
   isVideoPlay = !videoRef.value!.paused
   isVideoMuted = videoRef.value!.muted
@@ -71,10 +68,7 @@ const togglePlay = () => {
 <template>
   <div>
     <BackDrop>
-      <div
-        ref="mediaContainerRef"
-        class="relative h-full w-full sm:h-[881px] sm:w-[495.5px]"
-      >
+      <div ref="mediaContainerRef" class="relative h-full w-full sm:h-[881px] sm:w-[495.5px]">
         <div class="absolute inset-0">
           <video
             ref="videoRef"
@@ -96,12 +90,7 @@ const togglePlay = () => {
           ]"
           @click="togglePlay"
         >
-          <svg
-            aria-label="Play"
-            class="cursor-pointer fill-c1 text-c1"
-            role="img"
-            viewBox="0 0 24 24"
-          >
+          <svg aria-label="Play" class="cursor-pointer fill-c1 text-c1" role="img" viewBox="0 0 24 24">
             <path
               d="M5.888 22.5a3.46 3.46 0 01-1.721-.46l-.003-.002a3.451 3.451 0 01-1.72-2.982V4.943a3.445 3.445 0 015.163-2.987l12.226 7.059a3.444 3.444 0 01-.001 5.967l-12.22 7.056a3.462 3.462 0 01-1.724.462z"
             />
@@ -110,17 +99,12 @@ const togglePlay = () => {
         <!-- top -->
         <div class="mx-auto w-[90%] sm:w-[445px]">
           <div class="mt-[25px] flex w-full justify-between space-x-2">
-            <div
-              ref="containerBar"
-              class="relative h-[2px] w-full bg-[#c2c2c2]"
-            >
+            <div ref="containerBar" class="relative h-[2px] w-full bg-[#c2c2c2]">
               <div ref="barRef" class="absolute top-0 left-0 h-full bg-white" />
             </div>
           </div>
           <div class="relative mt-[10px] flex items-center justify-between">
-            <div
-              class="flex items-center space-x-[10px] text-[0.8rem] text-white"
-            >
+            <div class="flex items-center space-x-[10px] text-[0.8rem] text-white">
               <div class="h-[35px] w-[35px] rounded-[50%] bg-white" />
               <div>cuzknothz</div>
               <div class="text-[0.8rem]">1 h</div>

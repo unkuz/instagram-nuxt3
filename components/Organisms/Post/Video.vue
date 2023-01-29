@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import LoadingIcon_ from '@@/assets/svg/Dual Ring-1s-200px.svg'
+import LoadingIcon_ from '@@/assets/svg/loading_34295aioi.svg'
 import ExpandIcon_ from '@@/assets/svg/full_screen.svg'
 import PlayIcon_ from '@@/assets/svg/play_icon.svg'
 import { useDoubleClick, usePercentVideo } from '@@/composables'
@@ -49,9 +49,7 @@ watch(percent, () => {
 })
 
 const scrub = (e: MouseEvent) => {
-  const scrubTime =
-    (e.offsetX / progressBarRef!.parentElement!.offsetWidth) *
-    videoRef.value!.duration
+  const scrubTime = (e.offsetX / progressBarRef!.parentElement!.offsetWidth) * videoRef.value!.duration
   videoRef.value!.currentTime = scrubTime
 }
 
@@ -69,9 +67,7 @@ onBeforeUnmount(() => {
 })
 
 const toggleFullScreen = () => {
-  document.fullscreenElement
-    ? document.exitFullscreen()
-    : containerRef!.requestFullscreen()
+  document.fullscreenElement ? document.exitFullscreen() : containerRef!.requestFullscreen()
 }
 
 onMounted(() => {
@@ -82,10 +78,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    ref="containerRef"
-    class="group relative flex min-w-full items-center justify-center overflow-hidden bg-c2"
-  >
+  <div ref="containerRef" class="group relative flex min-w-full items-center justify-center overflow-hidden bg-c2">
     <video
       ref="videoRef"
       class="video block max-h-[100vh] w-full"
@@ -98,23 +91,15 @@ onMounted(() => {
       preload="metadata"
       :poster="video.poster"
     />
-    <div
-      v-show="isLoading"
-      class="absolute inset-0 flex items-center justify-center bg-c20/40"
-    >
-      <LoadingIcon_ class="w-[10%] !bg-transparent" />
+    <div v-show="isLoading" class="absolute inset-0 flex items-center justify-center bg-c20/40">
+      <LoadingIcon_ class="w-[10%] !bg-transparent invert" />
     </div>
 
-    <div
-      v-show="!isLoading"
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-    >
+    <div v-show="!isLoading" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
         :class="[
           'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-200',
-          isVideoPlay
-            ? 'scale-0 opacity-0'
-            : 'scale-100 animate-play opacity-100',
+          isVideoPlay ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100',
         ]"
       >
         <PlayIcon_ class="!aspect-square !h-[80px] fill-c4" @click="play" />

@@ -25,12 +25,8 @@ const containerMediaRef = ref<HTMLDivElement | null>(null)
 const { next, prev, current } = useCarousel(containerMediaRef)
 
 const isShowPre = $computed(() => current.value !== 0)
-const isShowNext = $computed(
-  () => current.value !== props.images.concat(props.videos).length - 1
-)
-const totalMedia = $computed<number>(
-  () => props.images.concat(props.videos).length
-)
+const isShowNext = $computed(() => current.value !== props.images.concat(props.videos).length - 1)
+const totalMedia = $computed<number>(() => props.images.concat(props.videos).length)
 
 watch(current, (idx) => {
   emit('current-index-carousel', idx)
@@ -53,12 +49,7 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
   <div class="relative overflow-hidden">
     <div ref="containerMediaRef" class="inline-flex min-w-full select-none">
       <Image v-for="i in images" :key="i.id" :src="i.src" :id-post="id" />
-      <Video
-        v-for="(video, idx) in videos"
-        :key="idx"
-        :video="video"
-        :id-post="id"
-      />
+      <Video v-for="(video, idx) in videos" :key="idx" :video="video" :id-post="id" />
     </div>
     <div
       v-if="isShowPre"
@@ -84,10 +75,7 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
     <div v-show="initShowLikeSaved">
       <Unlike v-if="hasLiked" />
       <Like v-else />
-      <Save
-        v-if="hasSaved"
-        class-name="[&>path]:fill-c11 [&>path]:stroke-c11"
-      />
+      <Save v-if="hasSaved" class-name="[&>path]:fill-c11 [&>path]:stroke-c11" />
       <Save v-else class-name="[&>path]:fill-c2 [&>path]:stroke-c2" />
     </div>
   </div>

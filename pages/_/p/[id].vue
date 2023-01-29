@@ -32,15 +32,11 @@ const router = useRouter()
 const postDetailStore = usePostDetailStore()
 let currentIdx = $ref(0)
 
-const { data: _timeline } = await useFetch<ITimeLine[]>(
-  'https://mocki.io/v1/bbd9ad8d-fbd8-4d95-a9ac-ee6416513aae'
-)
+const { data: _timeline } = await useFetch<ITimeLine[]>('https://mocki.io/v1/bbd9ad8d-fbd8-4d95-a9ac-ee6416513aae')
 
 postDetailStore.setPostDetail(route.params.id as string)
 
-const profilePicUrl = $computed<string>(
-  () => postDetailStore.post.user.profile_pic_url
-)
+const profilePicUrl = $computed<string>(() => postDetailStore.post.user.profile_pic_url)
 const images = computed<
   {
     id: string
@@ -70,18 +66,13 @@ onMounted(() => {
   const topH = rightSectionRef?.children[0].children[0].clientHeight!
   const bottomH = rightSectionRef?.children[1].clientHeight!
 
-  Object.assign(
-    (rightSectionRef?.children[0].children[1] as HTMLDivElement).style,
-    {
-      height: `${535 - topH - bottomH}px`,
-    }
-  )
+  Object.assign((rightSectionRef?.children[0].children[1] as HTMLDivElement).style, {
+    height: `${535 - topH - bottomH}px`,
+  })
 })
 
 const mediaArr = $computed(() =>
-  postDetailStore.post.carousel_media.images.concat(
-    postDetailStore.post.carousel_media.videos
-  )
+  postDetailStore.post.carousel_media.images.concat(postDetailStore.post.carousel_media.videos)
 )
 </script>
 
@@ -92,16 +83,9 @@ const mediaArr = $computed(() =>
         ref="postRef"
         class="flex h-[100vh] translate-y-[100vh] scale-0 flex-col overflow-scroll bg-c1 opacity-0 dark:bg-c19 md:h-[80vh] xl:h-[80%] xl:w-[80%] xl:flex-row xl:overflow-auto"
       >
-        <div
-          class="flex w-full cursor-pointer justify-end md:hidden"
-          @click="router.back"
-        >
-          X
-        </div>
+        <div class="flex w-full cursor-pointer justify-end md:hidden" @click="router.back">X</div>
         <div class="w-full md:h-full md:w-[80vw] xl:w-[700px]">
-          <article
-            class="w-full border-c4 shadow-c4 dark:border-none dark:shadow-none md:border-[1px] md:shadow-sm"
-          >
+          <article class="w-full border-c4 shadow-c4 dark:border-none dark:shadow-none md:border-[1px] md:shadow-sm">
             <Head :avatar="profilePicUrl" :user-name="userName" />
             <Carousel
               :id="id"
@@ -119,10 +103,7 @@ const mediaArr = $computed(() =>
                 :media-arr="mediaArr"
                 :has-saved="isSaved"
               />
-              <LikeCommentCount
-                :like-count="likeCount"
-                :comment-count="commentCount"
-              />
+              <LikeCommentCount :like-count="likeCount" :comment-count="commentCount" />
               <div class="m-[8px_0px_5px_0px] h-[18px] text-[0.8rem] text-c3">
                 {{ moment(createdAt).fromNow() }}
               </div>
@@ -135,11 +116,7 @@ const mediaArr = $computed(() =>
         >
           <div>
             <div>
-              <Caption
-                :user-name="userName"
-                :caption-content="captiontext"
-                :tags="tags"
-              />
+              <Caption :user-name="userName" :caption-content="captiontext" :tags="tags" />
             </div>
             <div
               :class="[
@@ -150,11 +127,7 @@ const mediaArr = $computed(() =>
               ]"
             >
               <template v-if="hasComment">
-                <IndividualComment
-                  v-for="(i, idx) in comments"
-                  :key="idx"
-                  :comment="i"
-                />
+                <IndividualComment v-for="(i, idx) in comments" :key="idx" :comment="i" />
               </template>
               <template v-else>
                 <div>No comment to show !!</div>

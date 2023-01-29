@@ -27,9 +27,7 @@ defineProps<IProps>()
           <Avatar :size="M" :url="avatar" />
         </div>
       </div>
-      <p
-        class="mt-[5px] overflow-hidden text-ellipsis whitespace-nowrap text-center text-xs"
-      >
+      <p class="mt-[5px] overflow-hidden text-ellipsis whitespace-nowrap text-center text-xs">
         {{ name }}
       </p>
     </div>

@@ -14,8 +14,10 @@ export const useTimeLineStore = defineStore('timeline', {
   }),
   getters: {},
   actions: {
-    save(data: ITimeLine[]) {
-      this.data = data
+    save(data: ITimeLine[] | null) {
+      if (data) {
+        this.data = data
+      }
     },
     setToggleLike(id: string) {
       const slashStore = useSlashStore()
@@ -60,9 +62,7 @@ export const useTimeLineStore = defineStore('timeline', {
       }
 
       if (commentReplyId) {
-        const idxCmRep = this.data[idx].comments.findIndex(
-          (i) => i.id === commentReplyId
-        )
+        const idxCmRep = this.data[idx].comments.findIndex((i) => i.id === commentReplyId)
         this.data[idx].comments[idxCmRep].reply.push(data)
       } else {
         this.data[idx].comments.unshift(data)

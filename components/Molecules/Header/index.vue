@@ -16,6 +16,7 @@ import Extension from '@@/components/Utils/Extension.vue'
 import { useClickOutSide } from '@@/composables'
 import { SectionEnum } from '@@/constants/section'
 import { useAuthStore, useGlobalStore, useSearchStore } from '@@/store'
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 
 const globalStore = useGlobalStore()
 const authStore = useAuthStore()
@@ -28,6 +29,9 @@ const activityFeedPopRef = $ref<HTMLDivElement | null>(null)
 const extensionRef = ref<HTMLDivElement | null>(null)
 const isShowProfile = $ref(false)
 
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const smallerThanMd = $(breakpoints.smallerOrEqual('md'))
+
 let showExtension = $ref(false)
 
 const toggleShowExtension = () => (showExtension = !showExtension)
@@ -35,10 +39,25 @@ const toggleShowExtension = () => (showExtension = !showExtension)
 useClickOutSide(extensionRef, () => (showExtension = false))
 
 const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
+
+const hiddenHeader = $(
+  computed(() => {
+    return (
+      [
+        SectionEnum.MESSENGER,
+        SectionEnum.REELS,
+        SectionEnum.SEARCH,
+        SectionEnum.ACTIVITYFEED,
+        SectionEnum.SELF,
+      ].includes(globalStore.section) && smallerThanMd
+    )
+  })
+)
 </script>
 
 <template>
   <header
+    v-show="!hiddenHeader"
     class="fixed top-0 left-0 z-10 h-[60px] w-screen border-c4 bg-c1 dark:border-none dark:bg-c19 md:border-b-[1px]"
   >
     <div
@@ -55,9 +74,7 @@ const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
           <div><Extension v-if="showExtension" /></div>
         </div>
       </div>
-      <div
-        class="relative hidden w-full items-center justify-center md:flex md:w-auto lg:ml-0 lg:w-full"
-      >
+      <div class="relative hidden w-full items-center justify-center md:flex md:w-auto lg:ml-0 lg:w-full">
         <Search />
         <SearchPop v-if="isShowSearchToolkit" />
       </div>
@@ -69,20 +86,14 @@ const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
             <HomeIcon :is-select="section === SectionEnum.HOME" />
           </NuxtLink>
         </div>
-        <div
-          class="ml-[22px] md:ml-0"
-          @click="handleSelect(SectionEnum.MESSENGER)"
-        >
+        <div class="ml-[22px] md:ml-0" @click="handleSelect(SectionEnum.MESSENGER)">
           <NuxtLink to="/inbox/">
-            <Messenger
-              :is-select="section === SectionEnum.MESSENGER"
-              :has-new="true"
-            />
+            <Messenger :is-select="section === SectionEnum.MESSENGER" :has-new="true" />
           </NuxtLink>
         </div>
         <div v-show="!isMobile" @click="handleSelect(SectionEnum.REELS)">
           <NuxtLink to="/reels">
-            <Reels :is-select="false" />
+            <Reels :is-select="section === SectionEnum.REELS" />
           </NuxtLink>
         </div>
         <div class="relative" @click="handleSelect(SectionEnum.NEW_POST)">
@@ -93,21 +104,13 @@ const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
             <FindPeople :is-select="section === SectionEnum.FINDPEOPLE" />
           </NuxtLink>
         </div>
-        <div
-          v-show="!isMobile"
-          class="relative"
-          @click="handleSelect(SectionEnum.ACTIVITYFEED)"
-        >
+        <div v-show="!isMobile" class="relative" @click="handleSelect(SectionEnum.ACTIVITYFEED)">
           <ActivityFeed :is-select="section === SectionEnum.ACTIVITYFEED" />
           <div ref="activityFeedPopRef">
             <ActivityFeedPop v-show="section === SectionEnum.ACTIVITYFEED" />
           </div>
         </div>
-        <div
-          v-show="!isMobile"
-          class="relative mr-0"
-          @click="isShowProfile = true"
-        >
+        <div v-show="!isMobile" class="relative mr-0" @click="isShowProfile = true">
           <SelfAvatar :is-select="section === SectionEnum.SELF" />
           <div ref="accountPopRef">
             <AccountPop v-show="isShowProfile" />

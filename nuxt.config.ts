@@ -1,6 +1,6 @@
 import { defineNuxtConfig } from 'nuxt/config'
+import VueTypeImports from 'vite-plugin-vue-type-imports'
 import svgLoader from 'vite-svg-loader'
-import eslintPlugin from 'vite-plugin-eslint'
 
 export default defineNuxtConfig({
   modules: [
@@ -41,8 +41,7 @@ export default defineNuxtConfig({
         },
         { rel: 'manifest', href: '/manifest.json' },
       ],
-      viewport:
-        'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
+      viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
       title: 'Instagram',
       script: [
         {
@@ -78,7 +77,7 @@ export default defineNuxtConfig({
   },
   vite: {
     // plugins: [svgLoader({}), eslintPlugin()],
-    plugins: [svgLoader({})],
+    plugins: [svgLoader({}), VueTypeImports()],
     // build: {
     //   rollupOptions: {
     //     output: {

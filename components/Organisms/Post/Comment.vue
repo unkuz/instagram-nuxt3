@@ -57,10 +57,7 @@ const send = async () => {
   <div class="flex w-full items-center justify-between">
     <div ref="emojiRef" class="relative">
       <Emoji v-if="isShowEmoji" @emoji-add="emojiAdd" />
-      <div
-        class="cursor-pointer text-[0.8rem] font-[500]"
-        @click="toggleShowEmoji"
-      >
+      <div class="cursor-pointer text-[0.8rem] font-[500]" @click="toggleShowEmoji">
         <svg width="28" height="28" viewBox="0 0 24 24">
           <g fill="currentColor">
             <path

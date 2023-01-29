@@ -9,23 +9,17 @@ const isReady = ref(false)
 const initY = ref(0)
 
 const position = () => {
-  initY.value =
-    (window.scrollY / document.body.scrollHeight) * window.innerHeight
+  initY.value = (window.scrollY / document.body.scrollHeight) * window.innerHeight
   gsap.to(customScrollBarRef.value, {
-    height: `${
-      (window.innerHeight * window.innerHeight) / document.body.clientHeight
-    }`,
-    top: `${
-      (window.scrollY / document.body.scrollHeight) * window.innerHeight
-    }`,
+    height: `${(window.innerHeight * window.innerHeight) / document.body.clientHeight}`,
+    top: `${(window.scrollY / document.body.scrollHeight) * window.innerHeight}`,
     duration: 0.5,
   })
 }
 
 watch([isReady, startY, endY], () => {
   if (isReady.value) {
-    const scrollToY =
-      ((endY.value - startY.value) / innerHeight) * document.body.scrollHeight
+    const scrollToY = ((endY.value - startY.value) / innerHeight) * document.body.scrollHeight
     window.scrollTo(0, scrollToY)
   }
 })

@@ -16,8 +16,7 @@ useClickOutSide(viewPostRef, () => {
 
 const calcHeightComment = () => {
   commentRef.value!.style.height = `${
-    commentContainerRef.value!.clientHeight -
-    commentHeadingRef.value!.clientHeight
+    commentContainerRef.value!.clientHeight - commentHeadingRef.value!.clientHeight
   }px`
 }
 
@@ -48,10 +47,7 @@ onMounted(() => {
           />
         </div>
         <div ref="commentContainerRef" class="h-full bg-white md:flex-1">
-          <div
-            ref="commentHeadingRef"
-            class="h-[60px] border-b-[1px] border-gray-300"
-          >
+          <div ref="commentHeadingRef" class="h-[60px] border-b-[1px] border-gray-300">
             <div class="mx-[16px] flex h-full items-center justify-between">
               <div class="flex items-center space-x-[10px]">
                 <div class="h-[40px] w-[40px] rounded-[50%] bg-black" />
@@ -76,24 +72,16 @@ onMounted(() => {
             </div>
           </div>
           <div ref="commentRef" class="overflow-y-scroll p-[16px]">
-            <div
-              v-for="(_i, idx) in 40"
-              :key="idx"
-              class="mb-[10px] flex w-full items-center justify-between"
-            >
+            <div v-for="(_i, idx) in 40" :key="idx" class="mb-[10px] flex w-full items-center justify-between">
               <div class="flex">
-                <div
-                  class="mr-[18px] aspect-square h-[40px] w-[40px] rounded-[50%] bg-black"
-                />
+                <div class="mr-[18px] aspect-square h-[40px] w-[40px] rounded-[50%] bg-black" />
                 <div>
                   <div class="">
                     <span class="mr-[4px]">cuzknothz</span>
                     <span>
-                      น่ารัก​ครับ​น้องน่ารัก​ครับ​น้องน่ารัก​ครับ​น้อง
-                      น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
-                      น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
-                      น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
-                      น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
+                      น่ารัก​ครับ​น้องน่ารัก​ครับ​น้องน่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
+                      น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
+                      น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
                     </span>
                   </div>
 

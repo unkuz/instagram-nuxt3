@@ -2,9 +2,7 @@
 
 <template>
   <div>
-    <div
-      class="absolute inset-0 z-40 flex items-center justify-center bg-violet-200 transition"
-    />
+    <div class="absolute inset-0 z-40 flex items-center justify-center bg-violet-200 transition" />
   </div>
 </template>
 <style scoped>
