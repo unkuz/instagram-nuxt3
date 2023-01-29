@@ -95,4 +95,52 @@ export const mock_reel = [
       ],
     },
   },
+  {
+    user: {
+      id: 'shryma',
+      username: 'shryma',
+      full_name: 'shryma',
+      profile_pic_url: '/video/reel/324245952_896125801807385_1846087263141329339_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    caption_text: '',
+    like_count: 256_907,
+    total_comment: 1208,
+    media: {
+      video: [
+        {
+          id: 1,
+          src: `/video/reel/shryma_285192436_694088385007678_1693872224269020818_n.mp4`,
+          poster: '/video/poster/hehe.png',
+        },
+      ],
+    },
+  },
+  {
+    user: {
+      id: 'nookke_ke',
+      username: 'nookke_ke',
+      full_name: 'nookke_ke',
+      profile_pic_url: '/video/reel/311013046_196783762765374_3569030589222747310_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    caption_text: '',
+    like_count: 256_907,
+    total_comment: 1208,
+    media: {
+      video: [
+        {
+          id: 1,
+          src: `/video/reel/nookke_ke_277391894_165147005857910_7981172370459109188_n.mp4`,
+          poster: '/video/poster/hehe.png',
+        },
+      ],
+    },
+  },
 ]
