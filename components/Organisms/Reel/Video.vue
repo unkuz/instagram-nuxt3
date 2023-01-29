@@ -4,16 +4,15 @@ import ProgressVideoBar from '@@/components/Atoms/Video/ProgressVideoBar.vue'
 import Loading from '@@/components/Atoms/Video/Loading.vue'
 import Mute from '@@/components/Atoms/Video/Mute.vue'
 import Pause from '@@/components/Atoms/Video/Pause.vue'
+import ReelCap from '~~/components/Atoms/Video/ReelCap.vue'
+import { IReel } from '@@/models'
 
-interface IProps {
-  src: string
-}
-const props = defineProps<IProps>()
+const props = defineProps<IReel>()
 
 const video = ref<HTMLVideoElement>()
 
 const { playing, currentTime, duration, volume, muted, buffered, waiting } = useMediaControls(video, {
-  src: props.src,
+  src: props.media.video[0].src,
 })
 
 watch(buffered, (val) => {})
@@ -41,5 +40,6 @@ watch(buffered, (val) => {})
     <Mute @click="muted = !muted" :isMute="muted" :buffered="buffered" />
     <Pause @click="playing = true" :class="[playing ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100']" />
     <Loading v-if="waiting" />
+    <ReelCap :user="props.user" :caption="props.caption_text" />
   </div>
 </template>

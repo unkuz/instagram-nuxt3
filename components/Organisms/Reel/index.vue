@@ -114,12 +114,12 @@ onBeforeUnmount(() => {
       class="keen-slider flex h-[calc(100vh-65px)] flex-col !flex-nowrap items-center md:h-[calc(100vh-84px)]"
     >
       <div
-        v-for="({ caption_text, like_count, media, total_comment, user }, idx) in reels"
+        v-for="(i, idx) in reels"
         :key="idx"
         class="keen-slider__slide flex !w-auto items-start justify-center bg-c19 md:bg-transparent"
       >
         <div ref="containvideoRefs">
-          <Video :src="media.video[0].src" />
+          <Video v-bind="i" />
         </div>
       </div>
     </div>
