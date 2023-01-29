@@ -3,6 +3,7 @@ import ReelKeyBoardShortcut from '@@/components/Utils/ReelKeyBoardShortcut.vue'
 import { TIME_IDLE_REELS } from '@@/configs'
 import { useIdle } from '@vueuse/core'
 import { useKeenSlider } from 'keen-slider/vue.es'
+import { useReelStore } from '@@/store'
 
 export interface IActiveKey {
   up: boolean
@@ -11,6 +12,9 @@ export interface IActiveKey {
   l: boolean
 }
 
+const reelStore = useReelStore()
+
+const reels = $computed(() => reelStore.data)
 const [container, slider] = useKeenSlider({
   slides: {
     perView: 1,
@@ -113,14 +117,16 @@ onBeforeUnmount(() => {
       class="keen-slider flex h-[calc(100vh-65px)] flex-col !flex-nowrap items-center md:h-[calc(100vh-84px)]"
     >
       <div
-        v-for="(_i, idx) in 2"
+        v-for="(
+          { caption_text, like_count, media, total_comment, user }, idx
+        ) in reels"
         :key="idx"
         class="keen-slider__slide !w-auto cursor-grab active:cursor-grabbing"
       >
         <video
           ref="videoRefs"
           class="h-[calc(100vh-65px)] w-auto object-cover md:h-[calc(100vh-114px)]"
-          src="/video/242322324_812426336116660_1281566458903572911_n.mp4"
+          :src="media.video[0].src"
           autoplay
           loop
           type="video/mp4"
