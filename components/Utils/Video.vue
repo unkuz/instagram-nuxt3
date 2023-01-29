@@ -21,10 +21,7 @@ watch(
 </script>
 
 <template>
-  <div
-    id="video"
-    class="fixed bottom-[10px] right-[10px] hidden cursor-pointer lg:block"
-  >
+  <div id="video" class="fixed bottom-[10px] right-[10px] hidden cursor-pointer lg:block">
     <video ref="videoRef" class="w-[200px]" />
   </div>
 </template>

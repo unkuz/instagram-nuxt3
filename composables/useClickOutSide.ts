@@ -1,9 +1,6 @@
 import { Ref } from 'vue'
 
-export function useClickOutSide(
-  ref: Ref<HTMLDivElement | null>,
-  callback: () => void
-) {
+export function useClickOutSide(ref: Ref<HTMLDivElement | null>, callback: () => void) {
   const listener = (e: MouseEvent | TouchEvent) => {
     e.stopPropagation()
     const el = unref(ref)

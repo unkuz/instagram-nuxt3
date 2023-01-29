@@ -40,15 +40,11 @@ onMounted(() => {
     <CookieIcon_ class="absolute -top-[23px] right-1/2 translate-x-1/2" />
     <div class="text-[0.8rem]">
       <p>
-        {{
-          "We care about your data, and we'd love to use cookies to make your experience better 💦"
-        }}
+        {{ "We care about your data, and we'd love to use cookies to make your experience better 💦" }}
       </p>
       <div class="mt-[10px] flex w-full items-center justify-between">
         <NuxtLink to="/privacy-policy" class="cursor-pointer">
-          <span class="text-c9 dark:text-c14" @click="animateOut"
-            >Privacy Policy</span
-          >
+          <span class="text-c9 dark:text-c14" @click="animateOut">Privacy Policy</span>
         </NuxtLink>
         <Button
           text="OK"

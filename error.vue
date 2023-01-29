@@ -7,9 +7,7 @@ const props = defineProps({
 const handleError = () => clearError({ redirect: '/' })
 </script>
 <template>
-  <div
-    class="flex h-[100vh] w-screen items-center justify-center text-[0.85rem]"
-  >
+  <div class="flex h-[100vh] w-screen items-center justify-center text-[0.85rem]">
     <ErrorPage />
   </div>
 </template>

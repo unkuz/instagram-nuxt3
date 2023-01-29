@@ -74,9 +74,7 @@ const hiddenHeader = $(
           <div><Extension v-if="showExtension" /></div>
         </div>
       </div>
-      <div
-        class="relative hidden w-full items-center justify-center md:flex md:w-auto lg:ml-0 lg:w-full"
-      >
+      <div class="relative hidden w-full items-center justify-center md:flex md:w-auto lg:ml-0 lg:w-full">
         <Search />
         <SearchPop v-if="isShowSearchToolkit" />
       </div>
@@ -88,15 +86,9 @@ const hiddenHeader = $(
             <HomeIcon :is-select="section === SectionEnum.HOME" />
           </NuxtLink>
         </div>
-        <div
-          class="ml-[22px] md:ml-0"
-          @click="handleSelect(SectionEnum.MESSENGER)"
-        >
+        <div class="ml-[22px] md:ml-0" @click="handleSelect(SectionEnum.MESSENGER)">
           <NuxtLink to="/inbox/">
-            <Messenger
-              :is-select="section === SectionEnum.MESSENGER"
-              :has-new="true"
-            />
+            <Messenger :is-select="section === SectionEnum.MESSENGER" :has-new="true" />
           </NuxtLink>
         </div>
         <div v-show="!isMobile" @click="handleSelect(SectionEnum.REELS)">
@@ -112,21 +104,13 @@ const hiddenHeader = $(
             <FindPeople :is-select="section === SectionEnum.FINDPEOPLE" />
           </NuxtLink>
         </div>
-        <div
-          v-show="!isMobile"
-          class="relative"
-          @click="handleSelect(SectionEnum.ACTIVITYFEED)"
-        >
+        <div v-show="!isMobile" class="relative" @click="handleSelect(SectionEnum.ACTIVITYFEED)">
           <ActivityFeed :is-select="section === SectionEnum.ACTIVITYFEED" />
           <div ref="activityFeedPopRef">
             <ActivityFeedPop v-show="section === SectionEnum.ACTIVITYFEED" />
           </div>
         </div>
-        <div
-          v-show="!isMobile"
-          class="relative mr-0"
-          @click="isShowProfile = true"
-        >
+        <div v-show="!isMobile" class="relative mr-0" @click="isShowProfile = true">
           <SelfAvatar :is-select="section === SectionEnum.SELF" />
           <div ref="accountPopRef">
             <AccountPop v-show="isShowProfile" />

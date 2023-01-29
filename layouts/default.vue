@@ -6,10 +6,7 @@ import NavBarBottom from '@@/components/Molecules/NavBarBottom.vue'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 
 const globalStore = useGlobalStore()
-const isShowNavBarBottom = computed(
-  () =>
-    !(globalStore.getIsMobile && globalStore.section === SectionEnum.MESSENGER)
-)
+const isShowNavBarBottom = computed(() => !(globalStore.getIsMobile && globalStore.section === SectionEnum.MESSENGER))
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const smallerThanMd = $(breakpoints.smallerOrEqual('md'))

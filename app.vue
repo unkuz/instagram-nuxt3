@@ -5,13 +5,7 @@ import Slash from '@@/components/Molecules/Slash.vue'
 import Cookie from '@@/components/Utils/Cookie.vue'
 import More from '@@/components/Utils/More.vue'
 import Prelude from '@@/components/Utils/Prelude.vue'
-import {
-  usePrelude,
-  useResizeWindow,
-  useScroll,
-  useScrollBarTheme,
-  useWatchRouteSetSection,
-} from '@@/composables'
+import { usePrelude, useResizeWindow, useScroll, useScrollBarTheme, useWatchRouteSetSection } from '@@/composables'
 import { SectionEnum } from '@@/constants'
 import { registerSeviceWorkerPWA } from '@@/helpers'
 import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
@@ -43,9 +37,7 @@ useHead({
     ]"
     v-signature
   >
-    <div
-      class="selection:bg-c2 selection:text-c1 dark:selection:bg-c1 dark:selection:text-c2"
-    >
+    <div class="selection:bg-c2 selection:text-c1 dark:selection:bg-c1 dark:selection:text-c2">
       <Prelude v-if="isShowPrelude" />
       <div class="min-h-screen dark:bg-c19 dark:text-c21">
         <NuxtLayout>

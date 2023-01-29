@@ -39,17 +39,11 @@ const timelineStore = useTimeLineStore()
         </div>
       </div>
       <NuxtLink :to="`/_/p/${id}`">
-        <ViewPostIcon_
-          class="fill-c2 dark:fill-c1"
-          @click="stopOtherVideoPlaying"
-        />
+        <ViewPostIcon_ class="fill-c2 dark:fill-c1" @click="stopOtherVideoPlaying" />
       </NuxtLink>
       <ShareIcon_ class="fill-c2 dark:fill-c1" />
     </div>
-    <div
-      v-if="mediaArr.length > 1"
-      class="flex items-center justify-center space-x-[4px]"
-    >
+    <div v-if="mediaArr.length > 1" class="flex items-center justify-center space-x-[4px]">
       <div
         v-for="(_i, idx) in mediaArr"
         :key="idx"
@@ -66,8 +60,7 @@ const timelineStore = useTimeLineStore()
         :class="[
           ' dark:[&>path]:stroke-white',
           {
-            '[&>path]:fill-c11 [&>path]:stroke-c11 dark:[&>path]:stroke-c11':
-              hasSaved,
+            '[&>path]:fill-c11 [&>path]:stroke-c11 dark:[&>path]:stroke-c11': hasSaved,
           },
         ]"
         @click="timelineStore.setToggleSave(id)"

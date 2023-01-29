@@ -46,29 +46,13 @@ const { key } = useForceRenderTimer()
           :media-arr="i.carousel_media.images.concat(i.carousel_media.videos)"
           :has-saved="i.is_saved"
         />
-        <LikeCommentCount
-          :like-count="i.like_count"
-          :comment-count="i.comments.length"
-        />
-        <Caption
-          :user-name="i.user.username"
-          :caption-content="i.caption_text"
-          :tags="i.tags"
-        />
-        <div
-          :key="key"
-          class="m-[0px_0px_0px_0px] h-[18px] text-c3 dark:text-c21 md:text-[0.8rem]"
-        >
+        <LikeCommentCount :like-count="i.like_count" :comment-count="i.comments.length" />
+        <Caption :user-name="i.user.username" :caption-content="i.caption_text" :tags="i.tags" />
+        <div :key="key" class="m-[0px_0px_0px_0px] h-[18px] text-c3 dark:text-c21 md:text-[0.8rem]">
           {{ moment(i.created_at).fromNow() }}
         </div>
         <div ref="commentRef" class="mt-[15px] w-full">
-          <IndividualComment
-            v-for="(j, idx) in i.comments"
-            :key="idx"
-            :comment="j"
-            :postId="i.id"
-            @reply="reply"
-          />
+          <IndividualComment v-for="(j, idx) in i.comments" :key="idx" :comment="j" :postId="i.id" @reply="reply" />
         </div>
         <Comment
           :id="i.id"

@@ -1,7 +1,4 @@
-export function useWindowResizeCallback(
-  callback: Function,
-  withInit: boolean = true
-) {
+export function useWindowResizeCallback(callback: Function, withInit: boolean = true) {
   const resize = () => callback()
 
   onMounted(() => {

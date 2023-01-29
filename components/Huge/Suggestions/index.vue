@@ -12,9 +12,7 @@ let timer: NodeJS.Timer
 let timer2: NodeJS.Timer
 
 let maxSuggestionPeopleFollow = $ref(MAX_SUGGESTION_PEOPLE_FOLLOW)
-const suggestion = $computed(() =>
-  sugestionStore.data.slice(0, maxSuggestionPeopleFollow)
-)
+const suggestion = $computed(() => sugestionStore.data.slice(0, maxSuggestionPeopleFollow))
 const authStore = useAuthStore()
 const avatar = $computed(() => authStore.data.avatar)
 const sugestionRef = $ref<HTMLDivElement | null>(null)
@@ -74,34 +72,19 @@ const authorText = 'cuzknothz'
         </NuxtLink>
       </div>
     </div>
-    <div
-      class="flex h-[11px] items-center justify-between text-sm text-c3 dark:text-c21"
-    >
+    <div class="flex h-[11px] items-center justify-between text-sm text-c3 dark:text-c21">
       <div>Suggestions for you</div>
       <NuxtLink to="/explore/people">
         <div class="cursor-pointer">See All</div>
       </NuxtLink>
     </div>
     <div class="mt-[8px] h-auto w-full duration-1000">
-      <Item
-        v-for="{ name, avatar, id } in suggestion"
-        :id="id"
-        :key="id"
-        :name="name"
-        :avatar="avatar"
-      />
+      <Item v-for="{ name, avatar, id } in suggestion" :id="id" :key="id" :name="name" :avatar="avatar" />
     </div>
     <div class="mt-[10px] text-[0.85rem] text-c3 dark:text-c21" v-once>
       <div class="flex justify-center">
         <span
-          v-for="(i, idx) of [
-            'About',
-            'Help',
-            'Press',
-            'API',
-            'Jobs',
-            'Privacy Terms',
-          ]"
+          v-for="(i, idx) of ['About', 'Help', 'Press', 'API', 'Jobs', 'Privacy Terms']"
           :key="idx"
           class="cursor-not-allowed after:content-['.'] last:after:content-['']"
           >{{ i }}</span
@@ -109,12 +92,7 @@ const authorText = 'cuzknothz'
       </div>
       <div class="mb-[13px] flex justify-center">
         <span
-          v-for="(i, idx) of [
-            'Location',
-            'Top accounts',
-            'Hashtags',
-            'Language',
-          ]"
+          v-for="(i, idx) of ['Location', 'Top accounts', 'Hashtags', 'Language']"
           :key="idx"
           class="cursor-not-allowed after:content-['.'] last:after:content-['']"
           >{{ i }}</span
@@ -126,11 +104,7 @@ const authorText = 'cuzknothz'
       <div>
         © <span> {{ getCurrentYear() }}</span> Instagram clone by
       </div>
-      <NuxtLink
-        :to="GITHUB_AUTHOR_LINK"
-        target="_blank"
-        class="relative overflow-hidden"
-      >
+      <NuxtLink :to="GITHUB_AUTHOR_LINK" target="_blank" class="relative overflow-hidden">
         <div
           class="cursor-pointer font-august text-[1.25rem] uppercase tracking-wider text-c2 drop-shadow-md dark:text-c1"
         >

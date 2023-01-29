@@ -37,9 +37,7 @@ const keyCodeBehaviour = (e: KeyboardEvent) => {
 
 const updateTime = () => {
   Object.assign(barRef!.style, {
-    width: `${
-      (videoRef!.currentTime * containerBar!.clientWidth) / videoRef!.duration
-    }px`,
+    width: `${(videoRef!.currentTime * containerBar!.clientWidth) / videoRef!.duration}px`,
   })
   isVideoPlay = !videoRef!.paused
   isVideoMuted = videoRef!.muted
@@ -69,17 +67,13 @@ const toggleMuted = () => {
   videoRef!.muted = !videoRef!.muted
 }
 
-const togglePlay = () =>
-  videoRef!.paused ? videoRef!.play() : videoRef!.pause()
+const togglePlay = () => (videoRef!.paused ? videoRef!.play() : videoRef!.pause())
 </script>
 
 <template>
   <div>
     <BackDrop>
-      <div
-        ref="mediaContainerRef"
-        class="relative h-full w-full sm:h-[881px] sm:w-[495.5px]"
-      >
+      <div ref="mediaContainerRef" class="relative h-full w-full sm:h-[881px] sm:w-[495.5px]">
         <div class="absolute inset-0">
           <video
             ref="videoRef"
@@ -105,17 +99,12 @@ const togglePlay = () =>
         </div>
         <div class="mx-auto w-[90%] sm:w-[445px]">
           <div class="mt-[25px] flex w-full justify-between space-x-2">
-            <div
-              ref="containerBar"
-              class="relative h-[2px] w-full bg-[#c2c2c2]"
-            >
+            <div ref="containerBar" class="relative h-[2px] w-full bg-[#c2c2c2]">
               <div ref="barRef" class="absolute top-0 left-0 h-full bg-white" />
             </div>
           </div>
           <div class="relative mt-[10px] flex items-center justify-between">
-            <div
-              class="flex items-center space-x-[10px] text-[0.8rem] text-white"
-            >
+            <div class="flex items-center space-x-[10px] text-[0.8rem] text-white">
               <div class="h-[35px] w-[35px] rounded-[50%] bg-white" />
               <div>cuzknothz</div>
               <div class="text-[0.8rem]">1 h</div>

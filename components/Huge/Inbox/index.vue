@@ -29,18 +29,13 @@ const setExpand = (section: InboxTypeEnum) => {
 </script>
 
 <template>
-  <div
-    class="h-[80vh] min-h-[500px] bg-[#5050505c] p-[20px] pb-0 text-[0.85rem] text-white"
-  >
+  <div class="h-[80vh] min-h-[500px] bg-[#5050505c] p-[20px] pb-0 text-[0.85rem] text-white">
     <div class="flex h-full w-full gap-[20px]">
       <div class="h-[500px] w-[220px]">
         <Search />
         <div class="my-[10px] mb-[30px]">
           <div class="mb-[5px] w-full px-[8px]">
-            <div
-              class="flex items-center justify-between"
-              @click="setExpand(InboxTypeEnum.UnRead)"
-            >
+            <div class="flex items-center justify-between" @click="setExpand(InboxTypeEnum.UnRead)">
               <span>Unread</span>
               <span>
                 <DownIcon_
@@ -67,10 +62,9 @@ const setExpand = (section: InboxTypeEnum) => {
                 </div>
 
                 <div class="line-clamp-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                  assumenda, excepturi vel non facere commodi delectus ipsam
-                  explicabo quaerat rem aspernatur placeat nobis veritatis quas
-                  quibusdam officia illum fugiat voluptatem?
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa assumenda, excepturi vel non facere
+                  commodi delectus ipsam explicabo quaerat rem aspernatur placeat nobis veritatis quas quibusdam officia
+                  illum fugiat voluptatem?
                 </div>
               </div>
               <p class="text-[0.7rem]">12:30</p>
@@ -78,9 +72,7 @@ const setExpand = (section: InboxTypeEnum) => {
           </div>
         </div>
       </div>
-      <div
-        class="relative flex-1 overflow-hidden rounded-t-[10px] bg-[#4f4f4f7c] shadow-xl"
-      >
+      <div class="relative flex-1 overflow-hidden rounded-t-[10px] bg-[#4f4f4f7c] shadow-xl">
         <div class="flex h-[60px] items-center bg-black/60 px-[10px]">
           <Avatar :size="S" url="/image/91480011.jpg" />
         </div>
@@ -88,11 +80,7 @@ const setExpand = (section: InboxTypeEnum) => {
           class="absolute bottom-[10px] left-1/2 flex h-[40px] w-[90%] -translate-x-1/2 justify-between rounded-[10px] bg-black px-[10px] shadow-xl"
         >
           <!-- <input/> -->
-          <input
-            class="flex-1 bg-transparent focus:outline-none"
-            type="text"
-            value="Fantastic? 😂😁😁😀"
-          />
+          <input class="flex-1 bg-transparent focus:outline-none" type="text" value="Fantastic? 😂😁😁😀" />
           <div class="flex items-center justify-between">
             <div>Emoji</div>
             <div>Attachment</div>

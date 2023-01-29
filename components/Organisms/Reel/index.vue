@@ -117,9 +117,7 @@ onBeforeUnmount(() => {
       class="keen-slider flex h-[calc(100vh-65px)] flex-col !flex-nowrap items-center md:h-[calc(100vh-84px)]"
     >
       <div
-        v-for="(
-          { caption_text, like_count, media, total_comment, user }, idx
-        ) in reels"
+        v-for="({ caption_text, like_count, media, total_comment, user }, idx) in reels"
         :key="idx"
         class="keen-slider__slide flex !w-auto cursor-grab items-center justify-center bg-c19 active:cursor-grabbing md:bg-transparent"
       >

@@ -25,12 +25,8 @@ const containerMediaRef = ref<HTMLDivElement | null>(null)
 const { next, prev, current } = useCarousel(containerMediaRef)
 
 const isShowPre = computed<boolean>(() => unref(current) !== 0)
-const isShowNext = computed<boolean>(
-  () => unref(current) !== props.images.concat(props.videos).length - 1
-)
-const totalMedia = computed<number>(
-  () => props.images.concat(props.videos).length
-)
+const isShowNext = computed<boolean>(() => unref(current) !== props.images.concat(props.videos).length - 1)
+const totalMedia = computed<number>(() => props.images.concat(props.videos).length)
 
 watch(
   () => current,
@@ -39,8 +35,7 @@ watch(
     stopOtherVideoPlaying()
     if (containerMediaRef.value) {
       gsap.to(containerMediaRef.value, {
-        height:
-          containerMediaRef.value.children[unref(idx)].children[0].clientHeight,
+        height: containerMediaRef.value.children[unref(idx)].children[0].clientHeight,
         duration: 0,
       })
     }
@@ -56,12 +51,7 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
   <div class="relative overflow-hidden">
     <div ref="containerMediaRef" class="inline-flex min-w-full select-none">
       <Image v-for="i in images" :key="i.id" :src="i.src" :id-post="id" />
-      <Video
-        v-for="(video, idx) in videos"
-        :key="idx"
-        :video="video"
-        :id-post="id"
-      />
+      <Video v-for="(video, idx) in videos" :key="idx" :video="video" :id-post="id" />
     </div>
     <div
       v-if="isShowPre"
@@ -87,10 +77,7 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
     <div v-show="initShowLikeSaved">
       <Unlike v-if="hasLiked" />
       <Like v-else />
-      <Save
-        v-if="hasSaved"
-        class-name="[&>path]:fill-c11 [&>path]:stroke-c11"
-      />
+      <Save v-if="hasSaved" class-name="[&>path]:fill-c11 [&>path]:stroke-c11" />
       <Save v-else class-name="[&>path]:fill-c2 [&>path]:stroke-c2" />
     </div>
   </div>
