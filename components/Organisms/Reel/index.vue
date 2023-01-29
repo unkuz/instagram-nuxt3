@@ -5,6 +5,8 @@ import { useIdle } from '@vueuse/core'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import { useReelStore } from '@@/store'
 import { IActiveKey } from '@@/type'
+import Video from './Video.vue'
+import ReelCap from '~~/components/Atoms/Video/ReelCap.vue'
 
 const reelStore = useReelStore()
 
@@ -18,7 +20,7 @@ const [container, slider] = useKeenSlider({
   vertical: true,
 })
 
-const videoRefs = $ref<HTMLVideoElement[]>([])
+const containvideoRefs = $ref<HTMLDivElement[]>([])
 let observer: IntersectionObserver
 let currentVideoOnScreen = $ref<HTMLVideoElement>()
 const { idle } = useIdle(TIME_IDLE_REELS)
@@ -55,7 +57,9 @@ onMounted(() => {
         break
       case 'l':
         activeKey.l = true
-        console.log('L')
+        break
+      case ' ':
+        currentVideoOnScreen!.paused ? currentVideoOnScreen!.play() : currentVideoOnScreen!.pause()
     }
   }
   //   document.onkeyup = (e) => {
@@ -92,14 +96,14 @@ onMounted(() => {
       threshold: 1,
     }
   )
-  videoRefs.forEach((videoEl) => {
-    observer.observe(videoEl)
+  containvideoRefs.forEach((containVideoEl) => {
+    observer.observe(containVideoEl.children[0].children[0])
   })
 })
 
 onBeforeUnmount(() => {
-  videoRefs.forEach((videoEl) => {
-    observer.unobserve(videoEl)
+  containvideoRefs.forEach((containVideoEl) => {
+    observer.unobserve(containVideoEl.children[0].children[0])
   })
 })
 </script>
@@ -111,21 +115,14 @@ onBeforeUnmount(() => {
       class="keen-slider flex h-[calc(100vh-65px)] flex-col !flex-nowrap items-center md:h-[calc(100vh-84px)]"
     >
       <div
-        v-for="({ caption_text, like_count, media, total_comment, user }, idx) in reels"
+        v-for="(i, idx) in reels"
         :key="idx"
-        class="keen-slider__slide flex !w-auto cursor-grab items-center justify-center bg-c19 active:cursor-grabbing md:bg-transparent"
+        class="keen-slider__slide flex !w-auto items-start justify-center bg-c19 md:bg-transparent"
       >
-        <video
-          ref="videoRefs"
-          class="h-[calc(100vh-65px)] md:h-[calc(100vh-114px)] 2xl:max-w-[40vw] xl:max-w-[50vw] md:max-w-[60vw]"
-          :src="media.video[0].src"
-          autoplay
-          loop
-          type="video/mp4"
-          playsinline
-          crossorigin="anonymous"
-          preload="metadata"
-        />
+        <div ref="containvideoRefs">
+          <Video v-bind="i" />
+        </div>
+        <ReelCap :user="i.user" :caption="i.caption_text" />
       </div>
     </div>
     <ReelKeyBoardShortcut :active-key="activeKey" />

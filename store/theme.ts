@@ -10,7 +10,10 @@ export const useThemeStore = defineStore('theme', {
   }),
   getters: {},
   actions: {
-    toggleDarkMode() {
+    toggleDarkMode(val?: boolean) {
+      if (_isBoolean(val)) {
+        return (this.darkMode = val)
+      }
       this.darkMode = !this.darkMode
     },
   },
