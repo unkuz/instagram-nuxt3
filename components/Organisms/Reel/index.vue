@@ -126,10 +126,8 @@ onBeforeUnmount(() => {
         </div>
         <ReelCap :user="i.user" :caption="i.caption_text" />
         <ReelAction :totalLike="i.like_count" :totalComment="i.total_comment" />
-       
       </div>
     </div>
     <ReelKeyBoardShortcut :active-key="activeKey" />
   </div>
 </template>
-

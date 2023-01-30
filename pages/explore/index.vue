@@ -6,10 +6,10 @@ import { useExploreStore } from '@@/store'
 
 const exploreStore = useExploreStore()
 
-const { data: _timeline } = await useFetch<ITimeLine[]>(APP_API.timeLine.list)
-const { data: _stories } = await useFetch<IStory[]>(APP_API.stories.list)
-const { data: _suggestions } = await useFetch<IStory[]>(APP_API.suggestions.list)
-const { data: _timelinez } = await useFetchCamel(APP_API.timeLine.list)
+const { data: _timeline } = await useLazyFetch<ITimeLine[]>(APP_API.timeLine.list)
+const { data: _stories } = await useLazyFetch<IStory[]>(APP_API.stories.list)
+const { data: _suggestions } = await useLazyFetch<IStory[]>(APP_API.suggestions.list)
+const { data: _timelinez } = await useLazyFetch(APP_API.timeLine.list)
 
 const explore = computed(() => exploreStore.list)
 </script>

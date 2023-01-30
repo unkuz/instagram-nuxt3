@@ -47,4 +47,3 @@ watch(buffered, (val) => {})
     <Mute @click="muted = !muted" :isMute="muted" class="!top-[15px] !left-[15px]" />
   </div>
 </template>
-

@@ -16,11 +16,11 @@ defineProps<IProps>()
   <div class="absolute bottom-[15px] left-[15px] right-[100px] duration-200 md:bottom-[50px]">
     <div class="flex items-center gap-[20px]">
       <Avatar :size="SizeAvatarEnum.S" :url="user.profile_pic_url" />
-      <TagName :name="user.full_name" class="max-w-[150px] line-clamp-1 !bg-c1 !text-c2" />
+      <TagName :name="user.full_name" class="max-w-[150px] !bg-c1 !text-c2 line-clamp-1" />
       <Button text="Follow" class="select-none bg-c9 px-[15px] py-[6px] text-[0.8rem] text-c1 duration-500" />
     </div>
     <p
-      class="mt-[10px] whitespace-pre-line line-clamp-1 md:mt-[20px] [&>a]:text-c7 dark:[&>a]:text-c15 text-c1"
+      class="mt-[10px] whitespace-pre-line text-c1 line-clamp-1 md:mt-[20px] [&>a]:text-c7 dark:[&>a]:text-c15"
       v-html="$urlify(caption)"
     />
   </div>

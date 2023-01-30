@@ -32,7 +32,7 @@ const router = useRouter()
 const postDetailStore = usePostDetailStore()
 let currentIdx = $ref(0)
 
-const { data: _timeline } = await useFetch<ITimeLine[]>('https://mocki.io/v1/bbd9ad8d-fbd8-4d95-a9ac-ee6416513aae')
+const { data: _timeline } = await useLazyFetch<ITimeLine[]>('https://mocki.io/v1/bbd9ad8d-fbd8-4d95-a9ac-ee6416513aae')
 
 postDetailStore.setPostDetail(route.params.id as string)
 

@@ -28,4 +28,3 @@ const hasLiked = ref(true)
     </div>
   </div>
 </template>
-

@@ -6,7 +6,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "start": "nuxt start",
-    "lint": "eslint --ext \".ts,.js,.vue\" --ignore-path .gitignore ."
+    "lint": "eslint --ext \".ts,.js,.vue\" --ignore-path .gitignore .",
+    "format": "prettier --write \"./**/*.{js,ts,vue}\" \"**/*.md\""
   },
   "devDependencies": {
     "@nuxt/content": "^2.4.2",
