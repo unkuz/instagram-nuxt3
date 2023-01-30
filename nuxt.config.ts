@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     'nuxt-icon',
     'nuxt-lodash',
     '@nuxtjs/fontaine',
+    // '@nuxt/content',
     // 'nuxt-logrocket',
     // '@sidebase/nuxt-auth',
     // '@nuxtjs/i18n',
@@ -155,4 +156,7 @@ export default defineNuxtConfig({
       titleSeparator: '|',
     },
   },
+  // content: {
+  //   // https://content.nuxtjs.org/api/configuration
+  // },
 })
