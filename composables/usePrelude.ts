@@ -1,18 +1,9 @@
 export const usePrelude = () => {
-  const isShowPrelude = ref(true)
-
-  let timerPrelude
-
-  const hiddenPrelude = () => {
-    isShowPrelude.value = false
-  }
+  let isShowPrelude = $ref(true)
 
   onMounted(() => {
-    timerPrelude = setTimeout(hiddenPrelude, 500)
+    document.fonts.ready.then(() => (isShowPrelude = false))
   })
 
-  onUnmounted(() => {
-    clearTimeout(timerPrelude)
-  })
-  return { isShowPrelude }
+  return $$({ isShowPrelude })
 }

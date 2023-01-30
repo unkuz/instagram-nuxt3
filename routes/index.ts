@@ -1,3 +1,3 @@
 export enum APP_ROUTES {
-  _____ = '/_____',
+  HOME = '/_',
 }

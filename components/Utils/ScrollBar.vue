@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { gsap } from 'gsap'
 
-const customScrollBarRef = ref<HTMLDivElement>(null)
+const customScrollBarRef = ref<HTMLDivElement | null>(null)
 
 const startY = ref(0)
 const endY = ref(0)
@@ -25,12 +25,10 @@ watch([isReady, startY, endY], () => {
 })
 
 const mouseMove = (e: MouseEvent) => {
-  console.error('MOVE')
   endY.value = e.clientY
 }
 const mouseUp = (e: MouseEvent) => {
   isReady.value = false
-  console.error('UP')
 }
 
 onMounted(() => {
@@ -42,12 +40,11 @@ onMounted(() => {
 })
 
 const mouseDown = (e: MouseEvent) => {
-  console.error('DOWN')
   isReady.value = true
   startY.value = e.clientY
 }
 
-onUnmounted(() => {
+onBeforeUnmount(() => {
   window.removeEventListener('scroll', position)
   window.removeEventListener('resize', position)
   window.removeEventListener('mousemove', mouseMove)
@@ -58,10 +55,10 @@ onUnmounted(() => {
 <template>
   <div>
     <div
-      @mousedown="mouseDown"
       ref="customScrollBarRef"
       draggable
       class="fixed right-0 z-50 h-[200px] w-[6px] bg-[#00b3ff] hover:bg-[#ff0088] active:bg-[#ff0088]"
-    ></div>
+      @mousedown="mouseDown"
+    />
   </div>
 </template>

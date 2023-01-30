@@ -1,8 +1,8 @@
-export function useCenterElement(refElement, refFile) {
+export function useCenterElement(refElement: HTMLDivElement | null, refFile: HTMLDivElement | null) {
   const position = () => {
-    Object.assign(refElement.value.style, {
-      top: `${window.scrollY + window.innerHeight / 2 - refElement.value.clientHeight / 2}px`,
-      left: `${window.innerWidth / 2 - refElement.value.clientWidth / 2}px`,
+    Object.assign(refElement!.style, {
+      top: `${window.scrollY + window.innerHeight / 2 - refElement!.clientHeight / 2}px`,
+      left: `${window.innerWidth / 2 - refElement!.clientWidth / 2}px`,
     })
   }
 
@@ -11,11 +11,12 @@ export function useCenterElement(refElement, refFile) {
     window.addEventListener('scroll', position)
     window.addEventListener('resize', position)
   })
+
   onUpdated(() => {
     position()
   })
 
-  onUnmounted(() => {
+  onBeforeUnmount(() => {
     window.removeEventListener('scroll', position)
     window.removeEventListener('resize', position)
   })

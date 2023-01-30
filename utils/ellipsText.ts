@@ -1,4 +1,8 @@
-import { Ref } from 'nuxt/dist/app/compat/capi'
+import { Ref } from 'vue'
 
-export const isEllipsisActive = (e: Ref<HTMLElement>) =>
-  e.value.scrollWidth > e.value.parentElement.scrollWidth
+export const isEllipsisActive = (element: Ref<HTMLElement | null>) => {
+  const el = unref(element)
+  if (el?.parentElement) {
+    el.scrollWidth > el.parentElement.scrollWidth
+  }
+}

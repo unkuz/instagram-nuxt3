@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import Navbarbottom from './navbarbottom.vue'
-import Header from '~~/components/Header/index.vue'
-import { useGlobalStore } from '~~/store/global'
+import NavBarBottom from '@@/components/Molecules/NavBarBottom.vue'
+import Header from '@@/components/Molecules/Header/index.vue'
+import { useGlobalStore } from '@@/store'
+
 const globalStore = useGlobalStore()
 const isMobile = computed(() => globalStore.getIsMobile)
 </script>
@@ -10,10 +11,15 @@ const isMobile = computed(() => globalStore.getIsMobile)
   <div>
     <Header v-if="!isMobile" />
     <div
-      :class="`mx-auto  ${isMobile ? 'mt-0' : ''} w-full text-[0.8rem] md:mt-[84px] lg:w-[605px]`"
+      :class="[
+        'mx-auto w-full text-[0.8rem] md:mt-[84px] lg:w-[605px]',
+        {
+          'mt-0': isMobile,
+        },
+      ]"
     >
       <slot />
     </div>
-    <Navbarbottom />
+    <NavBarBottom />
   </div>
 </template>

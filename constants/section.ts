@@ -1,4 +1,4 @@
-export enum SECTION {
+export enum SectionEnum {
   HOME = 'HOME',
   MESSENGER = 'MESSENGER',
   FINDPEOPLE = 'FINDPEOPLE',

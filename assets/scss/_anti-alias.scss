@@ -1,0 +1,11 @@
+svg {
+  circle,
+  path,
+  ellipse,
+  line,
+  polygon,
+  polyline,
+  rect {
+    shape-rendering: geometricPrecision;
+  }
+}

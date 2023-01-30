@@ -1,15 +1,16 @@
-export function useDebounce(input: any, delayTimeSecond: number) {
-  const value = ref(input.value)
-  let timer: ReturnType<typeof setTimeout>
-  
+export function useDebounce(input: string, delayTimeSecond: number) {
+  let value = $ref(input)
+  let timer: NodeJS.Timer
+
   onUpdated(() => {
     timer = setTimeout(() => {
-      value.value = input.value
+      value = input
     }, delayTimeSecond * 1000)
   })
 
-  onUnmounted(() => {
+  onBeforeUnmount(() => {
     clearTimeout(timer)
   })
+
   return value
 }

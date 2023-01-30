@@ -1,6 +1,11 @@
-export const useVideoPauseViewPort = (videoRef) => {
+import { Ref } from 'vue'
+import { useCurrentVideoStore } from '@@/store'
+
+export const useVideoPauseViewPort = (videoRef: Ref<HTMLVideoElement | null>) => {
+  const currentVideoStore = useCurrentVideoStore()
+
   const check = () => {
-    const rect = videoRef.value.getBoundingClientRect()
+    const rect = videoRef.value!.getBoundingClientRect()
 
     const condition =
       rect.bottom > 0 &&
@@ -9,12 +14,15 @@ export const useVideoPauseViewPort = (videoRef) => {
       rect.top < (innerHeight || document.documentElement.clientHeight)
 
     if (!condition) {
-      videoRef.value.pause()
+      videoRef.value!.pause()
+      currentVideoStore.setReady()
     }
   }
+
   onMounted(() => {
     addEventListener('scroll', check)
   })
+
   onBeforeUnmount(() => {
     removeEventListener('scroll', check)
   })

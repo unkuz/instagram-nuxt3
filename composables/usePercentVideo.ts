@@ -1,20 +1,19 @@
-import { Ref } from 'nuxt/dist/app/compat/capi'
+import { Ref } from 'vue'
 
-export const usePercentVideo = (videoRef: Ref<HTMLVideoElement>) => {
-  const percent = ref<number>(0)
+export const usePercentVideo = (videoRef: Ref<HTMLVideoElement | null>) => {
+  let percent = $ref(0)
 
   const updateTime = () => {
-    percent.value = videoRef.value.currentTime / videoRef.value.duration
-    // Object.assign(barRef.value.style, {
-    //   width: `${
-    //     (videoRef.value.currentTime * containerBar.value.clientWidth) / videoRef.value.duration
-    //   }px`,
-    // })
+    const videoEl = unref(videoRef)
+
+    percent = videoEl!.currentTime / videoEl!.duration
   }
 
   onMounted(() => {
-    videoRef.value.addEventListener('timeupdate', updateTime)
+    const videoEl = unref(videoRef)
+
+    videoEl!.addEventListener('timeupdate', updateTime)
   })
 
-  return { percent }
+  return $$({ percent })
 }

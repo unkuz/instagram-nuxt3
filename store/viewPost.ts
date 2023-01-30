@@ -1,20 +1,13 @@
 import { defineStore } from 'pinia'
 
-const state = () => ({
-  isShow: false,
-})
-const getters = {
-  getIsShow: (state) => state.isShow,
-}
-
-const actions = {
-  setIsShow(value) {
-    this.isShow = value
+export const useViewPostStore = defineStore('viewPost', {
+  state: () => ({
+    isShow: false,
+  }),
+  getters: {},
+  actions: {
+    setIsShow(value: boolean) {
+      this.isShow = value
+    },
   },
-}
-
-export const useViewPostStore = defineStore('viewPostStore', {
-  state,
-  getters,
-  actions,
 })

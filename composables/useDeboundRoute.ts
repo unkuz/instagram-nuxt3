@@ -1,6 +1,6 @@
 import { Router } from 'vue-router'
-import { TIMMING_PAGE_TRANSITION } from '~~/constants/pageTransition'
-import { useGlobalStore } from '~~/store/global'
+import { useGlobalStore } from '@@/store'
+
 export function useDebounceRoute(url: string, router: Router) {
   const globalStore = useGlobalStore()
   if (router.currentRoute.value.path == url) {

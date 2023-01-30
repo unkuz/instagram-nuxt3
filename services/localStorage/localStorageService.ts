@@ -3,7 +3,7 @@ export class LocalStoreSerive {
     return localStorage.setItem(key, JSON.stringify(value))
   }
 
-  static getLocalStorageData(key: string, defaultValue: string = '') {
+  static getLocalStorageData(key: string, defaultValue = '') {
     return localStorage.getItem(key) ?? defaultValue
   }
 
