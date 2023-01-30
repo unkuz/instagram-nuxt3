@@ -31,9 +31,9 @@ const handleSelect = (section: SectionEnum) => {
           <HomeIcon :is-select="section === SectionEnum.HOME" />
         </NuxtLink>
       </div>
-      <div @click="handleSelect(SectionEnum.SEARCH)">
+      <div>
         <NuxtLink to="/explore/">
-          <Search :is-select="section === SectionEnum.SEARCH" />
+          <Search :is-select="[SectionEnum.SEARCH, SectionEnum.FINDPEOPLE].includes(section)" />
         </NuxtLink>
       </div>
       <div @click="handleSelect(SectionEnum.REELS)">
