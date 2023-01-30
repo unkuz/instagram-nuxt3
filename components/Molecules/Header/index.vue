@@ -116,11 +116,6 @@ const hiddenHeader = $(
           </div>
         </div>
       </div>
-      <!-- <div v-else class="flex h-full w-full items-center justify-end">
-        <NuxtLink to="/login">
-          <LoginIcon_ />
-        </NuxtLink>
-      </div> -->
     </div>
   </header>
 </template>
