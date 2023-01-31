@@ -37,7 +37,7 @@ watch(buffered, (val) => {})
       :duration="duration"
       @setCurentTime="(val) => (currentTime = val * duration)"
     />
-    <Loading v-if="waiting" class="!bg-transparent md:[&__svg]:w-[10%] [&__svg]:w-[18%]" />
+    <Loading v-if="waiting" class="!bg-transparent" />
     <Pause
       v-show="!waiting"
       @click="playing = true"
