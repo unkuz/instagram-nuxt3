@@ -154,9 +154,4 @@ export const stories = [
     avatar: '/suggest/272887264_1317711585344508_1039895395246482301_n.jpg',
     id: 'elizentt',
   },
-  {
-    name: 'camokr',
-    avatar: '/suggest/293329529_545430770659089_1339469674371699030_n.jpg',
-    id: 'camokr',
-  },
 ]

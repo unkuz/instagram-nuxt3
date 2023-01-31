@@ -16,7 +16,7 @@ export const useStoriesStore = defineStore('stories', {
   getters: {},
   actions: {
     save(data: IStory[] | null) {
-      if (data) {
+      if (!_isNil(data)) {
         this.data = data
       }
     },

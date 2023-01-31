@@ -14,9 +14,9 @@ const storiesStore = useStoriesStore()
 const timeLineStore = useTimeLineStore()
 const suggestionStore = useSuggestionStore()
 
-const { data: _timeline, pending: pendingTimeline } = await useLazyFetch<ITimeLine[]>(APP_API.timeLine.list)
 const { data: _stories, pending: pendingStories } = await useLazyFetch<IStory[]>(APP_API.stories.list)
-const { data: _suggestions, pending: pendingSugestion } = await useLazyFetch<IStory[]>(APP_API.stories.list)
+const { data: _suggestions, pending: pendingSugestion } = await useLazyFetch<IStory[]>(APP_API.suggestions.list)
+const { data: _timeline, pending: pendingTimeline } = await useLazyFetch<ITimeLine[]>(APP_API.timeLine.list)
 
 storiesStore.save(_stories.value)
 timeLineStore.save(_timeline.value)
@@ -39,7 +39,7 @@ useWindowResizeCallback(calcLeftSuggestion)
   <div>
     <div class="relative flex w-full justify-center lg:block">
       <div ref="leftRef" class="inline-flex w-full flex-col items-center md:w-[614px] lg:block">
-        <Stories :isPending="pendingStories" v-if="storiesStore.data.length > 0"   />
+        <Stories :isPending="pendingStories" v-if="storiesStore.data.length > 0" />
         <Post :isPending="pendingTimeline" />
       </div>
       <div ref="rightRef" class="fixed left-0 top-[84px] hidden w-[293px] text-sm lg:block">

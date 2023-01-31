@@ -67,6 +67,6 @@ const { key } = useForceRenderTimer()
           </div>
         </div></article
     ></template>
-    <div v-else>HEHE</div>
+    <div v-else></div>
   </div>
 </template>
