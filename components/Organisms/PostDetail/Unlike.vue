@@ -2,7 +2,7 @@
 import { Elastic, gsap } from 'gsap'
 import UnlikeIcon_ from '@@/assets/svg/unlike_icon.svg'
 
-const unlikeRef = ref<HTMLDivElement | null>(null)
+const unlikeRef = ref<HTMLDivElement>()
 
 onMounted(() => {
   const tl = gsap.timeline()

@@ -5,10 +5,10 @@ import { useViewPostStore } from '@@/store'
 
 const viewPostStore = useViewPostStore()
 
-const viewPostRef = ref<HTMLDivElement | null>(null)
-const commentHeadingRef = ref<HTMLDivElement | null>(null)
-const commentRef = ref<HTMLDivElement | null>(null)
-const commentContainerRef = ref<HTMLDivElement | null>(null)
+const viewPostRef = ref<HTMLDivElement>()
+const commentHeadingRef = ref<HTMLDivElement>()
+const commentRef = ref<HTMLDivElement>()
+const commentContainerRef = ref<HTMLDivElement>()
 
 useClickOutSide(viewPostRef, () => {
   viewPostStore.setIsShow(false)

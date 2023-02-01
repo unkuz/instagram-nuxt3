@@ -2,10 +2,10 @@
 import BackDrop from '@@/components/Utils/BackDrop.vue'
 import { useWindowResizeCallback, useLockScroll } from '@@/composables'
 
-const viewPostRef = $ref<HTMLDivElement | null>(null)
-const commentHeadingRef = $ref<HTMLDivElement | null>(null)
-const commentRef = $ref<HTMLDivElement | null>(null)
-const commentContainerRef = $ref<HTMLDivElement | null>(null)
+const viewPostRef = $ref<HTMLDivElement>()
+const commentHeadingRef = $ref<HTMLDivElement>()
+const commentRef = $ref<HTMLDivElement>()
+const commentContainerRef = $ref<HTMLDivElement>()
 const router = useRouter()
 
 useLockScroll()

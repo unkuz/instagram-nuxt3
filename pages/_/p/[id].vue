@@ -15,7 +15,7 @@ import { ITimeLine } from '@@/models'
 
 useLockScroll()
 
-const postRef = ref<HTMLDivElement | null>(null)
+const postRef = ref<HTMLDivElement>()
 
 onMounted(() => {
   gsap.to(postRef, {
@@ -26,7 +26,7 @@ onMounted(() => {
   })
 })
 
-const rightSectionRef = $ref<HTMLDivElement | null>(null)
+const rightSectionRef = $ref<HTMLDivElement>()
 const route = useRoute()
 const router = useRouter()
 const postDetailStore = usePostDetailStore()

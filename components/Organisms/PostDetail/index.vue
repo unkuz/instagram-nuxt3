@@ -69,7 +69,7 @@ interface IProps {
 
 const props = defineProps<IProps>()
 const isShowComment = ref<boolean>(true)
-const commentRef = ref<HTMLDivElement | null>(null)
+const commentRef = ref<HTMLDivElement>()
 const currentIdx = ref<number>(0)
 const setCurrent = (value: number) => (currentIdx.value = value)
 const mediaArr = computed(() => props.carousel_media.images.concat(props.carousel_media.videos))

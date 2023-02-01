@@ -11,7 +11,7 @@ interface IProps {
 const props = defineProps<IProps>()
 const emit = defineEmits(['rm-current-reply-comment-id'])
 
-const emojiRef = ref<HTMLDivElement | null>(null)
+const emojiRef = ref<HTMLDivElement>()
 let isShowEmoji = $ref(false)
 const textBoxRef = $ref<HTMLTextAreaElement | null>(null)
 let commentValueText = $ref('')

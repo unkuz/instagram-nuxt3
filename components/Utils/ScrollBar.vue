@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { gsap } from 'gsap'
 
-const customScrollBarRef = ref<HTMLDivElement | null>(null)
+const customScrollBarRef = ref<HTMLDivElement>()
 
 const startY = ref(0)
 const endY = ref(0)

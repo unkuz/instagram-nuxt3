@@ -9,11 +9,11 @@ import BackDrop from '@@/components/Utils/BackDrop.vue'
 import { useClickOutSide, useLockScroll } from '@@/composables'
 
 const router = useRouter()
-const barRef = $ref<HTMLDivElement | null>(null)
-const containerBar = $ref<HTMLDivElement | null>(null)
+const barRef = $ref<HTMLDivElement>()
+const containerBar = $ref<HTMLDivElement>()
 const videoRef = $ref<HTMLVideoElement | null>(null)
-const bigPlayIcon = $ref<HTMLDivElement | null>(null)
-const mediaContainerRef = ref<HTMLDivElement | null>(null)
+const bigPlayIcon = $ref<HTMLDivElement>()
+const mediaContainerRef = ref<HTMLDivElement>()
 let isVideoPlay = $ref(false)
 let isVideoMuted = $ref(true)
 

@@ -39,7 +39,7 @@ const intructionMap = reactive([
   },
 ])
 
-const containerRef = $ref<HTMLDivElement | null>(null)
+const containerRef = $ref<HTMLDivElement>()
 let tl: TimelineLite = gsap.timeline({})
 let timer: NodeJS.Timer
 

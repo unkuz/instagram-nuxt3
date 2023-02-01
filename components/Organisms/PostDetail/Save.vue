@@ -7,7 +7,7 @@ interface IProps {
 }
 defineProps<IProps>()
 
-const unlikeRef = ref<HTMLDivElement | null>(null)
+const unlikeRef = ref<HTMLDivElement>()
 
 onMounted(() => {
   const tl = gsap.timeline()

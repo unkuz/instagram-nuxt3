@@ -20,7 +20,7 @@ interface IProps {
 let initShowLikeSaved = $ref(false)
 const props = defineProps<IProps>()
 const emit = defineEmits(['currentIndexCarousel'])
-const containerMediaRef = ref<HTMLDivElement | null>(null)
+const containerMediaRef = ref<HTMLDivElement>()
 
 const { next, prev, current } = useCarousel(containerMediaRef)
 

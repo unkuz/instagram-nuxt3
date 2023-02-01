@@ -7,8 +7,8 @@ import { useGlobalStore, usePostStore } from '@@/store'
 const postStore = usePostStore()
 const globalStore = useGlobalStore()
 const inputFileRef = $ref<HTMLInputElement | null>(null)
-const containerPreviewRef = $ref<HTMLDivElement | null>(null)
-const boxRef = ref<HTMLDivElement | null>(null)
+const containerPreviewRef = $ref<HTMLDivElement>()
+const boxRef = ref<HTMLDivElement>()
 let startPointX = $ref(0)
 
 const postFiles = $computed<FileList[]>(() => postStore.files)

@@ -17,7 +17,7 @@ let maxSuggestionPeopleFollow = $ref(MAX_SUGGESTION_PEOPLE_FOLLOW)
 const suggestion = $computed(() => sugestionStore.data.slice(0, maxSuggestionPeopleFollow))
 const authStore = useAuthStore()
 const avatar = $computed(() => authStore.data.avatar)
-const sugestionRef = $ref<HTMLDivElement | null>(null)
+const sugestionRef = $ref<HTMLDivElement>()
 
 let isIntersecting = $ref(false)
 

@@ -3,7 +3,7 @@ import { useLockScroll, useModalPosition } from '@@/composables'
 import { useProfileStore } from '@@/store'
 
 const profileStore = useProfileStore()
-const boxRef = ref<HTMLDivElement | null>(null)
+const boxRef = ref<HTMLDivElement>()
 
 const { x, y } = useModalPosition()
 

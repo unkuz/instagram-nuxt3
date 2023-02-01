@@ -4,11 +4,11 @@ import { useClickOutSide } from '@@/composables'
 import { useStoryStore } from '@@/store'
 
 const storyStore = useStoryStore()
-const barRef = ref<HTMLDivElement | null>(null)
-const containerBar = $ref<HTMLDivElement | null>(null)
+const barRef = ref<HTMLDivElement>()
+const containerBar = $ref<HTMLDivElement>()
 const videoRef = ref<HTMLVideoElement | null>(null)
-const bigPlayIcon = ref<HTMLDivElement | null>(null)
-const mediaContainerRef = ref<HTMLDivElement | null>(null)
+const bigPlayIcon = ref<HTMLDivElement>()
+const mediaContainerRef = ref<HTMLDivElement>()
 let isVideoPlay = $ref(false)
 let isVideoMuted = $ref(true)
 

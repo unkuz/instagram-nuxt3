@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { gsap } from 'gsap'
-const progressBarRef = ref<HTMLDivElement | null>(null)
+const progressBarRef = ref<HTMLDivElement>()
 
 onMounted(() => {
   gsap.to(progressBarRef.value, {

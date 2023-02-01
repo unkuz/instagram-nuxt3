@@ -5,7 +5,7 @@ import { TIME_DELAY_START_APPARENT_TOOLTIP } from '@@/configs'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { gsap } from 'gsap'
 
-const containerRef = $ref<HTMLDivElement | null>(null)
+const containerRef = $ref<HTMLDivElement>()
 const breakpoints = useBreakpoints(breakpointsTailwind)
 
 const largerThanSm = $(breakpoints.greater('md'))
