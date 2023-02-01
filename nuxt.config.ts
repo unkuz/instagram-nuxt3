@@ -4,6 +4,7 @@ import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
   modules: [
+    '@nuxt/content',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
@@ -26,6 +27,9 @@ export default defineNuxtConfig({
     // '@sidebase/nuxt-auth',
     // '@morev/vue-transitions/nuxt',
   ],
+  content: {
+    // https://content.nuxtjs.org/api/configuration
+  },
   extends: ['nuxt-seo-kit'],
   app: {
     head: {
