@@ -9,7 +9,7 @@ import LikeCommentCount from './LikeCommentCount.vue'
 import React from './React.vue'
 import { useForceRenderTimer } from '@@/composables'
 
-export interface IProps {
+interface IProps {
   created_at: string
   caption_text: string
   has_liked: boolean
