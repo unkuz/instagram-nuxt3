@@ -1876,10 +1876,10 @@
   resolved "https://registry.yarnpkg.com/@nuxt/devalue/-/devalue-2.0.0.tgz#c7bd7e9a516514e612d5d2e511ffc399e0eac322"
   integrity sha512-YBI/6o2EBz02tdEJRBK8xkt3zvOFOWlLBf7WKYGBsSYSRtjjgrqPe2skp6VLLmKx5WbHHDNcW+6oACaurxGzeA==
 
-"@nuxt/image-edge@1.0.0-27913696.5d122a3":
-  version "1.0.0-27913696.5d122a3"
-  resolved "https://registry.yarnpkg.com/@nuxt/image-edge/-/image-edge-1.0.0-27913696.5d122a3.tgz#6ce3739b7cbdbba08ed4ec8f23c3687a826d63ef"
-  integrity sha512-vD+ANKTUNOJz35nF+++eylkBNHOSx+Yg4Wdnw7drr/UKOR3WzH7TytsoExIrl8yLpdQU7aKUxRT5s5wrI7jmMQ==
+"@nuxt/image-edge@1.0.0-27919678.2f5b64b":
+  version "1.0.0-27919678.2f5b64b"
+  resolved "https://registry.yarnpkg.com/@nuxt/image-edge/-/image-edge-1.0.0-27919678.2f5b64b.tgz#a9b084cf2ad5eafff2e069b85e856a9dd1a876f3"
+  integrity sha512-MvQ8NJyOTO4n8x+KU+Fyn7H+FegAb+ZN+7cwTAquOy41ev+c1mKn2EYGjkrYEoY/jKMaKSgK/jMtQjOeOhiQXA==
   dependencies:
     "@nuxt/kit" "^3.1.1"
     consola "^2.15.3"
@@ -1987,12 +1987,12 @@
     unimport "^2.0.1"
     untyped "^1.2.2"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.1.2-rc.0-27919589.b864fa0":
-  version "3.1.2-rc.0-27919589.b864fa0"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.1.2-rc.0-27919589.b864fa0.tgz#27414836d895345e3516d044389bd2309be47a50"
-  integrity sha512-GFVkj2Jblf89h3fdWM0zh4BlCM87YYVDI3HUb/R1WOH1m7AKIEfAXAhPNRNIpTw9+DRdYEOcHyrC3dG/Zf3UsA==
+"@nuxt/kit@npm:@nuxt/kit-edge@3.1.2-rc.0-27919732.637b883":
+  version "3.1.2-rc.0-27919732.637b883"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.1.2-rc.0-27919732.637b883.tgz#df08fe2a52448c3b99e180000feea267ad9e6238"
+  integrity sha512-A82wpAvXmhrSByVh5u3ThQWPlSLMtA/DqdQK++RimxKcUaaH8t/BAnFI1wd6fOJauzCL/xGX5dtyFmfY/N6Jww==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.1.2-rc.0-27919589.b864fa0"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.1.2-rc.0-27919732.637b883"
     c12 "^1.1.0"
     consola "^2.15.3"
     defu "^6.1.2"
@@ -2081,10 +2081,10 @@
     unimport "^2.0.1"
     untyped "^1.2.2"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.1.2-rc.0-27919589.b864fa0":
-  version "3.1.2-rc.0-27919589.b864fa0"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.1.2-rc.0-27919589.b864fa0.tgz#043d3f3ef41ed7d0d4daeb83a68d792561c4d665"
-  integrity sha512-eTTc3oL2aKNOdrEhFjAgjnCYUaEc+Y5kmayb82W/BcTucJ7jvfO4uGVJZ4UrnZ1163fG8AD3ctI4Gjxb0LRygA==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.1.2-rc.0-27919732.637b883":
+  version "3.1.2-rc.0-27919732.637b883"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.1.2-rc.0-27919732.637b883.tgz#780b7381ddd002954be6ec33e0af5a5918e59f69"
+  integrity sha512-IJ/5HJZuVUs9xCbCerH0hZ4dlEQS9GhZVw0JzWByGBPziuWwS7WWXfwbbDyw5SU/wqWmPsRNihXALHhXKGTtlg==
   dependencies:
     c12 "^1.1.0"
     create-require "^1.1.1"
@@ -2126,13 +2126,13 @@
     rc9 "^2.0.0"
     std-env "^3.3.1"
 
-"@nuxt/test-utils-edge@3.1.2-rc.0-27919589.b864fa0":
-  version "3.1.2-rc.0-27919589.b864fa0"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.1.2-rc.0-27919589.b864fa0.tgz#bacbe05443ca2a747d62c5b9d2cce44b2c58cbf2"
-  integrity sha512-apnRzxJvBAJV1Ovnk8T9RbATr4cLd78UiP0VTVOaDWhwlGkv3Qx8eDAGJGbOKNwCOM4asBAOCqygrnRjcC+hvQ==
+"@nuxt/test-utils-edge@3.1.2-rc.0-27919732.637b883":
+  version "3.1.2-rc.0-27919732.637b883"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.1.2-rc.0-27919732.637b883.tgz#65b2077d3be715b909418e1ec178784d112bdb27"
+  integrity sha512-9m+FP3LhiQMb3fVc8G23mXbrb9gNMFQ4QmOLlxqlG4fDP2mHwmAbemAXOeSs9ms/5yHQF0kgvtXkQury3/lZ7Q==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.1.2-rc.0-27919589.b864fa0"
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.1.2-rc.0-27919589.b864fa0"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.1.2-rc.0-27919732.637b883"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.1.2-rc.0-27919732.637b883"
     consola "^2.15.3"
     defu "^6.1.2"
     execa "^6.1.0"
@@ -3889,10 +3889,10 @@ axios@^0.25.0:
   dependencies:
     follow-redirects "^1.14.7"
 
-axios@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.2.6.tgz#eacb6d065baa11bad5959e7ffa0cb6745c65f392"
-  integrity sha512-rC/7F08XxZwjMV4iuWv+JpD3E0Ksqg9nac4IIg6RwNuF0JTeWoCo/mBNG54+tNhhI11G3/VDRbdDQTs9hGp4pQ==
+axios@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.3.0.tgz#4cb0d72213989dec08d4b10129e42063bcb3dc78"
+  integrity sha512-oCye5nHhTypzkdLIvF9SaHfr8UAquqCn1KY3j8vsrjeol8yohAdGxIpRPbF1bOLsx33HOAatdfMX1yzsj2cHwg==
   dependencies:
     follow-redirects "^1.15.0"
     form-data "^4.0.0"
@@ -11418,10 +11418,10 @@ safe-regex@^2.1.1:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sass@^1.57.1:
-  version "1.57.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.57.1.tgz#dfafd46eb3ab94817145e8825208ecf7281119b5"
-  integrity sha512-O2+LwLS79op7GI0xZ8fqzF7X2m/m8WFfI02dHOdsK5R2ECeS5F62zrwg/relM1rjSLy7Vd/DiMNIvPrQGsA0jw==
+sass@^1.58.0:
+  version "1.58.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.58.0.tgz#ee8aea3ad5ea5c485c26b3096e2df6087d0bb1cc"
+  integrity sha512-PiMJcP33DdKtZ/1jSjjqVIKihoDc6yWmYr9K/4r3fVVIEDAluD0q7XZiRKrNJcPK3qkLRF/79DND1H5q1LBjgg==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
