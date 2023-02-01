@@ -81,7 +81,7 @@ const authorText = 'cuzknothz'
           <div class="cursor-pointer">See All</div>
         </NuxtLink>
       </div>
-      <div class="mt-[8px] h-auto w-full duration-1000">
+      <div class="mt-[8px] h-auto w-full">
         <Item v-for="{ name, avatar, id } in suggestion" :id="id" :key="id" :name="name" :avatar="avatar" />
       </div>
       <div class="mt-[10px] text-[0.85rem] text-c3 dark:text-c21" v-once>
