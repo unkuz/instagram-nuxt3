@@ -46,7 +46,7 @@ const toggleFullScreen = () => {
       crossorigin="anonymous"
       loop
       preload="metadata"
-      :poster="video.poster"
+      :poster="video.poster ?? ''"
     />
     <Loading v-show="waiting" />
     <PauseIcon_
