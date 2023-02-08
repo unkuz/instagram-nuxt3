@@ -42,43 +42,34 @@ watch(idle, (val) => {
   }
 })
 
-onMounted(() => {
-  document.onkeydown = (e) => {
-    switch (e.key.toLowerCase()) {
-      case 'arrowup':
-        activeKey.up = true
-        slider.value!.prev()
-        break
-      case 'arrowdown':
-        activeKey.down = true
-        slider.value!.next()
-        break
-      case 'm':
-        activeKey.m = true
-        currentVideoOnScreen!.muted = !currentVideoOnScreen?.muted
-        break
-      case 'l':
-        activeKey.l = true
-        break
-      case ' ':
-        currentVideoOnScreen!.paused ? currentVideoOnScreen!.play() : currentVideoOnScreen!.pause()
-    }
+const kBListener = (e: KeyboardEvent) => {
+  switch (e.key.toLowerCase()) {
+    case 'arrowup':
+      activeKey.up = true
+      slider.value!.prev()
+      break
+    case 'arrowdown':
+      activeKey.down = true
+      slider.value!.next()
+      break
+    case 'm':
+      activeKey.m = true
+      currentVideoOnScreen!.muted = !currentVideoOnScreen?.muted
+      break
+    case 'l':
+      activeKey.l = true
+      break
+    case ' ':
+      currentVideoOnScreen!.paused ? currentVideoOnScreen!.play() : currentVideoOnScreen!.pause()
   }
-  //   document.onkeyup = (e) => {
-  //     switch (e.key.toLowerCase()) {
-  //       case 'arrowup':
-  //         activeKey.up = false
-  //         break
-  //       case 'arrowdown':
-  //         activeKey.down = false
-  //         break
-  //       case 'm':
-  //         activeKey.m = false
-  //         break
-  //       case 'l':
-  //         activeKey.l = false
-  //     }
-  //   }
+}
+
+onMounted(() => {
+  document.addEventListener('keydown', kBListener)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('keydown', kBListener)
 })
 
 onMounted(() => {
