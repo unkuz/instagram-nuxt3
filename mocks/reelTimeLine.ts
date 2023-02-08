@@ -1,5 +1,88 @@
 export const timeLine = [
   {
+    created_at: '2022-02-08 21:20',
+    id: '45gffdafffdfdddds',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [
+        {
+          id: 1,
+          src: `/video/North Rebellion - Hold Me Tight.mp4`,
+          poster: '',
+        },
+      ],
+    },
+    user: {
+      id: 'Diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 3400,
+    has_liked: false,
+    caption_text: `Join the Notification Squad! Click the 🔔Bell. 
+    👉 Diversity Spotify Playlists: http://diversity.moe/spotify
+    
+    Stream/Download:
+    ➥ https://music.blossoms.asia/HoldMeTight
+    
+    🎧 Genre: Future House
+    
+    North Rebellion
+    • https://soundcloud.com/north-rebellion
+    • https://open.spotify.com/artist/6V12T...
+    • https://www.facebook.com/NorthRebelli...
+    • https://www.instagram.com/north._.beo/
+    • https://www.youtube.com/channel/UCeb5...
+    
+    💽 Label: Blossoms Asia
+    • https://blossoms.asia
+    • https://blossoms.asia/SC
+    • https://blossoms.asia/FB
+    • https://blossoms.asia/TW
+    
+    
+    
+    Artwork: https://www.deviantart.com/liang-xing...
+    ✍ by Liang-Xing
+    • https://deviantart.com/liang-xing
+    • https://www.facebook.com/profile.php?...
+    • https://patreon.com/liangxing
+    • https://liang-xing.tumblr.com/
+    • https://drawcrowd.com/liangxing
+    • https://pixiv.me/liangxing719
+    • https://www.deviantart.com/liang-xing/
+    • https://twitter.com/liangxing719
+    
+    
+    
+    Diversity
+    • http://diversity.moe
+    • http://diversity.moe/youtube
+    • http://diversity.moe/facebook
+    • http://diversity.moe/instagram
+    • http://diversity.moe/twitter
+    • http://diversity.moe/pixiv
+    • http://diversity.moe/spotify
+    • http://diversity.moe/soundcloud
+    
+    📄 Submit your music:
+    • http://diversity.moe/demo
+    
+    ✏️ For business inquiries and other issues please contact hello@divergemusic.group`,
+    is_seen: true,
+    tags: ['Diversity', 'North Rebellion', 'Hold Me Tight'],
+    is_saved: false,
+  },
+  {
     created_at: '2022-12-31 10:20',
     id: '45gffdafffddds',
     location: {
@@ -26,7 +109,7 @@ export const timeLine = [
         outgoing_request: false,
       },
     },
-    like_count: 2000,
+    like_count: 2700,
     has_liked: false,
     caption_text: `🔊 Lucky by Lucky Twice, Crystal Rock, Anastasia Rose
 ✨ Follow Diversity's Playlists on Spotify:
@@ -138,6 +221,85 @@ http://diversity.moe/demo
 `,
     is_seen: true,
     tags: ['Diversity', 'Crystal Rock', 'Anastasia Rose', 'Lucky Twice'],
+    is_saved: false,
+  },
+  {
+    created_at: '2022-02-08 21:20',
+    id: '45gffdafffdfddddsdf',
+    location: {
+      short_name: 'Copenhagen',
+    },
+    comments: [],
+    carousel_media: {
+      images: [],
+      videos: [
+        {
+          id: 1,
+          src: `/video/Gotez - Talking Head.mp4`,
+          poster: '',
+        },
+      ],
+    },
+    user: {
+      id: 'Diversity',
+      username: 'Diversity',
+      full_name: 'Diversity',
+      profile_pic_url: '/image/91480011.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    like_count: 1900,
+    has_liked: false,
+    caption_text: `Stream/Download:
+    ➥ https://spinninrecords.com/releases/v...
+    
+    🎧 Genre: Future Bounce
+    
+    Gotez
+    • https://soundcloud.com/gotezmusic
+    • https://www.instagram.com/gotezmusic/
+    • https://open.spotify.com/artist/0F1Cw...
+    • https://www.facebook.com/gotezreal/
+    
+    💽 Label: Spinnin' Records
+    • https://open.spotify.com/user/spinnin...
+    • https://soundcloud.com/spinninrecords
+    • https://facebook.com/SpinninRecords
+    • https://instagram.com/spinninrecords
+    • https://twitter.com/SpinninRecords
+    • https://spinninrecords.com
+    
+    
+    
+    Artwork ✍ by Sakimichan
+    •  https://www.patreon.com/sakimichan
+    • https://www.pixiv.net/member.php?id=3... 
+    • http://sakimichan.deviantart.com/ 
+    • http://www.facebook.com/Sakimichanart 
+    • http://sakimichan.tumblr.com/ 
+    • http://www.artstation.com/artist/saki... 
+    • http://sakimichan.artstation.com/
+    
+    
+    
+    Diversity
+    • http://diversity.moe
+    • http://diversity.moe/youtube
+    • http://diversity.moe/facebook
+    • http://diversity.moe/instagram
+    • http://diversity.moe/twitter
+    • http://diversity.moe/pixiv
+    • http://diversity.moe/spotify
+    • http://diversity.moe/soundcloud
+    
+    📄 Submit your music:
+    • http://diversity.moe/demo
+    
+    ✏️ For business inquiries and other issues please contact: hello@divergemusic.group`,
+    is_seen: true,
+    tags: ['Gotez', 'Talking Head'],
     is_saved: false,
   },
 ]
