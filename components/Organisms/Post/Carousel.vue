@@ -8,7 +8,6 @@ import Video from './Video.vue'
 import { stopOtherVideoPlaying } from '@@/helpers'
 import { useCarousel } from '@@/composables'
 import ArrowIcon_ from '@@/assets/svg/arrow_icon.svg'
-import { useKeenSlider } from 'keen-slider/vue.es'
 
 interface IProps {
   images: any
@@ -21,14 +20,7 @@ interface IProps {
 const props = defineProps<IProps>()
 let initShowLikeSaved = $ref(false)
 const emit = defineEmits(['current-index-carousel'])
-
-const [containerMediaRef, slider] = useKeenSlider({
-  slides: {
-    perView: 1,
-  },
-  dragSpeed: 2,
-  renderMode: 'precision',
-})
+const containerMediaRef = ref<HTMLDivElement>()
 
 const { next, prev, current } = useCarousel(containerMediaRef)
 
@@ -55,9 +47,9 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
 
 <template>
   <div class="relative overflow-hidden">
-    <div ref="containerMediaRef" class="keen-slider inline-flex min-w-full select-none">
-      <Image v-for="i in images" :key="i.id" :src="i.src" :id-post="id" class="keen-slider__slide" />
-      <Video v-for="(video, idx) in videos" :key="idx" :video="video" :id-post="id" class="keen-slider__slide" />
+    <div ref="containerMediaRef" class="inline-flex min-w-full select-none">
+      <Image v-for="i in images" :key="i.id" :src="i.src" :id-post="id" />
+      <Video v-for="(video, idx) in videos" :key="idx" :video="video" :id-post="id" />
     </div>
     <div
       v-if="isShowPre"
