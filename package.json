@@ -13,7 +13,7 @@
     "@nuxt/content": "^2.4.3",
     "@nuxt/image": "^0.7.1",
     "@nuxt/image-edge": "1.0.0-27919678.2f5b64b",
-    "@nuxt/test-utils-edge": "3.1.3-rc.0-27930944.c936bc7",
+    "@nuxt/test-utils-edge": "3.1.3-rc.0-27931142.2e62246",
     "@nuxtjs/device": "^3.1.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/html-validator": "^1.2.3",
