@@ -15,12 +15,13 @@ import SelfAvatar from '@/components/Atoms/Nav/SelfAvatar.vue'
 import Extension from '@/components/Utils/Extension.vue'
 import { useClickOutSide } from '@/composables'
 import { SectionEnum } from '@/constants/section'
-import { useAuthStore, useGlobalStore, useSearchStore } from '@/store'
+import { useAuthStore, useGlobalStore, useSearchStore,useAddStore } from '@/store'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import TopBarExplore from '@/components/Organisms/Explore/M/TopBar.vue'
 import TopBarReel from '@/components/Organisms/Reel/M/TopBar.vue'
 
 const globalStore = useGlobalStore()
+const addStore = useAddStore()
 const authStore = useAuthStore()
 const searchStore = useSearchStore()
 const isShowSearchToolkit = $computed(() => searchStore.getIsShowSearchToolkit)
@@ -56,6 +57,7 @@ const hiddenHeader = $(
     )
   })
 )
+
 </script>
 
 <template>
@@ -99,8 +101,8 @@ const hiddenHeader = $(
               <Reels :is-select="section === SectionEnum.REELS" />
             </NuxtLink>
           </div>
-          <div class="relative" @click="handleSelect(SectionEnum.NEW_POST)">
-            <NewPost :is-select="section === SectionEnum.NEW_POST" />
+          <div class="relative" @click="addStore.toggle(true)">
+            <NewPost :is-select="addStore.isShow" />
           </div>
           <div v-show="!isMobile" @click="handleSelect(SectionEnum.FINDPEOPLE)">
             <NuxtLink to="/explore/">

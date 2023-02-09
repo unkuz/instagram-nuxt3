@@ -8,10 +8,11 @@ import Prelude from '@/components/Utils/Prelude.vue'
 import { usePrelude, useResizeWindow, useScroll, useScrollBarTheme, useWatchRouteSetSection } from '@/composables'
 import { SectionEnum } from '@/constants'
 import { registerSeviceWorkerPWA } from '@/helpers'
-import { useGlobalStore, useMoreStore, useThemeStore } from '@/store'
+import { useGlobalStore, useMoreStore, useAddStore, useThemeStore } from '@/store'
 import { storeToRefs } from 'pinia'
 
 const { section, getIsMobile: isMobile } = $(storeToRefs(useGlobalStore()))
+const addStore = useAddStore()
 const { isShow: isShowMore } = $(storeToRefs(useMoreStore()))
 const { darkMode: isDarkMode } = $(storeToRefs(useThemeStore()))
 const { isShowPrelude } = usePrelude()
@@ -47,7 +48,7 @@ useHead({
           <OgImageScreenshot />
           <NuxtPage />
         </NuxtLayout>
-        <NewPost v-if="section === SectionEnum.NEW_POST && !isMobile" />
+        <NewPost v-if="addStore.isShow" />
         <More v-if="isShowMore" />
         <Cookie />
       </div>
