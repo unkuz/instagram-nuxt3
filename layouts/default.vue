@@ -4,6 +4,7 @@ import { SectionEnum } from '@/constants/section'
 import { useGlobalStore } from '@/store'
 import NavBarBottom from '@/components/Molecules/NavBarBottom.vue'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import HeaderButLeft from '~~/components/Molecules/HeaderButLeft.vue'
 
 const globalStore = useGlobalStore()
 const isShowNavBarBottom = computed(() => !(globalStore.getIsMobile && globalStore.section === SectionEnum.MESSENGER))
@@ -41,6 +42,7 @@ const deskTopNodNeedPading = $(
 <template>
   <div>
     <Header />
+    <!-- <HeaderButLeft/> -->
     <!-- <Extension /> -->
     <div
       :class="[
