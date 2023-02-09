@@ -3,6 +3,7 @@ import { APP_API } from '@/apis'
 import ErrorPage from '@/components/Utils/ErrorPage.vue'
 import { IStory, ITimeLine } from '@/models'
 import { useExploreStore } from '@/store'
+import Explore from '@/components/Organisms/Explore/index.vue'
 
 const exploreStore = useExploreStore()
 
@@ -16,12 +17,9 @@ const explore = computed(() => exploreStore.list)
 
 <template>
   <div class="mb-[84px] pt-[20px]">
-    <div>
-      <ErrorPage />
-    </div>
-    <!-- <div v-for="(i, idx) in _chunk(_shuffle(explore), 3)" :key="idx">
+    <div v-for="(i, idx) in _chunk(_shuffle(explore), 3)" :key="idx">
       <Explore :cluster="i" />
-    </div> -->
+    </div>
     <NuxtChild />
   </div>
 </template>

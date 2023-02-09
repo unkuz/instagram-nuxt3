@@ -4,8 +4,8 @@ import { useClickOutSide } from '@/composables'
 import { useSearchStore } from '@/store'
 
 const searchStore = useSearchStore()
-const searchRef = ref<HTMLInputElement | null>(null)
-const inputSearch = $ref<HTMLInputElement | null>(null)
+const searchRef = ref<HTMLInputElement>()
+const inputSearch = $ref<HTMLInputElement>()
 const isSearchActive = $computed(() => searchStore.isFocus)
 const isSearchHaveValue = $computed(() => searchStore.getIsSearchHaveValue)
 
