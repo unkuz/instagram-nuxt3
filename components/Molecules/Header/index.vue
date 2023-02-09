@@ -108,10 +108,9 @@ const hiddenHeader = $(
             </NuxtLink>
           </div>
           <div v-show="!isMobile" class="relative" @click="handleSelect(SectionEnum.ACTIVITYFEED)">
-            <ActivityFeed :is-select="section === SectionEnum.ACTIVITYFEED" />
-            <div ref="activityFeedPopRef">
-              <ActivityFeedPop v-show="section === SectionEnum.ACTIVITYFEED" />
-            </div>
+            <NuxtLink to="/activity-feed/">
+              <ActivityFeed :is-select="section === SectionEnum.ACTIVITYFEED" />
+            </NuxtLink>
           </div>
           <div v-show="!isMobile" class="relative mr-0" @click="isShowProfile = true">
             <SelfAvatar :is-select="section === SectionEnum.SELF" />
