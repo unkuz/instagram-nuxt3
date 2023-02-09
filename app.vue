@@ -1,14 +1,13 @@
 <script lang="ts" setup>
 import Loading from '@/components/Atoms/Loading.vue'
-import NewPost from '@/components/Huge/NewPost/index.vue'
+import Add_ from '@/components/Molecules/Add/Add_.vue'
 import Slash from '@/components/Molecules/Slash.vue'
 import Cookie from '@/components/Utils/Cookie.vue'
 import More from '@/components/Utils/More.vue'
 import Prelude from '@/components/Utils/Prelude.vue'
 import { usePrelude, useResizeWindow, useScroll, useScrollBarTheme, useWatchRouteSetSection } from '@/composables'
-import { SectionEnum } from '@/constants'
 import { registerSeviceWorkerPWA } from '@/helpers'
-import { useGlobalStore, useMoreStore, useAddStore, useThemeStore } from '@/store'
+import { useAddStore, useGlobalStore, useMoreStore, useThemeStore } from '@/store'
 import { storeToRefs } from 'pinia'
 
 const { section, getIsMobile: isMobile } = $(storeToRefs(useGlobalStore()))
@@ -48,7 +47,7 @@ useHead({
           <OgImageScreenshot />
           <NuxtPage />
         </NuxtLayout>
-        <NewPost v-if="addStore.isShow" />
+        <Add_ v-if="addStore.isShow" />
         <More v-if="isShowMore" />
         <Cookie />
       </div>
