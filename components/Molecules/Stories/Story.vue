@@ -9,6 +9,7 @@ interface IProps {
   name: string
   avatar: string
   id: string
+  hasRead: boolean
 }
 
 defineProps<IProps>()
@@ -21,7 +22,12 @@ defineProps<IProps>()
       @click="stopOtherVideoPlaying"
     >
       <div
-        class="mx-auto flex aspect-square h-[66px] w-[66px] flex-col items-center overflow-hidden rounded-[50%] bg-gradient-to-bl from-c17 to-c18 p-[3px] dark:from-c24 dark:to-c25"
+        :class="[
+          'mx-auto flex aspect-square h-[66px] w-[66px] flex-col items-center overflow-hidden rounded-[50%] bg-gradient-to-bl from-c17 to-c18 p-[3px] dark:from-c24 dark:to-c25',
+          {
+            'from-[#a3a3a3] to-[#a5a5a5]': hasRead,
+          },
+        ]"
       >
         <div class="h-full w-full rounded-[50%] bg-c1 p-[2px] dark:bg-c19">
           <Avatar :size="M" :url="avatar" />

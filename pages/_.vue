@@ -18,7 +18,7 @@ const { data: _stories, pending: pendingStories } = await useLazyFetch<IStory[]>
 const { data: _suggestions, pending: pendingSugestion } = await useLazyFetch<IStory[]>(APP_API.suggestions.list)
 // const { data: _timeline, pending: pendingTimeline } = await useLazyFetch<ITimeLine[]>(APP_API.timeLine.list)
 
-storiesStore.save(_stories.value)
+// storiesStore.save(_stories.value)
 // timeLineStore.save(_timeline.value)
 suggestionStore.save(_suggestions.value)
 

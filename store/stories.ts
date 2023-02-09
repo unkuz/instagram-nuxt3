@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { IStory } from '@/models'
+import { stories } from '~~/mocks'
 
 interface IState {
   data: IStory[]
@@ -9,7 +10,7 @@ interface IState {
 
 export const useStoriesStore = defineStore('stories', {
   state: () => ({
-    data: [] as IStory[],
+    data: [...stories] as IStory[],
     hasErr: false,
     errors: {},
   }),
