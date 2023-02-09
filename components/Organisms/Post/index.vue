@@ -10,6 +10,7 @@ import LikeCommentCount from './LikeCommentCount.vue'
 import React from './React.vue'
 import { useTimeLineStore } from '@/store'
 import { IPending } from '@/type'
+import PostSkl from '@/components/Skeleton/Post.vue';
 
 defineProps<IPending>()
 
@@ -67,6 +68,6 @@ const { key } = useForceRenderTimer()
           </div>
         </div></article
     ></template>
-    <div v-else></div>
+    <PostSkl v-else/>
   </div>
 </template>
