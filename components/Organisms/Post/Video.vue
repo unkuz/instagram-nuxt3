@@ -21,11 +21,6 @@ const { playing, currentTime, duration, volume, muted, buffered, waiting } = use
   src: props.video.src,
 })
 
-
-watch(buffered,(val)=>{
-  console.log('buffered',buffered);
-})
-
 const togglePlay = () => {
   playing.value = !playing.value
 }
