@@ -1,4 +1,4 @@
-import { useGlobalStore } from '@@/store'
+import { useGlobalStore } from '@/store'
 
 export function useResizeWindow() {
   const globalStore = useGlobalStore()

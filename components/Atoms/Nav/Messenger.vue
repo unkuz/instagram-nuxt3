@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import MessageIcon_ from '@@/assets/svg/message_icon.svg'
-import MessageIconSelected_ from '@@/assets/svg/message_icon_selected.svg'
+import MessageIcon_ from '@/assets/svg/message_icon.svg'
+import MessageIconSelected_ from '@/assets/svg/message_icon_selected.svg'
 import IconBase from './IconBase.vue'
 
 interface IconProps {

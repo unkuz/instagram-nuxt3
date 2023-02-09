@@ -7,7 +7,7 @@ import Comment from './Comment.vue'
 import Head from './Head.vue'
 import LikeCommentCount from './LikeCommentCount.vue'
 import React from './React.vue'
-import { useForceRenderTimer } from '@@/composables'
+import { useForceRenderTimer } from '@/composables'
 
 interface IProps {
   created_at: string

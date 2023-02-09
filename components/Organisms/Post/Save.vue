@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { Elastic, gsap } from 'gsap'
-import SaveIcon_ from '@@/assets/svg/save_icon.svg'
+import SaveIcon_ from '@/assets/svg/save_icon.svg'
 
 interface IProps {
   className: string

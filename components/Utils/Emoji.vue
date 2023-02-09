@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { EMOJI } from '@@/constants'
+import { EMOJI } from '@/constants'
 
 defineEmits(['emoji-add'])
 </script>

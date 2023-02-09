@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useCurrentVideoStore } from '@@/store'
+import { useCurrentVideoStore } from '@/store'
 
 const currentVideoStore = useCurrentVideoStore()
 const videoRef = ref<HTMLVideoElement | null>(null)

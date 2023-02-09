@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import InstagramLogo_ from '@@/assets/svg/instagram_logo.svg'
+import InstagramLogo_ from '@/assets/svg/instagram_logo.svg'
 
 definePageMeta({
   layout: 'empty',

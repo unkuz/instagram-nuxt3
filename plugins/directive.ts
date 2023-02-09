@@ -1,4 +1,4 @@
-import { signature } from '@@/utils'
+import { signature } from '@/utils'
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.directive('focus', {

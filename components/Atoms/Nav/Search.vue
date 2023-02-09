@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import SearchIcon_ from '@@/assets/svg/search_icon.svg'
-import SearchiconSelected_ from '@@/assets/svg/search_icon_selected.svg'
+import SearchIcon_ from '@/assets/svg/search_icon.svg'
+import SearchiconSelected_ from '@/assets/svg/search_icon_selected.svg'
 import IconBase from './IconBase.vue'
 
 interface IconProps {

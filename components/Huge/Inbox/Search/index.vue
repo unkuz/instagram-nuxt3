@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import SearchIcon from '@@/assets/svg/search_icon_2367fdg.svg'
+import SearchIcon from '@/assets/svg/search_icon_2367fdg.svg'
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
-import { IStateStore } from '@@/type'
-import { IAuthData } from '@@/models'
+import { IStateStore } from '@/type'
+import { IAuthData } from '@/models'
 
 type TState = IStateStore<IAuthData>
 

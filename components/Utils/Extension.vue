@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useThemeStore } from '@@/store'
+import { useThemeStore } from '@/store'
 
 const themeStore = useThemeStore()
 const isDarkMode = computed(() => themeStore.darkMode)

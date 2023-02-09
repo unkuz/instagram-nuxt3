@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useAuthStore } from '@@/store'
-import ErrorPage from '~~/components/Utils/ErrorPage.vue'
+import { useAuthStore } from '@/store'
+import ErrorPage from '@/components/Utils/ErrorPage.vue'
 
 definePageMeta({
   layout: 'empty',

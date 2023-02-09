@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { useMediaControls } from '@vueuse/core'
-import ProgressVideoBar from '@@/components/Atoms/Video/ProgressVideoBar.vue'
-import Loading from '@@/components/Atoms/Video/Loading.vue'
-import Mute from '@@/components/Atoms/Video/Mute.vue'
-import Pause from '@@/components/Atoms/Video/Pause.vue'
-import ReelCap from '~~/components/Atoms/Video/ReelCap.vue'
-import { IReel } from '@@/models'
+import ProgressVideoBar from '@/components/Atoms/Video/ProgressVideoBar.vue'
+import Loading from '@/components/Atoms/Video/Loading.vue'
+import Mute from '@/components/Atoms/Video/Mute.vue'
+import Pause from '@/components/Atoms/Video/Pause.vue'
+import ReelCap from '@/components/Atoms/Video/ReelCap.vue'
+import { IReel } from '@/models'
 
 const props = defineProps<IReel>()
 

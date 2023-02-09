@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import SoundOffIcon_ from '@@/assets/svg/sound_off.svg'
-import SoundOnIcon_ from '@@/assets/svg/sound_on.svg'
+import SoundOffIcon_ from '@/assets/svg/sound_off.svg'
+import SoundOnIcon_ from '@/assets/svg/sound_on.svg'
 
 interface IProps {
   isMute: boolean

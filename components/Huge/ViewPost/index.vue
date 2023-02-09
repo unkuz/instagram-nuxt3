@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import BackDrop from '@@/components/Utils/BackDrop.vue'
-import { useWindowResizeCallback } from '@@/composables'
-import { useViewPostStore } from '@@/store'
+import BackDrop from '@/components/Utils/BackDrop.vue'
+import { useWindowResizeCallback } from '@/composables'
+import { useViewPostStore } from '@/store'
 
 const viewPostStore = useViewPostStore()
 

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import ReelIcon_ from '@@/assets/svg/reel_icon.svg'
-import { QUALITY_IMAGE } from '@@/configs'
+import ReelIcon_ from '@/assets/svg/reel_icon.svg'
+import { QUALITY_IMAGE } from '@/configs'
 
 interface IProps {
   img: string | undefined

@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import ReelKeyBoardShortcut from '@@/components/Utils/ReelKeyBoardShortcut.vue'
-import { TIME_IDLE_REELS } from '@@/configs'
+import ReelKeyBoardShortcut from '@/components/Utils/ReelKeyBoardShortcut.vue'
+import { TIME_IDLE_REELS } from '@/configs'
 import { useIdle } from '@vueuse/core'
 import { useKeenSlider } from 'keen-slider/vue.es'
-import { useReelStore } from '@@/store'
-import { IActiveKey } from '@@/type'
+import { useReelStore } from '@/store'
+import { IActiveKey } from '@/type'
 import Video from './Video.vue'
-import ReelCap from '~~/components/Atoms/Video/ReelCap.vue'
-import ReelAction from '~~/components/Atoms/ReelAction.vue'
-import Mute from '~~/components/Atoms/Video/Mute.vue'
+import ReelCap from '@/components/Atoms/Video/ReelCap.vue'
+import ReelAction from '@/components/Atoms/ReelAction.vue'
+import Mute from '@/components/Atoms/Video/Mute.vue'
 
 const reelStore = useReelStore()
 

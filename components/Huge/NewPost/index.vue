@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import BackDrop from '@@/components/Utils/BackDrop.vue'
-import { useClickOutSide, useLockScroll } from '@@/composables'
-import { SectionEnum } from '@@/constants'
-import { useGlobalStore, usePostStore } from '@@/store'
+import BackDrop from '@/components/Utils/BackDrop.vue'
+import { useClickOutSide, useLockScroll } from '@/composables'
+import { SectionEnum } from '@/constants'
+import { useGlobalStore, usePostStore } from '@/store'
 
 const postStore = usePostStore()
 const globalStore = useGlobalStore()

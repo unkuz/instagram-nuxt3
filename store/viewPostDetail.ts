@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { useTimeLineStore } from '@@/store'
+import { useTimeLineStore } from '@/store'
 
 export const usePostDetailStore = defineStore('post-detail', {
   state: () => ({

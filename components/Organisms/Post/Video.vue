@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import ExpandIcon_ from '@@/assets/svg/full_screen.svg'
-import Loading from '@@/components/Atoms/Video/Loading.vue'
-import PauseIcon_ from '@@/components/Atoms/Video/Pause.vue'
-import ProgressVideoBar from '@@/components/Atoms/Video/ProgressVideoBar.vue'
-import { useDoubleClick } from '@@/composables'
-import { useTimeLineStore } from '@@/store'
+import ExpandIcon_ from '@/assets/svg/full_screen.svg'
+import Loading from '@/components/Atoms/Video/Loading.vue'
+import PauseIcon_ from '@/components/Atoms/Video/Pause.vue'
+import ProgressVideoBar from '@/components/Atoms/Video/ProgressVideoBar.vue'
+import { useDoubleClick } from '@/composables'
+import { useTimeLineStore } from '@/store'
 import { useMediaControls } from '@vueuse/core'
 
 interface IProps {

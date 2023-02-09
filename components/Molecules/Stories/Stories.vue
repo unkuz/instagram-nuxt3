@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useStoriesStore } from '@@/store'
+import { useStoriesStore } from '@/store'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import Story from './Story.vue'
 

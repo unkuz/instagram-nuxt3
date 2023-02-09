@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useLockScroll, useModalPosition } from '@@/composables'
-import { useProfileStore } from '@@/store'
+import { useLockScroll, useModalPosition } from '@/composables'
+import { useProfileStore } from '@/store'
 
 const profileStore = useProfileStore()
 const boxRef = ref<HTMLDivElement>()

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Avatar from '@@/components/Atoms/Avatar.vue'
-import { useForceRenderTimer } from '@@/composables'
-import { SizeAvatarEnum } from '@@/type'
+import Avatar from '@/components/Atoms/Avatar.vue'
+import { useForceRenderTimer } from '@/composables'
+import { SizeAvatarEnum } from '@/type'
 import moment from 'moment'
-import TagName from '~~/components/Atoms/TagName.vue'
+import TagName from '@/components/Atoms/TagName.vue'
 
 interface IProps {
   comment: any

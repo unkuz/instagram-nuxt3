@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useForceRenderTimer } from '@@/composables'
+import { useForceRenderTimer } from '@/composables'
 import moment from 'moment'
 import Caption from './Caption.vue'
 import Carousel from './Carousel.vue'
@@ -8,8 +8,8 @@ import Head from './Head.vue'
 import IndividualComment from './IndividualComment.vue'
 import LikeCommentCount from './LikeCommentCount.vue'
 import React from './React.vue'
-import { useTimeLineStore } from '~~/store'
-import { IPending } from '~~/type'
+import { useTimeLineStore } from '@/store'
+import { IPending } from '@/type'
 
 defineProps<IPending>()
 

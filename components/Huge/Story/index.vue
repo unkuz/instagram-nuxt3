@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import BackDrop from '@@/components/Utils/BackDrop.vue'
-import { useClickOutSide } from '@@/composables'
-import { useStoryStore } from '@@/store'
+import BackDrop from '@/components/Utils/BackDrop.vue'
+import { useClickOutSide } from '@/composables'
+import { useStoryStore } from '@/store'
 
 const storyStore = useStoryStore()
 const barRef = ref<HTMLDivElement>()

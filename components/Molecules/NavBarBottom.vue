@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import ActivityFeed from '@@/components/Atoms/Nav/ActivityFeed.vue'
-import HomeIcon from '@@/components/Atoms/Nav/HomeIcon.vue'
-import Reels from '@@/components/Atoms/Nav/Reels.vue'
-import Search from '@@/components/Atoms/Nav/Search.vue'
-import SelfAvatar from '@@/components/Atoms/Nav/SelfAvatar.vue'
-import { SectionEnum } from '@@/constants'
-import { useGlobalStore } from '@@/store'
+import ActivityFeed from '@/components/Atoms/Nav/ActivityFeed.vue'
+import HomeIcon from '@/components/Atoms/Nav/HomeIcon.vue'
+import Reels from '@/components/Atoms/Nav/Reels.vue'
+import Search from '@/components/Atoms/Nav/Search.vue'
+import SelfAvatar from '@/components/Atoms/Nav/SelfAvatar.vue'
+import { SectionEnum } from '@/constants'
+import { useGlobalStore } from '@/store'
 
 const globalStore = useGlobalStore()
 const isMobile = $computed(() => globalStore.getIsMobile)

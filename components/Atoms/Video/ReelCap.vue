@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { IUser } from '@@/models'
-import { SizeAvatarEnum } from '@@/type'
+import { IUser } from '@/models'
+import { SizeAvatarEnum } from '@/type'
 import Avatar from '../Avatar.vue'
 import Button from '../Button.vue'
 import TagName from '../TagName.vue'

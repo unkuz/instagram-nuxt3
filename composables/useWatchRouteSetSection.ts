@@ -1,5 +1,5 @@
-import { useGlobalStore } from '@@/store'
-import { SectionEnum } from '~~/constants'
+import { useGlobalStore } from '@/store'
+import { SectionEnum } from '@/constants'
 
 export const useWatchRouteSetSection = () => {
   const globalStore = useGlobalStore()

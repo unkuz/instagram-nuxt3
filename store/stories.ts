@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { IStory } from '@@/models'
+import { IStory } from '@/models'
 
 interface IState {
   data: IStory[]

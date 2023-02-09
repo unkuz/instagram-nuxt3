@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import Avatar from '@@/components/Atoms/Avatar.vue'
-import Button from '@@/components/Atoms/Button.vue'
-import { GITHUB_AUTHOR_LINK, MAX_SUGGESTION_PEOPLE_FOLLOW } from '@@/configs'
-import { useAuthStore, useSuggestionStore } from '@@/store'
-import { IPending, SizeAvatarEnum } from '@@/type'
-import { getCurrentYear } from '@@/utils'
+import Avatar from '@/components/Atoms/Avatar.vue'
+import Button from '@/components/Atoms/Button.vue'
+import { GITHUB_AUTHOR_LINK, MAX_SUGGESTION_PEOPLE_FOLLOW } from '@/configs'
+import { useAuthStore, useSuggestionStore } from '@/store'
+import { IPending, SizeAvatarEnum } from '@/type'
+import { getCurrentYear } from '@/utils'
 import Item from './Item.vue'
 
 defineProps<IPending>()

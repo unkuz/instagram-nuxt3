@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { gsap } from 'gsap'
-import ExpandIcon_ from '@@/assets/svg/full_screen.svg'
-import PlayIcon_ from '@@/assets/svg/play_icon.svg'
-import { useDoubleClick, usePercentVideo } from '@@/composables'
-import { useTimeLineStore } from '@@/store'
-import { stopOtherVideoPlaying } from '~~/helpers'
-import LoadingIcon_ from '@@/assets/svg/Dual Ring-1s-200px.svg'
+import ExpandIcon_ from '@/assets/svg/full_screen.svg'
+import PlayIcon_ from '@/assets/svg/play_icon.svg'
+import { useDoubleClick, usePercentVideo } from '@/composables'
+import { useTimeLineStore } from '@/store'
+import { stopOtherVideoPlaying } from '@/helpers'
+import LoadingIcon_ from '@/assets/svg/Dual Ring-1s-200px.svg'
 
 interface IProps {
   video: any

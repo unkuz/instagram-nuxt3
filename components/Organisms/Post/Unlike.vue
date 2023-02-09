@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { Elastic, gsap } from 'gsap'
-import UnlikeIcon_ from '@@/assets/svg/unlike_icon.svg'
+import UnlikeIcon_ from '@/assets/svg/unlike_icon.svg'
 
 const unlikeRef = $ref<HTMLDivElement>()
 let tl = gsap.timeline({})

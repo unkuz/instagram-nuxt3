@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import moment from 'moment'
-import Avatar from '@@/components/Atoms/Avatar.vue'
-import { SizeAvatarEnum } from '@@/type'
-import { useForceRenderTimer } from '@@/composables'
+import Avatar from '@/components/Atoms/Avatar.vue'
+import { SizeAvatarEnum } from '@/type'
+import { useForceRenderTimer } from '@/composables'
 
 interface IProps {
   comment: any

@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { gsap } from 'gsap'
 import BackDrop from './BackDrop.vue'
-import { useClickOutSide, useLockScroll } from '@@/composables'
-import { useMoreStore } from '@@/store'
-import Avatar from '@@/components/Atoms/Avatar.vue'
+import { useClickOutSide, useLockScroll } from '@/composables'
+import { useMoreStore } from '@/store'
+import Avatar from '@/components/Atoms/Avatar.vue'
 
 const options = [
   { name: 'Block' },

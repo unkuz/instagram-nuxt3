@@ -1,5 +1,5 @@
-import { useGlobalStore } from '@@/store'
-import { ScrollTypeEnum } from '@@/type'
+import { useGlobalStore } from '@/store'
+import { ScrollTypeEnum } from '@/type'
 
 export const useScroll = () => {
   const globalStore = useGlobalStore()

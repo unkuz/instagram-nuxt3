@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import LikeIcon_ from '@@/assets/svg/like_icon.svg'
-import SaveIcon_ from '@@/assets/svg/save_icon.svg'
-import ShareIcon_ from '@@/assets/svg/share_icon.svg'
-import ViewPostIcon_ from '@@/assets/svg/view_post_icon.svg'
-import UnlikeIcon from '@@/components/Atoms/UnlikeIcon.vue'
-import { stopOtherVideoPlaying } from '@@/helpers'
-import { useSlashStore, useTimeLineStore } from '@@/store'
+import LikeIcon_ from '@/assets/svg/like_icon.svg'
+import SaveIcon_ from '@/assets/svg/save_icon.svg'
+import ShareIcon_ from '@/assets/svg/share_icon.svg'
+import ViewPostIcon_ from '@/assets/svg/view_post_icon.svg'
+import UnlikeIcon from '@/components/Atoms/UnlikeIcon.vue'
+import { stopOtherVideoPlaying } from '@/helpers'
+import { useSlashStore, useTimeLineStore } from '@/store'
 
 interface IProps {
   hasLiked: boolean

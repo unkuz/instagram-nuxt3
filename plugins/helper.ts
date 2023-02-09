@@ -1,4 +1,4 @@
-import { formatNum, urlify, emailify } from '@@/helpers'
+import { formatNum, urlify, emailify } from '@/helpers'
 
 export default defineNuxtPlugin(() => {
   return {

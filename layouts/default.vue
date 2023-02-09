@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import Header from '@@/components/Molecules/Header/index.vue'
-import { SectionEnum } from '@@/constants/section'
-import { useGlobalStore } from '@@/store'
-import NavBarBottom from '@@/components/Molecules/NavBarBottom.vue'
+import Header from '@/components/Molecules/Header/index.vue'
+import { SectionEnum } from '@/constants/section'
+import { useGlobalStore } from '@/store'
+import NavBarBottom from '@/components/Molecules/NavBarBottom.vue'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 
 const globalStore = useGlobalStore()

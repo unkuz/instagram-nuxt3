@@ -1,5 +1,5 @@
 import { useWatchWithMounted } from './useWatchWithMounted'
-import { useThemeStore } from '@@/store'
+import { useThemeStore } from '@/store'
 import { storeToRefs } from 'pinia'
 
 export const useScrollBarTheme = () => {

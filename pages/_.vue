@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { APP_API } from '@@/apis'
-import Suggestions from '@@/components/Huge/Suggestions/index.vue'
-import Stories from '@@/components/Molecules/Stories/Stories.vue'
-import Post from '@@/components/Organisms/Post/index.vue'
-import { useWindowResizeCallback } from '@@/composables'
-import { IStory, ITimeLine } from '@@/models'
-import { useStoriesStore, useSuggestionStore, useTimeLineStore } from '@@/store'
+import { APP_API } from '@/apis'
+import Suggestions from '@/components/Huge/Suggestions/index.vue'
+import Stories from '@/components/Molecules/Stories/Stories.vue'
+import Post from '@/components/Organisms/Post/index.vue'
+import { useWindowResizeCallback } from '@/composables'
+import { IStory, ITimeLine } from '@/models'
+import { useStoriesStore, useSuggestionStore, useTimeLineStore } from '@/store'
 
 const rightRef = $ref<HTMLElement | null>(null)
 const leftRef = $ref<HTMLElement | null>(null)

@@ -5,9 +5,9 @@ import Like from './Like.vue'
 import Save from './Save.vue'
 import Unlike from './Unlike.vue'
 import Video from './Video.vue'
-import { stopOtherVideoPlaying } from '@@/helpers'
-import { useCarousel } from '@@/composables'
-import ArrowIcon_ from '@@/assets/svg/arrow_icon.svg'
+import { stopOtherVideoPlaying } from '@/helpers'
+import { useCarousel } from '@/composables'
+import ArrowIcon_ from '@/assets/svg/arrow_icon.svg'
 
 interface IProps {
   images: any

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { APP_API } from '@@/apis'
-import ErrorPage from '@@/components/Utils/ErrorPage.vue'
-import { IStory, ITimeLine } from '@@/models'
-import { useExploreStore } from '@@/store'
+import { APP_API } from '@/apis'
+import ErrorPage from '@/components/Utils/ErrorPage.vue'
+import { IStory, ITimeLine } from '@/models'
+import { useExploreStore } from '@/store'
 
 const exploreStore = useExploreStore()
 

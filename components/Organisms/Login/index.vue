@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useAuthStore } from '@@/store'
+import { useAuthStore } from '@/store'
 
 definePageMeta({
   layout: 'empty',

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import CookieIcon_ from '@@/assets/svg/cookie.svg'
-import Button from '@@/components/Atoms/Button.vue'
-import { TIME_DELAY_START_APPARENT_TOOLTIP } from '@@/configs'
+import CookieIcon_ from '@/assets/svg/cookie.svg'
+import Button from '@/components/Atoms/Button.vue'
+import { TIME_DELAY_START_APPARENT_TOOLTIP } from '@/configs'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { gsap } from 'gsap'
 

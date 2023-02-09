@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import ActivityFeedIcon_ from '@@/assets/svg/activity_feed_icon.svg'
-import ActivityFeedIconSelected_ from '@@/assets/svg/activity_feed_icon_selected.svg'
+import ActivityFeedIcon_ from '@/assets/svg/activity_feed_icon.svg'
+import ActivityFeedIconSelected_ from '@/assets/svg/activity_feed_icon_selected.svg'
 import IconBase from './IconBase.vue'
 
 interface IconProps {

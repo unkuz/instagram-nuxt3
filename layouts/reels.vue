@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import NavBarBottom from '@@/components/Molecules/NavBarBottom.vue'
-import Header from '@@/components/Molecules/Header/index.vue'
-import { useGlobalStore } from '@@/store'
+import NavBarBottom from '@/components/Molecules/NavBarBottom.vue'
+import Header from '@/components/Molecules/Header/index.vue'
+import { useGlobalStore } from '@/store'
 
 const globalStore = useGlobalStore()
 const isMobile = computed(() => globalStore.getIsMobile)

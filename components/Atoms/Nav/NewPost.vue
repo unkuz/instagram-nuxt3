@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import NewPostIcon_ from '@@/assets/svg/new_post_icon.svg'
-import NewPostIconSelected_ from '@@/assets/svg/new_post_icon_selected.svg'
+import NewPostIcon_ from '@/assets/svg/new_post_icon.svg'
+import NewPostIconSelected_ from '@/assets/svg/new_post_icon_selected.svg'
 import IconBase from './IconBase.vue'
 
 interface IconProps {

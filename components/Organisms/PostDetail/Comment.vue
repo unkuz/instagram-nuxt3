@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import Emoji from '@@/components/Utils/Emoji.vue'
-import { useClickOutSide } from '@@/composables'
-import { useAuthStore, usePostDetailStore } from '@@/store'
+import Emoji from '@/components/Utils/Emoji.vue'
+import { useClickOutSide } from '@/composables'
+import { useAuthStore, usePostDetailStore } from '@/store'
 
 interface IProps {
   id: string

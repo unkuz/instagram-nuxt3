@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { SELECT_TYPE } from '@@/constants/screens/account'
+import { SELECT_TYPE } from '@/constants/screens/account'
 
 export const useProfileStore = defineStore('profile', {
   state: () => ({

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { IPending } from '~~/type'
+import { IPending } from '@/type'
 import Stories from './Stories.vue'
 
 defineProps<IPending>()

@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
-import { ITimeLine } from '@@/models'
-import { IStateStore } from '@@/type'
+import { ITimeLine } from '@/models'
+import { IStateStore } from '@/type'
 import { timeLine } from '@/mocks/reelTimeLine'
-import { useSlashStore } from '@@/store'
+import { useSlashStore } from '@/store'
 
 type TState = IStateStore<ITimeLine[]>
 

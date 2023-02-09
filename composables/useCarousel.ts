@@ -1,4 +1,4 @@
-import { useWindowResizeCallback } from '@@/composables'
+import { useWindowResizeCallback } from '@/composables'
 import { gsap } from 'gsap'
 import { Ref } from 'vue'
 

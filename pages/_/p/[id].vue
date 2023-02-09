@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
 import moment from 'moment'
-import Caption from '@@/components/Organisms/Post/Caption.vue'
-import Carousel from '@@/components/Organisms/Post/Carousel.vue'
-import Comment from '@@/components/Organisms/Post/Comment.vue'
-import Head from '@@/components/Organisms/Post/Head.vue'
-import IndividualComment from '@@/components/Organisms/Post/IndividualComment.vue'
-import LikeCommentCount from '@@/components/Organisms/Post/LikeCommentCount.vue'
-import React from '@@/components/Organisms/Post/React.vue'
-import BackDrop from '@@/components/Utils/BackDrop.vue'
-import { useClickOutSide, useLockScroll } from '@@/composables'
-import { usePostDetailStore } from '@@/store'
-import { ITimeLine } from '@@/models'
+import Caption from '@/components/Organisms/Post/Caption.vue'
+import Carousel from '@/components/Organisms/Post/Carousel.vue'
+import Comment from '@/components/Organisms/Post/Comment.vue'
+import Head from '@/components/Organisms/Post/Head.vue'
+import IndividualComment from '@/components/Organisms/Post/IndividualComment.vue'
+import LikeCommentCount from '@/components/Organisms/Post/LikeCommentCount.vue'
+import React from '@/components/Organisms/Post/React.vue'
+import BackDrop from '@/components/Utils/BackDrop.vue'
+import { useClickOutSide, useLockScroll } from '@/composables'
+import { usePostDetailStore } from '@/store'
+import { ITimeLine } from '@/models'
 
 useLockScroll()
 

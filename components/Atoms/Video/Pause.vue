@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import PlayIcon_ from '@@/assets/svg/play_icon.svg'
+import PlayIcon_ from '@/assets/svg/play_icon.svg'
 </script>
 <template>
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-200">

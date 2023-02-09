@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import ReelIcon_ from '@@/assets/svg/reel_icon.svg'
-import ReelIconSelected_ from '@@/assets/svg/reel_icon_selected.svg'
+import ReelIcon_ from '@/assets/svg/reel_icon.svg'
+import ReelIconSelected_ from '@/assets/svg/reel_icon_selected.svg'
 
 import IconBase from './IconBase.vue'
 
