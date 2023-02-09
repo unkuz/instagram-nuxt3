@@ -21,6 +21,11 @@ const { playing, currentTime, duration, volume, muted, buffered, waiting } = use
   src: props.video.src,
 })
 
+
+watch(buffered,(val)=>{
+  console.log('buffered',buffered);
+})
+
 const togglePlay = () => {
   playing.value = !playing.value
 }
@@ -57,6 +62,7 @@ const toggleFullScreen = () => {
     <ProgressVideoBar
       :currentTime="currentTime"
       :duration="duration"
+      :buffered="buffered"
       @setCurentTime="(val) => (currentTime = val * duration)"
     />
     <div class="absolute bottom-[10px] right-[10px] flex gap-[15px]">

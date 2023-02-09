@@ -34,6 +34,7 @@ watch(buffered, (val) => {})
 
     <ProgressVideoBar
       :currentTime="currentTime"
+      :buffered="buffered"
       :duration="duration"
       @setCurentTime="(val) => (currentTime = val * duration)"
     />
