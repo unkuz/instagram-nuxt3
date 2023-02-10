@@ -39,58 +39,47 @@ export const timeLine = [
     },
     like_count: 3400,
     has_liked: false,
-    caption_text: `Join the Notification Squad! Click the 🔔Bell. 
-    👉 Diversity Spotify Playlists: http://diversity.moe/spotify
+    caption_text: `⭐️ Follow us on Spotify:
+    ➥ https://divergemusic.group/SpotifyPla...
     
-    Stream/Download:
-    ➥ https://music.blossoms.asia/HoldMeTight
+    🎧 Stream/Download:
+    ➥ https://release.divr.moe/TurnItUp
     
-    🎧 Genre: Future House
+    🎵 Genre: Future Bounce
     
-    North Rebellion
-    • https://soundcloud.com/north-rebellion
-    • https://open.spotify.com/artist/6V12T...
-    • https://www.facebook.com/NorthRebelli...
-    • https://www.instagram.com/north._.beo/
-    • https://www.youtube.com/channel/UCeb5...
+    KienThien
+    • https://soundcloud.com/kienthien
+    • https://open.spotify.com/artist/3DdiH...
+    • https://www.facebook.com/kthienmusic
     
-    💽 Label: Blossoms Asia
-    • https://blossoms.asia
-    • https://blossoms.asia/SC
-    • https://blossoms.asia/FB
-    • https://blossoms.asia/TW
+    💽 Label: Diversity
     
     
     
-    Artwork: https://www.deviantart.com/liang-xing...
-    ✍ by Liang-Xing
+    Artwork 🎨 by Liang-Xing
     • https://deviantart.com/liang-xing
     • https://www.facebook.com/profile.php?...
     • https://patreon.com/liangxing
     • https://liang-xing.tumblr.com/
     • https://drawcrowd.com/liangxing
     • https://pixiv.me/liangxing719
-    • https://www.deviantart.com/liang-xing/
     • https://twitter.com/liangxing719
     
     
     
-    Diversity
-    • http://diversity.moe
-    • http://diversity.moe/youtube
-    • http://diversity.moe/facebook
-    • http://diversity.moe/instagram
-    • http://diversity.moe/twitter
-    • http://diversity.moe/pixiv
-    • http://diversity.moe/spotify
-    • http://diversity.moe/soundcloud
+    ⭐️ Diversity
+    • http://label.divergemusic.group/Diver...
+    
+    ⭐️ Diverge Music Group
+    • http://divergemusic.group
+    • http://divergemusic.group/SpotifyPlay...
     
     📄 Submit your music:
-    • http://diversity.moe/demo
+    • http://submissions.divergemusic.group
     
-    ✏️ For business inquiries and other issues please contact hello@divergemusic.group`,
+    ✏️ For business inquiries and other issues please contact: hello@divergemusic.group`,
     is_seen: true,
-    tags: ['Diversity', 'North Rebellion', 'Hold Me Tight'],
+    tags: ['Diversity', 'KienThien', 'Turn It Up'],
     is_saved: false,
   },
   {
