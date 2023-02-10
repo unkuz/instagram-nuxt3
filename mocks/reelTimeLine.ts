@@ -10,6 +10,12 @@ export const timeLine = [
       images: [],
       videos: [
         {
+          id: 3,
+          src: `/video/KienThien - Turn It Up [Diversity Release].mp4`,
+          poster: '',
+        },
+
+        {
           id: 1,
           src: `/video/North Rebellion - Hold Me Tight.mp4`,
           poster: '',
