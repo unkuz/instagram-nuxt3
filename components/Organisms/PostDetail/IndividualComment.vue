@@ -21,7 +21,9 @@ const { S } = SizeAvatarEnum
           <Avatar :url="comment.user.profile_pic_url" :size="S" />
         </NuxtLink>
         <NuxtLink :to="`/${comment.user.username}`">
-          <p class="inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md line-clamp-1 dark:bg-c1 dark:text-c2">
+          <p
+            class="inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md line-clamp-1 dark:bg-c1 dark:text-c2"
+          >
             {{ comment.user.username }}
           </p>
         </NuxtLink>
@@ -51,7 +53,9 @@ const { S } = SizeAvatarEnum
           <Avatar :url="user.profile_pic_url" :size="S" />
         </NuxtLink>
         <NuxtLink :to="`/${user.username}`">
-          <p class="inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md line-clamp-1 dark:bg-c1 dark:text-c2">
+          <p
+            class="inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md line-clamp-1 dark:bg-c1 dark:text-c2"
+          >
             {{ user.username }}
           </p>
         </NuxtLink>

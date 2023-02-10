@@ -48,7 +48,10 @@ const likeUnLike = (idPost: string) => {
       <div
         v-for="(_i, idx) in mediaArr"
         :key="idx"
-        :class="['h-[6px] w-[6px]  rounded-[50%]  ', currentIdx === idx ? 'bg-c7 dark:bg-c7' : 'bg-c3 dark:bg-c1']"
+        :class="[
+          'h-[6px] w-[6px]  rounded-[50%]  ',
+          currentIdx === idx ? 'bg-c7 dark:bg-c7' : 'bg-c3 dark:bg-c1',
+        ]"
       />
     </div>
     <div class="flex h-full w-full items-center justify-end">

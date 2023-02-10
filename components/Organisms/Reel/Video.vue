@@ -11,9 +11,12 @@ const props = defineProps<IReel>()
 
 const video = ref<HTMLVideoElement>()
 
-const { playing, currentTime, duration, volume, muted, buffered, waiting } = useMediaControls(video, {
-  src: props.media.video[0].src,
-})
+const { playing, currentTime, duration, volume, muted, buffered, waiting } = useMediaControls(
+  video,
+  {
+    src: props.media.video[0].src,
+  }
+)
 
 watch(buffered, (val) => {})
 </script>

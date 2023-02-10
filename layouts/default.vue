@@ -7,7 +7,9 @@ import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import HeaderButLeft from '~~/components/Molecules/HeaderButLeft.vue'
 
 const globalStore = useGlobalStore()
-const isShowNavBarBottom = computed(() => !(globalStore.getIsMobile && globalStore.section === SectionEnum.MESSENGER))
+const isShowNavBarBottom = computed(
+  () => !(globalStore.getIsMobile && globalStore.section === SectionEnum.MESSENGER)
+)
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const smallerThanMd = $(breakpoints.smallerOrEqual('md'))

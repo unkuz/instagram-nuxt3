@@ -32,10 +32,18 @@ useClickOutSide(moreRef, () => {
 <template>
   <div class="z-50">
     <BackDrop>
-      <div ref="moreRef" class="fixed right-1/2 -bottom-[100%] z-20 w-[85%] translate-x-1/2 text-[0.8rem] sm:w-[400px]">
-        <div class="flex h-[60px] items-center justify-between rounded-[0.8rem] bg-c1 px-[20px] sm:px-[30px]">
+      <div
+        ref="moreRef"
+        class="fixed right-1/2 -bottom-[100%] z-20 w-[85%] translate-x-1/2 text-[0.8rem] sm:w-[400px]"
+      >
+        <div
+          class="flex h-[60px] items-center justify-between rounded-[0.8rem] bg-c1 px-[20px] sm:px-[30px]"
+        >
           <div class="flex items-center space-x-[20px]">
-            <Avatar url="/personal/284244344_5311122635605193_5864440318105391567_n.jpg" class="w-[45px]" />
+            <Avatar
+              url="/personal/284244344_5311122635605193_5864440318105391567_n.jpg"
+              class="w-[45px]"
+            />
             <div>
               <p>Joe Biden</p>
               <p>View Profile</p>

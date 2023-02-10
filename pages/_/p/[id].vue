@@ -32,7 +32,9 @@ const router = useRouter()
 const postDetailStore = usePostDetailStore()
 let currentIdx = $ref(0)
 
-const { data: _timeline } = await useLazyFetch<ITimeLine[]>('https://mocki.io/v1/bbd9ad8d-fbd8-4d95-a9ac-ee6416513aae')
+const { data: _timeline } = await useLazyFetch<ITimeLine[]>(
+  'https://mocki.io/v1/bbd9ad8d-fbd8-4d95-a9ac-ee6416513aae'
+)
 
 postDetailStore.setPostDetail(route.params.id as string)
 
@@ -85,7 +87,9 @@ const mediaArr = $computed(() =>
       >
         <div class="flex w-full cursor-pointer justify-end md:hidden" @click="router.back">X</div>
         <div class="w-full md:h-full md:w-[80vw] xl:w-[700px]">
-          <article class="w-full border-c4 shadow-c4 dark:border-none dark:shadow-none md:border-[1px] md:shadow-sm">
+          <article
+            class="w-full border-c4 shadow-c4 dark:border-none dark:shadow-none md:border-[1px] md:shadow-sm"
+          >
             <Head :avatar="profilePicUrl" :user-name="userName" />
             <Carousel
               :id="id"

@@ -1,7 +1,9 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="fixed top-[60px] right-0 w-[160px] rounded-lg border-[1px] border-gray-300 bg-white text-sm">
+  <div
+    class="fixed top-[60px] right-0 w-[160px] rounded-lg border-[1px] border-gray-300 bg-white text-sm"
+  >
     <div class="flex flex-col px-[10px]">
       <div class="flex h-[40px] items-center justify-between border-b-[1px] border-gray-200">
         <p>Post</p>

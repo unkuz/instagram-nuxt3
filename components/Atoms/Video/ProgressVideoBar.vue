@@ -38,7 +38,9 @@ watch(
     ></div>
     <div
       @click="scrub"
-      :class="['absolute bottom-0 right-0  h-[4px] w-full cursor-pointer  bg-transparent hover:bg-c16 [&>div]:bg-c15']"
+      :class="[
+        'absolute bottom-0 right-0  h-[4px] w-full cursor-pointer  bg-transparent hover:bg-c16 [&>div]:bg-c15',
+      ]"
     >
       <div ref="progressBarRef" class="h-full w-0" />
     </div>

@@ -62,9 +62,9 @@ const setExpand = (section: InboxTypeEnum) => {
                 </div>
 
                 <div class="line-clamp-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa assumenda, excepturi vel non facere
-                  commodi delectus ipsam explicabo quaerat rem aspernatur placeat nobis veritatis quas quibusdam officia
-                  illum fugiat voluptatem?
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa assumenda,
+                  excepturi vel non facere commodi delectus ipsam explicabo quaerat rem aspernatur
+                  placeat nobis veritatis quas quibusdam officia illum fugiat voluptatem?
                 </div>
               </div>
               <p class="text-[0.7rem]">12:30</p>
@@ -80,7 +80,11 @@ const setExpand = (section: InboxTypeEnum) => {
           class="absolute bottom-[10px] left-1/2 flex h-[40px] w-[90%] -translate-x-1/2 justify-between rounded-[10px] bg-black px-[10px] shadow-xl"
         >
           <!-- <input/> -->
-          <input class="flex-1 bg-transparent focus:outline-none" type="text" value="Fantastic? 😂😁😁😀" />
+          <input
+            class="flex-1 bg-transparent focus:outline-none"
+            type="text"
+            value="Fantastic? 😂😁😁😀"
+          />
           <div class="flex items-center justify-between">
             <div>Emoji</div>
             <div>Attachment</div>

@@ -11,7 +11,8 @@ definePageMeta({
   >
     <h1 class="mx-[20px] flex items-center gap-[10px] text-[0.8rem] md:mx-auto">
       <NuxtLink to="/">
-        <InstagramLogo_ class="mt-[7px] w-[200px] cursor-pointer fill-black dark:fill-white" /></NuxtLink
+        <InstagramLogo_
+          class="mt-[7px] w-[200px] cursor-pointer fill-black dark:fill-white" /></NuxtLink
       ><span>clone by</span>
       <div
         class="cursor-pointer font-august text-[1.5rem] uppercase tracking-wider text-c2 drop-shadow-md dark:text-c1"

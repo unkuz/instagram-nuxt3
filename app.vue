@@ -5,7 +5,13 @@ import Slash from '@/components/Molecules/Slash.vue'
 import Cookie from '@/components/Utils/Cookie.vue'
 import More from '@/components/Utils/More.vue'
 import Prelude from '@/components/Utils/Prelude.vue'
-import { usePrelude, useResizeWindow, useScroll, useScrollBarTheme, useWatchRouteSetSection } from '@/composables'
+import {
+  usePrelude,
+  useResizeWindow,
+  useScroll,
+  useScrollBarTheme,
+  useWatchRouteSetSection,
+} from '@/composables'
 import { registerSeviceWorkerPWA } from '@/helpers'
 import { useAddStore, useGlobalStore, useMoreStore, useThemeStore } from '@/store'
 import { storeToRefs } from 'pinia'

@@ -76,7 +76,11 @@ onBeforeUnmount(() => {
       <p class="mt-[15px] mb-[10px] text-center text-[0.85rem]">
         <span>{{ 'Keyboard shortcuts! ヾ(⌐■_■)ノ♪' }}</span>
       </p>
-      <p class="flex items-center gap-[15px]" v-for="({ icon, content, isPress }, idx) in intructionMap" :key="idx">
+      <p
+        class="flex items-center gap-[15px]"
+        v-for="({ icon, content, isPress }, idx) in intructionMap"
+        :key="idx"
+      >
         <span
           ><component
             :is="icon"

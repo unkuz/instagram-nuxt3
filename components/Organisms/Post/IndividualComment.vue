@@ -87,7 +87,9 @@ const { S } = SizeAvatarEnum
         <p>{{ text }}</p>
         <div class="flex gap-[20px] text-[0.8rem]">
           <div class="flex items-end gap-[5px] font-[550]">
-            <span class="align-bottom text-[0.9rem] leading-[1.05rem]">{{ comment_like_count }}</span>
+            <span class="align-bottom text-[0.9rem] leading-[1.05rem]">{{
+              comment_like_count
+            }}</span>
             <span class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1" title="Like">
               <svg width="18" height="18" viewBox="0 0 24 24">
                 <g>

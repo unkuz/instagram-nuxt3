@@ -78,7 +78,9 @@ const hiddenHeader = $(
             <div><Extension v-if="showExtension" /></div>
           </div>
         </div>
-        <div class="relative hidden w-full items-center justify-center md:flex md:w-auto lg:ml-0 lg:w-full">
+        <div
+          class="relative hidden w-full items-center justify-center md:flex md:w-auto lg:ml-0 lg:w-full"
+        >
           <Search />
           <SearchPop v-if="isShowSearchToolkit" />
         </div>

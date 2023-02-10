@@ -12,7 +12,9 @@ defineProps<IProps>()
 const hasLiked = ref(true)
 </script>
 <template>
-  <div class="absolute bottom-[15px] right-[15px] flex flex-col gap-[20px] text-c1 duration-200 md:bottom-[50px]">
+  <div
+    class="absolute bottom-[15px] right-[15px] flex flex-col gap-[20px] text-c1 duration-200 md:bottom-[50px]"
+  >
     <div class="flex flex-col items-center gap-[5px]">
       <UnlikeIcon v-if="hasLiked" />
       <LikeIcon_ v-else class="!fill-c1" />

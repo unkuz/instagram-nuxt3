@@ -17,9 +17,12 @@ const timelineStore = useTimeLineStore()
 const videoRef = ref<HTMLVideoElement | null>(null)
 let containerRef = $ref<HTMLVideoElement | null>(null)
 
-const { playing, currentTime, duration, volume, muted, buffered, waiting } = useMediaControls(videoRef, {
-  src: props.video.src,
-})
+const { playing, currentTime, duration, volume, muted, buffered, waiting } = useMediaControls(
+  videoRef,
+  {
+    src: props.video.src,
+  }
+)
 
 const togglePlay = () => {
   playing.value = !playing.value
@@ -37,7 +40,10 @@ const toggleFullScreen = () => {
 </script>
 
 <template>
-  <div ref="containerRef" class="group relative flex min-w-full items-center justify-center overflow-hidden bg-c2">
+  <div
+    ref="containerRef"
+    class="group relative flex min-w-full items-center justify-center overflow-hidden bg-c2"
+  >
     <video
       ref="videoRef"
       class="video block max-h-[100vh] w-full"

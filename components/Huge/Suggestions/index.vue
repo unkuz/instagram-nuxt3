@@ -83,7 +83,13 @@ const authorText = 'cuzknothz'
         </NuxtLink>
       </div>
       <div class="mt-[8px] h-auto w-full">
-        <Item v-for="{ name, avatar, id } in suggestion" :id="id" :key="id" :name="name" :avatar="avatar" />
+        <Item
+          v-for="{ name, avatar, id } in suggestion"
+          :id="id"
+          :key="id"
+          :name="name"
+          :avatar="avatar"
+        />
       </div>
       <div class="mt-[10px] text-[0.85rem] text-c3 dark:text-c21" v-once>
         <div class="flex justify-center">
