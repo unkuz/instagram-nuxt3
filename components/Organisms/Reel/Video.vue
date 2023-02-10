@@ -45,6 +45,6 @@ watch(buffered, (val) => {})
       :class="[playing ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100']"
     />
 
-    <Mute @click="muted = !muted" :isMute="muted" class="md:!top-[15px] hidden !left-[15px]" />
+    <Mute @click="muted = !muted" :isMute="muted" class="!left-[15px] hidden md:!top-[15px]" />
   </div>
 </template>

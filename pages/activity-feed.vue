@@ -1,9 +1,4 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 <template>
-    <div>
-      HEHE
-    </div>
+  <div>HEHE</div>
 </template>
-

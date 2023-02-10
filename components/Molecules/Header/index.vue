@@ -15,7 +15,7 @@ import SelfAvatar from '@/components/Atoms/Nav/SelfAvatar.vue'
 import Extension from '@/components/Utils/Extension.vue'
 import { useClickOutSide } from '@/composables'
 import { SectionEnum } from '@/constants/section'
-import { useAuthStore, useGlobalStore, useSearchStore,useAddStore } from '@/store'
+import { useAuthStore, useGlobalStore, useSearchStore, useAddStore } from '@/store'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import TopBarExplore from '@/components/Organisms/Explore/M/TopBar.vue'
 import TopBarReel from '@/components/Organisms/Reel/M/TopBar.vue'
@@ -57,7 +57,6 @@ const hiddenHeader = $(
     )
   })
 )
-
 </script>
 
 <template>

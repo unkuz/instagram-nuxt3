@@ -6,7 +6,7 @@ import { useAuthStore, useSuggestionStore } from '@/store'
 import { IPending, SizeAvatarEnum } from '@/type'
 import { getCurrentYear } from '@/utils'
 import Item from './Item.vue'
-import SuggestionSkl from '@/components/Skeleton/Suggestion.vue';
+import SuggestionSkl from '@/components/Skeleton/Suggestion.vue'
 
 defineProps<IPending>()
 
@@ -120,6 +120,6 @@ const authorText = 'cuzknothz'
         </NuxtLink>
       </div>
     </div>
-    <SuggestionSkl v-else/>
+    <SuggestionSkl v-else />
   </div>
 </template>

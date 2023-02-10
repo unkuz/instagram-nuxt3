@@ -33,7 +33,7 @@ watch(
     <div
       v-for="(i, idx) in buffered"
       class="absolute bottom-0 h-[4px] bg-[#ffffff48]"
-      :style="`left: ${(i[0] * 100) / duration}%; right: ${100% - ((i[1] * 100) / duration)}%`"
+      :style="`left: ${(i[0] * 100) / duration}%; right: ${100 % -((i[1] * 100) / duration)}%`"
       :key="idx"
     ></div>
     <div

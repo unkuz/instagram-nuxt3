@@ -6,11 +6,11 @@ import Reels from '../Atoms/Nav/Reels.vue'
 import Search from '@/components/Atoms/Nav/Search.vue'
 import ActivityFeed from '@/components/Atoms/Nav/ActivityFeed.vue'
 import NewPost from '../Atoms/Nav/NewPost.vue'
-
-
 </script>
 <template>
-  <header class="fixed top-0 left-0 z-50 h-screen w-[60px] border-r-[1px] bg-c1 dark:bg-c19  border-c4 flex flex-col items-center justify-between py-[50px]">
+  <header
+    class="fixed top-0 left-0 z-50 flex h-screen w-[60px] flex-col items-center justify-between border-r-[1px] border-c4 bg-c1 py-[50px] dark:bg-c19"
+  >
     <div class="mb-[100px]">
       <svg
         aria-label="Instagram"
@@ -43,9 +43,6 @@ import NewPost from '../Atoms/Nav/NewPost.vue'
       </NuxtLink>
       <ActivityFeed :is-select="false" />
       <NewPost :is-select="false" />
-     
-     
-      
     </div>
     <div>More</div>
   </header>

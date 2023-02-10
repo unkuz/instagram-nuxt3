@@ -15,10 +15,10 @@ export const timeLine = [
           poster: '',
         },
         {
-            id: 2,
-            src: `/video/EXTEN - I'm Enough.mp4`,
-            poster: '',
-          },
+          id: 2,
+          src: `/video/EXTEN - I'm Enough.mp4`,
+          poster: '',
+        },
       ],
     },
     user: {

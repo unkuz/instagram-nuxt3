@@ -5,8 +5,8 @@ export default defineNuxtPlugin(() => {
     provide: {
       urlify: (val: string) => urlify(val),
       formatNum: (val: number | bigint) => formatNum(val),
-      emailify:(val:string) => emailify(val),
-      urlEmailify:(val:string) => emailify(urlify(val))
+      emailify: (val: string) => emailify(val),
+      urlEmailify: (val: string) => emailify(urlify(val)),
     },
   }
 })
