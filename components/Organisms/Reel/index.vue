@@ -1,14 +1,13 @@
 <script setup lang="ts">
+import ReelAction from '@/components/Atoms/ReelAction.vue'
+import ReelCap from '@/components/Atoms/Video/ReelCap.vue'
 import ReelKeyBoardShortcut from '@/components/Utils/ReelKeyBoardShortcut.vue'
 import { TIME_IDLE_REELS } from '@/configs'
-import { useIdle } from '@vueuse/core'
-import { useKeenSlider } from 'keen-slider/vue.es'
 import { useReelStore } from '@/store'
 import { IActiveKey } from '@/type'
+import { useIdle } from '@vueuse/core'
+import { useKeenSlider } from 'keen-slider/vue.es'
 import Video from './Video.vue'
-import ReelCap from '@/components/Atoms/Video/ReelCap.vue'
-import ReelAction from '@/components/Atoms/ReelAction.vue'
-import Mute from '@/components/Atoms/Video/Mute.vue'
 
 const reelStore = useReelStore()
 
@@ -22,9 +21,10 @@ const [container, slider] = useKeenSlider({
   vertical: true,
 })
 
-const containvideoRefs = $ref<HTMLDivElement[]>([])
 let observer: IntersectionObserver
-let currentVideoOnScreen = $ref<HTMLVideoElement>()
+let currentVideoOnScreen: HTMLVideoElement
+
+const containvideoRefs = $ref<HTMLDivElement[]>([])
 const { idle } = useIdle(TIME_IDLE_REELS)
 
 let activeKey = reactive<IActiveKey>({
@@ -65,14 +65,6 @@ const kBListener = (e: KeyboardEvent) => {
 }
 
 onMounted(() => {
-  document.addEventListener('keydown', kBListener)
-})
-
-onBeforeUnmount(() => {
-  document.removeEventListener('keydown', kBListener)
-})
-
-onMounted(() => {
   observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -92,9 +84,13 @@ onMounted(() => {
   containvideoRefs.forEach((containVideoEl) => {
     observer.observe(containVideoEl.children[0].children[0])
   })
+
+  document.addEventListener('keydown', kBListener)
 })
 
 onBeforeUnmount(() => {
+  document.removeEventListener('keydown', kBListener)
+
   containvideoRefs.forEach((containVideoEl) => {
     observer.unobserve(containVideoEl.children[0].children[0])
   })
