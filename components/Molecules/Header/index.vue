@@ -19,6 +19,7 @@ import { useAuthStore, useGlobalStore, useSearchStore, useAddStore } from '@/sto
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import TopBarExplore from '@/components/Organisms/Explore/M/TopBar.vue'
 import TopBarReel from '@/components/Organisms/Reel/M/TopBar.vue'
+import { APP_CONFIGS } from '~~/configs'
 
 const globalStore = useGlobalStore()
 const addStore = useAddStore()
@@ -63,7 +64,12 @@ const hiddenHeader = $(
   <div>
     <header
       v-if="!hiddenHeader"
-      class="fixed top-0 left-0 z-10 h-[60px] w-screen border-c4 bg-c1 dark:border-none dark:bg-c19 md:border-b-[1px]"
+      :class="[
+        'fixed top-0 left-0 z-10 h-[60px] w-screen border-c4 bg-c1 backdrop-blur-[5px] dark:border-none dark:bg-c19 md:border-b-[1px]',
+        {
+          'border-none bg-c1/50 backdrop-blur-[5px] dark:bg-c2/50': APP_CONFIGS.HEADER_BLUR,
+        },
+      ]"
     >
       <div
         class="mx-[20px] grid h-full grid-cols-2 md:flex md:justify-between lg:mx-auto lg:grid lg:w-[935px] lg:grid-cols-3"

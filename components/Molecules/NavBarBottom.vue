@@ -6,6 +6,7 @@ import Search from '@/components/Atoms/Nav/Search.vue'
 import SelfAvatar from '@/components/Atoms/Nav/SelfAvatar.vue'
 import { SectionEnum } from '@/constants'
 import { useGlobalStore } from '@/store'
+import { APP_CONFIGS } from '~~/configs'
 
 const globalStore = useGlobalStore()
 const isMobile = $computed(() => globalStore.getIsMobile)
@@ -23,6 +24,9 @@ const handleSelect = (section: SectionEnum) => {
       {
         'border-none bg-c2 [&__svg]:fill-c1 [&__svg]:text-c1': isReelsSelect,
       },
+      {
+        'backdrop-blur-[5px] bg-c1/50 dark:bg-c2/50': APP_CONFIGS.HEADER_BLUR
+      }
     ]"
   >
     <div class="mt-3 flex items-center justify-around">
