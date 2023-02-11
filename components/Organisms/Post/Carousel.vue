@@ -32,7 +32,7 @@ const totalMedia = $computed<number>(() => props.images.concat(props.videos).len
 watch(
   () => props.currentParent,
   (val) => {
-    current.value = val 
+    current.value = val
   }
 )
 

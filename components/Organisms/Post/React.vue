@@ -62,7 +62,7 @@ const goTo = (idx: number) => emit('current-index-carousel', idx)
           v-for="(_i, idx) in mediaArr"
           :key="idx"
           :class="[
-            'h-[6px] w-[6px]  rounded-[50%]  cursor-pointer',
+            'h-[6px] w-[6px]  cursor-pointer  rounded-[50%]',
             currentIdx === idx ? 'bg-c7 dark:bg-c7' : 'bg-c3 dark:bg-c1',
           ]"
           @click="goTo(idx)"

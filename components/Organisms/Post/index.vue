@@ -43,7 +43,7 @@ const { key } = useForceRenderTimer()
             :has-saved="i.is_saved"
             :has-liked="i.has_liked"
             @current-index-carousel="setCurrent($event)"
-            :currentParent ="currentIdx"
+            :currentParent="currentIdx"
           />
           <div class="px-[16px] text-xs md:text-sm">
             <React

@@ -10,18 +10,18 @@ export const timeLine = [
       images: [],
       videos: [
         {
-          id: 3,
+          id: 1,
           src: `/video/KienThien - Turn It Up [Diversity Release].mp4`,
           poster: '',
         },
 
         {
-          id: 1,
+          id: 2,
           src: `/video/North Rebellion - Hold Me Tight.mp4`,
           poster: '',
         },
         {
-          id: 2,
+          id: 3,
           src: `/video/EXTEN - I'm Enough.mp4`,
           poster: '',
         },
@@ -74,6 +74,52 @@ export const timeLine = [
         {
           id: 13,
           src: `/video/cud - Can't Escape (SHX4 & Curdz Remix).mp4`,
+          poster: '',
+        },
+        {
+          id: 14,
+          src: `/video/Dirty Palm - No Stopping Love (Lyrics)-oFAwKSMWSzA-720p-1657457147293.mp4`,
+          poster: '',
+        },
+        {
+          id: 15,
+          src: `/video/Y2Mate.is - KLYDIX - Lunar Fairy-myPNmfYFtRQ-720p-1655963245423.mp4`,
+          poster: '',
+        },
+        {
+          id: 16,
+          src: `/video/Y2Mate.is - Seeb x Emelie Hollow - Safe Zone-1Tr-PfuFdZ4-720p-1656161086002.mp4`,
+          poster: '',
+        },
+        {
+          id: 17,
+          src: `/video/Y2Mate.is - RUQOA - Can't Let You Go-TopuVR3uY2I-720p-1655186938610.mp4`,
+          poster: '',
+        },
+        {
+          id: 18,
+          src: `/video/Y2Mate.is - Alok x Sigala x Ellie Goulding - All By Myself-nr-UpcnFqSg-720p-1660090313515.mp4`,
+          poster: '',
+        },
+        {
+          id: 19,
+          src: `/video/Dirty Palm & Conor Ross - Flowers (ft. Chandler Blasé).mp4`,
+          poster: '',
+        },
+        {
+          id: 20,
+          src: `/video/Jade Key - Superhero.mp4`,
+          poster: '',
+        },
+        {
+          id: 21,
+          src: `/video/KCuber - We Don't Need Words [Diversity Release].mp4`,
+          poster: '',
+        },
+
+        {
+          id: 22,
+          src: `/video/Tatsunoshin - Make You Mine (Official Audio) [Electric Fox].mp4`,
           poster: '',
         },
       ],

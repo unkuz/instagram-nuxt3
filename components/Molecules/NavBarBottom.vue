@@ -22,10 +22,9 @@ const handleSelect = (section: SectionEnum) => {
     :class="[
       'fixed bottom-0 z-10 h-[65px] w-full   bg-c1  dark:bg-c19 md:hidden',
       {
-        'border-none bg-c19 dark:bg-c19 [&__svg]:fill-c1 [&__svg]:text-c1':
-          isReelsSelect,
-        '!backdrop-blur-[5px] bg-c1/50  dark:bg-c19/50': APP_CONFIGS.HEADER_BLUR,
-        '!backdrop-blur-[5px] !bg-c19 dark:!bg-c19': APP_CONFIGS.HEADER_BLUR && isReelsSelect,
+        'border-none bg-c19 dark:bg-c19 [&__svg]:fill-c1 [&__svg]:text-c1': isReelsSelect,
+        'bg-c1/50 !backdrop-blur-[5px]  dark:bg-c19/50': APP_CONFIGS.HEADER_BLUR,
+        '!bg-c19 !backdrop-blur-[5px] dark:!bg-c19': APP_CONFIGS.HEADER_BLUR && isReelsSelect,
       },
     ]"
   >
