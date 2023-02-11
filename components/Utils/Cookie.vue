@@ -50,7 +50,7 @@ onMounted(() => {
         </NuxtLink>
         <Button
           text="OK"
-          class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500"
+          class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
           @click="acceptCookieUse"
         />
       </div>
