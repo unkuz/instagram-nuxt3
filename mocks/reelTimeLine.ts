@@ -51,6 +51,31 @@ export const timeLine = [
           src: `/video/Ryan Coss - On Fire.mp4`,
           poster: '',
         },
+        {
+          id: 9,
+          src: `/video/Crystal Rock x Anastasia Rose x Lucky Twice - Lucky.mp4`,
+          poster: '/video/poster/hehe.png',
+        },
+        {
+          id: 10,
+          src: `/video/Gotez - Talking Head.mp4`,
+          poster: '',
+        },
+        {
+          id: 11,
+          src: `/video/RUQOA & Saloon - Neverland.mp4`,
+          poster: '',
+        },
+        {
+          id: 12,
+          src: `/video/Jade Key - Superhero.mp4`,
+          poster: '',
+        },
+        {
+          id: 13,
+          src: `/video/cud - Can't Escape (SHX4 & Curdz Remix).mp4`,
+          poster: '',
+        },
       ],
     },
     user: {
@@ -67,31 +92,6 @@ export const timeLine = [
     has_liked: false,
     caption_text: `⭐️ Follow us on Spotify:
     ➥ https://divergemusic.group/SpotifyPla...
-    
-    🎧 Stream/Download:
-    ➥ https://release.divr.moe/TurnItUp
-    
-    🎵 Genre: Future Bounce
-    
-    KienThien
-    • https://soundcloud.com/kienthien
-    • https://open.spotify.com/artist/3DdiH...
-    • https://www.facebook.com/kthienmusic
-    
-    💽 Label: Diversity
-    
-    
-    
-    Artwork 🎨 by Liang-Xing
-    • https://deviantart.com/liang-xing
-    • https://www.facebook.com/profile.php?...
-    • https://patreon.com/liangxing
-    • https://liang-xing.tumblr.com/
-    • https://drawcrowd.com/liangxing
-    • https://pixiv.me/liangxing719
-    • https://twitter.com/liangxing719
-    
-    
     
     ⭐️ Diversity
     • http://label.divergemusic.group/Diver...
