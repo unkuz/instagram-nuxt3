@@ -39,7 +39,7 @@ onBeforeUnmount(() => clearTimeout(timer))
 <template>
   <ClientOnly>
     <Vue3Lottie
-      v-if="showSlash && largeMd"
+      v-if="showSlash"
       :animationData="mapData()"
       class="lotties pointer-events-none fixed inset-0 z-50 !h-screen !w-screen"
       :loop="false"
