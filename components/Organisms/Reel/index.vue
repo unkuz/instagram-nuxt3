@@ -5,7 +5,7 @@ import ReelKeyBoardShortcut from '@/components/Utils/ReelKeyBoardShortcut.vue'
 import { APP_CONFIGS } from '@/configs'
 import { useReelStore } from '@/store'
 import { IActiveKey } from '@/type'
-import { useIdle } from '@vueuse/core'
+import { useIdle, useTemplateRefsList } from '@vueuse/core'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import Video from './Video.vue'
 
@@ -24,7 +24,7 @@ const [container, slider] = useKeenSlider({
 let observer: IntersectionObserver
 let currentVideoOnScreen: HTMLVideoElement
 
-const containvideoRefs = $ref<HTMLDivElement[]>([])
+const containvideoRefs = $(useTemplateRefsList<HTMLDivElement>())
 const { idle } = useIdle(APP_CONFIGS.TIME_IDLE_REELS)
 
 let activeKey = reactive<IActiveKey>({
