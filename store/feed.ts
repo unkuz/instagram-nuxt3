@@ -6,7 +6,7 @@ import { useSlashStore } from '@/store'
 
 type TState = IStateStore<ITimeLine[]>
 
-export const useFeedStore = defineStore('timeline', {
+export const useFeedStore = defineStore('feed', {
   state: (): TState => ({
     data: [...timeLine],
     hasErr: false,
