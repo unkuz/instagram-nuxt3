@@ -9,6 +9,7 @@ import Avatar from '@/components/Atoms/Avatar.vue'
 import { SELECT_TYPE } from '@/constants/screens/account'
 import { useAuthStore, useProfileStore } from '@/store'
 import { SizeAvatarEnum } from '@/type'
+import TagName from '@/components/Atoms/TagName.vue'
 
 const profileStore = useProfileStore()
 const authStore = useAuthStore()
@@ -33,10 +34,8 @@ const coverImg = computed(() => authStore.data.coverImg)
       />
     </div>
     <div>
-      <div
-        class="mt-[50px] flex flex-col items-center duration-500 md:ml-[180px] md:mt-[5px] md:block"
-      >
-        <div>Cuzknothz</div>
+      <div class="mt-[50px] flex flex-col items-center md:ml-[180px] md:mt-[5px] md:block">
+        <TagName :name="'Cuzknothz'" />
         <div class="flex space-x-[20px]">
           <span>96 posts</span
           ><span class="cursor-pointer" @click="profileStore.setIsShowFollowing(true)"
@@ -48,8 +47,7 @@ const coverImg = computed(() => authStore.data.coverImg)
       </div>
     </div>
     <div class="mt-[20px] flex flex-col items-center justify-center">
-      <div>fhdskjafkjsdf</div>
-      <div>🍕🤣🤣🤣😂😂</div>
+      <div>djfklsdjfkldjfklsdjf</div>
       <div></div>
     </div>
     <div class="mt-[20px] flex justify-around">
@@ -71,7 +69,7 @@ const coverImg = computed(() => authStore.data.coverImg)
       <div class="overflow-hidden">
         <nuxt-img
           src="/personal/284244344_5311122635605193_5864440318105391567_n.jpg"
-          class="aspect-square w-full cursor-pointer overflow-hidden object-cover duration-500 hover:scale-110"
+          class="aspect-square w-full cursor-pointer overflow-hidden object-cover hover:scale-110"
         />
       </div>
     </div>
