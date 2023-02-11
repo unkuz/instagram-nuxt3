@@ -34,7 +34,7 @@ onMounted(() => {
   <div
     ref="containerRef"
     :class="[
-      'fixed -bottom-[200px] left-[20px] right-[20px] rounded-[0.5rem] bg-c1 p-[40px_24px_20px_24px] shadow-md   dark:bg-c2 dark:text-c1  md:left-[40px] md:right-[40px]  md:w-[290px]',
+      'fixed -bottom-[200px] left-[20px] right-[20px] rounded-[0.5rem] bg-c1/50 p-[40px_24px_20px_24px] shadow-md  backdrop-blur-[5px] dark:bg-c2/50 dark:text-c1  md:left-[40px] md:right-[40px]  md:w-[290px]',
     ]"
   >
     <CookieIcon_ class="absolute -top-[23px] right-1/2 translate-x-1/2" />
