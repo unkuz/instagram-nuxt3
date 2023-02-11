@@ -6,12 +6,12 @@ const unlikeRef = $ref<HTMLDivElement>()
 let tl = gsap.timeline({})
 
 onMounted(() => {
-  tl.to(unlikeRef, {
+  tl.to(unlikeRef!, {
     scale: 4,
     duration: 0.5,
     ease: Elastic.easeOut.config(1, 0.3),
   })
-  tl.to(unlikeRef, {
+  tl.to(unlikeRef!, {
     display: 'none',
     duration: 0,
   })
