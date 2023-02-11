@@ -3590,14 +3590,6 @@
     local-pkg "^0.4.3"
     vue-demi "*"
 
-"@vueuse/router@^9.12.0":
-  version "9.12.0"
-  resolved "https://registry.yarnpkg.com/@vueuse/router/-/router-9.12.0.tgz#985759be6fb4a55609942b300e62c4023a47612e"
-  integrity sha512-I3TaWrsxEdANrgJjNEeRTbOMGS+uYjB5zHoyayhFgk1SY1ytDw51tgXr6n4n9fVqglorvhKdX5rFDvBAbeQ+Xw==
-  dependencies:
-    "@vueuse/shared" "9.12.0"
-    vue-demi "*"
-
 "@vueuse/shared@9.12.0":
   version "9.12.0"
   resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-9.12.0.tgz#e6597da80084cba8fc3d6545f4c2fa9817b80428"
