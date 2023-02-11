@@ -22,8 +22,6 @@ export const useGlobalStore = defineStore('global', {
   }),
   getters: {
     getIsMobile: (state) => state.clientWidth < MOBILE_BREAK_POINT,
-    getIsMobileAndSelectNewPost: (state) =>
-      state.clientWidth < MOBILE_BREAK_POINT && state.section === SectionEnum.NEW_POST,
     getIsShowHeader: (state) => {
       return state.scroll === ScrollTypeEnum.UP
     },
