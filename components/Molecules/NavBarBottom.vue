@@ -25,8 +25,8 @@ const handleSelect = (section: SectionEnum) => {
         'border-none bg-c2 [&__svg]:fill-c1 [&__svg]:text-c1': isReelsSelect,
       },
       {
-        'backdrop-blur-[5px] bg-c1/50 dark:bg-c2/50': APP_CONFIGS.HEADER_BLUR
-      }
+        'bg-c1/50 backdrop-blur-[5px] dark:bg-c2/50': APP_CONFIGS.HEADER_BLUR,
+      },
     ]"
   >
     <div class="mt-3 flex items-center justify-around">
