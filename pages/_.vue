@@ -5,13 +5,13 @@ import Stories from '@/components/Molecules/Stories/Stories.vue'
 import Post from '@/components/Organisms/Post/index.vue'
 import { useWindowResizeCallback } from '@/composables'
 import { IStory, ITimeLine } from '@/models'
-import { useStoriesStore, useSuggestionStore, useTimeLineStore } from '@/store'
+import { useStoriesStore, useSuggestionStore, useFeedStore } from '@/store'
 
 const rightRef = $ref<HTMLElement | null>(null)
 const leftRef = $ref<HTMLElement | null>(null)
 
 const storiesStore = useStoriesStore()
-const timeLineStore = useTimeLineStore()
+const timeLineStore = useFeedStore()
 const suggestionStore = useSuggestionStore()
 
 const { data: _stories, pending: pendingStories } = await useLazyFetch<IStory[]>(

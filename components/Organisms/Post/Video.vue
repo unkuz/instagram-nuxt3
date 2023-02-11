@@ -4,7 +4,7 @@ import Loading from '@/components/Atoms/Video/Loading.vue'
 import PauseIcon_ from '@/components/Atoms/Video/Pause.vue'
 import ProgressVideoBar from '@/components/Atoms/Video/ProgressVideoBar.vue'
 import { useDoubleClick } from '@/composables'
-import { useTimeLineStore } from '@/store'
+import { useFeedStore } from '@/store'
 import { useMediaControls } from '@vueuse/core'
 
 interface IProps {
@@ -13,7 +13,7 @@ interface IProps {
 }
 
 const props = defineProps<IProps>()
-const timelineStore = useTimeLineStore()
+const timelineStore = useFeedStore()
 const videoRef = ref<HTMLVideoElement | null>(null)
 let containerRef = $ref<HTMLVideoElement | null>(null)
 

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useDoubleClick } from '@/composables'
-import { useTimeLineStore } from '@/store'
+import { useFeedStore } from '@/store'
 
 interface IProps {
   src: string
@@ -9,7 +9,7 @@ interface IProps {
 
 const props = defineProps<IProps>()
 
-const timelineStore = useTimeLineStore()
+const timelineStore = useFeedStore()
 const imageRef = ref<HTMLImageElement | null>(null)
 
 const toggleLike = () => {

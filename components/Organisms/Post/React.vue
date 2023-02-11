@@ -5,7 +5,8 @@ import ShareIcon_ from '@/assets/svg/share_icon.svg'
 import ViewPostIcon_ from '@/assets/svg/view_post_icon.svg'
 import UnlikeIcon from '@/components/Atoms/UnlikeIcon.vue'
 import { stopOtherVideoPlaying } from '@/helpers'
-import { useSlashStore, useTimeLineStore } from '@/store'
+import { useSlashStore, useFeedStore } from '@/store'
+import { useTailwindBreakPoint } from '@/composables'
 
 interface IProps {
   hasLiked: boolean
@@ -15,14 +16,21 @@ interface IProps {
   hasSaved: boolean
 }
 
-defineProps<IProps>()
+const props = defineProps<IProps>()
 
-const timelineStore = useTimeLineStore()
+const timelineStore = useFeedStore()
 const slashStore = useSlashStore()
+
+const { largeSm } = $(useTailwindBreakPoint())
 
 const likeUnLike = (idPost: string) => {
   timelineStore.setToggleLike(idPost)
 }
+
+const showDot = $computed(() => {
+  const { mediaArr } = props
+  return largeSm || (!largeSm && mediaArr.length < 10)
+})
 </script>
 
 <template>
@@ -44,15 +52,16 @@ const likeUnLike = (idPost: string) => {
       </NuxtLink>
       <ShareIcon_ class="fill-c2 dark:fill-c1" />
     </div>
-    <div v-if="mediaArr.length > 1" class="flex items-center justify-center space-x-[4px]">
-      <div
-        v-for="(_i, idx) in mediaArr"
-        :key="idx"
-        :class="[
-          'h-[6px] w-[6px]  rounded-[50%]  ',
-          currentIdx === idx ? 'bg-c7 dark:bg-c7' : 'bg-c3 dark:bg-c1',
-        ]"
-      />
+    <div class="flex items-center justify-center space-x-[4px]">
+      <template v-if="showDot">
+        <div
+          v-for="(_i, idx) in mediaArr"
+          :key="idx"
+          :class="[
+            'h-[6px] w-[6px]  rounded-[50%]  ',
+            currentIdx === idx ? 'bg-c7 dark:bg-c7' : 'bg-c3 dark:bg-c1',
+          ]"
+      /></template>
     </div>
     <div class="flex h-full w-full items-center justify-end">
       <SaveIcon_

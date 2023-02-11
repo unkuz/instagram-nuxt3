@@ -3,7 +3,7 @@ import { gsap } from 'gsap'
 import ExpandIcon_ from '@/assets/svg/full_screen.svg'
 import PlayIcon_ from '@/assets/svg/play_icon.svg'
 import { useDoubleClick, usePercentVideo } from '@/composables'
-import { useTimeLineStore } from '@/store'
+import { useFeedStore } from '@/store'
 import { stopOtherVideoPlaying } from '@/helpers'
 import LoadingIcon_ from '@/assets/svg/Dual Ring-1s-200px.svg'
 
@@ -13,7 +13,7 @@ interface IProps {
 }
 
 const props = defineProps<IProps>()
-const timelineStore = useTimeLineStore()
+const timelineStore = useFeedStore()
 const videoRef = ref<HTMLVideoElement | null>(null)
 const containerRef = ref<HTMLVideoElement | null>(null)
 const progressBarRef = ref<HTMLDivElement>()

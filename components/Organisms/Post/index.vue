@@ -8,13 +8,13 @@ import Head from './Head.vue'
 import IndividualComment from './IndividualComment.vue'
 import LikeCommentCount from './LikeCommentCount.vue'
 import React from './React.vue'
-import { useTimeLineStore } from '@/store'
+import { useFeedStore } from '@/store'
 import { IPending } from '@/type'
 import PostSkl from '@/components/Skeleton/Post.vue'
 
 defineProps<IPending>()
 
-const timeLineStore = useTimeLineStore()
+const timeLineStore = useFeedStore()
 const timeline = $computed(() => timeLineStore.data)
 const commentRef = $ref<HTMLDivElement | null>(null)
 let currentReplyCommentId = ref('')
