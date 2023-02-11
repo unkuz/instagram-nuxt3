@@ -26,7 +26,7 @@ onClickOutside(searchRef, () => {
 <template>
   <div
     ref="searchRef"
-    class="relative flex h-[36px] w-[268px] cursor-text items-center rounded-md bg-c4 px-[16px] dark:bg-c23"
+    class="relative flex h-[36px] w-[268px] cursor-text items-center rounded-md bg-c4/50 px-[16px] dark:bg-c23/50 backdrop-blur-[5px]"
     @click="searchStore.setIsFocus(true)"
   >
     <SearchIcon v-show="!isSearchActive" class="[&>path]:stroke-black [&>path]:dark:stroke-white" />
