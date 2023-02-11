@@ -4,9 +4,9 @@ import SaveIcon_ from '@/assets/svg/save_icon.svg'
 import ShareIcon_ from '@/assets/svg/share_icon.svg'
 import ViewPostIcon_ from '@/assets/svg/view_post_icon.svg'
 import UnlikeIcon from '@/components/Atoms/UnlikeIcon.vue'
-import { stopOtherVideoPlaying } from '@/helpers'
-import { useSlashStore, useFeedStore } from '@/store'
 import { useTailwindBreakPoint } from '@/composables'
+import { stopOtherVideoPlaying } from '@/helpers'
+import { useFeedStore, useSlashStore } from '@/store'
 
 interface IProps {
   hasLiked: boolean
@@ -18,21 +18,13 @@ interface IProps {
 
 const emit = defineEmits(['current-index-carousel'])
 
-const props = defineProps<IProps>()
+defineProps<IProps>()
 
 const timelineStore = useFeedStore()
-const slashStore = useSlashStore()
-
-const { largeSm } = $(useTailwindBreakPoint())
 
 const likeUnLike = (idPost: string) => {
   timelineStore.setToggleLike(idPost)
 }
-
-const showDot = $computed(() => {
-  const { mediaArr } = props
-  return largeSm || (!largeSm && mediaArr.length < 10)
-})
 
 const goTo = (idx: number) => emit('current-index-carousel', idx)
 </script>
@@ -57,16 +49,18 @@ const goTo = (idx: number) => emit('current-index-carousel', idx)
       <ShareIcon_ class="fill-c2 dark:fill-c1" />
     </div>
     <div class="flex items-center justify-center space-x-[4px]">
-      <template v-if="showDot">
-        <div
-          v-for="(_i, idx) in mediaArr"
-          :key="idx"
-          :class="[
-            'h-[6px] w-[6px]  cursor-pointer  rounded-[50%]',
-            currentIdx === idx ? 'bg-c7 dark:bg-c7' : 'bg-c3 dark:bg-c1',
-          ]"
-          @click="goTo(idx)"
-      /></template>
+      <div
+        v-for="(_i, idx) in mediaArr.slice(0, 10)"
+        :key="idx"
+        :class="[
+          'h-[6px] w-[6px]  cursor-pointer  rounded-[50%]',
+          currentIdx === idx ? 'bg-c7 dark:bg-c7' : 'bg-c3 dark:bg-c1',
+        ]"
+        @click="goTo(idx)"
+      />
+      <div v-if="mediaArr.length > 10" class="text-[.8rem] font-[600]">
+        {{ `+${mediaArr.length - 10}` }}
+      </div>
     </div>
     <div class="flex h-full w-full items-center justify-end">
       <SaveIcon_

@@ -151,7 +151,7 @@ export const timeLine = [
     
     ✏️ For business inquiries and other issues please contact: hello@divergemusic.group`,
     is_seen: true,
-    tags: ['Diversity', 'KienThien', 'Turn It Up'],
+    tags: ['Diversity'],
     is_saved: false,
   },
 ]
