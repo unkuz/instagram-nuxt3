@@ -117,6 +117,51 @@ export const timeLine = [
           src: `/video/Tatsunoshin - Make You Mine (Official Audio) [Electric Fox].mp4`,
           poster: '',
         },
+        {
+          id: 23,
+          src: `/video/KienThien - See It Through (feat. TuanNguyen).mp4`,
+          poster: '',
+        },
+        {
+          id: 24,
+          src: `/video/Jade Key - Saviour (VIP) (feat. ALYE).mp4`,
+          poster: '',
+        },
+        {
+          id: 25,
+          src: `/video/Voldex - Love You Anyway-UJn3vP5xzW8-720p-1656735840743.mp4`,
+          poster: '',
+        },
+        {
+          id: 26,
+          src: `/video/Atef - Synergy.mp4`,
+          poster: '',
+        },
+        {
+          id: 27,
+          src: `/video/BÔN - I Can Show You.mp4`,
+          poster: '',
+        },
+        {
+          id: 28,
+          src: `/video/Gotez - Talking Head (Official Lyric Video).mp4`,
+          poster: '',
+        },
+        {
+          id: 29,
+          src: `/video/Jade Key - Home (feat. Enya Angel) [Diversity Release].mp4`,
+          poster: '',
+        },
+        {
+          id: 30,
+          src: `/video/KLYDIX & RuYA  - 초월ㆍTranscend.mp4`,
+          poster: '',
+        },
+        {
+          id: 31,
+          src: `/video/Marc Benjamin, Galwaro, Julia Viktoria - Hard To Forget.mp4`,
+          poster: '',
+        },
       ],
     },
     user: {
