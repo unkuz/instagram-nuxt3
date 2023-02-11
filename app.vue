@@ -22,10 +22,10 @@ const { darkMode: isDarkMode } = $(storeToRefs(useThemeStore()))
 const { isShowPrelude } = usePrelude()
 
 registerSeviceWorkerPWA()
-useScrollBarTheme()
 useScroll()
 useResizeWindow()
 useWatchRouteSetSection()
+useScrollBarTheme()
 
 useHead({
   meta: [{ name: 'theme-color', content: isDarkMode ? '#121212' : '#fff' }],

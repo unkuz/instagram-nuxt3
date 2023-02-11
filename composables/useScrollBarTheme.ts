@@ -1,48 +1,24 @@
-import { useWatchWithMounted } from './useWatchWithMounted'
 import { useThemeStore } from '@/store'
+import { useStyleTag } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 
 export const useScrollBarTheme = () => {
   const { darkMode } = $(storeToRefs(useThemeStore()))
 
-  const styleCss = computed(() => {
-    return `
-::-webkit-scrollbar-track {
-  background: #121212;
-}
-:root {
-  --scrollbar-track: #121212 !important;
-}
-`
-  })
-
-  const checkIsCurrentHasStyle = (headTag: HTMLHeadElement) => {
-    let result = false
-    headTag.childNodes.forEach(({ localName, attributes }: any) => {
-      if (localName === 'style' && attributes[0]?.name === '__cuzknothz') {
-        return (result = true)
+  const { load, unload } = useStyleTag(`
+      ::-webkit-scrollbar-track {
+        background: #121212;
       }
-      result = false
-    })
-    return result
-  }
+      :root {
+        --scrollbar-track: #121212 !important;
+      }
+      `)
 
-  const makeStyle = () => {
-    const headTag = document.getElementsByTagName('head')[0]
+  watchEffect(() => {
     if (darkMode) {
-      const el = document.createElement('style')
-      el.setAttribute('__cuzknothz', '__cuzknothz')
-      el.appendChild(document.createTextNode(styleCss.value))
-      headTag.appendChild(el)
-    } else if (checkIsCurrentHasStyle(headTag)) {
-      headTag.childNodes.forEach((i: any) => {
-        const { localName, attributes } = i
-        if (localName === 'style' && attributes[0]?.name === '__cuzknothz') {
-          return headTag.removeChild(i)
-        }
-      })
+      load()
+    } else {
+      unload()
     }
-  }
-
-  useWatchWithMounted(() => darkMode, makeStyle)
+  })
 }
