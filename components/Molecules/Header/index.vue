@@ -14,9 +14,10 @@ import Search from '@/components/Molecules/Header/Search.vue'
 import TopBarExplore from '@/components/Organisms/Explore/M/TopBar.vue'
 import TopBarReel from '@/components/Organisms/Reel/M/TopBar.vue'
 import Extension from '@/components/Utils/Extension.vue'
-import { useClickOutSide, useTailwindBreakPoint } from '@/composables'
+import { useTailwindBreakPoint } from '@/composables'
 import { SectionEnum } from '@/constants/section'
 import { useAddStore, useAuthStore, useGlobalStore, useSearchStore } from '@/store'
+import { onClickOutside } from '@vueuse/core'
 import { APP_CONFIGS } from '~~/configs'
 
 const globalStore = useGlobalStore()
@@ -37,7 +38,7 @@ let showExtension = $ref(false)
 
 const toggleShowExtension = () => (showExtension = !showExtension)
 
-useClickOutSide(extensionRef, () => (showExtension = false))
+onClickOutside(extensionRef, () => (showExtension = false))
 
 const handleSelect = (section: SectionEnum) => globalStore.setSection(section)
 

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useLockScroll, useModalPosition } from '@/composables'
 import { useProfileStore } from '@/store'
+import { onClickOutside } from '@vueuse/core'
 
 const profileStore = useProfileStore()
 const boxRef = ref<HTMLDivElement>()
@@ -9,7 +10,7 @@ const { x, y } = useModalPosition()
 
 useLockScroll()
 
-useClickOutSide(boxRef, () => {
+onClickOutside(boxRef, () => {
   profileStore.setIsShowFollowing(false)
 })
 

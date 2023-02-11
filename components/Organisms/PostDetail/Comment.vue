@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import Emoji from '@/components/Utils/Emoji.vue'
-import { useClickOutSide } from '@/composables'
 import { useAuthStore, usePostDetailStore } from '@/store'
+import { onClickOutside } from '@vueuse/core'
 
 interface IProps {
   id: string
@@ -18,7 +18,7 @@ const authStore = useAuthStore()
 
 const emojiAdd = (value: string) => (commentValueText += value)
 
-useClickOutSide(emojiRef, () => (isShowEmoji = false))
+onClickOutside(emojiRef, () => (isShowEmoji = false))
 
 const toggleShowEmoji = () => (isShowEmoji = !isShowEmoji)
 

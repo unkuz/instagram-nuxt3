@@ -1,8 +1,9 @@
 <script lang="ts" setup>
 import BackDrop from '@/components/Utils/BackDrop.vue'
-import { useClickOutSide, useLockScroll } from '@/composables'
+import { useLockScroll } from '@/composables'
 import { SectionEnum } from '@/constants'
 import { useAddStore, useGlobalStore, usePostStore } from '@/store'
+import { onClickOutside } from '@vueuse/core'
 
 const postStore = usePostStore()
 const addStore = useAddStore()
@@ -50,7 +51,7 @@ onBeforeUnmount(() => {
   postStore.clearFiles()
 })
 
-useClickOutSide(boxRef, () => {
+onClickOutside(boxRef, () => {
   globalStore.setSection(SectionEnum.HOME)
 })
 

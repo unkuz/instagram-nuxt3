@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import SearchIcon from '@/assets/svg/search_icon_2367fdg.svg'
-import { useClickOutSide } from '@/composables'
 import { useSearchStore } from '@/store'
+import { onClickOutside } from '@vueuse/core'
 
 const searchStore = useSearchStore()
 const searchRef = ref<HTMLInputElement>()
@@ -18,7 +18,7 @@ watch(
   }
 )
 
-useClickOutSide(searchRef, () => {
+onClickOutside(searchRef, () => {
   searchStore.setIsFocus(false)
 })
 </script>

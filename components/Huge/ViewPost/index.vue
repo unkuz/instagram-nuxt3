@@ -2,6 +2,7 @@
 import BackDrop from '@/components/Utils/BackDrop.vue'
 import { useWindowResizeCallback } from '@/composables'
 import { useViewPostStore } from '@/store'
+import { onClickOutside } from '@vueuse/core'
 
 const viewPostStore = useViewPostStore()
 
@@ -10,7 +11,7 @@ const commentHeadingRef = ref<HTMLDivElement>()
 const commentRef = ref<HTMLDivElement>()
 const commentContainerRef = ref<HTMLDivElement>()
 
-useClickOutSide(viewPostRef, () => {
+onClickOutside(viewPostRef, () => {
   viewPostStore.setIsShow(false)
 })
 

@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import Emoji from '@/components/Utils/Emoji.vue'
-import { useClickOutSide } from '@/composables'
 import { useAuthStore, useFeedStore } from '@/store'
-import { useTextareaAutosize } from '@vueuse/core'
+import { onClickOutside, useTextareaAutosize } from '@vueuse/core'
 
 interface IProps {
   id: string
@@ -34,7 +33,7 @@ watch(
 
 const emojiAdd = (value: string) => (input.value += value)
 
-useClickOutSide(emojiRef, () => (isShowEmoji = false))
+onClickOutside(emojiRef, () => (isShowEmoji = false))
 
 const toggleShowEmoji = () => (isShowEmoji = !isShowEmoji)
 

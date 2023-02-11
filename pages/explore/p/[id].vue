@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import BackDrop from '@/components/Utils/BackDrop.vue'
 import { useWindowResizeCallback, useLockScroll } from '@/composables'
+import { onClickOutside } from '@vueuse/core'
 
 const viewPostRef = $ref<HTMLDivElement>()
 const commentHeadingRef = $ref<HTMLDivElement>()
@@ -10,7 +11,7 @@ const router = useRouter()
 
 useLockScroll()
 
-useClickOutSide(viewPostRef, () => {
+onClickOutside(viewPostRef, () => {
   router.back()
 })
 const calcHeightComment = () => {

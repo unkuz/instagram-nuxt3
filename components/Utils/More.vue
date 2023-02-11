@@ -1,9 +1,10 @@
 <script lang="ts" setup>
+import Avatar from '@/components/Atoms/Avatar.vue'
+import { useLockScroll } from '@/composables'
+import { useMoreStore } from '@/store'
+import { onClickOutside } from '@vueuse/core'
 import { gsap } from 'gsap'
 import BackDrop from './BackDrop.vue'
-import { useClickOutSide, useLockScroll } from '@/composables'
-import { useMoreStore } from '@/store'
-import Avatar from '@/components/Atoms/Avatar.vue'
 
 const options = [
   { name: 'Block' },
@@ -24,7 +25,7 @@ onMounted(() => {
   })
 })
 
-useClickOutSide(moreRef, () => {
+onClickOutside(moreRef, () => {
   moreStore.setHidden()
 })
 </script>

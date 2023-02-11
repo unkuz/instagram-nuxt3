@@ -6,7 +6,8 @@ import PlayIcon_ from '@/assets/svg/play_icon.svg'
 import PlayIcon__ from '@/assets/svg/play_original_icon.svg'
 import UnMutedIcon_ from '@/assets/svg/un_muted_icon.svg'
 import BackDrop from '@/components/Utils/BackDrop.vue'
-import { useClickOutSide, useLockScroll } from '@/composables'
+import { useLockScroll } from '@/composables'
+import { onClickOutside } from '@vueuse/core'
 
 const router = useRouter()
 const barRef = $ref<HTMLDivElement>()
@@ -19,7 +20,7 @@ let isVideoMuted = $ref(true)
 
 useLockScroll()
 
-useClickOutSide(mediaContainerRef, () => {
+onClickOutside(mediaContainerRef, () => {
   router.back()
 })
 

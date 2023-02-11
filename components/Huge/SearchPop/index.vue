@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import Arrow from '@/components/Utils/Arrow.vue'
-import { useClickOutSide } from '@/composables'
+import { onClickOutside } from '@vueuse/core'
 
 const searchResultRef = ref<HTMLDivElement>()
 let isShow = $ref(true)
 
-useClickOutSide(searchResultRef, () => {
+onClickOutside(searchResultRef, () => {
   isShow = false
 })
 </script>

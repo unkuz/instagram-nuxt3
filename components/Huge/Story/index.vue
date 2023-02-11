@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import BackDrop from '@/components/Utils/BackDrop.vue'
-import { useClickOutSide } from '@/composables'
 import { useStoryStore } from '@/store'
+import { onClickOutside } from '@vueuse/core'
 
 const storyStore = useStoryStore()
 const barRef = ref<HTMLDivElement>()
@@ -12,7 +12,7 @@ const mediaContainerRef = ref<HTMLDivElement>()
 let isVideoPlay = $ref(false)
 let isVideoMuted = $ref(true)
 
-useClickOutSide(mediaContainerRef, () => {
+onClickOutside(mediaContainerRef, () => {
   storyStore.setIsShowStory(false)
 })
 

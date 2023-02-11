@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import ProfileIcon_ from '@/assets/svg/profile.svg'
 import Arrow from '@/components/Utils/Arrow.vue'
-import { useClickOutSide } from '@/composables'
 import { SectionEnum } from '@/constants'
 import { useGlobalStore } from '@/store'
+import { onClickOutside } from '@vueuse/core'
 
 const globalStore = useGlobalStore()
 const accountPopRef = ref<HTMLDivElement>()
 
-useClickOutSide(accountPopRef, () => {})
+onClickOutside(accountPopRef, () => {})
 
 const handleSelect = (section: SectionEnum) => {
   globalStore.setSection(section)
