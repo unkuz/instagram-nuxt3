@@ -2,6 +2,7 @@
 import { useTailwindBreakPoint } from '@/composables'
 import { APP_CONFIGS } from '@/configs'
 import HeartFly from '@/lotties/heart-fly.lotties.json'
+import love from '@/lotties/love.lotties.json'
 import Luv from '@/lotties/luv.lotties.json'
 import { useSlashStore } from '@/store'
 
@@ -14,14 +15,12 @@ const animation = $computed(() => slashStore.animation)
 
 let timer: NodeJS.Timer
 const mapData = () => {
-  type TData = {
-    [key: string]: number | string | any
-  }
-  const data: TData = {
+  const data = {
     luv: Luv,
     'heart-fly': HeartFly,
+    love: love,
   }
-  return data[`${animation}`]
+  return data[animation as keyof typeof data]
 }
 
 watchEffect(() => {

@@ -29,7 +29,7 @@ export const useFeedStore = defineStore('timeline', {
             slashStore.setHideSlash()
           } else {
             i.has_liked = true
-            slashStore.setShowAnimation('luv')
+            slashStore.setShowAnimation('love')
           }
 
           i.like_count = i.has_liked ? i.like_count + 1 : i.like_count - 1
