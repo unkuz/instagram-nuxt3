@@ -25,7 +25,7 @@ const handleSelect = (section: SectionEnum) => {
         'border-none bg-c2 [&__svg]:fill-c1 [&__svg]:text-c1': isReelsSelect,
       },
       {
-        'bg-c1/50 backdrop-blur-[5px] dark:bg-c2/50': APP_CONFIGS.HEADER_BLUR,
+        'bg-c1/50 backdrop-blur-[5px] dark:bg-c19/50': APP_CONFIGS.HEADER_BLUR,
       },
     ]"
   >
