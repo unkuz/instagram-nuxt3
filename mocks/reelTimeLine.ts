@@ -25,6 +25,32 @@ export const timeLine = [
           src: `/video/EXTEN - I'm Enough.mp4`,
           poster: '',
         },
+
+        {
+          id: 4,
+          src: `/video/Aleficent & MØTHRA - Alive.mp4`,
+          poster: '',
+        },
+        {
+          id: 5,
+          src: `/video/Dirty Palm & Conor Ross - Flowers (ft. Chandler Blasé).mp4`,
+          poster: '',
+        },
+        {
+          id: 6,
+          src: `/video/Y2Mate.is - SHX4 & KienThien - With You-9tNL30DVbaU-720p-1658438488286.mp4`,
+          poster: '',
+        },
+        {
+          id: 7,
+          src: `/video/Y2Mate.is - KienThien & Allie Coss - Be With You-ZFqv3qbYLiE-720p-1654390315468.mp4`,
+          poster: '',
+        },
+        {
+          id: 8,
+          src: `/video/Ryan Coss - On Fire.mp4`,
+          poster: '',
+        },
       ],
     },
     user: {
