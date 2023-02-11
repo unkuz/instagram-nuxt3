@@ -10,4 +10,5 @@ export const APP_CONFIGS = Object.freeze({
   TIME_IDLE_REELS: 5 * 60 * 1000, // 5 minutes
   BACK_DROP_BLUR: true,
   HEADER_BLUR: true,
+  MAX_DOT_CAROUSEL: 9,
 })

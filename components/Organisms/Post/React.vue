@@ -7,6 +7,7 @@ import UnlikeIcon from '@/components/Atoms/UnlikeIcon.vue'
 import { useTailwindBreakPoint } from '@/composables'
 import { stopOtherVideoPlaying } from '@/helpers'
 import { useFeedStore, useSlashStore } from '@/store'
+import { APP_CONFIGS } from '@/configs'
 
 interface IProps {
   hasLiked: boolean
@@ -50,7 +51,7 @@ const goTo = (idx: number) => emit('current-index-carousel', idx)
     </div>
     <div class="flex items-center justify-center space-x-[4px]">
       <div
-        v-for="(_i, idx) in mediaArr.slice(0, 10)"
+        v-for="(_i, idx) in mediaArr.slice(0, APP_CONFIGS.MAX_DOT_CAROUSEL)"
         :key="idx"
         :class="[
           'h-[6px] w-[6px]  cursor-pointer  rounded-[50%]',
@@ -58,8 +59,8 @@ const goTo = (idx: number) => emit('current-index-carousel', idx)
         ]"
         @click="goTo(idx)"
       />
-      <div v-if="mediaArr.length > 10" class="text-[.8rem] font-[600]">
-        {{ `+${mediaArr.length - 10}` }}
+      <div v-if="mediaArr.length > APP_CONFIGS.MAX_DOT_CAROUSEL" class="text-[.8rem] font-[600]">
+        {{ `+${mediaArr.length - APP_CONFIGS.MAX_DOT_CAROUSEL}` }}
       </div>
     </div>
     <div class="flex h-full w-full items-center justify-end">
