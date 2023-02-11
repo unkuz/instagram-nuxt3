@@ -1,44 +1,5 @@
 export const timeLine = [
   {
-    created_at: '2023-02-11 10:20',
-    id: '32er',
-    location: {
-      short_name: 'Copenhagen',
-    },
-    comments: [],
-    carousel_media: {
-      images: [
-        {
-          id: 1,
-          src: `/video/296156517_439234241550335_9075911159131574339_n.jpg`,
-        },
-      ],
-      videos: [],
-    },
-    user: {
-      id: 'olivur.morris',
-      username: 'olivur.morris',
-      full_name: 'olivur.morris',
-      profile_pic_url: '/image/326386081_877905256589336_3572849433668934905_n.jpg',
-      friendship_status: {
-        following: true,
-        outgoing_request: false,
-      },
-    },
-    like_count: 2700,
-    has_liked: false,
-    caption_text: `Feels good to be home! 🔥
-    
-        After a few days of relaxation I hit the ground running this morning with work and spent my lunchtime editing my photos from my trip! 👊🏻
-        
-        I've got a lot of branded content to work on over the next couple of days and even more emails to respond to! 🙌🏻
-        
-        How's everyone else's week going? ✌🏻`,
-    is_seen: true,
-    tags: ['thursdaymotivation', 'ultrawide', 'setuptour', 'deskdecor', 'devlife'],
-    is_saved: false,
-  },
-  {
     created_at: '2023-02-10 21:20',
     id: '45gffdafffdfdddds',
     location: {
