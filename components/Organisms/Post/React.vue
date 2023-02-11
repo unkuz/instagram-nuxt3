@@ -16,6 +16,8 @@ interface IProps {
   hasSaved: boolean
 }
 
+const emit = defineEmits(['current-index-carousel'])
+
 const props = defineProps<IProps>()
 
 const timelineStore = useFeedStore()
@@ -31,6 +33,8 @@ const showDot = $computed(() => {
   const { mediaArr } = props
   return largeSm || (!largeSm && mediaArr.length < 10)
 })
+
+const goTo = (idx: number) => emit('current-index-carousel', idx)
 </script>
 
 <template>
@@ -58,9 +62,10 @@ const showDot = $computed(() => {
           v-for="(_i, idx) in mediaArr"
           :key="idx"
           :class="[
-            'h-[6px] w-[6px]  rounded-[50%]  ',
+            'h-[6px] w-[6px]  rounded-[50%]  cursor-pointer',
             currentIdx === idx ? 'bg-c7 dark:bg-c7' : 'bg-c3 dark:bg-c1',
           ]"
+          @click="goTo(idx)"
       /></template>
     </div>
     <div class="flex h-full w-full items-center justify-end">

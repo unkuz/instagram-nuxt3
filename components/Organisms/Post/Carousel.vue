@@ -15,6 +15,7 @@ interface IProps {
   hasLiked: boolean
   id: string
   hasSaved: boolean
+  currentParent: number
 }
 
 const props = defineProps<IProps>()
@@ -27,6 +28,13 @@ const { next, prev, current } = useCarousel(containerMediaRef)
 const isShowPre = $computed(() => current.value !== 0)
 const isShowNext = $computed(() => current.value !== props.images.concat(props.videos).length - 1)
 const totalMedia = $computed<number>(() => props.images.concat(props.videos).length)
+
+watch(
+  () => props.currentParent,
+  (val) => {
+    current.value = val 
+  }
+)
 
 watch(current, (idx) => {
   emit('current-index-carousel', idx)

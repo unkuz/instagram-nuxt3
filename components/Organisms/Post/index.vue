@@ -43,6 +43,7 @@ const { key } = useForceRenderTimer()
             :has-saved="i.is_saved"
             :has-liked="i.has_liked"
             @current-index-carousel="setCurrent($event)"
+            :currentParent ="currentIdx"
           />
           <div class="px-[16px] text-xs md:text-sm">
             <React
@@ -51,6 +52,7 @@ const { key } = useForceRenderTimer()
               :has-liked="i.has_liked"
               :media-arr="i.carousel_media.images.concat(i.carousel_media.videos)"
               :has-saved="i.is_saved"
+              @current-index-carousel="setCurrent($event)"
             />
             <LikeCommentCount :like-count="i.like_count" :comment-count="i.comments.length" />
             <Caption
