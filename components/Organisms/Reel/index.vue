@@ -9,6 +9,19 @@ import { useIdle, useTemplateRefsList } from '@vueuse/core'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import Video from './Video.vue'
 
+const router = useRouter()
+const route = useRoute()
+let currentVideoOnScreen: HTMLVideoElement
+
+console.log(router)
+
+watchEffect(() => {
+  if (currentVideoOnScreen) {
+    const id = currentVideoOnScreen.getAttribute('ins-data-video-id')
+    router.replace(`${route.path}?videoId=${id}`)
+  }
+})
+
 const reelStore = useReelStore()
 
 const reels = $computed(() => reelStore.data)
@@ -22,7 +35,6 @@ const [container, slider] = useKeenSlider({
 })
 
 let observer: IntersectionObserver
-let currentVideoOnScreen: HTMLVideoElement
 
 const containvideoRefs = $(useTemplateRefsList<HTMLDivElement>())
 const { idle } = useIdle(APP_CONFIGS.TIME_IDLE_REELS)

@@ -22,6 +22,7 @@ export const mock_reel = [
         },
       ],
     },
+    id: 1,
   },
   {
     user: {
@@ -48,6 +49,7 @@ export const mock_reel = [
         },
       ],
     },
+    id: 2,
   },
   {
     user: {
@@ -85,6 +87,7 @@ export const mock_reel = [
         },
       ],
     },
+    id: 3,
   },
   {
     user: {
@@ -109,6 +112,7 @@ export const mock_reel = [
         },
       ],
     },
+    id: 4,
   },
   {
     user: {
@@ -135,6 +139,7 @@ export const mock_reel = [
         },
       ],
     },
+    id: 5,
   },
   {
     user: {
@@ -159,5 +164,6 @@ export const mock_reel = [
         },
       ],
     },
+    id: 6,
   },
 ]

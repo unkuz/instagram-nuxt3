@@ -33,6 +33,7 @@ watch(buffered, (val) => {})
       crossorigin="anonymous"
       preload="metadata"
       @click="playing = !playing"
+      :ins-data-video-id="id"
     />
 
     <ProgressVideoBar

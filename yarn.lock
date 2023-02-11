@@ -3590,6 +3590,14 @@
     local-pkg "^0.4.3"
     vue-demi "*"
 
+"@vueuse/router@^9.12.0":
+  version "9.12.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/router/-/router-9.12.0.tgz#985759be6fb4a55609942b300e62c4023a47612e"
+  integrity sha512-I3TaWrsxEdANrgJjNEeRTbOMGS+uYjB5zHoyayhFgk1SY1ytDw51tgXr6n4n9fVqglorvhKdX5rFDvBAbeQ+Xw==
+  dependencies:
+    "@vueuse/shared" "9.12.0"
+    vue-demi "*"
+
 "@vueuse/shared@9.12.0":
   version "9.12.0"
   resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-9.12.0.tgz#e6597da80084cba8fc3d6545f4c2fa9817b80428"
@@ -13539,7 +13547,7 @@ vue-instantsearch@^4.3.2:
     instantsearch.js "4.50.1"
     mitt "^2.1.0"
 
-vue-router@^4.1.6:
+vue-router@4, vue-router@^4.1.6:
   version "4.1.6"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.1.6.tgz#b70303737e12b4814578d21d68d21618469375a1"
   integrity sha512-DYWYwsG6xNPmLq/FmZn8Ip+qrhFEzA14EI12MsMgVxvHFDYvlr4NXpVF5hrRH1wVcDP8fGi5F4rxuJSl8/r+EQ==

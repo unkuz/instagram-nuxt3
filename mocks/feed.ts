@@ -67,11 +67,7 @@ export const timeLine = [
           src: `/video/RUQOA & Saloon - Neverland.mp4`,
           poster: '',
         },
-        {
-          id: 12,
-          src: `/video/Jade Key - Superhero.mp4`,
-          poster: '',
-        },
+
         {
           id: 13,
           src: `/video/cud - Can't Escape (SHX4 & Curdz Remix).mp4`,
