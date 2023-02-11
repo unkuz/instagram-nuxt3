@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { TIME_DURATION_SLASH } from '@/configs'
+import { APP_CONFIGS } from '@/configs'
 import HeartFly from '@/lotties/heart-fly.lotties.json'
 import Luv from '@/lotties/luv.lotties.json'
 import { useSlashStore } from '@/store'
@@ -29,7 +29,7 @@ watchEffect(() => {
   if (showSlash) {
     timer = setTimeout(() => {
       slashStore.setHideSlash()
-    }, TIME_DURATION_SLASH)
+    }, APP_CONFIGS.TIME_DURATION_SLASH)
   } else {
     clearTimeout(timer)
     slashStore.setHideSlash()

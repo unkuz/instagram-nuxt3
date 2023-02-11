@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import Avatar from '@/components/Atoms/Avatar.vue'
 import Button from '@/components/Atoms/Button.vue'
-import { GITHUB_AUTHOR_LINK, MAX_SUGGESTION_PEOPLE_FOLLOW } from '@/configs'
+import { APP_CONFIGS } from '@/configs'
 import { useAuthStore, useSuggestionStore } from '@/store'
 import { IPending, SizeAvatarEnum } from '@/type'
 import { getCurrentYear } from '@/utils'
@@ -14,7 +14,7 @@ const sugestionStore = useSuggestionStore()
 let timer: NodeJS.Timer
 let timer2: NodeJS.Timer
 
-let maxSuggestionPeopleFollow = $ref(MAX_SUGGESTION_PEOPLE_FOLLOW)
+let maxSuggestionPeopleFollow = $ref(APP_CONFIGS.MAX_SUGGESTION_PEOPLE_FOLLOW)
 const suggestion = $computed(() => sugestionStore.data.slice(0, maxSuggestionPeopleFollow))
 const authStore = useAuthStore()
 const avatar = $computed(() => authStore.data.avatar)
@@ -114,7 +114,7 @@ const authorText = 'cuzknothz'
         <div>
           © <span> {{ getCurrentYear() }}</span> Instagram clone by
         </div>
-        <NuxtLink :to="GITHUB_AUTHOR_LINK" target="_blank" class="relative overflow-hidden">
+        <NuxtLink :to="APP_CONFIGS.GITHUB_AUTHOR_LINK" target="_blank" class="relative overflow-hidden">
           <div
             class="cursor-pointer font-august text-[1.25rem] uppercase tracking-wider text-c2 drop-shadow-md dark:text-c1"
           >

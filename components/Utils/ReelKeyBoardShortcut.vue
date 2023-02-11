@@ -5,7 +5,7 @@ import KbMIcon_ from '@/assets/svg/kb_m.svg'
 import KbUpIcon_ from '@/assets/svg/kb_up.svg'
 import KeyboardIcon_ from '@/assets/svg/keyboard.svg'
 import Button from '@/components/Atoms/Button.vue'
-import { TIME_DELAY_START_APPARENT_TOOLTIP } from '@/configs'
+import { APP_CONFIGS } from '@/configs'
 import { gsap } from 'gsap'
 import { IActiveKey } from '@/type'
 import KbSpaceIcon_ from '@/assets/svg/kb_space.svg'
@@ -49,12 +49,12 @@ const ok = () => {
 
 onMounted(() => {
   timer = setTimeout(() => {
-    tl.to(containerRef, {
+    tl.to(containerRef!, {
       bottom: 40,
       ease: 'elastic.out(1, 0.5)',
       duration: 1,
     })
-  }, TIME_DELAY_START_APPARENT_TOOLTIP)
+  }, APP_CONFIGS.TIME_DELAY_START_APPARENT_TOOLTIP)
 })
 
 onBeforeUnmount(() => {

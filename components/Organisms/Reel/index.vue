@@ -2,7 +2,7 @@
 import ReelAction from '@/components/Atoms/ReelAction.vue'
 import ReelCap from '@/components/Atoms/Video/ReelCap.vue'
 import ReelKeyBoardShortcut from '@/components/Utils/ReelKeyBoardShortcut.vue'
-import { TIME_IDLE_REELS } from '@/configs'
+import { APP_CONFIGS } from '@/configs'
 import { useReelStore } from '@/store'
 import { IActiveKey } from '@/type'
 import { useIdle } from '@vueuse/core'
@@ -25,7 +25,7 @@ let observer: IntersectionObserver
 let currentVideoOnScreen: HTMLVideoElement
 
 const containvideoRefs = $ref<HTMLDivElement[]>([])
-const { idle } = useIdle(TIME_IDLE_REELS)
+const { idle } = useIdle(APP_CONFIGS.TIME_IDLE_REELS)
 
 let activeKey = reactive<IActiveKey>({
   up: false,

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import CookieIcon_ from '@/assets/svg/cookie.svg'
 import Button from '@/components/Atoms/Button.vue'
-import { TIME_DELAY_START_APPARENT_TOOLTIP } from '@/configs'
+import { APP_CONFIGS } from '@/configs'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { gsap } from 'gsap'
 
@@ -22,12 +22,12 @@ const acceptCookieUse = () => {
 
 onMounted(() => {
   setTimeout(() => {
-    tl.to(containerRef, {
+    tl.to(containerRef!, {
       bottom: largerThanSm ? 40 : 85,
       ease: 'elastic.out(1, 0.5)',
       duration: 1,
     })
-  }, TIME_DELAY_START_APPARENT_TOOLTIP)
+  }, APP_CONFIGS.TIME_DELAY_START_APPARENT_TOOLTIP)
 })
 </script>
 <template>
