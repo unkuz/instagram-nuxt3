@@ -6,11 +6,11 @@ import Cookie from '@/components/Utils/Cookie.vue'
 import More from '@/components/Utils/More.vue'
 import Prelude from '@/components/Utils/Prelude.vue'
 import {
-usePrelude,
-useResizeWindow,
-useScroll,
-useScrollBarTheme,
-useWatchRouteSetSection,
+  usePrelude,
+  useResizeWindow,
+  useScroll,
+  useScrollBarTheme,
+  useWatchRouteSetSection,
 } from '@/composables'
 import { registerSeviceWorkerPWA } from '@/helpers'
 import { useAddStore, useMoreStore, useThemeStore } from '@/store'
