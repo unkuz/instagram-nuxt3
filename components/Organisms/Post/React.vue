@@ -64,7 +64,7 @@ const goTo = (idx: number) => emit('current-index-carousel', idx)
         :class="[
           'text-[.8rem] font-[600] ',
           {
-            'text-c7 dark:text-c7': currentIdx > APP_CONFIGS.MAX_DOT_CAROUSEL,
+            'text-c7 dark:text-c7': currentIdx > APP_CONFIGS.MAX_DOT_CAROUSEL + 1,
           },
         ]"
       >

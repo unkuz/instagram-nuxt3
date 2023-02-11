@@ -5,14 +5,17 @@ import { storeToRefs } from 'pinia'
 export const useScrollBarTheme = () => {
   const { darkMode } = $(storeToRefs(useThemeStore()))
 
-  const { load, unload } = useStyleTag(`
+  const { load, unload } = useStyleTag(
+    `
       ::-webkit-scrollbar-track {
         background: #121212;
       }
       :root {
         --scrollbar-track: #121212 !important;
       }
-      `,{id:'scrollbar_theme'})
+      `,
+    { id: 'scrollbar_theme' }
+  )
 
   watchEffect(() => {
     if (darkMode) {
