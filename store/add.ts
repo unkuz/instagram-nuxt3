@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useAddStore = defineStore('newPost', {
+export const useAddStore = defineStore('add', {
   state: () => ({
     isShow: false,
   }),
