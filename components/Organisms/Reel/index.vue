@@ -9,9 +9,7 @@ import { useIdle, useTemplateRefsList } from '@vueuse/core'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import Video from './Video.vue'
 
-
 let currentVideoOnScreen: HTMLVideoElement
-
 
 const reelStore = useReelStore()
 

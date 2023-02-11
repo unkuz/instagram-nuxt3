@@ -3,7 +3,6 @@ import { SizeAvatarEnum } from '@/type'
 import { stopOtherVideoPlaying } from '@/helpers'
 import Avatar from '@/components/Atoms/Avatar.vue'
 
-
 interface IProps {
   name: string
   avatar: string

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { EMOJI } from '@/constants'
-import { gsap,Elastic } from 'gsap'
+import { gsap, Elastic } from 'gsap'
 
 defineEmits(['emoji-add'])
 
@@ -14,7 +14,6 @@ onMounted(() => {
     top: -310,
     duration: 0.3,
     ease: Elastic.easeOut.config(1, 0.6),
-
   })
 })
 
