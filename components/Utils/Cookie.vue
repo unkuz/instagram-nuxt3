@@ -4,11 +4,11 @@ import Button from '@/components/Atoms/Button.vue'
 import { APP_CONFIGS } from '@/configs'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { gsap } from 'gsap'
+import { useTailwindBreakPoint } from '@/composables'
 
 const containerRef = $ref<HTMLDivElement>()
-const breakpoints = useBreakpoints(breakpointsTailwind)
 
-const largerThanSm = $(breakpoints.greater('md'))
+const { largeMd } = $(useTailwindBreakPoint())
 
 let tl: TimelineLite = gsap.timeline({})
 
@@ -23,7 +23,7 @@ const acceptCookieUse = () => {
 onMounted(() => {
   setTimeout(() => {
     tl.to(containerRef!, {
-      bottom: largerThanSm ? 40 : 85,
+      bottom: largeMd ? 40 : 85,
       ease: 'elastic.out(1, 0.5)',
       duration: 1,
     })

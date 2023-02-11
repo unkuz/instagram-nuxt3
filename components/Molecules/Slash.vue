@@ -1,12 +1,11 @@
 <script setup lang="ts">
+import { useTailwindBreakPoint } from '@/composables'
 import { APP_CONFIGS } from '@/configs'
 import HeartFly from '@/lotties/heart-fly.lotties.json'
 import Luv from '@/lotties/luv.lotties.json'
 import { useSlashStore } from '@/store'
-import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 
-const breakpoints = useBreakpoints(breakpointsTailwind)
-const largerThanSm = $(breakpoints.greater('md'))
+const { largeMd } = $(useTailwindBreakPoint())
 
 const slashStore = useSlashStore()
 
@@ -41,7 +40,7 @@ onBeforeUnmount(() => clearTimeout(timer))
 <template>
   <ClientOnly>
     <Vue3Lottie
-      v-if="showSlash && largerThanSm"
+      v-if="showSlash && largeMd"
       :animationData="mapData()"
       class="lotties pointer-events-none fixed inset-0 z-50 !h-screen !w-screen"
       :loop="false"

@@ -4,6 +4,8 @@ export const useTailwindBreakPoint = () => {
   const breakpoints = useBreakpoints(breakpointsTailwind)
 
   const largeSm = breakpoints.greater('sm')
+  const smallMd = breakpoints.smallerOrEqual('md')
+  const largeMd = breakpoints.greater('md')
 
-  return { largeSm }
+  return { largeSm, smallMd, largeMd }
 }

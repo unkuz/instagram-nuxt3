@@ -1,10 +1,5 @@
 <script lang="ts" setup>
 import Flashicon_ from '@/assets/svg/flash_icon.svg'
-import Logo from '@/components/Molecules/Header/Logo.vue'
-import Search from '@/components/Molecules/Header/Search.vue'
-import AccountPop from '@/components/Huge/AccountPop/index.vue'
-import ActivityFeedPop from '@/components/Huge/ActivityFeedPop/index.vue'
-import SearchPop from '@/components/Huge/SearchPop/index.vue'
 import ActivityFeed from '@/components/Atoms/Nav/ActivityFeed.vue'
 import FindPeople from '@/components/Atoms/Nav/FindPeople.vue'
 import HomeIcon from '@/components/Atoms/Nav/HomeIcon.vue'
@@ -12,13 +7,16 @@ import Messenger from '@/components/Atoms/Nav/Messenger.vue'
 import NewPost from '@/components/Atoms/Nav/NewPost.vue'
 import Reels from '@/components/Atoms/Nav/Reels.vue'
 import SelfAvatar from '@/components/Atoms/Nav/SelfAvatar.vue'
-import Extension from '@/components/Utils/Extension.vue'
-import { useClickOutSide } from '@/composables'
-import { SectionEnum } from '@/constants/section'
-import { useAuthStore, useGlobalStore, useSearchStore, useAddStore } from '@/store'
-import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import AccountPop from '@/components/Huge/AccountPop/index.vue'
+import SearchPop from '@/components/Huge/SearchPop/index.vue'
+import Logo from '@/components/Molecules/Header/Logo.vue'
+import Search from '@/components/Molecules/Header/Search.vue'
 import TopBarExplore from '@/components/Organisms/Explore/M/TopBar.vue'
 import TopBarReel from '@/components/Organisms/Reel/M/TopBar.vue'
+import Extension from '@/components/Utils/Extension.vue'
+import { useClickOutSide, useTailwindBreakPoint } from '@/composables'
+import { SectionEnum } from '@/constants/section'
+import { useAddStore, useAuthStore, useGlobalStore, useSearchStore } from '@/store'
 import { APP_CONFIGS } from '~~/configs'
 
 const globalStore = useGlobalStore()
@@ -33,8 +31,7 @@ const activityFeedPopRef = $ref<HTMLDivElement>()
 const extensionRef = ref<HTMLDivElement>()
 const isShowProfile = $ref(false)
 
-const breakpoints = useBreakpoints(breakpointsTailwind)
-const smallerThanMd = $(breakpoints.smallerOrEqual('md'))
+const { smallMd } = $(useTailwindBreakPoint())
 
 let showExtension = $ref(false)
 
@@ -54,7 +51,7 @@ const hiddenHeader = $(
         SectionEnum.ACTIVITYFEED,
         SectionEnum.SELF,
         SectionEnum.FINDPEOPLE,
-      ].includes(globalStore.section) && smallerThanMd
+      ].includes(globalStore.section) && smallMd
     )
   })
 )

@@ -1,18 +1,17 @@
 <script lang="ts" setup>
 import Header from '@/components/Molecules/Header/index.vue'
+import NavBarBottom from '@/components/Molecules/NavBarBottom.vue'
+import { useTailwindBreakPoint } from '@/composables'
 import { SectionEnum } from '@/constants/section'
 import { useGlobalStore } from '@/store'
-import NavBarBottom from '@/components/Molecules/NavBarBottom.vue'
-import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import HeaderButLeft from '~~/components/Molecules/HeaderButLeft.vue'
 
 const globalStore = useGlobalStore()
+
+const { smallMd } = $(useTailwindBreakPoint())
+
 const isShowNavBarBottom = computed(
   () => !(globalStore.getIsMobile && globalStore.section === SectionEnum.MESSENGER)
 )
-
-const breakpoints = useBreakpoints(breakpointsTailwind)
-const smallerThanMd = $(breakpoints.smallerOrEqual('md'))
 
 const noNeedPadingTop = $(
   computed(() => {
@@ -23,7 +22,7 @@ const noNeedPadingTop = $(
         SectionEnum.SEARCH,
         SectionEnum.ACTIVITYFEED,
         SectionEnum.SELF,
-      ].includes(globalStore.section) && smallerThanMd
+      ].includes(globalStore.section) && smallMd
     )
   })
 )
