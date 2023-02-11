@@ -10,6 +10,11 @@ export const timeLine = [
       images: [],
       videos: [
         {
+          id: 22,
+          src: `/video/Tatsunoshin - Make You Mine (Official Audio) [Electric Fox].mp4`,
+          poster: '',
+        },
+        {
           id: 1,
           src: `/video/KienThien - Turn It Up [Diversity Release].mp4`,
           poster: '',
@@ -114,12 +119,6 @@ export const timeLine = [
         {
           id: 21,
           src: `/video/KCuber - We Don't Need Words [Diversity Release].mp4`,
-          poster: '',
-        },
-
-        {
-          id: 22,
-          src: `/video/Tatsunoshin - Make You Mine (Official Audio) [Electric Fox].mp4`,
           poster: '',
         },
       ],
