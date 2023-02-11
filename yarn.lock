@@ -2120,12 +2120,12 @@
     unimport "^2.2.4"
     untyped "^1.2.2"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.2.1-rc.0-27933775.19bef5a":
-  version "3.2.1-rc.0-27933775.19bef5a"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.2.1-rc.0-27933775.19bef5a.tgz#6877dd2653b5e182bf0b07e7b15e566d7fa437d2"
-  integrity sha512-KBNNmZBseoEFZg/Ii+njiVCN8ZudcvhuJVoZ+Jjo0x1TYHcu+E5UnXlLbPthuwN/ICDfOfMCDSCKiNTAkbZ8HA==
+"@nuxt/kit@npm:@nuxt/kit-edge@3.2.1-rc.0-27934134.7111b6c":
+  version "3.2.1-rc.0-27934134.7111b6c"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.2.1-rc.0-27934134.7111b6c.tgz#a53d1382a7b85a8b830d7ec2e78af767f7e30b79"
+  integrity sha512-6PPHslWvz/PAj81viFiT0B5//gV3+0nDTtOWVoLIKsfSYVEbDP7PTn93p7rdK7sc8nqwMyvBxSMV6b8/S4Wuww==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.2.1-rc.0-27933775.19bef5a"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.2.1-rc.0-27934134.7111b6c"
     c12 "^1.1.0"
     consola "^2.15.3"
     defu "^6.1.2"
@@ -2140,7 +2140,7 @@
     pkg-types "^1.0.1"
     scule "^1.0.0"
     semver "^7.3.8"
-    unctx "^2.1.1"
+    unctx "^2.1.2"
     unimport "^2.2.4"
     untyped "^1.2.2"
 
@@ -2233,10 +2233,10 @@
     unimport "^2.2.4"
     untyped "^1.2.2"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.2.1-rc.0-27933775.19bef5a":
-  version "3.2.1-rc.0-27933775.19bef5a"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.2.1-rc.0-27933775.19bef5a.tgz#f9a315d3c884751605d92d0f14f1aa25a337ae31"
-  integrity sha512-balZsxTbzhyww4O+Wq0Ry7c9kMKjcEFrDh2yDdMRG+Xj7bkb5kSvdDr4YmvwcINcIWJH/1emd3n5eq8bU15Siw==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.2.1-rc.0-27934134.7111b6c":
+  version "3.2.1-rc.0-27934134.7111b6c"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.2.1-rc.0-27934134.7111b6c.tgz#e47e6555a4bd05920ed8c3b609efa0d5dfec4834"
+  integrity sha512-xKJsqTpcNN1yS9RxtCySCcA0MZuy2GS7IZ05kDJL0um+jK1FuIQHn34Btj5pe61nPtQqJWJ+mfNSykjTtjxo5w==
   dependencies:
     c12 "^1.1.0"
     create-require "^1.1.1"
@@ -2278,13 +2278,13 @@
     rc9 "^2.0.0"
     std-env "^3.3.1"
 
-"@nuxt/test-utils-edge@3.2.1-rc.0-27933775.19bef5a":
-  version "3.2.1-rc.0-27933775.19bef5a"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.2.1-rc.0-27933775.19bef5a.tgz#3e042cf3326b8d1a10e3a4f65dc4036cfcb75ba9"
-  integrity sha512-CHmABRzZVkP/XpBDLeiPciR5DkJAWFUggSQG1kobsxD7L60aYpHfhYTrGpqJVHEBW+Zb5rOvRWq1dnpCeTlz7A==
+"@nuxt/test-utils-edge@3.2.1-rc.0-27934134.7111b6c":
+  version "3.2.1-rc.0-27934134.7111b6c"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.2.1-rc.0-27934134.7111b6c.tgz#cc55c6d269589351bcd17095e5ec4a5990ead0ef"
+  integrity sha512-HaW34ZEOom9AF19qqbTYvZ7sfcAwoEjTOLkVARD7NGikUwY5jBIGAnYC3V0fXyqUe9X8WWVIMJw+FtahObPe1w==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.2.1-rc.0-27933775.19bef5a"
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.2.1-rc.0-27933775.19bef5a"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.2.1-rc.0-27934134.7111b6c"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.2.1-rc.0-27934134.7111b6c"
     consola "^2.15.3"
     defu "^6.1.2"
     execa "^6.1.0"
@@ -6122,10 +6122,10 @@ eslint-visitor-keys@^3.3.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.3.0.tgz#f6480fa6b1f30efe2d1968aa8ac745b862469826"
   integrity sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==
 
-eslint@^8.33.0:
-  version "8.33.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.33.0.tgz#02f110f32998cb598c6461f24f4d306e41ca33d7"
-  integrity sha512-WjOpFQgKK8VrCnAtl8We0SUOy/oVZ5NHykyMiagV1M9r8IFpIJX7DduK6n1mpfhlG7T1NLWm2SuD8QB7KFySaA==
+eslint@^8.34.0:
+  version "8.34.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.34.0.tgz#fe0ab0ef478104c1f9ebc5537e303d25a8fb22d6"
+  integrity sha512-1Z8iFsucw+7kSqXNZVslXS8Ioa4u2KM7GPwuKtkTFAqZ/cHMcEaR+1+Br0wLlot49cNxIiZk5wp8EAbPcYZxTg==
   dependencies:
     "@eslint/eslintrc" "^1.4.1"
     "@humanwhocodes/config-array" "^0.11.8"
@@ -9999,10 +9999,10 @@ nuxt-simple-sitemap@^1.0.7:
     sitemap "^7.1.1"
     ufo "^1.0.1"
 
-nuxt-typed-router@^2.3.3:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-2.3.3.tgz#7412207c2e680c84c36e5ac5038083d076d558f1"
-  integrity sha512-k8fOmPGdVpCKxfdKRQosCQAjUVFcnzRTLYrL12uGdYatz/3fPBVSRlOLP1wiopMxZCYvjJ4H8G30vxNfWyMLuQ==
+nuxt-typed-router@^2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-2.3.4.tgz#ad7ba633d44e05676c13016054fef8bcc77cb8eb"
+  integrity sha512-4u7ecYsRsWQsl3nxVhZWwxVDynggTBMMRhjtqkVKsRlk/ob9yMxIZ/0WLJFvWzrqwZ4qmARPiNvHoMmhNVmBaQ==
   dependencies:
     "@nuxt/kit" "3.1.1"
     chalk "^5.2.0"
@@ -12965,6 +12965,16 @@ unctx@^2.1.0, unctx@^2.1.1:
     estree-walker "^3.0.1"
     magic-string "^0.26.7"
     unplugin "^1.0.0"
+
+unctx@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/unctx/-/unctx-2.1.2.tgz#12d34c540ef4fbaffb2a3b38a0697e42b152d478"
+  integrity sha512-KK18aLRKe3OlbPyHbXAkIWSU3xK8GInomXfA7fzDMGFXQ1crX1UWrCzKesVXeUyHIayHUrnTvf87IPCKMyeKTg==
+  dependencies:
+    acorn "^8.8.2"
+    estree-walker "^3.0.3"
+    magic-string "^0.27.0"
+    unplugin "^1.0.1"
 
 undici@^5.12.0, undici@^5.8.0:
   version "5.16.0"
