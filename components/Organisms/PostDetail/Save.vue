@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { Elastic, gsap } from 'gsap'
-import SaveIcon_ from '@@/assets/svg/save_icon.svg'
+import SaveIcon_ from '@/assets/svg/save_icon.svg'
 
 interface IProps {
   className: string
 }
 defineProps<IProps>()
 
-const unlikeRef = ref<HTMLDivElement | null>(null)
+const unlikeRef = ref<HTMLDivElement>()
 
 onMounted(() => {
   const tl = gsap.timeline()

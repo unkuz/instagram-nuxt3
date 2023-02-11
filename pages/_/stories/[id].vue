@@ -1,25 +1,26 @@
 <script lang="ts" setup>
-import MenuIcon_ from '@@/assets/svg/menu_icon.svg'
-import MutedIcon_ from '@@/assets/svg/muted_icon.svg'
-import PauseIcon_ from '@@/assets/svg/pause_icon.svg'
-import PlayIcon_ from '@@/assets/svg/play_icon.svg'
-import PlayIcon__ from '@@/assets/svg/play_original_icon.svg'
-import UnMutedIcon_ from '@@/assets/svg/un_muted_icon.svg'
-import BackDrop from '@@/components/Utils/BackDrop.vue'
-import { useClickOutSide, useLockScroll } from '@@/composables'
+import MenuIcon_ from '@/assets/svg/menu_icon.svg'
+import MutedIcon_ from '@/assets/svg/muted_icon.svg'
+import PauseIcon_ from '@/assets/svg/pause_icon.svg'
+import PlayIcon_ from '@/assets/svg/play_icon.svg'
+import PlayIcon__ from '@/assets/svg/play_original_icon.svg'
+import UnMutedIcon_ from '@/assets/svg/un_muted_icon.svg'
+import BackDrop from '@/components/Utils/BackDrop.vue'
+import { useLockScroll } from '@/composables'
+import { onClickOutside } from '@vueuse/core'
 
 const router = useRouter()
-const barRef = $ref<HTMLDivElement | null>(null)
-const containerBar = $ref<HTMLDivElement | null>(null)
+const barRef = $ref<HTMLDivElement>()
+const containerBar = $ref<HTMLDivElement>()
 const videoRef = $ref<HTMLVideoElement | null>(null)
-const bigPlayIcon = $ref<HTMLDivElement | null>(null)
-const mediaContainerRef = ref<HTMLDivElement | null>(null)
+const bigPlayIcon = $ref<HTMLDivElement>()
+const mediaContainerRef = ref<HTMLDivElement>()
 let isVideoPlay = $ref(false)
 let isVideoMuted = $ref(true)
 
 useLockScroll()
 
-useClickOutSide(mediaContainerRef, () => {
+onClickOutside(mediaContainerRef, () => {
   router.back()
 })
 

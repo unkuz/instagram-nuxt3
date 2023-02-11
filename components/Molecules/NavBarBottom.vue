@@ -1,11 +1,12 @@
 <script lang="ts" setup>
-import ActivityFeed from '@@/components/Atoms/Nav/ActivityFeed.vue'
-import HomeIcon from '@@/components/Atoms/Nav/HomeIcon.vue'
-import Reels from '@@/components/Atoms/Nav/Reels.vue'
-import Search from '@@/components/Atoms/Nav/Search.vue'
-import SelfAvatar from '@@/components/Atoms/Nav/SelfAvatar.vue'
-import { SectionEnum } from '@@/constants'
-import { useGlobalStore } from '@@/store'
+import ActivityFeed from '@/components/Atoms/Nav/ActivityFeed.vue'
+import HomeIcon from '@/components/Atoms/Nav/HomeIcon.vue'
+import Reels from '@/components/Atoms/Nav/Reels.vue'
+import Search from '@/components/Atoms/Nav/Search.vue'
+import SelfAvatar from '@/components/Atoms/Nav/SelfAvatar.vue'
+import { SectionEnum } from '@/constants'
+import { useGlobalStore } from '@/store'
+import { APP_CONFIGS } from '~~/configs'
 
 const globalStore = useGlobalStore()
 const isMobile = $computed(() => globalStore.getIsMobile)
@@ -21,7 +22,9 @@ const handleSelect = (section: SectionEnum) => {
     :class="[
       'fixed bottom-0 z-10 h-[65px] w-full   bg-c1  dark:bg-c19 md:hidden',
       {
-        'border-none bg-c2 [&__svg]:fill-c1 [&__svg]:text-c1': isReelsSelect,
+        'border-none bg-c19 dark:bg-c19 [&__svg]:fill-c1 [&__svg]:text-c1': isReelsSelect,
+        'bg-c1/50 !backdrop-blur-[5px]  dark:bg-c19/50': APP_CONFIGS.HEADER_BLUR,
+        '!bg-c19 !backdrop-blur-[5px] dark:!bg-c19': APP_CONFIGS.HEADER_BLUR && isReelsSelect,
       },
     ]"
   >

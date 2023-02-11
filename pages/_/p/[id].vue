@@ -1,21 +1,22 @@
 <script setup lang="ts">
+import Caption from '@/components/Organisms/Post/Caption.vue'
+import Carousel from '@/components/Organisms/Post/Carousel.vue'
+import Comment from '@/components/Organisms/Post/Comment.vue'
+import Head from '@/components/Organisms/Post/Head.vue'
+import IndividualComment from '@/components/Organisms/Post/IndividualComment.vue'
+import LikeCommentCount from '@/components/Organisms/Post/LikeCommentCount.vue'
+import React from '@/components/Organisms/Post/React.vue'
+import BackDrop from '@/components/Utils/BackDrop.vue'
+import { useLockScroll } from '@/composables'
+import { ITimeLine } from '@/models'
+import { usePostDetailStore } from '@/store'
+import { onClickOutside } from '@vueuse/core'
 import { gsap } from 'gsap'
 import moment from 'moment'
-import Caption from '@@/components/Organisms/Post/Caption.vue'
-import Carousel from '@@/components/Organisms/Post/Carousel.vue'
-import Comment from '@@/components/Organisms/Post/Comment.vue'
-import Head from '@@/components/Organisms/Post/Head.vue'
-import IndividualComment from '@@/components/Organisms/Post/IndividualComment.vue'
-import LikeCommentCount from '@@/components/Organisms/Post/LikeCommentCount.vue'
-import React from '@@/components/Organisms/Post/React.vue'
-import BackDrop from '@@/components/Utils/BackDrop.vue'
-import { useClickOutSide, useLockScroll } from '@@/composables'
-import { usePostDetailStore } from '@@/store'
-import { ITimeLine } from '@@/models'
 
 useLockScroll()
 
-const postRef = ref<HTMLDivElement | null>(null)
+const postRef = ref<HTMLDivElement>()
 
 onMounted(() => {
   gsap.to(postRef, {
@@ -26,13 +27,15 @@ onMounted(() => {
   })
 })
 
-const rightSectionRef = $ref<HTMLDivElement | null>(null)
+const rightSectionRef = $ref<HTMLDivElement>()
 const route = useRoute()
 const router = useRouter()
 const postDetailStore = usePostDetailStore()
 let currentIdx = $ref(0)
 
-const { data: _timeline } = await useLazyFetch<ITimeLine[]>('https://mocki.io/v1/bbd9ad8d-fbd8-4d95-a9ac-ee6416513aae')
+const { data: _timeline } = await useLazyFetch<ITimeLine[]>(
+  'https://mocki.io/v1/bbd9ad8d-fbd8-4d95-a9ac-ee6416513aae'
+)
 
 postDetailStore.setPostDetail(route.params.id as string)
 
@@ -58,7 +61,7 @@ const isSaved = $computed(() => postDetailStore.post.is_saved)
 
 const setCurrent = (value: number) => (currentIdx = value)
 
-useClickOutSide(postRef, () => {
+onClickOutside(postRef, () => {
   router.back()
 })
 
@@ -85,7 +88,9 @@ const mediaArr = $computed(() =>
       >
         <div class="flex w-full cursor-pointer justify-end md:hidden" @click="router.back">X</div>
         <div class="w-full md:h-full md:w-[80vw] xl:w-[700px]">
-          <article class="w-full border-c4 shadow-c4 dark:border-none dark:shadow-none md:border-[1px] md:shadow-sm">
+          <article
+            class="w-full border-c4 shadow-c4 dark:border-none dark:shadow-none md:border-[1px] md:shadow-sm"
+          >
             <Head :avatar="profilePicUrl" :user-name="userName" />
             <Carousel
               :id="id"

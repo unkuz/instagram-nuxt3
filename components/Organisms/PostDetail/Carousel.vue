@@ -5,9 +5,9 @@ import Like from './Like.vue'
 import Save from './Save.vue'
 import Unlike from './Unlike.vue'
 import Video from './Video.vue'
-import { stopOtherVideoPlaying } from '@@/helpers'
-import { useCarousel } from '@@/composables'
-import ArrowIcon_ from '@@/assets/svg/arrow_icon.svg'
+import { stopOtherVideoPlaying } from '@/helpers'
+import { useCarousel } from '@/composables'
+import ArrowIcon_ from '@/assets/svg/arrow_icon.svg'
 
 interface IProps {
   images: any
@@ -20,12 +20,14 @@ interface IProps {
 let initShowLikeSaved = $ref(false)
 const props = defineProps<IProps>()
 const emit = defineEmits(['currentIndexCarousel'])
-const containerMediaRef = ref<HTMLDivElement | null>(null)
+const containerMediaRef = ref<HTMLDivElement>()
 
 const { next, prev, current } = useCarousel(containerMediaRef)
 
 const isShowPre = computed<boolean>(() => unref(current) !== 0)
-const isShowNext = computed<boolean>(() => unref(current) !== props.images.concat(props.videos).length - 1)
+const isShowNext = computed<boolean>(
+  () => unref(current) !== props.images.concat(props.videos).length - 1
+)
 const totalMedia = computed<number>(() => props.images.concat(props.videos).length)
 
 watch(

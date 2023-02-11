@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import moment from 'moment'
-import Avatar from '@@/components/Atoms/Avatar.vue'
-import { SizeAvatarEnum } from '@@/type'
-import { useForceRenderTimer } from '@@/composables'
+import Avatar from '@/components/Atoms/Avatar.vue'
+import { SizeAvatarEnum } from '@/type'
+import { useForceRenderTimer } from '@/composables'
 
 interface IProps {
   comment: any
@@ -10,7 +10,6 @@ interface IProps {
 defineProps<IProps>()
 
 const { key } = useForceRenderTimer()
-const { S } = SizeAvatarEnum
 </script>
 
 <template>
@@ -18,10 +17,12 @@ const { S } = SizeAvatarEnum
     <div class="relative my-[5px] rounded-md">
       <div class="mx-[10px] flex items-center gap-[10px]">
         <NuxtLink :to="`/${comment.user.username}`">
-          <Avatar :url="comment.user.profile_pic_url" :size="S" />
+          <Avatar :url="comment.user.profile_pic_url" :size="SizeAvatarEnum.S" />
         </NuxtLink>
         <NuxtLink :to="`/${comment.user.username}`">
-          <p class="inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md line-clamp-1 dark:bg-c1 dark:text-c2">
+          <p
+            class="inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md line-clamp-1 dark:bg-c1 dark:text-c2"
+          >
             {{ comment.user.username }}
           </p>
         </NuxtLink>
@@ -48,10 +49,12 @@ const { S } = SizeAvatarEnum
     >
       <div class="mx-[10px] flex items-center gap-[10px]">
         <NuxtLink :to="`/${user.username}`">
-          <Avatar :url="user.profile_pic_url" :size="S" />
+          <Avatar :url="user.profile_pic_url" :size="SizeAvatarEnum.S" />
         </NuxtLink>
         <NuxtLink :to="`/${user.username}`">
-          <p class="inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md line-clamp-1 dark:bg-c1 dark:text-c2">
+          <p
+            class="inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md line-clamp-1 dark:bg-c1 dark:text-c2"
+          >
             {{ user.username }}
           </p>
         </NuxtLink>

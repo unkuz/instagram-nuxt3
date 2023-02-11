@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
-import { TSuggestion } from '@@/models'
-import { MAX_SUGGESTION_PEOPLE_FOLLOW } from '@@/configs'
+import { TSuggestion } from '@/models'
+import { APP_CONFIGS } from '@/configs'
 
 export interface IState {
   data: TSuggestion[]
@@ -18,7 +18,7 @@ export const useSuggestionStore = defineStore('suggestion', {
   actions: {
     save(data: TSuggestion[] | null) {
       if (data) {
-        this.data = data.slice(0, MAX_SUGGESTION_PEOPLE_FOLLOW)
+        this.data = data.slice(0, APP_CONFIGS.MAX_SUGGESTION_PEOPLE_FOLLOW)
       }
     },
   },

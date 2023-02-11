@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import HomeIcon_ from '@@/assets/svg/home_icon.svg'
-import HomeIconSelected_ from '@@/assets/svg/home_icon_selected.svg'
+import HomeIcon_ from '@/assets/svg/home_icon.svg'
+import HomeIconSelected_ from '@/assets/svg/home_icon_selected.svg'
 import IconBase from './IconBase.vue'
 
 interface IconProps {

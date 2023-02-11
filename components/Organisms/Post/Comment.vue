@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import Emoji from '@@/components/Utils/Emoji.vue'
-import { useClickOutSide } from '@@/composables'
-import { useAuthStore, usePostDetailStore, useTimeLineStore } from '@@/store'
+import Emoji from '@/components/Utils/Emoji.vue'
+import { useAuthStore, useFeedStore } from '@/store'
+import { onClickOutside, useTextareaAutosize } from '@vueuse/core'
 
 interface IProps {
   id: string
@@ -11,12 +11,11 @@ interface IProps {
 const props = defineProps<IProps>()
 const emit = defineEmits(['rm-current-reply-comment-id'])
 
-const emojiRef = ref<HTMLDivElement | null>(null)
+const { textarea, input } = useTextareaAutosize()
+
+const emojiRef = ref<HTMLDivElement>()
 let isShowEmoji = $ref(false)
-const textBoxRef = $ref<HTMLTextAreaElement | null>(null)
-let commentValueText = $ref('')
-const viewPostDetailStore = usePostDetailStore()
-const timeLineStore = useTimeLineStore()
+const timeLineStore = useFeedStore()
 const authStore = useAuthStore()
 
 watch(
@@ -26,21 +25,21 @@ watch(
       const findNickNameCommentReply = timeLineStore.data
         .find(({ id }) => id === props.id)!
         .comments.find(({ id }) => id === val)!.user.username
-      commentValueText = '@' + `${findNickNameCommentReply}` + ' '
-      textBoxRef?.focus()
+      input.value = '@' + `${findNickNameCommentReply}` + ' '
+      textarea.value?.focus()
     }
   }
 )
 
-const emojiAdd = (value: string) => (commentValueText += value)
+const emojiAdd = (value: string) => (input.value += value)
 
-useClickOutSide(emojiRef, () => (isShowEmoji = false))
+onClickOutside(emojiRef, () => (isShowEmoji = false))
 
 const toggleShowEmoji = () => (isShowEmoji = !isShowEmoji)
 
 const send = async () => {
   await timeLineStore.comment(props.id, {
-    text: commentValueText,
+    text: input.value,
     userName: authStore.data.userName,
     userImg: authStore.data.avatar,
     id: Math.random() * 10000,
@@ -49,7 +48,7 @@ const send = async () => {
   if (props.currentReplyCommentId) {
     emit('rm-current-reply-comment-id')
   }
-  commentValueText = ''
+  input.value = ''
 }
 </script>
 
@@ -68,11 +67,11 @@ const send = async () => {
       </div>
     </div>
     <textarea
-      ref="textBoxRef"
-      v-model="commentValueText"
+      ref="textarea"
+      v-model="input"
       rows="1"
       spellcheck="false"
-      class="m-auto my-[10px] block h-[38px] w-[83%] cursor-text resize-none rounded-[5px] border-[1px] border-c4 bg-transparent p-[5px] shadow-sm shadow-c4 placeholder:text-center placeholder:text-[0.8rem] focus:outline-none dark:border-c20 dark:shadow-none lg:w-[88%]"
+      class="m-auto my-[10px] block h-[38px] max-h-[100px] w-[83%] cursor-text resize-none rounded-[5px] border-[1px] border-c4 bg-transparent p-[5px] shadow-sm shadow-c4 placeholder:text-center placeholder:text-[0.8rem] focus:outline-none dark:border-c20 dark:shadow-none lg:w-[88%]"
       @keyup.enter="send"
     />
 

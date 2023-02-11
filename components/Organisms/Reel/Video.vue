@@ -1,19 +1,22 @@
 <script setup lang="ts">
 import { useMediaControls } from '@vueuse/core'
-import ProgressVideoBar from '@@/components/Atoms/Video/ProgressVideoBar.vue'
-import Loading from '@@/components/Atoms/Video/Loading.vue'
-import Mute from '@@/components/Atoms/Video/Mute.vue'
-import Pause from '@@/components/Atoms/Video/Pause.vue'
-import ReelCap from '~~/components/Atoms/Video/ReelCap.vue'
-import { IReel } from '@@/models'
+import ProgressVideoBar from '@/components/Atoms/Video/ProgressVideoBar.vue'
+import Loading from '@/components/Atoms/Video/Loading.vue'
+import Mute from '@/components/Atoms/Video/Mute.vue'
+import Pause from '@/components/Atoms/Video/Pause.vue'
+import ReelCap from '@/components/Atoms/Video/ReelCap.vue'
+import { IReel } from '@/models'
 
 const props = defineProps<IReel>()
 
 const video = ref<HTMLVideoElement>()
 
-const { playing, currentTime, duration, volume, muted, buffered, waiting } = useMediaControls(video, {
-  src: props.media.video[0].src,
-})
+const { playing, currentTime, duration, volume, muted, buffered, waiting } = useMediaControls(
+  video,
+  {
+    src: props.media.video[0].src,
+  }
+)
 
 watch(buffered, (val) => {})
 </script>
@@ -30,20 +33,22 @@ watch(buffered, (val) => {})
       crossorigin="anonymous"
       preload="metadata"
       @click="playing = !playing"
+      :ins-data-video-id="id"
     />
 
     <ProgressVideoBar
       :currentTime="currentTime"
+      :buffered="buffered"
       :duration="duration"
       @setCurentTime="(val) => (currentTime = val * duration)"
     />
-    <Loading v-if="waiting" />
+    <Loading v-if="waiting" class="!bg-transparent" />
     <Pause
       v-show="!waiting"
       @click="playing = true"
       :class="[playing ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100']"
     />
 
-    <Mute @click="muted = !muted" :isMute="muted" class="!top-[15px] !left-[15px]" />
+    <Mute @click="muted = !muted" :isMute="muted" class="!left-[15px] hidden md:!top-[15px]" />
   </div>
 </template>

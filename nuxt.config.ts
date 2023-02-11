@@ -4,6 +4,7 @@ import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
   modules: [
+    '@nuxt/content',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
@@ -26,6 +27,9 @@ export default defineNuxtConfig({
     // '@sidebase/nuxt-auth',
     // '@morev/vue-transitions/nuxt',
   ],
+  content: {
+    // https://content.nuxtjs.org/api/configuration
+  },
   extends: ['nuxt-seo-kit'],
   app: {
     head: {
@@ -42,7 +46,8 @@ export default defineNuxtConfig({
         },
         { rel: 'manifest', href: '/manifest.json' },
       ],
-      viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
+      viewport:
+        'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
       title: 'Instagram',
       script: [
         {

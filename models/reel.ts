@@ -27,4 +27,5 @@ export interface IReel {
   like_count: number
   total_comment: number
   media: IMedia
+  id: string | number
 }

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useStoriesStore } from '@@/store'
+import { useStoriesStore } from '@/store'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import Story from './Story.vue'
 
@@ -61,7 +61,10 @@ const [container] = useKeenSlider({
   <div
     class="h-[119px] w-full overflow-hidden bg-transparent p-0 dark:bg-transparent md:mb-[24px] md:bg-c4 md:p-[1px] md:clip-path-cuzknothz"
   >
-    <div v-cloak class="relative flex h-full w-full items-center bg-white dark:bg-c19 md:clip-path-cuzknothz">
+    <div
+      v-cloak
+      class="relative flex h-full w-full items-center bg-white dark:bg-c19 md:clip-path-cuzknothz"
+    >
       <div ref="container" class="keen-slider h-full pt-[20px]">
         <div v-for="i in stories" :key="i.id" class="keen-slider__slide">
           <Story v-bind="i" />

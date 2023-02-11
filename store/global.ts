@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
-import { MOBILE_BREAK_POINT, SectionEnum } from '@@/constants'
-import { ScrollTypeEnum } from '@@/type'
+import { MOBILE_BREAK_POINT, SectionEnum } from '@/constants'
+import { ScrollTypeEnum } from '@/type'
 
 interface IState {
   section: SectionEnum
@@ -22,8 +22,6 @@ export const useGlobalStore = defineStore('global', {
   }),
   getters: {
     getIsMobile: (state) => state.clientWidth < MOBILE_BREAK_POINT,
-    getIsMobileAndSelectNewPost: (state) =>
-      state.clientWidth < MOBILE_BREAK_POINT && state.section === SectionEnum.NEW_POST,
     getIsShowHeader: (state) => {
       return state.scroll === ScrollTypeEnum.UP
     },

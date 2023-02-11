@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useProfileStore } from '@@/store'
-import { SELECT_TYPE } from '@@/constants/screens/account'
+import { useProfileStore } from '@/store'
+import { SELECT_TYPE } from '@/constants/screens/account'
 
 const profileStore = useProfileStore()
 const currentSelect = computed<SELECT_TYPE>(() => profileStore.select)

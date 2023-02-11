@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { TIME_DURATION_SLASH } from '@@/configs'
-import HeartFly from '@@/lotties/heart-fly.lotties.json'
-import Luv from '@@/lotties/luv.lotties.json'
-import { useSlashStore } from '@@/store'
-import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import { useTailwindBreakPoint } from '@/composables'
+import { APP_CONFIGS } from '@/configs'
+import HeartFly from '@/lotties/heart-fly.lotties.json'
+import love from '@/lotties/love.lotties.json'
+import Luv from '@/lotties/luv.lotties.json'
+import { useSlashStore } from '@/store'
 
-const breakpoints = useBreakpoints(breakpointsTailwind)
-const largerThanSm = $(breakpoints.greater('md'))
+const { largeMd } = $(useTailwindBreakPoint())
 
 const slashStore = useSlashStore()
 
@@ -15,21 +15,19 @@ const animation = $computed(() => slashStore.animation)
 
 let timer: NodeJS.Timer
 const mapData = () => {
-  type TData = {
-    [key: string]: number | string | any
-  }
-  const data: TData = {
+  const data = {
     luv: Luv,
     'heart-fly': HeartFly,
+    love: love,
   }
-  return data[`${animation}`]
+  return data[animation as keyof typeof data]
 }
 
 watchEffect(() => {
   if (showSlash) {
     timer = setTimeout(() => {
       slashStore.setHideSlash()
-    }, TIME_DURATION_SLASH)
+    }, APP_CONFIGS.TIME_DURATION_SLASH)
   } else {
     clearTimeout(timer)
     slashStore.setHideSlash()
@@ -41,7 +39,7 @@ onBeforeUnmount(() => clearTimeout(timer))
 <template>
   <ClientOnly>
     <Vue3Lottie
-      v-if="showSlash && largerThanSm"
+      v-if="showSlash"
       :animationData="mapData()"
       class="lotties pointer-events-none fixed inset-0 z-50 !h-screen !w-screen"
       :loop="false"

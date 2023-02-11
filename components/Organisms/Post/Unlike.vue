@@ -1,17 +1,17 @@
 <script lang="ts" setup>
 import { Elastic, gsap } from 'gsap'
-import UnlikeIcon_ from '@@/assets/svg/unlike_icon.svg'
+import UnlikeIcon_ from '@/assets/svg/unlike_icon.svg'
 
-const unlikeRef = $ref<HTMLDivElement | null>(null)
+const unlikeRef = $ref<HTMLDivElement>()
 let tl = gsap.timeline({})
 
 onMounted(() => {
-  tl.to(unlikeRef, {
+  tl.to(unlikeRef!, {
     scale: 4,
     duration: 0.5,
     ease: Elastic.easeOut.config(1, 0.3),
   })
-  tl.to(unlikeRef, {
+  tl.to(unlikeRef!, {
     display: 'none',
     duration: 0,
   })

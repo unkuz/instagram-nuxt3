@@ -1,4 +1,4 @@
-import { useGlobalStore } from '@@/store'
+import { useGlobalStore } from '@/store'
 export function deboundRoute(url: string) {
   const globalStore = useGlobalStore()
   const router = useRouter()

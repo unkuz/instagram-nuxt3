@@ -1,20 +1,23 @@
 <script lang="ts" setup>
-import BackDrop from '@@/components/Utils/BackDrop.vue'
-import { useWindowResizeCallback, useLockScroll } from '@@/composables'
+import BackDrop from '@/components/Utils/BackDrop.vue'
+import { useWindowResizeCallback, useLockScroll } from '@/composables'
+import { onClickOutside } from '@vueuse/core'
 
-const viewPostRef = $ref<HTMLDivElement | null>(null)
-const commentHeadingRef = $ref<HTMLDivElement | null>(null)
-const commentRef = $ref<HTMLDivElement | null>(null)
-const commentContainerRef = $ref<HTMLDivElement | null>(null)
+const viewPostRef = $ref<HTMLDivElement>()
+const commentHeadingRef = $ref<HTMLDivElement>()
+const commentRef = $ref<HTMLDivElement>()
+const commentContainerRef = $ref<HTMLDivElement>()
 const router = useRouter()
 
 useLockScroll()
 
-useClickOutSide(viewPostRef, () => {
+onClickOutside(viewPostRef, () => {
   router.back()
 })
 const calcHeightComment = () => {
-  commentRef!.style.height = `${commentContainerRef!.clientHeight - commentHeadingRef!.clientHeight}px`
+  commentRef!.style.height = `${
+    commentContainerRef!.clientHeight - commentHeadingRef!.clientHeight
+  }px`
 }
 
 useWindowResizeCallback(calcHeightComment)
@@ -60,16 +63,21 @@ useWindowResizeCallback(calcHeightComment)
             </div>
           </div>
           <div ref="commentRef" class="overflow-y-scroll p-[16px]">
-            <div v-for="(_i, idx) in 40" :key="idx" class="mb-[10px] flex w-full items-center justify-between">
+            <div
+              v-for="(_i, idx) in 40"
+              :key="idx"
+              class="mb-[10px] flex w-full items-center justify-between"
+            >
               <div class="flex">
                 <div class="mr-[18px] aspect-square h-[40px] w-[40px] rounded-[50%] bg-black" />
                 <div>
                   <div class="">
                     <span class="mr-[4px]">cuzknothz</span>
                     <span>
-                      น่ารัก​ครับ​น้องน่ารัก​ครับ​น้องน่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
-                      น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
+                      น่ารัก​ครับ​น้องน่ารัก​ครับ​น้องน่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
                       น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
+                      น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
+                      น่ารัก​ครับ​น้อง น่ารัก​ครับ​น้อง
                     </span>
                   </div>
 

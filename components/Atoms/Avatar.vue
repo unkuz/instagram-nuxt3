@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SizeAvatarEnum } from '@@/type'
+import { SizeAvatarEnum } from '@/type'
 
 const { T, S, M, L } = SizeAvatarEnum
 

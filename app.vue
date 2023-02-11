@@ -1,26 +1,31 @@
 <script lang="ts" setup>
-import Loading from '@@/components/Atoms/Loading.vue'
-import NewPost from '@@/components/Huge/NewPost/index.vue'
-import Slash from '@@/components/Molecules/Slash.vue'
-import Cookie from '@@/components/Utils/Cookie.vue'
-import More from '@@/components/Utils/More.vue'
-import Prelude from '@@/components/Utils/Prelude.vue'
-import { usePrelude, useResizeWindow, useScroll, useScrollBarTheme, useWatchRouteSetSection } from '@@/composables'
-import { SectionEnum } from '@@/constants'
-import { registerSeviceWorkerPWA } from '@@/helpers'
-import { useGlobalStore, useMoreStore, useThemeStore } from '@@/store'
+import Loading from '@/components/Atoms/Loading.vue'
+import Add_ from '@/components/Molecules/Add/Add_.vue'
+import Slash from '@/components/Molecules/Slash.vue'
+import Cookie from '@/components/Utils/Cookie.vue'
+import More from '@/components/Utils/More.vue'
+import Prelude from '@/components/Utils/Prelude.vue'
+import {
+  usePrelude,
+  useResizeWindow,
+  useScroll,
+  useScrollBarTheme,
+  useWatchRouteSetSection,
+} from '@/composables'
+import { registerSeviceWorkerPWA } from '@/helpers'
+import { useAddStore, useMoreStore, useThemeStore } from '@/store'
 import { storeToRefs } from 'pinia'
 
-const { section, getIsMobile: isMobile } = $(storeToRefs(useGlobalStore()))
+const addStore = useAddStore()
 const { isShow: isShowMore } = $(storeToRefs(useMoreStore()))
 const { darkMode: isDarkMode } = $(storeToRefs(useThemeStore()))
 const { isShowPrelude } = usePrelude()
 
 registerSeviceWorkerPWA()
-useScrollBarTheme()
 useScroll()
 useResizeWindow()
 useWatchRouteSetSection()
+useScrollBarTheme()
 
 useHead({
   meta: [{ name: 'theme-color', content: isDarkMode ? '#121212' : '#fff' }],
@@ -47,7 +52,7 @@ useHead({
           <OgImageScreenshot />
           <NuxtPage />
         </NuxtLayout>
-        <NewPost v-if="section === SectionEnum.NEW_POST && !isMobile" />
+        <Add_ v-if="addStore.isShow" />
         <More v-if="isShowMore" />
         <Cookie />
       </div>

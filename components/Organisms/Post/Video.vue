@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import ExpandIcon_ from '@@/assets/svg/full_screen.svg'
-import Loading from '@@/components/Atoms/Video/Loading.vue'
-import PauseIcon_ from '@@/components/Atoms/Video/Pause.vue'
-import ProgressVideoBar from '@@/components/Atoms/Video/ProgressVideoBar.vue'
-import { useDoubleClick } from '@@/composables'
-import { useTimeLineStore } from '@@/store'
+import ExpandIcon_ from '@/assets/svg/full_screen.svg'
+import Loading from '@/components/Atoms/Video/Loading.vue'
+import PauseIcon_ from '@/components/Atoms/Video/Pause.vue'
+import ProgressVideoBar from '@/components/Atoms/Video/ProgressVideoBar.vue'
+import { useDoubleClick } from '@/composables'
+import { useFeedStore } from '@/store'
 import { useMediaControls } from '@vueuse/core'
 
 interface IProps {
@@ -13,13 +13,16 @@ interface IProps {
 }
 
 const props = defineProps<IProps>()
-const timelineStore = useTimeLineStore()
+const timelineStore = useFeedStore()
 const videoRef = ref<HTMLVideoElement | null>(null)
 let containerRef = $ref<HTMLVideoElement | null>(null)
 
-const { playing, currentTime, duration, volume, muted, buffered, waiting } = useMediaControls(videoRef, {
-  src: props.video.src,
-})
+const { playing, currentTime, duration, volume, muted, buffered, waiting } = useMediaControls(
+  videoRef,
+  {
+    src: props.video.src,
+  }
+)
 
 const togglePlay = () => {
   playing.value = !playing.value
@@ -37,7 +40,10 @@ const toggleFullScreen = () => {
 </script>
 
 <template>
-  <div ref="containerRef" class="group relative flex min-w-full items-center justify-center overflow-hidden bg-c2">
+  <div
+    ref="containerRef"
+    class="group relative flex min-w-full items-center justify-center overflow-hidden bg-c2"
+  >
     <video
       ref="videoRef"
       class="video block max-h-[100vh] w-full"
@@ -46,7 +52,7 @@ const toggleFullScreen = () => {
       crossorigin="anonymous"
       loop
       preload="metadata"
-      :poster="video.poster"
+      :poster="video.poster ?? ''"
     />
     <Loading v-show="waiting" />
     <PauseIcon_
@@ -57,6 +63,7 @@ const toggleFullScreen = () => {
     <ProgressVideoBar
       :currentTime="currentTime"
       :duration="duration"
+      :buffered="buffered"
       @setCurentTime="(val) => (currentTime = val * duration)"
     />
     <div class="absolute bottom-[10px] right-[10px] flex gap-[15px]">

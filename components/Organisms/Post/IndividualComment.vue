@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Avatar from '@@/components/Atoms/Avatar.vue'
-import { useForceRenderTimer } from '@@/composables'
-import { SizeAvatarEnum } from '@@/type'
+import Avatar from '@/components/Atoms/Avatar.vue'
+import { useForceRenderTimer } from '@/composables'
+import { SizeAvatarEnum } from '@/type'
 import moment from 'moment'
-import TagName from '~~/components/Atoms/TagName.vue'
+import TagName from '@/components/Atoms/TagName.vue'
 
 interface IProps {
   comment: any
@@ -13,7 +13,6 @@ interface IProps {
 defineProps<IProps>()
 
 const { key } = useForceRenderTimer()
-const { S } = SizeAvatarEnum
 </script>
 
 <template>
@@ -21,7 +20,7 @@ const { S } = SizeAvatarEnum
     <div class="relative my-[4px] rounded-md">
       <div class="mx-[10px] flex items-center gap-[10px]">
         <NuxtLink :to="`/${comment.user.username}`">
-          <Avatar :url="comment.user.profile_pic_url" :size="S" />
+          <Avatar :url="comment.user.profile_pic_url" :size="SizeAvatarEnum.S" />
         </NuxtLink>
         <div class="flex items-end gap-[10px]">
           <NuxtLink :to="`/${comment.user.username}`">
@@ -74,7 +73,7 @@ const { S } = SizeAvatarEnum
     >
       <div class="mx-[10px] flex items-center gap-[10px]">
         <NuxtLink :to="`/${user.username}`">
-          <Avatar :url="user.profile_pic_url" :size="S" />
+          <Avatar :url="user.profile_pic_url" :size="SizeAvatarEnum.S" />
         </NuxtLink>
         <NuxtLink :to="`/${user.username}`">
           <TagName :name="comment.user.username" />
@@ -87,7 +86,9 @@ const { S } = SizeAvatarEnum
         <p>{{ text }}</p>
         <div class="flex gap-[20px] text-[0.8rem]">
           <div class="flex items-end gap-[5px] font-[550]">
-            <span class="align-bottom text-[0.9rem] leading-[1.05rem]">{{ comment_like_count }}</span>
+            <span class="align-bottom text-[0.9rem] leading-[1.05rem]">{{
+              comment_like_count
+            }}</span>
             <span class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1" title="Like">
               <svg width="18" height="18" viewBox="0 0 24 24">
                 <g>

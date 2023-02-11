@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { useTimeLineStore } from '@@/store'
+import { useFeedStore } from '@/store'
 
 export const usePostDetailStore = defineStore('post-detail', {
   state: () => ({
@@ -74,7 +74,7 @@ export const usePostDetailStore = defineStore('post-detail', {
   getters: {},
   actions: {
     setPostDetail(id: string) {
-      const timeLineStore = useTimeLineStore()
+      const timeLineStore = useFeedStore()
       this.post = timeLineStore.data.find((i) => i.id === id)
       if (!this.post) {
         this.hasErr = true

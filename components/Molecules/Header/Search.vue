@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import SearchIcon from '@@/assets/svg/search_icon_2367fdg.svg'
-import { useClickOutSide } from '@@/composables'
-import { useSearchStore } from '@@/store'
+import SearchIcon from '@/assets/svg/search_icon_2367fdg.svg'
+import { useSearchStore } from '@/store'
+import { onClickOutside } from '@vueuse/core'
 
 const searchStore = useSearchStore()
-const searchRef = ref<HTMLInputElement | null>(null)
-const inputSearch = $ref<HTMLInputElement | null>(null)
+const searchRef = ref<HTMLInputElement>()
+const inputSearch = $ref<HTMLInputElement>()
 const isSearchActive = $computed(() => searchStore.isFocus)
 const isSearchHaveValue = $computed(() => searchStore.getIsSearchHaveValue)
 
@@ -18,7 +18,7 @@ watch(
   }
 )
 
-useClickOutSide(searchRef, () => {
+onClickOutside(searchRef, () => {
   searchStore.setIsFocus(false)
 })
 </script>
@@ -26,7 +26,7 @@ useClickOutSide(searchRef, () => {
 <template>
   <div
     ref="searchRef"
-    class="relative flex h-[36px] w-[268px] cursor-text items-center rounded-md bg-c4 px-[16px] dark:bg-c23"
+    class="relative flex h-[36px] w-[268px] cursor-text items-center rounded-md bg-c4/50 px-[16px] dark:bg-c23/50"
     @click="searchStore.setIsFocus(true)"
   >
     <SearchIcon v-show="!isSearchActive" class="[&>path]:stroke-black [&>path]:dark:stroke-white" />

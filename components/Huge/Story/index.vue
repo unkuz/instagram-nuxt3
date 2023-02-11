@@ -1,18 +1,18 @@
 <script lang="ts" setup>
-import BackDrop from '@@/components/Utils/BackDrop.vue'
-import { useClickOutSide } from '@@/composables'
-import { useStoryStore } from '@@/store'
+import BackDrop from '@/components/Utils/BackDrop.vue'
+import { useStoryStore } from '@/store'
+import { onClickOutside } from '@vueuse/core'
 
 const storyStore = useStoryStore()
-const barRef = ref<HTMLDivElement | null>(null)
-const containerBar = $ref<HTMLDivElement | null>(null)
+const barRef = ref<HTMLDivElement>()
+const containerBar = $ref<HTMLDivElement>()
 const videoRef = ref<HTMLVideoElement | null>(null)
-const bigPlayIcon = ref<HTMLDivElement | null>(null)
-const mediaContainerRef = ref<HTMLDivElement | null>(null)
+const bigPlayIcon = ref<HTMLDivElement>()
+const mediaContainerRef = ref<HTMLDivElement>()
 let isVideoPlay = $ref(false)
 let isVideoMuted = $ref(true)
 
-useClickOutSide(mediaContainerRef, () => {
+onClickOutside(mediaContainerRef, () => {
   storyStore.setIsShowStory(false)
 })
 
@@ -26,7 +26,9 @@ const keyCodeBehaviour = (e: KeyboardEvent) => {
 
 const updateTime = () => {
   Object.assign(barRef.value!.style, {
-    width: `${(videoRef.value!.currentTime * containerBar!.clientWidth) / videoRef.value!.duration}px`,
+    width: `${
+      (videoRef.value!.currentTime * containerBar!.clientWidth) / videoRef.value!.duration
+    }px`,
   })
   isVideoPlay = !videoRef.value!.paused
   isVideoMuted = videoRef.value!.muted
@@ -90,7 +92,12 @@ const togglePlay = () => {
           ]"
           @click="togglePlay"
         >
-          <svg aria-label="Play" class="cursor-pointer fill-c1 text-c1" role="img" viewBox="0 0 24 24">
+          <svg
+            aria-label="Play"
+            class="cursor-pointer fill-c1 text-c1"
+            role="img"
+            viewBox="0 0 24 24"
+          >
             <path
               d="M5.888 22.5a3.46 3.46 0 01-1.721-.46l-.003-.002a3.451 3.451 0 01-1.72-2.982V4.943a3.445 3.445 0 015.163-2.987l12.226 7.059a3.444 3.444 0 01-.001 5.967l-12.22 7.056a3.462 3.462 0 01-1.724.462z"
             />

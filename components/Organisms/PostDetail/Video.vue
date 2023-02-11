@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { gsap } from 'gsap'
-import ExpandIcon_ from '@@/assets/svg/full_screen.svg'
-import PlayIcon_ from '@@/assets/svg/play_icon.svg'
-import { useDoubleClick, usePercentVideo } from '@@/composables'
-import { useTimeLineStore } from '@@/store'
-import { stopOtherVideoPlaying } from '~~/helpers'
-import LoadingIcon_ from '@@/assets/svg/Dual Ring-1s-200px.svg'
+import ExpandIcon_ from '@/assets/svg/full_screen.svg'
+import PlayIcon_ from '@/assets/svg/play_icon.svg'
+import { useDoubleClick, usePercentVideo } from '@/composables'
+import { useFeedStore } from '@/store'
+import { stopOtherVideoPlaying } from '@/helpers'
+import LoadingIcon_ from '@/assets/svg/Dual Ring-1s-200px.svg'
 
 interface IProps {
   video: any
@@ -13,10 +13,10 @@ interface IProps {
 }
 
 const props = defineProps<IProps>()
-const timelineStore = useTimeLineStore()
+const timelineStore = useFeedStore()
 const videoRef = ref<HTMLVideoElement | null>(null)
 const containerRef = ref<HTMLVideoElement | null>(null)
-const progressBarRef = ref<HTMLDivElement | null>(null)
+const progressBarRef = ref<HTMLDivElement>()
 const isVideoPlay = ref<boolean>(false)
 const isFullScreen = ref<boolean>(false)
 const isLoading = ref<boolean>(true)
@@ -58,7 +58,8 @@ watch(percent, () => {
 })
 
 const scrub = (e: MouseEvent) => {
-  const scrubTime = (e.offsetX / progressBarRef.value!.parentElement!.offsetWidth) * videoRef.value!.duration
+  const scrubTime =
+    (e.offsetX / progressBarRef.value!.parentElement!.offsetWidth) * videoRef.value!.duration
   videoRef.value!.currentTime = scrubTime
 }
 
@@ -101,7 +102,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="containerRef" class="group relative flex min-w-full items-center justify-center overflow-hidden bg-c2">
+  <div
+    ref="containerRef"
+    class="group relative flex min-w-full items-center justify-center overflow-hidden bg-c2"
+  >
     <video
       ref="videoRef"
       class="video block max-h-[100vh] w-full"

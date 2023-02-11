@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { Elastic, gsap } from 'gsap'
-import LikeIcon_ from '@@/assets/svg/heart_break_icon.svg'
+import LikeIcon_ from '@/assets/svg/heart_break_icon.svg'
 
-const likeRef = ref<HTMLDivElement | null>(null)
+const likeRef = ref<HTMLDivElement>()
 
 onMounted(() => {
   const tl = gsap.timeline()

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { SectionEnum } from '@@/constants'
-import { useGlobalStore } from '@@/store'
-import InstagramLogo_ from '@@/assets/svg/instagram_logo.svg'
+import { SectionEnum } from '@/constants'
+import { useGlobalStore } from '@/store'
+import InstagramLogo_ from '@/assets/svg/instagram_logo.svg'
 
 const globalStore = useGlobalStore()
 

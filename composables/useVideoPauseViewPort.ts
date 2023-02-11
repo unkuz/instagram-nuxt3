@@ -1,5 +1,5 @@
 import { Ref } from 'vue'
-import { useCurrentVideoStore } from '@@/store'
+import { useCurrentVideoStore } from '@/store'
 
 export const useVideoPauseViewPort = (videoRef: Ref<HTMLVideoElement | null>) => {
   const currentVideoStore = useCurrentVideoStore()

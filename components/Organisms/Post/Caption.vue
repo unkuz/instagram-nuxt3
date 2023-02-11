@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TagName from '~~/components/Atoms/TagName.vue'
+import TagName from '@/components/Atoms/TagName.vue'
 
 interface IProps {
   userName: string
@@ -21,7 +21,10 @@ const hasCaptionOrTag = $computed(() => {
   <div>
     <TagName :name="userName" />
     <div v-if="hasCaptionOrTag" class="mt-[5px] py-[5px] md:text-[0.85rem]">
-      <p class="whitespace-pre-line [&>a]:text-c7 dark:[&>a]:text-c15" v-html="$urlify(captionContent)"></p>
+      <p
+        class="whitespace-pre-line [&>a]:text-c7 dark:[&>a]:text-c15"
+        v-html="$urlify(captionContent)"
+      ></p>
       <div class="mt-[3px] flex flex-wrap gap-[8px]">
         <NuxtLink v-for="(i, idx) in tags" :key="idx" :to="`/explore/tags/${i}`">
           <div class="text-purple-500" title="tag">

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useForceRenderTimer } from '@@/composables'
+import { useForceRenderTimer } from '@/composables'
 import moment from 'moment'
 import Caption from './Caption.vue'
 import Carousel from './Carousel.vue'
@@ -8,12 +8,13 @@ import Head from './Head.vue'
 import IndividualComment from './IndividualComment.vue'
 import LikeCommentCount from './LikeCommentCount.vue'
 import React from './React.vue'
-import { useTimeLineStore } from '~~/store'
-import { IPending } from '~~/type'
+import { useFeedStore } from '@/store'
+import { IPending } from '@/type'
+import PostSkl from '@/components/Skeleton/Post.vue'
 
 defineProps<IPending>()
 
-const timeLineStore = useTimeLineStore()
+const timeLineStore = useFeedStore()
 const timeline = $computed(() => timeLineStore.data)
 const commentRef = $ref<HTMLDivElement | null>(null)
 let currentReplyCommentId = ref('')
@@ -42,6 +43,7 @@ const { key } = useForceRenderTimer()
             :has-saved="i.is_saved"
             :has-liked="i.has_liked"
             @current-index-carousel="setCurrent($event)"
+            :currentParent="currentIdx"
           />
           <div class="px-[16px] text-xs md:text-sm">
             <React
@@ -50,14 +52,28 @@ const { key } = useForceRenderTimer()
               :has-liked="i.has_liked"
               :media-arr="i.carousel_media.images.concat(i.carousel_media.videos)"
               :has-saved="i.is_saved"
+              @current-index-carousel="setCurrent($event)"
             />
             <LikeCommentCount :like-count="i.like_count" :comment-count="i.comments.length" />
-            <Caption :user-name="i.user.username" :caption-content="i.caption_text" :tags="i.tags" />
-            <div :key="key" class="m-[0px_0px_0px_0px] h-[18px] text-c3 dark:text-c21 md:text-[0.8rem]">
+            <Caption
+              :user-name="i.user.username"
+              :caption-content="i.caption_text"
+              :tags="i.tags"
+            />
+            <div
+              :key="key"
+              class="m-[0px_0px_0px_0px] h-[18px] text-c3 dark:text-c21 md:text-[0.8rem]"
+            >
               {{ moment(i.created_at).fromNow() }}
             </div>
             <div ref="commentRef" class="mt-[15px] w-full">
-              <IndividualComment v-for="(j, idx) in i.comments" :key="idx" :comment="j" :postId="i.id" @reply="reply" />
+              <IndividualComment
+                v-for="(j, idx) in i.comments"
+                :key="idx"
+                :comment="j"
+                :postId="i.id"
+                @reply="reply"
+              />
             </div>
             <Comment
               :id="i.id"
@@ -67,6 +83,6 @@ const { key } = useForceRenderTimer()
           </div>
         </div></article
     ></template>
-    <div v-else>HEHE</div>
+    <PostSkl v-else />
   </div>
 </template>

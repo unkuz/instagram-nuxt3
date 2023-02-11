@@ -1,5 +1,5 @@
 import { Router } from 'vue-router'
-import { useGlobalStore } from '@@/store'
+import { useGlobalStore } from '@/store'
 
 export function useDebounceRoute(url: string, router: Router) {
   const globalStore = useGlobalStore()

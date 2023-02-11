@@ -1,4 +1,4 @@
-import { getScrollbarWidth } from '@@/utils'
+import { getScrollbarWidth } from '@/utils'
 
 export function useLockScroll() {
   let overflow = ''

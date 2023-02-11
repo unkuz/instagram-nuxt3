@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import ExploreIcon_ from '@@/assets/svg/explore_icon.svg'
-import ExploreIconSelected_ from '@@/assets/svg/explore_icon_selected.svg'
+import ExploreIcon_ from '@/assets/svg/explore_icon.svg'
+import ExploreIconSelected_ from '@/assets/svg/explore_icon_selected.svg'
 import IconBase from './IconBase.vue'
 
 interface IconProps {

@@ -1,16 +1,15 @@
 <script lang="ts" setup>
-import PostIcon_ from '@@/assets/svg/post_icon.svg'
-import PostIconSelected_ from '@@/assets/svg/post_icon_selected.svg'
-import ReelIcon_ from '@@/assets/svg/reel_icon.svg'
-import TagIcon_ from '@@/assets/svg/tag_icon.svg'
-import TagIconSelected_ from '@@/assets/svg/tag_icon_selected.svg'
-import Modal from '@@/components/Huge/Profile/Modal.vue'
-import Avatar from '@@/components/Atoms/Avatar.vue'
-import { SELECT_TYPE } from '@@/constants/screens/account'
-import { useAuthStore, useProfileStore } from '@@/store'
-import { SizeAvatarEnum } from '@@/type'
+import PostIcon_ from '@/assets/svg/post_icon.svg'
+import PostIconSelected_ from '@/assets/svg/post_icon_selected.svg'
+import ReelIcon_ from '@/assets/svg/reel_icon.svg'
+import TagIcon_ from '@/assets/svg/tag_icon.svg'
+import TagIconSelected_ from '@/assets/svg/tag_icon_selected.svg'
+import Modal from '@/components/Huge/Profile/Modal.vue'
+import Avatar from '@/components/Atoms/Avatar.vue'
+import { SELECT_TYPE } from '@/constants/screens/account'
+import { useAuthStore, useProfileStore } from '@/store'
+import { SizeAvatarEnum } from '@/type'
 
-const { L } = SizeAvatarEnum
 const profileStore = useProfileStore()
 const authStore = useAuthStore()
 const isShowFollowing = computed(() => profileStore.isShowFollowing)
@@ -28,18 +27,23 @@ const coverImg = computed(() => authStore.data.coverImg)
         :style="{ backgroundImage: `url(${coverImg})` }"
       />
       <Avatar
-        :size="L"
+        :size="SizeAvatarEnum.L"
         :url="avatar"
         class="absolute top-[67%] left-1/2 -translate-x-1/2 border-[5px] border-c1 md:top-[60%] md:left-[3%] md:h-[140px] md:w-[140px] md:translate-x-0"
       />
     </div>
     <div>
-      <div class="mt-[50px] flex flex-col items-center duration-500 md:ml-[180px] md:mt-[5px] md:block">
+      <div
+        class="mt-[50px] flex flex-col items-center duration-500 md:ml-[180px] md:mt-[5px] md:block"
+      >
         <div>Cuzknothz</div>
         <div class="flex space-x-[20px]">
           <span>96 posts</span
-          ><span class="cursor-pointer" @click="profileStore.setIsShowFollowing(true)">38.8k followers</span
-          ><span class="cursor-pointer" @click="profileStore.setIsShowFollowing(true)">150 following</span>
+          ><span class="cursor-pointer" @click="profileStore.setIsShowFollowing(true)"
+            >38.8k followers</span
+          ><span class="cursor-pointer" @click="profileStore.setIsShowFollowing(true)"
+            >150 following</span
+          >
         </div>
       </div>
     </div>

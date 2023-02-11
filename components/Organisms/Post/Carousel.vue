@@ -5,9 +5,9 @@ import Like from './Like.vue'
 import Save from './Save.vue'
 import Unlike from './Unlike.vue'
 import Video from './Video.vue'
-import { stopOtherVideoPlaying } from '@@/helpers'
-import { useCarousel } from '@@/composables'
-import ArrowIcon_ from '@@/assets/svg/arrow_icon.svg'
+import { stopOtherVideoPlaying } from '@/helpers'
+import { useCarousel } from '@/composables'
+import ArrowIcon_ from '@/assets/svg/arrow_icon.svg'
 
 interface IProps {
   images: any
@@ -15,18 +15,26 @@ interface IProps {
   hasLiked: boolean
   id: string
   hasSaved: boolean
+  currentParent: number
 }
 
 const props = defineProps<IProps>()
 let initShowLikeSaved = $ref(false)
 const emit = defineEmits(['current-index-carousel'])
-const containerMediaRef = ref<HTMLDivElement | null>(null)
+const containerMediaRef = ref<HTMLDivElement>()
 
 const { next, prev, current } = useCarousel(containerMediaRef)
 
 const isShowPre = $computed(() => current.value !== 0)
 const isShowNext = $computed(() => current.value !== props.images.concat(props.videos).length - 1)
 const totalMedia = $computed<number>(() => props.images.concat(props.videos).length)
+
+watch(
+  () => props.currentParent,
+  (val) => {
+    current.value = val
+  }
+)
 
 watch(current, (idx) => {
   emit('current-index-carousel', idx)
@@ -68,7 +76,7 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
     </div>
     <div
       v-show="totalMedia > 1"
-      class="absolute top-[20px] right-[20px] flex min-w-[40px] select-none justify-center rounded-full bg-c2 px-[8px] py-[3px] text-[0.75rem] font-[600] text-c1 dark:bg-c1 dark:text-c2"
+      class="absolute top-[20px] right-[20px] flex min-w-[40px] select-none justify-center rounded-full bg-c2/30 px-[8px] py-[3px] text-[0.75rem] font-[600] text-c1 backdrop-blur-[1px] dark:bg-c1/30 dark:text-c2"
     >
       {{ `${current + 1}/${totalMedia}` }}
     </div>

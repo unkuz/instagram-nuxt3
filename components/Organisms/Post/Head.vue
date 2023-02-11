@@ -1,12 +1,11 @@
 <script lang="ts" setup>
-import MoreIcon_ from '@@/assets/svg/more_icon.svg'
-import { useMoreStore } from '@@/store'
-import { SizeAvatarEnum } from '@@/type'
-import Avatar from '@@/components/Atoms/Avatar.vue'
-import TagName from '~~/components/Atoms/TagName.vue'
+import MoreIcon_ from '@/assets/svg/more_icon.svg'
+import { useMoreStore } from '@/store'
+import { SizeAvatarEnum } from '@/type'
+import Avatar from '@/components/Atoms/Avatar.vue'
+import TagName from '@/components/Atoms/TagName.vue'
 
 const moreStore = useMoreStore()
-const { S } = SizeAvatarEnum
 
 interface IProps {
   avatar: string
@@ -22,7 +21,7 @@ const showMore = () => moreStore.setShow()
   <div class="h-[60px]">
     <div class="mx-[16px] flex h-full items-center justify-between">
       <div class="flex items-center space-x-[10px] text-[0.8rem]">
-        <Avatar :size="S" :url="avatar" />
+        <Avatar :size="SizeAvatarEnum.S" :url="avatar" />
         <TagName :name="userName" />
       </div>
       <div>
