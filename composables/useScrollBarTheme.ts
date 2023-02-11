@@ -12,7 +12,7 @@ export const useScrollBarTheme = () => {
       :root {
         --scrollbar-track: #121212 !important;
       }
-      `)
+      `,{id:'scrollbar_theme'})
 
   watchEffect(() => {
     if (darkMode) {
