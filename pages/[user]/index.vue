@@ -10,7 +10,6 @@ import { SELECT_TYPE } from '@/constants/screens/account'
 import { useAuthStore, useProfileStore } from '@/store'
 import { SizeAvatarEnum } from '@/type'
 
-const { L } = SizeAvatarEnum
 const profileStore = useProfileStore()
 const authStore = useAuthStore()
 const isShowFollowing = computed(() => profileStore.isShowFollowing)
@@ -28,7 +27,7 @@ const coverImg = computed(() => authStore.data.coverImg)
         :style="{ backgroundImage: `url(${coverImg})` }"
       />
       <Avatar
-        :size="L"
+        :size="SizeAvatarEnum.L"
         :url="avatar"
         class="absolute top-[67%] left-1/2 -translate-x-1/2 border-[5px] border-c1 md:top-[60%] md:left-[3%] md:h-[140px] md:w-[140px] md:translate-x-0"
       />

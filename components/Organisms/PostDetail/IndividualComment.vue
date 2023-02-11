@@ -10,7 +10,6 @@ interface IProps {
 defineProps<IProps>()
 
 const { key } = useForceRenderTimer()
-const { S } = SizeAvatarEnum
 </script>
 
 <template>
@@ -18,7 +17,7 @@ const { S } = SizeAvatarEnum
     <div class="relative my-[5px] rounded-md">
       <div class="mx-[10px] flex items-center gap-[10px]">
         <NuxtLink :to="`/${comment.user.username}`">
-          <Avatar :url="comment.user.profile_pic_url" :size="S" />
+          <Avatar :url="comment.user.profile_pic_url" :size="SizeAvatarEnum.S" />
         </NuxtLink>
         <NuxtLink :to="`/${comment.user.username}`">
           <p
@@ -50,7 +49,7 @@ const { S } = SizeAvatarEnum
     >
       <div class="mx-[10px] flex items-center gap-[10px]">
         <NuxtLink :to="`/${user.username}`">
-          <Avatar :url="user.profile_pic_url" :size="S" />
+          <Avatar :url="user.profile_pic_url" :size="SizeAvatarEnum.S" />
         </NuxtLink>
         <NuxtLink :to="`/${user.username}`">
           <p

@@ -3,7 +3,6 @@ import { SizeAvatarEnum } from '@/type'
 import { stopOtherVideoPlaying } from '@/helpers'
 import Avatar from '@/components/Atoms/Avatar.vue'
 
-const { M } = SizeAvatarEnum
 
 interface IProps {
   name: string
@@ -30,7 +29,7 @@ defineProps<IProps>()
         ]"
       >
         <div class="h-full w-full rounded-[50%] bg-c1 p-[2px] dark:bg-c19">
-          <Avatar :size="M" :url="avatar" />
+          <Avatar :size="SizeAvatarEnum.M" :url="avatar" />
         </div>
       </div>
       <p class="mt-[5px] overflow-hidden text-ellipsis whitespace-nowrap text-center text-xs">

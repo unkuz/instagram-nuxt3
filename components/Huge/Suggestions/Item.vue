@@ -3,8 +3,6 @@ import Avatar from '@/components/Atoms/Avatar.vue'
 import Button from '@/components/Atoms/Button.vue'
 import { SizeAvatarEnum } from '@/type'
 
-const { S } = SizeAvatarEnum
-
 interface IProps {
   avatar: string
   name: string
@@ -20,7 +18,7 @@ const toggleFollow = () => (isFollow = !isFollow)
 <template>
   <div class="flex h-[48px] items-center justify-between py-[8px]">
     <NuxtLink :to="`/${id}`">
-      <Avatar :size="S" :url="avatar" />
+      <Avatar :size="SizeAvatarEnum.S" :url="avatar" />
     </NuxtLink>
 
     <div class="w-[185px]">

@@ -22,7 +22,6 @@ const sugestionRef = $ref<HTMLDivElement>()
 
 let isIntersecting = $ref(false)
 
-const { M } = SizeAvatarEnum
 const authorText = 'cuzknothz'
 
 // onMounted(() => {
@@ -65,7 +64,7 @@ const authorText = 'cuzknothz'
   <div>
     <div ref="sugestionRef" v-if="!isPending">
       <div class="mt-[26px] mb-[22px] flex h-[56px] items-center justify-between">
-        <Avatar :size="M" :url="avatar" />
+        <Avatar :size="SizeAvatarEnum.M" :url="avatar" />
         <div class="-ml-[70px]">
           <p class="cursor-pointer font-medium">cuzknothz</p>
           <p class="text-c3 dark:text-c21">cuzknothz</p>

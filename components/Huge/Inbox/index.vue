@@ -5,8 +5,6 @@ import StatusUser from '@/components/Atoms/StatusUser.vue'
 import Search from '@/components/Huge/Inbox/Search/index.vue'
 import { SizeAvatarEnum } from '@/type'
 
-const { S, T, M } = SizeAvatarEnum
-
 enum InboxTypeEnum {
   UnRead,
   Team,
@@ -54,7 +52,7 @@ const setExpand = (section: InboxTypeEnum) => {
               v-for="i in 2"
               class="relative mb-[10px] flex justify-between gap-[10px] rounded-[10px] bg-[#4f4f4f7c] p-[8px] shadow-xl last:mb-0"
             >
-              <Avatar :size="S" url="/image/91480011.jpg" />
+              <Avatar :size="SizeAvatarEnum.S" url="/image/91480011.jpg" />
               <div class="flex-1">
                 <div class="flex items-center gap-[5px]">
                   <div class="line-clamp-1">underfined</div>
@@ -74,7 +72,7 @@ const setExpand = (section: InboxTypeEnum) => {
       </div>
       <div class="relative flex-1 overflow-hidden rounded-t-[10px] bg-[#4f4f4f7c] shadow-xl">
         <div class="flex h-[60px] items-center bg-black/60 px-[10px]">
-          <Avatar :size="S" url="/image/91480011.jpg" />
+          <Avatar :size="SizeAvatarEnum.S" url="/image/91480011.jpg" />
         </div>
         <div
           class="absolute bottom-[10px] left-1/2 flex h-[40px] w-[90%] -translate-x-1/2 justify-between rounded-[10px] bg-black px-[10px] shadow-xl"
@@ -97,7 +95,7 @@ const setExpand = (section: InboxTypeEnum) => {
       <div class="w-[220px]">
         <div class="rounded-[10px] bg-[#5b595b] p-[15px] shadow-xl">
           <div class="flex gap-[5px]">
-            <Avatar :size="S" url="/image/91480011.jpg" />
+            <Avatar :size="SizeAvatarEnum.S" url="/image/91480011.jpg" />
             <div>
               <div class="flex items-center gap-[5px]">
                 <p class="line-clamp-1">Lorem,</p>
