@@ -45,15 +45,14 @@ const likeUnLike = (idPost: string) => {
       <ShareIcon_ class="fill-c2 dark:fill-c1" />
     </div>
     <div v-if="mediaArr.length > 1" class="flex items-center justify-center space-x-[4px]">
-      <template v-if="mediaArr.length <= 10"
-        ><div
-          v-for="(_i, idx) in mediaArr"
-          :key="idx"
-          :class="[
-            'h-[6px] w-[6px]  rounded-[50%]  ',
-            currentIdx === idx ? 'bg-c7 dark:bg-c7' : 'bg-c3 dark:bg-c1',
-          ]"
-      /></template>
+      <div
+        v-for="(_i, idx) in mediaArr"
+        :key="idx"
+        :class="[
+          'h-[6px] w-[6px]  rounded-[50%]  ',
+          currentIdx === idx ? 'bg-c7 dark:bg-c7' : 'bg-c3 dark:bg-c1',
+        ]"
+      />
     </div>
     <div class="flex h-full w-full items-center justify-end">
       <SaveIcon_
