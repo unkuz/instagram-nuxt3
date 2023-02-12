@@ -1,10 +1,11 @@
 import { defineStore } from 'pinia'
 import { inboxDetail } from '@/mocks'
-import { useAuthStore } from './auth'
+import { useAuthStore } from '@/store'
 
 export const useInboxDetailStore = defineStore('inboxDetail', {
   state: () => ({
-    data: [...inboxDetail],
+    // data: [...inboxDetail],
+    data: [] as typeof inboxDetail,
     detail: {
       replying: true,
     },
