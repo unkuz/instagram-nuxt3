@@ -35,5 +35,8 @@ export const useInboxDetailStore = defineStore('inboxDetail', {
       })
       this.data = _data
     },
+    setReplying(val: boolean) {
+      this.detail.replying = val
+    },
   },
 })
