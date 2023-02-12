@@ -40,7 +40,7 @@ onClickOutside(moreRef, () => {
         class="fixed right-1/2 -bottom-[100%] z-20 w-[85%] translate-x-1/2 text-[0.8rem] sm:w-[400px]"
       >
         <div
-          class="flex h-[60px] items-center justify-between rounded-[0.8rem] bg-c1/90 backdrop-blur-sm px-[20px] sm:px-[30px]"
+          class="flex h-[60px] items-center justify-between rounded-[0.8rem] bg-c1/90 px-[20px] backdrop-blur-sm sm:px-[30px]"
         >
           <div class="flex items-center space-x-[20px]">
             <Avatar
@@ -69,7 +69,7 @@ onClickOutside(moreRef, () => {
           </div>
         </div>
         <div
-          class="mt-[10px] flex h-[45px] cursor-pointer items-center justify-center rounded-[0.8rem] bg-c1/90 backdrop-blur-sm px-[30px] active:bg-blue-300 sm:h-[50px]"
+          class="mt-[10px] flex h-[45px] cursor-pointer items-center justify-center rounded-[0.8rem] bg-c1/90 px-[30px] backdrop-blur-sm active:bg-blue-300 sm:h-[50px]"
           @click="moreStore.setHidden()"
         >
           Done

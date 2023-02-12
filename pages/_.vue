@@ -24,7 +24,7 @@ const { data: _suggestions, pending: pendingSugestion } = await useLazyFetch<ISt
 
 // storiesStore.save(_stories.value)
 // timeLineStore.save(_timeline.value)
-suggestionStore.save(_suggestions.value)
+// suggestionStore.save(_suggestions.value)
 
 const calcLeftSuggestion = () => {
   if (rightRef && leftRef && leftRef.getClientRects()[0]) {
