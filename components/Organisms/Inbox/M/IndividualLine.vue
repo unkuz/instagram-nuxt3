@@ -12,7 +12,7 @@ withDefaults(defineProps<IProps>(), {
 </script>
 <template>
 
-  <div :class="['mb-[10px] flex gap-[10px] items-end', isReply ?'justify-start': 'justify-end' ]">
+  <div :class="['mb-[10px] last:mb-0 flex gap-[10px] items-end', isReply ?'justify-start': 'justify-end' ]">
 
 
     <Avatar

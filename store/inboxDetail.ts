@@ -13,7 +13,8 @@ export const useInboxDetailStore = defineStore('inboxDetail', {
       const {
         data: { userName, avatar },
       } = authStore
-      this.data.push({
+      let _data = this.data.slice(0)
+      _data.push({
         user: {
           id: userName,
           username: userName,
@@ -26,6 +27,7 @@ export const useInboxDetailStore = defineStore('inboxDetail', {
         },
         message: val,
       })
+      this.data = _data
     },
   },
 })
