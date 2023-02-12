@@ -12,15 +12,16 @@ const containListRef = $ref<HTMLDivElement>()
 
 let listMessageObserver: MutationObserver | null = null
 
+const scrollEnd = () => {
+  if (containListRef?.lastElementChild) {
+    containListRef.lastElementChild.scrollIntoView({ behavior: 'smooth', block: 'end' })
+  }
+}
+
 onMounted(() => {
-  listMessageObserver = new MutationObserver(() => {
-    if (containListRef?.lastElementChild) {
-      containListRef.lastElementChild.scrollIntoView({ behavior: 'smooth', block: 'end' })
-    }
-  })
+  scrollEnd()
+  listMessageObserver = new MutationObserver(() => scrollEnd())
   listMessageObserver.observe(containListRef!, {
-    attributes: true,
-    characterData: true,
     childList: true,
     subtree: true,
   })
