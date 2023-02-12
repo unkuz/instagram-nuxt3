@@ -3,7 +3,7 @@ import Inbox from '@/components/Huge/Inbox/index.vue'
 import { APP_API } from '@/apis'
 import { IStory, ITimeLine } from '@/models'
 import ErrorPage from '@/components/Utils/ErrorPage.vue'
-import Detail from '@/components/Organisms/Inbox/M/Detail.vue'
+import Detail from '@/components/Organisms/Inbox/Detail/Detail.vue'
 
 const { data: _timeline } = await useLazyFetch<ITimeLine[]>(APP_API.timeLine.list)
 const { data: _stories } = await useLazyFetch<IStory[]>(APP_API.stories.list)
