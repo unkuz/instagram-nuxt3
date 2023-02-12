@@ -9,6 +9,7 @@ import { useFocus, useMagicKeys } from '@vueuse/core'
 import { gsap } from 'gsap'
 import Emoji from '~~/components/Utils/Emoji.vue'
 import { useInboxDetailStore } from '~~/store'
+import { usePermission } from '@vueuse/core'
 
 let showEmoji = $ref(false)
 const emojiRef = ref<HTMLDivElement>()
@@ -19,13 +20,58 @@ const { focused } = useFocus(inputRef, { initialValue: false })
 const { shift, space, a, enter } = useMagicKeys()
 let inputValue = $ref('')
 
+const microphoneAccess = usePermission('microphone')
+
 watch(enter, async (val) => {
   if (val && focused.value) {
     await inboxDetailStore.reply(inputValue)
     inputValue = ''
-
   }
 })
+
+const record = () => {
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    console.log('getUserMedia supported.')
+    navigator.mediaDevices
+      .getUserMedia(
+        // constraints - only audio needed for this app
+        {
+          audio: true,
+        }
+      )
+
+      // Success callback
+      .then((stream) => {})
+
+      // Error callback
+      .catch((err) => {
+        console.error(`The following getUserMedia error occurred: ${err}`)
+      })
+  } else {
+    console.log('getUserMedia not supported on your browser!')
+  }
+}
+
+const takePicture = () => {
+  const constraints = {
+    audio: true,
+    video: { width: 1280, height: 720 },
+  }
+
+  navigator.mediaDevices
+    .getUserMedia(constraints)
+    .then((mediaStream) => {
+      const video = document.querySelector('video')
+      //   video.srcObject = mediaStream
+      //   video.onloadedmetadata = () => {
+      //     video.play()
+      //   }
+    })
+    .catch((err) => {
+      // always check for errors at the end.
+      console.error(`${err.name}: ${err.message}`)
+    })
+}
 
 const toggleEmoji = () => (showEmoji = !showEmoji)
 
@@ -60,16 +106,16 @@ onBeforeUnmount(() => {
     </div>
 
     <div
-      class="absolute bottom-0 right-0 left-0 flex h-[60px] items-center justify-evenly bg-c1 dark:bg-c19 py-[5px] [&__svg]:w-[22px] [&__svg]:cursor-pointer [&__svg]:text-blue-400"
+      class="absolute bottom-0 right-0 left-0 flex h-[60px] items-center justify-evenly bg-c1 py-[5px] dark:bg-c19 [&__svg]:w-[22px] [&__svg]:cursor-pointer [&__svg]:text-blue-400"
     >
       <template v-if="hiddenLeft"
         ><span><RightFillIcon_ /></span
       ></template>
 
       <template v-else>
-        <span><CameraFillIcon_ /></span>
+        <span @click="takePicture"><CameraFillIcon_ /></span>
         <span><PictureFillIcon_ /></span>
-        <span><MicFillIcon_ /></span
+        <span @click="record"><MicFillIcon_ /></span
       ></template>
 
       <div
