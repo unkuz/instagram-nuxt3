@@ -2,7 +2,7 @@
 import { APP_API } from '@/apis'
 import Suggestions from '@/components/Huge/Suggestions/index.vue'
 import Stories from '@/components/Molecules/Stories/Stories.vue'
-import Post from '@/components/Organisms/Post/index.vue'
+import Feed from '@/components/Organisms/Feed/List/index.vue'
 import { useWindowResizeCallback } from '@/composables'
 import { IStory, ITimeLine } from '@/models'
 import { useStoriesStore, useSuggestionStore, useFeedStore } from '@/store'
@@ -44,7 +44,7 @@ useWindowResizeCallback(calcLeftSuggestion)
     <div class="relative flex w-full justify-center lg:block">
       <div ref="leftRef" class="inline-flex w-full flex-col items-center md:w-[614px] lg:block">
         <Stories :isPending="pendingStories" v-if="storiesStore.data.length > 0" />
-        <Post :isPending="false" />
+        <Feed :isPending="false" />
       </div>
       <div ref="rightRef" class="fixed left-0 top-[84px] hidden w-[293px] text-sm lg:block">
         <Suggestions :isPending="pendingSugestion" />
