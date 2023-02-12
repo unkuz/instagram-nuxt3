@@ -17,8 +17,9 @@ import { useAddStore, useMoreStore, useThemeStore } from '@/store'
 import { storeToRefs } from 'pinia'
 
 const addStore = useAddStore()
-const { isShow: isShowMore } = $(storeToRefs(useMoreStore()))
-const { darkMode: isDarkMode } = $(storeToRefs(useThemeStore()))
+const moreStore = useMoreStore()
+const isShowMore = computed(() => moreStore.isShow)
+const { darkMode } = storeToRefs(useThemeStore())
 const { isShowPrelude } = usePrelude()
 
 registerSeviceWorkerPWA()
@@ -28,7 +29,7 @@ useWatchRouteSetSection()
 useScrollBarTheme()
 
 useHead({
-  meta: [{ name: 'theme-color', content: isDarkMode ? '#121212' : '#fff' }],
+  meta: [{ name: 'theme-color', content: unref(darkMode) ? '#121212' : '#fff' }],
 })
 </script>
 
@@ -37,7 +38,7 @@ useHead({
     :class="[
       'scroll-smooth font-quicksan',
       {
-        'dark ': isDarkMode,
+        'dark ': darkMode,
       },
     ]"
     v-signature

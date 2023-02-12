@@ -19,7 +19,7 @@ const moreStore = useMoreStore()
 useLockScroll()
 
 onMounted(() => {
-  gsap.to(moreRef, {
+  gsap.to(moreRef.value!, {
     bottom: 0,
     duration: 0.2,
   })
