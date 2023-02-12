@@ -6,8 +6,6 @@ import IndividualLine from './IndividualLine.vue'
 const inboxDetailStore = useInboxDetailStore()
 const authStore = useAuthStore()
 
-
-
 const containRef = $ref<HTMLDivElement>()
 const containListRef = $ref<HTMLDivElement>()
 
@@ -16,7 +14,6 @@ let listMessageObserver: MutationObserver | null = null
 onMounted(() => {
   listMessageObserver = new MutationObserver(() => {
     if (containListRef?.lastElementChild) {
-
       containListRef.lastElementChild.scrollIntoView({ behavior: 'smooth', block: 'end' })
     }
   })
@@ -33,6 +30,7 @@ onBeforeUnmount(() => {
 })
 
 const list = $computed(() => inboxDetailStore.data)
+const replying = $computed(() => inboxDetailStore.detail.replying)
 const currentUser = $computed(() => authStore.data.userName)
 </script>
 
@@ -50,6 +48,7 @@ const currentUser = $computed(() => authStore.data.userName)
           :isReply="i.user.full_name !== currentUser"
           :content="i.message"
         />
+        <IndividualLine v-if="replying" :isReply="true" :content="'...'" />
       </div>
 
       <Bottom />

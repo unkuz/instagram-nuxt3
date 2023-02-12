@@ -5,6 +5,9 @@ import { useAuthStore } from './auth'
 export const useInboxDetailStore = defineStore('inboxDetail', {
   state: () => ({
     data: [...inboxDetail],
+    detail: {
+      replying: true,
+    },
   }),
   getters: {},
   actions: {

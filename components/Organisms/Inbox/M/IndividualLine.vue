@@ -20,7 +20,7 @@ withDefaults(defineProps<IProps>(), {
       url="/image/91480011.jpg"
     />
 
-    <div :class="['rounded-2xl  p-[12px] whitespace-pre-line', isReply ? 'bg-gray-200' : 'bg-blue-500 text-white']">
+    <div :class="['rounded-2xl  p-[12px] whitespace-pre-line', isReply ? 'bg-gray-200 dark:text-c2' : 'bg-blue-500 text-white']">
       {{ content }}
     </div>
   </div>

@@ -23,7 +23,7 @@ watch(enter, async (val) => {
   if (val && focused.value) {
     await inboxDetailStore.reply(inputValue)
     inputValue = ''
-    
+
   }
 })
 
@@ -60,7 +60,7 @@ onBeforeUnmount(() => {
     </div>
 
     <div
-      class="absolute bottom-0 right-0 left-0 flex h-[60px] items-center justify-evenly bg-c1 py-[5px] [&__svg]:w-[22px] [&__svg]:cursor-pointer [&__svg]:text-blue-400"
+      class="absolute bottom-0 right-0 left-0 flex h-[60px] items-center justify-evenly bg-c1 dark:bg-c19 py-[5px] [&__svg]:w-[22px] [&__svg]:cursor-pointer [&__svg]:text-blue-400"
     >
       <template v-if="hiddenLeft"
         ><span><RightFillIcon_ /></span
@@ -74,11 +74,11 @@ onBeforeUnmount(() => {
 
       <div
         :class="[
-          'relative h-[36px]  overflow-hidden rounded-[18px] border-[1px] border-c4',
+          'relative h-[36px]  overflow-hidden rounded-[18px] border-[1px] border-c4 dark:border-c4/20',
           hiddenLeft ? 'w-[80%]' : 'w-[60%]',
         ]"
       >
-        <span ref="aniInputRef" class="absolute h-full w-[0px] bg-c4/50"></span>
+        <span ref="aniInputRef" class="absolute h-full w-[0px] bg-c4/50 dark:bg-c4/10"></span>
         <span class="absolute inset-0 px-[10px]"
           ><input
             ref="inputRef"
