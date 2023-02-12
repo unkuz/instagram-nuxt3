@@ -13,10 +13,12 @@ const currentUser = $computed(() => authStore.data.userName)
 </script>
 
 <template>
-  <div class="relative md:h-[calc(100vh-84px)] h-[calc(100vh)] text-[.8rem]">
+  <div class="relative h-[calc(100vh)] text-[.8rem] md:h-[calc(100vh-84px)]">
     <div class=" ">
-      <div>''</div>
-      <div class="w-full overflow-scroll px-[10px] py-[10px]">
+      <div class="absolute top-0">''</div>
+      <div
+        class="h-[calc(100vh-60px)] w-full overflow-scroll px-[10px] py-[10px] md:h-[calc(100vh-84px-60px)]"
+      >
         <IndividualLine
           v-for="(i, idx) in list"
           :key="idx"
