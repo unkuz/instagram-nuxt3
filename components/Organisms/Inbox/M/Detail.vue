@@ -2,6 +2,7 @@
 import { useAuthStore, useInboxDetailStore } from '~~/store'
 import Bottom from './Bottom.vue'
 import IndividualLine from './IndividualLine.vue'
+import Replying from './Replying.vue'
 
 const inboxDetailStore = useInboxDetailStore()
 const authStore = useAuthStore()
@@ -50,9 +51,7 @@ const currentUser = $computed(() => authStore.data.userName)
         />
         <IndividualLine v-if="replying" :isReply="true">
           <template #special>
-            <div>
-              <div class="h-[4px] w-[4px] rounded-[50%] bg-black"></div>
-            </div>
+            <Replying />
           </template>
         </IndividualLine>
       </div>
