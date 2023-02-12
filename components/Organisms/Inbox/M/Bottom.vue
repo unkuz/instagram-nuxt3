@@ -104,7 +104,7 @@ onBeforeUnmount(() => {
 onMounted(() => {
   setInterval(() => {
     inboxDetailStore.setReplying(Math.random() > 0.9)
-  },5000)
+  }, 5000)
 })
 // onClickOutside(emojiRef, () => (showEmoji = true))
 </script>
