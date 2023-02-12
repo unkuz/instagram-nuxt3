@@ -7,7 +7,7 @@ export const useInboxDetailStore = defineStore('inboxDetail', {
     data: [...inboxDetail],
     // data: [] as typeof inboxDetail,
     detail: {
-      replying: true,
+      replying: false,
     },
   }),
   getters: {
