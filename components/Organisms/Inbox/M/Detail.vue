@@ -48,7 +48,13 @@ const currentUser = $computed(() => authStore.data.userName)
           :isReply="i.user.full_name !== currentUser"
           :content="i.message"
         />
-        <IndividualLine v-if="replying" :isReply="true" :content="'...'" />
+        <IndividualLine v-if="replying" :isReply="true">
+          <template #special>
+            <div>
+              <div class="h-[4px] w-[4px] rounded-[50%] bg-black"></div>
+            </div>
+          </template>
+        </IndividualLine>
       </div>
 
       <Bottom />

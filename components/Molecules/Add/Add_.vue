@@ -19,9 +19,16 @@ const close = () => addStore.toggle(false)
 <template>
   <div>
     <BackDrop @click.self="close">
-      <div @click="open()" ref="dropZoneRef" :class="['h-[300px] w-[500px] bg-white text-[.8rem]',{
-        'border-fuchsia-200 border-[5px]': isOverDropZone
-      }]">
+      <div
+        @click="open()"
+        ref="dropZoneRef"
+        :class="[
+          'h-[300px] w-[500px] bg-white text-[.8rem]',
+          {
+            'border-[5px] border-fuchsia-200': isOverDropZone,
+          },
+        ]"
+      >
         <div class="flex justify-between">
           <div>Post</div>
           <div>Story</div>

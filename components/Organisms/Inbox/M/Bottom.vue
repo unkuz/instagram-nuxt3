@@ -114,7 +114,7 @@ onBeforeUnmount(() => {
 
       <template v-else>
         <span @click="takePicture"><CameraFillIcon_ /></span>
-        <span @click="openFileExplorer"><PictureFillIcon_ /></span>
+        <span @click="openFileExplorer()"><PictureFillIcon_ /></span>
         <span @click="record"><MicFillIcon_ /></span
       ></template>
 
