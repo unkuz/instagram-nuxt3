@@ -14,11 +14,13 @@ import {
 } from '@/composables'
 import { registerSeviceWorkerPWA } from '@/helpers'
 import { useAddStore, useMoreStore, useThemeStore } from '@/store'
+import { useWebNotification } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 
 const addStore = useAddStore()
-const { isShow: isShowMore } = $(storeToRefs(useMoreStore()))
-const { darkMode: isDarkMode } = $(storeToRefs(useThemeStore()))
+const moreStore = useMoreStore()
+const isShowMore = computed(() => moreStore.isShow)
+const { darkMode } = storeToRefs(useThemeStore())
 const { isShowPrelude } = usePrelude()
 
 registerSeviceWorkerPWA()
@@ -28,7 +30,22 @@ useWatchRouteSetSection()
 useScrollBarTheme()
 
 useHead({
-  meta: [{ name: 'theme-color', content: isDarkMode ? '#121212' : '#fff' }],
+  meta: [{ name: 'theme-color', content: unref(darkMode) ? '#121212' : '#fff' }],
+})
+
+const { isSupported, notification, show, close, onClick, onShow, onError, onClose } =
+  useWebNotification({
+    title: '😍',
+    dir: 'auto',
+    lang: 'en',
+    renotify: true,
+    tag: 'test',
+  })
+
+onMounted(() => {
+  setInterval(() => {
+    show()
+  }, 5 * 1000 * 60)
 })
 </script>
 
@@ -37,7 +54,7 @@ useHead({
     :class="[
       'scroll-smooth font-quicksan',
       {
-        'dark ': isDarkMode,
+        'dark ': darkMode,
       },
     ]"
     v-signature

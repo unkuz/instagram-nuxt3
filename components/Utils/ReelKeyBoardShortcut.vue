@@ -66,7 +66,7 @@ onBeforeUnmount(() => {
   <div
     ref="containerRef"
     :class="[
-      'fixed right-0 -bottom-[300px] hidden cursor-help rounded-[0.5rem] bg-c1/50 p-[40px_24px_20px_24px] shadow-md  dark:bg-c2/50 backdrop-blur-[5px]  dark:text-c1 md:right-[40px]   md:block  md:w-[280px]',
+      'fixed right-0 -bottom-[300px] hidden cursor-help rounded-[0.5rem] bg-c1/50 p-[40px_24px_20px_24px] shadow-md  backdrop-blur-[5px] dark:bg-c2/50  dark:text-c1 md:right-[40px]   md:block  md:w-[280px]',
     ]"
   >
     <KeyboardIcon_

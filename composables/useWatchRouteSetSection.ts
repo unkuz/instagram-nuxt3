@@ -6,8 +6,11 @@ export const useWatchRouteSetSection = () => {
   const route = useRoute()
 
   watchEffect(() => {
-    const section = route.path.split('/')[1]
+    if (globalStore.section === SectionEnum.NEW_POST) {
+      return
+    }
 
+    const section = route.path.split('/')[1]
     if (section === '_') {
       globalStore.setSection(SectionEnum.HOME)
     } else if (section === 'inbox') {

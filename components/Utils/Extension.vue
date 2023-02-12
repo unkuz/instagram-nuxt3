@@ -7,9 +7,10 @@ const isDarkMode = computed(() => themeStore.darkMode)
 
 <template>
   <div
-    class="absolute top-[30px] -left-[62px] w-[200px] -translate-x-1/2 border-[1px] border-c4 bg-c1 py-[20px] text-[0.7rem] dark:border-c20 dark:bg-c19"
+    class="absolute text-[.8rem] top-[29px] -left-[70px] w-[200px] -translate-x-1/2 border-[1px] border-c4 bg-c1 py-[20px] dark:border-c20 dark:bg-c19"
   >
-    <div class="flex w-full cursor-pointer select-none justify-center">
+    <div class="flex w-full cursor-pointer select-none justify-start items-center px-[20px] gap-[30px]">
+      <div>Dark mode :</div>
       <div
         class="relative h-[20px] w-[40px] overflow-hidden rounded-[10px] bg-c2 dark:bg-c1"
         @click="themeStore.toggleDarkMode"

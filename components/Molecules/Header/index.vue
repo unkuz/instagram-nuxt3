@@ -18,7 +18,7 @@ import { useTailwindBreakPoint } from '@/composables'
 import { SectionEnum } from '@/constants/section'
 import { useAddStore, useAuthStore, useGlobalStore, useSearchStore } from '@/store'
 import { onClickOutside } from '@vueuse/core'
-import { APP_CONFIGS } from '~~/configs'
+import { APP_CONFIGS } from '@/configs'
 
 const globalStore = useGlobalStore()
 const addStore = useAddStore()
@@ -56,6 +56,11 @@ const hiddenHeader = $(
     )
   })
 )
+
+const onAdd = () => {
+  globalStore.setSection(SectionEnum.NEW_POST)
+  addStore.toggle(true)
+}
 </script>
 
 <template>
@@ -109,7 +114,7 @@ const hiddenHeader = $(
               <Reels :is-select="section === SectionEnum.REELS" />
             </NuxtLink>
           </div>
-          <div class="relative" @click="addStore.toggle(true)">
+          <div class="relative" @click="onAdd">
             <NewPost :is-select="addStore.isShow" />
           </div>
           <div v-show="!isMobile" @click="handleSelect(SectionEnum.FINDPEOPLE)">

@@ -9,7 +9,9 @@ interface IProps {
   quality?: number
 }
 
-defineProps<IProps>()
+withDefaults(defineProps<IProps>(), {
+  quality: 50,
+})
 </script>
 <template>
   <nuxt-img

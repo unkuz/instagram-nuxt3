@@ -10,6 +10,11 @@ export const timeLine = [
       images: [],
       videos: [
         {
+          id: 23,
+          src: `/video/KienThien - See It Through (feat. TuanNguyen).mp4`,
+          poster: '',
+        },
+        {
           id: 1,
           src: `/video/KienThien - Turn It Up [Diversity Release].mp4`,
           poster: '',
@@ -117,11 +122,7 @@ export const timeLine = [
           src: `/video/Tatsunoshin - Make You Mine (Official Audio) [Electric Fox].mp4`,
           poster: '',
         },
-        {
-          id: 23,
-          src: `/video/KienThien - See It Through (feat. TuanNguyen).mp4`,
-          poster: '',
-        },
+
         {
           id: 24,
           src: `/video/Jade Key - Saviour (VIP) (feat. ALYE).mp4`,

@@ -6,7 +6,7 @@ import Search from '@/components/Atoms/Nav/Search.vue'
 import SelfAvatar from '@/components/Atoms/Nav/SelfAvatar.vue'
 import { SectionEnum } from '@/constants'
 import { useGlobalStore } from '@/store'
-import { APP_CONFIGS } from '~~/configs'
+import { APP_CONFIGS } from '@/configs'
 
 const globalStore = useGlobalStore()
 const isMobile = $computed(() => globalStore.getIsMobile)

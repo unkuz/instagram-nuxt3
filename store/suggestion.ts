@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { TSuggestion } from '@/models'
 import { APP_CONFIGS } from '@/configs'
+import { suggests } from '@/mocks'
 
 export interface IState {
   data: TSuggestion[]
@@ -10,7 +11,7 @@ export interface IState {
 
 export const useSuggestionStore = defineStore('suggestion', {
   state: (): IState => ({
-    data: [],
+    data: [...suggests],
     hasErr: false,
     errors: {},
   }),
