@@ -6,6 +6,8 @@ import ProgressVideoBar from '@/components/Atoms/Video/ProgressVideoBar.vue'
 import { useDoubleClick } from '@/composables'
 import { useFeedStore } from '@/store'
 import { useMediaControls } from '@vueuse/core'
+import MiniPlayerIcon_ from '@/assets/svg/mingcute/mini_player.svg'
+import ExpandPlayerIcon_ from '@/assets/svg/mingcute/expand_player.svg'
 
 interface IProps {
   video: any
@@ -17,12 +19,20 @@ const timelineStore = useFeedStore()
 const videoRef = ref<HTMLVideoElement | null>(null)
 let containerRef = $ref<HTMLVideoElement | null>(null)
 
-const { playing, currentTime, duration, volume, muted, buffered, waiting } = useMediaControls(
-  videoRef,
-  {
-    src: props.video.src,
-  }
-)
+const {
+  playing,
+  currentTime,
+  duration,
+  volume,
+  muted,
+  buffered,
+  waiting,
+  togglePictureInPicture,
+  supportsPictureInPicture,
+  isPictureInPicture,
+} = useMediaControls(videoRef, {
+  src: props.video.src,
+})
 
 const togglePlay = () => {
   playing.value = !playing.value
@@ -73,6 +83,16 @@ const toggleFullScreen = () => {
           @click.stop.prevent="toggleFullScreen"
         />
       </div>
+    </div>
+    <div @click="togglePictureInPicture" v-if="supportsPictureInPicture">
+      <MiniPlayerIcon_
+        v-if="!isPictureInPicture"
+        class="absolute top-[10px] left-[10px] hidden !w-[26px] cursor-pointer group-hover:block"
+      />
+      <ExpandPlayerIcon_
+        v-else
+        class="absolute top-[10px] left-[10px] hidden !w-[26px] cursor-pointer group-hover:block"
+      />
     </div>
   </div>
 </template>
