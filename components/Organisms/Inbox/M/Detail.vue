@@ -67,7 +67,7 @@ const currentUser = $computed(() => authStore.data.userName)
       </div>
       <div
         ref="containListRef"
-        class="h-[calc(100vh-60px)] w-full overflow-scroll p-[10px_10px_0px_10px] py-[60px] md:h-[calc(100vh-84px-60px)]"
+        class="h-[calc(100vh-60px)] w-full overflow-scroll p-[10px_10px_0px_10px] pt-[60px] md:h-[calc(100vh-84px-60px)]"
       >
         <IndividualLine
           v-for="(i, idx) in list"
