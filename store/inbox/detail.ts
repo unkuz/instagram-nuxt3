@@ -4,13 +4,27 @@ import { useAuthStore } from '@/store'
 
 export const useInboxDetailStore = defineStore('inboxDetail', {
   state: () => ({
-    // data: [...inboxDetail],
-    data: [] as typeof inboxDetail,
+    data: [...inboxDetail],
+    // data: [] as typeof inboxDetail,
     detail: {
       replying: true,
     },
   }),
-  getters: {},
+  getters: {
+    dataAfterProcees: (state) => {
+      if (!_isArray(state.data)) return []
+      let _data = _cloneDeep(state.data.map((i) => ({ ...i, sequent: false })))
+
+      for (let i = 0; i < state.data.length; i++) {
+        if (_data?.[i]?.user?.username === _data?.[i + 1]?.user?.username) {
+          _data[i].sequent = true
+          _data[i + 1].sequent = true
+        }
+      }
+
+      return _data
+    },
+  },
   actions: {
     reply(val: string) {
       if (!val.trim()) {

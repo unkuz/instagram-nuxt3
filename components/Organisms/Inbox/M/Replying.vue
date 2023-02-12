@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
 
-let tl = gsap.timeline({ repeat: Infinity })
+let tl = gsap.timeline({ repeat: 100 })
 
 onMounted(() => {
   tl.to('.replying___', {

@@ -31,7 +31,7 @@ onBeforeUnmount(() => {
   listMessageObserver?.disconnect()
 })
 
-const list = $computed(() => inboxDetailStore.data)
+const list = $computed(() => inboxDetailStore.dataAfterProcees)
 const replying = $computed(() => inboxDetailStore.detail.replying)
 const currentUser = $computed(() => authStore.data.userName)
 </script>
@@ -49,6 +49,7 @@ const currentUser = $computed(() => authStore.data.userName)
           :key="idx"
           :isReply="i.user.full_name !== currentUser"
           :content="i.message"
+          :sequent="i.sequent"
         />
         <IndividualLine v-if="replying" :isReply="true">
           <template #special>
