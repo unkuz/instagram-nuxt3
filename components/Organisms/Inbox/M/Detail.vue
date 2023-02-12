@@ -48,13 +48,15 @@ const currentUser = $computed(() => authStore.data.userName)
       >
         <NuxtLink to="/inbox/"><BackIcon_ /> </NuxtLink>
         <span class="flex flex-col items-center text-[.8rem] font-[600]"
-          ><span>cuzknothz</span
+          ><NuxtLink to="/cukznothz"><span class="cursor-pointer">cuzknothz</span></NuxtLink
           ><span :class="[isOnline ? 'text-c15' : 'text-c21']">{{
             isOnline ? 'Online' : 'Offline'
           }}</span></span
         >
         <span class="relative"
-          ><Avatar url="/image/91480011.jpg" class="h-[30px] w-[30px]" />
+          ><NuxtLink to="/cukznothz"
+            ><Avatar url="/image/91480011.jpg" class="h-[30px] w-[30px]"
+          /></NuxtLink>
           <div
             :class="[
               'absolute -right-[3px] bottom-0 h-[8px] w-[8px] rounded-[50%] bg-c15',
