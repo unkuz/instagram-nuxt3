@@ -5,18 +5,26 @@ import LikeFillIcon_ from '@/assets/svg/mingcute/like_fill.svg'
 import MicFillIcon_ from '@/assets/svg/mingcute/mic_fill.svg'
 import PictureFillIcon_ from '@/assets/svg/mingcute/picture_fill.svg'
 import RightFillIcon_ from '@/assets/svg/mingcute/right_fill.svg'
-
-import { useFocus } from '@vueuse/core'
+import { useFocus, useMagicKeys } from '@vueuse/core'
 import { gsap } from 'gsap'
 import Emoji from '~~/components/Utils/Emoji.vue'
+import { useInboxDetailStore } from '~~/store'
 
 let showEmoji = $ref(false)
 const emojiRef = ref<HTMLDivElement>()
+const inboxDetailStore = useInboxDetailStore()
 const aniInputRef = $ref<HTMLSpanElement>()
 const inputRef = ref<HTMLInputElement>()
 const { focused } = useFocus(inputRef, { initialValue: false })
+const { shift, space, a, enter } = useMagicKeys()
+let inputValue = $ref('')
 
-const inputValue = $ref('')
+watch(enter, async (val) => {
+  if (val && focused.value) {
+    await inboxDetailStore.reply(inputValue)
+    inputValue = ''
+  }
+})
 
 const toggleEmoji = () => (showEmoji = !showEmoji)
 
