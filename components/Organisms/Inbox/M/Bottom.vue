@@ -85,10 +85,14 @@ watch(focused, (focused) => {
   if (focused) {
     tl.to(aniInputRef!, {
       width: '100%',
+      duration: 0.3,
+      ease: 'slow(0.7, 0.7, false)',
     })
   } else {
     tl.to(aniInputRef!, {
       width: '0%',
+      duration: 0.3,
+      ease: 'slow(0.7, 0.7, false)',
     })
   }
 })
