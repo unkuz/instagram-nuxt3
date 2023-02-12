@@ -21,7 +21,7 @@ defineProps<IProps>()
     >
       <div
         :class="[
-          'mx-auto flex aspect-square h-[66px] w-[66px] flex-col items-center overflow-hidden rounded-[50%]  p-[3px] ',
+          'mx-auto flex aspect-square h-[66px] w-[66px] flex-col items-center overflow-hidden rounded-[50%] p-[3px] ',
           hasRead ? 'bg-c21/60' : 'bg-gradient-to-bl from-c17 to-c18 dark:from-c24 dark:to-c25',
         ]"
       >
