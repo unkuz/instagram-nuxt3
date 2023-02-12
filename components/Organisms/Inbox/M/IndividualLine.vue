@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Avatar from '~~/components/Atoms/Avatar.vue'
-import { SizeAvatarEnum } from '~~/type'
+import Avatar from '@/components/Atoms/Avatar.vue'
+import { SizeAvatarEnum } from '@/type'
 interface IProps {
   isReply: boolean
   content?: string

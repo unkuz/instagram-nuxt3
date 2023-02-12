@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { IStory } from '@/models'
-import { stories } from '~~/mocks'
+import { stories } from '@/mocks'
 
 interface IState {
   data: IStory[]

@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { useAuthStore, useInboxDetailStore } from '~~/store'
+import { useAuthStore, useInboxDetailStore } from '@/store'
 import Bottom from './Bottom.vue'
 import IndividualLine from './IndividualLine.vue'
 import Replying from './Replying.vue'
+import Avatar from '@/components/Atoms/Avatar.vue'
+import BackIcon_ from '@/assets/svg/mingcute/back.svg'
 
 const inboxDetailStore = useInboxDetailStore()
 const authStore = useAuthStore()
+
+const isOnline = ref(true)
 
 const containRef = $ref<HTMLDivElement>()
 const containListRef = $ref<HTMLDivElement>()
@@ -39,10 +43,29 @@ const currentUser = $computed(() => authStore.data.userName)
 <template>
   <div class="fck relative h-[calc(100vh)] text-[.8rem] md:h-[calc(100vh-84px)]">
     <div class=" " ref="containRef">
-      <div class="absolute top-0">''</div>
+      <div
+        class="absolute top-0 left-0 right-0 flex h-[60px] w-full items-center justify-between bg-c1/90 dark:bg-c19/50 px-[20px] backdrop-blur-[2px]"
+      >
+        <NuxtLink to="/inbox/"><BackIcon_ /> </NuxtLink>
+        <span class="flex flex-col items-center text-[.8rem] font-[600]"
+          ><span>cuzknothz</span
+          ><span :class="[isOnline ? 'text-c15' : 'text-c21']">{{
+            isOnline ? 'Online' : 'Offline'
+          }}</span></span
+        >
+        <span class="relative"
+          ><Avatar url="/image/91480011.jpg" class="h-[30px] w-[30px]" />
+          <div
+            :class="[
+              'absolute -right-[3px] bottom-0 h-[8px] w-[8px] rounded-[50%] bg-c15',
+              isOnline ? 'bg-c15' : 'bg-c21',
+            ]"
+          ></div>
+        </span>
+      </div>
       <div
         ref="containListRef"
-        class="h-[calc(100vh-60px)] w-full overflow-scroll p-[10px_10px_0px_10px] md:h-[calc(100vh-84px-60px)]"
+        class="h-[calc(100vh)] w-full overflow-scroll p-[10px_10px_0px_10px] py-[60px] md:h-[calc(100vh-84px)]"
       >
         <IndividualLine
           v-for="(i, idx) in list"

@@ -7,8 +7,8 @@ import PictureFillIcon_ from '@/assets/svg/mingcute/picture_fill.svg'
 import RightFillIcon_ from '@/assets/svg/mingcute/right_fill.svg'
 import { useFileDialog, useFocus, useMagicKeys, usePermission } from '@vueuse/core'
 import { gsap } from 'gsap'
-import Emoji from '~~/components/Utils/Emoji.vue'
-import { useInboxDetailStore } from '~~/store'
+import Emoji from '@/components/Utils/Emoji.vue'
+import { useInboxDetailStore } from '@/store'
 
 let showEmoji = $ref(false)
 const emojiRef = ref<HTMLDivElement>()
@@ -116,7 +116,7 @@ onMounted(() => {
     </div>
 
     <div
-      class="absolute bottom-0 right-0 left-0 flex h-[60px] items-center justify-evenly bg-c1 py-[5px] dark:bg-c19 [&__svg]:w-[22px] [&__svg]:cursor-pointer [&__svg]:text-blue-400"
+      class="absolute bottom-0 right-0 left-0 flex h-[60px] items-center justify-evenly bg-c1/50 backdrop-blur-sm py-[5px] dark:bg-c19/50 [&__svg]:w-[22px] [&__svg]:cursor-pointer [&__svg]:text-blue-400"
     >
       <template v-if="hiddenLeft"
         ><span><RightFillIcon_ /></span
