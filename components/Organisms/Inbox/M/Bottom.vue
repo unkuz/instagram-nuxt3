@@ -130,7 +130,7 @@ onBeforeUnmount(() => {
 
       <div
         :class="[
-          'relative h-[36px]  overflow-hidden rounded-[18px] border-[1px] border-c4 dark:border-c4/20',
+          'relative h-[36px]  overflow-hidden rounded-[18px] border-[1px] border-c4 dark:border-c4/20 duration-200',
           hiddenLeft ? 'w-[80%]' : 'w-[60%]',
         ]"
       >
