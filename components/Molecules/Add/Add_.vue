@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import BackDrop from '@/components/Utils/BackDrop.vue'
-import { useAddStore } from '@/store'
+import { useAddStore, useGlobalStore } from '@/store'
 import { useDropZone, useFileDialog } from '@vueuse/core'
 
 const addStore = useAddStore()

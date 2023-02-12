@@ -13,7 +13,7 @@ export const useInboxDetailStore = defineStore('inboxDetail', {
   getters: {
     dataAfterProcees: (state) => {
       if (!_isArray(state.data)) return []
-      let _data = _cloneDeep(state.data.map((i) => ({ ...i, sequent: false })))
+      let _data = _cloneDeep(state.data.map((i) => ({ ...i, sequent: false, sequentNo: 1 })))
 
       for (let i = 0; i < state.data.length; i++) {
         if (_data?.[i]?.user?.username === _data?.[i + 1]?.user?.username) {

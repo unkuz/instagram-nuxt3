@@ -37,7 +37,7 @@ const currentUser = $computed(() => authStore.data.userName)
 </script>
 
 <template>
-  <div class="relative h-[calc(100vh)] text-[.8rem] md:h-[calc(100vh-84px)]">
+  <div class="fck relative h-[calc(100vh)] text-[.8rem] md:h-[calc(100vh-84px)]">
     <div class=" " ref="containRef">
       <div class="absolute top-0">''</div>
       <div
@@ -62,3 +62,8 @@ const currentUser = $computed(() => authStore.data.userName)
     </div>
   </div>
 </template>
+<style>
+.fck .haha:nth-child(1) {
+  background-color: aqua;
+}
+</style>
