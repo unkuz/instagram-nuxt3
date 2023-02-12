@@ -11,7 +11,7 @@ withDefaults(defineProps<IProps>(), {
 })
 </script>
 <template>
-  <div class="mb-[10px] flex items-end gap-[10px]">
+  <div :class="['mb-[10px] flex gap-[10px] items-end', isReply ?'justify-start': 'justify-end' ]">
     <Avatar
       :class="['w-[30px]', isReply ? 'opacity-100' : 'opacity-0']"
       url="/image/91480011.jpg"
