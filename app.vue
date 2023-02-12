@@ -14,6 +14,7 @@ import {
 } from '@/composables'
 import { registerSeviceWorkerPWA } from '@/helpers'
 import { useAddStore, useMoreStore, useThemeStore } from '@/store'
+import { useWebNotification } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 
 const addStore = useAddStore()
@@ -30,6 +31,21 @@ useScrollBarTheme()
 
 useHead({
   meta: [{ name: 'theme-color', content: unref(darkMode) ? '#121212' : '#fff' }],
+})
+
+const { isSupported, notification, show, close, onClick, onShow, onError, onClose } =
+  useWebNotification({
+    title: '😍',
+    dir: 'auto',
+    lang: 'en',
+    renotify: true,
+    tag: 'test',
+  })
+
+onMounted(() => {
+  setInterval(() => {
+    show()
+  }, 5 * 1000 * 60)
 })
 </script>
 
