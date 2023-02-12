@@ -9,6 +9,9 @@ export const useInboxDetailStore = defineStore('inboxDetail', {
   getters: {},
   actions: {
     reply(val: string) {
+      if (!val.trim()) {
+        return
+      }
       const authStore = useAuthStore()
       const {
         data: { userName, avatar },

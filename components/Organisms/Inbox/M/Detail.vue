@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import Avatar from '~~/components/Atoms/Avatar.vue'
-import { SizeAvatarEnum } from '~~/type'
-import IndividualLine from './IndividualLine.vue'
-import Bottom from './Bottom.vue'
 import { useAuthStore, useInboxDetailStore } from '~~/store'
-import { idText } from 'typescript'
+import Bottom from './Bottom.vue'
+import IndividualLine from './IndividualLine.vue'
 
 const inboxDetailStore = useInboxDetailStore()
 const authStore = useAuthStore()
+
+
 
 const containRef = $ref<HTMLDivElement>()
 const containListRef = $ref<HTMLDivElement>()
@@ -17,6 +16,7 @@ let listMessageObserver: MutationObserver | null = null
 onMounted(() => {
   listMessageObserver = new MutationObserver(() => {
     if (containListRef?.lastElementChild) {
+
       containListRef.lastElementChild.scrollIntoView({ behavior: 'smooth', block: 'end' })
     }
   })
