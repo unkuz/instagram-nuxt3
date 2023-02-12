@@ -41,14 +41,14 @@ const currentUser = $computed(() => authStore.data.userName)
 </script>
 
 <template>
-  <div class="fck relative h-[calc(100vh)] text-[.8rem] md:h-[calc(100vh-84px)]">
+  <div class="fck relative h-[calc(100vh)] text-[.85rem] md:h-[calc(100vh-84px)]">
     <div class=" " ref="containRef">
       <div
         class="absolute top-0 left-0 right-0 flex h-[60px] w-full items-center justify-between bg-c1 px-[20px] dark:bg-c19"
       >
         <NuxtLink to="/inbox/"><BackIcon_ /> </NuxtLink>
-        <span class="flex flex-col items-center text-[.8rem] font-[600]"
-          ><NuxtLink to="/cukznothz"><span class="cursor-pointer">cuzknothz</span></NuxtLink
+        <span class="flex flex-col items-center text-[.85rem] font-[600]"
+          ><NuxtLink to="/cukznothz"><span class="cursor-pointer text-[.9rem]">cuzknothz</span></NuxtLink
           ><span :class="[isOnline ? 'text-c15' : 'text-c21']">{{
             isOnline ? 'Online' : 'Offline'
           }}</span></span

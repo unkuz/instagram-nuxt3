@@ -15,7 +15,7 @@ withDefaults(defineProps<IProps>(), {
 <template>
   <div
     :class="[
-      'mb-[10px] flex items-end gap-[10px] last:mb-0',
+      'mb-[10px] flex items-end gap-[10px] last:mb-0 ',
       isReply ? 'justify-start' : 'justify-end',
       sequent && isReply && '',
       sequent && !isReply && '',
