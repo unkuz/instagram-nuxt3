@@ -76,7 +76,7 @@ const goTo = (idx: number) => emit('current-index-carousel', idx)
         :class="[
           ' dark:[&>path]:stroke-white',
           {
-            '[&>path]:fill-c11 [&>path]:stroke-c11 dark:[&>path]:stroke-c11': hasSaved,
+            '[&>path]:fill-c11 [&>path]:!stroke-c11 dark:[&>path]:stroke-c11': hasSaved,
           },
         ]"
         @click="timelineStore.setToggleSave(id)"
