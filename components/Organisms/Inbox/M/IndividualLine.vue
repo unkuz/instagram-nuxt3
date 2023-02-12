@@ -24,7 +24,7 @@ withDefaults(defineProps<IProps>(), {
 
     <div
       :class="[
-        'whitespace-pre-line  rounded-2xl p-[12px]',
+        'whitespace-pre-line  rounded-2xl p-[8px_10px_8px_10px]',
         isReply ? 'bg-gray-200 dark:text-c2' : 'bg-blue-500 text-white',
       ]"
     >

@@ -18,7 +18,7 @@ onMounted(() => {
 onBeforeUnmount(() => tl.kill())
 </script>
 <template>
-  <div class="flex gap-[3px]">
+  <div class="flex gap-[3px] justify-center items-center h-[18px] px-[10px]">
     <div
       v-for="(i, idx) in 3"
       :key="idx"
