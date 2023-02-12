@@ -62,7 +62,7 @@ const goTo = (idx: number) => emit('current-index-carousel', idx)
       <div
         v-if="mediaArr.length > APP_CONFIGS.MAX_DOT_CAROUSEL"
         :class="[
-          'text-[.8rem] font-[600] ',
+          'text-[.75rem] font-[600] ',
           {
             'text-c7 dark:text-c7': currentIdx >= APP_CONFIGS.MAX_DOT_CAROUSEL,
           },
