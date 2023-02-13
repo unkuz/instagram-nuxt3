@@ -1,9 +1,9 @@
 export const inboxList = [
   {
     user: {
-      id: 'Diversity',
-      username: 'Diversity',
-      full_name: 'Diversity',
+      id: 'cuzknothz',
+      username: 'cuzknothz',
+      full_name: 'cuzknothz',
       profile_pic_url: '/image/91480011.jpg',
       friendship_status: {
         following: true,

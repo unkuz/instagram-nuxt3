@@ -4,6 +4,7 @@ import ListUser from '@/components/Organisms/Inbox/List/ListUser.vue'
 import EditIcon_ from '@/assets/svg/mingcute/edit.svg'
 import { useInboxStore } from '~~/store'
 import Avatar from '~~/components/Atoms/Avatar.vue'
+import BackIcon_ from '@/assets/svg/mingcute/back.svg'
 
 const router = useRouter()
 
@@ -11,13 +12,16 @@ const inboxStore = useInboxStore()
 
 const inboxList = $computed(() => inboxStore.data)
 
-const back = () => router.back()
+const back = () => navigateTo('/_')
 </script>
 
 <template>
   <div class="mx-auto w-full px-[10px] text-[.85rem] md:w-[490px] md:px-0">
     <div class="md:h-[calc(100vh-84px-24px)]">
-      <div class="flex h-[60px] items-center md:hidden" @click="back">BACK</div>
+      <div class="flex h-[60px] items-center md:hidden" @click="back">
+        <NuxtLink to="/inbox/"><BackIcon_ @click="back" /> </NuxtLink>
+        <span class="font-[600]">Message</span>
+      </div>
       <div class="flex items-center justify-between gap-[20px]">
         <div
           class="relative flex h-[45px] w-full cursor-text items-center rounded-md bg-c4/50 px-[16px] dark:bg-c23/50"
