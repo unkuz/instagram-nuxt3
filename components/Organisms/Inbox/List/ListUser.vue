@@ -40,7 +40,7 @@ const [container] = useKeenSlider({
 
 <template>
 
-      <div ref="container" class="keen-slider pt-[20px]">
+      <div ref="container" class="keen-slider pt-[20px] h-[120px]">
         <div v-for="i in stories" :key="i.id" class="keen-slider__slide">
           <Story v-bind="i" />
         </div>

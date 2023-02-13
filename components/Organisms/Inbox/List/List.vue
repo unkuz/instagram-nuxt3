@@ -4,7 +4,7 @@ import ListUser from '@/components/Organisms/Inbox/List/ListUser.vue'
 </script>
 
 <template>
-  <div class="mx-auto w-full text-[.85rem] md:w-[390px]">
+  <div class="mx-auto w-full text-[.85rem] md:w-[390px] md:px-0 px-[10px]">
     <div class="h-[700px]  md:h-[calc(100vh-84px-24px)]">
       <div class="flex h-[60px] items-center md:hidden">BACK</div>
       <div
@@ -35,13 +35,13 @@ import ListUser from '@/components/Organisms/Inbox/List/ListUser.vue'
         />
       </div>
       <ListUser />
-      <div class="h-[500px] overflow-scroll">
-        <div v-for="i in 10" class="flex w-full items-center rounded-3xl hover:bg-black/50 p-[10px] justify-between">
+      <div class="h-[calc(100vh-60px-45px-120px)] overflow-hidden">
+        <div v-for="i in 10" class="flex w-full items-center rounded-2xl hover:bg-c22 p-[10px] justify-between duration-500 cursor-pointer">
           <div class="flex items-center gap-[10px]">
             <div class="h-[60px] w-[60px] rounded-[50%] bg-fuchsia-200"></div>
-            <div class="flex flex-col">
-              <span>cuzknothz</span>
-              <span>🙄😶😶😑</span>
+            <div class="flex flex-col h-[80%]">
+              <span class="line-clamp-1 font-[600]">cuzknothz</span>
+              <span class="line-clamp-1">🙄😶😶😑</span>
             </div>
           </div>
           <div class="flex flex-col">
