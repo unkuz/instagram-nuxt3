@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TimeFromNow from '@/components/Atoms/TimeFromNow.vue'
+import Avatar from '@/components/Atoms/Avatar.vue'
 
 interface IProps {
   profile_pic_url: string
