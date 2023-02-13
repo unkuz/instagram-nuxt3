@@ -6,6 +6,7 @@ import Feed from '@/components/Organisms/Feed/List/index.vue'
 import { useWindowResizeCallback } from '@/composables'
 import { IStory, ITimeLine } from '@/models'
 import { useStoriesStore, useSuggestionStore, useFeedStore } from '@/store'
+import {gsap} from 'gsap'
 
 const rightRef = $ref<HTMLElement>()
 const leftRef = $ref<HTMLElement>()
