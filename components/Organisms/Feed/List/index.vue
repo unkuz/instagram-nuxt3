@@ -14,9 +14,9 @@ import React from './React.vue'
 
 defineProps<IPending>()
 
-const timeLineStore = useFeedStore()
-const timeline = $computed(() => timeLineStore.data)
-const commentRef = $ref<HTMLDivElement | null>(null)
+const feedStore = useFeedStore()
+const feeds = $computed(() => feedStore.data)
+const commentRef = $ref<HTMLDivElement>()
 let currentReplyCommentId = ref('')
 const reply = (commentId: string) => (currentReplyCommentId.value = commentId)
 
@@ -29,7 +29,7 @@ const { key } = useForceRenderTimer()
   <div>
     <template v-if="!isPending"
       ><article
-        v-for="i in timeline"
+        v-for="i in feeds"
         :key="i.id"
         ref="postRef"
         class="w-full bg-transparent p-[1px] md:bg-c4 md:clip-path-cuzknothz dark:md:bg-transparent [&:not(:last-child)]:mb-[24px]"

@@ -7,8 +7,8 @@ import { useWindowResizeCallback } from '@/composables'
 import { IStory, ITimeLine } from '@/models'
 import { useStoriesStore, useSuggestionStore, useFeedStore } from '@/store'
 
-const rightRef = $ref<HTMLElement | null>(null)
-const leftRef = $ref<HTMLElement | null>(null)
+const rightRef = $ref<HTMLElement>()
+const leftRef = $ref<HTMLElement>()
 
 const storiesStore = useStoriesStore()
 const timeLineStore = useFeedStore()
@@ -27,13 +27,13 @@ const { data: _suggestions, pending: pendingSugestion } = await useLazyFetch<ISt
 // suggestionStore.save(_suggestions.value)
 
 const calcLeftSuggestion = () => {
-  if (rightRef && leftRef && leftRef.getClientRects()[0]) {
+  if (rightRef && leftRef) {
     rightRef.style.left = `${leftRef?.getClientRects()[0].left + leftRef.clientWidth! + 28}px`
   }
 }
 
 onMounted(() => {
-  leftRef && calcLeftSuggestion()
+  calcLeftSuggestion()
 })
 
 useWindowResizeCallback(calcLeftSuggestion)
@@ -43,7 +43,7 @@ useWindowResizeCallback(calcLeftSuggestion)
   <div>
     <div class="relative flex w-full justify-center lg:block">
       <div ref="leftRef" class="inline-flex w-full flex-col items-center md:w-[614px] lg:block">
-        <Stories :isPending="pendingStories" v-if="storiesStore.data.length > 0" />
+        <Stories :isPending="pendingStories" v-if="storiesStore.data.length" />
         <Feed :isPending="false" />
       </div>
       <div ref="rightRef" class="fixed left-0 top-[84px] hidden w-[293px] text-sm lg:block">

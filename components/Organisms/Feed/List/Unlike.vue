@@ -10,8 +10,7 @@ onMounted(() => {
     scale: 4,
     duration: 0.5,
     ease: Elastic.easeOut.config(1, 0.3),
-  })
-  tl.to(unlikeRef!, {
+  }).to(unlikeRef!, {
     display: 'none',
     duration: 0,
   })
