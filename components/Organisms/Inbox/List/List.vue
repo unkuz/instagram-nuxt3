@@ -5,6 +5,7 @@ import EditIcon_ from '@/assets/svg/mingcute/edit.svg'
 import { useInboxStore } from '~~/store'
 import Avatar from '~~/components/Atoms/Avatar.vue'
 import BackIcon_ from '@/assets/svg/mingcute/back.svg'
+import TimeFromNow from '@/components/Atoms/TimeFromNow.vue'
 
 const router = useRouter()
 
@@ -70,9 +71,13 @@ const back = () => navigateTo('/_')
                 <span class="line-clamp-1">{{ i.preview_lastest_message.content }}</span>
               </div>
             </div>
-            <div class="flex flex-col">
-              <span>0.22</span>
-              <span>djsfkaj</span>
+            <div class="flex flex-col items-end justify-between h-full">
+              <div>
+                <TimeFromNow :time="i.preview_lastest_message.created_at" />
+              </div>
+              <div>
+                <div class="w-[15px] h-[15px] flex justify-center items-center text-[.7rem] rounded-[50%] bg-c12">3</div>
+              </div>
             </div>
           </div></NuxtLink
         >

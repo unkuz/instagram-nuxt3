@@ -12,7 +12,7 @@ export const inboxList = [
     },
     preview_lastest_message: {
       content: 'Yoo',
-      created_at: '',
+      created_at: '2023-02-10 21:20',
     },
     message_not_seen_count: 3,
   }

@@ -11,6 +11,7 @@ import Head from './Head.vue'
 import IndividualComment from './IndividualComment.vue'
 import LikeCommentCount from './LikeCommentCount.vue'
 import React from './React.vue'
+import TimeFromNow from '@/components/Atoms/TimeFromNow.vue'
 
 defineProps<IPending>()
 
@@ -60,12 +61,12 @@ const { key } = useForceRenderTimer()
               :caption-content="i.caption_text"
               :tags="i.tags"
             />
-            <div
-              :key="key"
+
+            <TimeFromNow
+              :time="i.created_at"
               class="m-[0px_0px_0px_0px] h-[18px] text-c3 dark:text-c21 md:text-[0.8rem]"
-            >
-              {{ moment(i.created_at).fromNow() }}
-            </div>
+            />
+
             <div ref="commentRef" class="mt-[15px] w-full">
               <IndividualComment
                 v-for="(j, idx) in i.comments"
