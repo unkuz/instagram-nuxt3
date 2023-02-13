@@ -71,12 +71,12 @@ const back = () => navigateTo('/_')
                 <span class="line-clamp-1">{{ i.preview_lastest_message.content }}</span>
               </div>
             </div>
-            <div class="flex flex-col items-end justify-between h-full">
+            <div class="flex flex-col items-end  h-full">
               <div>
                 <TimeFromNow :time="i.preview_lastest_message.created_at" />
               </div>
               <div>
-                <div class="w-[15px] h-[15px] flex justify-center items-center text-[.7rem] rounded-[50%] bg-c12">3</div>
+                <div class="w-[22px] h-[22px] font-[600] flex justify-center items-center text-[.7rem] rounded-[50%] bg-c12">3</div>
               </div>
             </div>
           </div></NuxtLink
