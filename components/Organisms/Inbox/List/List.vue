@@ -13,15 +13,13 @@ const router = useRouter()
 const inboxStore = useInboxStore()
 
 const inboxList = $computed(() => inboxStore.data)
-
-const back = () => navigateTo('/_')
 </script>
 
 <template>
   <div class="mx-auto w-full px-[10px] text-[.85rem] md:w-[490px] md:px-0">
     <div class="md:h-[calc(100vh-84px-24px)]">
-      <div class="flex h-[60px] items-center md:hidden" @click="back">
-        <NuxtLink to="/inbox/"><BackIcon_ @click="back" /> </NuxtLink>
+      <div class="flex h-[60px] items-center md:hidden">
+        <NuxtLink to="/inbox/"><BackIcon_ /> </NuxtLink>
         <span class="font-[600]">Message</span>
       </div>
       <div class="flex items-center justify-between gap-[20px]">
