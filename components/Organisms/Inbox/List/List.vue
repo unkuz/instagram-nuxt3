@@ -1,7 +1,6 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="">
-    <div class="h-[100px] w-full bg-cyan-200"></div>
+  <div class="w-full h-screen bg-fuchsia-200">
   </div>
 </template>
