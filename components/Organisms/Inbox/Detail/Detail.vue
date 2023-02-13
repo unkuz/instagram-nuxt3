@@ -47,7 +47,7 @@ const currentUser = $computed(() => authStore.data.userName)
   <div class="fck relative h-[calc(100vh)] text-[.85rem] md:h-[calc(100vh-84px)]">
     <div class=" " ref="containRef">
       <div
-        class="absolute top-0 left-0 right-0 flex h-[60px] w-full items-center justify-between bg-c1 px-[20px] dark:bg-c19"
+        class="absolute top-0 left-0 right-0 flex h-[60px] w-full items-center justify-between bg-c1 px-[20px] md:px-0 dark:bg-c19"
       >
         <div class="flex items-center gap-[20px]">
           <NuxtLink to="/inbox/"><BackIcon_ /> </NuxtLink>
@@ -80,7 +80,7 @@ const currentUser = $computed(() => authStore.data.userName)
       </div>
       <div
         ref="containListRef"
-        class="h-[calc(100vh-60px)] w-full overflow-scroll p-[10px_10px_0px_10px] pt-[60px] md:h-[calc(100vh-84px-60px)]"
+        class="h-[calc(100vh-60px)] w-full overflow-scroll p-[10px_10px_0px_10px] md:p-[10px_0px_0px_0px] md:h-[calc(100vh-84px-60px)] !pt-[100px]"
       >
         <IndividualLine
           v-for="(i, idx) in list"
