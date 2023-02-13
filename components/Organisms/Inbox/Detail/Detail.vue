@@ -50,7 +50,7 @@ let tl = gsap.timeline({})
 onMounted(() => {
   tl.to(inboxRef!, {
     width: 'auto',
-    duration: 1,
+    duration: 0.5,
     ease: 'bounce.out',
   }).then(() => {
     scrollEnd()
@@ -60,13 +60,6 @@ onMounted(() => {
 onBeforeUnmount(() => {
   tl.kill()
 })
-
-const back = () => {
-  tl.to(inboxRef!, {
-    duration: 0.5,
-    opacity: 0,
-  }).then(() => navigateTo('/inbox/'))
-}
 </script>
 
 <template>
@@ -79,7 +72,7 @@ const back = () => {
         class="absolute top-0 left-0 right-0 flex h-[60px] w-full items-center justify-between bg-c1 px-[20px] dark:bg-c19 md:px-0"
       >
         <div class="flex items-center gap-[20px]">
-          <BackIcon_ @click="back" />
+          <NuxtLink to="/inbox/"><BackIcon_ /></NuxtLink>
           <div class="flex gap-[20px]">
             <span class="relative flex items-center justify-center"
               ><NuxtLink to="/cukznothz"
