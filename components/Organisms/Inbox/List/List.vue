@@ -6,6 +6,7 @@ import { useInboxStore } from '~~/store'
 import Avatar from '~~/components/Atoms/Avatar.vue'
 import BackIcon_ from '@/assets/svg/mingcute/back.svg'
 import TimeFromNow from '@/components/Atoms/TimeFromNow.vue'
+import IndividualLine from './IndividualLine.vue'
 
 const router = useRouter()
 
@@ -58,33 +59,15 @@ const back = () => navigateTo('/_')
       <div
         class="h-[calc(100vh-60px-45px-120px)] overflow-scroll md:h-[calc(100vh-84px-60px-120px)]"
       >
-        <NuxtLink to="/inbox/3475">
-          <div
-            v-for="(i, idx) in inboxList"
-            :key="idx"
-            class="flex w-full cursor-pointer items-center justify-between rounded-2xl p-[10px] duration-500 hover:bg-c22"
-          >
-            <div class="flex items-center gap-[10px]">
-              <Avatar class="h-[60px] w-[60px]" :url="i.user.profile_pic_url" />
-              <div class="flex h-[80%] flex-col">
-                <span class="font-[600] line-clamp-1">{{ i.user.username }}</span>
-                <span class="line-clamp-1">{{ i.preview_lastest_message.content }}</span>
-              </div>
-            </div>
-            <div class="flex h-full flex-col items-end">
-              <div>
-                <TimeFromNow :time="i.preview_lastest_message.created_at" />
-              </div>
-              <div>
-                <div
-                  class="flex h-[22px] w-[22px] items-center justify-center rounded-[50%] bg-c12 text-[.7rem] font-[600]"
-                >
-                  3
-                </div>
-              </div>
-            </div>
-          </div></NuxtLink
-        >
+        <IndividualLine
+          v-for="(i, idx) in inboxList"
+          :key="idx"
+          :profile_pic_url="i.user.profile_pic_url"
+          :username="i.user.username"
+          :preview_lastest_message="i.preview_lastest_message.content"
+          :created_at="i.preview_lastest_message.created_at"
+          :message_not_seen_count="i.message_not_seen_count"
+        />
       </div>
     </div>
   </div>
