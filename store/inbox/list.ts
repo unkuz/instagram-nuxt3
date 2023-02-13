@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { inboxList } from '~~/mocks'
+import { inboxList } from '@/mocks'
 
 export const useInboxStore = defineStore('inbox', {
   state: () => ({
