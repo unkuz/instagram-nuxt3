@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TagName from '@/components/Atoms/TagName.vue';
+import TagName from '@/components/Atoms/TagName.vue'
 
 interface IProps {
   userName: string

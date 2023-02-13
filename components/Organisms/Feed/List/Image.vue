@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useDoubleClick } from '@/composables';
-import { useFeedStore } from '@/store';
+import { useDoubleClick } from '@/composables'
+import { useFeedStore } from '@/store'
 
 interface IProps {
   src: string

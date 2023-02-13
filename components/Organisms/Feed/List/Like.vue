@@ -23,4 +23,3 @@ onBeforeUnmount(() => tl.kill())
     <LikeIcon_ />
   </div>
 </template>
-

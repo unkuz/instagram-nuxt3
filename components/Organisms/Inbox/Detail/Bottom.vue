@@ -130,8 +130,8 @@ onBeforeUnmount(() => {
 
       <div
         :class="[
-          'relative h-[36px]  overflow-hidden rounded-[18px] border-[1px] border-c4 dark:border-c4/20 duration-200',
-          hiddenLeft ? 'w-[80%]' : 'md:w-[60%] w-[50%]',
+          'relative h-[36px]  overflow-hidden rounded-[18px] border-[1px] border-c4 duration-200 dark:border-c4/20',
+          hiddenLeft ? 'w-[80%]' : 'w-[50%] md:w-[60%]',
         ]"
       >
         <span ref="aniInputRef" class="absolute h-full w-[0px] bg-c4/50 dark:bg-c4/10"></span>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import Emoji from '@/components/Utils/Emoji.vue';
-import { useAuthStore, useFeedStore } from '@/store';
-import { onClickOutside, useTextareaAutosize } from '@vueuse/core';
+import Emoji from '@/components/Utils/Emoji.vue'
+import { useAuthStore, useFeedStore } from '@/store'
+import { onClickOutside, useTextareaAutosize } from '@vueuse/core'
 
 interface IProps {
   id: string
