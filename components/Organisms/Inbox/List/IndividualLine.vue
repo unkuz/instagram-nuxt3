@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import TimeFromNow from '@/components/Atoms/TimeFromNow.vue'
 import Avatar from '@/components/Atoms/Avatar.vue'
+import TagName from '@/components/Atoms/TagName.vue'
 
 interface IProps {
   profile_pic_url: string
@@ -17,18 +18,18 @@ const goDetail = () => navigateTo('/inbox/5723987')
 <template>
   <div
     @click="goDetail"
-    class="flex w-full cursor-pointer items-center justify-between rounded-2xl p-[10px] duration-500 hover:bg-c22"
+    class="flex w-full cursor-pointer items-center justify-between rounded-2xl p-[10px] duration-1000 hover:bg-c22"
   >
-    <div class="flex items-center gap-[10px]">
+    <div class="flex items-center gap-[5px]">
       <Avatar class="h-[60px] w-[60px]" :url="profile_pic_url" />
-      <div class="flex h-[80%] flex-col">
-        <span class="font-[600] line-clamp-1">{{ username }}</span>
-        <span class="line-clamp-1">{{ preview_lastest_message }}</span>
+      <div class="flex flex-col gap-[10px]">
+        <TagName name="cuzknothz" />
+        <span class="text-c19 line-clamp-1">{{ preview_lastest_message }}</span>
       </div>
     </div>
-    <div class="flex h-full flex-col items-end">
+    <div class="flex h-full flex-col items-end gap-[10px]">
       <div>
-        <TimeFromNow :time="created_at" />
+        <TimeFromNow class="text-[.75rem]" :time="created_at" />
       </div>
       <div>
         <div

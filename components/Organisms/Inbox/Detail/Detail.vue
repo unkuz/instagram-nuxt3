@@ -8,6 +8,7 @@ import BackIcon_ from '@/assets/svg/mingcute/back.svg'
 import VideoCallIcon_ from '@/assets/svg/mingcute/video_call.svg'
 import CallIcon_ from '@/assets/svg/mingcute/call.svg'
 import InfoIcon_ from '@/assets/svg/mingcute/info.svg'
+import TagName from '@/components/Atoms/TagName.vue'
 import { gsap } from 'gsap'
 
 const inboxDetailStore = useInboxDetailStore()
@@ -93,8 +94,8 @@ const back = () => {
               ></div>
             </span>
             <div class="flex flex-col">
-              <span>cuzknothz</span>
-              <span>😹</span>
+              <TagName name="cuzknothz" />
+              <span>🥕</span>
             </div>
           </div>
         </div>
