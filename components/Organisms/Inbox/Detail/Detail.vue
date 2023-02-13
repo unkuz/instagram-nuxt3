@@ -63,9 +63,10 @@ onBeforeUnmount(() => {
 
 const back = () => {
   tl.to(inboxRef!, {
-    opacity: 0,
-    duration: 0.5,
+    translateY: '100%',
+    width: 390,
     webkitFilter: 'blur(5px)',
+    opacity: 0,
   }).then(() => navigateTo('/inbox/'))
 }
 </script>

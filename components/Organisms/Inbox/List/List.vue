@@ -59,15 +59,18 @@ const back = () => navigateTo('/_')
       <div
         class="h-[calc(100vh-60px-45px-120px)] overflow-scroll md:h-[calc(100vh-84px-60px-120px)]"
       >
-        <IndividualLine
-          v-for="(i, idx) in inboxList"
-          :key="idx"
-          :profile_pic_url="i.user.profile_pic_url"
-          :username="i.user.username"
-          :preview_lastest_message="i.preview_lastest_message.content"
-          :created_at="i.preview_lastest_message.created_at"
-          :message_not_seen_count="i.message_not_seen_count"
-        />
+        <template v-if="inboxList.length">
+          <IndividualLine
+            v-for="(i, idx) in inboxList"
+            :key="idx"
+            :profile_pic_url="i.user.profile_pic_url"
+            :username="i.user.username"
+            :preview_lastest_message="i.preview_lastest_message.content"
+            :created_at="i.preview_lastest_message.created_at"
+            :message_not_seen_count="i.message_not_seen_count"
+          />
+        </template>
+        <template v-else> Empty </template>
       </div>
     </div>
   </div>
