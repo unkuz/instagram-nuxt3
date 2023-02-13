@@ -29,7 +29,6 @@ const scrollEnd = () => {
 }
 
 onMounted(() => {
-  scrollEnd()
   listMessageObserver = new MutationObserver(() => scrollEnd())
   listMessageObserver.observe(containListRef!, {
     childList: true,
@@ -52,12 +51,20 @@ onMounted(() => {
     width: 'auto',
     duration: 1,
     ease: 'bounce.out',
+  }).then(() => {
+    scrollEnd()
   })
 })
 
 onBeforeUnmount(() => {
   tl.kill()
 })
+
+const back = () => {
+  tl.reverse().then(() => {
+    navigateTo('/inbox')
+  })
+}
 </script>
 
 <template>
@@ -70,7 +77,7 @@ onBeforeUnmount(() => {
         class="absolute top-0 left-0 right-0 flex h-[60px] w-full items-center justify-between bg-c1 px-[20px] dark:bg-c19 md:px-0"
       >
         <div class="flex items-center gap-[20px]">
-          <NuxtLink to="/inbox/"><BackIcon_ /> </NuxtLink>
+          <NuxtLink to="/inbox/"><BackIcon_ @click="back" /> </NuxtLink>
           <div class="flex gap-[20px]">
             <span class="relative flex items-center justify-center"
               ><NuxtLink to="/cukznothz"
