@@ -31,7 +31,7 @@ defineProps<IProps>()
             <TimeFromNow class="text-[.75rem]" :time="created_at" />
           </div>
           <div>
-            <div
+            <div v-if="message_not_seen_count"
               class="flex h-[22px] w-[22px] items-center justify-center rounded-[50%] bg-c14 text-[.7rem] font-[600]"
             >
               {{ $formatNum(message_not_seen_count) }}
