@@ -11,6 +11,7 @@ import InfoIcon_ from '@/assets/svg/mingcute/info.svg'
 import TagName from '@/components/Atoms/TagName.vue'
 import { gsap } from 'gsap'
 import PreviewMedia from './PreviewMedia.vue'
+import { useTailwindBreakPoint } from '@/composables'
 
 const inboxDetailStore = useInboxDetailStore()
 
@@ -27,6 +28,8 @@ const inboxRef = $ref<HTMLDivElement>()
 
 const containRef = $ref<HTMLDivElement>()
 const containListRef = $ref<HTMLDivElement>()
+
+const { smallMd } = useTailwindBreakPoint()
 
 let listMessageObserver: MutationObserver | null = null
 
@@ -57,7 +60,7 @@ let tl = gsap.timeline({})
 onMounted(() => {
   tl.to(inboxRef!, {
     width: 'auto',
-    duration: 0.5,
+    duration: smallMd.value ? 0 : 0.5,
     ease: 'bounce.out',
   }).then(() => {
     scrollEnd()
@@ -169,4 +172,3 @@ const setPreview = (val: { type: string; src: string }) => {
     </div>
   </div>
 </template>
-
