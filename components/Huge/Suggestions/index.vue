@@ -22,8 +22,6 @@ const sugestionRef = $ref<HTMLDivElement>()
 
 let isIntersecting = $ref(false)
 
-const authorText = 'cuzknothz'
-
 // onMounted(() => {
 //   let observer = new IntersectionObserver(
 //     (entries) => {
@@ -121,7 +119,7 @@ const authorText = 'cuzknothz'
           <div
             class="cursor-pointer font-august text-[1.25rem] uppercase tracking-wider text-c2 drop-shadow-md dark:text-c1"
           >
-            {{ authorText }}
+            {{ APP_CONFIGS.AUTHOR }}
           </div>
           <!-- <div
           class="absolute top-[6px] h-[4px] w-[35px] rotate-[60deg] animate-cuzknothz bg-c1 dark:bg-c19"
