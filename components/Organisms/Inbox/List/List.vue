@@ -16,7 +16,7 @@ const inboxList = $computed(() => inboxStore.data)
 </script>
 
 <template>
-  <div class="mx-auto w-full px-[10px] text-[.85rem] md:w-[490px] md:px-0 ">
+  <div class="mx-auto w-full px-[10px] text-[.85rem] md:w-[490px] md:px-0">
     <div class="md:h-[calc(100vh-84px-24px)]">
       <div class="flex h-[60px] w-full items-center justify-between text-[.85rem] md:hidden">
         <div class="flex items-center gap-[10px]">

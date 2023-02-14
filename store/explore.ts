@@ -3,7 +3,7 @@ import { explore } from '@/mocks'
 
 export const useExploreStore = defineStore('explore', {
   state: () => ({
-    list: explore,
+    list: [...explore],
   }),
   getters: {},
   actions: {},
