@@ -8,6 +8,7 @@ import { IActiveKey } from '@/type'
 import { useIdle, useTemplateRefsList } from '@vueuse/core'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import Video from './Video.vue'
+import TopBar from './M/TopBar.vue'
 
 let currentVideoOnScreen: HTMLVideoElement
 
@@ -100,6 +101,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div>
+    <TopBar class="" />
     <div
       ref="container"
       class="keen-slider flex h-[calc(100vh-65px)] flex-col !flex-nowrap items-center md:h-[calc(100vh-84px)]"

@@ -86,7 +86,7 @@ const setPreview = (val: { type: string; src: string }) => {
   >
     <div ref="containRef">
       <div
-        class="absolute top-0 left-0 right-0 flex h-[60px] w-full items-center justify-between bg-c1 px-[20px] dark:bg-c19 md:px-0"
+        class="absolute top-0 left-0 right-0 flex h-[60px] w-full items-center justify-between bg-c1 px-[10px] dark:bg-c19 md:px-0"
       >
         <div class="flex items-center gap-[20px]">
           <NuxtLink to="/inbox/"><BackIcon_ /></NuxtLink>

@@ -2462,7 +2462,7 @@
     defu "^6.1.2"
     pathe "^1.1.0"
 
-"@nuxtjs/tailwindcss@^6.4.0":
+"@nuxtjs/tailwindcss@^6.1.1":
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/tailwindcss/-/tailwindcss-6.4.0.tgz#c0ba563bcfe276e43e6cb264258de02a526d4c87"
   integrity sha512-JLCmoaOvk+cY972Oz0UBiSx8rhjYTB2bFydN3AebJN5y1G/8HLugN6m4LANQu6df1rAaRYpdXF0LGlrLsxPXDQ==

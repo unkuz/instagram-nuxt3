@@ -18,7 +18,7 @@ const inboxList = $computed(() => inboxStore.data)
 <template>
   <div class="mx-auto w-full px-[10px] text-[.85rem] md:w-[490px] md:px-0">
     <div class="md:h-[calc(100vh-84px-24px)]">
-      <div class="flex h-[60px] items-center md:hidden">
+      <div class="flex h-[60px] items-center md:hidden text-[.85rem]">
         <NuxtLink to="/_"><BackIcon_ /> </NuxtLink>
         <span class="font-[600]">Message</span>
       </div>

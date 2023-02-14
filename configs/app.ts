@@ -11,4 +11,5 @@ export const APP_CONFIGS = Object.freeze({
   BACK_DROP_BLUR: true,
   HEADER_BLUR: true,
   MAX_DOT_CAROUSEL: 9,
+  STYLE_SNAP_CHAT: true,
 })
