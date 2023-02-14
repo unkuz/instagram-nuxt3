@@ -15,9 +15,9 @@ import PreviewMedia from './PreviewMedia.vue'
 const inboxDetailStore = useInboxDetailStore()
 
 let previewMedia = ref({
-  type: '',
-  src: '',
-  isShow: true,
+  type: 'image',
+  src: '/image/56893748fgasdf.jpg',
+  isShow: false,
 })
 const authStore = useAuthStore()
 
@@ -146,7 +146,7 @@ const setPreview = (val: { type: string; src: string }) => {
             <video
               v-for="(k, idx) in i.message.content"
               :key="idx"
-              class="h-[100px] w-auto bg-c2 object-contain rounded-[10px]"
+              class="h-[100px] w-auto rounded-[10px] bg-c2 object-contain"
               :src="k.src"
               @click="setPreview({ type: 'video', src: k.src })"
             />
@@ -169,3 +169,4 @@ const setPreview = (val: { type: string; src: string }) => {
     </div>
   </div>
 </template>
+

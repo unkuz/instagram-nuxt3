@@ -8,10 +8,17 @@ defineProps<IProps>()
 
 const emit = defineEmits(['close'])
 
-const close = emit('close')
+const close = () => emit('close')
 </script>
 <template>
-  <BackDrop>
-    <nuxt-img v-if="previewMedia.type === 'image'" :src="previewMedia.src" class="h-[90%] w-auto" />
+  <BackDrop @click.self="close">
+    <div class="h-auto max-h-[90vh] w-auto max-w-[80vw]">
+      <nuxt-img
+        v-if="previewMedia.type === 'image'"
+        :src="previewMedia.src"
+      />
+      <video v-if="previewMedia.type === 'video'" :src="previewMedia.src" />
+    </div>
   </BackDrop>
 </template>
+
