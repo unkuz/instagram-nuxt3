@@ -40,6 +40,9 @@ withDefaults(defineProps<IProps>(), {
       {{ content }}
 
       <slot name="special" />
+      <slot name="text" />
+      <slot name="image" />
+      <slot name="video" />
     </div>
   </div>
 </template>

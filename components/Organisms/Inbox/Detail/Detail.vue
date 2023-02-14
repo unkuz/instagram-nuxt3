@@ -10,8 +10,15 @@ import CallIcon_ from '@/assets/svg/mingcute/call.svg'
 import InfoIcon_ from '@/assets/svg/mingcute/info.svg'
 import TagName from '@/components/Atoms/TagName.vue'
 import { gsap } from 'gsap'
+import PreviewMedia from './PreviewMedia.vue'
 
 const inboxDetailStore = useInboxDetailStore()
+
+let previewMedia = ref({
+  type: '',
+  src: '',
+  isShow: true,
+})
 const authStore = useAuthStore()
 
 const isOnline = ref(true)
@@ -60,6 +67,16 @@ onMounted(() => {
 onBeforeUnmount(() => {
   tl.kill()
 })
+
+const setPreview = (val: { type: string; src: string }) => {
+  const { type, src } = val
+  previewMedia.value = {
+    isShow: true,
+    type,
+    src,
+  }
+  console.log('previewMedia', previewMedia)
+}
 </script>
 
 <template>
@@ -108,15 +125,45 @@ onBeforeUnmount(() => {
           v-for="(i, idx) in list"
           :key="idx"
           :isReply="i.user.full_name !== currentUser"
-          :content="i.message"
           :sequent="i.sequent"
-        />
+        >
+          <template v-if="i.message.type === 'text'" #text>
+            {{ i.message.content }}
+          </template>
+          <template v-if="i.message.type === 'image'" #image>
+            <div class="flex flex-wrap gap-[10px]">
+              <nuxt-img
+                v-for="(j, idx) in i.message.content"
+                :key="idx"
+                class="h-[100px] w-auto cursor-pointer rounded-[10px] bg-c2 object-contain"
+                :src="j.src"
+                quality="50"
+                @click="setPreview({ type: 'image', src: j.src })"
+              />
+            </div>
+          </template>
+          <template v-if="i.message.type === 'video'" #video>
+            <video
+              v-for="(k, idx) in i.message.content"
+              :key="idx"
+              class="h-[100px] w-auto bg-c2 object-contain"
+              :src="k.src"
+              @click="setPreview({ type: 'video', src: k.src })"
+            />
+          </template>
+        </IndividualLine>
         <IndividualLine v-if="replying" :isReply="true">
           <template #special>
             <Replying />
           </template>
         </IndividualLine>
       </div>
+
+      <PreviewMedia
+        v-if="previewMedia.isShow"
+        :previewMedia="previewMedia"
+        @close="previewMedia.isShow = false"
+      />
 
       <Bottom />
     </div>
