@@ -17,7 +17,7 @@ defineProps<IProps>()
   <div>
     <NuxtLink to="/inbox/5723987">
       <div
-        class="flex w-full cursor-pointer items-center justify-between rounded-2xl p-[10px] duration-1000 hover:bg-c22 dark:hover:bg-c20"
+        class="duration-0 flex w-full cursor-pointer items-center justify-between rounded-2xl p-[10px] hover:bg-c22 active:bg-c20 dark:hover:bg-c20 md:duration-1000"
       >
         <div class="flex items-center gap-[10px]">
           <Avatar class="h-[60px] w-[60px]" :url="profile_pic_url" />
@@ -42,3 +42,4 @@ defineProps<IProps>()
     </NuxtLink>
   </div>
 </template>
+
