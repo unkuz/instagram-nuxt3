@@ -1,17 +1,8 @@
 <script lang="ts" setup>
-import { APP_API } from '@/apis'
-import ErrorPage from '@/components/Utils/ErrorPage.vue'
-import { IStory, ITimeLine } from '@/models'
-import { useExploreStore } from '@/store'
 import Explore from '@/components/Organisms/Explore/index.vue'
+import { useExploreStore } from '@/store'
 
 const exploreStore = useExploreStore()
-
-const { data: _timeline } = await useLazyFetch<ITimeLine[]>(APP_API.timeLine.list)
-const { data: _stories } = await useLazyFetch<IStory[]>(APP_API.stories.list)
-const { data: _suggestions } = await useLazyFetch<IStory[]>(APP_API.suggestions.list)
-const { data: _timelinez } = await useLazyFetch(APP_API.timeLine.list)
-
 const explore = computed(() => exploreStore.list)
 </script>
 
