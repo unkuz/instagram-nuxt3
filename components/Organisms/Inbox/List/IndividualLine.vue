@@ -22,7 +22,7 @@ defineProps<IProps>()
         <div class="flex items-center gap-[10px]">
           <Avatar class="h-[60px] w-[60px]" :url="profile_pic_url" />
           <div class="flex flex-col gap-[5px]">
-            <TagName name="cuzknothz" />
+            <TagName :name="username" />
             <span class="text-c19 line-clamp-1 dark:text-c1">{{ preview_lastest_message }}</span>
           </div>
         </div>
@@ -34,7 +34,7 @@ defineProps<IProps>()
             <div
               class="flex h-[22px] w-[22px] items-center justify-center rounded-[50%] bg-c14 text-[.7rem] font-[600]"
             >
-              {{ message_not_seen_count }}
+              {{ $formatNum(message_not_seen_count) }}
             </div>
           </div>
         </div>

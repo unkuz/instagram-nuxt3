@@ -15,5 +15,24 @@ export const inboxList = [
       created_at: '2023-02-10 21:20',
     },
     message_not_seen_count: 3,
+    status: '🍆'
+  },
+  {
+    user: {
+      id: '238157832naked',
+      username: '238157832naked',
+      full_name: '238157832naked',
+      profile_pic_url: '/image/avatar.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    preview_lastest_message: {
+      content: '🥕',
+      created_at: '2023-02-10 21:20',
+    },
+    message_not_seen_count: 9,
+    status: '🌵'
   },
 ]
