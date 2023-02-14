@@ -7,12 +7,11 @@ interface IProps {
   isBig?: boolean
 }
 
-withDefaults(defineProps<IProps>(), { isBig: false })
+withDefaults(defineProps<IProps>(), { isBig: false, img: '' })
 </script>
 
 <template>
   <div
-    v-if="!!img"
     :class="[
       'group relative aspect-square w-full cursor-pointer overflow-hidden',
       {
@@ -21,7 +20,6 @@ withDefaults(defineProps<IProps>(), { isBig: false })
     ]"
   >
     <nuxt-img
-      v-if="!!img"
       :src="img"
       :alt="img"
       class="h-full w-full object-cover duration-150 group-hover:scale-110"
