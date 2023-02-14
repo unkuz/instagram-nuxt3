@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import { useStoriesStore } from '@/store'
 import { useKeenSlider } from 'keen-slider/vue.es'
-import Story from '@/components/Molecules/Stories/Story.vue'
-import SearchInbox from './SearchInbox.vue'
+import User from './User.vue'
 
 const storiesStore = useStoriesStore()
 const stories = $computed(() => storiesStore.data)
@@ -41,7 +40,8 @@ const [container] = useKeenSlider({
 <template>
   <div ref="container" class="keen-slider h-[120px] pt-[20px]">
     <div v-for="i in stories" :key="i.id" class="keen-slider__slide">
-      <Story v-bind="i" />
+      <User v-bind="i" />
     </div>
   </div>
 </template>
+
