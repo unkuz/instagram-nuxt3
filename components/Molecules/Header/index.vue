@@ -27,10 +27,10 @@ const searchStore = useSearchStore()
 const isShowSearchToolkit = $computed(() => searchStore.getIsShowSearchToolkit)
 const section = $computed(() => globalStore.section)
 const isMobile = $computed<boolean>(() => globalStore.getIsMobile)
-const accountPopRef = $ref<HTMLDivElement>()
+const accountPopRef = ref<HTMLDivElement>()
 const activityFeedPopRef = $ref<HTMLDivElement>()
 const extensionRef = ref<HTMLDivElement>()
-const isShowProfile = $ref(false)
+let isShowProfile = $ref(false)
 
 const { smallMd } = $(useTailwindBreakPoint())
 
@@ -61,6 +61,8 @@ const onAdd = () => {
   globalStore.setSection(SectionEnum.NEW_POST)
   addStore.toggle(true)
 }
+
+onClickOutside(accountPopRef, () => (isShowProfile = false))
 </script>
 
 <template>
@@ -127,7 +129,10 @@ const onAdd = () => {
           </NuxtLink>
         </div>
         <div v-show="!isMobile" class="relative mr-0" @click="isShowProfile = true">
-          <SelfAvatar :is-select="section === SectionEnum.SELF" />
+          <SelfAvatar
+            :is-select="section === SectionEnum.SELF"
+            @click="isShowProfile = !isShowProfile"
+          />
           <div ref="accountPopRef">
             <AccountPop v-show="isShowProfile" />
           </div>
