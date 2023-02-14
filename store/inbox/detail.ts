@@ -26,15 +26,34 @@ export const useInboxDetailStore = defineStore('inboxDetail', {
     },
   },
   actions: {
-    reply(val: string) {
-      if (!val.trim()) {
+    async reply(val: string | FileList | null) {
+      if (_isString(val) && !val.trim()) {
         return
       }
+
+      let type: string = 'text'
+      let content: any
+
+      if (typeof val === 'string') {
+        type = 'text'
+        content = val
+      }
+
+      if (typeof val === 'object') {
+        type = 'image'
+
+        const arrFile = [...Array.from(val)]
+        const listBlobs = arrFile.map((i) => URL.createObjectURL(i))
+
+        content = listBlobs.map((blob) => ({ id: Math.random(), src: blob }))
+      }
+
+      console.log('VAL', val, typeof val)
       const authStore = useAuthStore()
       const {
         data: { userName, avatar },
       } = authStore
-      let _data = this.data.slice(0)
+      let _data = _cloneDeep(this.data)
       _data.push({
         user: {
           id: userName,
@@ -46,7 +65,10 @@ export const useInboxDetailStore = defineStore('inboxDetail', {
             outgoing_request: false,
           },
         },
-        message: val,
+        message: {
+          type,
+          content,
+        },
       })
       this.data = _data
     },
@@ -55,3 +77,4 @@ export const useInboxDetailStore = defineStore('inboxDetail', {
     },
   },
 })
+

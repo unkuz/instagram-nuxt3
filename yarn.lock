@@ -2098,12 +2098,12 @@
     unimport "^2.2.4"
     untyped "^1.2.2"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.2.1-rc.0-27934134.7111b6c":
-  version "3.2.1-rc.0-27934134.7111b6c"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.2.1-rc.0-27934134.7111b6c.tgz#a53d1382a7b85a8b830d7ec2e78af767f7e30b79"
-  integrity sha512-6PPHslWvz/PAj81viFiT0B5//gV3+0nDTtOWVoLIKsfSYVEbDP7PTn93p7rdK7sc8nqwMyvBxSMV6b8/S4Wuww==
+"@nuxt/kit@npm:@nuxt/kit-edge@3.2.1-rc.0-27938922.9e789c7":
+  version "3.2.1-rc.0-27938922.9e789c7"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.2.1-rc.0-27938922.9e789c7.tgz#7f19f8e094130491e6a174968cdc767c2f7ca1b4"
+  integrity sha512-K2m4H0PP6TECVoizT09PXqL7kAyxqodwyN/PyqEyyhaasWBucBpyhIQd+uo/eR5RK1UiraiqWyL2fPA9vLxdwQ==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.2.1-rc.0-27934134.7111b6c"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.2.1-rc.0-27938922.9e789c7"
     c12 "^1.1.0"
     consola "^2.15.3"
     defu "^6.1.2"
@@ -2211,10 +2211,10 @@
     unimport "^2.2.4"
     untyped "^1.2.2"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.2.1-rc.0-27934134.7111b6c":
-  version "3.2.1-rc.0-27934134.7111b6c"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.2.1-rc.0-27934134.7111b6c.tgz#e47e6555a4bd05920ed8c3b609efa0d5dfec4834"
-  integrity sha512-xKJsqTpcNN1yS9RxtCySCcA0MZuy2GS7IZ05kDJL0um+jK1FuIQHn34Btj5pe61nPtQqJWJ+mfNSykjTtjxo5w==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.2.1-rc.0-27938922.9e789c7":
+  version "3.2.1-rc.0-27938922.9e789c7"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.2.1-rc.0-27938922.9e789c7.tgz#eea2cc4df956ba02d0952a4332c1c11bd4b02237"
+  integrity sha512-zotutoR0/pz6ioLTMEUdDKPVLP36b8Gc00wPZK34XgeGYuTAKk7jEWb9ks63+BAsBuXkl8BiunBm4c7uD4M2mQ==
   dependencies:
     c12 "^1.1.0"
     create-require "^1.1.1"
@@ -2256,16 +2256,16 @@
     rc9 "^2.0.0"
     std-env "^3.3.1"
 
-"@nuxt/test-utils-edge@3.2.1-rc.0-27934134.7111b6c":
-  version "3.2.1-rc.0-27934134.7111b6c"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.2.1-rc.0-27934134.7111b6c.tgz#cc55c6d269589351bcd17095e5ec4a5990ead0ef"
-  integrity sha512-HaW34ZEOom9AF19qqbTYvZ7sfcAwoEjTOLkVARD7NGikUwY5jBIGAnYC3V0fXyqUe9X8WWVIMJw+FtahObPe1w==
+"@nuxt/test-utils-edge@3.2.1-rc.0-27938922.9e789c7":
+  version "3.2.1-rc.0-27938922.9e789c7"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.2.1-rc.0-27938922.9e789c7.tgz#ef98a69740b1d3030d232dab506eab62b724158c"
+  integrity sha512-lEfoXcSMFBIoDQH0vJffuLuiqVSYJjC4+YDexdEOp8FbqNrDwUdpx69IqXoEMNoDulAs0dkH4URXx99o9mBE0w==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.2.1-rc.0-27934134.7111b6c"
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.2.1-rc.0-27934134.7111b6c"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.2.1-rc.0-27938922.9e789c7"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.2.1-rc.0-27938922.9e789c7"
     consola "^2.15.3"
     defu "^6.1.2"
-    execa "^6.1.0"
+    execa "^7.0.0"
     get-port-please "^3.0.1"
     jiti "^1.17.0"
     ofetch "^1.0.0"
@@ -4006,10 +4006,10 @@ axios@^0.25.0:
   dependencies:
     follow-redirects "^1.14.7"
 
-axios@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.3.2.tgz#7ac517f0fa3ec46e0e636223fd973713a09c72b3"
-  integrity sha512-1M3O703bYqYuPhbHeya5bnhpYVsDDRyQSabNja04mZtboLNSuZ4YrltestrLXfHgmzua4TpUqRiVKbiQuo2epw==
+axios@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.3.3.tgz#e7011384ba839b885007c9c9fae1ff23dceb295b"
+  integrity sha512-eYq77dYIFS77AQlhzEL937yUBSepBfPIe8FcgEDN35vMNZKMrs81pgnyrQpwfy4NF4b4XWX1Zgx7yX+25w8QJA==
   dependencies:
     follow-redirects "^1.15.0"
     form-data "^4.0.0"
@@ -6275,6 +6275,21 @@ execa@^6.1.0:
     signal-exit "^3.0.7"
     strip-final-newline "^3.0.0"
 
+execa@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-7.0.0.tgz#2a44e20e73797f6c2df23889927972386157d7e4"
+  integrity sha512-tQbH0pH/8LHTnwTrsKWideqi6rFB/QNUawEwrn+WHyz7PX1Tuz2u7wfTvbaNBdP5JD5LVWxNo8/A8CHNZ3bV6g==
+  dependencies:
+    cross-spawn "^7.0.3"
+    get-stream "^6.0.1"
+    human-signals "^4.3.0"
+    is-stream "^3.0.0"
+    merge-stream "^2.0.0"
+    npm-run-path "^5.1.0"
+    onetime "^6.0.0"
+    signal-exit "^3.0.7"
+    strip-final-newline "^3.0.0"
+
 expand-template@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/expand-template/-/expand-template-2.0.3.tgz#6e14b3fcee0f3a6340ecb57d2e8918692052a47c"
@@ -7328,6 +7343,11 @@ human-signals@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-3.0.1.tgz#c740920859dafa50e5a3222da9d3bf4bb0e5eef5"
   integrity sha512-rQLskxnM/5OCldHo+wNXbpVgDn5A17CUoKX+7Sokwaknlq7CdSnphy0W39GU8dw59XiCXmFXDg4fRuckQRKewQ==
+
+human-signals@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-4.3.0.tgz#2095c3cd5afae40049403d4b811235b03879db50"
+  integrity sha512-zyzVyMjpGBX2+6cDVZeFPCdtOtdsxOeseRhB9tkQ6xXmGUNrcnBzdEKPy3VPNYz+4gy1oukVOXcrJCunSyc6QQ==
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24:
   version "0.4.24"
@@ -11620,10 +11640,10 @@ safe-regex@^2.1.1:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sass@^1.58.0:
-  version "1.58.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.58.0.tgz#ee8aea3ad5ea5c485c26b3096e2df6087d0bb1cc"
-  integrity sha512-PiMJcP33DdKtZ/1jSjjqVIKihoDc6yWmYr9K/4r3fVVIEDAluD0q7XZiRKrNJcPK3qkLRF/79DND1H5q1LBjgg==
+sass@^1.58.1:
+  version "1.58.1"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.58.1.tgz#17ab0390076a50578ed0733f1cc45429e03405f6"
+  integrity sha512-bnINi6nPXbP1XNRaranMFEBZWUfdW/AF16Ql5+ypRxfTvCRTTKrLsMIakyDcayUt2t/RZotmL4kgJwNH5xO+bg==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"

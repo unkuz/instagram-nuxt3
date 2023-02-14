@@ -146,7 +146,7 @@ const setPreview = (val: { type: string; src: string }) => {
             <video
               v-for="(k, idx) in i.message.content"
               :key="idx"
-              class="h-[100px] w-auto bg-c2 object-contain"
+              class="h-[100px] w-auto bg-c2 object-contain rounded-[10px]"
               :src="k.src"
               @click="setPreview({ type: 'video', src: k.src })"
             />

@@ -22,6 +22,11 @@ let inputValue = $ref('')
 const microphoneAccess = usePermission('microphone')
 const { files, open: openFileExplorer, reset } = useFileDialog()
 
+watch(files, (val) => {
+
+  inboxDetailStore.reply(files.value)
+})
+
 watch(enter, async (val) => {
   if (val && focused.value) {
     await inboxDetailStore.reply(inputValue)
@@ -154,3 +159,4 @@ onBeforeUnmount(() => {
     </div>
   </div>
 </template>
+
