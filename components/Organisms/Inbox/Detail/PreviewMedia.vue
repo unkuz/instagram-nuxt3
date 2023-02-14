@@ -12,12 +12,9 @@ const close = () => emit('close')
 </script>
 <template>
   <BackDrop @click.self="close">
-    <div class="h-auto max-h-[90vh] w-auto max-w-[80vw]">
-      <nuxt-img
-        v-if="previewMedia.type === 'image'"
-        :src="previewMedia.src"
-      />
-      <video v-if="previewMedia.type === 'video'" :src="previewMedia.src" />
+    <div class="h-auto max-h-[90vh] w-auto max-w-[80vw] p-[10px] bg-c1">
+      <nuxt-img v-if="previewMedia.type === 'image'" :src="previewMedia.src" />
+      <video v-if="previewMedia.type === 'video'" :src="previewMedia.src" controls />
     </div>
   </BackDrop>
 </template>
