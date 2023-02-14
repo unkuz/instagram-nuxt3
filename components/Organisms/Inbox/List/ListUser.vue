@@ -2,9 +2,10 @@
 import { useStoriesStore } from '@/store'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import User from './User.vue'
+import { useInboxListUserStore } from '@/store'
 
-const storiesStore = useStoriesStore()
-const stories = $computed(() => storiesStore.data)
+const inboxListUserStore = useInboxListUserStore()
+const listUser = $computed(() => inboxListUserStore.data)
 
 const [container] = useKeenSlider({
   breakpoints: {
@@ -39,9 +40,8 @@ const [container] = useKeenSlider({
 
 <template>
   <div ref="container" class="keen-slider h-[120px] pt-[20px]">
-    <div v-for="i in stories" :key="i.id" class="keen-slider__slide">
+    <div v-for="i in listUser" :key="i.id" class="keen-slider__slide">
       <User v-bind="i" />
     </div>
   </div>
 </template>
-
