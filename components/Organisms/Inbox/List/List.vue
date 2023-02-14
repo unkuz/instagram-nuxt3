@@ -16,11 +16,14 @@ const inboxList = $computed(() => inboxStore.data)
 </script>
 
 <template>
-  <div class="mx-auto w-full px-[10px] text-[.85rem] md:w-[490px] md:px-0">
+  <div class="mx-auto w-full px-[10px] text-[.85rem] md:w-[490px] md:px-0 ">
     <div class="md:h-[calc(100vh-84px-24px)]">
-      <div class="flex h-[60px] items-center md:hidden text-[.85rem]">
-        <NuxtLink to="/_"><BackIcon_ /> </NuxtLink>
-        <span class="font-[600]">Message</span>
+      <div class="flex h-[60px] w-full items-center justify-between text-[.85rem] md:hidden">
+        <div class="flex items-center gap-[10px]">
+          <NuxtLink to="/_"><BackIcon_  /> </NuxtLink> <span class="font-[600]">Message</span>
+        </div>
+
+        <EditIcon_ class="[&__path]:fill-c17" />
       </div>
       <div class="flex items-center justify-between gap-[20px]">
         <div
@@ -50,10 +53,10 @@ const inboxList = $computed(() => inboxStore.data)
             class="absolute top-1/2 left-1/2 h-[30px] w-[90%] w-[72%] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-c7 focus:outline-none"
           />
         </div>
-        <EditIcon_ />
       </div>
 
       <ListUser />
+
       <div
         class="h-[calc(100vh-60px-45px-120px)] overflow-scroll md:h-[calc(100vh-84px-60px-120px)]"
       >

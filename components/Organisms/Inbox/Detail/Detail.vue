@@ -60,7 +60,7 @@ let tl = gsap.timeline({})
 onMounted(() => {
   tl.to(inboxRef!, {
     width: 'auto',
-    duration: smallMd.value ? 0 : 0.5,
+    duration: smallMd.value ? 0.05 : 0.5,
     ease: 'bounce.out',
   }).then(() => {
     scrollEnd()
