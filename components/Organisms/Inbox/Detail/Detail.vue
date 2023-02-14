@@ -82,7 +82,7 @@ const setPreview = (val: { type: string; src: string }) => {
 <template>
   <div
     ref="inboxRef"
-    class="relative mx-auto h-[calc(100vh)] text-[.85rem] md:h-[calc(100vh-84px)] md:w-[300px]"
+    class="relative mx-auto h-[calc(100vh)] text-[.85rem] md:h-[calc(100vh-84px)] md:w-[300px] [&__path]:fill-c17"
   >
     <div ref="containRef">
       <div

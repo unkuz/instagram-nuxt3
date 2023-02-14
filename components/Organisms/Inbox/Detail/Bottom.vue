@@ -115,8 +115,8 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="">
-    <div class="relative" ref="emojiRef">
+  <div class="[&__path]:fill-c17">
+    <div class="relative " ref="emojiRef">
       <Emoji v-if="showEmoji" :top="-378" class="!left-0" />
     </div>
 
