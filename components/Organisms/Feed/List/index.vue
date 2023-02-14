@@ -12,6 +12,7 @@ import IndividualComment from './IndividualComment.vue'
 import LikeCommentCount from './LikeCommentCount.vue'
 import React from './React.vue'
 import TimeFromNow from '@/components/Atoms/TimeFromNow.vue'
+import FetchMoreObserver from '@/components/Utils/FetchMoreObserver.vue';
 
 defineProps<IPending>()
 
@@ -82,8 +83,11 @@ const { key } = useForceRenderTimer()
               :currentReplyCommentId="currentReplyCommentId"
             />
           </div>
-        </div></article
-    ></template>
+        </div>
+      </article>
+      <FetchMoreObserver />
+    </template>
     <PostSkl v-else />
   </div>
 </template>
+
