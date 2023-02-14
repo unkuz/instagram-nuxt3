@@ -7,7 +7,7 @@ const explore = computed(() => exploreStore.list)
 </script>
 
 <template>
-  <div class="mb-[84px] pt-[20px]">
+  <div class="mb-[84px] pt-[20px] text-[.85rem]">
     <ClientOnly>
       <div v-for="(i, idx) in _chunk(explore, 3)" :key="idx">
         <Explore :cluster="i" />
