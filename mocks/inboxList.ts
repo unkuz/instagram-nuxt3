@@ -29,10 +29,28 @@ export const inboxList = [
       },
     },
     preview_lastest_message: {
-      content: '🥕',
+      content: '🍆🍆',
       created_at: '2023-02-10 21:20',
     },
     message_not_seen_count: 9,
+    status: '🌵'
+  },
+  {
+    user: {
+      id: 'cukznothz',
+      username: 'cukznothz',
+      full_name: 'cukznothz',
+      profile_pic_url: '/image/timeline/199217281_189955476361657_1385657636525037305_n.jpg',
+      friendship_status: {
+        following: true,
+        outgoing_request: false,
+      },
+    },
+    preview_lastest_message: {
+      content: '🍬🍫🍫🍭🍬🍬',
+      created_at: '2023-02-10 21:20',
+    },
+    message_not_seen_count: 0,
     status: '🌵'
   },
 ]
