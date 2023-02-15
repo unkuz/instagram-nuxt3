@@ -7,7 +7,9 @@ onMounted(() => {
   observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        console.log('NEED LOAD MORE DATA')
+        if (entry.isIntersecting) {
+          console.log('NEED LOAD MORE DATA')
+        }
       })
     },
     {
@@ -19,5 +21,5 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="el" class="h-[10px] w-[10px] bg-black mx-auto"></div>
+  <div ref="el" class="mx-auto h-[10px] w-[10px] bg-black"></div>
 </template>
