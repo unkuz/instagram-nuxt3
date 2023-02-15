@@ -61,7 +61,7 @@ const toggleFullScreen = () => {
       playsinline
       crossorigin="anonymous"
       loop
-      preload="metadata"
+      preload="none"
       :poster="video.poster ?? ''"
     />
     <Loading v-show="waiting" />
