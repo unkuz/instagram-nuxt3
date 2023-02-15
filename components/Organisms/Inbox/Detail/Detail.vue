@@ -127,7 +127,7 @@ const { isOverDropZone } = useDropZone(inboxRef, onDrop)
       </div>
       <div
         ref="containListRef"
-        class="h-[calc(100vh-60px)] w-full overflow-scroll p-[10px_10px_0px_10px] !pt-[100px] md:h-[calc(100vh-84px-60px)] md:p-[10px_0px_0px_0px]"
+        class="h-[calc(100vh-60px)] w-full overflow-scroll p-[10px_10px_0px_10px] !pt-[100px] md:h-[calc(100vh-84px-60px)] md:p-[10px_0px_0px_0px] scrollbar-hide"
       >
         <IndividualLine
           v-for="(i, idx) in list"

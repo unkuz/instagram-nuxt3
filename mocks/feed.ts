@@ -5,7 +5,46 @@ export const timeLine = [
     location: {
       short_name: 'Copenhagen',
     },
-    comments: [],
+    comments: [
+      {
+        text: 'Nice 😍❤',
+        created_at: '2022-11-19 22:50',
+        user: {
+          pk: 20433830474,
+          username: 'Helly Neko Music',
+          full_name: 'Helly Neko Music',
+          is_private: false,
+          profile_pic_url: '/timeline/channels4_profile.jpg',
+        },
+        comment_like_count: 1,
+        reply: [
+          {
+            text: `you're my superhero~ <3`,
+            created_at: '2022-11-19 23:20',
+            user: {
+              pk: 20433830474,
+              username: 'Renko Kaitoshi',
+              full_name: '마크뮤직',
+              is_private: false,
+              profile_pic_url: '/timeline/dsfsdfsdf.jpg',
+            },
+            comment_like_count: 3,
+          },
+          {
+            text: `<3`,
+            created_at: '2022-11-19 23:20',
+            user: {
+              pk: 20433830474,
+              username: 'Renko Kaitoshi',
+              full_name: '마크뮤직',
+              is_private: false,
+              profile_pic_url: '/timeline/dsfsdfsdf.jpg',
+            },
+            comment_like_count: 3,
+          },
+        ],
+      },
+    ],
     carousel_media: {
       images: [],
       videos: [
