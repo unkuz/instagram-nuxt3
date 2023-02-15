@@ -14,16 +14,16 @@ withDefaults(defineProps<IProps>(), { isBig: false, img: '', id: '' })
 </script>
 
 <template>
-  <div>
+  <div
+    :class="[
+      'group relative aspect-square w-full cursor-pointer overflow-hidden',
+      {
+        '!col-span-2 !row-span-2 ': isBig,
+      },
+    ]"
+  >
     <NuxtLink :to="`/explore/${'1'}`">
-      <div
-        :class="[
-          'group relative aspect-square w-full cursor-pointer overflow-hidden',
-          {
-            'col-span-2 row-span-2 ': isBig,
-          },
-        ]"
-      >
+      <div>
         <nuxt-img
           :src="img"
           :alt="img"

@@ -12,6 +12,7 @@ import TagName from '@/components/Atoms/TagName.vue'
 import { gsap } from 'gsap'
 import PreviewMedia from './PreviewMedia.vue'
 import { useTailwindBreakPoint } from '@/composables'
+import { useDropZone } from '@vueuse/core'
 
 const inboxDetailStore = useInboxDetailStore()
 
@@ -24,7 +25,7 @@ const authStore = useAuthStore()
 
 const isOnline = ref(true)
 
-const inboxRef = $ref<HTMLDivElement>()
+const inboxRef = ref<HTMLDivElement>()
 
 const containRef = $ref<HTMLDivElement>()
 const containListRef = $ref<HTMLDivElement>()
@@ -58,7 +59,7 @@ const currentUser = $computed(() => authStore.data.userName)
 let tl = gsap.timeline({})
 
 onMounted(() => {
-  tl.to(inboxRef!, {
+  tl.to(inboxRef.value!, {
     width: 'auto',
     duration: smallMd.value ? 0.05 : 0.5,
     ease: 'bounce.out',
@@ -80,6 +81,10 @@ const setPreview = (val: { type: string; src: string }) => {
   }
   console.log('previewMedia', previewMedia)
 }
+const onDrop = (files: File[] | null) => {
+  // called when files are dropped on zone
+}
+const { isOverDropZone } = useDropZone(inboxRef, onDrop)
 </script>
 
 <template>

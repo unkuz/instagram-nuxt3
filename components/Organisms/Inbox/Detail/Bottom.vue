@@ -17,38 +17,50 @@ const aniInputRef = $ref<HTMLSpanElement>()
 const inputRef = ref<HTMLInputElement>()
 const { focused } = useFocus(inputRef, { initialValue: false })
 const { shift, space, a, enter } = useMagicKeys()
+let audioRecordURL = $ref<string>()
 let inputValue = $ref('')
+
+let isRecording = $ref(false)
 
 const microphoneAccess = usePermission('microphone')
 const { files, open: openFileExplorer, reset } = useFileDialog()
 
 watch(files, (val) => {
-
   inboxDetailStore.reply(files.value)
 })
 
 watch(enter, async (val) => {
   if (val && focused.value) {
     await inboxDetailStore.reply(inputValue)
-    inputValue = ''
+    inputValue = '' 
   }
 })
 
+let mediaRecorder: MediaRecorder
+
 const record = () => {
+  isRecording = true
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     console.log('getUserMedia supported.')
     navigator.mediaDevices
-      .getUserMedia(
-        // constraints - only audio needed for this app
-        {
-          audio: true,
+      .getUserMedia({
+        audio: true,
+      })
+      .then((stream) => {
+        mediaRecorder = new MediaRecorder(stream)
+        let chunks: Blob[] = []
+        mediaRecorder.ondataavailable = (e) => {
+          chunks.push(e.data)
         }
-      )
-
-      // Success callback
-      .then((stream) => {})
-
-      // Error callback
+        mediaRecorder.onerror = (e: any) => {
+          alert(e.error)
+        }
+        mediaRecorder.onstop = (e) => {
+          let blod = new Blob(chunks)
+          let url = URL.createObjectURL(blod)
+          audioRecordURL = url
+        }
+      })
       .catch((err) => {
         console.error(`The following getUserMedia error occurred: ${err}`)
       })
@@ -116,7 +128,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="[&__path]:fill-c17">
-    <div class="relative " ref="emojiRef">
+    <div class="relative" ref="emojiRef">
       <Emoji v-if="showEmoji" :top="-378" class="!left-0" />
     </div>
 
@@ -159,4 +171,3 @@ onBeforeUnmount(() => {
     </div>
   </div>
 </template>
-

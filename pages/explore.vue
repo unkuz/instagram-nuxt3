@@ -10,7 +10,7 @@ const explore = computed(() => exploreStore.list)
   <div class="mb-[84px] pt-[20px] text-[.85rem]">
     <ClientOnly>
       <div v-for="(i, idx) in _chunk(explore, 3)" :key="idx">
-        <Explore :cluster="i" />
+        <Explore :cluster="i" :idx="idx" />
       </div>
     </ClientOnly>
     <NuxtPage/>
