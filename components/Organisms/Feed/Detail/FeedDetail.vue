@@ -7,6 +7,7 @@ import TimeFromNow from '@/components/Atoms/TimeFromNow.vue'
 import React from '@/components/Organisms/Feed/List/React.vue'
 import LikeCommentCount from '../List/LikeCommentCount.vue'
 import IndividualComment from '../List/IndividualComment.vue'
+import {useLockScroll} from '@/composables/useLockScroll'
 
 const feedStore = useFeedStore()
 const feed = $computed(() => feedStore.data[0])
@@ -14,6 +15,8 @@ const feed = $computed(() => feedStore.data[0])
 const back = () => navigateTo('/')
 
 const currentIdx = ref(0)
+
+useLockScroll()
 
 const setCurrent = (val) => (currentIdx.value = val)
 </script>
