@@ -9,9 +9,26 @@ import LikeCommentCount from '../List/LikeCommentCount.vue'
 import IndividualComment from '../List/IndividualComment.vue'
 import { useLockScroll } from '@/composables/useLockScroll'
 import Carousel from '../List/Carousel.vue'
+import { gsap } from 'gsap'
 
 const feedStore = useFeedStore()
 const feed = $computed(() => feedStore.data[0])
+const containerRef = $ref<HTMLDivElement>()
+const tl = gsap.timeline({})
+
+onMounted(() => {
+  tl.to(containerRef!, {
+    opacity: 0,
+    translateY: '200%',
+    scale: 0,
+    duration: 0,
+  }).to(containerRef!, {
+    opacity: 1,
+    translateY: 0,
+    scale: 1,
+    duration: 0.3,
+  })
+})
 
 const back = () => navigateTo('/')
 
@@ -26,9 +43,10 @@ const setCurrent = (val) => (currentIdx.value = val)
   <div>
     <BackDrop @click.self="back">
       <div
-        class="flex h-screen w-screen bg-c1 text-[.75rem] md:h-[80vh] md:w-[80vw] md:text-[.8rem] md:flex-col xl:flex-row"
+        ref="containerRef"
+        class="flex h-screen w-screen bg-c1 text-[.75rem] dark:bg-c2 md:h-[80vh] md:w-[80vw] md:flex-col md:text-[.8rem] xl:flex-row"
       >
-        <div class="hidden flex-1 flex-col  md:flex justify-center items-center bg-c2">
+        <div class="hidden flex-1 flex-col items-center justify-center bg-c2 md:flex">
           <Carousel
             :id="feed.id"
             :images="feed.carousel_media.images"
@@ -39,9 +57,9 @@ const setCurrent = (val) => (currentIdx.value = val)
             :currentParent="currentIdx"
           />
         </div>
-        <div class="relative flex h-full w-full flex-col px-[10px]  md:w-full lg:w-[500px]">
+        <div class="relative flex h-full w-full flex-col px-[10px] md:w-full lg:w-[500px]">
           <div class="absolute top-0 left-0 right-0 z-10 bg-c1 px-[10px]">
-            <Head  :avatar="feed.user.profile_pic_url" :user-name="feed.user.username" />
+            <Head :avatar="feed.user.profile_pic_url" :user-name="feed.user.username" />
             <React
               :id="feed.id"
               :current-idx="currentIdx"
