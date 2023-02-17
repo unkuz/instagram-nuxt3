@@ -26,9 +26,9 @@ const setCurrent = (val) => (currentIdx.value = val)
   <div>
     <BackDrop @click.self="back">
       <div
-        class="flex h-screen w-screen bg-c1 text-[.75rem] md:h-[80vh] md:w-[80vw] md:text-[.8rem]"
+        class="flex h-screen w-screen bg-c1 text-[.75rem] md:h-[80vh] md:w-[80vw] md:text-[.8rem] md:flex-col xl:flex-row"
       >
-        <div class="hidden flex-1 flex-col bg-red-200 md:flex">
+        <div class="hidden flex-1 flex-col  md:flex justify-center items-center bg-c2">
           <Carousel
             :id="feed.id"
             :images="feed.carousel_media.images"
@@ -39,9 +39,9 @@ const setCurrent = (val) => (currentIdx.value = val)
             :currentParent="currentIdx"
           />
         </div>
-        <div class="relative flex h-full w-full flex-col px-[10px] md:!w-[500px]">
+        <div class="relative flex h-full w-full flex-col px-[10px]  md:w-full lg:w-[500px]">
           <div class="absolute top-0 left-0 right-0 z-10 bg-c1 px-[10px]">
-            <Head class="" :avatar="feed.user.profile_pic_url" :user-name="feed.user.username" />
+            <Head  :avatar="feed.user.profile_pic_url" :user-name="feed.user.username" />
             <React
               :id="feed.id"
               :current-idx="currentIdx"
