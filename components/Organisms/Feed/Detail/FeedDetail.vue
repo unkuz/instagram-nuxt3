@@ -58,7 +58,7 @@ const setCurrent = (val) => (currentIdx.value = val)
           />
         </div>
         <div class="relative flex h-full w-full flex-col px-[10px] md:w-full lg:w-[500px]">
-          <div class="absolute top-0 left-0 right-0 z-10 bg-c1 px-[10px]">
+          <div class="absolute top-0 left-0 right-0 z-10 bg-c1 dark:bg-c2 px-[10px]">
             <Head :avatar="feed.user.profile_pic_url" :user-name="feed.user.username" />
             <React
               :id="feed.id"
