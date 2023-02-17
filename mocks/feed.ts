@@ -49,6 +49,11 @@ export const timeLine = [
       images: [],
       videos: [
         {
+          id: 2,
+          src: `/video/Trevor Omoto - The Way.mp4`,
+          poster: '',
+        },
+        {
           id: 23,
           src: `/video/KienThien - See It Through (feat. TuanNguyen).mp4`,
           poster: '',
