@@ -7,7 +7,8 @@ import TimeFromNow from '@/components/Atoms/TimeFromNow.vue'
 import React from '@/components/Organisms/Feed/List/React.vue'
 import LikeCommentCount from '../List/LikeCommentCount.vue'
 import IndividualComment from '../List/IndividualComment.vue'
-import {useLockScroll} from '@/composables/useLockScroll'
+import { useLockScroll } from '@/composables/useLockScroll'
+import Carousel from '../List/Carousel.vue'
 
 const feedStore = useFeedStore()
 const feed = $computed(() => feedStore.data[0])
@@ -24,15 +25,23 @@ const setCurrent = (val) => (currentIdx.value = val)
 <template>
   <div>
     <BackDrop @click.self="back">
-      <div class="flex md:h-[80vh] h-screen w-screen md:w-[80vw] bg-c1 md:text-[.8rem] text-[.75rem]">
-        <div class="flex-1 flex-col bg-red-200 hidden md:flex"></div>
-        <div class="relative flex h-full md:!w-[500px] w-full flex-col px-[10px]">
-          <div class="absolute top-0 left-0 right-0 bg-c1 px-[10px] z-10">
-            <Head
-              class=""
-              :avatar="feed.user.profile_pic_url"
-              :user-name="feed.user.username"
-            />
+      <div
+        class="flex h-screen w-screen bg-c1 text-[.75rem] md:h-[80vh] md:w-[80vw] md:text-[.8rem]"
+      >
+        <div class="hidden flex-1 flex-col bg-red-200 md:flex">
+          <Carousel
+            :id="feed.id"
+            :images="feed.carousel_media.images"
+            :videos="feed.carousel_media.videos"
+            :has-saved="feed.is_saved"
+            :has-liked="feed.has_liked"
+            @current-index-carousel="setCurrent($event)"
+            :currentParent="currentIdx"
+          />
+        </div>
+        <div class="relative flex h-full w-full flex-col px-[10px] md:!w-[500px]">
+          <div class="absolute top-0 left-0 right-0 z-10 bg-c1 px-[10px]">
+            <Head class="" :avatar="feed.user.profile_pic_url" :user-name="feed.user.username" />
             <React
               :id="feed.id"
               :current-idx="currentIdx"
