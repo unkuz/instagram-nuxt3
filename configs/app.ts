@@ -1,7 +1,7 @@
 export const APP_CONFIGS = Object.freeze({
   QUALITY_IMAGE: {
-    AVATAR: 50,
-    EXPLORE: 50,
+    AVATAR: 30,
+    EXPLORE: 30,
   },
   MAX_SUGGESTION_PEOPLE_FOLLOW: 7,
   GITHUB_AUTHOR_LINK: 'https://github.com/cuzknothz',
