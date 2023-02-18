@@ -50,17 +50,17 @@ export const timeLine = [
       videos: [
         {
           id: 2,
-          src: `http://localhost:8000/media/videos/Trevor%20Omoto%20-%20The%20Way.mp4`,
+          src: `/video/Trevor Omoto - The Way.mp4`,
           poster: '',
         },
         // {
         //   id: 23,
-        //   src: `http://localhost:8000/media/videos/Trevor%20Omoto%20-%20The%20Way.mp4`,
+        //   src: `/video/KienThien - See It Through (feat. TuanNguyen).mp4`,
         //   poster: '',
         // },
         // {
         //   id: 1,
-        //   src: `http://localhost:8000/media/videos/Trevor%20Omoto%20-%20The%20Way.mp4`,
+        //   src: `/video/KienThien - Turn It Up [Diversity Release].mp4`,
         //   poster: '',
         // },
 
