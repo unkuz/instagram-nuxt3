@@ -9,7 +9,7 @@ import LikeCommentCount from '../List/LikeCommentCount.vue'
 import IndividualComment from '../List/IndividualComment.vue'
 import { useLockScroll } from '@/composables/useLockScroll'
 import Carousel from '../List/Carousel.vue'
-import { gsap } from 'gsap'
+import { gsap, Elastic } from 'gsap'
 
 const feedStore = useFeedStore()
 const feed = $computed(() => feedStore.data[0])
@@ -19,7 +19,7 @@ const tl = gsap.timeline({})
 onMounted(() => {
   tl.to(containerRef!, {
     opacity: 0,
-    translateY: '200%',
+    translateY: '-200%',
     scale: 0,
     duration: 0,
   }).to(containerRef!, {
@@ -27,6 +27,7 @@ onMounted(() => {
     translateY: 0,
     scale: 1,
     duration: 0.3,
+    ease: Elastic.easeOut.config(1, 0.6),
   })
 })
 
@@ -44,7 +45,7 @@ const setCurrent = (val) => (currentIdx.value = val)
     <BackDrop @click.self="back">
       <div
         ref="containerRef"
-        class="flex h-screen w-screen bg-c1 text-[.75rem] dark:bg-c2 md:h-[80vh] md:w-[80vw] md:flex-col md:text-[.8rem] xl:flex-row"
+        class="flex h-screen w-screen bg-c1 text-[.75rem] dark:bg-c2 md:h-[90vh] md:w-[80vw] md:flex-col md:text-[.8rem] xl:h-[80vh] xl:flex-row"
       >
         <div class="hidden flex-1 flex-col items-center justify-center bg-c2 md:flex">
           <Carousel
@@ -58,7 +59,7 @@ const setCurrent = (val) => (currentIdx.value = val)
           />
         </div>
         <div class="relative flex h-full w-full flex-col px-[10px] md:w-full lg:w-[500px]">
-          <div class="absolute top-0 left-0 right-0 z-10 bg-c1 dark:bg-c2 px-[10px]">
+          <div class="absolute top-0 left-0 right-0 z-10 bg-c1 px-[10px] dark:bg-c2">
             <Head :avatar="feed.user.profile_pic_url" :user-name="feed.user.username" />
             <React
               :id="feed.id"
