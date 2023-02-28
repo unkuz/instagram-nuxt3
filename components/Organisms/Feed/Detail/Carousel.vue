@@ -14,7 +14,7 @@ interface IProps {
   images: any
   videos: any
   hasLiked: boolean
-  id: string
+  id : number
   hasSaved: boolean
   currentParent: number
 }

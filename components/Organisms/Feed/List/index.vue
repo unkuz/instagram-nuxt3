@@ -19,8 +19,8 @@ defineProps<IPending>()
 const feedStore = useFeedStore()
 const feeds = $computed(() => feedStore.data)
 const commentRef = $ref<HTMLDivElement>()
-let currentReplyCommentId = ref('')
-const reply = (commentId: string) => (currentReplyCommentId.value = commentId)
+let currentReplyCommentId = ref<string | number>('')
+const reply = (commentId : number) => (currentReplyCommentId.value = commentId)
 
 let currentIdx = $ref(0)
 const setCurrent = (value: number) => (currentIdx = value)
@@ -37,7 +37,7 @@ const { key } = useForceRenderTimer()
         class="w-full bg-transparent p-[1px] md:bg-c4 md:clip-path-cuzknothz dark:md:bg-transparent [&:not(:last-child)]:mb-[24px]"
       >
         <div class="w-full bg-c1 dark:bg-c19 md:clip-path-cuzknothz">
-          <Head :avatar="i.user.profile_pic_url" :user-name="i.user.username" />
+          <Head :avatar="i.user.profile_pic_url" :user-name="i.user.user_name" />
           <Carousel
             :id="i.id"
             :images="i.carousel_media.images"
@@ -58,8 +58,8 @@ const { key } = useForceRenderTimer()
             />
             <LikeCommentCount :like-count="i.like_count" :comment-count="i.comments.length" />
             <Caption
-              :user-name="i.user.username"
-              :caption-content="i.caption_text"
+              :user-name="i.user.user_name"
+              :captionContent="'sdfsdfdfkjsfksdjfkjsdkfjk'"
               :tags="i.tags"
             />
 

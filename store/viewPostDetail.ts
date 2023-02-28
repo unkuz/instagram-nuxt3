@@ -73,7 +73,7 @@ export const usePostDetailStore = defineStore('post-detail', {
   }),
   getters: {},
   actions: {
-    setPostDetail(id: string) {
+    setPostDetail(id : number) {
       const timeLineStore = useFeedStore()
       this.post = timeLineStore.data.find((i) => i.id === id)
       if (!this.post) {

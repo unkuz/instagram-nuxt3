@@ -7,7 +7,7 @@ import Dot from '@/components/Atoms/Dot.vue'
 interface IProps {
   name: string
   avatar: string
-  id: string
+  id : number
   hasRead: boolean
   isOnline: boolean
 }

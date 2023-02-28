@@ -4,8 +4,8 @@ import { useAuthStore, useFeedStore } from '@/store'
 import { onClickOutside, useTextareaAutosize } from '@vueuse/core'
 
 interface IProps {
-  id: string
-  currentReplyCommentId: string
+  id : number
+  currentReplyCommentId : number | string
 }
 
 const props = defineProps<IProps>()
@@ -23,8 +23,8 @@ watch(
   (val) => {
     if (val) {
       const findNickNameCommentReply = timeLineStore.data
-        .find(({ id }) => id === props.id)!
-        .comments.find(({ id }) => id === val)!.user.username
+        .find(({ id }:any) => id === props.id)!
+        .comments.find(({ id }:any) => id === val)!.user.username
       input.value = '@' + `${findNickNameCommentReply}` + ' '
       textarea.value?.focus()
     }

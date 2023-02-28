@@ -1,6 +1,6 @@
 export interface ITimeLine {
   created_at: string
-  id: string
+  id : number
   location: Location
   comments: Comment[]
   carousel_media: CarouselMedia
@@ -23,7 +23,7 @@ export interface Comment {
   user: User
   comment_like_count: number
   reply: Reply[]
-  id: string
+  id : number
 }
 
 export interface User {
@@ -60,7 +60,7 @@ export interface Video {
 }
 
 export interface User3 {
-  id: string
+  id : number
   username: string
   full_name: string
   profile_pic_url: string

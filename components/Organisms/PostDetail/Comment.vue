@@ -4,7 +4,7 @@ import { useAuthStore, usePostDetailStore } from '@/store'
 import { onClickOutside } from '@vueuse/core'
 
 interface IProps {
-  id: string
+  id : number
 }
 
 const { id } = defineProps<IProps>()

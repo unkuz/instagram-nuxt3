@@ -7,8 +7,8 @@ import { useSlashStore } from '@/store'
 type TState = IStateStore<ITimeLine[]>
 
 export const useFeedStore = defineStore('feed', {
-  state: (): TState => ({
-    data: [...timeLine],
+  state: (): any => ({
+    data: [],
     hasErr: false,
     errors: {},
   }),
@@ -19,7 +19,7 @@ export const useFeedStore = defineStore('feed', {
         this.data = data
       }
     },
-    setToggleLike(id: string) {
+    setToggleLike(id : number) {
       const slashStore = useSlashStore()
 
       this.data.forEach((i: ITimeLine) => {
@@ -36,7 +36,7 @@ export const useFeedStore = defineStore('feed', {
         }
       })
     },
-    setToggleSave(id: string) {
+    setToggleSave(id : number) {
       this.data.forEach((i: ITimeLine) => {
         if (i.id === id) {
           i.is_saved = !i.is_saved

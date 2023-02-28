@@ -21,10 +21,12 @@ const { data: _stories, pending: pendingStories } = await useLazyFetch<IStory[]>
 const { data: _suggestions, pending: pendingSugestion } = await useLazyFetch<IStory[]>(
   APP_API.suggestions.list
 )
-// const { data: _timeline, pending: pendingTimeline } = await useLazyFetch<ITimeLine[]>(APP_API.timeLine.list)
+const { data: _timeline, pending: pendingTimeline } = await useLazyFetch<ITimeLine[]>(
+  APP_API.FEED.list
+)
 
 // storiesStore.save(_stories.value)
-// timeLineStore.save(_timeline.value)
+timeLineStore.save(_timeline.value)
 // suggestionStore.save(_suggestions.value)
 
 const calcLeftSuggestion = () => {
@@ -44,11 +46,11 @@ useWindowResizeCallback(calcLeftSuggestion)
   <div>
     <div class="relative flex w-full justify-center lg:block">
       <div ref="leftRef" class="inline-flex w-full flex-col items-center md:w-[614px] lg:block">
-        <Stories :isPending="false" v-if="storiesStore.data.length" />
+        <!-- <Stories :isPending="false" v-if="storiesStore.data.length" /> -->
         <Feed :isPending="false" />
       </div>
       <div ref="rightRef" class="fixed left-0 top-[84px] hidden w-[293px] text-sm lg:block">
-        <Suggestions :isPending="false" />
+        <!-- <Suggestions :isPending="false" /> -->
       </div>
     </div>
     <NuxtPage />

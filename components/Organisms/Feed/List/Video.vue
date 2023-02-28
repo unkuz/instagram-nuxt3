@@ -8,10 +8,11 @@ import { useFeedStore } from '@/store'
 import { useMediaControls } from '@vueuse/core'
 import MiniPlayerIcon_ from '@/assets/svg/mingcute/mini_player.svg'
 import ExpandPlayerIcon_ from '@/assets/svg/mingcute/expand_player.svg'
+import { BASE_URL_API } from '~~/apis'
 
 interface IProps {
   video: any
-  idPost: string
+  idPost : number
 }
 
 const props = defineProps<IProps>()
@@ -31,7 +32,7 @@ const {
   supportsPictureInPicture,
   isPictureInPicture,
 } = useMediaControls(videoRef, {
-  src: props.video.src,
+  src: BASE_URL_API + props.video.src,
 })
 
 const togglePlay = () => {
@@ -42,7 +43,7 @@ const toggleLike = () => {
   timelineStore.setToggleLike(props.idPost)
 }
 
-useDoubleClick(videoRef, togglePlay, toggleLike)
+// useDoubleClick(videoRef, togglePlay, toggleLike)
 
 const toggleFullScreen = () => {
   document.fullscreenElement ? document.exitFullscreen() : containerRef!.requestFullscreen()
@@ -59,7 +60,6 @@ const toggleFullScreen = () => {
       class="video block max-h-[100vh] w-full"
       type="video/mp4"
       playsinline
-      crossorigin="anonymous"
       loop
       preload="none"
       :poster="video.poster ?? ''"

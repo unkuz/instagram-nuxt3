@@ -4,7 +4,7 @@ import { useFeedStore } from '@/store'
 
 interface IProps {
   src: string
-  idPost: string
+  id : number
 }
 
 const props = defineProps<IProps>()

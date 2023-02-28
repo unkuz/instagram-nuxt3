@@ -6,7 +6,7 @@ import Avatar from '@/components/Atoms/Avatar.vue'
 interface IProps {
   name: string
   avatar: string
-  id: string
+  id : number
   hasRead: boolean
 }
 
