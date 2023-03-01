@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import Loading from '@/components/Atoms/Loading.vue'
-import Add_ from '@/components/Molecules/Add/Add_.vue'
+import Add_ from '~~/components/Molecules/Add/index.vue'
 import Slash from '@/components/Molecules/Slash.vue'
 import Cookie from '@/components/Utils/Cookie.vue'
 import More from '@/components/Utils/More.vue'
@@ -23,7 +23,7 @@ const isShowMore = computed(() => moreStore.isShow)
 const { darkMode } = storeToRefs(useThemeStore())
 const { isShowPrelude } = usePrelude()
 
-registerSeviceWorkerPWA()
+// registerSeviceWorkerPWA()
 useScroll()
 useResizeWindow()
 useWatchRouteSetSection()

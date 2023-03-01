@@ -7,6 +7,7 @@ import { IPending, SizeAvatarEnum } from '@/type'
 import { getCurrentYear } from '@/utils'
 import Item from './Item.vue'
 import SuggestionSkl from '@/components/Skeleton/Suggestion.vue'
+import { BASE_URL_API } from '~~/apis'
 
 defineProps<IPending>()
 
@@ -17,7 +18,7 @@ let timer2: NodeJS.Timer
 let maxSuggestionPeopleFollow = $ref(APP_CONFIGS.MAX_SUGGESTION_PEOPLE_FOLLOW)
 const suggestion = $computed(() => sugestionStore.data.slice(0, maxSuggestionPeopleFollow))
 const authStore = useAuthStore()
-const avatar = $computed(() => authStore.data.avatar)
+const avatar = $computed(() =>BASE_URL_API + '/' + authStore.data.user.profile_pic_url)
 const sugestionRef = $ref<HTMLDivElement>()
 
 let isIntersecting = $ref(false)
@@ -81,11 +82,11 @@ let isIntersecting = $ref(false)
       </div>
       <div class="mt-[8px] h-auto w-full">
         <Item
-          v-for="{ name, avatar, id } in suggestion"
+          v-for="{ user_name, profile_pic_url, id } in suggestion"
           :id="id"
           :key="id"
-          :name="name"
-          :avatar="avatar"
+          :user_name="user_name"
+          :avatar="profile_pic_url"
         />
       </div>
       <div class="mt-[10px] text-[0.85rem] text-c3 dark:text-c21" v-once>

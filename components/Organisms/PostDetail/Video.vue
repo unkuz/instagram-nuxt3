@@ -9,7 +9,7 @@ import LoadingIcon_ from '@/assets/svg/Dual Ring-1s-200px.svg'
 
 interface IProps {
   video: any
-  idPost: string
+  id : number
 }
 
 const props = defineProps<IProps>()

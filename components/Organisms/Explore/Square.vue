@@ -7,7 +7,7 @@ import ChatIcon_ from '@/assets/svg/mingcute/chat.svg'
 interface IProps {
   img: string | undefined
   isBig?: boolean
-  id: string
+  id : number
 }
 
 withDefaults(defineProps<IProps>(), { isBig: false, img: '', id: '' })

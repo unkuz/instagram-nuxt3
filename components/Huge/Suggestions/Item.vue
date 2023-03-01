@@ -5,8 +5,8 @@ import { SizeAvatarEnum } from '@/type'
 
 interface IProps {
   avatar: string
-  name: string
-  id: string
+  user_name: string
+  id : number
 }
 
 defineProps<IProps>()
@@ -17,14 +17,14 @@ const toggleFollow = () => (isFollow = !isFollow)
 
 <template>
   <div class="flex h-[48px] items-center justify-between py-[8px]">
-    <NuxtLink :to="`/${id}`">
+    <NuxtLink :to="`/${user_name}`">
       <Avatar :size="SizeAvatarEnum.S" :url="avatar" />
     </NuxtLink>
 
     <div class="w-[185px]">
-      <NuxtLink :to="`/${id}`">
+      <NuxtLink :to="`/${user_name}`">
         <p class="cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap font-medium">
-          {{ name }}
+          {{ user_name }}
         </p>
       </NuxtLink>
       <p class="text-[0.8rem] text-c3 dark:text-c21">Suggested for you</p>

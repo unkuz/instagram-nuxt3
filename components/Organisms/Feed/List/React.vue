@@ -22,8 +22,8 @@ defineProps<IProps>()
 
 const timelineStore = useFeedStore()
 
-const likeUnLike = (idPost: string) => {
-  timelineStore.setToggleLike(idPost)
+const likeUnLike = (id : number) => {
+  timelineStore.setToggleLike(id)
 }
 
 const goTo = (idx: number) => emit('current-index-carousel', idx)

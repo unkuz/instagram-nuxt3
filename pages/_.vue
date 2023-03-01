@@ -7,6 +7,7 @@ import { useWindowResizeCallback } from '@/composables'
 import { IStory, ITimeLine } from '@/models'
 import { useStoriesStore, useSuggestionStore, useFeedStore } from '@/store'
 import { gsap } from 'gsap'
+import { axios } from '~~/services/axios'
 
 const rightRef = $ref<HTMLElement>()
 const leftRef = $ref<HTMLElement>()
@@ -18,14 +19,24 @@ const suggestionStore = useSuggestionStore()
 const { data: _stories, pending: pendingStories } = await useLazyFetch<IStory[]>(
   APP_API.stories.list
 )
-const { data: _suggestions, pending: pendingSugestion } = await useLazyFetch<IStory[]>(
-  APP_API.suggestions.list
+const { data: _suggestions, pending: pendingSugestion } = await useLazyAsyncData<IStory[]>(
+  'suggestion',
+  async () => {
+    const res = await axios.get(APP_API.SUGGESTION.user)
+    return res.data
+  }
 )
-// const { data: _timeline, pending: pendingTimeline } = await useLazyFetch<ITimeLine[]>(APP_API.timeLine.list)
+const { data: _timeline, pending: pendingTimeline } = await useLazyAsyncData<ITimeLine[]>(
+  'feed',
+  async () => {
+    const res = await axios.get(APP_API.FEED.list)
+    return res.data
+  }
+)
 
 // storiesStore.save(_stories.value)
-// timeLineStore.save(_timeline.value)
-// suggestionStore.save(_suggestions.value)
+timeLineStore.save(_timeline.value)
+suggestionStore.save(_suggestions.value)
 
 const calcLeftSuggestion = () => {
   if (rightRef && leftRef) {

@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import { useDoubleClick } from '@/composables'
 import { useFeedStore } from '@/store'
+import { BASE_URL_API } from '~~/apis';
 
 interface IProps {
   src: string
-  idPost: string
+  idPost : number
 }
 
 const props = defineProps<IProps>()
@@ -16,7 +17,7 @@ const toggleLike = () => {
   timelineStore.setToggleLike(props.idPost)
 }
 
-useDoubleClick(imageRef, () => {}, toggleLike)
+// useDoubleClick(imageRef, () => {}, toggleLike)
 </script>
 
 <template>
@@ -25,7 +26,7 @@ useDoubleClick(imageRef, () => {}, toggleLike)
       ref="imageRef"
       class="max-h-[60vh] min-h-full min-w-full bg-c2 object-contain"
       draggable="false"
-      :src="src"
+      :src="BASE_URL_API + src"
       alt=""
     />
   </div>
