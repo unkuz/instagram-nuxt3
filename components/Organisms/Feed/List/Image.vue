@@ -21,7 +21,7 @@ const toggleLike = () => {
 </script>
 
 <template>
-  <div class="min-w-full">
+  <div class="min-w-full keen-slider__slide">
     <nuxt-img
       ref="imageRef"
       class="max-h-[60vh] min-h-full min-w-full bg-c2 object-contain"

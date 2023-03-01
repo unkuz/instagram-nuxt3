@@ -52,8 +52,8 @@ const toggleFullScreen = () => {
 
 <template>
   <div
-    ref="containerRef"
-    class="group relative flex min-w-full items-center justify-center overflow-hidden bg-c2"
+    ref="containerRef "
+    class="group relative flex min-w-full items-center justify-center overflow-hidden bg-c2 keen-slider__slide"
   >
     <video
       ref="videoRef"
