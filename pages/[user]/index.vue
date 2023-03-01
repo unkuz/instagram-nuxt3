@@ -10,14 +10,32 @@ import { SELECT_TYPE } from '@/constants/screens/account'
 import { useAuthStore, useProfileStore } from '@/store'
 import { SizeAvatarEnum } from '@/type'
 import TagName from '@/components/Atoms/TagName.vue'
+import { APP_API, BASE_URL_API } from '~~/apis'
+import {axios} from '@/services/axios';
 
 const profileStore = useProfileStore()
 const authStore = useAuthStore()
+
+const route = useRoute()
+
+console.log("ROUTE",route.params.user);
+
+const { data: profile, pending: pendingTimeline } = await useLazyAsyncData<any>(
+  'feed',
+  async () => {
+    const res = await axios.get(APP_API.USER.detail + route.params.user + '/')
+    console.log("profile",res.data);
+    return res.data
+  }
+)
+
+
+
 const isShowFollowing = computed(() => profileStore.isShowFollowing)
 const isShowFollowers = computed(() => profileStore.isShowFollowers)
 const currentSelect = computed(() => profileStore.select)
-const avatar = computed(() => authStore.data.avatar)
-const coverImg = computed(() => authStore.data.coverImg)
+const avatar = computed(() =>BASE_URL_API + '/'+ authStore.data.user.profile_pic_url)
+const coverImg = computed(() =>BASE_URL_API + '/'+ authStore.data.user.cover_pic_url)
 </script>
 
 <template>

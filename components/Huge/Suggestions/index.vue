@@ -85,7 +85,7 @@ let isIntersecting = $ref(false)
           v-for="{ user_name, profile_pic_url, id } in suggestion"
           :id="id"
           :key="id"
-          :name="user_name"
+          :user_name="user_name"
           :avatar="profile_pic_url"
         />
       </div>

@@ -18,5 +18,8 @@ export const APP_API = {
   },
   AUTH:{
     LOGIN: '/login/'
+  },
+  USER:{
+    detail:'/user/'
   }
 }
