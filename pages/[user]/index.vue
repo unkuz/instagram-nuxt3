@@ -1,24 +1,13 @@
 <script lang="ts" setup>
-import PostIcon_ from '@/assets/svg/post_icon.svg'
-import PostIconSelected_ from '@/assets/svg/post_icon_selected.svg'
-import ReelIcon_ from '@/assets/svg/reel_icon.svg'
-import TagIcon_ from '@/assets/svg/tag_icon.svg'
-import TagIconSelected_ from '@/assets/svg/tag_icon_selected.svg'
-import Modal from '@/components/Huge/Profile/Modal.vue'
 import Avatar from '@/components/Atoms/Avatar.vue'
-import { SELECT_TYPE } from '@/constants/screens/account'
+import TagName from '@/components/Atoms/TagName.vue'
+import { axios } from '@/services/axios'
 import { useAuthStore, useProfileStore } from '@/store'
 import { SizeAvatarEnum } from '@/type'
-import TagName from '@/components/Atoms/TagName.vue'
-import { APP_API, BASE_URL_API } from '~~/apis'
-import { axios } from '@/services/axios'
-
-const profileStore = useProfileStore()
-const authStore = useAuthStore()
+import { APP_API } from '~~/apis'
 
 const route = useRoute()
-
-console.log('ROUTE', route.params.user)
+const profileStore = useProfileStore()
 
 const { data: _profile, pending: pendingTimeline } = await useLazyAsyncData<any>(
   'profile',
@@ -28,15 +17,18 @@ const { data: _profile, pending: pendingTimeline } = await useLazyAsyncData<any>
         user_name: route.params.user,
       },
     })
-
-    console.log('profile', res.data)
     return res.data
   }
 )
 
-profileStore.setProfile(_profile.value)
+profileStore.save(_profile.value)
+
 
 const profile = $computed(() =>  profileStore.profile)
+
+onBeforeUnmount(()=>{
+    profileStore.$reset()
+})
 </script>
 
 <template>

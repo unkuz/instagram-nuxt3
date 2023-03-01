@@ -1,8 +1,9 @@
 import _axios from 'axios'
+import { BASE_URL_API } from '~~/apis'
 import { useAuthStore } from '~~/store'
 
 export const axios = _axios.create({
-  baseURL: 'http://127.0.0.1:8000/',
+  baseURL: BASE_URL_API,
   timeout: 1000,
   //   headers: { 'X-Custom-Header': 'foobar' },
 })
