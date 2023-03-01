@@ -11,12 +11,13 @@ interface IProps {
 
 withDefaults(defineProps<IProps>(), {
   quality: 50,
+  url: 'https://gextoneducation.com/wp-content/uploads/2015/06/no-avatar-female.png',
 })
 </script>
 <template>
   <nuxt-img
     :class="[
-      'non-drag cursor-pointer select-none rounded-[50%] bg-cover bg-center',
+      'non-drag cursor-pointer select-none rounded-[50%] bg-cover bg-center object-cover',
       {
         'h-[24px] w-[24px]': size === T,
         'h-[32px] w-[32px]': size === S,
