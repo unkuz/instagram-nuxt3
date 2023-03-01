@@ -79,7 +79,7 @@ const togglePlay = () => (videoRef!.paused ? videoRef!.play() : videoRef!.pause(
           <video
             ref="videoRef"
             class="h-full w-full object-cover"
-            src="/video/242322324_812426336116660_1281566458903572911_n.mp4"
+            src=""
             autoplay
             loop
             muted
