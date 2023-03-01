@@ -75,7 +75,7 @@ const togglePlay = () => {
           <video
             ref="videoRef"
             class="h-full w-full object-cover"
-            src="/video/277951101_388380176198930_7921718664685624255_n.mp4"
+            src=""
             autoplay
             loop
             muted
