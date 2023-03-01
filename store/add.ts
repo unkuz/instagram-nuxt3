@@ -3,6 +3,7 @@ import { useGlobalStore } from './global'
 
 export const useAddStore = defineStore('add', {
   state: () => ({
+    
     isShow: false,
   }),
   getters: {},

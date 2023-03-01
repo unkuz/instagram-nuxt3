@@ -28,7 +28,7 @@ const { key } = useForceRenderTimer()
 </script>
 
 <template>
-  <div>
+  <div class="w-full">
     <ClientOnly>
       <template v-if="!isPending"
         ><article

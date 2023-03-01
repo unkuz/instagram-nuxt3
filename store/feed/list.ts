@@ -5,6 +5,7 @@ import { timeLine } from '@/mocks'
 import { useSlashStore } from '@/store'
 import { axios } from '~~/services/axios'
 import { APP_API } from '~~/apis'
+import { isImageOrVideo } from '@/utils'
 
 type TState = IStateStore<ITimeLine[]>
 
@@ -26,7 +27,7 @@ export const useFeedStore = defineStore('feed', {
       await axios.post(APP_API.FEED.like, { feed: id })
       this.data.forEach((i: ITimeLine) => {
         if (i.id === id) {
-          if (i.has_liked) {           
+          if (i.has_liked) {
             i.has_liked = false
             slashStore.setHideSlash()
           } else {
@@ -71,6 +72,37 @@ export const useFeedStore = defineStore('feed', {
         this.data[idx].comments.unshift(data)
       }
     },
+    async addFeed(val: { media: FileList; caption: string }) {
+      console.log(val)
+
+      let images = [] as File[]
+      let videos = [] as File[]
+      if (val.media?.length) {
+        Array.from(val.media).forEach((i) => {
+          const type = isImageOrVideo(i)
+          if (type === 'image') {
+            images.push(i)
+          } else {
+            if (type === 'video') {
+              videos.push(i)
+            }
+          }
+        })
+      }
+
+      const formData = new FormData()
+      images.forEach((i) => {
+        formData.append('images', i)
+      })
+      videos.forEach((i) => {
+        formData.append('videos', i)
+      })
+
+      formData.append('caption_text', val.caption)
+
+      await axios.post(APP_API.FEED.create, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      })
+    },
   },
 })
-
