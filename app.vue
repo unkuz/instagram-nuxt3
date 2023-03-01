@@ -23,7 +23,7 @@ const isShowMore = computed(() => moreStore.isShow)
 const { darkMode } = storeToRefs(useThemeStore())
 const { isShowPrelude } = usePrelude()
 
-// registerSeviceWorkerPWA()
+registerSeviceWorkerPWA()
 useScroll()
 useResizeWindow()
 useWatchRouteSetSection()
