@@ -7,6 +7,7 @@ import { useWindowResizeCallback } from '@/composables'
 import { IStory, ITimeLine } from '@/models'
 import { useStoriesStore, useSuggestionStore, useFeedStore } from '@/store'
 import { gsap } from 'gsap'
+import { axios } from '~~/services/axios'
 
 const rightRef = $ref<HTMLElement>()
 const leftRef = $ref<HTMLElement>()
@@ -21,8 +22,12 @@ const { data: _stories, pending: pendingStories } = await useLazyFetch<IStory[]>
 const { data: _suggestions, pending: pendingSugestion } = await useLazyFetch<IStory[]>(
   APP_API.suggestions.list
 )
-const { data: _timeline, pending: pendingTimeline } = await useLazyFetch<ITimeLine[]>(
-  APP_API.FEED.list
+const { data: _timeline, pending: pendingTimeline } = await useLazyAsyncData<ITimeLine[]>(
+  'feed',
+  async () => {
+    const res = await axios.get(APP_API.FEED.list)
+    return res.data
+  }
 )
 
 // storiesStore.save(_stories.value)
@@ -46,11 +51,11 @@ useWindowResizeCallback(calcLeftSuggestion)
   <div>
     <div class="relative flex w-full justify-center lg:block">
       <div ref="leftRef" class="inline-flex w-full flex-col items-center md:w-[614px] lg:block">
-        <!-- <Stories :isPending="false" v-if="storiesStore.data.length" /> -->
+        <Stories :isPending="false" v-if="storiesStore.data.length" />
         <Feed :isPending="false" />
       </div>
       <div ref="rightRef" class="fixed left-0 top-[84px] hidden w-[293px] text-sm lg:block">
-        <!-- <Suggestions :isPending="false" /> -->
+        <Suggestions :isPending="false" />
       </div>
     </div>
     <NuxtPage />

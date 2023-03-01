@@ -3,6 +3,8 @@ import { ITimeLine } from '@/models'
 import { IStateStore } from '@/type'
 import { timeLine } from '@/mocks'
 import { useSlashStore } from '@/store'
+import { axios } from '~~/services/axios'
+import { APP_API } from '~~/apis'
 
 type TState = IStateStore<ITimeLine[]>
 
@@ -19,12 +21,12 @@ export const useFeedStore = defineStore('feed', {
         this.data = data
       }
     },
-    setToggleLike(id : number) {
+    async setToggleLike(id: number) {
       const slashStore = useSlashStore()
-
+      await axios.post(APP_API.FEED.like, { feed: id })
       this.data.forEach((i: ITimeLine) => {
         if (i.id === id) {
-          if (i.has_liked) {
+          if (i.has_liked) {           
             i.has_liked = false
             slashStore.setHideSlash()
           } else {
@@ -36,7 +38,8 @@ export const useFeedStore = defineStore('feed', {
         }
       })
     },
-    setToggleSave(id : number) {
+    async setToggleSave(id: number) {
+      await axios.post(APP_API.FEED.save, { feed: id })
       this.data.forEach((i: ITimeLine) => {
         if (i.id === id) {
           i.is_saved = !i.is_saved
@@ -70,3 +73,4 @@ export const useFeedStore = defineStore('feed', {
     },
   },
 })
+

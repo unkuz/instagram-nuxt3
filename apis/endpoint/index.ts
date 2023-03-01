@@ -2,10 +2,10 @@ export const BASE_URL_API = 'http://127.0.0.1:8000'
 
 export const APP_API = {
   FEED: {
-    list: BASE_URL_API + '/feed/',
-    like: BASE_URL_API + '/feed/like/',
-    create: BASE_URL_API + '/feed/create/',
-    save: BASE_URL_API + '/feed/save/',
+    list: '/feed/',
+    like: '/feed/like/',
+    create: '/feed/create/',
+    save: '/feed/save/',
   },
   timeLine: {
     list: 'https://mocki.io/v1/767e1645-9d26-4ec1-b0c5-bdd0e87b5435',
