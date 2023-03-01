@@ -42,10 +42,10 @@ watch(current, (idx) => {
   if (!containerMediaRef.value) {
     return
   }
-  gsap.to(containerMediaRef.value, {
-    height: containerMediaRef.value.children[idx].children[0].clientHeight,
-    duration: 0,
-  })
+  // gsap.to(containerMediaRef.value, {
+  //   height: containerMediaRef.value.children[idx].children[0].clientHeight,
+  //   duration: 0,
+  // })
 })
 
 watch([() => props.hasSaved, () => props.hasLiked], () => {

@@ -60,7 +60,7 @@ const { key } = useForceRenderTimer()
               <LikeCommentCount :like-count="i.like_count" :comment-count="i.comments.length" />
               <Caption
                 :user-name="i.user.user_name"
-                :captionContent="'sdfsdfdfkjsfksdjfkjsdkfjk'"
+                :captionContent="i.caption_text"
                 :tags="i.tags"
               />
 
