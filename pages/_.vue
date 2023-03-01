@@ -19,8 +19,12 @@ const suggestionStore = useSuggestionStore()
 const { data: _stories, pending: pendingStories } = await useLazyFetch<IStory[]>(
   APP_API.stories.list
 )
-const { data: _suggestions, pending: pendingSugestion } = await useLazyFetch<IStory[]>(
-  APP_API.suggestions.list
+const { data: _suggestions, pending: pendingSugestion } = await useLazyAsyncData<IStory[]>(
+  'suggestion',
+  async () => {
+    const res = await axios.get(APP_API.SUGGESTION.user)
+    return res.data
+  }
 )
 const { data: _timeline, pending: pendingTimeline } = await useLazyAsyncData<ITimeLine[]>(
   'feed',
@@ -32,7 +36,7 @@ const { data: _timeline, pending: pendingTimeline } = await useLazyAsyncData<ITi
 
 // storiesStore.save(_stories.value)
 timeLineStore.save(_timeline.value)
-// suggestionStore.save(_suggestions.value)
+suggestionStore.save(_suggestions.value)
 
 const calcLeftSuggestion = () => {
   if (rightRef && leftRef) {

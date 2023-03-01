@@ -54,7 +54,7 @@ onBeforeUnmount(() => {
 
 const list = $computed(() => inboxDetailStore.dataAfterProcees)
 const replying = $computed(() => inboxDetailStore.detail.replying)
-const currentUser = $computed(() => authStore.data.userName)
+const currentUser = $computed(() => authStore.data.user.user_name)
 
 let tl = gsap.timeline({})
 

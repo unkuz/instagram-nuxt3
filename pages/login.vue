@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { useAuthStore } from '@/store'
 import ErrorPage from '@/components/Utils/ErrorPage.vue'
-
-const { status, data, signIn, signOut } = useSession()
+import { axios } from '@/services/axios'
+import { APP_API } from '~~/apis'
 
 definePageMeta({
   layout: 'empty',
@@ -18,8 +18,7 @@ const account = reactive({
 })
 
 const login = () => {
-  console.log('')
-  signIn()
+  authStore.login({ ...account })
 }
 
 useWatchWithMounted(isLogin, () => {

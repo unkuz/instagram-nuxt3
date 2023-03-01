@@ -2,6 +2,7 @@
 import Emoji from '@/components/Utils/Emoji.vue'
 import { useAuthStore, useFeedStore } from '@/store'
 import { onClickOutside, useTextareaAutosize } from '@vueuse/core'
+import { BASE_URL_API } from '~~/apis';
 
 interface IProps {
   id : number
@@ -41,7 +42,7 @@ const send = async () => {
   await timeLineStore.comment(props.id, {
     text: input.value,
     userName: authStore.data.userName,
-    userImg: authStore.data.avatar,
+    userImg:BASE_URL_API + '/' + authStore.data.user.profile_pic_url,
     id: Math.random() * 10000,
     commentReplyId: props.currentReplyCommentId,
   })

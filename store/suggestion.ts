@@ -11,7 +11,7 @@ export interface IState {
 
 export const useSuggestionStore = defineStore('suggestion', {
   state: (): IState => ({
-    data: [...suggests],
+    data: [],
     hasErr: false,
     errors: {},
   }),
