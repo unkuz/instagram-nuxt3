@@ -61,8 +61,6 @@ const toggleFullScreen = () => {
       type="video/mp4"
       playsinline
       loop
-      preload="none"
-      :poster="video.poster ?? ''"
     />
     <Loading v-show="waiting" />
     <PauseIcon_

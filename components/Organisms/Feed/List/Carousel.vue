@@ -13,7 +13,7 @@ interface IProps {
   images: any
   videos: any
   hasLiked: boolean
-  id : number
+  id: number
   hasSaved: boolean
   currentParent: number
 }
@@ -39,13 +39,13 @@ watch(
 watch(current, (idx) => {
   emit('current-index-carousel', idx)
   stopOtherVideoPlaying()
-  const containerMediaEl = unref(containerMediaRef)
-  if (containerMediaEl) {
-    gsap.to(containerMediaRef, {
-      height: containerMediaEl.children[idx].children[0].clientHeight,
-      duration: 0,
-    })
+  if (!containerMediaRef.value) {
+    return
   }
+  gsap.to(containerMediaRef.value, {
+    height: containerMediaRef.value.children[idx].children[0].clientHeight,
+    duration: 0,
+  })
 })
 
 watch([() => props.hasSaved, () => props.hasLiked], () => {
