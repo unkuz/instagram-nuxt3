@@ -64,7 +64,7 @@ const inboxList = $computed(() => inboxStore.data)
           <IndividualLine
             v-for="(i, idx) in inboxList"
             :key="idx"
-            :profile_pic_url="i.user.profile_pic_url"
+            :profile_pic_url="i.user?.profile_pic_url"
             :username="i.user.username"
             :preview_lastest_message="i.preview_lastest_message.content"
             :created_at="i.preview_lastest_message.created_at"

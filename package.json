@@ -51,6 +51,8 @@
     "vue-gtag-next": "^1.14.0"
   },
   "dependencies": {
+    "@dicebear/collection": "^5.3.4",
+    "@dicebear/core": "^5.3.4",
     "@morev/vue-transitions": "^2.3.6",
     "@nuxt/ufo": "^0.5.4",
     "@nuxtjs/algolia": "^1.5.0",

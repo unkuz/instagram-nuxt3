@@ -27,7 +27,7 @@ const send = async () => {
   await viewPostDetailStore.comment(id, {
     text: commentValueText,
     userName: authStore.data.user.user_name,
-    userImg:BASE_URL_API + '/' + authStore.data.user.profile_pic_url,
+    userImg:BASE_URL_API + '/' + authStore.data.user?.profile_pic_url,
     id: Math.random() * 10000,
   })
   commentValueText = ''

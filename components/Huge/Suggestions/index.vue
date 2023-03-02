@@ -18,7 +18,7 @@ let timer2: NodeJS.Timer
 let maxSuggestionPeopleFollow = $ref(APP_CONFIGS.MAX_SUGGESTION_PEOPLE_FOLLOW)
 const suggestion = $computed(() => sugestionStore.data.slice(0, maxSuggestionPeopleFollow))
 const authStore = useAuthStore()
-const avatar = $computed(() =>BASE_URL_API + '/' + authStore.data.user.profile_pic_url)
+const avatar = $computed(() =>BASE_URL_API + '/' + authStore.data.user?.profile_pic_url)
 const sugestionRef = $ref<HTMLDivElement>()
 
 let isIntersecting = $ref(false)

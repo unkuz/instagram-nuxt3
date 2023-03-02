@@ -20,7 +20,7 @@ const { key } = useForceRenderTimer()
     <div class="relative my-[4px] rounded-md">
       <div class="mx-[10px] flex items-center gap-[10px]">
         <NuxtLink :to="`/${comment.user.username}`">
-          <Avatar :url="comment.user.profile_pic_url" :size="SizeAvatarEnum.S" />
+          <Avatar :url="comment.user?.profile_pic_url" :size="SizeAvatarEnum.S" />
         </NuxtLink>
         <div class="flex items-end gap-[10px]">
           <NuxtLink :to="`/${comment.user.username}`">

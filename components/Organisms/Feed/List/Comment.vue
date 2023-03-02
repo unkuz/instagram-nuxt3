@@ -42,7 +42,7 @@ const send = async () => {
   await timeLineStore.comment(props.id, {
     text: input.value,
     userName: authStore.data.userName,
-    userImg:BASE_URL_API + '/' + authStore.data.user.profile_pic_url,
+    userImg:BASE_URL_API + '/' + authStore.data.user?.profile_pic_url,
     id: Math.random() * 10000,
     commentReplyId: props.currentReplyCommentId,
   })

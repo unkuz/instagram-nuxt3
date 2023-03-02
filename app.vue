@@ -1,25 +1,20 @@
 <script lang="ts" setup>
 import Loading from '@/components/Atoms/Loading.vue'
-import Add_ from '~~/components/Molecules/Add/index.vue'
 import Slash from '@/components/Molecules/Slash.vue'
-import Cookie from '@/components/Utils/Cookie.vue'
-import More from '@/components/Utils/More.vue'
+import OverLay from '@/components/Organisms/OverLay/index.vue'
 import Prelude from '@/components/Utils/Prelude.vue'
 import {
-  usePrelude,
-  useResizeWindow,
-  useScroll,
-  useScrollBarTheme,
-  useWatchRouteSetSection,
+usePrelude,
+useResizeWindow,
+useScroll,
+useScrollBarTheme,
+useWatchRouteSetSection,
 } from '@/composables'
 import { registerSeviceWorkerPWA } from '@/helpers'
-import { useAddStore, useMoreStore, useThemeStore } from '@/store'
+import { useThemeStore } from '@/store'
 import { useWebNotification } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 
-const addStore = useAddStore()
-const moreStore = useMoreStore()
-const isShowMore = computed(() => moreStore.isShow)
 const { darkMode } = storeToRefs(useThemeStore())
 const { isShowPrelude } = usePrelude()
 
@@ -69,9 +64,7 @@ onMounted(() => {
           <OgImageScreenshot />
           <NuxtPage />
         </NuxtLayout>
-        <Add_ v-if="addStore.isShow" />
-        <More v-if="isShowMore" />
-        <Cookie />
+        <OverLay />
       </div>
     </div>
     <Slash />
