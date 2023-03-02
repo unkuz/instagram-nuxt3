@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { ITimeLine } from '@/models'
 import { IStateStore } from '@/type'
 import { timeLine } from '@/mocks'
-import { useSlashStore } from '@/store'
+import { useAddStore, useSlashStore, useFeedStore } from '@/store'
 import { axios } from '~~/services/axios'
 import { APP_API } from '~~/apis'
 import { isImageOrVideo } from '@/utils'
@@ -73,6 +73,8 @@ export const useFeedStore = defineStore('feed', {
       }
     },
     async addFeed(val: { media: FileList; caption: string }) {
+      const addStore = useAddStore()
+
       console.log(val)
 
       let images = [] as File[]
@@ -100,9 +102,14 @@ export const useFeedStore = defineStore('feed', {
 
       formData.append('caption_text', val.caption)
 
-      await axios.post(APP_API.FEED.create, formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      })
+      try {
+        await axios.post(APP_API.FEED.create, formData, {
+          headers: { 'Content-Type': 'multipart/form-data' },
+        })
+        addStore.toggle(false)
+        const { data } = await axios.get(APP_API.FEED.list)
+        this.data = data
+      } catch (e) {}
     },
   },
 })

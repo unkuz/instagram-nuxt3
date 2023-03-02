@@ -115,9 +115,7 @@ const scrollToComment = () => {
       <div ref="commentRef" class="mt-[5px] w-full">
         <IndividualComment v-for="(i, idx) in comments" :key="idx" :comment="i" />
       </div>
-      <ClientOnly>
         <Comment :id="id" />
-      </ClientOnly>
     </div>
   </article>
 </template>

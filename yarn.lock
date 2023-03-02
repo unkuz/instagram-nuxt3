@@ -2329,12 +2329,12 @@
     unimport "^2.2.4"
     untyped "^1.2.2"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.2.4-rc.0-27962522.0be8cda":
-  version "3.2.4-rc.0-27962522.0be8cda"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.2.4-rc.0-27962522.0be8cda.tgz#be77908424666cfdd838da5a8ef0a06312856551"
-  integrity sha512-oyjDiYg1ZyEVtbxlSSAzbSU41T0paofPhGHf9//LK9oDvT8ObGnVTZQYAySVWpQWpzg/E3tRpfqFJ35uAKKxkA==
+"@nuxt/kit@npm:@nuxt/kit-edge@3.2.4-rc.0-27962856.21e3e17":
+  version "3.2.4-rc.0-27962856.21e3e17"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.2.4-rc.0-27962856.21e3e17.tgz#dbde40df1edbe1c01a846d9b1448286c40d71282"
+  integrity sha512-3m6mY8R9P9MgoRW0R/lM3lpHNPGizaSVRwgIzkYnIKHe2VAvkE4TR7O1nVnBgneOAGpIeX1wJIXJmC1T3B/91w==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.2.4-rc.0-27962522.0be8cda"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.2.4-rc.0-27962856.21e3e17"
     c12 "^1.1.2"
     consola "^2.15.3"
     defu "^6.1.2"
@@ -2480,10 +2480,10 @@
     unimport "^2.2.4"
     untyped "^1.2.2"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.2.4-rc.0-27962522.0be8cda":
-  version "3.2.4-rc.0-27962522.0be8cda"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.2.4-rc.0-27962522.0be8cda.tgz#98aa938ac8cfd329c9822909b89150a5f9ec4abb"
-  integrity sha512-+4EHPo3rRu72cP4S7YrF6P8a2N7VnPqfv3Phe5k3UZN1xH+NfukFR9z8ixZiyIbGbSZ2UKz6+1OulAk+FlgSmw==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.2.4-rc.0-27962856.21e3e17":
+  version "3.2.4-rc.0-27962856.21e3e17"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.2.4-rc.0-27962856.21e3e17.tgz#080a5b7793f5e016e20614016968279531f1d1b8"
+  integrity sha512-lFInE/rTjFZnvrnEKyi5/5/jUHI2JGXImr9otIzRYVanWs5N+mdkBlH8ReiOz8VMARdYu+ihKMO2d8v15aOjzQ==
   dependencies:
     c12 "^1.1.2"
     create-require "^1.1.1"
@@ -2525,13 +2525,13 @@
     rc9 "^2.0.1"
     std-env "^3.3.2"
 
-"@nuxt/test-utils-edge@3.2.4-rc.0-27962522.0be8cda":
-  version "3.2.4-rc.0-27962522.0be8cda"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.2.4-rc.0-27962522.0be8cda.tgz#4096e50a7932b639b7478053c7b8aebf60daefdd"
-  integrity sha512-kmhUhmvNnDX2JvPbp5s5DcU9B1Pl+TXrwJPZUeCZUZV0D+YEv8I9Vr0LKi3/CyYJy10RbocE57x6GCfTjAmA7Q==
+"@nuxt/test-utils-edge@3.2.4-rc.0-27962856.21e3e17":
+  version "3.2.4-rc.0-27962856.21e3e17"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.2.4-rc.0-27962856.21e3e17.tgz#0bb3430b711a6de52fdbf8b41c0c62c2bf221eb7"
+  integrity sha512-yi109xjDiikdBnxAPHiF6rWgAR9vDfmB9/B9Rj++N0AD3iXSIAUbdV4thwIF1ohArsasQrilhicTYR3HXEhu1A==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.2.4-rc.0-27962522.0be8cda"
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.2.4-rc.0-27962522.0be8cda"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.2.4-rc.0-27962856.21e3e17"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.2.4-rc.0-27962856.21e3e17"
     consola "^2.15.3"
     defu "^6.1.2"
     execa "^7.0.0"
@@ -11477,10 +11477,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier-plugin-tailwindcss@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.2.3.tgz#b68a1de10056fc84055426af132c2697bea0955c"
-  integrity sha512-s2N5Dh7Ao5KTV1mao5ZBnn8EKtUcDPJEkGViZIjI0Ij9TTI5zgTz4IHOxW33jOdjHKa8CSjM88scelUiC5TNRQ==
+prettier-plugin-tailwindcss@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.2.4.tgz#ed0ca759bc948eb2bc48b419c6e57eb2adabdb0a"
+  integrity sha512-wMyugRI2yD8gqmMpZSS8kTA0gGeKozX/R+w8iWE+yiCZL09zY0SvfiHfHabNhjGhzxlQ2S2VuTxPE3T72vppCQ==
 
 prettier@2.8.4, prettier@^2.8.4:
   version "2.8.4"
