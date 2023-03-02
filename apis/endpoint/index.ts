@@ -21,5 +21,8 @@ export const APP_API = {
   },
   USER:{
     detail:'/user/'
+  },
+  STORY:{
+    LIST:'/story/'
   }
 }
