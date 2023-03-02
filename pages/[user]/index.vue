@@ -18,12 +18,11 @@ const { data, pending: pendingTimeline } = await useLazyAsyncData<any>('profile'
   return res.data
 })
 
-watch(data, (val) => {
-  profileStore.save(val)
+watchEffect(() => {
+  profileStore.save(data.value)
 })
 
 const profile = $computed(() => profileStore.profile)
-
 </script>
 
 <template>

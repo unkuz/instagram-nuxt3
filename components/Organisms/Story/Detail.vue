@@ -12,7 +12,7 @@ const id = $computed(() => route.params.id)
 const story = $computed(() => storyDetailStore.data)
 
 const media = $computed(() =>
-  _concat(storyDetailStore.data.carousel_media.videos, storyDetailStore.data.carousel_media.images)
+  _concat(storyDetailStore.data?.carousel_media?.videos, storyDetailStore?.data?.carousel_media?.images)
 )
 
 const [sliderRef, slider] = useKeenSlider({
@@ -28,13 +28,13 @@ const [sliderRef, slider] = useKeenSlider({
     <div ref="sliderRef" class="keen-slider w-full h-full">
       <div
         class="keen-slider__slide flex items-center justify-center"
-        v-for="i in storyDetailStore.data.carousel_media.videos"
+        v-for="i in storyDetailStore?.data?.carousel_media?.videos"
       >
         <video controls :src="BASE_URL_API + i.src" />
       </div>
       <div
         class="keen-slider__slide flex items-center justify-center"
-        v-for="i in storyDetailStore.data.carousel_media.images"
+        v-for="i in storyDetailStore?.data?.carousel_media?.images"
       >
         <img :src="BASE_URL_API + i.src" class="h-full w-full object-contain" />
       </div>

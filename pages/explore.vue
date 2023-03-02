@@ -12,7 +12,7 @@ const { data, pending } = await useLazyAsyncData<any>('explore', async () => {
   return res.data
 })
 
-watch(data, () => {
+watchEffect(() => {
   exploreStore.save(data.value)
 })
 </script>

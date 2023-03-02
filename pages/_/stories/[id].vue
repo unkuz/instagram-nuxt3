@@ -14,8 +14,8 @@ const { data, pending } = await useLazyAsyncData<any>('story-detail', async () =
   return res.data
 })
 
-watch(data, (val) => {
-  storyDetailStore.save(val)
+watchEffect(() => {
+  storyDetailStore.save(data.value)
 })
 
 const back = () => navigateTo('/')

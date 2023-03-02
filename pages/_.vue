@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { APP_API } from '@/apis'
+import { APP_API, BASE_URL_API } from '@/apis'
 import Suggestions from '@/components/Huge/Suggestions/index.vue'
 import Stories from '@/components/Molecules/Stories/Stories.vue'
 import Feed from '@/components/Organisms/Feed/List/index.vue'
@@ -23,11 +23,6 @@ const { data: _stories, pending: pendingStories } = await useLazyAsyncData<IStor
     return res.data
   }
 )
-
-watch(_stories, (val) => {
-  storiesStore.save(val)
-})
-
 const { data: _suggestions, pending: pendingSugestion } = await useLazyAsyncData<IStory[]>(
   'suggestion',
   async () => {
@@ -35,10 +30,6 @@ const { data: _suggestions, pending: pendingSugestion } = await useLazyAsyncData
     return res.data
   }
 )
-
-watch(_suggestions, (val) => {
-  suggestionStore.save(val)
-})
 const { data: _timeline, pending: pendingTimeline } = await useLazyAsyncData<ITimeLine[]>(
   'feed',
   async () => {
@@ -47,11 +38,15 @@ const { data: _timeline, pending: pendingTimeline } = await useLazyAsyncData<ITi
   }
 )
 
-watch(_timeline, (val) => {
-  timeLineStore.save(val)
+watchEffect(() => {
+  storiesStore.save(unref(_stories))
 })
-
-
+watchEffect(() => {
+  suggestionStore.save(unref(_suggestions))
+})
+watchEffect(() => {
+  timeLineStore.save(unref(_timeline))
+})
 
 const calcLeftSuggestion = () => {
   if (rightRef && leftRef) {
