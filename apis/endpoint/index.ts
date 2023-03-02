@@ -23,6 +23,9 @@ export const APP_API = {
     detail:'/user/'
   },
   STORY:{
-    LIST:'/story/'
+    LIST:'/story/',
+  },
+  EXPLORE:{
+    LIST:'/explore/'
   }
 }

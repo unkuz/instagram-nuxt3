@@ -9,26 +9,21 @@ import { APP_API } from '~~/apis'
 const route = useRoute()
 const profileStore = useProfileStore()
 
-const { data: _profile, pending: pendingTimeline } = await useLazyAsyncData<any>(
-  'profile',
-  async () => {
-    const res = await axios.get(APP_API.USER.detail, {
-      params: {
-        user_name: route.params.user,
-      },
-    })
-    return res.data
-  }
-)
-
-profileStore.save(_profile.value)
-
-
-const profile = $computed(() =>  profileStore.profile)
-
-onBeforeUnmount(()=>{
-    profileStore.$reset()
+const { data, pending: pendingTimeline } = await useLazyAsyncData<any>('profile', async () => {
+  const res = await axios.get(APP_API.USER.detail, {
+    params: {
+      user_name: route.params.user,
+    },
+  })
+  return res.data
 })
+
+watch(data, (val) => {
+  profileStore.save(val)
+})
+
+const profile = $computed(() => profileStore.profile)
+
 </script>
 
 <template>
@@ -76,9 +71,7 @@ onBeforeUnmount(()=>{
         <TagIconSelected_ v-else />
       </div> -->
     </div>
-    <div class="mt-[20px] grid grid-cols-3 gap-[5px]">
-   
-    </div>
+    <div class="mt-[20px] grid grid-cols-3 gap-[5px]"></div>
     <!-- <Modal v-if="isShowFollowing" /> -->
   </div>
 </template>

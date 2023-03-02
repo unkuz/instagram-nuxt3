@@ -16,7 +16,6 @@ const storiesStore = useStoriesStore()
 const timeLineStore = useFeedStore()
 const suggestionStore = useSuggestionStore()
 
-
 const { data: _stories, pending: pendingStories } = await useLazyAsyncData<IStory[]>(
   'story',
   async () => {
@@ -25,6 +24,10 @@ const { data: _stories, pending: pendingStories } = await useLazyAsyncData<IStor
   }
 )
 
+watch(_stories, (val) => {
+  storiesStore.save(val)
+})
+
 const { data: _suggestions, pending: pendingSugestion } = await useLazyAsyncData<IStory[]>(
   'suggestion',
   async () => {
@@ -32,6 +35,10 @@ const { data: _suggestions, pending: pendingSugestion } = await useLazyAsyncData
     return res.data
   }
 )
+
+watch(_suggestions, (val) => {
+  suggestionStore.save(val)
+})
 const { data: _timeline, pending: pendingTimeline } = await useLazyAsyncData<ITimeLine[]>(
   'feed',
   async () => {
@@ -40,9 +47,11 @@ const { data: _timeline, pending: pendingTimeline } = await useLazyAsyncData<ITi
   }
 )
 
-storiesStore.save(_stories.value)
-timeLineStore.save(_timeline.value)
-suggestionStore.save(_suggestions.value)
+watch(_timeline, (val) => {
+  timeLineStore.save(val)
+})
+
+
 
 const calcLeftSuggestion = () => {
   if (rightRef && leftRef) {
