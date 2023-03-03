@@ -2,10 +2,10 @@
 import Emoji from '@/components/Utils/Emoji.vue'
 import { useAuthStore, usePostDetailStore } from '@/store'
 import { onClickOutside } from '@vueuse/core'
-import { BASE_URL_API } from '~~/apis';
+import { BASE_URL_API } from '~~/apis'
 
 interface IProps {
-  id : number
+  id: number
 }
 
 const { id } = defineProps<IProps>()
@@ -27,7 +27,7 @@ const send = async () => {
   await viewPostDetailStore.comment(id, {
     text: commentValueText,
     userName: authStore.data.user.user_name,
-    userImg:BASE_URL_API + '/' + authStore.data.user?.profile_pic_url,
+    userImg: BASE_URL_API + '/' + authStore.data.user?.profile_pic_url,
     id: Math.random() * 10000,
   })
   commentValueText = ''

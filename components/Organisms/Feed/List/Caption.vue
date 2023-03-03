@@ -22,7 +22,8 @@ const hasCaptionOrTag = $computed(() => {
     <TagName :name="userName" />
     <div v-if="hasCaptionOrTag" class="mt-[5px] py-[5px] md:text-[0.85rem]">
       <p
-        class="whitespace-pre-line [&>a]:text-c7 dark:[&>a]:text-c15" v-html="$urlify(captionContent)"
+        class="whitespace-pre-line [&>a]:text-c7 dark:[&>a]:text-c15"
+        v-html="$urlify(captionContent)"
       />
       <div class="mt-[3px] flex flex-wrap gap-[8px]">
         <NuxtLink v-for="(i, idx) in tags" :key="idx" :to="`/explore/tags/${i}`">

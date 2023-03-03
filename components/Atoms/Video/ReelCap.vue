@@ -24,6 +24,8 @@ defineProps<IProps>()
     </div>
     <p
       class="mt-[10px] whitespace-pre-line text-c1 line-clamp-1 md:mt-[20px] [&>a]:text-c7 dark:[&>a]:text-c15"
-    >{{ $urlify(caption) }}</p>
+    >
+      {{ $urlify(caption) }}
+    </p>
   </div>
 </template>

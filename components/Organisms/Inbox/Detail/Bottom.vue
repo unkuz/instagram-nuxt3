@@ -32,7 +32,7 @@ watch(files, (val) => {
 watch(enter, async (val) => {
   if (val && focused.value) {
     await inboxDetailStore.reply(inputValue)
-    inputValue = '' 
+    inputValue = ''
   }
 })
 

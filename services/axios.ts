@@ -10,7 +10,7 @@ export const axios = _axios.create({
 
 axios.interceptors.request.use((config) => {
   const authStore = useAuthStore()
-  const token = authStore.data.access ?? ''
+  const token = authStore.data.token.access ?? ''
   if (token) {
     config.headers.Authorization = `Bearer ${token}`
   }

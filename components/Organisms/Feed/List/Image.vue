@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { useDoubleClick } from '@/composables'
 import { useFeedStore } from '@/store'
-import { BASE_URL_API } from '~~/apis';
+import { BASE_URL_API } from '~~/apis'
 
 interface IProps {
   src: string
-  idPost : number
+  idPost: number
 }
 
 const props = defineProps<IProps>()
@@ -21,7 +21,7 @@ const toggleLike = () => {
 </script>
 
 <template>
-  <div class="min-w-full keen-slider__slide">
+  <div class="keen-slider__slide min-w-full">
     <nuxt-img
       ref="imageRef"
       class="max-h-[60vh] min-h-full min-w-full bg-c2 object-contain"

@@ -1,6 +1,6 @@
 export interface IStory {
   name: string
   avatar: string
-  id : number
+  id: number
   hasRead: boolean
 }

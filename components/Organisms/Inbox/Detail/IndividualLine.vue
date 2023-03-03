@@ -30,7 +30,7 @@ withDefaults(defineProps<IProps>(), {
 
     <div
       :class="[
-        'whitespace-pre-line p-[8px_10px_8px_10px] rounded-2xl',
+        'whitespace-pre-line rounded-2xl p-[8px_10px_8px_10px]',
         isReply ? ' bg-c11 dark:text-c2' : ' bg-c17 text-white',
         !sequent && 'rounded-2xl',
       ]"

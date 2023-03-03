@@ -4,11 +4,11 @@ import Slash from '@/components/Molecules/Slash.vue'
 import OverLay from '@/components/Organisms/OverLay/index.vue'
 import Prelude from '@/components/Utils/Prelude.vue'
 import {
-usePrelude,
-useResizeWindow,
-useScroll,
-useScrollBarTheme,
-useWatchRouteSetSection,
+  usePrelude,
+  useResizeWindow,
+  useScroll,
+  useScrollBarTheme,
+  useWatchRouteSetSection,
 } from '@/composables'
 import { registerSeviceWorkerPWA } from '@/helpers'
 import { useThemeStore } from '@/store'

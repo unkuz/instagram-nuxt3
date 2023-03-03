@@ -20,7 +20,7 @@ const inboxList = $computed(() => inboxStore.data)
     <div class="md:h-[calc(100vh-84px-24px)]">
       <div class="flex h-[60px] w-full items-center justify-between text-[.85rem] md:hidden">
         <div class="flex items-center gap-[10px]">
-          <NuxtLink to="/_"><BackIcon_  /> </NuxtLink> <span class="font-[600]">Message</span>
+          <NuxtLink to="/_"><BackIcon_ /> </NuxtLink> <span class="font-[600]">Message</span>
         </div>
 
         <EditIcon_ class="[&__path]:fill-c17" />

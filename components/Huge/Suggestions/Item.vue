@@ -6,7 +6,7 @@ import { SizeAvatarEnum } from '@/type'
 interface IProps {
   avatar: string
   user_name: string
-  id : number
+  id: number
 }
 
 defineProps<IProps>()

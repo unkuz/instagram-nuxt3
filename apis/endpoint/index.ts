@@ -16,16 +16,16 @@ export const APP_API = {
   SUGGESTION: {
     user: '/suggestion/user/',
   },
-  AUTH:{
-    LOGIN: '/login/'
+  AUTH: {
+    LOGIN: '/login/',
   },
-  USER:{
-    detail:'/user/'
+  USER: {
+    detail: '/user/',
   },
-  STORY:{
-    LIST:'/story/',
+  STORY: {
+    LIST: '/story/',
   },
-  EXPLORE:{
-    LIST:'/explore/'
-  }
+  EXPLORE: {
+    LIST: '/explore/',
+  },
 }

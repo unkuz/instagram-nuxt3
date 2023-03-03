@@ -13,7 +13,7 @@ interface IProps {
   images: any
   videos: any
   hasLiked: boolean
-  id : number
+  id: number
   hasSaved: boolean
 }
 

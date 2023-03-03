@@ -30,10 +30,10 @@ const { key } = useForceRenderTimer()
 
 <template>
   <div class="w-full">
-      <template v-if="!isPending">
-        <IndividualFeed v-for="i in feeds" :key="i.id" :feed="i" />
-        <FetchMoreObserver />
-      </template>
-      <PostSkl v-else />
+    <template v-if="!isPending">
+      <IndividualFeed v-for="i in feeds" :key="i.id" :feed="i" />
+      <FetchMoreObserver />
+    </template>
+    <PostSkl v-else />
   </div>
 </template>

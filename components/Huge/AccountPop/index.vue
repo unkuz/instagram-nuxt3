@@ -10,8 +10,7 @@ const accountPopRef = ref<HTMLDivElement>()
 
 const authStore = useAuthStore()
 
-
-const userName = $computed(()=>authStore.data.user?.user_name)
+const userName = $computed(() => authStore.data.user?.user_name)
 
 onClickOutside(accountPopRef, () => {})
 

@@ -47,14 +47,14 @@ interface IProps {
       comment_like_count: number
     }[]
   }[]
-  id : number
+  id: number
   is_seen: boolean
   like_count: number
   location: {
     short_name: string
   }
   user: {
-    id : number
+    id: number
     username: string
     full_name: string
     profile_pic_url: string
@@ -115,7 +115,7 @@ const scrollToComment = () => {
       <div ref="commentRef" class="mt-[5px] w-full">
         <IndividualComment v-for="(i, idx) in comments" :key="idx" :comment="i" />
       </div>
-        <Comment :id="id" />
+      <Comment :id="id" />
     </div>
   </article>
 </template>

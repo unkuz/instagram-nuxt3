@@ -41,7 +41,7 @@ onBeforeUnmount(() => clearTimeout(timer))
     <Vue3Lottie
       v-if="showSlash"
       :animationData="mapData()"
-      class="lotties pointer-events-none fixed inset-0 z-50 !h-screen !w-screen md:block hidden"
+      class="lotties pointer-events-none fixed inset-0 z-50 hidden !h-screen !w-screen md:block"
       :loop="false"
       renderer="svg"
     >

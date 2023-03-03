@@ -12,7 +12,7 @@ import { BASE_URL_API } from '~~/apis'
 
 interface IProps {
   video: any
-  idPost : number
+  idPost: number
 }
 
 const props = defineProps<IProps>()
@@ -53,7 +53,7 @@ const toggleFullScreen = () => {
 <template>
   <div
     ref="containerRef "
-    class="group relative flex min-w-full items-center justify-center overflow-hidden bg-c2 keen-slider__slide"
+    class="keen-slider__slide group relative flex min-w-full items-center justify-center overflow-hidden bg-c2"
   >
     <video
       ref="videoRef"

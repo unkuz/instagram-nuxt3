@@ -22,7 +22,7 @@ defineProps<IProps>()
 
 const timelineStore = useFeedStore()
 
-const likeUnLike = (id : number) => {
+const likeUnLike = (id: number) => {
   timelineStore.setToggleLike(id)
 }
 

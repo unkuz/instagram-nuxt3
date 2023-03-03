@@ -15,7 +15,7 @@ watchEffect(() => {
   exploreStore.save(data.value)
 })
 
-const exploreChunk = $computed(()=>exploreStore.list)
+const exploreChunk = $computed(() => exploreStore.list)
 </script>
 
 <template>

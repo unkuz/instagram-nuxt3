@@ -183,9 +183,7 @@ export const inboxDetail = [
     },
     message: {
       type: 'video',
-      content: [
-        { id: 1, src: '/video/Gotez - Talking Head.mp4' },
-      ],
+      content: [{ id: 1, src: '/video/Gotez - Talking Head.mp4' }],
     },
   },
 ]

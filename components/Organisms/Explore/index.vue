@@ -17,12 +17,20 @@ const random = $ref(Math.random())
       class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[15px] md:gap-[15px]"
     >
       <Square v-if="cluster?.[0]?.images?.[0]?.src" :img="cluster?.[0]?.images?.[0]?.src" />
-      <Square v-if="cluster?.[1]?.images?.[0]?.src" :is-big="true" :img="cluster?.[1]?.images?.[0]?.src" />
+      <Square
+        v-if="cluster?.[1]?.images?.[0]?.src"
+        :is-big="true"
+        :img="cluster?.[1]?.images?.[0]?.src"
+      />
       <Square v-if="cluster?.[2]?.images?.[0]?.src" :img="cluster?.[2]?.images?.[0]?.src" />
     </div>
 
     <div v-else class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[15px] md:gap-[15px]">
-      <Square v-if="cluster?.[0]?.images?.[0]?.src" :is-big="true" :img="cluster?.[0]?.images?.[0]?.src" />
+      <Square
+        v-if="cluster?.[0]?.images?.[0]?.src"
+        :is-big="true"
+        :img="cluster?.[0]?.images?.[0]?.src"
+      />
       <Square v-if="cluster?.[1]?.images?.[0]?.src" :img="cluster?.[1]?.images?.[0]?.src" />
       <Square v-if="cluster?.[2]?.images?.[0]?.src" :img="cluster?.[2]?.images?.[0]?.src" />
     </div>

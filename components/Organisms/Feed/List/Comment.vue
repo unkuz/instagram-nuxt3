@@ -2,11 +2,11 @@
 import Emoji from '@/components/Utils/Emoji.vue'
 import { useAuthStore, useFeedStore } from '@/store'
 import { onClickOutside, useTextareaAutosize } from '@vueuse/core'
-import { BASE_URL_API } from '~~/apis';
+import { BASE_URL_API } from '~~/apis'
 
 interface IProps {
-  id : number
-  currentReplyCommentId : number | string
+  id: number
+  currentReplyCommentId: number | string
 }
 
 const props = defineProps<IProps>()
@@ -24,8 +24,8 @@ watch(
   (val) => {
     if (val) {
       const findNickNameCommentReply = timeLineStore.data
-        .find(({ id }:any) => id === props.id)!
-        .comments.find(({ id }:any) => id === val)!.user.username
+        .find(({ id }: any) => id === props.id)!
+        .comments.find(({ id }: any) => id === val)!.user.username
       input.value = '@' + `${findNickNameCommentReply}` + ' '
       textarea.value?.focus()
     }
@@ -42,7 +42,7 @@ const send = async () => {
   await timeLineStore.comment(props.id, {
     text: input.value,
     userName: authStore.data.userName,
-    userImg:BASE_URL_API + '/' + authStore.data.user?.profile_pic_url,
+    userImg: BASE_URL_API + '/' + authStore.data.user?.profile_pic_url,
     id: Math.random() * 10000,
     commentReplyId: props.currentReplyCommentId,
   })
