@@ -19,12 +19,10 @@ useWatchWithMounted(isLogin, () => {
 })
 
 const submit = (data: any) => {
-    signIn()
-//   authStore.login(_pick(data as IAccountLogin, ['user_name', 'password']))
+  authStore.login(_pick(data as IAccountLogin, ['user_name', 'password']))
 }
 
 
-const {  status,  data,  lastRefreshedAt,  getCsrfToken,  getProviders,  getSession,  signIn,  signOut,} = useSession()
 
 
 const messageErrorServer = $computed(()=>authStore?.errors?.detail)
