@@ -8,6 +8,7 @@ import { getCurrentYear } from '@/utils'
 import Item from './Item.vue'
 import SuggestionSkl from '@/components/Skeleton/Suggestion.vue'
 import { BASE_URL_API } from '~~/apis'
+import TagName from '@/components/Atoms/TagName.vue'
 
 defineProps<IPending>()
 
@@ -57,6 +58,7 @@ let isIntersecting = $ref(false)
 //   clearInterval(timer)
 //   clearInterval(timer2)
 // })
+const userName = $computed(() => authStore.data.user?.user_name)
 
 const logout = () => {
   authStore.logout()
@@ -67,10 +69,13 @@ const logout = () => {
   <div>
     <div ref="sugestionRef" v-if="!isPending">
       <div class="mt-[26px] mb-[22px] flex h-[56px] items-center justify-between">
-        <Avatar :size="SizeAvatarEnum.M" :url="avatar" />
+        <NuxtLink :to="`/${userName}/`"><Avatar :size="SizeAvatarEnum.M" :url="avatar" /></NuxtLink>
+
         <div class="-ml-[70px]">
-          <p class="cursor-pointer font-medium">cuzknothz</p>
-          <p class="text-c3 dark:text-c21">cuzknothz</p>
+          <NuxtLink :to="`/${userName}/`"> <TagName :name="userName" /></NuxtLink>
+          <NuxtLink :to="`/${userName}/`"
+            ><p class="text-c3 dark:text-c21">{{ userName }}</p></NuxtLink
+          >
         </div>
         <div @click="logout">
           <NuxtLink to="/login">

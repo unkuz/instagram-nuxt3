@@ -19,6 +19,10 @@ watchEffect(() => {
 })
 
 const back = () => navigateTo('/')
+
+onBeforeUnmount(() => {
+  storyDetailStore.$reset()
+})
 </script>
 
 <template>

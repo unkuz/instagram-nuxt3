@@ -57,19 +57,11 @@ watch(files, (val) => {
 })
 
 watch(
-  () => media,
-  (val) => {
-    console.log('MEDIA', val)
-  },
-  {
-    deep: true,
-  }
-)
-
-watch(
   () => isShowInputCaption,
   (val) => {
     slider.value?.update()
+  },{
+    flush:'post'
   }
 )
 

@@ -11,7 +11,7 @@ const id = $computed(() => route.params.id)
 
 const story = $computed(() => storyDetailStore.data)
 
-const media = $computed(() =>
+const media = computed(() =>
   _concat(
     storyDetailStore.data?.carousel_media?.videos,
     storyDetailStore?.data?.carousel_media?.images
@@ -25,6 +25,14 @@ const [sliderRef, slider] = useKeenSlider({
   renderMode: 'precision',
   dragSpeed: 0.1,
 })
+
+watch(
+  media,
+  (val) => {
+    slider.value?.update()
+  },
+  { flush: 'post',deep:true }
+)
 </script>
 <template>
   <div class="relative h-[80vh] w-[500px] max-w-[50vw] bg-c2">
