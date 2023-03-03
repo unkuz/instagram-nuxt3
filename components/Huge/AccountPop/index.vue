@@ -17,6 +17,8 @@ onClickOutside(accountPopRef, () => {})
 const handleSelect = (section: SectionEnum) => {
   globalStore.setSection(section)
 }
+
+const logout = () => authStore.logout()
 </script>
 
 <template>
@@ -38,7 +40,7 @@ const handleSelect = (section: SectionEnum) => {
       <NuxtLink to="/login/">
         <div
           class="flex h-[37px] cursor-pointer justify-center px-[16px] py-[8px] hover:bg-c4"
-          @click="handleSelect(SectionEnum.SELF)"
+          @click="logout"
         >
           Log out
         </div>

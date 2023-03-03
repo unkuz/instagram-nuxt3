@@ -6,8 +6,6 @@ import { axios } from '~~/services/axios'
 
 type TState = IStateStore<IAuthData>
 
-
-
 export const useAuthStore = defineStore('auth', {
   state: (): any => ({
     data: {
@@ -27,12 +25,18 @@ export const useAuthStore = defineStore('auth', {
         this.data.user = data.user
         this.data.token = data.token
         navigateTo('/')
-      } catch (e:any) {
+      } catch (e: any) {
         this.data.user = {}
         this.data.token = {}
         this.hasErr = true
         this.errors = e.response.data
       }
+    },
+    logout() {
+      this.data.user = {}
+      this.data.token = {}
+      this.hasErr = false
+      this.errors = {}
     },
   },
   persist: true,

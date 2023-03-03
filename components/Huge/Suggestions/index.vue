@@ -57,6 +57,10 @@ let isIntersecting = $ref(false)
 //   clearInterval(timer)
 //   clearInterval(timer2)
 // })
+
+const logout = () => {
+  authStore.logout()
+}
 </script>
 
 <template>
@@ -68,7 +72,7 @@ let isIntersecting = $ref(false)
           <p class="cursor-pointer font-medium">cuzknothz</p>
           <p class="text-c3 dark:text-c21">cuzknothz</p>
         </div>
-        <div @click="authStore.data.isLogin = false">
+        <div @click="logout">
           <NuxtLink to="/login">
             <Button class="!bg-c15 py-[6px] text-[.8rem] text-c1" text="Log out" />
           </NuxtLink>
@@ -122,9 +126,6 @@ let isIntersecting = $ref(false)
           >
             {{ APP_CONFIGS.AUTHOR }}
           </div>
-          <!-- <div
-          class="absolute top-[6px] h-[4px] w-[35px] rotate-[60deg] animate-cuzknothz bg-c1 dark:bg-c19"
-        ></div> -->
         </NuxtLink>
       </div>
     </div>
