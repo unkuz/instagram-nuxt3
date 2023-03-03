@@ -42,6 +42,8 @@ onMounted(() => {
     show()
   }, 5 * 1000 * 60)
 })
+
+
 </script>
 
 <template>

@@ -5,7 +5,7 @@ import Stories from '@/components/Molecules/Stories/Stories.vue'
 import Feed from '@/components/Organisms/Feed/List/index.vue'
 import { useWindowResizeCallback } from '@/composables'
 import { IStory, ITimeLine } from '@/models'
-import { useStoriesStore, useSuggestionStore, useFeedStore } from '@/store'
+import { useStoriesStore, useSuggestionStore, useFeedStore, useThemeStore } from '@/store'
 import { gsap } from 'gsap'
 import { axios } from '~~/services/axios'
 
@@ -38,6 +38,8 @@ const { data: _timeline, pending: pendingTimeline } = await useLazyAsyncData<ITi
   }
 )
 
+const themeStore = useThemeStore()
+
 watchEffect(() => {
   storiesStore.save(unref(_stories))
 })
@@ -57,6 +59,7 @@ const calcLeftSuggestion = () => {
 onMounted(() => {
   calcLeftSuggestion()
 })
+
 
 useWindowResizeCallback(calcLeftSuggestion)
 </script>

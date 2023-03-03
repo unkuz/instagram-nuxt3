@@ -21,6 +21,8 @@ const submit = (data: any) => {
   authStore.login(_pick(data as IAccountLogin, ['user_name', 'password']))
 }
 
+const messageErrorServer = $computed(()=>authStore?.errors?.detail)
+
 const schemaValidate = {
   user_name(val: any) {
     return true
@@ -41,6 +43,8 @@ const schemaValidate = {
         <ErrorMessage name="password" />
         <button>Login</button>
       </Form>
+
+       <p class="text-[0.85rem] text-c13">{{messageErrorServer}}</p>
     </div>
   </div>
 </template>

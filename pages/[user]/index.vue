@@ -27,7 +27,7 @@ const profile = $computed(() => profileStore.profile)
 
 <template>
   <div v-if="!pendingTimeline" class="relative mb-[65px] text-sm">
-    <div class="relative h-[250px]">
+    <div class="relative md:h-[250px] h-[200px]">
       <div
         class="absolute h-full w-full cursor-pointer bg-cover bg-center object-cover"
         :style="{ backgroundImage: `url(${profile?.cover_pic_url})` }"
