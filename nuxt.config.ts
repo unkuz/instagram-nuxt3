@@ -1,6 +1,7 @@
 import { defineNuxtConfig } from 'nuxt/config'
 import VueTypeImports from 'vite-plugin-vue-type-imports'
 import svgLoader from 'vite-svg-loader'
+import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineNuxtConfig({
   modules: [
@@ -84,7 +85,17 @@ export default defineNuxtConfig({
   },
   vite: {
     // plugins: [svgLoader({}), eslintPlugin()],
-    plugins: [svgLoader({}), VueTypeImports()],
+    plugins: [
+      svgLoader({}),
+      VueTypeImports(),
+      VitePWA({
+        registerType: 'autoUpdate',
+        devOptions: {
+          enabled: true,
+        },
+        
+      }),
+    ],
     // build: {
     //   rollupOptions: {
     //     output: {
