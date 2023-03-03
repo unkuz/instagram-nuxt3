@@ -7,17 +7,20 @@ import Pause from '@/components/Atoms/Video/Pause.vue'
 import ReelCap from '@/components/Atoms/Video/ReelCap.vue'
 import { IReel } from '@/models'
 
-const props = defineProps<IReel>()
+const props = defineProps<{
+    src:string
+}>()
 
 const video = ref<HTMLVideoElement>()
 
 const { playing, currentTime, duration, volume, muted, buffered, waiting } = useMediaControls(
   video,
   {
-    src: props.videos?.[0].src,
+    src: props.src
   }
 )
 
+console.log("SRC",props.src);
 watch(buffered, (val) => {})
 </script>
 
@@ -30,7 +33,6 @@ watch(buffered, (val) => {})
       loop
       type="video/mp4"
       playsinline
-      crossorigin="anonymous"
       preload="metadata"
       @click="playing = !playing"
       :ins-data-video-id="id"
