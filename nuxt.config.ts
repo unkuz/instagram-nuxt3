@@ -5,6 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineNuxtConfig({
   modules: [
+    // '@sidebase/nuxt-auth',
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
@@ -15,18 +16,14 @@ export default defineNuxtConfig({
     'nuxt-lodash',
     '@nuxtjs/fontaine',
     // '@nuxtjs/algolia',
-    // '@nuxt/content',
     // 'nuxt-logrocket',
-    // '@sidebase/nuxt-auth',
     // '@nuxtjs/i18n',
-    // '@nuxt/content',
     // '@nuxtjs/device',
     // 'nuxt-security',
     // '@nuxtjs/algolia',
     // '@twicpics/components/nuxt3',
     // 'nuxt-security',
     // '@nuxtjs/fontaine',
-    // '@sidebase/nuxt-auth',
     // '@morev/vue-transitions/nuxt',
   ],
   content: {
@@ -93,7 +90,6 @@ export default defineNuxtConfig({
         devOptions: {
           enabled: true,
         },
-        
       }),
     ],
     // build: {

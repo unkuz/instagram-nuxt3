@@ -3,6 +3,7 @@ import { useAuthStore } from '@/store'
 import { IAccountLogin } from '@/type'
 import { ErrorMessage, Field, Form } from 'vee-validate'
 
+
 definePageMeta({
   layout: 'empty',
 })
@@ -18,8 +19,13 @@ useWatchWithMounted(isLogin, () => {
 })
 
 const submit = (data: any) => {
-  authStore.login(_pick(data as IAccountLogin, ['user_name', 'password']))
+    signIn()
+//   authStore.login(_pick(data as IAccountLogin, ['user_name', 'password']))
 }
+
+
+const {  status,  data,  lastRefreshedAt,  getCsrfToken,  getProviders,  getSession,  signIn,  signOut,} = useSession()
+
 
 const messageErrorServer = $computed(()=>authStore?.errors?.detail)
 

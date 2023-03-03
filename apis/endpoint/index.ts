@@ -28,4 +28,7 @@ export const APP_API = {
   EXPLORE: {
     LIST: '/explore/',
   },
+  REEL: {
+    LIST: '/reel/',
+  },
 }

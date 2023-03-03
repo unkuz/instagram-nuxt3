@@ -108,14 +108,14 @@ onBeforeUnmount(() => {
     >
       <div
         v-for="(i, idx) in reels"
-        :key="idx"
+        :key="i.id"
         class="keen-slider__slide flex !w-auto items-start justify-center bg-c19 md:bg-transparent"
       >
         <div ref="containvideoRefs">
           <Video v-bind="i" />
         </div>
         <ReelCap :user="i.user" :caption="i.caption_text" />
-        <ReelAction :totalLike="i.like_count" :totalComment="i.total_comment" />
+        <ReelAction :totalLike="0" :totalComment="0" />
       </div>
     </div>
     <ReelKeyBoardShortcut :active-key="activeKey" />

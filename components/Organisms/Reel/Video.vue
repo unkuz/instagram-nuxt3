@@ -14,7 +14,7 @@ const video = ref<HTMLVideoElement>()
 const { playing, currentTime, duration, volume, muted, buffered, waiting } = useMediaControls(
   video,
   {
-    src: props.media.video[0].src,
+    src: props.videos?.[0].src,
   }
 )
 
