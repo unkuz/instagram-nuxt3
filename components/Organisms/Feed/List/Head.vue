@@ -21,8 +21,11 @@ const showMore = () => moreStore.setShow()
   <div class="h-[60px]">
     <div class="mx-[16px] flex h-full items-center justify-between">
       <div class="flex items-center space-x-[10px] text-[0.8rem]">
-        <Avatar :size="SizeAvatarEnum.S" :url="avatar" />
-        <TagName :name="userName" />
+        <NuxtLink :to="`/${userName}/`">
+          <Avatar :size="SizeAvatarEnum.S" :url="avatar"
+        /></NuxtLink>
+
+        <NuxtLink :to="`/${userName}/`"><TagName :name="userName" /></NuxtLink>
       </div>
       <div>
         <MoreIcon_ class="fill-c2 dark:fill-c1" @click.stop="showMore" />

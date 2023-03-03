@@ -73,7 +73,7 @@
     "keen-slider": "^6.8.5",
     "magic-regexp": "^0.6.3",
     "moment": "^2.29.4",
-    "next-auth": "4.20.0",
+    "next-auth": "4.20.1",
     "nuxt-graphql-client": "^0.2.25",
     "nuxt-logrocket": "^2.0.4",
     "nuxt-security": "^0.11.0",

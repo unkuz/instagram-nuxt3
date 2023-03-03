@@ -5,10 +5,13 @@ import Reels from '@/components/Atoms/Nav/Reels.vue'
 import Search from '@/components/Atoms/Nav/Search.vue'
 import SelfAvatar from '@/components/Atoms/Nav/SelfAvatar.vue'
 import { SectionEnum } from '@/constants'
-import { useGlobalStore } from '@/store'
+import { useAuthStore, useGlobalStore } from '@/store'
 import { APP_CONFIGS } from '@/configs'
 
 const globalStore = useGlobalStore()
+const authStore = useAuthStore()
+const userName = $computed(() => authStore.data.user?.user_name)
+
 const isMobile = $computed(() => globalStore.getIsMobile)
 const section = $computed(() => globalStore.section)
 const isReelsSelect = $computed(() => globalStore.section === SectionEnum.REELS && isMobile)
@@ -50,7 +53,7 @@ const handleSelect = (section: SectionEnum) => {
         </NuxtLink>
       </div>
       <div @click="handleSelect(SectionEnum.SELF)">
-        <NuxtLink to="/cuzknothz/">
+        <NuxtLink :to="`/${userName}/`">
           <SelfAvatar :is-select="section === SectionEnum.SELF" />
         </NuxtLink>
       </div>
