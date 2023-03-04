@@ -24,6 +24,7 @@
     "@sidebase/nuxt-auth": "^0.4.2",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
+    "@types/uuid": "^9.0.1",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
     "@vue/eslint-config-standard": "^8.0.1",
@@ -74,6 +75,7 @@
     "keen-slider": "^6.8.5",
     "magic-regexp": "^0.6.3",
     "moment": "^2.29.4",
+    "nanoid": "^4.0.1",
     "next-auth": "4.20.1",
     "nuxt-graphql-client": "^0.2.25",
     "nuxt-logrocket": "^2.0.4",
@@ -87,6 +89,7 @@
     "tailwind-scrollbar-hide": "^1.1.7",
     "three": "0.134",
     "troisjs": "^0.3.4",
+    "uuid": "^9.0.0",
     "vee-validate": "^4.7.4",
     "vite-svg-loader": "^4.0.0",
     "vue3-lottie": "^2.5.0"

@@ -1,31 +1,60 @@
 <script setup lang="ts">
 import BackDrop from '@/components/Utils/BackDrop.vue'
 import { useFileDialog } from '@vueuse/core'
-import { useAddStore } from '~~/store'
-
-import {useLockScroll} from '@/composables'
+import { ToastTypeEnum, useAddStore, useToastStore } from '~~/store'
+import { useDropZone } from '@vueuse/core'
+import { useLockScroll } from '@/composables'
+import { nanoid } from 'nanoid'
+import { formatBytes } from '@/utils'
 
 useLockScroll()
 const addStore = useAddStore()
-
+const toastStore = useToastStore()
 
 const { files, open, reset } = useFileDialog()
 
-const listFile = ref([])
+const dropZoneRef = ref<HTMLDivElement>()
+
+interface IFile {
+  name: string
+  src: string
+  type: string
+  size: string
+}
+const listFile = ref<IFile[]>([])
+
+const pushToFileList = (file: File) => {
+  const type = isImageOrVideo(file)
+  if (['image', 'video'].includes(type)) {
+    const _file = {
+      id: nanoid(),
+      name: file.name,
+      src: URL.createObjectURL(file),
+      type: type,
+      size: formatBytes(file.size),
+    }
+    listFile.value.push(_file)
+  } else {
+    toastStore.pushTimmer({
+      type: ToastTypeEnum.ERROR,
+      content: 'Only accept image and video',
+    })
+  }
+}
+
+const onDrop = (files: File[] | null) => {
+  files?.forEach((i) => {
+    pushToFileList(i)
+  })
+}
+
+const { isOverDropZone } = useDropZone(dropZoneRef, onDrop)
 
 watch(files, (val) => {
   if (val) {
     const fileList = Array.from(val)
     fileList.forEach((i) => {
-      const type = isImageOrVideo(i)
-      if (['image', 'video'].includes(type)) {
-        const file = {
-          name: i.name,
-          src: URL.createObjectURL(i),
-          type: type,
-        }
-        listFile.value.push(file)
-      }
+      pushToFileList(i)
     })
   }
 })
@@ -55,10 +84,10 @@ onBeforeUnmount(() => {
         />
       </div>
 
-      <div class="max-h-[200px] w-full overflow-scroll">
+      <div class="max-h-[200px] w-full overflow-scroll mb-[10px]">
         <div v-for="i in listFile" class="h-[40px] w-full line-clamp-1">
           <div v-if="i.type === 'video'" class="flex w-full items-center gap-[10px]">
-            <div class="relative !h-[30px] !w-[30px]">
+            <div class="relative !h-[30px] !w-[30px] min-w-[30px]">
               <video :src="i.src" class="h-full w-full object-cover" />
               <div class="absolute bottom-1/2 right-1/2 translate-x-1/2 translate-y-1/2">
                 <svg
@@ -84,19 +113,29 @@ onBeforeUnmount(() => {
                 </svg>
               </div>
             </div>
-            <p class="w-[calc(100%-30px)] line-clamp-1">{{ i.name }}</p>
+            <span class="w-[calc(100%-30px)]"
+              ><p class="w-full line-clamp-1">{{ i.name }}</p>
+              <p class="w-full line-clamp-1 text-[.8rem] text-c17">{{ i.size }}</p></span
+            >
           </div>
           <div v-else-if="i.type === 'image'" class="flex w-full items-center gap-[10px]">
-            <div class="!h-[30px] !w-[30px]">
+            <div class="!h-[30px] !w-[30px] min-w-[30px]">
               <img :src="i.src" class="h-full w-full object-cover" />
             </div>
-            <p class="w-[calc(100%-30px)] line-clamp-1">{{ i.name }}</p>
+            <span class="w-[calc(100%-30px)]"
+              ><p class="w-full line-clamp-1">{{ i.name }}</p>
+              <p class="w-full line-clamp-1 text-[.8rem] text-c17">{{ i.size }}</p>
+            </span>
           </div>
         </div>
       </div>
       <div
         @click="open()"
-        class="flex h-[60px] w-full cursor-pointer items-center justify-center rounded-[10px] border-[2px] border-dashed border-c17"
+        ref="dropZoneRef"
+        :class="[
+          'flex h-[60px] w-full cursor-pointer items-center justify-center rounded-[10px] border-[2px] border-dashed ',
+          isOverDropZone ? 'border-c11' : 'border-c17',
+        ]"
       >
         <span v-if="!listFile.length">Drag files here or browser</span>
         <span v-else> Drag more file here or browser</span>

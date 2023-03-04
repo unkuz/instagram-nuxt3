@@ -1,8 +1,22 @@
 import { defineStore } from 'pinia'
 
+export enum ToastTypeEnum {
+  ERROR,
+  WARNING,
+  SUCCESS,
+  NONE,
+}
+
+interface IPushPayload {
+  type: ToastTypeEnum
+  content: string
+}
+
 export const useToastStore = defineStore('toast', {
   state: () => ({
-    isShow: true,
+    isShow: false,
+    type: ToastTypeEnum.NONE,
+    content: '',
   }),
   getters: {},
   actions: {
@@ -15,6 +29,27 @@ export const useToastStore = defineStore('toast', {
         } else {
           clearTimeout(timer)
         }
+      }
+    },
+    push(data: IPushPayload) {
+      const { type, content } = data
+
+      if ([...Object.values(ToastTypeEnum)].includes(type) && _isString(content)) {
+        this.type = type
+        this.content = content
+        this.isShow = true
+      }
+    },
+    pushTimmer(data: IPushPayload, time = 10 * 1000) {
+      const { type, content } = data
+
+      if ([...Object.values(ToastTypeEnum)].includes(type) && _isString(content)) {
+        this.type = type
+        this.content = content
+        this.isShow = true
+        setTimeout(() => {
+          this.isShow = false
+        }, time)
       }
     },
   },
