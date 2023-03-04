@@ -34,7 +34,7 @@ const { key } = useForceRenderTimer()
     class="w-full bg-transparent p-[1px] md:bg-c4 md:clip-path-cuzknothz dark:md:bg-transparent [&:not(:last-child)]:mb-[24px]"
   >
     <div class="w-full bg-c1 dark:bg-c19 md:clip-path-cuzknothz">
-      <Head :avatar="feed.user?.profile_pic_url" :user-name="feed.user.user_name" />
+      <Head :avatar="feed.user?.profile_pic_url" :user-name="feed.user.user_name" :feed="feed" />
       <Carousel
         :id="feed.id"
         :images="feed.carousel_media.images"

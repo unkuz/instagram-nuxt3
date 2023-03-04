@@ -4,17 +4,24 @@ import Avatar from '@/components/Atoms/Avatar.vue'
 import TagName from '@/components/Atoms/TagName.vue'
 import { useMoreStore } from '@/store'
 import { SizeAvatarEnum } from '@/type'
+import { TypeMoreEnum } from '@/store'
 
 const moreStore = useMoreStore()
 
 interface IProps {
   avatar: string
   userName: string
+  feed: any
 }
 
-defineProps<IProps>()
+const props = defineProps<IProps>()
 
-const showMore = () => moreStore.setShow()
+const showMore = () => {
+  moreStore.set({
+    type: TypeMoreEnum.FEED,
+    data: props.feed,
+  })
+}
 </script>
 
 <template>

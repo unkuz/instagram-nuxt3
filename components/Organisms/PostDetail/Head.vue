@@ -15,7 +15,7 @@ defineProps<IProps>()
 
 const showMore = (e: MouseEvent) => {
   e.stopPropagation()
-  moreStore.setShow()
+  moreStore.toggle(true)
 }
 </script>
 
