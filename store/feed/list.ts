@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 import { ITimeLine } from '@/models'
-import { IStateStore } from '@/type'
+import { IFilePost, IStateStore } from '@/type'
 import { timeLine } from '@/mocks'
-import { useAddStore, useSlashStore, useFeedStore } from '@/store'
+import { ToastTypeEnum, useAddStore, useSlashStore, useToastStore } from '@/store'
 import { axios } from '~~/services/axios'
 import { APP_API } from '~~/apis'
 import { isImageOrVideo } from '@/utils'
@@ -72,21 +72,22 @@ export const useFeedStore = defineStore('feed', {
         this.data[idx].comments.unshift(data)
       }
     },
-    async addFeed(val: { media: FileList; caption: string }) {
+    async addFeed(val: { media: IFilePost[]; caption: string }) {
       const addStore = useAddStore()
+      const toastStore = useToastStore()
 
       console.log(val)
 
       let images = [] as File[]
       let videos = [] as File[]
       if (val.media?.length) {
-        Array.from(val.media).forEach((i) => {
-          const type = isImageOrVideo(i)
+        val.media.forEach((i) => {
+          const type = isImageOrVideo(i.file)
           if (type === 'image') {
-            images.push(i)
+            images.push(i.file)
           } else {
             if (type === 'video') {
-              videos.push(i)
+              videos.push(i.file)
             }
           }
         })
@@ -109,7 +110,12 @@ export const useFeedStore = defineStore('feed', {
         addStore.toggle(false)
         const { data } = await axios.get(APP_API.FEED.list)
         this.data = data
-      } catch (e) {}
+      } catch (e) {
+        toastStore.pushTimmer({
+          type: ToastTypeEnum.ERROR,
+          content: 'Something wrong or u are upload so much media',
+        })
+      }
     },
   },
 })

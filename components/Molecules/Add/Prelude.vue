@@ -6,22 +6,20 @@ import { useDropZone } from '@vueuse/core'
 import { useLockScroll } from '@/composables'
 import { nanoid } from 'nanoid'
 import { formatBytes } from '@/utils'
+import Edit from './Edit.vue'
+import { IFilePost } from '~~/type'
 
 useLockScroll()
 const addStore = useAddStore()
 const toastStore = useToastStore()
 
+const step = ref(1)
+
 const { files, open, reset } = useFileDialog()
 
 const dropZoneRef = ref<HTMLDivElement>()
 
-interface IFile {
-  name: string
-  src: string
-  type: string
-  size: string
-}
-const listFile = ref<IFile[]>([])
+const listFile = ref<IFilePost[]>([])
 
 const pushToFileList = (file: File) => {
   const type = isImageOrVideo(file)
@@ -30,8 +28,9 @@ const pushToFileList = (file: File) => {
       id: nanoid(),
       name: file.name,
       src: URL.createObjectURL(file),
-      type: type,
+      type,
       size: formatBytes(file.size),
+      file,
     }
     listFile.value.push(_file)
   } else {
@@ -68,6 +67,7 @@ onBeforeUnmount(() => {
 <template>
   <BackDrop @click.self="addStore.toggle(false)">
     <div
+      v-if="step === 1"
       class="flex w-[320px] flex-col justify-center rounded-[10px] bg-white p-[30px_20px_20px_20px]"
     >
       <div
@@ -78,16 +78,17 @@ onBeforeUnmount(() => {
       >
         <div>Upload File</div>
         <AtomsButton
+          @click="step = 2"
           v-if="listFile.length"
           text="Next"
           class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
         />
       </div>
 
-      <div class="max-h-[200px] w-full overflow-scroll mb-[10px]">
+      <div class="mb-[10px] max-h-[200px] w-full overflow-scroll">
         <div v-for="i in listFile" class="h-[40px] w-full line-clamp-1">
           <div v-if="i.type === 'video'" class="flex w-full items-center gap-[10px]">
-            <div class="relative !h-[30px] !w-[30px] min-w-[30px]">
+            <div class="relative !h-[35px] !w-[35px] min-w-[35px]">
               <video :src="i.src" class="h-full w-full object-cover" />
               <div class="absolute bottom-1/2 right-1/2 translate-x-1/2 translate-y-1/2">
                 <svg
@@ -113,18 +114,18 @@ onBeforeUnmount(() => {
                 </svg>
               </div>
             </div>
-            <span class="w-[calc(100%-30px)]"
+            <span class="w-[calc(100%-35px)]"
               ><p class="w-full line-clamp-1">{{ i.name }}</p>
-              <p class="w-full line-clamp-1 text-[.8rem] text-c17">{{ i.size }}</p></span
+              <p class="w-full text-[.8rem] text-c17 line-clamp-1">{{ i.size }}</p></span
             >
           </div>
           <div v-else-if="i.type === 'image'" class="flex w-full items-center gap-[10px]">
-            <div class="!h-[30px] !w-[30px] min-w-[30px]">
+            <div class="!h-[35px] !w-[35px] min-w-[35px]">
               <img :src="i.src" class="h-full w-full object-cover" />
             </div>
-            <span class="w-[calc(100%-30px)]"
+            <span class="w-[calc(100%-35px)]"
               ><p class="w-full line-clamp-1">{{ i.name }}</p>
-              <p class="w-full line-clamp-1 text-[.8rem] text-c17">{{ i.size }}</p>
+              <p class="w-full text-[.8rem] text-c17 line-clamp-1">{{ i.size }}</p>
             </span>
           </div>
         </div>
@@ -140,6 +141,10 @@ onBeforeUnmount(() => {
         <span v-if="!listFile.length">Drag files here or browser</span>
         <span v-else> Drag more file here or browser</span>
       </div>
-      <div></div></div
-  ></BackDrop>
+      <div></div>
+    </div>
+    <div v-else-if="step === 2">
+      <Edit :listFile="listFile" />
+    </div>
+  </BackDrop>
 </template>
