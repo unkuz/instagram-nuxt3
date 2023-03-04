@@ -10,14 +10,14 @@ export interface IState {
 }
 
 export const useSuggestionStore = defineStore('suggestion', {
-  state: (): IState => ({
+  state: (): any => ({
     data: [],
     hasErr: false,
     errors: {},
   }),
   getters: {},
   actions: {
-    save(data: TSuggestion[] | null) {
+    save(data: any) {
       if (data) {
         this.data = data.slice(0, APP_CONFIGS.MAX_SUGGESTION_PEOPLE_FOLLOW)
       }

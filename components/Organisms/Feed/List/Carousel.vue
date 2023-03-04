@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import ArrowIcon_ from '@/assets/svg/arrow_icon.svg'
-import { useCarousel } from '@/composables'
+import { useCarousel,useDoubleClick } from '@/composables'
 import { stopOtherVideoPlaying } from '@/helpers'
 import { gsap } from 'gsap'
 import Image from './Image.vue'
@@ -47,9 +47,15 @@ watch(
   (val) => {
     stopOtherVideoPlaying()
     console.log('IDX', val)
-    // slider.value.moveToIdx(val)
   }
 )
+
+
+useDoubleClick(sliderRef,()=>{
+
+},()=>{
+
+})
 
 watch([() => props.hasSaved, () => props.hasLiked], () => {
   initShowLikeSaved = true

@@ -1,7 +1,7 @@
 import { Ref } from 'vue'
 
 export const useDoubleClick = (
-  refElement: Ref<HTMLElement | null>,
+  refElement: Ref<HTMLElement | null | undefined>,
   click: () => void,
   dblclick: () => void
 ) => {

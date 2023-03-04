@@ -38,8 +38,6 @@ onBeforeUnmount(() => {
   mediaObserver?.disconnect()
 })
 
-// const dropZoneRef = ref<HTMLDivElement>()
-
 watch(files, (val) => {
   if (val) {
     const fileList = Array.from(val)
@@ -64,18 +62,6 @@ watch(
     flush:'post'
   }
 )
-
-// onBeforeUnmount(() => {
-//   media.forEach((i) => {
-//     URL.revokeObjectURL(i.src)
-//   })
-// })
-
-// const onDrop = (files: File[] | null) => {
-//   console.log('FILE', files)
-// }
-
-// const { isOverDropZone } = useDropZone(dropZoneRef, onDrop)
 
 const next = () => {
   isShowInputCaption = true

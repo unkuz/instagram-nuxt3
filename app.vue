@@ -49,7 +49,7 @@ onMounted(() => {
 <template>
   <div
     :class="[
-      'scroll-smooth font-quicksan',
+      'scroll-smooth font-quicksan text-[.85rem]',
       {
         'dark ': darkMode,
       },
