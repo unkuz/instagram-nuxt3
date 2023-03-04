@@ -35,19 +35,13 @@ const profile = $computed(() => profileStore.profile)
       <Avatar
         :size="SizeAvatarEnum.L"
         :url="profile?.profile_pic_url"
-        class="absolute top-[67%] left-1/2 -translate-x-1/2 border-[5px] border-c1 md:top-[60%] md:left-[3%] md:h-[140px] md:w-[140px] md:translate-x-0"
+        class="absolute top-[67%] left-1/2 -translate-x-1/2 border-[5px] border-c1 dark:border-c19  md:top-[60%] md:left-[3%] md:h-[140px] md:w-[140px] md:translate-x-0"
       />
     </div>
     <div>
       <div class="mt-[50px] flex flex-col items-center md:ml-[180px] md:mt-[5px] md:block">
         <TagName :name="profile?.user_name" />
         <div class="flex space-x-[20px]">
-          <!-- <span>96 posts</span
-          ><span class="cursor-pointer" @click="profileStore.setIsShowFollowing(true)"
-            >38.8k followers</span
-          ><span class="cursor-pointer" @click="profileStore.setIsShowFollowing(true)"
-            >150 following</span
-          > -->
         </div>
       </div>
     </div>
@@ -56,21 +50,7 @@ const profile = $computed(() => profileStore.profile)
       <div></div>
     </div>
     <div class="mt-[20px] flex justify-around">
-      <!-- <div @click="profileStore.setSelect(SELECT_TYPE.ALL)">
-        <PostIcon_ v-if="currentSelect == SELECT_TYPE.ALL" />
-        <PostIconSelected_ v-else />
-      </div> -->
-      <!-- <div @click="profileStore.setSelect(SELECT_TYPE.REELS)">
-        <ReelIcon_ v-if="currentSelect == SELECT_TYPE.REELS" />
-        <ReelIcon_ v-else class="color-[#00aeff] fill-[#00aeff]" />
-      </div>
-
-      <div @click="profileStore.setSelect(SELECT_TYPE.TAG)">
-        <TagIcon_ v-if="currentSelect == SELECT_TYPE.TAG" />
-        <TagIconSelected_ v-else />
-      </div> -->
     </div>
     <div class="mt-[20px] grid grid-cols-3 gap-[5px]"></div>
-    <!-- <Modal v-if="isShowFollowing" /> -->
   </div>
 </template>
