@@ -1,4 +1,3 @@
-import { isNil } from 'lodash'
 import { defineStore } from 'pinia'
 import { mock_reel } from '~~/mocks'
 
@@ -9,7 +8,7 @@ export const useReelStore = defineStore('reel', {
   getters: {},
   actions: {
     save(val: any) {
-      if (isNil(val)) {
+      if (_isNil(val)) {
         return
       }
       this.data = val
