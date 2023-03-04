@@ -4,9 +4,6 @@ import { IAccountLogin } from '@/type'
 import { ErrorMessage, Field, Form } from 'vee-validate'
 
 
-definePageMeta({
-  layout: 'empty',
-})
 
 const authStore = useAuthStore()
 
@@ -21,8 +18,6 @@ useWatchWithMounted(isLogin, () => {
 const submit = (data: any) => {
   authStore.login(_pick(data as IAccountLogin, ['user_name', 'password']))
 }
-
-
 
 
 const messageErrorServer = $computed(()=>authStore?.errors?.detail)
