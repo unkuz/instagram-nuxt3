@@ -68,7 +68,7 @@ onClickOutside(moreRef, () => {
           <div class="flex items-center space-x-[20px]">
             <Avatar :url="userFeed?.profile_pic_url" class="!h-[40px] !w-[40px]" />
             <div>
-              <AtomsTagName :name="userFeed?.user_name"/>
+              <AtomsTagName :name="userFeed?.user_name" />
             </div>
           </div>
           <div class="flex items-center space-x-[20px]">

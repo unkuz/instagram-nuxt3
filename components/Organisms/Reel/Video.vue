@@ -8,7 +8,7 @@ import ReelCap from '@/components/Atoms/Video/ReelCap.vue'
 import { IReel } from '@/models'
 
 const props = defineProps<{
-    src:string
+  src: string
 }>()
 
 const video = ref<HTMLVideoElement>()
@@ -16,11 +16,11 @@ const video = ref<HTMLVideoElement>()
 const { playing, currentTime, duration, volume, muted, buffered, waiting } = useMediaControls(
   video,
   {
-    src: props.src
+    src: props.src,
   }
 )
 
-console.log("SRC",props.src);
+console.log('SRC', props.src)
 watch(buffered, (val) => {})
 </script>
 

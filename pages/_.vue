@@ -60,7 +60,6 @@ onMounted(() => {
   calcLeftSuggestion()
 })
 
-
 useWindowResizeCallback(calcLeftSuggestion)
 </script>
 

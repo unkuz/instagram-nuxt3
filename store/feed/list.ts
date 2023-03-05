@@ -46,7 +46,7 @@ export const useFeedStore = defineStore('feed', {
           }
         })
       } catch (e) {
-        console.log("e",e);
+        console.log('e', e)
         toastStore.pushTimmer({
           type: ToastTypeEnum.ERROR,
           content: 'Somthing wrong happen !!',

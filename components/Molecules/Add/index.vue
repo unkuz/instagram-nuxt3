@@ -58,8 +58,9 @@ watch(
   () => isShowInputCaption,
   (val) => {
     slider.value?.update()
-  },{
-    flush:'post'
+  },
+  {
+    flush: 'post',
   }
 )
 
@@ -182,7 +183,6 @@ const close = () => addStore.toggle(false)
         >
           <input type="text" v-model="caption" class="mt-[100px] h-[40px] w-full bg-gray-300" />
         </div>
-      
       </div>
     </BackDrop>
   </div>

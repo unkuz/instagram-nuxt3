@@ -31,7 +31,7 @@ watch(
   (val) => {
     slider.value?.update()
   },
-  { flush: 'post',deep:true }
+  { flush: 'post', deep: true }
 )
 </script>
 <template>

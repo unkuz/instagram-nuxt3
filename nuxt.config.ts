@@ -81,10 +81,7 @@ export default defineNuxtConfig({
   },
   vite: {
     // plugins: [svgLoader({}), eslintPlugin()],
-    plugins: [
-      svgLoader({}),
-      VueTypeImports()
-    ],
+    plugins: [svgLoader({}), VueTypeImports()],
     // build: {
     //   rollupOptions: {
     //     output: {

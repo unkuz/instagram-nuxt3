@@ -13,6 +13,6 @@ const moreStore = useMoreStore()
     <Add_ v-if="addStore.isShow" />
     <More v-if="moreStore.isShow" />
     <Cookie />
-    <Toast/>
+    <Toast />
   </div>
 </template>
