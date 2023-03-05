@@ -30,7 +30,7 @@ defineProps<IProps>()
         </div>
       </div>
       <p class="mt-[5px] overflow-hidden text-ellipsis whitespace-nowrap text-center text-xs">
-        {{ name }}
+        {{ user.user_name }}
       </p>
     </div>
   </NuxtLink>
