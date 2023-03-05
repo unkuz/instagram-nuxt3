@@ -32,4 +32,7 @@ export const APP_API = {
   REEL: {
     LIST: '/reel/',
   },
+  INBOX:{
+    LIST:'/message/'
+  }
 }

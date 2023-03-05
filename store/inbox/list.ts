@@ -3,10 +3,16 @@ import { inboxList } from '@/mocks'
 
 export const useInboxStore = defineStore('inbox', {
   state: () => ({
-    data: [...inboxList],
+    data: [],
     hasErr: false,
     message: '',
   }),
   getters: {},
-  actions: {},
+  actions: {
+    save(data: any) {
+      if (data) {
+        this.data = data
+      }
+    },
+  },
 })

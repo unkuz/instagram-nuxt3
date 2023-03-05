@@ -1,16 +1,21 @@
 <script setup lang="ts">
-import SearchInbox from './SearchInbox.vue'
-import ListUser from '@/components/Organisms/Inbox/List/ListUser.vue'
-import EditIcon_ from '@/assets/svg/mingcute/edit.svg'
-import { useInboxStore } from '@/store'
-import Avatar from '@/components/Atoms/Avatar.vue'
 import BackIcon_ from '@/assets/svg/mingcute/back.svg'
-import TimeFromNow from '@/components/Atoms/TimeFromNow.vue'
+import EditIcon_ from '@/assets/svg/mingcute/edit.svg'
+import ListUser from '@/components/Organisms/Inbox/List/ListUser.vue'
+import { axios } from '@/services/axios'
+import { useInboxStore } from '@/store'
+import { APP_API } from '~~/apis'
 import IndividualLine from './IndividualLine.vue'
 
-const router = useRouter()
-
 const inboxStore = useInboxStore()
+
+const { data, pending } = await useLazyAsyncData('inbox-list', async () => {
+  const res = await axios.get(APP_API.INBOX.LIST)
+  return res.data
+})
+watchEffect(() => {
+  inboxStore.save(unref(data))
+})
 
 const inboxList = $computed(() => inboxStore.data)
 </script>
@@ -55,7 +60,7 @@ const inboxList = $computed(() => inboxStore.data)
         </div>
       </div>
 
-      <ListUser />
+      <!-- <ListUser /> -->
 
       <div
         class="h-[calc(100vh-60px-45px-120px)] overflow-scroll md:h-[calc(100vh-84px-60px-120px)]"
@@ -64,11 +69,11 @@ const inboxList = $computed(() => inboxStore.data)
           <IndividualLine
             v-for="(i, idx) in inboxList"
             :key="idx"
-            :profile_pic_url="i.user?.profile_pic_url"
-            :username="i.user.username"
-            :preview_lastest_message="i.preview_lastest_message.content"
-            :created_at="i.preview_lastest_message.created_at"
-            :message_not_seen_count="i.message_not_seen_count"
+            :profile_pic_url="i.recipient?.profile_pic_url"
+            :username="i.recipient?.user_name"
+            :preview_lastest_message="i?.messages?.[0]?.content"
+            :created_at="i?.messages?.[0]?.created_at"
+            :message_not_seen_count="1"
           />
         </template>
         <template v-else> Empty </template>
