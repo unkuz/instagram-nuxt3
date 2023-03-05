@@ -5,7 +5,7 @@ export interface IFriendshipStatus {
 
 export interface IUser {
   id: number
-  username: string
+  user_name: string
   full_name: string
   profile_pic_url: string
   friendship_status: IFriendshipStatus

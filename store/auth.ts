@@ -49,6 +49,23 @@ export const useAuthStore = defineStore('auth', {
       this.hasErr = false
       this.errors = {}
     },
+    async createAccount(account: IAccountLogin) {
+      const toastStore = useToastStore()
+      try {
+        const { data } = await axios.post(APP_API.AUTH.CREATE, { ...account })
+        console.log('DAAAAA', data)
+        toastStore.pushTimmer({
+          type: ToastTypeEnum.SUCCESS,
+          content: 'Nice. Create account successfully',
+        })
+      } catch (e: any) {
+        this.errors = e.response.data
+        toastStore.pushTimmer({
+          type: ToastTypeEnum.ERROR,
+          content: this.errors?.detail,
+        })
+      }
+    },
   },
   persist: true,
 })

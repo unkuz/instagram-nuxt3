@@ -18,6 +18,7 @@ export const APP_API = {
   },
   AUTH: {
     LOGIN: '/login/',
+    CREATE:'/user/'
   },
   USER: {
     detail: '/user/',
