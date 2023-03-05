@@ -45,10 +45,7 @@ export const useInboxDetailStore = defineStore('inboxDetail', {
         const { data } = await axios.get(`${APP_API.INBOX.LIST}${id}/`)
         this.data = data
 
-        toastStore.pushTimmer({
-          type: ToastTypeEnum.SUCCESS,
-          content: 'Send message success',
-        })
+ 
       } catch (e) {
         toastStore.pushTimmer({
           type: ToastTypeEnum.ERROR,
