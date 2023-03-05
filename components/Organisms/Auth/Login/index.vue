@@ -1,11 +1,10 @@
 <script lang="ts" setup>
-import { useAuthStore } from '@/store'
+import { ToastTypeEnum, useAuthStore, useToastStore } from '@/store'
 import { IAccountLogin } from '@/type'
 import { ErrorMessage, Field, Form } from 'vee-validate'
 
-
-
 const authStore = useAuthStore()
+const toastStore = useToastStore()
 
 const isLogin = computed(() => authStore.data.isLogin)
 
@@ -19,8 +18,7 @@ const submit = (data: any) => {
   authStore.login(_pick(data as IAccountLogin, ['user_name', 'password']))
 }
 
-
-const messageErrorServer = $computed(()=>authStore?.errors?.detail)
+const messageErrorServer = $computed(() => authStore.errors?.detail)
 
 const schemaValidate = {
   user_name(val: any) {
@@ -30,9 +28,22 @@ const schemaValidate = {
     return true
   },
 }
+
+watch(
+  () => messageErrorServer,
+  (val) => {
+    toastStore.pushTimmer({
+      type: ToastTypeEnum.ERROR,
+      content: val,
+    })
+  },
+  {
+    deep: true,
+  }
+)
 </script>
 <template>
-<div class="flex h-screen w-screen items-center justify-center">
+  <div class="flex h-screen w-screen items-center justify-center">
     <div class="flex w-[200px] flex-col gap-[20px]">
       <Form @submit="submit" :validation-schema="schemaValidate" class="flex flex-col gap-[10px]">
         <Field name="user_name" class="bg-red-300" />
@@ -41,9 +52,6 @@ const schemaValidate = {
         <ErrorMessage name="password" />
         <button>Login</button>
       </Form>
-
-       <p class="text-[0.85rem] text-c13">{{messageErrorServer}}</p>
     </div>
   </div>
 </template>
-

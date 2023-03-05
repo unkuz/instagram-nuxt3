@@ -32,6 +32,7 @@ export const useToastStore = defineStore('toast', {
       }
     },
     push(data: IPushPayload) {
+      this.isShow = false
       const { type, content } = data
 
       if ([...Object.values(ToastTypeEnum)].includes(type) && _isString(content)) {
@@ -41,6 +42,7 @@ export const useToastStore = defineStore('toast', {
       }
     },
     pushTimmer(data: IPushPayload, time = 10 * 1000) {
+      this.isShow = false
       const { type, content } = data
 
       if ([...Object.values(ToastTypeEnum)].includes(type) && _isString(content)) {

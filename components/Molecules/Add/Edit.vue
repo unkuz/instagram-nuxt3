@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Avatar from '@/components/Atoms/Avatar.vue'
 import TagName from '@/components/Atoms/TagName.vue'
-import { useTextareaAutosize } from '@vueuse/core'
+import { useMagicKeys, useTextareaAutosize } from '@vueuse/core'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import { BASE_URL_API } from '~~/apis'
 import { ToastTypeEnum, useAuthStore, useFeedStore, useToastStore } from '~~/store'
@@ -12,6 +12,26 @@ interface IProps {
 }
 
 const props = defineProps<IProps>()
+
+const tagRefs = $ref<HTMLDivElement[]>()
+const tags = $ref([''])
+
+const { shift, space, a /* keys you want to monitor */, enter } = useMagicKeys()
+
+watch(enter, (val) => {
+  if (val) {
+    const elFocus = tagRefs!.find((i) => document.activeElement === i)
+
+    if (elFocus && elFocus?.innerText) {
+      tags.push('')
+      console.log('tagRefs?.[-1]', tagRefs?.at(-1)?.focus())
+    }
+
+    console.log('VAL', val)
+  }
+})
+
+const addTags = () => {}
 
 let currentIdx = $ref(0)
 
@@ -40,7 +60,7 @@ const [sliderRef, slider] = useKeenSlider({
 const post = () => {
   console.log('CAP', caption.value)
   if (!caption.value) {
-    toastStore.push({
+    toastStore.pushTimmer({
       type: ToastTypeEnum.ERROR,
       content: 'Require caption to post',
     })
@@ -49,6 +69,7 @@ const post = () => {
   feedStore.addFeed({
     media: props.listFile,
     caption: caption.value,
+    tags: tags,
   })
 }
 </script>
@@ -77,7 +98,7 @@ const post = () => {
           <NuxtLink :to="`/${userName}/`">
             <Avatar :size="SizeAvatarEnum.S" :url="avatar"
           /></NuxtLink>
-          <TagName :name="userName" class="!bg-c1 !text-c2 line-clamp-1" />
+          <TagName :name="userName" class="line-clamp-1" />
         </div>
         <AtomsButton
           @click="post"
@@ -92,6 +113,17 @@ const post = () => {
           class="max-h-[50vh] w-full resize-none text-c2 caret-violet-400 focus:outline-none"
           placeholder="What's on your mind?"
         />
+      </div>
+      <div></div>
+      <div class="flex flex-wrap gap-[10px]">
+        <span
+          v-for="i in tags"
+          ref="tagRefs"
+          contenteditable
+          class="flex min-w-[20px] items-center justify-center rounded-[5px] border-[1px] border-dashed border-purple-300 px-[10px] focus:outline-none"
+        >
+          {{ i }}
+        </span>
       </div>
     </div>
   </div>

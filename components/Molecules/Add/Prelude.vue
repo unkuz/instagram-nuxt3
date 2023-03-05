@@ -125,7 +125,7 @@ onBeforeUnmount(() => {
             </div>
             <span class="w-[calc(100%-35px)]"
               ><p class="w-full line-clamp-1">{{ i.name }}</p>
-              <p class="w-full text-[.8rem] text-c17 line-clamp-1">{{ i.size }}</p>
+              <p class="w-full text-[.8rem] text-c17 line-clamp-1 ">{{ i.size }}</p>
             </span>
           </div>
         </div>

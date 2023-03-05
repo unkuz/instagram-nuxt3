@@ -68,13 +68,12 @@ onClickOutside(moreRef, () => {
           <div class="flex items-center space-x-[20px]">
             <Avatar :url="userFeed?.profile_pic_url" class="!h-[40px] !w-[40px]" />
             <div>
-              <p>{{ userFeed?.user_name }}</p>
-              <NuxtLink :to="`/${userFeed?.user_name}/`"><p>View Profile</p></NuxtLink>
+              <AtomsTagName :name="userFeed?.user_name"/>
             </div>
           </div>
           <div class="flex items-center space-x-[20px]">
             <Button
-              text="Add"
+              text="Unfollow"
               class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
             />
           </div>

@@ -6,6 +6,7 @@ import { ToastTypeEnum, useAddStore, useSlashStore, useToastStore } from '@/stor
 import { axios } from '~~/services/axios'
 import { APP_API } from '~~/apis'
 import { isImageOrVideo } from '@/utils'
+import { TagsWithInnerContent } from '@unhead/shared'
 
 type TState = IStateStore<ITimeLine[]>
 
@@ -72,7 +73,7 @@ export const useFeedStore = defineStore('feed', {
         this.data[idx].comments.unshift(data)
       }
     },
-    async addFeed(val: { media: IFilePost[]; caption: string }) {
+    async addFeed(val: { media: IFilePost[]; caption: string; tags: string[] }) {
       const addStore = useAddStore()
       const toastStore = useToastStore()
 
@@ -102,6 +103,9 @@ export const useFeedStore = defineStore('feed', {
       })
 
       formData.append('caption_text', val.caption)
+      val.tags.forEach((i) => {
+        formData.append('tags', i)
+      })
 
       try {
         await axios.post(APP_API.FEED.create, formData, {
