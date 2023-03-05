@@ -1,13 +1,10 @@
+import { axios } from '@/services/axios'
 import { defineStore } from 'pinia'
-import { inboxDetail } from '@/mocks'
-import { useAuthStore } from '@/store'
-import axios from 'axios'
 import { APP_API } from '~~/apis'
 
 export const useInboxDetailStore = defineStore('inboxDetail', {
   state: () => ({
     data: {},
-    // data: [] as typeof inboxDetail,
     detail: {
       replying: false,
     },
