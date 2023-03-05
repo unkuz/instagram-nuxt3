@@ -1,6 +1,8 @@
 import { axios } from '@/services/axios'
 import { defineStore } from 'pinia'
 import { APP_API } from '~~/apis'
+import { useInboxStore } from './list'
+import { ToastTypeEnum, useToastStore } from '@/store/toast'
 
 export const useInboxDetailStore = defineStore('inboxDetail', {
   state: () => ({
@@ -33,12 +35,26 @@ export const useInboxDetailStore = defineStore('inboxDetail', {
       }
     },
     async reply(val: string | FileList | null, id: number) {
-      console.log('VA', val)
+      const inboxStore = useInboxStore()
+      const toastStore = useToastStore()
+      try {
+        await axios.post(`${APP_API.INBOX.LIST}send/`, {
+          inbox: id,
+          message: val,
+        })
+        const { data } = await axios.get(`${APP_API.INBOX.LIST}${id}/`)
+        this.data = data
 
-      await axios.post(`${APP_API.INBOX.LIST}send/`, {
-        inbox: id,
-        message: val,
-      })
+        toastStore.pushTimmer({
+          type: ToastTypeEnum.SUCCESS,
+          content: 'Send message success',
+        })
+      } catch (e) {
+        toastStore.pushTimmer({
+          type: ToastTypeEnum.ERROR,
+          content: 'Send message error',
+        })
+      }
     },
     setReplying(val: boolean) {
       this.detail.replying = val
