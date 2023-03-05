@@ -10,6 +10,12 @@ import { gsap } from 'gsap'
 import Emoji from '@/components/Utils/Emoji.vue'
 import { useInboxDetailStore } from '@/store'
 
+interface IProps {
+  id: number
+}
+
+const props = defineProps<IProps>()
+
 let showEmoji = $ref(false)
 const emojiRef = ref<HTMLDivElement>()
 const inboxDetailStore = useInboxDetailStore()
@@ -25,13 +31,13 @@ let isRecording = $ref(false)
 const microphoneAccess = usePermission('microphone')
 const { files, open: openFileExplorer, reset } = useFileDialog()
 
-watch(files, (val) => {
-  inboxDetailStore.reply(files.value)
-})
+// watch(files, (val) => {
+//   inboxDetailStore.reply(files.value)
+// })
 
 watch(enter, async (val) => {
   if (val && focused.value) {
-    await inboxDetailStore.reply(inputValue)
+    await inboxDetailStore.reply(inputValue, props.id)
     inputValue = ''
   }
 })

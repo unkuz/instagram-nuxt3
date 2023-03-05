@@ -8,7 +8,7 @@ const route = useRoute()
 const inboxDetailStore = useInboxDetailStore()
 
 const { data, pending } = await useLazyAsyncData('inbox-detail', async () => {
-  const res = await axios.get(`${APP_API.STORY.LIST}${route.params.id}/`)
+  const res = await axios.get(`${APP_API.INBOX.LIST}${route.params.id}/`)
   return res.data
 })
 

@@ -56,6 +56,8 @@ const list = $computed(() => inboxDetailStore.dataAfterProcees)
 const replying = $computed(() => inboxDetailStore.detail.replying)
 const currentUser = $computed(() => authStore.data.user.user_name)
 
+const data = $computed(() => inboxDetailStore.data)
+
 let tl = gsap.timeline({})
 
 onMounted(() => {
@@ -100,8 +102,8 @@ const { isOverDropZone } = useDropZone(inboxRef, onDrop)
           <NuxtLink to="/inbox/"><BackIcon_ /></NuxtLink>
           <div class="flex gap-[20px]">
             <span class="relative flex items-center justify-center"
-              ><NuxtLink to="/cukznothz"
-                ><Avatar url="/image/91480011.jpg" class="h-[40px] w-[40px]"
+              ><NuxtLink :to="`/${data.recipient.user_name}/`"
+                ><Avatar :url="data.recipient.profile_pic_url" class="h-[40px] w-[40px]"
               /></NuxtLink>
               <div
                 :class="[
@@ -132,13 +134,14 @@ const { isOverDropZone } = useDropZone(inboxRef, onDrop)
         <IndividualLine
           v-for="(i, idx) in list"
           :key="idx"
-          :isReply="i.user.full_name !== currentUser"
+          :isReply="i.user.user_name !== currentUser"
           :sequent="i.sequent"
+          :avatar="i?.user?.profile_pic_url"
         >
-          <template v-if="i.message.type === 'text'" #text>
-            {{ i.message.content }}
+          <template #text>
+            {{ i.content }}
           </template>
-          <template v-if="i.message.type === 'image'" #image>
+          <!-- <template v-if="i.message.type === 'image'" #image>
             <div class="flex flex-wrap gap-[10px]">
               <nuxt-img
                 v-for="(j, idx) in i.message.content"
@@ -149,8 +152,8 @@ const { isOverDropZone } = useDropZone(inboxRef, onDrop)
                 @click="setPreview({ type: 'image', src: j.src })"
               />
             </div>
-          </template>
-          <template v-if="i.message.type === 'video'" #video>
+          </template> -->
+          <!-- <template v-if="i.message.type === 'video'" #video>
             <video
               v-for="(k, idx) in i.message.content"
               :key="idx"
@@ -158,7 +161,7 @@ const { isOverDropZone } = useDropZone(inboxRef, onDrop)
               :src="k.src"
               @click="setPreview({ type: 'video', src: k.src })"
             />
-          </template>
+          </template> -->
         </IndividualLine>
         <IndividualLine v-if="replying" :isReply="true">
           <template #special>
@@ -173,7 +176,7 @@ const { isOverDropZone } = useDropZone(inboxRef, onDrop)
         @close="previewMedia.isShow = false"
       />
 
-      <Bottom />
+      <Bottom :id="data.id" />
     </div>
   </div>
 </template>
