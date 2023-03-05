@@ -102,8 +102,8 @@ const { isOverDropZone } = useDropZone(inboxRef, onDrop)
           <NuxtLink to="/inbox/"><BackIcon_ /></NuxtLink>
           <div class="flex gap-[20px]">
             <span class="relative flex items-center justify-center"
-              ><NuxtLink :to="`/${data.recipient.user_name}/`"
-                ><Avatar :url="data.recipient.profile_pic_url" class="h-[40px] w-[40px]"
+              ><NuxtLink :to="`/${data?.recipient?.user_name}/`"
+                ><Avatar :url="data?.recipient?.profile_pic_url" class="h-[40px] w-[40px]"
               /></NuxtLink>
               <div
                 :class="[
@@ -134,8 +134,8 @@ const { isOverDropZone } = useDropZone(inboxRef, onDrop)
         <IndividualLine
           v-for="(i, idx) in list"
           :key="idx"
-          :isReply="i.user.user_name !== currentUser"
-          :sequent="i.sequent"
+          :isReply="i?.user?.user_name !== currentUser"
+          :sequent="i?.sequent"
           :avatar="i?.user?.profile_pic_url"
         >
           <template #text>
