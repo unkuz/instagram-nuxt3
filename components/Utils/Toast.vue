@@ -16,15 +16,14 @@ const close = () => toastStore.toggle(false)
       ,
       isShow ? 'bottom-0' : '-bottom-[100%]',
       type === ToastTypeEnum.ERROR && 'bg-red-500',
-      type === ToastTypeEnum.SUCCESS && 'bg-c15',
+      type === ToastTypeEnum.SUCCESS && 'bg-c15 text-c2',
       type === ToastTypeEnum.WARNING && 'bg-c11',
     ]"
   >
     <span>{{ content }}</span>
     <button @click="close">
       <svg
-        width="20px"
-        height="20px"
+        class="aspect-square w-[18px]"
         viewBox="0 0 24 24"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"

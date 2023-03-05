@@ -25,20 +25,33 @@ export const useFeedStore = defineStore('feed', {
     },
     async setToggleLike(id: number) {
       const slashStore = useSlashStore()
-      await axios.post(APP_API.FEED.like, { feed: id })
-      this.data.forEach((i: ITimeLine) => {
-        if (i.id === id) {
-          if (i.has_liked) {
-            i.has_liked = false
-            slashStore.setHideSlash()
-          } else {
-            i.has_liked = true
-            slashStore.setShowAnimation('love')
-          }
+      const toastStore = useToastStore()
+      try {
+        await axios.post(APP_API.FEED.like, { feed: id })
+        this.data.forEach((i: ITimeLine) => {
+          if (i.id === id) {
+            if (i.has_liked) {
+              i.has_liked = false
+              slashStore.setHideSlash()
+            } else {
+              i.has_liked = true
+              slashStore.setShowAnimation('love')
+            }
 
-          i.like_count = i.has_liked ? i.like_count + 1 : i.like_count - 1
-        }
-      })
+            i.like_count = i.has_liked ? i.like_count + 1 : i.like_count - 1
+            toastStore.pushTimmer({
+              type: ToastTypeEnum.SUCCESS,
+              content: i.has_liked ? 'Liked' : 'Unliked',
+            })
+          }
+        })
+      } catch (e) {
+        console.log("e",e);
+        toastStore.pushTimmer({
+          type: ToastTypeEnum.ERROR,
+          content: 'Somthing wrong happen !!',
+        })
+      }
     },
     async setToggleSave(id: number) {
       await axios.post(APP_API.FEED.save, { feed: id })
@@ -112,6 +125,10 @@ export const useFeedStore = defineStore('feed', {
           headers: { 'Content-Type': 'multipart/form-data' },
         })
         addStore.toggle(false)
+        toastStore.pushTimmer({
+          type: ToastTypeEnum.SUCCESS,
+          content: 'Post successfully',
+        })
         const { data } = await axios.get(APP_API.FEED.list)
         this.data = data
       } catch (e) {

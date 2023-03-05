@@ -18,8 +18,6 @@ const submit = (data: any) => {
   authStore.login(_pick(data as IAccountLogin, ['user_name', 'password']))
 }
 
-const messageErrorServer = $computed(() => authStore.errors?.detail)
-
 const schemaValidate = {
   user_name(val: any) {
     return true
@@ -28,19 +26,6 @@ const schemaValidate = {
     return true
   },
 }
-
-watch(
-  () => messageErrorServer,
-  (val) => {
-    toastStore.pushTimmer({
-      type: ToastTypeEnum.ERROR,
-      content: val,
-    })
-  },
-  {
-    deep: true,
-  }
-)
 </script>
 <template>
   <div class="flex h-screen w-screen items-center justify-center">
