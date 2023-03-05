@@ -44,8 +44,6 @@ export const useInboxDetailStore = defineStore('inboxDetail', {
         })
         const { data } = await axios.get(`${APP_API.INBOX.LIST}${id}/`)
         this.data = data
-
- 
       } catch (e) {
         toastStore.pushTimmer({
           type: ToastTypeEnum.ERROR,

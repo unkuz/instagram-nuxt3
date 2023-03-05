@@ -2,20 +2,10 @@
 import BackIcon_ from '@/assets/svg/mingcute/back.svg'
 import EditIcon_ from '@/assets/svg/mingcute/edit.svg'
 import ListUser from '@/components/Organisms/Inbox/List/ListUser.vue'
-import { axios } from '@/services/axios'
 import { useInboxStore } from '@/store'
-import { APP_API } from '~~/apis'
 import IndividualLine from './IndividualLine.vue'
 
 const inboxStore = useInboxStore()
-
-const { data, pending } = await useLazyAsyncData('inbox-list', async () => {
-  const res = await axios.get(APP_API.INBOX.LIST)
-  return res.data
-})
-watchEffect(() => {
-  inboxStore.save(unref(data))
-})
 
 const inboxList = $computed(() => inboxStore.data)
 </script>
@@ -60,7 +50,7 @@ const inboxList = $computed(() => inboxStore.data)
         </div>
       </div>
 
-      <!-- <ListUser /> -->
+      <ListUser />
 
       <div
         class="h-[calc(100vh-60px-45px-120px)] overflow-scroll md:h-[calc(100vh-84px-60px-120px)]"

@@ -5,9 +5,9 @@ import User from './User.vue'
 import { useInboxListUserStore } from '@/store'
 
 const inboxListUserStore = useInboxListUserStore()
-const listUser = $computed(() => inboxListUserStore.data)
+const listUser = computed(() => inboxListUserStore.data)
 
-const [container] = useKeenSlider({
+const [sliderRef, slider] = useKeenSlider({
   breakpoints: {
     '(min-width: 385px)': {
       slides: {
@@ -36,10 +36,14 @@ const [container] = useKeenSlider({
   dragSpeed: 1.2,
   renderMode: 'precision',
 })
+
+watch(listUser, () => {
+  slider.value?.update()
+})
 </script>
 
 <template>
-  <div ref="container" class="keen-slider h-[120px] pt-[20px]">
+  <div ref="sliderRef" class="keen-slider h-[120px] pt-[20px]">
     <div v-for="i in listUser" :key="i.id" class="keen-slider__slide">
       <User v-bind="i" />
     </div>

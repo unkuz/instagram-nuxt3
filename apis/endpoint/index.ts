@@ -18,10 +18,11 @@ export const APP_API = {
   },
   AUTH: {
     LOGIN: '/login/',
-    CREATE:'/user/'
+    CREATE: '/user/',
   },
   USER: {
     detail: '/user/',
+    LIST: '/user/',
   },
   STORY: {
     LIST: '/story/',
@@ -32,7 +33,7 @@ export const APP_API = {
   REEL: {
     LIST: '/reel/',
   },
-  INBOX:{
-    LIST:'/message/'
-  }
+  INBOX: {
+    LIST: '/message/',
+  },
 }
