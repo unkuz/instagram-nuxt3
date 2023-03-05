@@ -74,6 +74,7 @@ const inboxList = $computed(() => inboxStore.data)
             :preview_lastest_message="i?.messages?.[0]?.content"
             :created_at="i?.messages?.[0]?.created_at"
             :message_not_seen_count="1"
+            :id="i.id"
           />
         </template>
         <template v-else> Empty </template>

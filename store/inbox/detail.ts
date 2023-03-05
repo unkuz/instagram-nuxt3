@@ -26,6 +26,11 @@ export const useInboxDetailStore = defineStore('inboxDetail', {
     },
   },
   actions: {
+    save(data:any) {
+      if (data) {
+        this.data = data
+      }
+    },
     async reply(val: string | FileList | null) {
       if (_isString(val) && !val.trim()) {
         return

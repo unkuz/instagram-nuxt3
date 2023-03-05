@@ -9,13 +9,14 @@ interface IProps {
   preview_lastest_message: string
   created_at: string
   message_not_seen_count: number
+  id: number
 }
 
 defineProps<IProps>()
 </script>
 <template>
   <div>
-    <NuxtLink to="/inbox/5723987">
+    <NuxtLink :to="`/inbox/${id}`">
       <div
         class="duration-0 flex w-full cursor-pointer items-center justify-between rounded-2xl p-[10px] hover:bg-c22 active:bg-c20 dark:hover:bg-c20 md:duration-1000"
       >
