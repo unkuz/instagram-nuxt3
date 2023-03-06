@@ -15,5 +15,5 @@ export enum TypePostEnum {
   FEED,
   REEL,
   STORY,
-  NONE
+  NONE,
 }

@@ -4,11 +4,14 @@ import ReelCap from '@/components/Atoms/Video/ReelCap.vue'
 import ReelKeyBoardShortcut from '@/components/Utils/ReelKeyBoardShortcut.vue'
 import { APP_CONFIGS } from '@/configs'
 import { useReelStore } from '@/store'
-import { IActiveKey } from '@/type'
+import { IActiveKey, IPending } from '@/type'
 import { useIdle, useTemplateRefsList } from '@vueuse/core'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import Video from './Video.vue'
 import TopBar from './M/TopBar.vue'
+import ReelSkeleton from '@/components/Skeleton/Reel/index.vue'
+
+defineProps<IPending>()
 
 let currentVideoOnScreen: HTMLVideoElement
 
@@ -106,17 +109,20 @@ onBeforeUnmount(() => {
       ref="container"
       class="keen-slider flex h-[calc(100vh-65px)] flex-col !flex-nowrap items-center md:h-[calc(100vh-84px)]"
     >
-      <div
-        v-for="i in reels"
-        :key="i.id"
-        class="keen-slider__slide flex !w-auto items-start justify-center bg-c19 md:bg-transparent"
-      >
-        <div ref="containvideoRefs">
-          <Video :src="i?.videos?.[0]?.src" />
+      <ReelSkeleton v-if="isPending" />
+      <template v-else>
+        <div
+          v-for="i in reels"
+          :key="i.id"
+          class="keen-slider__slide flex !w-auto items-start justify-center bg-c19 md:bg-transparent"
+        >
+          <div ref="containvideoRefs">
+            <Video :src="i?.videos?.[0]?.src" />
+          </div>
+          <ReelCap :user="i.user" :caption="i.caption_text" />
+          <ReelAction :totalLike="0" :totalComment="0" />
         </div>
-        <ReelCap :user="i.user" :caption="i.caption_text" />
-        <ReelAction :totalLike="0" :totalComment="0" />
-      </div>
+      </template>
     </div>
     <ReelKeyBoardShortcut :active-key="activeKey" />
   </div>

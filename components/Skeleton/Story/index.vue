@@ -68,15 +68,17 @@ const [container] = useKeenSlider({
             class="mx-[8px] inline-block max-w-[74px] select-none overflow-hidden text-ellipsis whitespace-nowrap sm:cursor-pointer"
           >
             <div
-              class="mx-auto flex aspect-square h-[66px] w-[66px] flex-col items-center overflow-hidden rounded-[50%] skeleton p-[3px]"
+              class="skeleton mx-auto flex aspect-square h-[66px] w-[66px] flex-col items-center overflow-hidden rounded-[50%] p-[3px]"
             >
               <div class="h-full w-full rounded-[50%] bg-c1 p-[2px] dark:bg-c19">
                 <Avatar :size="SizeAvatarEnum.M" skeleton />
               </div>
             </div>
             <p
-              class="mt-[5px] overflow-hidden text-ellipsis whitespace-nowrap text-center text-xs h-[15px] skeleton text-transparent"
-            >hehe</p>
+              class="skeleton mt-[5px] h-[15px] overflow-hidden text-ellipsis whitespace-nowrap text-center text-xs text-transparent"
+            >
+              hehe
+            </p>
           </div>
         </div>
       </div>

@@ -19,6 +19,6 @@ watchEffect(() => {
 
 <template>
   <div>
-    <Reel class="text-[.8rem]" />
+    <Reel class="text-[.8rem]" :isPending="pending" />
   </div>
 </template>
