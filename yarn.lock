@@ -2812,10 +2812,10 @@
   resolved "https://registry.yarnpkg.com/@nuxt/devalue/-/devalue-2.0.0.tgz#c7bd7e9a516514e612d5d2e511ffc399e0eac322"
   integrity sha512-YBI/6o2EBz02tdEJRBK8xkt3zvOFOWlLBf7WKYGBsSYSRtjjgrqPe2skp6VLLmKx5WbHHDNcW+6oACaurxGzeA==
 
-"@nuxt/image-edge@1.0.0-27954023.4cee565":
-  version "1.0.0-27954023.4cee565"
-  resolved "https://registry.yarnpkg.com/@nuxt/image-edge/-/image-edge-1.0.0-27954023.4cee565.tgz#422f1671ae786925140215bac6639ed174e6af79"
-  integrity sha512-HBanm2MKV1Ac1hQYJz49ajUCJRIol5clbgrYTiScWAM0UXCyk5YIHGTb4x2w3aj3BRsWZlrB0UtA1O/QmSPu8Q==
+"@nuxt/image-edge@1.0.0-27968280.9739e4d":
+  version "1.0.0-27968280.9739e4d"
+  resolved "https://registry.yarnpkg.com/@nuxt/image-edge/-/image-edge-1.0.0-27968280.9739e4d.tgz#b62327070c07d2d5941e0eb975a33321ed0a339a"
+  integrity sha512-fT0jxdaQi4Oh8BW6vXfTCW4ile18cZeB6t+U51U2EsxaiYKLtob4z2Z3XYJ+LGkOsFR4vooa8wnHZStHqIyTOg==
   dependencies:
     "@nuxt/kit" "^3.1.1"
     consola "^2.15.3"
@@ -2973,12 +2973,12 @@
     unimport "^2.2.4"
     untyped "^1.2.2"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.3.0-27965718.b73ca9143":
-  version "3.3.0-27965718.b73ca9143"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.3.0-27965718.b73ca9143.tgz#8aedaae65b5affb30a1ad1399d5ec791500d8e09"
-  integrity sha512-8MWLV9x1k6Sz09Tf/liFptsgTiCpRadKz8hnDbIOq2DCGe7LLEMDfke2x0kDAhQA2+a9yI2txgJqw+1aVP1Yog==
+"@nuxt/kit@npm:@nuxt/kit-edge@3.3.0-27968381.129bb4fa3":
+  version "3.3.0-27968381.129bb4fa3"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.3.0-27968381.129bb4fa3.tgz#d70de2d88aebb966bf3f87b43ecffb296c156abe"
+  integrity sha512-XlGW5S/jaSqowxcok77LpLPu4vDtHjaXwNkttvFKBEhjNspaqMuaGLlxvAEsIOK7uJmsGTl2BnCZvQOmIRxu2g==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.0-27965718.b73ca9143"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.0-27968381.129bb4fa3"
     c12 "^1.1.2"
     consola "^2.15.3"
     defu "^6.1.2"
@@ -3124,10 +3124,10 @@
     unimport "^2.2.4"
     untyped "^1.2.2"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.3.0-27965718.b73ca9143":
-  version "3.3.0-27965718.b73ca9143"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.3.0-27965718.b73ca9143.tgz#d210a371158380307617f25e5e84c4a956e9f364"
-  integrity sha512-2v+CXFbkQvCw+Dz8JaV3cMk6gmPn2hkPh9NM7Z805IsCfc27O7+MkcWuYWOgNRc4ymfrUlr7d7+WwwjXpagjzA==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.3.0-27968381.129bb4fa3":
+  version "3.3.0-27968381.129bb4fa3"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.3.0-27968381.129bb4fa3.tgz#66e16048e0977d280d8b411bcb666324e81c6006"
+  integrity sha512-LB/Pih47scuGLTX4XlLgnfXlse2GuOWhKBcqZULsoa57XOBaTQ7++ohTLLcWkUgdaWp24c7ePAjd1OMnEQ4KgQ==
   dependencies:
     c12 "^1.1.2"
     create-require "^1.1.1"
@@ -3169,13 +3169,13 @@
     rc9 "^2.0.1"
     std-env "^3.3.2"
 
-"@nuxt/test-utils-edge@3.3.0-27965718.b73ca9143":
-  version "3.3.0-27965718.b73ca9143"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.3.0-27965718.b73ca9143.tgz#7b04e145545c4419a75c120c4dfdc0601d21c508"
-  integrity sha512-jhKzjdl608mUChfZwq+uRGH41WJexT/mPIPhJ8X0gxWUcpymqZF6EbOYGmTXejyaY0V4K0e8BRyL0+7JRAJvKw==
+"@nuxt/test-utils-edge@3.3.0-27968381.129bb4fa3":
+  version "3.3.0-27968381.129bb4fa3"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.3.0-27968381.129bb4fa3.tgz#cd739a8135303796b77a1fa2d084268d538d0623"
+  integrity sha512-fcGwm8fa9nvJu8VyhRVTnuV5/B0neBKT7W8/D52FTlzfkeAqTRYjf70jun7ng0NkaSjlM6L8Lsku+vDirZ23RQ==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.3.0-27965718.b73ca9143"
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.0-27965718.b73ca9143"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.3.0-27968381.129bb4fa3"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.0-27968381.129bb4fa3"
     consola "^2.15.3"
     defu "^6.1.2"
     execa "^7.0.0"
@@ -3312,14 +3312,14 @@
     pathe "^1.0.0"
     ufo "^1.0.0"
 
-"@nuxtjs/html-validator@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/html-validator/-/html-validator-1.2.3.tgz#3d411a0f68595d6ebe16d207bd20da3100792da2"
-  integrity sha512-SDoqoi3QqcaoFl8yW5Kdqon5rbAgUWZu1cDUEZR85WBl3T2BddXJazrkIg7gq0r2G/hrxSVDHUtaVYvKhq+ILw==
+"@nuxtjs/html-validator@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/html-validator/-/html-validator-1.2.4.tgz#2a5ee6fc3de09a12f9ec6a5a7c930ffd988006ce"
+  integrity sha512-IKy/+lR516ls7gXbXsCzLKdIhzyjxo5b7//6yZ8hNIvaLljb3yyCTiEM139B7RchIvIyBpf0GJ5GKWn2rPmRhw==
   dependencies:
-    "@nuxt/kit" "^3.0.0"
+    "@nuxt/kit" "^3.2.3"
     chalk "^5.1.2"
-    html-validate "~7.10.1"
+    html-validate "~7.13.0"
     pathe "^1.0.0"
     prettier "^2.7.1"
     std-env "^3.3.1"
@@ -8365,10 +8365,10 @@ html-tags@^3.1.0:
   resolved "https://registry.yarnpkg.com/html-tags/-/html-tags-3.2.0.tgz#dbb3518d20b726524e4dd43de397eb0a95726961"
   integrity sha512-vy7ClnArOZwCnqZgvv+ddgHgJiAFXe3Ge9ML5/mBctVJoUoYPCdxVucOywjDARn6CVoh3dRSFdPHy2sX80L0Wg==
 
-html-validate@~7.10.1:
-  version "7.10.1"
-  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-7.10.1.tgz#8ac955e1f93206164822225c9b4772dae08d303e"
-  integrity sha512-2MjthTcMfqAZ8V1YyXshINGsdmPKc3RW9IKJ3kgfjXq59BuvSVM+vBhfOu0dJvlpRVH117vZ5JImYNsMfca3nA==
+html-validate@~7.13.0:
+  version "7.13.2"
+  resolved "https://registry.yarnpkg.com/html-validate/-/html-validate-7.13.2.tgz#fef73c35ff6deccba5fc6573658c47bae1664df4"
+  integrity sha512-ZUinzQ/a9zC0vP3uoCAKhHWogkCCK8KXcl5gMd+d8esuCl+p5d8P4zL/qSuvhc+zJ3qiIFyDaZ/wyUE1A78vNA==
   dependencies:
     "@babel/code-frame" "^7.10.0"
     "@html-validate/stylish" "^3.0.0"
