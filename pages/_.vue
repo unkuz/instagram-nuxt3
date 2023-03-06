@@ -71,7 +71,7 @@ useWindowResizeCallback(calcLeftSuggestion)
         <Feed :isPending="pendingTimeline" />
       </div>
       <div ref="rightRef" class="fixed left-0 top-[84px] hidden w-[293px] text-sm lg:block">
-        <Suggestions :isPending="false" />
+        <Suggestions :isPending="pendingSugestion" />
       </div>
     </div>
     <NuxtPage />

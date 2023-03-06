@@ -9,6 +9,7 @@ import Item from './Item.vue'
 import SuggestionSkl from '@/components/Skeleton/Suggestion.vue'
 import { BASE_URL_API } from '~~/apis'
 import TagName from '@/components/Atoms/TagName.vue'
+import SuggestionSkeleton from '@/components/Skeleton/Suggestion/index.vue'
 
 defineProps<IPending>()
 
@@ -67,7 +68,8 @@ const logout = () => {
 
 <template>
   <div>
-    <div ref="sugestionRef" v-if="!isPending">
+    <SuggestionSkeleton v-if="isPending" />
+    <div ref="sugestionRef" v-else>
       <div class="mt-[26px] mb-[22px] flex h-[56px] items-center justify-between">
         <NuxtLink :to="`/${userName}/`"><Avatar :size="SizeAvatarEnum.M" :url="avatar" /></NuxtLink>
 
@@ -134,6 +136,5 @@ const logout = () => {
         </NuxtLink>
       </div>
     </div>
-    <SuggestionSkl v-else />
   </div>
 </template>
