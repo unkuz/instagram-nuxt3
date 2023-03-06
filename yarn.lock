@@ -2973,12 +2973,12 @@
     unimport "^2.2.4"
     untyped "^1.2.2"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.3.0-27968381.129bb4fa3":
-  version "3.3.0-27968381.129bb4fa3"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.3.0-27968381.129bb4fa3.tgz#d70de2d88aebb966bf3f87b43ecffb296c156abe"
-  integrity sha512-XlGW5S/jaSqowxcok77LpLPu4vDtHjaXwNkttvFKBEhjNspaqMuaGLlxvAEsIOK7uJmsGTl2BnCZvQOmIRxu2g==
+"@nuxt/kit@npm:@nuxt/kit-edge@3.3.0-27968571.4f61e36c6":
+  version "3.3.0-27968571.4f61e36c6"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.3.0-27968571.4f61e36c6.tgz#beeef2c534493a95073c28f9bfd8c3986b615a18"
+  integrity sha512-CzFNu3+wAjM5gDQcQDYTIpWJChHm4iXVZyJ/bNncfQEuKncootp8Tb155Wg9jZQ7NZXU15cRebUQARQXpBnYug==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.0-27968381.129bb4fa3"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.0-27968571.4f61e36c6"
     c12 "^1.1.2"
     consola "^2.15.3"
     defu "^6.1.2"
@@ -3124,10 +3124,10 @@
     unimport "^2.2.4"
     untyped "^1.2.2"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.3.0-27968381.129bb4fa3":
-  version "3.3.0-27968381.129bb4fa3"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.3.0-27968381.129bb4fa3.tgz#66e16048e0977d280d8b411bcb666324e81c6006"
-  integrity sha512-LB/Pih47scuGLTX4XlLgnfXlse2GuOWhKBcqZULsoa57XOBaTQ7++ohTLLcWkUgdaWp24c7ePAjd1OMnEQ4KgQ==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.3.0-27968571.4f61e36c6":
+  version "3.3.0-27968571.4f61e36c6"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.3.0-27968571.4f61e36c6.tgz#3b614e88476830cd676198b0a4bae5c2c07d8f89"
+  integrity sha512-sOBjICjvDVObHm77WcPJ7Lt0MiRDvo0wbI/1kjbFUoZgNGzwlr7AJKgz8fGacAxGphi8jhuyAd5uVC0AvVqu8w==
   dependencies:
     c12 "^1.1.2"
     create-require "^1.1.1"
@@ -3169,13 +3169,13 @@
     rc9 "^2.0.1"
     std-env "^3.3.2"
 
-"@nuxt/test-utils-edge@3.3.0-27968381.129bb4fa3":
-  version "3.3.0-27968381.129bb4fa3"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.3.0-27968381.129bb4fa3.tgz#cd739a8135303796b77a1fa2d084268d538d0623"
-  integrity sha512-fcGwm8fa9nvJu8VyhRVTnuV5/B0neBKT7W8/D52FTlzfkeAqTRYjf70jun7ng0NkaSjlM6L8Lsku+vDirZ23RQ==
+"@nuxt/test-utils-edge@3.3.0-27968571.4f61e36c6":
+  version "3.3.0-27968571.4f61e36c6"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.3.0-27968571.4f61e36c6.tgz#2b97fdb0c39d0c37379a93edb8cf2fbd3ff8fb9f"
+  integrity sha512-IjWZSw0Eg69Dslj0T1oqkQc0lxA1PFbW1b74E/G6HTJ2zE3Wf2hAxC63ChoF3S8+SIOsKk7MUZlrQx5nErDjCg==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.3.0-27968381.129bb4fa3"
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.0-27968381.129bb4fa3"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.3.0-27968571.4f61e36c6"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.0-27968571.4f61e36c6"
     consola "^2.15.3"
     defu "^6.1.2"
     execa "^7.0.0"
@@ -3606,49 +3606,49 @@
     estree-walker "^2.0.2"
     picomatch "^2.3.1"
 
-"@sentry/core@7.40.0":
-  version "7.40.0"
-  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-7.40.0.tgz#1013ddf576ed3a4be9abf2b8e8b0c95ab7e3d7bb"
-  integrity sha512-OPAobQG0GTY++r5LWUcOA1lS+2TY2Lmw/i5s4kL9WbY+f08dbLNEGNBObY7/V98OL4f7OG+nWaPFybgM7kqUTQ==
+"@sentry/core@7.41.0":
+  version "7.41.0"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-7.41.0.tgz#a4a8291ef4e65f40c28fc38318e7dae721d5d609"
+  integrity sha512-yT3wl3wMfPymstIZRWNjuov4xhieIEPD0z9MIW9VmoemqkD5BEZsgPuvGaVIyQVMyx61GsN4H4xd0JCyNqNvLg==
   dependencies:
-    "@sentry/types" "7.40.0"
-    "@sentry/utils" "7.40.0"
+    "@sentry/types" "7.41.0"
+    "@sentry/utils" "7.41.0"
     tslib "^1.9.3"
 
-"@sentry/node@^7.40.0":
-  version "7.40.0"
-  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-7.40.0.tgz#4dd3240acea5dabac662588716d24efaedb3e1e6"
-  integrity sha512-S2pcLBUsCg3+WYlyQbXKPey3H1yaZPt9fpJTPAoabbidYXweBAbtFjSCRwPFwCQMzWusWxlYEwWRT77C07pHVg==
+"@sentry/node@^7.41.0":
+  version "7.41.0"
+  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-7.41.0.tgz#41d33f2fec547dce4962db401c08ab672625ca62"
+  integrity sha512-JAz0TAVvq4z7dNrDBECLB5Fd4bGDGXSOR1f63iV/8fUNsZPqqdh8LXnctPXTpcTjsdlfmjUL1CC2RQ6yKYMtTQ==
   dependencies:
-    "@sentry/core" "7.40.0"
-    "@sentry/types" "7.40.0"
-    "@sentry/utils" "7.40.0"
+    "@sentry/core" "7.41.0"
+    "@sentry/types" "7.41.0"
+    "@sentry/utils" "7.41.0"
     cookie "^0.4.1"
     https-proxy-agent "^5.0.0"
     lru_map "^0.3.3"
     tslib "^1.9.3"
 
-"@sentry/tracing@^7.40.0":
-  version "7.40.0"
-  resolved "https://registry.yarnpkg.com/@sentry/tracing/-/tracing-7.40.0.tgz#4a6bb37febe4d65901be227bed7a0b8743d59c31"
-  integrity sha512-y1SNwlFEC7a2ThtWbT/KbnAVecAWyIeKiO/IRgyZSdcj1z4CliADKNQmkUhnDlLy8jV1ARGuZ1DvsuPNlWyDfw==
+"@sentry/tracing@^7.41.0":
+  version "7.41.0"
+  resolved "https://registry.yarnpkg.com/@sentry/tracing/-/tracing-7.41.0.tgz#28f57667a13b95cb8bce5af0809e7727b645e6b7"
+  integrity sha512-zh1ceuwQ8NzE5n8r4y78QrYD/alJl4qlkiEX9lAL6PnLMWJkVWM02BBu+x75yPFWSSDfDA/kZ9WqKkHNdjGpDw==
   dependencies:
-    "@sentry/core" "7.40.0"
-    "@sentry/types" "7.40.0"
-    "@sentry/utils" "7.40.0"
+    "@sentry/core" "7.41.0"
+    "@sentry/types" "7.41.0"
+    "@sentry/utils" "7.41.0"
     tslib "^1.9.3"
 
-"@sentry/types@7.40.0":
-  version "7.40.0"
-  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-7.40.0.tgz#27b012b59d593132e413018773f0a045d68075d7"
-  integrity sha512-dIbqBenbmDx1F8pvfC11C88J83ecwumUhV+YOIxcmVd1fmlPF2hXWZ01+NTkTDkCu341sJx4wPQogByFy8FwGA==
+"@sentry/types@7.41.0":
+  version "7.41.0"
+  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-7.41.0.tgz#3d53432a3d7693a31b606d3083ab9203c56f5aec"
+  integrity sha512-4z9VdObynwd64i0VHCqkeIAHmsFzapL21qN41Brzb7jY/eGxjn/0rxInDGH+vkoE9qacGqiYfWj4vRNPLsC/bw==
 
-"@sentry/utils@7.40.0":
-  version "7.40.0"
-  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-7.40.0.tgz#0986f2e93b1d42b1e1aeb077941226e3d76419c4"
-  integrity sha512-ZdCbTpAXPiVVfvNJVftnDhsctOui71MDUhVIdLkgg4Cuic+WHGPRmmZ+H6uZdp7vRaeB+Uvnn5+t2iSAVo/mAA==
+"@sentry/utils@7.41.0":
+  version "7.41.0"
+  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-7.41.0.tgz#54224dba668dd8c8feb0ff1b4f39938b8fdefd3b"
+  integrity sha512-SL+MGitvkakbkrOTb48rDuJp9GYx/veB6EOzYygh49+zwz4DGM7dD4/rvf/mVlgmXUzPgdGDgkVmxgX3nT7I7g==
   dependencies:
-    "@sentry/types" "7.40.0"
+    "@sentry/types" "7.41.0"
     tslib "^1.9.3"
 
 "@shuding/opentype.js@1.4.0-beta.0":
@@ -3659,10 +3659,10 @@
     fflate "^0.7.3"
     string.prototype.codepointat "^0.2.1"
 
-"@sidebase/nuxt-auth@^0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@sidebase/nuxt-auth/-/nuxt-auth-0.4.2.tgz#348bb2e233faeb67b080f80f577f768b73a5c66f"
-  integrity sha512-lsHKIOukfxFOWF54/h0I2HujYoEQzGHWpHWb9yI84R7UPEvpONWAWoQ1ozWXnf1MDXQobsrJ5iTB22fI/xmxoQ==
+"@sidebase/nuxt-auth@^0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@sidebase/nuxt-auth/-/nuxt-auth-0.4.3.tgz#7854f303001565ad114e5b1c3c8266b1ffe8fa96"
+  integrity sha512-j2YGxErbTlCY+wC8XqKqEKaQC/ULHU8qiGrvyF01K8rnOVIBbR01XJtzkZUgsHaQbMIWeZXe09mnX5J2SbuP3A==
   dependencies:
     "@nuxt/kit" "^3.1.2"
     defu "^6.1.1"
@@ -11869,10 +11869,10 @@ pinia@>=2.0.31:
     "@vue/devtools-api" "^6.5.0"
     vue-demi "*"
 
-pinia@^2.0.32:
-  version "2.0.32"
-  resolved "https://registry.yarnpkg.com/pinia/-/pinia-2.0.32.tgz#93a12df4416566c1bb49225a078fe20b982350be"
-  integrity sha512-8Tw4OrpCSJ028UUyp0gYPP/wyjigLoEceuO/x1G+FlHVf73337e5vLm4uDmrRIoBG1hvaed/eSHnrCFjOc4nkA==
+pinia@^2.0.33:
+  version "2.0.33"
+  resolved "https://registry.yarnpkg.com/pinia/-/pinia-2.0.33.tgz#b70065be697874d5824e9792f59bd5d87ddb5e7d"
+  integrity sha512-HOj1yVV2itw6rNIrR2f7+MirGNxhORjrULL8GWgRwXsGSvEqIQ+SE0MYt6cwtpegzCda3i+rVTZM+AM7CG+kRg==
   dependencies:
     "@vue/devtools-api" "^6.5.0"
     vue-demi "*"
