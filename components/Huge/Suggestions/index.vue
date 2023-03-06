@@ -7,7 +7,7 @@ import { IPending, SizeAvatarEnum } from '@/type'
 import { getCurrentYear } from '@/utils'
 import Item from './Item.vue'
 import SuggestionSkl from '@/components/Skeleton/Suggestion.vue'
-import { BASE_URL_API } from '~~/apis'
+import { BASE_URL_API } from '@/apis'
 import TagName from '@/components/Atoms/TagName.vue'
 import SuggestionSkeleton from '@/components/Skeleton/Suggestion/index.vue'
 

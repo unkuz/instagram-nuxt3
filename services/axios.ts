@@ -1,6 +1,6 @@
 import _axios from 'axios'
-import { BASE_URL_API } from '~~/apis'
-import { useAuthStore } from '~~/store'
+import { BASE_URL_API } from '@/apis'
+import { useAuthStore } from '@/store'
 
 export const axios = _axios.create({
   baseURL: BASE_URL_API,

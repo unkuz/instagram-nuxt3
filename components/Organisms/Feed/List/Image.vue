@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useDoubleClick } from '@/composables'
 import { useFeedStore } from '@/store'
-import { BASE_URL_API } from '~~/apis'
+import { BASE_URL_API } from '@/apis'
 
 interface IProps {
   src: string

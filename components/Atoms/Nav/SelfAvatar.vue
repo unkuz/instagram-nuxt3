@@ -2,7 +2,7 @@
 import Avatar from '@/components/Atoms/Avatar.vue'
 import { useAuthStore } from '@/store'
 import { SizeAvatarEnum } from '@/type'
-import { BASE_URL_API } from '~~/apis'
+import { BASE_URL_API } from '@/apis'
 
 interface IconProps {
   isSelect: boolean

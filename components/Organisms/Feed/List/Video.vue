@@ -8,7 +8,7 @@ import { useFeedStore } from '@/store'
 import { useMediaControls } from '@vueuse/core'
 import MiniPlayerIcon_ from '@/assets/svg/mingcute/mini_player.svg'
 import ExpandPlayerIcon_ from '@/assets/svg/mingcute/expand_player.svg'
-import { BASE_URL_API } from '~~/apis'
+import { BASE_URL_API } from '@/apis'
 
 interface IProps {
   video: any

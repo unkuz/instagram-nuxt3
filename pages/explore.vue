@@ -2,7 +2,7 @@
 import Explore from '@/components/Organisms/Explore/index.vue'
 import { useExploreStore } from '@/store'
 import { axios } from '@/services/axios'
-import { APP_API } from '~~/apis'
+import { APP_API } from '@/apis'
 import ExploreSkeleton from '@/components/Skeleton/Explore/index.vue'
 
 const exploreStore = useExploreStore()

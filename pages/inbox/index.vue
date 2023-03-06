@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import InboxList from '~~/components/Organisms/Inbox/List/index.vue'
-import { useInboxListUserStore, useInboxStore } from '~~/store'
+import InboxList from '@/components/Organisms/Inbox/List/index.vue'
+import { useInboxListUserStore, useInboxStore } from '@/store'
 import { axios } from '@/services/axios'
-import { APP_API } from '~~/apis'
+import { APP_API } from '@/apis'
 
 const inboxStore = useInboxStore()
 const inboxListUserStore = useInboxListUserStore()

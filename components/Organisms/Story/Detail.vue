@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useStoryDetailStore } from '@/store/story/detail'
 import { useKeenSlider } from 'keen-slider/vue.es'
-import { BASE_URL_API } from '~~/apis'
+import { BASE_URL_API } from '@/apis'
 
 const route = useRoute()
 

@@ -4,7 +4,7 @@ import TagName from '@/components/Atoms/TagName.vue'
 import { axios } from '@/services/axios'
 import { useAuthStore, useProfileStore } from '@/store'
 import { SizeAvatarEnum } from '@/type'
-import { APP_API } from '~~/apis'
+import { APP_API } from '@/apis'
 
 const route = useRoute()
 const profileStore = useProfileStore()

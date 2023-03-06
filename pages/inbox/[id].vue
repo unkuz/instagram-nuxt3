@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import Detail from '@/components/Organisms/Inbox/Detail/Detail.vue'
 import { axios } from '@/services/axios'
-import { APP_API } from '~~/apis'
-import { useInboxDetailStore } from '~~/store'
+import { APP_API } from '@/apis'
+import { useInboxDetailStore } from '@/store'
 
 const route = useRoute()
 const inboxDetailStore = useInboxDetailStore()

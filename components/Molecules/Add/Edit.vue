@@ -3,9 +3,9 @@ import Avatar from '@/components/Atoms/Avatar.vue'
 import TagName from '@/components/Atoms/TagName.vue'
 import { useMagicKeys, useTextareaAutosize } from '@vueuse/core'
 import { useKeenSlider } from 'keen-slider/vue.es'
-import { BASE_URL_API } from '~~/apis'
-import { ToastTypeEnum, useAuthStore, useFeedStore, useToastStore } from '~~/store'
-import { IFilePost, SizeAvatarEnum } from '~~/type'
+import { BASE_URL_API } from '@/apis'
+import { ToastTypeEnum, useAuthStore, useFeedStore, useToastStore } from '@/store'
+import { IFilePost, SizeAvatarEnum } from '@/type'
 
 interface IProps {
   listFile: IFilePost[]

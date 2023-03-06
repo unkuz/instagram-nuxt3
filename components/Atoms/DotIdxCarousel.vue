@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { APP_CONFIGS } from '~~/configs'
+import { APP_CONFIGS } from '@/configs'
 
 interface IProps {
   mediaArr: any[]

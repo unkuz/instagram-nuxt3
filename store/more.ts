@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { axios } from '@/services/axios'
-import { APP_API } from '~~/apis'
+import { APP_API } from '@/apis'
 import { useFeedStore } from './feed/list'
 import { ToastTypeEnum, useToastStore } from './toast'
 

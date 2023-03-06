@@ -3,7 +3,7 @@ import LikeIcon_ from '@/assets/svg/like_icon.svg'
 import ShareIcon_ from '@/assets/svg/share_icon.svg'
 import ViewPostIcon_ from '@/assets/svg/view_post_icon.svg'
 import UnlikeIcon from '@/components/Atoms/UnlikeIcon.vue'
-import { useSlashStore } from '~~/store'
+import { useSlashStore } from '@/store'
 
 interface IProps {
   totalLike: number

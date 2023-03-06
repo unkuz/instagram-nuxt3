@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Avatar from '~~/components/Atoms/Avatar.vue';
-import TimeFromNow from '~~/components/Atoms/TimeFromNow.vue';
+import Avatar from '@/components/Atoms/Avatar.vue';
+import TimeFromNow from '@/components/Atoms/TimeFromNow.vue';
 </script>
 <template>
   <div class="mx-auto flex w-full py-[10px] md:w-[484px]">

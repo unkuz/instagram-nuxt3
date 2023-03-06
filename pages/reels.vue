@@ -3,7 +3,7 @@ import { APP_API } from '@/apis'
 import Reel from '@/components/Organisms/Reel/index.vue'
 import { IStory, ITimeLine } from '@/models'
 import { axios } from '@/services/axios'
-import { useReelStore } from '~~/store'
+import { useReelStore } from '@/store'
 
 const reelStore = useReelStore()
 

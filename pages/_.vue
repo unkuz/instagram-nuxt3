@@ -7,7 +7,7 @@ import StorySkeleton from '@/components/Skeleton/Story/index.vue'
 import { useWindowResizeCallback } from '@/composables'
 import { IStory, ITimeLine } from '@/models'
 import { useFeedStore, useStoriesStore, useSuggestionStore, useThemeStore } from '@/store'
-import { axios } from '~~/services/axios'
+import { axios } from '@/services/axios'
 
 const rightRef = $ref<HTMLElement>()
 const leftRef = $ref<HTMLElement>()

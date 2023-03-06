@@ -2,7 +2,7 @@
 import Emoji from '@/components/Utils/Emoji.vue'
 import { useAuthStore, usePostDetailStore } from '@/store'
 import { onClickOutside } from '@vueuse/core'
-import { BASE_URL_API } from '~~/apis'
+import { BASE_URL_API } from '@/apis'
 
 interface IProps {
   id: number

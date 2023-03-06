@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
-import { APP_API } from '~~/apis'
-import { axios } from '~~/services/axios'
+import { APP_API } from '@/apis'
+import { axios } from '@/services/axios'
 import { ToastTypeEnum, useToastStore } from '../toast'
 
 export const useInboxListUserStore = defineStore('listUser', {

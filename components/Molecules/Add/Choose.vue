@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { TypePostEnum } from '~~/type'
+import { TypePostEnum } from '@/type'
 
 let choose = $ref<TypePostEnum>(TypePostEnum.NONE)
 

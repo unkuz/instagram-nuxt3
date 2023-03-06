@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import BackDrop from '@/components/Utils/BackDrop.vue'
-import { useFeedStore } from '~~/store'
+import { useFeedStore } from '@/store'
 import Head from '@/components/Organisms/Feed/List/Head.vue'
 import Caption from '@/components/Organisms/Feed/List/Caption.vue'
 import TimeFromNow from '@/components/Atoms/TimeFromNow.vue'

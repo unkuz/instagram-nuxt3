@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import BackDrop from '@/components/Utils/BackDrop.vue'
 import Detail from '@/components/Organisms/Story/Detail.vue'
-import { APP_API } from '~~/apis'
+import { APP_API } from '@/apis'
 import { axios } from '@/services/axios'
-import { useStoryDetailStore } from '~~/store'
+import { useStoryDetailStore } from '@/store'
 
 const route = useRoute()
 

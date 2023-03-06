@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Avatar from '~~/components/Atoms/Avatar.vue'
-import TagName from '~~/components/Atoms/TagName.vue'
-import { SizeAvatarEnum } from '~~/type'
+import Avatar from '@/components/Atoms/Avatar.vue'
+import TagName from '@/components/Atoms/TagName.vue'
+import { SizeAvatarEnum } from '@/type'
 </script>
 
 <template>

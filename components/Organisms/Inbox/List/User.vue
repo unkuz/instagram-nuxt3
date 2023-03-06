@@ -3,7 +3,7 @@ import { SizeAvatarEnum } from '@/type'
 import { stopOtherVideoPlaying } from '@/helpers'
 import Avatar from '@/components/Atoms/Avatar.vue'
 import Dot from '@/components/Atoms/Dot.vue'
-import { useInboxListUserStore } from '~~/store'
+import { useInboxListUserStore } from '@/store'
 
 interface IProps {
   user_name: string

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ToastTypeEnum, useToastStore } from '~~/store/toast'
+import { ToastTypeEnum, useToastStore } from '@/store/toast'
 
 const toastStore = useToastStore()
 
