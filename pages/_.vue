@@ -68,7 +68,7 @@ useWindowResizeCallback(calcLeftSuggestion)
     <div class="relative flex w-full justify-center lg:block">
       <div ref="leftRef" class="inline-flex w-full flex-col items-center md:w-[614px] lg:block">
         <Stories :isPending="false" v-if="storiesStore.data.length" />
-        <Feed :isPending="false" />
+        <Feed :isPending="pendingTimeline" />
       </div>
       <div ref="rightRef" class="fixed left-0 top-[84px] hidden w-[293px] text-sm lg:block">
         <Suggestions :isPending="false" />

@@ -10,3 +10,10 @@ export interface IFilePost {
   size: string
   file: File
 }
+
+export enum TypePostEnum {
+  FEED,
+  REEL,
+  STORY,
+  NONE
+}

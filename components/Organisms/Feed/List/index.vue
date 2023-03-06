@@ -1,18 +1,9 @@
 <script lang="ts" setup>
-import PostSkl from '@/components/Skeleton/Post.vue'
+import FeedSkeleton from '@/components/Skeleton/Feed/index.vue'
+import FetchMoreObserver from '@/components/Utils/FetchMoreObserver.vue'
 import { useForceRenderTimer } from '@/composables'
 import { useFeedStore } from '@/store'
 import { IPending } from '@/type'
-import moment from 'moment'
-import Caption from './Caption.vue'
-import Carousel from './Carousel.vue'
-import Comment from './Comment.vue'
-import Head from './Head.vue'
-import IndividualComment from './IndividualComment.vue'
-import LikeCommentCount from './LikeCommentCount.vue'
-import React from './React.vue'
-import TimeFromNow from '@/components/Atoms/TimeFromNow.vue'
-import FetchMoreObserver from '@/components/Utils/FetchMoreObserver.vue'
 import IndividualFeed from './IndividualFeed.vue'
 
 defineProps<IPending>()
@@ -34,6 +25,8 @@ const { key } = useForceRenderTimer()
       <IndividualFeed v-for="i in feeds" :key="i.id" :feed="i" />
       <FetchMoreObserver />
     </template>
-    <PostSkl v-else />
+    <template v-else>
+      <FeedSkeleton v-for="(i, idx) in 2" :key="idx" />
+    </template>
   </div>
 </template>

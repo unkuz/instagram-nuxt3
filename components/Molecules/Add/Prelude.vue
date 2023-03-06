@@ -8,6 +8,7 @@ import { nanoid } from 'nanoid'
 import { formatBytes } from '@/utils'
 import Edit from './Edit.vue'
 import { IFilePost } from '~~/type'
+import Choose from './Choose.vue'
 
 useLockScroll()
 const addStore = useAddStore()
@@ -66,6 +67,9 @@ onBeforeUnmount(() => {
 </script>
 <template>
   <BackDrop @click.self="addStore.toggle(false)">
+    <!-- <div v-if="step === 0" class="flex w-[320px] flex-col justify-center rounded-[10px] bg-white p-[30px_20px_20px_20px]">
+      <Choose />
+    </div> -->
     <div
       v-if="step === 1"
       class="flex w-[320px] flex-col justify-center rounded-[10px] bg-white p-[30px_20px_20px_20px]"
