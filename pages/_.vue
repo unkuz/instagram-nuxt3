@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import { APP_API, BASE_URL_API } from '@/apis'
+import { APP_API } from '@/apis'
 import Suggestions from '@/components/Huge/Suggestions/index.vue'
 import Stories from '@/components/Molecules/Stories/Stories.vue'
 import Feed from '@/components/Organisms/Feed/List/index.vue'
+import StorySkeleton from '@/components/Skeleton/Story/index.vue'
 import { useWindowResizeCallback } from '@/composables'
 import { IStory, ITimeLine } from '@/models'
-import { useStoriesStore, useSuggestionStore, useFeedStore, useThemeStore } from '@/store'
-import { gsap } from 'gsap'
+import { useFeedStore, useStoriesStore, useSuggestionStore, useThemeStore } from '@/store'
 import { axios } from '~~/services/axios'
 
 const rightRef = $ref<HTMLElement>()
@@ -67,7 +67,8 @@ useWindowResizeCallback(calcLeftSuggestion)
   <div>
     <div class="relative flex w-full justify-center lg:block">
       <div ref="leftRef" class="inline-flex w-full flex-col items-center md:w-[614px] lg:block">
-        <Stories :isPending="false" v-if="storiesStore.data.length" />
+        <StorySkeleton v-if="pendingStories" />
+        <Stories v-else />
         <Feed :isPending="pendingTimeline" />
       </div>
       <div ref="rightRef" class="fixed left-0 top-[84px] hidden w-[293px] text-sm lg:block">
