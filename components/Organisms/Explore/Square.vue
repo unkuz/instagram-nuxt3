@@ -5,12 +5,13 @@ import HeartIcon_ from '@/assets/svg/mingcute/heart.svg'
 import ChatIcon_ from '@/assets/svg/mingcute/chat.svg'
 
 interface IProps {
-  img: string | undefined
+  img?: string | undefined
   isBig?: boolean
-  id: number
+  id?: number
+  skeleton?: boolean
 }
 
-withDefaults(defineProps<IProps>(), { isBig: false, img: '', id: '' })
+withDefaults(defineProps<IProps>(), { isBig: false, img: '', skeleton: false })
 </script>
 
 <template>
@@ -19,10 +20,11 @@ withDefaults(defineProps<IProps>(), { isBig: false, img: '', id: '' })
       'group relative aspect-square w-full cursor-pointer overflow-hidden',
       {
         '!col-span-2 !row-span-2 ': isBig,
+        'skeleton ': skeleton,
       },
     ]"
   >
-    <NuxtLink :to="`/explore/${'1'}`">
+    <NuxtLink v-if="!skeleton" :to="`/explore/${'1'}`">
       <nuxt-img
         :src="img"
         :alt="img"
