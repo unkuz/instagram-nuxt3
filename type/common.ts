@@ -17,3 +17,8 @@ export enum TypePostEnum {
   STORY,
   NONE,
 }
+
+export enum SignInUpEnum {
+  SIGN_IN,
+  SIGN_UP,
+}

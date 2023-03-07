@@ -37,7 +37,7 @@ const logout = () => authStore.logout()
         </div>
       </NuxtLink>
       <hr />
-      <NuxtLink to="/login/">
+      <NuxtLink to="/auth/">
         <div
           class="flex h-[37px] cursor-pointer justify-center px-[16px] py-[8px] hover:bg-c4"
           @click="logout"

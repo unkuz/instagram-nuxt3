@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="fixed inset-0 opacity-20 md:opacity-80">
+  <div class="pointer-events-none fixed inset-0 opacity-20 md:opacity-80">
     <div
       class="absolute top-[15vh] right-[10vw] h-[200px] w-[200px] rounded-full bg-c11 mix-blend-multiply blur-[200px] delay-100"
     />

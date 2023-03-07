@@ -80,7 +80,7 @@ const logout = () => {
           >
         </div>
         <div @click="logout">
-          <NuxtLink to="/login">
+          <NuxtLink to="/auth">
             <Button class="!bg-c15 py-[6px] text-[.8rem] text-c1" text="Log out" />
           </NuxtLink>
         </div>

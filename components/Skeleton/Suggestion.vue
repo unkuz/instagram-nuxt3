@@ -12,7 +12,7 @@ import Avatar from '@/components/Atoms/Avatar.vue'
         <p class="text-c3 dark:text-c21">{{ 'dsf' }}</p>
       </div>
       <div>
-        <NuxtLink to="/login">
+        <NuxtLink to="/auth">
           <AtomsButton class="!bg-c15 py-[6px] text-[.8rem] text-c1" text="Log out" />
         </NuxtLink>
       </div>

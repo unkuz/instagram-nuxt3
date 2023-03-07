@@ -8,7 +8,7 @@ export const useAuthBasic = () => {
 
   useWatchWithMounted(isLogin, () => {
     if (!isLogin.value) {
-      navigateTo('/login')
+      navigateTo('/auth')
     }
   })
 }
