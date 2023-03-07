@@ -10,27 +10,11 @@ interface IProps {
 
 defineProps<IProps>()
 
-const inputRef = ref()
 const placeHolderRef = $ref<HTMLDivElement>()
-
-const { focused } = useFocus(inputRef, { initialValue: false })
-
-watch(focused, (val) => {
-  gsap.to(placeHolderRef!, {
-    bottom: val ? 'auto' : '50%',
-    translateY: val ? 'auto' : '50%',
-    top: val ? '-8px' : 'auto',
-  })
-})
-
-const goFocus = () => inputRef?.value?.focus()
 </script>
 
 <template>
-  <div
-    @click="goFocus"
-    class="mx-auto mt-[10px] h-[50px] w-[250px] rounded-2xl bg-c18/10 px-[20px] py-[10px]"
-  >
+  <div class="mx-auto mt-[10px] h-[50px] w-[250px] rounded-2xl bg-c18/10 px-[20px] py-[10px]">
     <div class="flex h-full w-full items-center justify-between">
       <div class="relative h-full w-[90%] bg-transparent">
         <p class="absolute -top-[8px] bottom-1/2 translate-y-1/2 opacity-50" ref="placeHolderRef">
@@ -40,7 +24,6 @@ const goFocus = () => inputRef?.value?.focus()
           :name="name"
           type="text"
           class="full h-full w-full translate-y-[4px] bg-transparent focus:outline-none"
-          ref="inputRef"
         />
       </div>
 
