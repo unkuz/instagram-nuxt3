@@ -48,7 +48,7 @@ useWatchWithMounted(isLogin, () => {
 <template>
   <div class="flex h-screen w-screen items-center justify-center">
     <div class="flex w-[400px] flex-col rounded-3xl bg-c1">
-      <div class="mx-auto mb-[15px]">Welcome back! Please enter your details</div>
+      <div class="mx-auto mb-[25px]">Welcome back! Please enter your details</div>
       <div
         class="mx-auto flex h-[40px] w-[250px] items-center gap-[5px] rounded-2xl bg-c2/20 px-[5px]"
       >

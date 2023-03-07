@@ -17,7 +17,7 @@ export const APP_API = {
     user: '/suggestion/user/',
   },
   AUTH: {
-    LOGIN: '/auth/',
+    LOGIN: '/login/',
     CREATE: '/user/',
   },
   USER: {
