@@ -1,42 +1,29 @@
 <script setup lang="ts">
 import { useFocus } from '@vueuse/core'
 import { gsap } from 'gsap'
+import { Field } from 'vee-validate'
 
 interface IProps {
   name: string
-  value: string | number
+  placeHolder: string
 }
 
-const props = defineProps<IProps>()
-const emit = defineEmits(['input'])
+defineProps<IProps>()
 
 const inputRef = ref()
 const placeHolderRef = $ref<HTMLDivElement>()
 
-let state = $ref('')
-
 const { focused } = useFocus(inputRef, { initialValue: false })
 
-let isFocus = $ref(false)
-
 watch(focused, (val) => {
-  isFocus = true
-
-  const state = props.value
-
   gsap.to(placeHolderRef!, {
-    bottom: val || state ? 'auto' : '50%',
-    translateY: val || state ? 'auto' : '50%',
-    top: val || state ? '-8px' : 'auto',
+    bottom: val ? 'auto' : '50%',
+    translateY: val ? 'auto' : '50%',
+    top: val ? '-8px' : 'auto',
   })
 })
 
 const goFocus = () => inputRef?.value?.focus()
-
-const emitValue = (e: Event) => {
-  const val = (e.target as HTMLInputElement).value
-  emit('input', val)
-}
 </script>
 
 <template>
@@ -47,14 +34,13 @@ const emitValue = (e: Event) => {
     <div class="flex h-full w-full items-center justify-between">
       <div class="relative h-full w-[90%] bg-transparent">
         <p class="absolute -top-[8px] bottom-1/2 translate-y-1/2 opacity-50" ref="placeHolderRef">
-          {{ name }}
+          {{ placeHolder }}
         </p>
-        <input
+        <Field
+          :name="name"
           type="text"
           class="full h-full w-full translate-y-[4px] bg-transparent focus:outline-none"
           ref="inputRef"
-          :value="value"
-          @input="emitValue"
         />
       </div>
 

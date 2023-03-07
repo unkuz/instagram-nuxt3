@@ -1,28 +1,37 @@
 <script lang="ts" setup>
+import { Form, Field, ErrorMessage } from 'vee-validate'
+
 import { useAuthStore } from '~~/store'
 import Input from './../Common/Input.vue'
 
 const authStore = useAuthStore()
 
-const state = reactive({
-  user_name: '',
-  password: '',
-})
+const schema = {
+  user_name(value) {
+    return true
+  },
+  password(value) {
+    return true
+  },
+}
 
-const submit = () => {
-  authStore.login({ ...state })
+const submit = (val: any) => {
+  console.log('VAL', val)
+  authStore.login({ ...val })
 }
 </script>
 <template>
   <div>
-    <Input name="Username" :value="state.user_name" @input="(val) => (state.user_name = val)" />
-    <Input name="Password" :value="state.password" @input="(val) => (state.password = val)" />
+    <Form @submit="submit" :validation-schema="schema">
+      <Input name="user_name" place-holder="User name" />
+      <Input name="password" place-holder="Password" />
 
-    <button
-      @click="submit"
-      class="mx-auto mt-[10px] flex h-[50px] w-[250px] items-center justify-center rounded-2xl bg-c15"
-    >
-      Continue
-    </button>
+      <button
+        @click="submit"
+        class="mx-auto mt-[10px] flex h-[50px] w-[250px] items-center justify-center rounded-2xl bg-c15"
+      >
+        Continue
+      </button>
+    </Form>
   </div>
 </template>
