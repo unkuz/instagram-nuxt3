@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { useFocus } from '@vueuse/core'
+import { gsap } from 'gsap'
 
 interface IProps {
   name: string
   value: string | number
 }
 
-defineProps<IProps>()
+const props = defineProps<IProps>()
+const emit = defineEmits(['input'])
 
 const inputRef = ref()
 const placeHolderRef = $ref<HTMLDivElement>()
@@ -20,6 +22,8 @@ let isFocus = $ref(false)
 watch(focused, (val) => {
   isFocus = true
 
+  const state = props.value
+
   gsap.to(placeHolderRef!, {
     bottom: val || state ? 'auto' : '50%',
     translateY: val || state ? 'auto' : '50%',
@@ -28,6 +32,11 @@ watch(focused, (val) => {
 })
 
 const goFocus = () => inputRef?.value?.focus()
+
+const emitValue = (e: Event) => {
+  const val = (e.target as HTMLInputElement).value
+  emit('input', val)
+}
 </script>
 
 <template>
@@ -45,7 +54,7 @@ const goFocus = () => inputRef?.value?.focus()
           class="full h-full w-full translate-y-[4px] bg-transparent focus:outline-none"
           ref="inputRef"
           :value="value"
-          @input="(val) => $emit('input', val)"
+          @input="emitValue"
         />
       </div>
 
