@@ -17,7 +17,7 @@ const toggleLike = () => {
   timelineStore.setToggleLike(props.idPost)
 }
 
-// useDoubleClick(imageRef, () => {}, toggleLike)
+useDoubleClick(imageRef, () => {}, toggleLike)
 </script>
 
 <template>

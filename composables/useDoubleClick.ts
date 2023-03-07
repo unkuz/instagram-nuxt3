@@ -21,18 +21,17 @@ export const useDoubleClick = (
   }
 
   onMounted(() => {
-    const el = unref(refElement)
-    if (el) {
-      el.addEventListener('click', _click)
-      el.addEventListener('dblclick', _dbclick)
-    }
+    // if (refElement.value) {
+    //   console.log('refElement.value', refElement.value)
+    //   refElement.value.addEventListener('click', _click)
+    //   refElement.value.addEventListener('dblclick', _dbclick)
+    // }
   })
 
   onBeforeUnmount(() => {
-    const el = unref(refElement)
-    if (el) {
-      el.removeEventListener('click', _click)
-      el.removeEventListener('dblclick', _dbclick)
-    }
+    // if (refElement.value) {
+    //   refElement.value.removeEventListener('click', _click)
+    //   refElement.value.removeEventListener('dblclick', _dbclick)
+    // }
   })
 }

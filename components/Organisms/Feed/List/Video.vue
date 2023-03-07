@@ -43,7 +43,7 @@ const toggleLike = () => {
   timelineStore.setToggleLike(props.idPost)
 }
 
-// useDoubleClick(videoRef, togglePlay, toggleLike)
+useDoubleClick(videoRef, togglePlay, toggleLike)
 
 const toggleFullScreen = () => {
   document.fullscreenElement ? document.exitFullscreen() : containerRef!.requestFullscreen()
