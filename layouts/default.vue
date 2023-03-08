@@ -43,8 +43,8 @@ const deskTopNodNeedPading = $(
 
 <template>
   <div>
-    <!-- <BgGlass /> -->
     <Header />
+    <BgGlass />
     <!-- <HeaderButLeft/> -->
     <!-- <Extension /> -->
     <div
