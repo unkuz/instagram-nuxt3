@@ -28,10 +28,12 @@ const profile = $computed(() => profileStore.profile)
 <template>
   <div v-if="!pendingTimeline" class="relative mb-[65px] text-sm">
     <div class="relative h-[200px] md:h-[250px]">
-      <div
+      <nuxt-img
         class="absolute h-full w-full cursor-pointer bg-cover bg-center object-cover"
+        :src="profile?.cover_pic_url"
         :style="{ backgroundImage: `url(${profile?.cover_pic_url})` }"
       />
+
       <Avatar
         :size="SizeAvatarEnum.L"
         :url="profile?.profile_pic_url"
