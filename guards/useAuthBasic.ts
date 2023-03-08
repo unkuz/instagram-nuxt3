@@ -1,14 +1,13 @@
 import { useAuthStore } from '@/store'
-import { useWatchWithMounted } from '@/composables'
 
 export const useAuthBasic = () => {
   const authStore = useAuthStore()
 
-  const isLogin = computed(() => authStore.data.isLogin)
+  const accessToken = computed(() => authStore.data.token.access)
 
-  useWatchWithMounted(isLogin, () => {
-    if (!isLogin.value) {
-      navigateTo('/auth')
+  watchEffect(() => {
+    if (!accessToken) {
+      navigateTo('/auth/')
     }
   })
 }
