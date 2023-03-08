@@ -9,7 +9,7 @@ const state = reactive({
 </script>
 <template>
   <div>
-    <Input name="Username" :value="state.user_name" @input="(val) => (state.user_name = val)" />
+    <!-- <Input name="Username" :value="state.user_name" @input="(val) => (state.user_name = val)" />
     <Input name="Password" :value="state.password" @input="(val) => (state.password = val)" />
     <Input
       name="Confirm Password"
@@ -21,6 +21,6 @@ const state = reactive({
       class="mx-auto mt-[10px] flex h-[50px] w-[250px] items-center justify-center rounded-2xl bg-c15"
     >
       Continue
-    </button>
+    </button> -->
   </div>
 </template>
