@@ -92,6 +92,7 @@
     "uuid": "^9.0.0",
     "vee-validate": "^4.7.4",
     "vite-svg-loader": "^4.0.0",
-    "vue3-lottie": "^2.5.0"
+    "vue3-lottie": "^2.5.0",
+    "yup": "^1.0.2"
   }
 }

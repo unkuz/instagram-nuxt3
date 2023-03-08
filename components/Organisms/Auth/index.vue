@@ -7,6 +7,7 @@ import { useFocus } from '@vueuse/core'
 import { gsap } from 'gsap'
 import SignIn from './SignIn/index.vue'
 import SignUp from './SignUp/index.vue'
+import InstagramLogo_ from '@/assets/svg/instagram_logo.svg'
 
 const authStore = useAuthStore()
 const toastStore = useToastStore()
@@ -62,11 +63,21 @@ useWatchWithMounted(isLogin, () => {
     navigateTo('/')
   }
 })
+
+const title = $computed(() => {
+  if (_isEqual(selected, SignInUpEnum.SIGN_IN)) {
+    return 'Wait a minutes ! Who are you ?'
+  }
+  return 'Create an account. Enter below ! '
+})
 </script>
 <template>
   <div class="flex h-screen w-screen items-center justify-center">
-    <div class="flex w-[400px] flex-col rounded-3xl bg-c1">
-      <div class="mx-auto mb-[25px]">Wait a minutes ! Who are you ?</div>
+    <div class="flex w-[400px] flex-col rounded-3xl bg-c1 duration-200">
+      <InstagramLogo_
+        class="mx-auto mt-[7px] w-[200px] cursor-pointer fill-black dark:fill-white"
+      />
+      <div class="mx-auto mb-[25px]">{{ title }}</div>
       <div
         class="relative mx-auto flex h-[40px] w-[250px] items-center gap-[5px] rounded-2xl bg-c2/20 px-[5px]"
       >
@@ -92,11 +103,9 @@ useWatchWithMounted(isLogin, () => {
         >
           SignUp
         </div>
-        <div class="absolute h-[80%] w-[45%] rounded-[10px] bg-black" ref="thumbBar"></div>
       </div>
       <template v-if="selected === SignInUpEnum.SIGN_IN"><SignIn /></template>
       <template v-else><SignUp /></template>
     </div>
   </div>
 </template>
-

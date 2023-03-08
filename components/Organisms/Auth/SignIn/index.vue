@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Form, Field, ErrorMessage } from 'vee-validate'
+import { Form } from 'vee-validate'
 
 import { useAuthStore } from '~~/store'
 import Input from './../Common/Input.vue'
