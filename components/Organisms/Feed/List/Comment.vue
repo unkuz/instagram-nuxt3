@@ -54,7 +54,7 @@ const send = async () => {
 </script>
 
 <template>
-  <div class="flex w-full items-center justify-between">
+  <div class="mb-[20px] flex w-full items-center justify-between gap-[10px]">
     <div ref="emojiRef" class="relative">
       <Emoji v-if="isShowEmoji" @emoji-add="emojiAdd" />
       <div class="cursor-pointer text-[0.8rem] font-[500]" @click="toggleShowEmoji">
@@ -72,7 +72,7 @@ const send = async () => {
       v-model="input"
       rows="1"
       spellcheck="false"
-      class="m-auto my-[10px] block h-[38px] max-h-[100px] w-[83%] cursor-text resize-none rounded-[5px] border-[1px] border-c4 bg-transparent p-[5px] shadow-sm shadow-c4 placeholder:text-center placeholder:text-[0.8rem] focus:outline-none dark:border-c20 dark:shadow-none lg:w-[88%]"
+      class="flex-1 resize-none rounded-[5px] bg-c4/50 py-[7px] px-[5px] placeholder:ml-[10px] focus:outline-none"
       @keyup.enter="send"
     />
 
