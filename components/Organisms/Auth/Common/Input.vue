@@ -12,7 +12,9 @@ const placeHolderRef = $ref<HTMLDivElement>()
 </script>
 
 <template>
-  <div class="mx-auto mt-[10px] h-[50px] w-[250px] rounded-2xl bg-c18/10 px-[20px] py-[10px]">
+  <div
+    class="mx-auto mt-[10px] h-[50px] w-[250px] rounded-2xl bg-c18/10 px-[20px] py-[10px] dark:bg-c2/50"
+  >
     <div class="flex h-full w-full items-center justify-between">
       <div class="relative h-full w-[90%] bg-transparent">
         <p class="absolute -top-[25px] bottom-1/2 translate-y-1/2 opacity-50" ref="placeHolderRef">

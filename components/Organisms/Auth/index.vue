@@ -73,7 +73,7 @@ const title = $computed(() => {
 </script>
 <template>
   <div class="flex h-screen w-screen items-center justify-center">
-    <div class="flex w-[400px] flex-col rounded-3xl bg-c1 duration-200">
+    <div class="flex w-[400px] flex-col rounded-3xl bg-c1 duration-200 dark:bg-c19">
       <InstagramLogo_
         class="mx-auto mt-[7px] w-[200px] cursor-pointer fill-black dark:fill-white"
       />

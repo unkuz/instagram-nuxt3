@@ -60,7 +60,7 @@ const [container] = useKeenSlider({
 <template>
   <div
     v-if="stories.length"
-    class="h-[119px] w-full overflow-hidden bg-transparent p-0 dark:bg-transparent md:mb-[24px] md:bg-c4 md:p-[1px] md:clip-path-cuzknothz"
+    class="h-[119px] w-full overflow-hidden border-b-[1px] border-c2 bg-transparent p-0 dark:bg-transparent md:mb-[24px] md:bg-c4 md:p-[1px] md:clip-path-cuzknothz"
   >
     <div
       v-cloak
