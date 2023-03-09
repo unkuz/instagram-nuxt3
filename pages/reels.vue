@@ -5,6 +5,10 @@ import { IStory, ITimeLine } from '@/models'
 import { axios } from '@/services/axios'
 import { useReelStore } from '@/store'
 
+definePageMeta({
+  middleware: 'auth',
+})
+
 const reelStore = useReelStore()
 
 const { data, pending } = await useLazyAsyncData<IStory[]>('reel', async () => {

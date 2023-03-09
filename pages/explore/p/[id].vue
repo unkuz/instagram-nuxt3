@@ -3,6 +3,9 @@ import BackDrop from '@/components/Utils/BackDrop.vue'
 import { useWindowResizeCallback, useLockScroll } from '@/composables'
 import { onClickOutside } from '@vueuse/core'
 
+definePageMeta({
+  middleware: 'auth',
+})
 const viewPostRef = $ref<HTMLDivElement>()
 const commentHeadingRef = $ref<HTMLDivElement>()
 const commentRef = $ref<HTMLDivElement>()

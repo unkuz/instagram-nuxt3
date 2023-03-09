@@ -69,6 +69,12 @@ export const useAuthStore = defineStore('auth', {
         })
       }
     },
+    async getNewAccessToken(val: string) {
+      try {
+        const { data } = await axios.post(APP_API.AUTH.GET_NEW_TOKEN, { refresh: val })
+        this.data.token.access = data
+      } catch (e) {}
+    },
   },
   persist: true,
 })

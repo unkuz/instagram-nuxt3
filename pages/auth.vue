@@ -14,4 +14,3 @@ definePageMeta({
     <Auth />
   </div>
 </template>
-

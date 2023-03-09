@@ -9,6 +9,10 @@ import { IStory, ITimeLine } from '@/models'
 import { useFeedStore, useStoriesStore, useSuggestionStore, useThemeStore } from '@/store'
 import { axios } from '@/services/axios'
 
+definePageMeta({
+  middleware: 'auth',
+})
+
 const rightRef = $ref<HTMLElement>()
 const leftRef = $ref<HTMLElement>()
 

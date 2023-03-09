@@ -3,7 +3,9 @@ import Detail from '@/components/Organisms/Inbox/Detail/Detail.vue'
 import { axios } from '@/services/axios'
 import { APP_API } from '@/apis'
 import { useInboxDetailStore } from '@/store'
-
+definePageMeta({
+  middleware: 'auth',
+})
 const route = useRoute()
 const inboxDetailStore = useInboxDetailStore()
 

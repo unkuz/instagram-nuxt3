@@ -5,6 +5,9 @@ import { APP_API } from '@/apis'
 import { axios } from '@/services/axios'
 import { useStoryDetailStore } from '@/store'
 
+definePageMeta({
+  middleware: 'auth',
+})
 const route = useRoute()
 
 const storyDetailStore = useStoryDetailStore()

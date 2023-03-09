@@ -19,6 +19,7 @@ export const APP_API = {
   AUTH: {
     LOGIN: '/login/',
     CREATE: '/user/',
+    GET_NEW_TOKEN: '/api/token/refresh/',
   },
   USER: {
     detail: '/user/',

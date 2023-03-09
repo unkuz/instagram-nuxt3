@@ -6,6 +6,10 @@ import { useAuthStore, useProfileStore } from '@/store'
 import { SizeAvatarEnum } from '@/type'
 import { APP_API } from '@/apis'
 
+definePageMeta({
+  middleware: 'auth',
+})
+
 const route = useRoute()
 const profileStore = useProfileStore()
 

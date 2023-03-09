@@ -4,7 +4,9 @@ import { useExploreStore } from '@/store'
 import { axios } from '@/services/axios'
 import { APP_API } from '@/apis'
 import ExploreSkeleton from '@/components/Skeleton/Explore/index.vue'
-
+definePageMeta({
+  middleware: 'auth',
+})
 const exploreStore = useExploreStore()
 
 const { data, pending } = await useLazyAsyncData<any>('explore', async () => {
