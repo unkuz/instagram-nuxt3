@@ -17,8 +17,6 @@ const sugestionStore = useSuggestionStore()
 let timer: NodeJS.Timer
 let timer2: NodeJS.Timer
 
-const { signIn, status, signOut } = useSession()
-
 let maxSuggestionPeopleFollow = $ref(APP_CONFIGS.MAX_SUGGESTION_PEOPLE_FOLLOW)
 const suggestion = $computed(() => sugestionStore.data.slice(0, maxSuggestionPeopleFollow))
 const authStore = useAuthStore()
@@ -81,7 +79,11 @@ const logout = () => {
             ><p class="text-c3 dark:text-c21">{{ userName }}</p></NuxtLink
           >
         </div>
-        <Button @click="signOut" class="!bg-c15 py-[6px] text-[.8rem] text-c1" text="Log out" />
+        <div @click="logout">
+          <NuxtLink to="/auth">
+            <Button class="!bg-c15 py-[6px] text-[.8rem] text-c1" text="Log out" />
+          </NuxtLink>
+        </div>
       </div>
       <div class="flex h-[11px] items-center justify-between text-sm text-c3 dark:text-c21">
         <div>Suggestions for you</div>

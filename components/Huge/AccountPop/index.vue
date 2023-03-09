@@ -7,7 +7,6 @@ import { onClickOutside } from '@vueuse/core'
 
 const globalStore = useGlobalStore()
 const accountPopRef = ref<HTMLDivElement>()
-const { signOut } = useSession()
 
 const authStore = useAuthStore()
 
@@ -18,6 +17,8 @@ onClickOutside(accountPopRef, () => {})
 const handleSelect = (section: SectionEnum) => {
   globalStore.setSection(section)
 }
+
+const logout = () => authStore.logout()
 </script>
 
 <template>
@@ -36,12 +37,14 @@ const handleSelect = (section: SectionEnum) => {
         </div>
       </NuxtLink>
       <hr />
-      <div
-        class="flex h-[37px] cursor-pointer justify-center px-[16px] py-[8px] hover:bg-c4"
-        @click="signOut()"
-      >
-        Log out
-      </div>
+      <NuxtLink to="/auth/">
+        <div
+          class="flex h-[37px] cursor-pointer justify-center px-[16px] py-[8px] hover:bg-c4"
+          @click="logout"
+        >
+          Log out
+        </div>
+      </NuxtLink>
     </div>
   </div>
 </template>
