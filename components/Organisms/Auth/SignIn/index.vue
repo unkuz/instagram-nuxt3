@@ -18,7 +18,7 @@ const submit = (val: any) => {
       <Input name="password" place-holder="Password" />
       <button
         @click="submit"
-        class="mx-auto mt-[10px] flex h-[50px] w-[250px] items-center justify-center rounded-2xl bg-c15"
+        class="mx-auto mt-[10px] flex h-[50px] w-[250px] items-center justify-center rounded-2xl bg-c15 dark:text-c1"
       >
         Continue
       </button>
