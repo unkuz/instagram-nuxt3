@@ -20,9 +20,12 @@ export const useAuthStore = defineStore('auth', {
   actions: {
     async login(account: IAccountLogin) {
       const toastStore = useToastStore()
+
+      const { user_name, password } = account
       try {
         const { data } = await axios.post(APP_API.AUTH.LOGIN, {
-          ...account,
+          user_name,
+          password,
         })
         this.data.user = data.user
         this.data.token = data.token
