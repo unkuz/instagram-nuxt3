@@ -1,22 +1,10 @@
 <script lang="ts" setup>
+import { SCHEMA_AUTH } from '@/utils'
 import { Form } from 'vee-validate'
-
 import { useAuthStore } from '~~/store'
 import Input from './../Common/Input.vue'
 
 const authStore = useAuthStore()
-
-const schema = {
-  user_name(value) {
-    return true
-  },
-  password(value) {
-    return true
-  },
-  re_password(value) {
-    return true
-  },
-}
 
 const submit = (val: any) => {
   const { user_name, password } = val
@@ -29,7 +17,7 @@ const submit = (val: any) => {
 </script>
 <template>
   <div>
-    <Form @submit="submit" :validation-schema="schema">
+    <Form @submit="submit" :validation-schema="SCHEMA_AUTH.SIGNUP">
       <Input name="user_name" place-holder="User name" />
       <Input name="password" place-holder="Password" />
       <Input name="re_password" place-holder="Re Password" />

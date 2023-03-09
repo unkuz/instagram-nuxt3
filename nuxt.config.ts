@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     'nuxt-icon',
     'nuxt-lodash',
     '@nuxtjs/fontaine',
+    '@vite-pwa/nuxt',
     // '@nuxtjs/algolia',
     // 'nuxt-logrocket',
     // '@nuxtjs/i18n',
