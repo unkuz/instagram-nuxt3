@@ -31,7 +31,7 @@ const { key } = useForceRenderTimer()
 
 <template>
   <article
-    class="w-full border-b-[1px] border-c4 bg-transparent p-[1px] dark:md:bg-transparent [&:not(:last-child)]:mb-[0px]"
+    class="w-full border-b-[1px] border-c4 bg-transparent p-[1px] dark:border-c4/10 dark:md:bg-transparent [&:not(:last-child)]:mb-[0px]"
   >
     <Head :avatar="feed.user?.profile_pic_url" :user-name="feed.user.user_name" :feed="feed" />
     <Carousel
