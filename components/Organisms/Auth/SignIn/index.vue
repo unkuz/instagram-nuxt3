@@ -14,15 +14,32 @@ const schema = {
     return true
   },
 }
+const { signIn, status, signOut } = useSession()
+
+const mySignInHandler = async ({ username, password }: { username: string; password: string }) => {
+  const { error, url } = await signIn('credentials', { username, password, callbackUrl:'/_' })
+  if (error) {
+    // Do your custom error handling here
+    alert('You have made a terrible mistake while entering your credentials')
+  } else {
+    // No error, continue with the sign in, e.g., by following the returned redirect:
+    return navigateTo(url)
+  }
+}
 
 const submit = (val: any) => {
-  console.log('VAL', val)
-  authStore.login({ ...val })
+  // authStore.login({ ...val })
+  mySignInHandler({
+    username: val.user_name,
+    password: val.password,
+  })
 }
 </script>
 <template>
   <div>
     <Form @submit="submit" :validation-schema="schema">
+      {{ status }}
+      <button @click="signOut">signOut</button>
       <Input name="user_name" place-holder="User name" />
       <Input name="password" place-holder="Password" />
 
@@ -35,3 +52,4 @@ const submit = (val: any) => {
     </Form>
   </div>
 </template>
+

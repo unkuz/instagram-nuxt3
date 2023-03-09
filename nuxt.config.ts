@@ -25,6 +25,10 @@ export default defineNuxtConfig({
     // '@nuxtjs/fontaine',
     // '@morev/vue-transitions/nuxt',
   ],
+  auth: {
+    enableGlobalAppMiddleware: true,
+    origin: 'http://localhost:3000/',
+  },
   content: {
     // https://content.nuxtjs.org/api/configuration
   },
