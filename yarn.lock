@@ -2761,11 +2761,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@nozomuikuta/h3-cors@^0.1.5":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@nozomuikuta/h3-cors/-/h3-cors-0.1.8.tgz#1e50e8d43e7198b532f7c04c19324407a59f510d"
-  integrity sha512-qWe2mUfnjxaBwTYKNM/9GrGK0nciyynn5Lk/sv8wYpKbloaoJFB98onBWMTotV5e/l8CCoelsr1oz4qYb7FdHg==
-
 "@nuxt/content@^2.4.3":
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/@nuxt/content/-/content-2.4.3.tgz#db3bbd35b87b9e23518eef19cc063a200d86062a"
@@ -10670,10 +10665,10 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-mkdirp@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-2.1.3.tgz#b083ff37be046fd3d6552468c1f0ff44c1545d1f"
-  integrity sha512-sjAkg21peAG9HS+Dkx7hlG9Ztx7HLeKnvB3NQRcu/mltCVmvkF0pisbiTSfDVYTT86XEfZrTUosLdZLStquZUw==
+mkdirp@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-2.1.5.tgz#78d7eaf15e069ba7b6b47d76dd94cfadf7a4062f"
+  integrity sha512-jbjfql+shJtAPrFoKxHOXip4xS+kul9W3OzfzzrqueWK2QMGon2bFH2opl6W9EagBThjEz+iysyi/swOoVfB/w==
 
 mlly@^0.5.16:
   version "0.5.17"
@@ -11252,12 +11247,11 @@ nuxt-schema-org@2.1.2:
     "@unhead/schema-org-vue" "^0.5.0"
     pathe "^1.1.0"
 
-nuxt-security@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/nuxt-security/-/nuxt-security-0.11.0.tgz#27c935769b771abc62d7e5b32ee91bcf8568e5a5"
-  integrity sha512-qxqfDgl/ffW0T6AmcuWJS7N6+JVXZv790B5C++OKIpe1tStkOJ4PuP7XmRvbS00DMO+tuURE6JsZ6TardnhURQ==
+nuxt-security@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/nuxt-security/-/nuxt-security-0.12.0.tgz#4bfd011a0e2f4e8c3b03aea40890b096d55e5078"
+  integrity sha512-Ed4CbkPBa7DzkvCwbOhJoXN+mg/Htj1agd1hfHqjf1KA5CDAwR8dgxaN5z7uC76RpHQ9tGP1niHNSmcs3D8D0Q==
   dependencies:
-    "@nozomuikuta/h3-cors" "^0.1.5"
     "@nuxt/kit" "^3.2.2"
     basic-auth "^2.0.1"
     defu "^6.1.1"
@@ -11306,17 +11300,17 @@ nuxt-simple-sitemap@^1.0.7:
     sitemap "^7.1.1"
     ufo "^1.0.1"
 
-nuxt-typed-router@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-3.0.3.tgz#b45fddeb95c42c2edd821aef490ec485e92c8d5a"
-  integrity sha512-MIbgUm3waQV6S2RUYpctKggQQc6yJ7lB+Uj+gSQqtdH+o9BKVnxEpSaaEQQ3e3AwP9AJN9GeniBchnVcL/WvBQ==
+nuxt-typed-router@^3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-3.0.6.tgz#5823e10ac54bd1897a96f5eaff8eb19db128c5ad"
+  integrity sha512-eBzjgZF9Y2nXcCXJPYjJUflBd9SeWb7FsgMKagUxCY+b6ULdm8aZN8tJUI7E/V3t+Rp0Vyy8/yz0OCDuYeLg+w==
   dependencies:
     "@nuxt/kit" "^3.2.2"
     chalk "^5.2.0"
     defu "^6.1.2"
     lodash-es "^4.17.21"
     log-symbols "^5.1.0"
-    mkdirp "^2.1.3"
+    mkdirp "^2.1.5"
     nanoid "^4.0.1"
     pathe "1.1.0"
     prettier "2.8.4"
