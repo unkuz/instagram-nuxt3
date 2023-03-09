@@ -30,6 +30,6 @@ const placeHolderRef = $ref<HTMLDivElement>()
         </div>
       </div>
     </div>
-    <ErrorMessage :name="name" class="mx-auto text-c13" />
+    <ErrorMessage :name="name" class="mx-auto text-[.8rem] text-c13" />
   </div>
 </template>
