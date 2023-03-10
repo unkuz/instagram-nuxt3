@@ -10,7 +10,6 @@ const isPending = $computed(() => authStore.pending)
 
 const submit = (val: any) => {
   const { user_name, password } = val
-  console.log('VAL', val)
   authStore.create({
     user_name,
     password,
