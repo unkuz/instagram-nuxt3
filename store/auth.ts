@@ -39,10 +39,10 @@ export const useAuthStore = defineStore('auth', {
         this.data.user = {}
         this.data.token = {}
         this.hasErr = true
-        this.errors = e.response.data
+        this.errors = e.response?.data?.detail ?? 'The server is down, please try again later 😅😅😅'
         toastStore.pushTimmer({
           type: ToastTypeEnum.ERROR,
-          content: this.errors?.detail,
+          content: this.errors
         })
       }
     },
