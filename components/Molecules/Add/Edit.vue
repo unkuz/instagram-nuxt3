@@ -4,7 +4,7 @@ import TagName from '@/components/Atoms/TagName.vue'
 import { useMagicKeys, useTextareaAutosize } from '@vueuse/core'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import { BASE_URL_API } from '@/apis'
-import { ToastTypeEnum, useAuthStore, useFeedStore, useToastStore } from '@/store'
+import { ToastTypeEnum, useAddStore, useAuthStore, useFeedStore, useToastStore } from '@/store'
 import { IFilePost, SizeAvatarEnum, TypePostEnum } from '@/type'
 import { ADD_SLIDER } from '~~/constants'
 
@@ -46,6 +46,7 @@ const callback = (e: any) => {
 }
 
 const authStore = useAuthStore()
+const addStore = useAddStore()
 const feedStore = useFeedStore()
 const toastStore = useToastStore()
 
@@ -70,10 +71,11 @@ const post = () => {
     })
     return
   }
-  feedStore.addFeed({
+  addStore.post({
     media: props.listFile,
     caption: caption.value,
     tags: tags,
+    typePost: props.select,
   })
 }
 </script>
