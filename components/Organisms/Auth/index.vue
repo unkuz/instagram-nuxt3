@@ -88,4 +88,3 @@ const setSelect = (val: SignInUpEnum) => (selected = val)
     </div>
   </div>
 </template>
-

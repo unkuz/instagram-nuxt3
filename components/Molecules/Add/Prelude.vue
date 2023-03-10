@@ -1,14 +1,14 @@
 <script setup lang="ts">
+import Slider from '@/components/Organisms/Auth/Common/Slider.vue'
 import BackDrop from '@/components/Utils/BackDrop.vue'
 import { useLockScroll } from '@/composables'
+import { ADD_SLIDER } from '@/constants/add'
 import { ToastTypeEnum, useAddStore, useToastStore } from '@/store'
 import { IFilePost, TypePostEnum } from '@/type'
 import { formatBytes } from '@/utils'
 import { useDropZone, useFileDialog } from '@vueuse/core'
 import { nanoid } from 'nanoid'
 import Edit from './Edit.vue'
-import Slider from '@/components/Organisms/Auth/Common/Slider.vue'
-import { ADD_SLIDER } from '@/constants/add'
 
 useLockScroll()
 const addStore = useAddStore()
@@ -95,4 +95,3 @@ onBeforeUnmount(() => {
     </div>
   </BackDrop>
 </template>
-
