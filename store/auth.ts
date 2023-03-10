@@ -68,10 +68,11 @@ export const useAuthStore = defineStore('auth', {
           content: 'Nice. Create account successfully',
         })
       } catch (e: any) {
-        this.errors = e.response.data
+        this.errors =
+          e.response?.data?.detail ?? 'The server is down, please try again later 😅😅😅'
         toastStore.pushTimmer({
           type: ToastTypeEnum.ERROR,
-          content: this.errors?.detail,
+          content: this.errors,
         })
       } finally {
         this.pending = false
