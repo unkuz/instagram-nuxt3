@@ -31,7 +31,7 @@ useWatchWithMounted(
     class="relative mx-auto flex h-[40px] w-[250px] items-center justify-around overflow-hidden rounded-2xl bg-c19/10 px-[5px]"
   >
     <div class="absolute h-[80%] rounded-[10px] bg-white" ref="sliderRef" />
-    <div v-for="(i, idx) in arr" :key="idx" class="relative" @click="$emit('set', i.section)">
+    <div v-for="(i, idx) in arr" :key="idx" class="relative cursor-pointer" @click="$emit('set', i.section)">
       {{ i.text }}
     </div>
   </div>
