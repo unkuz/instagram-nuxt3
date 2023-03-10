@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import BackDrop from '@/components/Utils/BackDrop.vue'
-import { useFileDialog } from '@vueuse/core'
-import { ToastTypeEnum, useAddStore, useToastStore } from '@/store'
-import { useDropZone } from '@vueuse/core'
 import { useLockScroll } from '@/composables'
-import { nanoid } from 'nanoid'
-import { formatBytes } from '@/utils'
-import Edit from './Edit.vue'
+import { ToastTypeEnum, useAddStore, useToastStore } from '@/store'
 import { IFilePost } from '@/type'
-import Choose from './Choose.vue'
+import { formatBytes } from '@/utils'
+import { useDropZone, useFileDialog } from '@vueuse/core'
+import { nanoid } from 'nanoid'
+import Edit from './Edit.vue'
 
 useLockScroll()
 const addStore = useAddStore()

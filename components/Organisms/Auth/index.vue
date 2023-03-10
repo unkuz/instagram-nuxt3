@@ -8,6 +8,8 @@ import { gsap } from 'gsap'
 import SignIn from './SignIn/index.vue'
 import SignUp from './SignUp/index.vue'
 import InstagramLogo_ from '@/assets/svg/instagram_logo.svg'
+import Slider from './Common/Slider.vue'
+import { AUTH_SLIDER } from '~~/constants'
 
 const authStore = useAuthStore()
 const toastStore = useToastStore()
@@ -17,7 +19,7 @@ const thumbBar = $ref<HTMLDivElement>()
 const usernameRef = ref()
 const placeHolderUsernameRef = ref<HTMLDivElement>()
 
-const selected = $ref(SignInUpEnum.SIGN_IN)
+let selected = $ref(SignInUpEnum.SIGN_IN)
 
 let tlThumbBar = gsap.timeline({})
 
@@ -70,6 +72,8 @@ const title = $computed(() => {
   }
   return 'Create an account. Enter below ! '
 })
+
+const setSelect = (val: SignInUpEnum) => (selected = val)
 </script>
 <template>
   <div class="flex h-screen w-screen items-center justify-center">
@@ -78,34 +82,10 @@ const title = $computed(() => {
         class="mx-auto mt-[7px] w-[200px] cursor-pointer fill-black dark:fill-white"
       />
       <div class="mx-auto mb-[25px]">{{ title }}</div>
-      <div
-        class="relative mx-auto flex h-[40px] w-[250px] items-center gap-[5px] rounded-2xl bg-c2/20 px-[5px]"
-      >
-        <div
-          @click="selected = SignInUpEnum.SIGN_IN"
-          :class="[
-            'flex h-[80%] w-[100px] flex-1 items-center justify-center rounded-[10px] ',
-            {
-              'bg-c1': selected === SignInUpEnum.SIGN_IN,
-            },
-          ]"
-        >
-          SignIn
-        </div>
-        <div
-          @click="selected = SignInUpEnum.SIGN_UP"
-          :class="[
-            'flex h-[80%] w-[100px] flex-1 items-center justify-center rounded-[10px] ',
-            {
-              'bg-c1': selected === SignInUpEnum.SIGN_UP,
-            },
-          ]"
-        >
-          SignUp
-        </div>
-      </div>
+      <Slider :arr="AUTH_SLIDER" :select="selected" @set="setSelect" />
       <template v-if="selected === SignInUpEnum.SIGN_IN"><SignIn /></template>
       <template v-else><SignUp /></template>
     </div>
   </div>
 </template>
+
