@@ -24,16 +24,34 @@ const listFile = ref<IFilePost[]>([])
 const pushToFileList = (file: File) => {
   const type = isImageOrVideo(file)
   if (['image', 'video'].includes(type)) {
-    const _file = {
-      id: nanoid(),
-      name: file.name,
-      src: URL.createObjectURL(file),
-      type,
-      size: formatBytes(file.size),
-      file,
+    if ([TypePostEnum.REEL, TypePostEnum.STORY].includes(typeAdd)) {
+      if (type === 'video') {
+        const _file = {
+          id: nanoid(),
+          name: file.name,
+          src: URL.createObjectURL(file),
+          type,
+          size: formatBytes(file.size),
+          file,
+        }
+        listFile.value.push(_file)
+      } else {
+        toastStore.pushTimmer({
+          type: ToastTypeEnum.ERROR,
+          content: `${_find(ADD_SLIDER, { section: typeAdd })!.text} only accept video file`,
+        })
+      }
+    } else if (typeAdd === TypePostEnum.FEED) {
+      const _file = {
+        id: nanoid(),
+        name: file.name,
+        src: URL.createObjectURL(file),
+        type,
+        size: formatBytes(file.size),
+        file,
+      }
+      listFile.value.push(_file)
     }
-    listFile.value.push(_file)
-    step.value = 2
   } else {
     toastStore.pushTimmer({
       type: ToastTypeEnum.ERROR,
@@ -64,6 +82,12 @@ onBeforeUnmount(() => {
     URL.revokeObjectURL(i.src)
   })
 })
+
+watch(listFile, (val) => {
+  if (val.length) {
+    step = 2
+  }
+})
 </script>
 <template>
   <BackDrop @click.self="addStore.toggle(false)">
@@ -91,7 +115,7 @@ onBeforeUnmount(() => {
       <div></div>
     </div>
     <div v-else-if="step === 2">
-      <Edit  :select="typeAdd" :listFile="listFile" />
+      <Edit :select="typeAdd" :listFile="listFile" />
     </div>
   </BackDrop>
 </template>
