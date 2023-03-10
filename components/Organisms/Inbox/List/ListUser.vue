@@ -4,8 +4,16 @@ import { useKeenSlider } from 'keen-slider/vue.es'
 import User from './User.vue'
 import { useInboxListUserStore } from '@/store'
 
+interface IProps {
+  keyword: string
+}
+
+const props = defineProps<IProps>()
+
 const inboxListUserStore = useInboxListUserStore()
-const listUser = computed(() => inboxListUserStore.data)
+const listUser = computed(() =>
+  inboxListUserStore.data.filter((i) => i?.user_name?.includes(props.keyword))
+)
 
 const [sliderRef, slider] = useKeenSlider({
   breakpoints: {
@@ -37,8 +45,17 @@ const [sliderRef, slider] = useKeenSlider({
   renderMode: 'precision',
 })
 
-watch(listUser, () => {
-  slider.value?.update()
+let changeListUserObserver: MutationObserver | null = null
+
+onMounted(() => {
+  changeListUserObserver = new MutationObserver(() => slider.value?.update())
+  changeListUserObserver.observe(sliderRef.value!, {
+    childList: true,
+    subtree: true,
+  })
+})
+onBeforeUnmount(() => {
+  changeListUserObserver?.disconnect()
 })
 </script>
 

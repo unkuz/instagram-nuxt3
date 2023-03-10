@@ -7,7 +7,11 @@ import IndividualLine from './IndividualLine.vue'
 
 const inboxStore = useInboxStore()
 
-const inboxList = $computed(() => inboxStore.data)
+let keyword = ref('')
+
+const inboxList = $computed(() =>
+  inboxStore.data.filter((i) => i.recipient?.user_name.includes(keyword.value))
+)
 </script>
 
 <template>
@@ -45,12 +49,13 @@ const inboxList = $computed(() => inboxStore.data)
             >Search</span
           ><input
             type="text"
-            class="absolute top-1/2 left-1/2 h-[30px] w-[90%] w-[72%] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-c7 focus:outline-none"
+            v-model="keyword"
+            class="absolute top-1/2 left-1/2 h-[30px] w-[72%] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-c7 focus:outline-none"
           />
         </div>
       </div>
 
-      <ListUser />
+      <ListUser :keyword="keyword" />
 
       <div
         class="h-[calc(100vh-60px-45px-120px)] overflow-scroll md:h-[calc(100vh-84px-60px-120px)]"
