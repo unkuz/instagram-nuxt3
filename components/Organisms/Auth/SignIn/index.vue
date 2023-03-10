@@ -1,11 +1,12 @@
 <script lang="ts" setup>
+import { SCHEMA_AUTH } from '@/utils'
 import { Form } from 'vee-validate'
-import { object, string } from 'yup'
 import { useAuthStore } from '~~/store'
 import Input from './../Common/Input.vue'
-import { SCHEMA_AUTH } from '@/utils'
 
 const authStore = useAuthStore()
+
+const isPending = $computed(() => authStore.pending)
 
 const submit = (val: any) => {
   authStore.login({ ...val })
@@ -18,7 +19,13 @@ const submit = (val: any) => {
       <Input name="password" place-holder="Password" />
       <button
         @click="submit"
-        class="skeleton-btn mx-auto mt-[10px] flex h-[50px] w-[250px] items-center justify-center rounded-2xl bg-c15 dark:text-c1"
+        :disabled="isPending"
+        :class="[
+          'skeleton-btn mx-auto mt-[10px] flex h-[50px] w-[250px] items-center justify-center rounded-2xl bg-c15 dark:text-c1',
+          {
+            'skeleton ': isPending,
+          },
+        ]"
       >
         Continue
       </button>

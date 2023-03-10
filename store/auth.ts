@@ -15,6 +15,7 @@ export const useAuthStore = defineStore('auth', {
     },
     hasErr: false,
     errors: {},
+    pending: false,
   }),
   getters: {},
   actions: {
@@ -22,6 +23,7 @@ export const useAuthStore = defineStore('auth', {
       const toastStore = useToastStore()
 
       const { user_name, password } = account
+      this.pending = true
       try {
         const { data } = await axios.post(APP_API.AUTH.LOGIN, {
           user_name,
@@ -39,11 +41,14 @@ export const useAuthStore = defineStore('auth', {
         this.data.user = {}
         this.data.token = {}
         this.hasErr = true
-        this.errors = e.response?.data?.detail ?? 'The server is down, please try again later 😅😅😅'
+        this.errors =
+          e.response?.data?.detail ?? 'The server is down, please try again later 😅😅😅'
         toastStore.pushTimmer({
           type: ToastTypeEnum.ERROR,
-          content: this.errors
+          content: this.errors,
         })
+      } finally {
+        this.pending = false
       }
     },
     logout() {
@@ -52,8 +57,9 @@ export const useAuthStore = defineStore('auth', {
       this.hasErr = false
       this.errors = {}
     },
-    async createAccount(account: IAccountLogin) {
+    async create(account: IAccountLogin) {
       const toastStore = useToastStore()
+      this.pending = true
       try {
         const { data } = await axios.post(APP_API.AUTH.CREATE, { ...account })
         console.log('DAAAAA', data)
@@ -67,6 +73,8 @@ export const useAuthStore = defineStore('auth', {
           type: ToastTypeEnum.ERROR,
           content: this.errors?.detail,
         })
+      } finally {
+        this.pending = false
       }
     },
     async getNewAccessToken(val: string) {

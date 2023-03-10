@@ -6,10 +6,12 @@ import Input from './../Common/Input.vue'
 
 const authStore = useAuthStore()
 
+const isPending = $computed(() => authStore.pending)
+
 const submit = (val: any) => {
   const { user_name, password } = val
   console.log('VAL', val)
-  authStore.createAccount({
+  authStore.create({
     user_name,
     password,
   })
@@ -24,7 +26,12 @@ const submit = (val: any) => {
 
       <button
         @click="submit"
-        class="mx-auto mt-[10px] flex h-[50px] w-[250px] items-center justify-center rounded-2xl bg-c15 dark:text-c1"
+        :class="[
+          'skeleton-btn mx-auto mt-[10px] flex h-[50px] w-[250px] items-center justify-center rounded-2xl bg-c15 dark:text-c1',
+          {
+            'skeleton ': isPending,
+          },
+        ]"
       >
         Continue
       </button>
