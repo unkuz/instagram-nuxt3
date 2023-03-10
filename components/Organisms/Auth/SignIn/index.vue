@@ -8,17 +8,16 @@ const authStore = useAuthStore()
 
 const isPending = $computed(() => authStore.pending)
 
-const submit = (val: any) => {
+const onSubmit = (val: any) => {
   authStore.login({ ...val })
 }
 </script>
 <template>
   <div>
-    <Form @submit="submit" :validation-schema="SCHEMA_AUTH.SIGNIN">
+    <Form @submit="onSubmit" :validation-schema="SCHEMA_AUTH.SIGNIN">
       <Input name="user_name" place-holder="User name" />
       <Input name="password" place-holder="Password" type="password" />
       <button
-        @click="submit"
         :disabled="isPending"
         :class="[
           'skeleton-btn mx-auto mt-[10px] flex h-[50px] w-[250px] items-center justify-center rounded-2xl bg-c15 dark:text-c1',
