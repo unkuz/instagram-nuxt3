@@ -91,7 +91,7 @@ onBeforeUnmount(() => {
       <div></div>
     </div>
     <div v-else-if="step === 2">
-      <Edit :listFile="listFile" />
+      <Edit  :select="typeAdd" :listFile="listFile" />
     </div>
   </BackDrop>
 </template>

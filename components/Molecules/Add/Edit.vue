@@ -5,10 +5,12 @@ import { useMagicKeys, useTextareaAutosize } from '@vueuse/core'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import { BASE_URL_API } from '@/apis'
 import { ToastTypeEnum, useAuthStore, useFeedStore, useToastStore } from '@/store'
-import { IFilePost, SizeAvatarEnum } from '@/type'
+import { IFilePost, SizeAvatarEnum, TypePostEnum } from '@/type'
+import { ADD_SLIDER } from '~~/constants'
 
 interface IProps {
   listFile: IFilePost[]
+  select: TypePostEnum
 }
 
 const props = defineProps<IProps>()
@@ -30,6 +32,8 @@ watch(enter, (val) => {
     console.log('VAL', val)
   }
 })
+
+const textBtnNext = $computed(() => 'Add to ' + _find(ADD_SLIDER, { section: props.select })?.text)
 
 const addTags = () => {}
 
@@ -102,7 +106,7 @@ const post = () => {
         </div>
         <AtomsButton
           @click="post"
-          text="Post"
+          :text="textBtnNext"
           class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
         />
       </div>
