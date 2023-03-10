@@ -16,7 +16,7 @@ const submit = (val: any) => {
   <div>
     <Form @submit="submit" :validation-schema="SCHEMA_AUTH.SIGNIN">
       <Input name="user_name" place-holder="User name" />
-      <Input name="password" place-holder="Password" />
+      <Input name="password" place-holder="Password" type="password" />
       <button
         @click="submit"
         :disabled="isPending"

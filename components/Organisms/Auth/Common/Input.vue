@@ -4,9 +4,10 @@ import { Field, ErrorMessage } from 'vee-validate'
 interface IProps {
   name: string
   placeHolder: string
+  type?: string
 }
 
-defineProps<IProps>()
+withDefaults(defineProps<IProps>(), { type: 'text' })
 
 const placeHolderRef = $ref<HTMLDivElement>()
 </script>
@@ -24,7 +25,7 @@ const placeHolderRef = $ref<HTMLDivElement>()
           </p>
           <Field
             :name="name"
-            type="text"
+            :type="type"
             class="full h-full w-full translate-y-[4px] bg-transparent focus:bg-transparent focus:outline-none"
           />
         </div>
