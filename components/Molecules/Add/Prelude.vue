@@ -14,7 +14,8 @@ useLockScroll()
 const addStore = useAddStore()
 const toastStore = useToastStore()
 
-const step = ref(1)
+let step = $ref(1)
+
 const typeAdd = $ref(TypePostEnum.FEED)
 
 const dropZoneRef = ref<HTMLDivElement>()
@@ -35,6 +36,7 @@ const pushToFileList = (file: File) => {
           file,
         }
         listFile.value.push(_file)
+        step = 2
       } else {
         toastStore.pushTimmer({
           type: ToastTypeEnum.ERROR,
@@ -51,6 +53,7 @@ const pushToFileList = (file: File) => {
         file,
       }
       listFile.value.push(_file)
+      step = 2
     }
   } else {
     toastStore.pushTimmer({
@@ -81,12 +84,6 @@ onBeforeUnmount(() => {
   listFile.value.forEach((i) => {
     URL.revokeObjectURL(i.src)
   })
-})
-
-watch(listFile, (val) => {
-  if (val.length) {
-    step = 2
-  }
 })
 </script>
 <template>
