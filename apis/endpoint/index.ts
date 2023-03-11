@@ -6,6 +6,7 @@ export const APP_API = {
     like: '/feed/like/',
     create: '/feed/create/',
     save: '/feed/save/',
+    COMMENT: '/feed/comment/',
   },
   SUGGESTION: {
     user: '/suggestion/user/',

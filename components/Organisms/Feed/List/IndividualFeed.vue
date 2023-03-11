@@ -14,7 +14,7 @@ import React from './React.vue'
 import TimeFromNow from '@/components/Atoms/TimeFromNow.vue'
 import FetchMoreObserver from '@/components/Utils/FetchMoreObserver.vue'
 
-defineProps<{
+const props = defineProps<{
   feed: any
 }>()
 
@@ -27,6 +27,17 @@ const reply = (commentId: number) => (currentReplyCommentId.value = commentId)
 let currentIdx = ref(0)
 const setCurrent = (value: number) => (currentIdx.value = value)
 const { key } = useForceRenderTimer()
+
+const commentCount = $computed(() => {
+  let i = props.feed.comments.length
+  let j = 0
+
+  props.feed.comments.forEach((k) => {
+    j += k.reply.length
+  })
+
+  return i + j
+})
 </script>
 
 <template>
@@ -51,7 +62,7 @@ const { key } = useForceRenderTimer()
         :media-arr="feed.carousel_media.images.concat(feed.carousel_media.videos)"
         :has-saved="feed.is_saved"
       />
-      <LikeCommentCount :like-count="feed.like_count" :comment-count="feed.comments.length" />
+      <LikeCommentCount :like-count="feed.like_count" :comment-count="commentCount" />
       <Caption
         :user-name="feed.user.user_name"
         :captionContent="feed.caption_text"

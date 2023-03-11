@@ -19,12 +19,12 @@ const { key } = useForceRenderTimer()
   <div :id="`post_detail_${comment.id}`" class="mb-[10px] md:text-[0.85rem]">
     <div class="relative my-[4px] rounded-md">
       <div class="mx-[10px] flex items-center gap-[10px]">
-        <NuxtLink :to="`/${comment.user.username}`">
+        <NuxtLink :to="`/${comment.user.user_name}`">
           <Avatar :url="comment.user?.profile_pic_url" :size="SizeAvatarEnum.S" />
         </NuxtLink>
         <div class="flex items-end gap-[10px]">
-          <NuxtLink :to="`/${comment.user.username}`">
-            <TagName :name="comment.user.username" />
+          <NuxtLink :to="`/${comment.user.user_name}`">
+            <TagName :name="comment.user.user_name" />
           </NuxtLink>
           <p :key="key" class="translate-y-[3px] text-[0.8rem] text-c3 dark:text-c21">
             {{ moment(comment.created_at).fromNow() }}
@@ -72,11 +72,11 @@ const { key } = useForceRenderTimer()
       class="relative my-[4px] ml-[42px] rounded-md"
     >
       <div class="mx-[10px] flex items-center gap-[10px]">
-        <NuxtLink :to="`/${user.username}`">
+        <NuxtLink :to="`/${user.user_name}`">
           <Avatar :url="user.profile_pic_url" :size="SizeAvatarEnum.S" />
         </NuxtLink>
-        <NuxtLink :to="`/${user.username}`">
-          <TagName :name="comment.user.username" />
+        <NuxtLink :to="`/${user.user_name}`">
+          <TagName :name="comment.user.user_name" />
         </NuxtLink>
         <p :key="key" class="text-[0.8rem] text-c3 dark:text-c21">
           {{ moment(created_at).fromNow() }}

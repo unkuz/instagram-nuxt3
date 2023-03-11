@@ -49,7 +49,11 @@ export const useMoreStore = defineStore('more', {
           content: 'Delete successfully',
         })
       } catch (e) {
-        console.log('e', e)
+        console.log('e', e.response)
+        toastStore.pushTimmer({
+          type: ToastTypeEnum.ERROR,
+          content: e.response?.data?.detail,
+        })
       }
     },
   },

@@ -2,9 +2,9 @@ import { defineStore } from 'pinia'
 import { ITimeLine } from '@/models'
 import { IFilePost, IStateStore } from '@/type'
 import { timeLine } from '@/mocks'
-import { ToastTypeEnum, useAddStore, useSlashStore, useToastStore } from '@/store'
+import { ToastTypeEnum, useAddStore, useAuthStore, useSlashStore, useToastStore } from '@/store'
 import { axios } from '@/services/axios'
-import { APP_API } from '@/apis'
+import { APP_API, BASE_URL_API } from '@/apis'
 import { isImageOrVideo } from '@/utils'
 import { TagsWithInnerContent } from '@unhead/shared'
 
@@ -39,10 +39,6 @@ export const useFeedStore = defineStore('feed', {
             }
 
             i.like_count = i.has_liked ? i.like_count + 1 : i.like_count - 1
-            toastStore.pushTimmer({
-              type: ToastTypeEnum.SUCCESS,
-              content: i.has_liked ? 'Liked' : 'Unliked',
-            })
           }
         })
       } catch (e) {
@@ -61,7 +57,9 @@ export const useFeedStore = defineStore('feed', {
         }
       })
     },
-    comment(id, { text, userName, userImg, id: commentId, commentReplyId }) {
+    comment(id, { text, id: commentId, commentReplyId }) {
+      const authStore = useAuthStore()
+      const { user_name, profile_pic_url } = authStore.data.user
       const idx = this.data.findIndex((i) => i.id === id)
 
       const data = {
@@ -69,10 +67,10 @@ export const useFeedStore = defineStore('feed', {
         created_at: new Date().getTime(),
         user: {
           pk: '',
-          username: userName,
+          user_name: user_name,
           full_name: '',
           is_private: '',
-          profile_pic_url: userImg,
+          profile_pic_url: `${BASE_URL_API}` + '/' + profile_pic_url,
         },
         comment_like_count: 0,
         reply: [],
@@ -80,10 +78,23 @@ export const useFeedStore = defineStore('feed', {
       }
 
       if (commentReplyId) {
-        const idxCmRep = this.data[idx].comments.findIndex((i) => i.id === commentReplyId)
-        this.data[idx].comments[idxCmRep].reply.push(data)
+        try {
+          axios.post(APP_API.FEED.COMMENT, {
+            content: text,
+            feed: id,
+            comment_id: commentReplyId,
+          })
+          const idxCmRep = this.data[idx].comments.findIndex((i) => i.id === commentReplyId)
+          this.data[idx].comments[idxCmRep].reply.push(data)
+        } catch (e) {}
       } else {
-        this.data[idx].comments.unshift(data)
+        try {
+          axios.post(APP_API.FEED.COMMENT, {
+            content: text,
+            feed: id,
+          })
+          this.data[idx].comments.push(data)
+        } catch (e) {}
       }
     },
     async addFeed(val: { media: IFilePost[]; caption: string; tags: string[] }) {
