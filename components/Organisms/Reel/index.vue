@@ -28,6 +28,7 @@ const [container, slider] = useKeenSlider({
 })
 
 let observer: IntersectionObserver
+let mutationOb: MutationObserver | null = null
 
 const containvideoRefs = $(useTemplateRefsList<HTMLDivElement>())
 const { idle } = useIdle(APP_CONFIGS.TIME_IDLE_REELS)
@@ -86,6 +87,14 @@ onMounted(() => {
       threshold: 1,
     }
   )
+
+  mutationOb = new MutationObserver(() => slider.value?.update())
+
+  mutationOb.observe(container.value!, {
+    childList: true,
+    subtree: true,
+  })
+
   containvideoRefs.forEach((containVideoEl) => {
     observer.observe(containVideoEl.children[0].children[0])
   })

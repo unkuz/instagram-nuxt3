@@ -19,7 +19,9 @@ export const useWatchRouteSetSection = () => {
       globalStore.setSection(SectionEnum.REELS)
     } else if (section === 'explore') {
       globalStore.setSection(SectionEnum.FINDPEOPLE)
-    } else if (section === 'cuzknothz') {
+    } else if (section === 'activity-feed') {
+      globalStore.setSection(SectionEnum.ACTIVITYFEED)
+    } else {
       globalStore.setSection(SectionEnum.SELF)
     }
   })
