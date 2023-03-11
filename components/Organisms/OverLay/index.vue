@@ -9,16 +9,16 @@ const moreStore = useMoreStore()
 
 const route = useRoute()
 
-console.log(route.path)
+console.log(route)
 
-const isAuthPage = $computed(() => _isEqual(route.path, '/auth'))
+const isNotAuthPage = $computed(() => !_isEqual(route.name, 'auth'))
 </script>
 
 <template>
   <div>
     <Add_ v-if="addStore.isShow" />
     <More v-if="moreStore.isShow" />
-    <Cookie v-if="!isAuthPage" />
+    <Cookie v-if="isNotAuthPage" />
     <Toast />
   </div>
 </template>
