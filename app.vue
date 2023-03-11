@@ -37,11 +37,11 @@ const { isSupported, notification, show, close, onClick, onShow, onError, onClos
     tag: 'test',
   })
 
-onMounted(() => {
-  setInterval(() => {
-    show()
-  }, 5 * 1000 * 60)
-})
+// onMounted(() => {
+//   setInterval(() => {
+//     show()
+//   }, 5 * 1000 * 60)
+// })
 </script>
 
 <template>

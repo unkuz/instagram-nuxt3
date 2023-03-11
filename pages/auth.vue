@@ -10,7 +10,7 @@ definePageMeta({
 
 <template>
   <div>
-    <BgGlass />
+    <BgGlass class="!opacity-50" />
     <Auth />
   </div>
 </template>
