@@ -42,7 +42,6 @@ export const useFeedStore = defineStore('feed', {
           }
         })
       } catch (e) {
-        console.log('e', e)
         toastStore.pushTimmer({
           type: ToastTypeEnum.ERROR,
           content: 'Somthing wrong happen !!',
@@ -100,8 +99,6 @@ export const useFeedStore = defineStore('feed', {
     async addFeed(val: { media: IFilePost[]; caption: string; tags: string[] }) {
       const addStore = useAddStore()
       const toastStore = useToastStore()
-
-      console.log(val)
 
       let images = [] as File[]
       let videos = [] as File[]

@@ -46,7 +46,6 @@ watch(
   () => props.currentParent,
   (val) => {
     stopOtherVideoPlaying()
-    console.log('IDX', val)
   }
 )
 

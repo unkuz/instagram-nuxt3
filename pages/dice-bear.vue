@@ -7,8 +7,6 @@ const avatar = createAvatar(adventurer, {
 })
 
 const svg = await avatar.toDataUri()
-
-console.log('svg', svg)
 </script>
 <template>
   <div class="flex h-screen w-screen items-center justify-center">

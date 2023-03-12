@@ -8,7 +8,6 @@ onMounted(() => {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log('NEED LOAD MORE DATA')
         }
       })
     },

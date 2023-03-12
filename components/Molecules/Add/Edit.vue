@@ -26,10 +26,7 @@ watch(enter, (val) => {
 
     if (elFocus && elFocus?.innerText) {
       tags.push('')
-      console.log('tagRefs?.[-1]', tagRefs?.at(-1)?.focus())
     }
-
-    console.log('VAL', val)
   }
 })
 
@@ -63,7 +60,6 @@ const [sliderRef, slider] = useKeenSlider({
 })
 
 const post = () => {
-  console.log('CAP', caption.value)
   if (!caption.value) {
     toastStore.pushTimmer({
       type: ToastTypeEnum.ERROR,

@@ -16,10 +16,7 @@
 //       authStore.getNewAccessToken(accessToken)
 //     }
 //   } catch (e) {
-//     console.log('E', e)
 //   }
-
-//   console.log(jwt_decode(accessToken))
 
 //   watchEffect(() => {
 //     if (!accessToken) {

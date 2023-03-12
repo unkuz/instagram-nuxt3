@@ -21,7 +21,6 @@
 //           //   user_name: credentials?.username,
 //           //   password: credentials.password,
 //           // })
-//           // console.log('AUTH', data)
 //           // // toastStore.pushTimmer({
 //           // //   type: ToastTypeEnum.SUCCESS,
 //           // //   content: 'Login successfully',

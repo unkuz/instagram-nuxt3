@@ -20,7 +20,6 @@ const { playing, currentTime, duration, volume, muted, buffered, waiting } = use
   }
 )
 
-console.log('SRC', props.src)
 watch(buffered, (val) => {})
 </script>
 

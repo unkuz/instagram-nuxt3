@@ -22,7 +22,6 @@ export const useDoubleClick = (
 
   onMounted(() => {
     // if (refElement.value) {
-    //   console.log('refElement.value', refElement.value)
     //   refElement.value.addEventListener('click', _click)
     //   refElement.value.addEventListener('dblclick', _dbclick)
     // }

@@ -24,8 +24,6 @@ export const useAddStore = defineStore('add', {
       const addStore = useAddStore()
       const toastStore = useToastStore()
 
-      console.log(val)
-
       let images = [] as File[]
       let videos = [] as File[]
       if (val.media?.length) {

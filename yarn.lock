@@ -2980,12 +2980,12 @@
     unimport "^2.2.4"
     untyped "^1.2.2"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.3.0-27974453.d2f0b226":
-  version "3.3.0-27974453.d2f0b226"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.3.0-27974453.d2f0b226.tgz#0814fac089760d2bed1293bcd441ceccd4ead79c"
-  integrity sha512-fLgMNjhSWGyYAmhgbzyeubkLu11gjCbayp1HncsX3WkVK4wBe+klB0G4kg6f2Qv+GMupdwA4r16ny7HBygSv3Q==
+"@nuxt/kit@npm:@nuxt/kit-edge@3.3.0-27976278.e13e227d":
+  version "3.3.0-27976278.e13e227d"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.3.0-27976278.e13e227d.tgz#1c9a5cc7ebcef837e0ea1e121480240c22091b38"
+  integrity sha512-/wpdoY4093g1bqWpRUzc4Bbck5ZO7T96E/PZZ8B9vIbNf2Kpg1OLkxR26OYizMcdxO1HSZgk3cpjY/BJ0rLagg==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.0-27974453.d2f0b226"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.0-27976278.e13e227d"
     c12 "^1.1.2"
     consola "^2.15.3"
     defu "^6.1.2"
@@ -2995,7 +2995,7 @@
     jiti "^1.17.2"
     knitwork "^1.0.0"
     lodash.template "^4.5.0"
-    mlly "^1.1.1"
+    mlly "^1.2.0"
     pathe "^1.1.0"
     pkg-types "^1.0.2"
     scule "^1.0.0"
@@ -3131,15 +3131,15 @@
     unimport "^2.2.4"
     untyped "^1.2.2"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.3.0-27974453.d2f0b226":
-  version "3.3.0-27974453.d2f0b226"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.3.0-27974453.d2f0b226.tgz#3b5864f1c5c46e868e9e2c56e67f6eb4e0c0e6e6"
-  integrity sha512-e5Gv/bVFeDJBHPGumgKK9e3cpjIuzlScsYwEi+U6u9UZztwEkdWq1jKr4wWG86IY5m49P8PuHiSUMZZ1QMlXPg==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.3.0-27976278.e13e227d":
+  version "3.3.0-27976278.e13e227d"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.3.0-27976278.e13e227d.tgz#4373c762162524965c0736a1a22793772a2c6eb0"
+  integrity sha512-8cGcA/tG9e7v8WkeCjzn1dVNno+X8TV1T8X9+8h6bsBZpWaPd9XHElP1eT/bbHLD22yM1ZymGeeB/C7yv+rdwg==
   dependencies:
     c12 "^1.1.2"
     create-require "^1.1.1"
     defu "^6.1.2"
-    hookable "^5.4.2"
+    hookable "^5.5.0"
     jiti "^1.17.2"
     pathe "^1.1.0"
     pkg-types "^1.0.2"
@@ -3176,13 +3176,13 @@
     rc9 "^2.0.1"
     std-env "^3.3.2"
 
-"@nuxt/test-utils-edge@3.3.0-27974453.d2f0b226":
-  version "3.3.0-27974453.d2f0b226"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.3.0-27974453.d2f0b226.tgz#61e0130cf87beffff201d4ca090ec52d921ff5b2"
-  integrity sha512-J/IiJAfjleGJbZ7U9OPtIHzSuHXZLXy+bt6iQq7O9GjlALACitkM/WQjG5JvsX3SGiHWwMQnzqFqRkaSB6zcFQ==
+"@nuxt/test-utils-edge@3.3.0-27976278.e13e227d":
+  version "3.3.0-27976278.e13e227d"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.3.0-27976278.e13e227d.tgz#2439f1f6eb0f0515c526be37eac56f74cb0e6f59"
+  integrity sha512-u8jVucFTqCZwzfs1GWagFL4i4L2HxQ3ziB63udPfr6OCHR3/kQgfYpIiRnmlNuVaB8NwTXKckuTSmOhUHPWDVw==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.3.0-27974453.d2f0b226"
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.0-27974453.d2f0b226"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.3.0-27976278.e13e227d"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.0-27976278.e13e227d"
     consola "^2.15.3"
     defu "^6.1.2"
     execa "^7.0.0"
@@ -8398,6 +8398,11 @@ hookable@^5.4.2:
   resolved "https://registry.yarnpkg.com/hookable/-/hookable-5.4.2.tgz#6a1d3c4b3cb5b4262f99b3070ce0ee92c9c78049"
   integrity sha512-6rOvaUiNKy9lET1X0ECnyZ5O5kSV0PJbtA5yZUgdEF7fGJEVwSLSislltyt7nFwVVALYHQJtfGeAR2Y0A0uJkg==
 
+hookable@^5.5.0:
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/hookable/-/hookable-5.5.1.tgz#3a842c66be72a9cb14043d8e6afa5bc094c831c5"
+  integrity sha512-ac50aYjbtRMMZEtTG0qnVaBDA+1lqL9fHzDnxMQlVuO6LZWcBB7NXjIu9H9iImClewNdrit4RiEzi9QpRTgKrg==
+
 hosted-git-info@^2.1.4:
   version "2.8.9"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
@@ -10737,6 +10742,16 @@ mlly@^1.1.1:
     pathe "^1.1.0"
     pkg-types "^1.0.1"
     ufo "^1.1.0"
+
+mlly@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/mlly/-/mlly-1.2.0.tgz#f0f6c2fc8d2d12ea6907cd869066689b5031b613"
+  integrity sha512-+c7A3CV0KGdKcylsI6khWyts/CYrGTrRVo4R/I7u/cUsy0Conxa6LUhiEzVKIw14lc2L5aiO4+SeVe4TeGRKww==
+  dependencies:
+    acorn "^8.8.2"
+    pathe "^1.1.0"
+    pkg-types "^1.0.2"
+    ufo "^1.1.1"
 
 moment@^2.29.4:
   version "2.29.4"

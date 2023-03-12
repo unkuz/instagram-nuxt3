@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useStoriesStore } from '@/store'
 import { useKeenSlider } from 'keen-slider/vue.es'
-import User from './User.vue'
+import IndividualUser from './IndividualUser.vue'
 import { useInboxListUserStore } from '@/store'
 
 interface IProps {
@@ -62,7 +62,7 @@ onBeforeUnmount(() => {
 <template>
   <div ref="sliderRef" class="keen-slider h-[120px] pt-[20px]">
     <div v-for="i in listUser" :key="i.id" class="keen-slider__slide">
-      <User v-bind="i" />
+      <IndividualUser v-bind="i" />
     </div>
   </div>
 </template>

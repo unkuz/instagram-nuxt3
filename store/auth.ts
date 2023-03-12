@@ -62,7 +62,6 @@ export const useAuthStore = defineStore('auth', {
       this.pending = true
       try {
         const { data } = await axios.post(APP_API.AUTH.CREATE, { ...account })
-        console.log('DAAAAA', data)
         toastStore.pushTimmer({
           type: ToastTypeEnum.SUCCESS,
           content: 'Nice. Create account successfully',

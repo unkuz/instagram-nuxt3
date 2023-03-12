@@ -81,7 +81,6 @@ const setPreview = (val: { type: string; src: string }) => {
     type,
     src,
   }
-  console.log('previewMedia', previewMedia)
 }
 const onDrop = (files: File[] | null) => {
   // called when files are dropped on zone

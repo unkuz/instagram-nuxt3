@@ -9,8 +9,6 @@ const moreStore = useMoreStore()
 
 const route = useRoute()
 
-console.log(route)
-
 const isNotAuthPage = $computed(() => !_isEqual(route.name, 'auth'))
 </script>
 
