@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     'nuxt-lodash',
     '@nuxtjs/fontaine',
     '@vite-pwa/nuxt',
+    // '@nuxtjs/eslint-module',
     // '@nuxtjs/algolia',
     // 'nuxt-logrocket',
     // '@nuxtjs/i18n',
