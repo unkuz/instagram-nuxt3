@@ -2652,12 +2652,12 @@
     unimport "^3.0.2"
     untyped "^1.2.2"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.3.2-27989158.46712942":
-  version "3.3.2-27989158.46712942"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.3.2-27989158.46712942.tgz#75193058040d825eb5adcde7fd3dafa1233b9f3e"
-  integrity sha512-DyKocnkgivCBFrCc/TloUKt7my9RMXYnv+QaCCzUMu2GAtIDdeaE9DmPzDZflBYGS0b4cdJkN+dCu1DXVvBSJg==
+"@nuxt/kit@npm:@nuxt/kit-edge@3.3.2-27990587.4430c664":
+  version "3.3.2-27990587.4430c664"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.3.2-27990587.4430c664.tgz#84d3d7ffd7b007f54e2899557c41cc5ec823691f"
+  integrity sha512-Xn4ABTo75B/XCua4ildZFQBghTRGt8mveAbN7OrKRTGB5hEngJ9BGh06ty30pdmHnq7WSLbUH2Q84Y41Sr1/OA==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.2-27989158.46712942"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.2-27990587.4430c664"
     c12 "^1.2.0"
     consola "^2.15.3"
     defu "^6.1.2"
@@ -2784,10 +2784,10 @@
     unimport "^3.0.2"
     untyped "^1.2.2"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.3.2-27989158.46712942":
-  version "3.3.2-27989158.46712942"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.3.2-27989158.46712942.tgz#7b284e0430b4c161e1be18878a51da9c04926ce0"
-  integrity sha512-fsDMGljC5e4lioaXgoIgODhbk9l0RlcZinq665XOEJajelK4AJ3sExoi5KxzAHwX7QCGdL6iyYtz90TQe18eSQ==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.3.2-27990587.4430c664":
+  version "3.3.2-27990587.4430c664"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.3.2-27990587.4430c664.tgz#4f1152fa93bb02798fd8e4ab62f9a046f724b0d6"
+  integrity sha512-oTZc9px1yzBo0wWQuegETD1ZsiMCwf8yCZIUbADs3lB4IUtsxOO3E22iLW9oakUfgRRVAwK1vYgIAOMFWHn6Lw==
   dependencies:
     c12 "^1.2.0"
     create-require "^1.1.1"
@@ -2829,13 +2829,13 @@
     rc9 "^2.0.1"
     std-env "^3.3.2"
 
-"@nuxt/test-utils-edge@3.3.2-27989158.46712942":
-  version "3.3.2-27989158.46712942"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.3.2-27989158.46712942.tgz#4ef074f819b2a5ac4e9b3d000786820e9340e29e"
-  integrity sha512-FUXEoqVQYyhw+T71wGQkuYxZ2x3fxtxIK8L8DwgXQ6VLows5CbLKrpG1G7gB34Y0tYpRYb1B8rB/kj6TfdpcuA==
+"@nuxt/test-utils-edge@3.3.2-27990587.4430c664":
+  version "3.3.2-27990587.4430c664"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.3.2-27990587.4430c664.tgz#03a90bea2914779e36dfab51510d0b1cb844eb10"
+  integrity sha512-N0RW9cAx3AkByQ6rM0ghgS2xZlLI59qf1T3eKlvLC2ec5qRlYw9DD/NLjixPPb0D7k2yAsU2GWunW0PojuC8tw==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.3.2-27989158.46712942"
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.2-27989158.46712942"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.3.2-27990587.4430c664"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.3.2-27990587.4430c664"
     consola "^2.15.3"
     defu "^6.1.2"
     execa "^7.1.1"
@@ -3047,24 +3047,31 @@
     defu "^6.1.2"
     pathe "^1.1.0"
 
-"@nuxtjs/tailwindcss@^6.6.3":
-  version "6.6.3"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/tailwindcss/-/tailwindcss-6.6.3.tgz#f4762f20a3b900bcc9001694cd3a0d9198be054b"
-  integrity sha512-SaquOyi5Hn+8/wyhj4hcoB5Fnq1EfCi6AFhDCls9srKLOF4EHF1sAKI/P6m6F28AUXl+b+cH+YK+6f423vrJxA==
+"@nuxtjs/tailwindcss@^6.6.4":
+  version "6.6.4"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/tailwindcss/-/tailwindcss-6.6.4.tgz#4d32fc6b94db609c44a873249e3d881179027f65"
+  integrity sha512-Lpgb1EmbHP6URHpi5D373BoNHBnODfnSstZk88SfrJ0r94r4jUaixtmSwLj9ot0wpO3Adz85RIg468/sCc4nAw==
   dependencies:
     "@nuxt/kit" "^3.3.1"
     "@nuxt/postcss8" "^1.1.3"
     autoprefixer "^10.4.14"
     chokidar "^3.5.3"
     clear-module "^4.1.2"
+    colorette "^2.0.19"
+    cookie-es "^0.5.0"
     defu "^6.1.2"
+    destr "^1.2.2"
+    h3 "^1.6.2"
+    iron-webcrypto "^0.6.0"
     pathe "^1.1.0"
     postcss "^8.4.21"
     postcss-custom-properties "^13.1.4"
     postcss-nesting "^11.2.1"
+    radix3 "^1.0.0"
     tailwind-config-viewer "^1.7.2"
     tailwindcss "^3.2.7"
     ufo "^1.1.1"
+    uncrypto "^0.1.2"
 
 "@nuxtjs/web-vitals@^0.2.4":
   version "0.2.4"
@@ -3483,10 +3490,10 @@
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
 
-"@twicpics/components@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@twicpics/components/-/components-0.15.1.tgz#39753c2f099c0a740ba7d953409cc541f537b8b0"
-  integrity sha512-N5Aupa5gPg+PxydBjJw37yzIu1/X719ot2AV9MdfFwctUN4Y/3KA4MAjSNPGqxM/UPc4qH3c/Vat9G6T68Gh/A==
+"@twicpics/components@^0.16.0":
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/@twicpics/components/-/components-0.16.0.tgz#8c049e6fbab4b07840b1bb9c3f04b29d9ffbbf2e"
+  integrity sha512-h4gpcV+OpBakjIizMfVDZp9gkQDXNf/gwj3LlLzFrOrY9vDs4fl5dvaIfzi61tvWlrccs4abuisFulNsTX0r1w==
 
 "@types/cacheable-request@^6.0.1":
   version "6.0.3"
@@ -10611,12 +10618,12 @@ nuxt-simple-sitemap@^1.0.9:
     sitemap "^7.1.1"
     ufo "^1.1.1"
 
-nuxt-typed-router@^3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-3.0.6.tgz#5823e10ac54bd1897a96f5eaff8eb19db128c5ad"
-  integrity sha512-eBzjgZF9Y2nXcCXJPYjJUflBd9SeWb7FsgMKagUxCY+b6ULdm8aZN8tJUI7E/V3t+Rp0Vyy8/yz0OCDuYeLg+w==
+nuxt-typed-router@^3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-3.0.7.tgz#92ba9e0ac7ea3d1c55ba1b833b751f925f96a5fd"
+  integrity sha512-hgsKMUtr6IhG5MSmD6cm3WPIEYeiAK9yqZ/kPsRDPma0TLl5/pEFvnc9N4GFE9vFupHRhEvYY46jllitf2orUA==
   dependencies:
-    "@nuxt/kit" "^3.2.2"
+    "@nuxt/kit" "^3.3.1"
     chalk "^5.2.0"
     defu "^6.1.2"
     lodash-es "^4.17.21"
@@ -10624,7 +10631,7 @@ nuxt-typed-router@^3.0.6:
     mkdirp "^2.1.5"
     nanoid "^4.0.1"
     pathe "1.1.0"
-    prettier "2.8.4"
+    prettier "2.8.6"
 
 nuxt-unhead@^1.4.15:
   version "1.4.15"
@@ -11636,12 +11643,7 @@ prettier-plugin-tailwindcss@^0.2.5:
   resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.2.5.tgz#fb9f07f22d0658fdedbf4d83254bf907656f7500"
   integrity sha512-vZ/iKieyCx0WTxHbkf5E1rBlv/ybFk8WTT4hL5W2jlVxum2Zbe0jMUpuQdDrpa4z2vnPiJ5KIWCqL/kd16fKYg==
 
-prettier@2.8.4:
-  version "2.8.4"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.4.tgz#34dd2595629bfbb79d344ac4a91ff948694463c3"
-  integrity sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==
-
-prettier@^2.7.1, prettier@^2.8.6:
+prettier@2.8.6, prettier@^2.7.1, prettier@^2.8.6:
   version "2.8.6"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.6.tgz#5c174b29befd507f14b83e3c19f83fdc0e974b71"
   integrity sha512-mtuzdiBbHwPEgl7NxWlqOkithPyp4VN93V7VeHVWBF+ad3I5avc0RVDT4oImXQy9H/AqxA2NSQH8pSxHW6FYbQ==
@@ -14171,6 +14173,19 @@ vite-plugin-pwa@^0.14.4:
   version "0.14.4"
   resolved "https://registry.yarnpkg.com/vite-plugin-pwa/-/vite-plugin-pwa-0.14.4.tgz#d83fae9e85ab4a082e11ab475b3ec124bfe49084"
   integrity sha512-M7Ct0so8OlouMkTWgXnl8W1xU95glITSKIe7qswZf1tniAstO2idElGCnsrTJ5NPNSx1XqfTCOUj8j94S6FD7Q==
+  dependencies:
+    "@rollup/plugin-replace" "^5.0.1"
+    debug "^4.3.4"
+    fast-glob "^3.2.12"
+    pretty-bytes "^6.0.0"
+    rollup "^3.7.2"
+    workbox-build "^6.5.4"
+    workbox-window "^6.5.4"
+
+vite-plugin-pwa@^0.14.5:
+  version "0.14.5"
+  resolved "https://registry.yarnpkg.com/vite-plugin-pwa/-/vite-plugin-pwa-0.14.5.tgz#86fb1233b31dc4e30d5f040391fc4a57977f2c86"
+  integrity sha512-LH3VCtoWx0scfim8Ph+daVl45uVRyWzXn3C3GUq92uWUui1p8eh+DjTQ23Pvb7SJ0SJtxZ99LCpOLCkFkaxokg==
   dependencies:
     "@rollup/plugin-replace" "^5.0.1"
     debug "^4.3.4"
