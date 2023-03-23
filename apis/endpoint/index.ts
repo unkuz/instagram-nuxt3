@@ -19,6 +19,7 @@ export const APP_API = {
   USER: {
     detail: '/user/',
     LIST: '/user/',
+    UPDATE_PROFLE: (userId: string) => `/user/${userId}/`,
   },
   STORY: {
     LIST: '/story/',

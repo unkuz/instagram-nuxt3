@@ -1,5 +1,7 @@
 import { defineStore } from 'pinia'
 import { SELECT_TYPE } from '@/constants/screens/account'
+import { axios } from '~~/services/axios'
+import { APP_API } from '~~/apis'
 
 export type TData = {
   id: number
@@ -25,14 +27,10 @@ export const useProfileStore = defineStore('profile', {
     save(val: any) {
       this.data = val
     },
-    // setSelect(select: SELECT_TYPE) {
-    //   this.select = select
-    // },
-    // setIsShowFollowing(isShowFollowing: boolean) {
-    //   this.isShowFollowing = isShowFollowing
-    // },
-    // setIsShowFollowers(isShowFollowers: boolean) {
-    //   this.isShowFollowers = isShowFollowers
-    // },
+    async updateProfile(val: any) {
+      try {
+        await axios.put(APP_API.USER.UPDATE_PROFLE())
+      } catch (e) {}
+    },
   },
 })

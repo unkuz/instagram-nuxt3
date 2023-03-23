@@ -6,6 +6,8 @@ import EditProfile from '@/components/Molecules/EditProfile/index.vue'
 import { axios } from '@/services/axios'
 import { useProfileStore } from '@/store'
 import { SizeAvatarEnum } from '@/type'
+import { useFileDialog } from '@vueuse/core'
+import { isImageOrVideo } from '@/utils'
 
 definePageMeta({
   middleware: 'auth',
@@ -13,6 +15,8 @@ definePageMeta({
 
 const route = useRoute()
 const profileStore = useProfileStore()
+const { files: avatarFile, open: openAvatar } = useFileDialog({ multiple: false })
+const { files: coverFile, open: openCover } = useFileDialog({ multiple: false })
 
 let showEditProfile = $ref(false)
 
@@ -30,6 +34,43 @@ watchEffect(() => {
 })
 
 const profile = $computed(() => profileStore.profile)
+
+let avatarImg = $ref<string>()
+let coverImg = $ref<string>()
+
+const changeCover = () => {
+  openCover()
+}
+
+watch(avatarFile, (val) => {
+  if (val) {
+    const file = Array.from(val)?.[0]
+    const type = isImageOrVideo(file)
+    if (type === 'image') {
+      avatarImg = URL.createObjectURL(file)
+    }
+  }
+})
+
+watch(coverFile, (val) => {
+  if (val) {
+    const file = Array.from(val)?.[0]
+    const type = isImageOrVideo(file)
+    if (type === 'image') {
+      coverImg = URL.createObjectURL(file)
+    }
+  }
+})
+
+const changeAvatar = () => {
+  openAvatar()
+}
+
+onBeforeUnmount(() => {
+  ;[avatarImg, coverImg].forEach((i) => {
+    URL.revokeObjectURL(i!)
+  })
+})
 </script>
 
 <template>
@@ -37,20 +78,38 @@ const profile = $computed(() => profileStore.profile)
     <div class="relative">
       <div class="group relative h-[200px] md:h-[250px]">
         <nuxt-img
+          v-if="!coverImg"
           class="absolute h-full w-full cursor-pointer bg-cover bg-center object-cover"
           :src="profile?.cover_pic_url"
-          :style="{ backgroundImage: `url(${profile?.cover_pic_url})` }"
         />
-        <div class="absolute inset-0 hidden bg-black/50 group-hover:block"></div>
+        <img
+          v-else
+          :src="coverImg"
+          class="absolute h-full w-full cursor-pointer bg-cover bg-center object-cover"
+        />
+        <div class="absolute inset-0 hidden bg-black/50 group-hover:block">
+          <div @click="changeCover">Change</div>
+        </div>
       </div>
 
       <div class="group absolute h-[140px] w-[140px] -translate-y-[100px] translate-x-[20px]">
         <Avatar
+          v-if="!avatarImg"
           :size="SizeAvatarEnum.L"
           :url="profile?.profile_pic_url"
-          class="absolute border-[5px] border-c1 dark:border-c19 md:h-full md:w-full"
+          class="absolute h-full w-full border-[5px] border-c1 dark:border-c19"
         />
-        <div class="absolute inset-0 hidden rounded-[50%] bg-black/50 group-hover:block"></div>
+        <img
+          v-else
+          :src="avatarImg"
+          class="absolute h-full w-full cursor-pointer rounded-[50%] bg-cover bg-center object-cover"
+        />
+        <div
+          @click="changeAvatar"
+          class="absolute inset-0 hidden rounded-[50%] bg-black/50 group-hover:block"
+        >
+          <div></div>
+        </div>
       </div>
     </div>
     <div>
