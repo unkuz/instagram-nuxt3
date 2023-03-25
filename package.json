@@ -12,7 +12,7 @@
   "devDependencies": {
     "@nuxt/content": "^2.4.3",
     "@nuxt/image-edge": "1.0.0-27991759.1a5eea1",
-    "@nuxt/test-utils-edge": "3.3.2-27992199.dc5982d9",
+    "@nuxt/test-utils-edge": "3.3.3-27994724.dd6f9c01",
     "@nuxtjs/device": "^3.1.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/eslint-module": "^4.0.2",
@@ -36,7 +36,7 @@
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.10.0",
-    "nuxt": "^3.3.1",
+    "nuxt": "^3.3.2",
     "nuxt-icon": "^0.3.3",
     "nuxt-ionic": "^0.7.0",
     "nuxt-lodash": "^2.4.1",
