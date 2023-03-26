@@ -6,7 +6,6 @@ export default defineNuxtRouteMiddleware(() => {
   const accessToken = authStore?.data?.token?.access
 
   if (!accessToken) {
-    console.log('HEHE')
     return navigateTo('/auth/')
   }
 
@@ -17,7 +16,6 @@ export default defineNuxtRouteMiddleware(() => {
       authStore.getNewAccessToken(accessToken)
     }
   } catch (e) {
-    console.log('E', e)
     navigateTo('/auth/')
   }
 })

@@ -10718,7 +10718,7 @@ nuxt-security@^0.13.0:
     pathe "^1.0.0"
     xss "^1.0.14"
 
-nuxt-seo-kit@^1.3.2:
+nuxt-seo-kit@^1.3.5:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/nuxt-seo-kit/-/nuxt-seo-kit-1.3.5.tgz#cfc8ad2f432f0755433129a3648bd6bf8ef08aca"
   integrity sha512-Koet/upXpcKtwuimbEJyYilrrU7Q/9a+diH1hR9CgWXFdWcbJrX0idwy5Z7mDy2iK57r4BLIemCga8hfRVQBpw==
