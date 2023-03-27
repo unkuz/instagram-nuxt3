@@ -2,6 +2,7 @@
 import Avatar from '@/components/Atoms/Avatar.vue'
 import { useAuthStore } from '@/store'
 import { SizeAvatarEnum } from '@/type'
+import { BASE_URL_API } from '@/apis'
 
 interface IconProps {
   isSelect: boolean
@@ -10,7 +11,7 @@ interface IconProps {
 defineProps<IconProps>()
 
 const authStore = useAuthStore()
-const avatar = computed(() => authStore.data.avatar)
+const avatar = computed(() => BASE_URL_API + '/' + authStore.data.user?.profile_pic_url)
 </script>
 
 <template>

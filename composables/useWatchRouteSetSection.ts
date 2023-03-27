@@ -10,17 +10,16 @@ export const useWatchRouteSetSection = () => {
       return
     }
 
-    const section = route.path.split('/')[1]
-    if (section === '_') {
-      globalStore.setSection(SectionEnum.HOME)
-    } else if (section === 'inbox') {
-      globalStore.setSection(SectionEnum.MESSENGER)
-    } else if (section === 'reels') {
-      globalStore.setSection(SectionEnum.REELS)
-    } else if (section === 'explore') {
-      globalStore.setSection(SectionEnum.FINDPEOPLE)
-    } else if (section === 'cuzknothz') {
-      globalStore.setSection(SectionEnum.SELF)
+    const mapData = {
+      _: SectionEnum.HOME,
+      inbox: SectionEnum.MESSENGER,
+      reels: SectionEnum.REELS,
+      explore: SectionEnum.FINDPEOPLE,
+      'activity-feed': SectionEnum.ACTIVITYFEED,
     }
+
+    const section = route.path.split('/')[1] as keyof typeof mapData
+
+    globalStore.setSection(mapData?.[section] ?? SectionEnum.SELF)
   })
 }

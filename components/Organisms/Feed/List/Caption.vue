@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TagName from '@/components/Atoms/TagName.vue';
+import TagName from '@/components/Atoms/TagName.vue'
 
 interface IProps {
   userName: string
@@ -7,12 +7,12 @@ interface IProps {
   tags: string[]
 }
 
-const { captionContent, tags } = defineProps<IProps>()
+const props = defineProps<IProps>()
 
 const hasCaptionOrTag = $computed(() => {
-  if (captionContent.trim() === '' || tags.length === 0) {
-    return false
-  }
+  // if (props.captionContent.trim() === '' || props.tags.length === 0) {
+  //   return false
+  // }
   return true
 })
 </script>
@@ -24,7 +24,7 @@ const hasCaptionOrTag = $computed(() => {
       <p
         class="whitespace-pre-line [&>a]:text-c7 dark:[&>a]:text-c15"
         v-html="$urlify(captionContent)"
-      ></p>
+      />
       <div class="mt-[3px] flex flex-wrap gap-[8px]">
         <NuxtLink v-for="(i, idx) in tags" :key="idx" :to="`/explore/tags/${i}`">
           <div class="text-purple-500" title="tag">

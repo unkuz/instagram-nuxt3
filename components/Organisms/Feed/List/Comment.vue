@@ -1,11 +1,12 @@
 <script lang="ts" setup>
-import Emoji from '@/components/Utils/Emoji.vue';
-import { useAuthStore, useFeedStore } from '@/store';
-import { onClickOutside, useTextareaAutosize } from '@vueuse/core';
+import Emoji from '@/components/Utils/Emoji.vue'
+import { useAuthStore, useFeedStore } from '@/store'
+import { onClickOutside, useTextareaAutosize } from '@vueuse/core'
+import { BASE_URL_API } from '@/apis'
 
 interface IProps {
-  id: string
-  currentReplyCommentId: string
+  id: number
+  currentReplyCommentId: number | string
 }
 
 const props = defineProps<IProps>()
@@ -23,8 +24,8 @@ watch(
   (val) => {
     if (val) {
       const findNickNameCommentReply = timeLineStore.data
-        .find(({ id }) => id === props.id)!
-        .comments.find(({ id }) => id === val)!.user.username
+        .find(({ id }: any) => id === props.id)!
+        .comments.find(({ id }: any) => id === val)!.user.username
       input.value = '@' + `${findNickNameCommentReply}` + ' '
       textarea.value?.focus()
     }
@@ -40,8 +41,6 @@ const toggleShowEmoji = () => (isShowEmoji = !isShowEmoji)
 const send = async () => {
   await timeLineStore.comment(props.id, {
     text: input.value,
-    userName: authStore.data.userName,
-    userImg: authStore.data.avatar,
     id: Math.random() * 10000,
     commentReplyId: props.currentReplyCommentId,
   })
@@ -53,7 +52,7 @@ const send = async () => {
 </script>
 
 <template>
-  <div class="flex w-full items-center justify-between">
+  <div class="mb-[20px] flex w-full items-center justify-between gap-[10px]">
     <div ref="emojiRef" class="relative">
       <Emoji v-if="isShowEmoji" @emoji-add="emojiAdd" />
       <div class="cursor-pointer text-[0.8rem] font-[500]" @click="toggleShowEmoji">
@@ -71,7 +70,7 @@ const send = async () => {
       v-model="input"
       rows="1"
       spellcheck="false"
-      class="m-auto my-[10px] block h-[38px] max-h-[100px] w-[83%] cursor-text resize-none rounded-[5px] border-[1px] border-c4 bg-transparent p-[5px] shadow-sm shadow-c4 placeholder:text-center placeholder:text-[0.8rem] focus:outline-none dark:border-c20 dark:shadow-none lg:w-[88%]"
+      class="flex-1 resize-none rounded-[5px] bg-c4/50 py-[7px] px-[5px] placeholder:ml-[10px] focus:outline-none dark:bg-c23/50"
       @keyup.enter="send"
     />
 

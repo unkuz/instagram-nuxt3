@@ -7,6 +7,9 @@ import { IPending, SizeAvatarEnum } from '@/type'
 import { getCurrentYear } from '@/utils'
 import Item from './Item.vue'
 import SuggestionSkl from '@/components/Skeleton/Suggestion.vue'
+import { BASE_URL_API } from '@/apis'
+import TagName from '@/components/Atoms/TagName.vue'
+import SuggestionSkeleton from '@/components/Skeleton/Suggestion/index.vue'
 
 defineProps<IPending>()
 
@@ -17,12 +20,10 @@ let timer2: NodeJS.Timer
 let maxSuggestionPeopleFollow = $ref(APP_CONFIGS.MAX_SUGGESTION_PEOPLE_FOLLOW)
 const suggestion = $computed(() => sugestionStore.data.slice(0, maxSuggestionPeopleFollow))
 const authStore = useAuthStore()
-const avatar = $computed(() => authStore.data.avatar)
+const avatar = $computed(() => BASE_URL_API + '/' + authStore.data.user?.profile_pic_url)
 const sugestionRef = $ref<HTMLDivElement>()
 
 let isIntersecting = $ref(false)
-
-const authorText = 'cuzknothz'
 
 // onMounted(() => {
 //   let observer = new IntersectionObserver(
@@ -58,19 +59,28 @@ const authorText = 'cuzknothz'
 //   clearInterval(timer)
 //   clearInterval(timer2)
 // })
+const userName = $computed(() => authStore.data.user?.user_name)
+
+const logout = () => {
+  authStore.logout()
+}
 </script>
 
 <template>
   <div>
-    <div ref="sugestionRef" v-if="!isPending">
+    <SuggestionSkeleton v-if="isPending" />
+    <div ref="sugestionRef" v-else>
       <div class="mt-[26px] mb-[22px] flex h-[56px] items-center justify-between">
-        <Avatar :size="SizeAvatarEnum.M" :url="avatar" />
+        <NuxtLink :to="`/${userName}/`"><Avatar :size="SizeAvatarEnum.M" :url="avatar" /></NuxtLink>
+
         <div class="-ml-[70px]">
-          <p class="cursor-pointer font-medium">cuzknothz</p>
-          <p class="text-c3 dark:text-c21">cuzknothz</p>
+          <NuxtLink :to="`/${userName}/`"> <TagName :name="userName" /></NuxtLink>
+          <NuxtLink :to="`/${userName}/`"
+            ><p class="text-c3 dark:text-c21">{{ userName }}</p></NuxtLink
+          >
         </div>
-        <div @click="authStore.data.isLogin = false">
-          <NuxtLink to="/login">
+        <div @click="logout">
+          <NuxtLink to="/auth">
             <Button class="!bg-c15 py-[6px] text-[.8rem] text-c1" text="Log out" />
           </NuxtLink>
         </div>
@@ -83,11 +93,11 @@ const authorText = 'cuzknothz'
       </div>
       <div class="mt-[8px] h-auto w-full">
         <Item
-          v-for="{ name, avatar, id } in suggestion"
+          v-for="{ user_name, profile_pic_url, id } in suggestion"
           :id="id"
           :key="id"
-          :name="name"
-          :avatar="avatar"
+          :user_name="user_name"
+          :avatar="profile_pic_url"
         />
       </div>
       <div class="mt-[10px] text-[0.85rem] text-c3 dark:text-c21" v-once>
@@ -121,14 +131,10 @@ const authorText = 'cuzknothz'
           <div
             class="cursor-pointer font-august text-[1.25rem] uppercase tracking-wider text-c2 drop-shadow-md dark:text-c1"
           >
-            {{ authorText }}
+            {{ APP_CONFIGS.AUTHOR }}
           </div>
-          <!-- <div
-          class="absolute top-[6px] h-[4px] w-[35px] rotate-[60deg] animate-cuzknothz bg-c1 dark:bg-c19"
-        ></div> -->
         </NuxtLink>
       </div>
     </div>
-    <SuggestionSkl v-else />
   </div>
 </template>

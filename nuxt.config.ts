@@ -4,6 +4,7 @@ import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
   modules: [
+    // '@sidebase/nuxt-auth',
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
@@ -13,20 +14,23 @@ export default defineNuxtConfig({
     'nuxt-icon',
     'nuxt-lodash',
     '@nuxtjs/fontaine',
-    // '@nuxt/content',
+    '@vite-pwa/nuxt',
+    // '@nuxtjs/eslint-module',
+    // '@nuxtjs/algolia',
     // 'nuxt-logrocket',
-    // '@sidebase/nuxt-auth',
     // '@nuxtjs/i18n',
-    // '@nuxt/content',
     // '@nuxtjs/device',
     // 'nuxt-security',
     // '@nuxtjs/algolia',
     // '@twicpics/components/nuxt3',
     // 'nuxt-security',
     // '@nuxtjs/fontaine',
-    // '@sidebase/nuxt-auth',
     // '@morev/vue-transitions/nuxt',
   ],
+  //   auth: {
+  //     enableGlobalAppMiddleware: true,
+  //     origin: 'http://localhost:3000/',
+  //   },
   content: {
     // https://content.nuxtjs.org/api/configuration
   },
@@ -50,14 +54,14 @@ export default defineNuxtConfig({
         'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
       title: 'Instagram',
       script: [
-        {
-          src: `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1817809598132751`,
-          crossorigin: 'anonymous',
-          async: true,
-        },
-        {
-          src: '/ads.js',
-        },
+        // {
+        //   src: `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1817809598132751`,
+        //   crossorigin: 'anonymous',
+        //   async: true,
+        // },
+        // {
+        //   src: '/ads.js',
+        // },
       ],
     },
     keepalive: false,

@@ -4,3 +4,6 @@ export * from './stories'
 export * from './suggets'
 export * from './reel'
 export * from './inbox'
+export * from './inboxList'
+
+export * from './inboxListUser'

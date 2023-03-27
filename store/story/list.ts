@@ -10,7 +10,7 @@ interface IState {
 
 export const useStoriesStore = defineStore('stories', {
   state: () => ({
-    data: [...stories] as IStory[],
+    data: [] as IStory[],
     hasErr: false,
     errors: {},
   }),

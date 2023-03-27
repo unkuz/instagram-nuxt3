@@ -4,8 +4,8 @@ export interface IFriendshipStatus {
 }
 
 export interface IUser {
-  id: string
-  username: string
+  id: number
+  user_name: string
   full_name: string
   profile_pic_url: string
   friendship_status: IFriendshipStatus
@@ -27,5 +27,5 @@ export interface IReel {
   like_count: number
   total_comment: number
   media: IMedia
-  id: string | number
+  id: number | number
 }

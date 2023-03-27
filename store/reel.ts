@@ -6,5 +6,12 @@ export const useReelStore = defineStore('reel', {
     data: [...mock_reel],
   }),
   getters: {},
-  actions: {},
+  actions: {
+    save(val: any) {
+      if (_isNil(val)) {
+        return
+      }
+      this.data = val
+    },
+  },
 })

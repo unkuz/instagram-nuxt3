@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import LikeIcon_ from '@/assets/svg/heart_break_icon.svg';
-import { Elastic, gsap } from 'gsap';
+import LikeIcon_ from '@/assets/svg/heart_break_icon.svg'
+import { Elastic, gsap } from 'gsap'
 
 const likeRef = $ref<HTMLDivElement>()
 let tl: TimelineLite = gsap.timeline({})
@@ -10,8 +10,7 @@ onMounted(() => {
     scale: 4,
     duration: 0.5,
     ease: Elastic.easeOut.config(1, 0.3),
-  })
-  tl.to(likeRef!, {
+  }).to(likeRef!, {
     display: 'none',
     duration: 0,
   })

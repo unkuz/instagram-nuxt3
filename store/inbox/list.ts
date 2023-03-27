@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { inboxList } from '@/mocks'
 
 export const useInboxStore = defineStore('inbox', {
   state: () => ({
@@ -7,5 +8,11 @@ export const useInboxStore = defineStore('inbox', {
     message: '',
   }),
   getters: {},
-  actions: {},
+  actions: {
+    save(data: any) {
+      if (data) {
+        this.data = data
+      }
+    },
+  },
 })

@@ -10,6 +10,12 @@ import { gsap } from 'gsap'
 import Emoji from '@/components/Utils/Emoji.vue'
 import { useInboxDetailStore } from '@/store'
 
+interface IProps {
+  id: number
+}
+
+const props = defineProps<IProps>()
+
 let showEmoji = $ref(false)
 const emojiRef = ref<HTMLDivElement>()
 const inboxDetailStore = useInboxDetailStore()
@@ -17,38 +23,53 @@ const aniInputRef = $ref<HTMLSpanElement>()
 const inputRef = ref<HTMLInputElement>()
 const { focused } = useFocus(inputRef, { initialValue: false })
 const { shift, space, a, enter } = useMagicKeys()
+let audioRecordURL = $ref<string>()
 let inputValue = $ref('')
+
+let isRecording = $ref(false)
 
 const microphoneAccess = usePermission('microphone')
 const { files, open: openFileExplorer, reset } = useFileDialog()
 
+// watch(files, (val) => {
+//   inboxDetailStore.reply(files.value)
+// })
+
 watch(enter, async (val) => {
   if (val && focused.value) {
-    await inboxDetailStore.reply(inputValue)
+    await inboxDetailStore.reply(inputValue, props.id)
     inputValue = ''
   }
 })
 
+let mediaRecorder: MediaRecorder
+
 const record = () => {
+  isRecording = true
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    console.log('getUserMedia supported.')
     navigator.mediaDevices
-      .getUserMedia(
-        // constraints - only audio needed for this app
-        {
-          audio: true,
+      .getUserMedia({
+        audio: true,
+      })
+      .then((stream) => {
+        mediaRecorder = new MediaRecorder(stream)
+        let chunks: Blob[] = []
+        mediaRecorder.ondataavailable = (e) => {
+          chunks.push(e.data)
         }
-      )
-
-      // Success callback
-      .then((stream) => {})
-
-      // Error callback
+        mediaRecorder.onerror = (e: any) => {
+          alert(e.error)
+        }
+        mediaRecorder.onstop = (e) => {
+          let blod = new Blob(chunks)
+          let url = URL.createObjectURL(blod)
+          audioRecordURL = url
+        }
+      })
       .catch((err) => {
         console.error(`The following getUserMedia error occurred: ${err}`)
       })
   } else {
-    console.log('getUserMedia not supported on your browser!')
   }
 }
 
@@ -110,7 +131,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="">
+  <div class="[&__path]:fill-c17">
     <div class="relative" ref="emojiRef">
       <Emoji v-if="showEmoji" :top="-378" class="!left-0" />
     </div>
@@ -130,8 +151,8 @@ onBeforeUnmount(() => {
 
       <div
         :class="[
-          'relative h-[36px]  overflow-hidden rounded-[18px] border-[1px] border-c4 dark:border-c4/20 duration-200',
-          hiddenLeft ? 'w-[80%]' : 'w-[60%]',
+          'relative h-[36px]  overflow-hidden rounded-[18px] border-[1px] border-c4 duration-200 dark:border-c4/20',
+          hiddenLeft ? 'w-[80%]' : 'w-[50%] md:w-[60%]',
         ]"
       >
         <span ref="aniInputRef" class="absolute h-full w-[0px] bg-c4/50 dark:bg-c4/10"></span>

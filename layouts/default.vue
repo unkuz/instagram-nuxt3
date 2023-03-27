@@ -4,6 +4,7 @@ import NavBarBottom from '@/components/Molecules/NavBarBottom.vue'
 import { useTailwindBreakPoint } from '@/composables'
 import { SectionEnum } from '@/constants/section'
 import { useGlobalStore } from '@/store'
+import BgGlass from '@/components/Utils/BgGlass.vue'
 
 const globalStore = useGlobalStore()
 
@@ -43,6 +44,7 @@ const deskTopNodNeedPading = $(
 <template>
   <div>
     <Header />
+    <BgGlass />
     <!-- <HeaderButLeft/> -->
     <!-- <Extension /> -->
     <div

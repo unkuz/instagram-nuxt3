@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import Back from '@/components/Atoms/Icon/Back.vue'
-import NewPost from '@/components/Atoms/Nav/NewPost.vue'
+import BackIcon_ from '@/assets/svg/mingcute/back.svg'
 </script>
 <template>
   <div
-    class="fixed top-0 left-0 right-0 z-50 flex h-[60px] w-full items-center justify-between bg-transparent px-[20px] text-white"
+    class="absolute top-0 left-0 right-0 z-20 flex h-[60px] items-center gap-[15px] bg-transparent px-[10px] text-[.85rem] md:hidden"
   >
-    <Back />
-    <div class="text-[.8rem] uppercase">Reels</div>
-    <div><NewPost :is-select="false" class="[&__svg]:text-white" /></div>
+    <NuxtLink to="/_"><BackIcon_ /> </NuxtLink>
+    <span class="font-[600] text-white">Reel</span>
   </div>
 </template>

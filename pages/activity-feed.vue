@@ -1,4 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ActivityFeedNotification from '@/components/Organisms/ActivityFeedNotification/index.vue'
+definePageMeta({
+  middleware: 'auth',
+})
+</script>
 <template>
-  <div>HEHE</div>
+  <div>
+    <ActivityFeedNotification />
+  </div>
 </template>

@@ -3,8 +3,8 @@ import LikeIcon_ from '@/assets/svg/like_icon.svg'
 import SaveIcon_ from '@/assets/svg/save_icon.svg'
 import ShareIcon_ from '@/assets/svg/share_icon.svg'
 import ViewPostIcon_ from '@/assets/svg/view_post_icon.svg'
+import DotIdxCarousel from '@/components/Atoms/DotIdxCarousel.vue'
 import UnlikeIcon from '@/components/Atoms/UnlikeIcon.vue'
-import { APP_CONFIGS } from '@/configs'
 import { stopOtherVideoPlaying } from '@/helpers'
 import { useFeedStore } from '@/store'
 
@@ -22,11 +22,9 @@ defineProps<IProps>()
 
 const timelineStore = useFeedStore()
 
-const likeUnLike = (idPost: string) => {
-  timelineStore.setToggleLike(idPost)
+const likeUnLike = (id: number) => {
+  timelineStore.setToggleLike(id)
 }
-
-const goTo = (idx: number) => emit('current-index-carousel', idx)
 </script>
 
 <template>
@@ -48,28 +46,7 @@ const goTo = (idx: number) => emit('current-index-carousel', idx)
       </NuxtLink>
       <ShareIcon_ class="fill-c2 dark:fill-c1" />
     </div>
-    <div class="flex items-center justify-center space-x-[4px]">
-      <div
-        v-for="(_i, idx) in mediaArr.slice(0, APP_CONFIGS.MAX_DOT_CAROUSEL)"
-        :key="idx"
-        :class="[
-          'h-[6px] w-[6px]  cursor-pointer  rounded-[50%]',
-          currentIdx === idx ? 'bg-c7 dark:bg-c7' : 'bg-c3 dark:bg-c1',
-        ]"
-        @click="goTo(idx)"
-      />
-      <div
-        v-if="mediaArr.length > APP_CONFIGS.MAX_DOT_CAROUSEL"
-        :class="[
-          'text-[.75rem] font-[600] ',
-          {
-            'text-c7 dark:text-c7': currentIdx >= APP_CONFIGS.MAX_DOT_CAROUSEL,
-          },
-        ]"
-      >
-        {{ `+${mediaArr.length - APP_CONFIGS.MAX_DOT_CAROUSEL}` }}
-      </div>
-    </div>
+    <DotIdxCarousel :mediaArr="mediaArr" :current="currentIdx" />
     <div class="flex h-full w-full items-center justify-end">
       <SaveIcon_
         :class="[

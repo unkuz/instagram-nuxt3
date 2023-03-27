@@ -7,7 +7,5 @@
 <script setup lang="ts">
 let itemRefs = ref<HTMLDivElement[]>()
 
-onMounted(() => {
-  console.log('ITEM REF LISR', itemRefs.value)
-})
+onMounted(() => {})
 </script>

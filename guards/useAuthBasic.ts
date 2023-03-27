@@ -1,14 +1,27 @@
-import { useAuthStore } from '@/store'
-import { useWatchWithMounted } from '@/composables'
+// import { useAuthStore } from '@/store'
+// import jwt_decode from 'jwt-decode'
 
-export const useAuthBasic = () => {
-  const authStore = useAuthStore()
+// export const useAuthBasic = () => {
+//   const authStore = useAuthStore()
 
-  const isLogin = computed(() => authStore.data.isLogin)
+//   const accessToken = computed(() => authStore.data.token.access)
 
-  useWatchWithMounted(isLogin, () => {
-    if (!isLogin.value) {
-      navigateTo('/login')
-    }
-  })
-}
+//   if (_isNil(accessToken)) {
+//     navigateTo('/auth/')
+//   }
+//   try {
+//     const { exp } = jwt_decode(accessToken)
+
+//     if (exp > Date.now()) {
+//       authStore.getNewAccessToken(accessToken)
+//     }
+//   } catch (e) {
+//   }
+
+//   watchEffect(() => {
+//     if (!accessToken) {
+//       navigateTo('/auth/')
+//     }
+//   })
+// }
+// //

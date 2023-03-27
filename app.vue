@@ -1,9 +1,7 @@
 <script lang="ts" setup>
 import Loading from '@/components/Atoms/Loading.vue'
-import Add_ from '@/components/Molecules/Add/Add_.vue'
 import Slash from '@/components/Molecules/Slash.vue'
-import Cookie from '@/components/Utils/Cookie.vue'
-import More from '@/components/Utils/More.vue'
+import OverLay from '@/components/Organisms/OverLay/index.vue'
 import Prelude from '@/components/Utils/Prelude.vue'
 import {
   usePrelude,
@@ -13,17 +11,14 @@ import {
   useWatchRouteSetSection,
 } from '@/composables'
 import { registerSeviceWorkerPWA } from '@/helpers'
-import { useAddStore, useMoreStore, useThemeStore } from '@/store'
+import { useThemeStore } from '@/store'
 import { useWebNotification } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 
-const addStore = useAddStore()
-const moreStore = useMoreStore()
-const isShowMore = computed(() => moreStore.isShow)
 const { darkMode } = storeToRefs(useThemeStore())
 const { isShowPrelude } = usePrelude()
 
-registerSeviceWorkerPWA()
+// registerSeviceWorkerPWA()
 useScroll()
 useResizeWindow()
 useWatchRouteSetSection()
@@ -42,17 +37,17 @@ const { isSupported, notification, show, close, onClick, onShow, onError, onClos
     tag: 'test',
   })
 
-onMounted(() => {
-  setInterval(() => {
-    show()
-  }, 5 * 1000 * 60)
-})
+// onMounted(() => {
+//   setInterval(() => {
+//     show()
+//   }, 5 * 1000 * 60)
+// })
 </script>
 
 <template>
   <div
     :class="[
-      'scroll-smooth font-quicksan',
+      'scroll-smooth font-quicksan text-[.85rem]',
       {
         'dark ': darkMode,
       },
@@ -69,9 +64,7 @@ onMounted(() => {
           <OgImageScreenshot />
           <NuxtPage />
         </NuxtLayout>
-        <Add_ v-if="addStore.isShow" />
-        <More v-if="isShowMore" />
-        <Cookie />
+        <OverLay />
       </div>
     </div>
     <Slash />

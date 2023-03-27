@@ -2,15 +2,27 @@
 import { APP_API } from '@/apis'
 import Reel from '@/components/Organisms/Reel/index.vue'
 import { IStory, ITimeLine } from '@/models'
-import ReelSkl from '@/components/Skeleton/Reel.vue'
-const { data: _timeline, pending } = await useLazyFetch<ITimeLine[]>(APP_API.timeLine.list)
-const { data: _stories } = await useLazyFetch<IStory[]>(APP_API.stories.list)
-const { data: _suggestions } = await useLazyFetch<IStory[]>(APP_API.suggestions.list)
+import { axios } from '@/services/axios'
+import { useReelStore } from '@/store'
+
+definePageMeta({
+  middleware: 'auth',
+})
+
+const reelStore = useReelStore()
+
+const { data, pending } = await useLazyAsyncData<IStory[]>('reel', async () => {
+  const res = await axios.get(APP_API.REEL.LIST)
+  return res.data
+})
+
+watchEffect(() => {
+  reelStore.save(unref(data))
+})
 </script>
 
 <template>
   <div>
-    <Reel v-if="!pending" class="text-[.8rem]" />
-    <ReelSkl v-else />
+    <Reel class="text-[.8rem]" :isPending="pending" />
   </div>
 </template>

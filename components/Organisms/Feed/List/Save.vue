@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import SaveIcon_ from '@/assets/svg/save_icon.svg';
-import { Elastic, gsap } from 'gsap';
+import SaveIcon_ from '@/assets/svg/save_icon.svg'
+import { Elastic, gsap } from 'gsap'
 
 interface IProps {
   className: string
@@ -15,8 +15,7 @@ onMounted(() => {
     scale: 4,
     duration: 0.5,
     ease: Elastic.easeOut.config(1, 0.3),
-  })
-  tl.to(unlikeRef!, {
+  }).to(unlikeRef!, {
     display: 'none',
     duration: 0,
   })

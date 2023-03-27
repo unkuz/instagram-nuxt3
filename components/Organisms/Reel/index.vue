@@ -4,10 +4,14 @@ import ReelCap from '@/components/Atoms/Video/ReelCap.vue'
 import ReelKeyBoardShortcut from '@/components/Utils/ReelKeyBoardShortcut.vue'
 import { APP_CONFIGS } from '@/configs'
 import { useReelStore } from '@/store'
-import { IActiveKey } from '@/type'
+import { IActiveKey, IPending } from '@/type'
 import { useIdle, useTemplateRefsList } from '@vueuse/core'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import Video from './Video.vue'
+import TopBar from './M/TopBar.vue'
+import ReelSkeleton from '@/components/Skeleton/Reel/index.vue'
+
+defineProps<IPending>()
 
 let currentVideoOnScreen: HTMLVideoElement
 
@@ -24,6 +28,7 @@ const [container, slider] = useKeenSlider({
 })
 
 let observer: IntersectionObserver
+let mutationOb: MutationObserver | null = null
 
 const containvideoRefs = $(useTemplateRefsList<HTMLDivElement>())
 const { idle } = useIdle(APP_CONFIGS.TIME_IDLE_REELS)
@@ -82,6 +87,14 @@ onMounted(() => {
       threshold: 1,
     }
   )
+
+  mutationOb = new MutationObserver(() => slider.value?.update())
+
+  mutationOb.observe(container.value!, {
+    childList: true,
+    subtree: true,
+  })
+
   containvideoRefs.forEach((containVideoEl) => {
     observer.observe(containVideoEl.children[0].children[0])
   })
@@ -100,21 +113,25 @@ onBeforeUnmount(() => {
 
 <template>
   <div>
+    <TopBar class="" />
     <div
       ref="container"
       class="keen-slider flex h-[calc(100vh-65px)] flex-col !flex-nowrap items-center md:h-[calc(100vh-84px)]"
     >
-      <div
-        v-for="(i, idx) in reels"
-        :key="idx"
-        class="keen-slider__slide flex !w-auto items-start justify-center bg-c19 md:bg-transparent"
-      >
-        <div ref="containvideoRefs">
-          <Video v-bind="i" />
+      <ReelSkeleton v-if="isPending" />
+      <template v-else>
+        <div
+          v-for="i in reels"
+          :key="i.id"
+          class="keen-slider__slide flex !w-auto items-start justify-center bg-c19 md:bg-transparent"
+        >
+          <div ref="containvideoRefs">
+            <Video :src="i?.videos?.[0]?.src" />
+          </div>
+          <ReelCap :user="i.user" :caption="i.caption_text" />
+          <ReelAction :totalLike="0" :totalComment="0" />
         </div>
-        <ReelCap :user="i.user" :caption="i.caption_text" />
-        <ReelAction :totalLike="i.like_count" :totalComment="i.total_comment" />
-      </div>
+      </template>
     </div>
     <ReelKeyBoardShortcut :active-key="activeKey" />
   </div>
