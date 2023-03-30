@@ -2528,10 +2528,10 @@
   resolved "https://registry.yarnpkg.com/@nuxt/devalue/-/devalue-2.0.0.tgz#c7bd7e9a516514e612d5d2e511ffc399e0eac322"
   integrity sha512-YBI/6o2EBz02tdEJRBK8xkt3zvOFOWlLBf7WKYGBsSYSRtjjgrqPe2skp6VLLmKx5WbHHDNcW+6oACaurxGzeA==
 
-"@nuxt/image-edge@1.0.0-28001428.0aa03b6":
-  version "1.0.0-28001428.0aa03b6"
-  resolved "https://registry.yarnpkg.com/@nuxt/image-edge/-/image-edge-1.0.0-28001428.0aa03b6.tgz#6296b97925efd12883789b5ae46c0fcae79f2d51"
-  integrity sha512-LaT+zz94KW1F//AgY2CHWBsgFnOuwJX0Z3e4+Xz1YCtQoyMCRZgRxX98ijYKw32QEIxUOp+d88eQ+zMceeebJg==
+"@nuxt/image-edge@1.0.0-28002839.c6a7c9b":
+  version "1.0.0-28002839.c6a7c9b"
+  resolved "https://registry.yarnpkg.com/@nuxt/image-edge/-/image-edge-1.0.0-28002839.c6a7c9b.tgz#00a26f45ff3d1df8c05704ef662ba02b4484462a"
+  integrity sha512-926Ax7yyBDrDlxXfckSaXJdj6IOpk9ehGzgefB0jJQTzK60Ziwv4E14J18wSvD0zZOjMLoDYQBDgjxsD0/n7cw==
   dependencies:
     "@nuxt/kit" "^3.3.1"
     consola "^2.15.3"

@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@nuxt/content": "^2.5.2",
-    "@nuxt/image-edge": "1.0.0-28001428.0aa03b6",
+    "@nuxt/image-edge": "1.0.0-28002839.c6a7c9b",
     "@nuxt/test-utils-edge": "3.3.3-28001470.ae82d708",
     "@nuxtjs/device": "^3.1.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
