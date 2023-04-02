@@ -6,7 +6,7 @@ import { useKeenSlider } from 'keen-slider/vue.es'
 import { BASE_URL_API } from '@/apis'
 import { ToastTypeEnum, useAddStore, useAuthStore, useFeedStore, useToastStore } from '@/store'
 import { IFilePost, SizeAvatarEnum, TypePostEnum } from '@/type'
-import { ADD_SLIDER } from '~~/constants'
+import { ADD_SLIDER } from '@/constants'
 
 interface IProps {
   listFile: IFilePost[]

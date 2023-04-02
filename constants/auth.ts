@@ -1,4 +1,4 @@
-import { SignInUpEnum } from '~~/type'
+import { SignInUpEnum } from '@/type'
 
 export const AUTH_SLIDER = [
   { text: 'Sign In', section: SignInUpEnum.SIGN_IN },

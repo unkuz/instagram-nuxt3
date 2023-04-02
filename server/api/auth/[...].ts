@@ -1,8 +1,8 @@
 // import { NuxtAuthHandler } from '#auth'
 // import CredentialsProvider from 'next-auth/providers/credentials'
 // import { axios } from '@/services/axios'
-// import { APP_API } from '~~/apis'
-// // import { ToastTypeEnum, useToastStore } from '~~/store'
+// import { APP_API } from '@/apis'
+// // import { ToastTypeEnum, useToastStore } from '@/store'
 
 // export default NuxtAuthHandler({
 //   pages: {
