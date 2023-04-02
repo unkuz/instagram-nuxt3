@@ -95,7 +95,6 @@ onClickOutside(accountPopRef, () => (isShowProfile = false))
         class="relative hidden w-full items-center justify-center md:flex md:w-auto lg:ml-0 lg:w-full"
       >
         <Search />
-        <SearchPop v-if="isShowSearchToolkit" />
       </div>
       <div
         class="flex h-full w-full flex-row-reverse items-center justify-start space-x-[22px] md:w-auto md:flex-row md:justify-end md:first:mr-6 lg:w-full"
