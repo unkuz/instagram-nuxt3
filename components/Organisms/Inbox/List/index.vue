@@ -45,12 +45,12 @@ const inboxList = $computed(() =>
               stroke-width="2"
               d="M19 10.5A8.5 8.5 0 1 1 10.5 2a8.5 8.5 0 0 1 8.5 8.5zM16.511 16.511 22 22"
             ></path></svg
-          ><span class="absolute top-1/2 left-[45px] -translate-y-1/2 text-sm dark:text-c1"
+          ><span class="absolute left-[45px] top-1/2 -translate-y-1/2 text-sm dark:text-c1"
             >Search</span
           ><input
             type="text"
             v-model="keyword"
-            class="absolute top-1/2 left-1/2 h-[30px] w-[72%] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-c7 focus:outline-none"
+            class="absolute left-1/2 top-1/2 h-[30px] w-[72%] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-c7 focus:outline-none"
           />
         </div>
       </div>

@@ -70,7 +70,7 @@ const logout = () => {
   <div>
     <SuggestionSkeleton v-if="isPending" />
     <div ref="sugestionRef" v-else>
-      <div class="mt-[26px] mb-[22px] flex h-[56px] items-center justify-between">
+      <div class="mb-[22px] mt-[26px] flex h-[56px] items-center justify-between">
         <NuxtLink :to="`/${userName}/`"><Avatar :size="SizeAvatarEnum.M" :url="avatar" /></NuxtLink>
 
         <div class="-ml-[70px]">

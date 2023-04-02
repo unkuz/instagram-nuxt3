@@ -137,7 +137,7 @@ onBeforeUnmount(() => {
     </div>
 
     <div
-      class="absolute bottom-0 right-0 left-0 flex h-[60px] items-center justify-evenly bg-c1 py-[5px] dark:bg-c19 [&__svg]:w-[22px] [&__svg]:cursor-pointer [&__svg]:text-blue-400"
+      class="absolute bottom-0 left-0 right-0 flex h-[60px] items-center justify-evenly bg-c1 py-[5px] dark:bg-c19 [&__svg]:w-[22px] [&__svg]:cursor-pointer [&__svg]:text-blue-400"
     >
       <template v-if="hiddenLeft"
         ><span><RightFillIcon_ /></span
@@ -165,7 +165,7 @@ onBeforeUnmount(() => {
             :placeholder="focused ? 'Type a message...' : 'Message'"
         /></span>
 
-        <span @click="toggleEmoji" class="absolute right-[10px] bottom-1/2 translate-y-1/2"
+        <span @click="toggleEmoji" class="absolute bottom-1/2 right-[10px] translate-y-1/2"
           ><EmojiFillIcon_ />
         </span>
       </div>

@@ -6,7 +6,7 @@ import { SizeAvatarEnum } from '@/type'
 </script>
 <template>
   <div>
-    <div class="mt-[26px] mb-[22px] flex h-[56px] items-center justify-between">
+    <div class="mb-[22px] mt-[26px] flex h-[56px] items-center justify-between">
       <Avatar :size="SizeAvatarEnum.M" skeleton />
       <div class="-ml-[70px]">
         <TagName skeleton />
@@ -37,7 +37,7 @@ import { SizeAvatarEnum } from '@/type'
         <div
           class="flex w-[55px] cursor-pointer justify-end text-[0.8rem] font-[500] [&>div]:px-[6px]"
         >
-          <Button skeleton class="h-[27px] w-[52px] !bg-c8 !py-[4px] !px-[8px] !text-c9" />
+          <Button skeleton class="h-[27px] w-[52px] !bg-c8 !px-[8px] !py-[4px] !text-c9" />
         </div>
       </div>
     </div>

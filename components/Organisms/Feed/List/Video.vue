@@ -85,11 +85,11 @@ const toggleFullScreen = () => {
     <div @click="togglePictureInPicture" v-if="supportsPictureInPicture">
       <MiniPlayerIcon_
         v-if="!isPictureInPicture"
-        class="absolute top-[10px] left-[10px] hidden !w-[26px] cursor-pointer group-hover:block"
+        class="absolute left-[10px] top-[10px] hidden !w-[26px] cursor-pointer group-hover:block"
       />
       <ExpandPlayerIcon_
         v-else
-        class="absolute top-[10px] left-[10px] hidden !w-[26px] cursor-pointer group-hover:block"
+        class="absolute left-[10px] top-[10px] hidden !w-[26px] cursor-pointer group-hover:block"
       />
     </div>
   </div>

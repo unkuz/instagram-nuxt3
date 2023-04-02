@@ -18,13 +18,13 @@ defineProps<IProps>()
   <div>
     <NuxtLink :to="`/inbox/${id}`">
       <div
-        class="duration-0 flex w-full cursor-pointer items-center justify-between rounded-2xl p-[10px] hover:bg-c22 active:bg-c20 dark:hover:bg-c20 md:duration-1000"
+        class="flex w-full cursor-pointer items-center justify-between rounded-2xl p-[10px] duration-0 hover:bg-c22 active:bg-c20 dark:hover:bg-c20 md:duration-1000"
       >
         <div class="flex items-center gap-[10px]">
           <Avatar class="h-[60px] w-[60px]" :url="profile_pic_url" />
           <div class="flex flex-col gap-[5px]">
             <TagName :name="username" />
-            <span class="text-c19 line-clamp-1 dark:text-c1">{{ preview_lastest_message }}</span>
+            <span class="line-clamp-1 text-c19 dark:text-c1">{{ preview_lastest_message }}</span>
           </div>
         </div>
         <div class="flex h-full flex-col items-end gap-[8px]">

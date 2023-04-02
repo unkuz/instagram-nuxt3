@@ -120,7 +120,7 @@ const close = () => addStore.toggle(false)
         <svg
           v-if="!isShowInputCaption"
           @click="next()"
-          class="absolute top-[20px] right-[20px] z-10 rotate-180"
+          class="absolute right-[20px] top-[20px] z-10 rotate-180"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -135,7 +135,7 @@ const close = () => addStore.toggle(false)
           @click="submit()"
           v-else
           width="24px"
-          class="absolute top-[20px] right-[20px] z-10"
+          class="absolute right-[20px] top-[20px] z-10"
           height="24px"
           viewBox="0 0 24 24"
           version="1.1"

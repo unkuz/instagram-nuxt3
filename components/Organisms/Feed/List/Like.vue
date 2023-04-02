@@ -19,7 +19,7 @@ onBeforeUnmount(() => tl.kill())
 </script>
 
 <template>
-  <div ref="likeRef" class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2">
+  <div ref="likeRef" class="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2">
     <LikeIcon_ />
   </div>
 </template>

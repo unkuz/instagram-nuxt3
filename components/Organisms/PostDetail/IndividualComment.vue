@@ -21,7 +21,7 @@ const { key } = useForceRenderTimer()
         </NuxtLink>
         <NuxtLink :to="`/${comment.user.username}`">
           <p
-            class="inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md line-clamp-1 dark:bg-c1 dark:text-c2"
+            class="line-clamp-1 inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md dark:bg-c1 dark:text-c2"
           >
             {{ comment.user.username }}
           </p>
@@ -40,7 +40,7 @@ const { key } = useForceRenderTimer()
           <p class="cursor-pointer text-c13">Reply</p>
         </div>
       </div>
-      <div class="absolute top-0 left-0 h-full w-[3px] -translate-x-[0px] bg-c14" />
+      <div class="absolute left-0 top-0 h-full w-[3px] -translate-x-[0px] bg-c14" />
     </div>
     <div
       v-for="({ user, created_at, text, comment_like_count }, idx) in comment.reply"
@@ -53,7 +53,7 @@ const { key } = useForceRenderTimer()
         </NuxtLink>
         <NuxtLink :to="`/${user.username}`">
           <p
-            class="inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md line-clamp-1 dark:bg-c1 dark:text-c2"
+            class="line-clamp-1 inline-block bg-c2 px-[10px] py-[1px] text-c1 shadow-md dark:bg-c1 dark:text-c2"
           >
             {{ user.username }}
           </p>
@@ -72,7 +72,7 @@ const { key } = useForceRenderTimer()
           <p class="cursor-pointer text-c13">Reply</p>
         </div>
       </div>
-      <div class="absolute top-0 left-0 h-full w-[3px] -translate-x-[0px] bg-c12" />
+      <div class="absolute left-0 top-0 h-full w-[3px] -translate-x-[0px] bg-c12" />
     </div>
   </div>
 </template>

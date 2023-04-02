@@ -119,10 +119,10 @@ onMounted(() => {
       <LoadingIcon_ class="w-[10%] !bg-transparent" />
     </div>
 
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
       <div
         :class="[
-          'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-200',
+          'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 duration-200',
           isVideoPlay ? 'scale-0 opacity-0' : 'scale-100 animate-play opacity-100',
         ]"
       >

@@ -32,7 +32,7 @@ onClickOutside(searchRef, () => {
     <SearchIcon v-show="!isSearchActive" class="[&>path]:stroke-black [&>path]:dark:stroke-white" />
     <span
       v-show="!isSearchActive && !isSearchHaveValue"
-      class="absolute top-1/2 left-[45px] -translate-y-1/2 text-sm dark:text-c1"
+      class="absolute left-[45px] top-1/2 -translate-y-1/2 text-sm dark:text-c1"
       >Search</span
     >
     <input
@@ -40,7 +40,7 @@ onClickOutside(searchRef, () => {
       v-model="searchStore.value"
       type="text"
       :class="[
-        'absolute top-1/2  left-1/2 h-[30px] w-[90%] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-c7 focus:outline-none',
+        'absolute left-1/2  top-1/2 h-[30px] w-[90%] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-c7 focus:outline-none',
         {
           'w-[72%]': !isSearchActive,
         },

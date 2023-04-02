@@ -69,7 +69,7 @@ onClickOutside(accountPopRef, () => (isShowProfile = false))
   <header
     v-if="!hiddenHeader"
     :class="[
-      'fixed top-0 left-0 z-10 h-[60px] w-screen border-c4 bg-c1 backdrop-blur-[5px] dark:border-none dark:bg-c19 md:border-b-[1px]',
+      'fixed left-0 top-0 z-10 h-[60px] w-screen border-c4 bg-c1 backdrop-blur-[5px] dark:border-none dark:bg-c19 md:border-b-[1px]',
       {
         'bg-c1/50 backdrop-blur-[5px] dark:bg-c19/50': APP_CONFIGS.HEADER_BLUR,
       },
