@@ -69,7 +69,7 @@ onClickOutside(accountPopRef, () => (isShowProfile = false))
   <header
     v-if="!hiddenHeader"
     :class="[
-      'fixed left-0 top-0 z-10 h-[60px] w-screen border-c4 bg-c1 backdrop-blur-[5px] dark:border-none dark:bg-c19 md:border-b-[1px]',
+      'fixed left-0 top-0 z-10 h-[60px] w-screen  bg-c1 backdrop-blur-[5px]  dark:bg-c19 ',
       {
         'bg-c1/50 backdrop-blur-[5px] dark:bg-c19/50': APP_CONFIGS.HEADER_BLUR,
       },
@@ -79,7 +79,7 @@ onClickOutside(accountPopRef, () => (isShowProfile = false))
     ]"
   >
     <div
-      class="mx-[20px] grid h-full grid-cols-2 md:flex md:justify-between lg:mx-auto lg:grid lg:w-[935px] lg:grid-cols-3"
+      class="mx-[20px] grid h-full grid-cols-2 border-c4 dark:border-none md:flex md:justify-between md:border-b-[1px] lg:mx-auto lg:grid lg:w-[935px] lg:grid-cols-3"
     >
       <div class="flex w-full items-center gap-[22px] md:w-auto lg:w-full">
         <Logo />
