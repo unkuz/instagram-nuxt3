@@ -2,31 +2,31 @@ import { Ref } from 'vue'
 
 export const useDoubleClick = (
   el: Ref<HTMLElement | null | undefined>,
-  click: () => void,
-  dblclick: () => void
+  clickCb: Function,
+  dbclickCb: Function
 ) => {
   let timer = ref<any>(null)
 
-  const _click = (event: MouseEvent) => {
-    if (event.detail === 1) {
+  const onClick = (e: MouseEvent) => {
+    if (e.detail === 1) {
       timer = setTimeout(() => {
-        click()
+        clickCb()
       }, 200)
     }
   }
 
-  const _dbclick = (event: MouseEvent) => {
+  const onDbClick = (e: MouseEvent) => {
     clearTimeout(timer)
-    dblclick()
+    dbclickCb()
   }
 
   onMounted(() => {
-    el.value!.addEventListener('click', _click)
-    el.value!.addEventListener('dblclick', _dbclick)
+    el.value!.addEventListener('click', onClick)
+    el.value!.addEventListener('dblclick', onDbClick)
   })
 
   onBeforeUnmount(() => {
-    el.value!.removeEventListener('click', _click)
-    el.value!.removeEventListener('dblclick', _dbclick)
+    el.value!.removeEventListener('click', onClick)
+    el.value!.removeEventListener('dblclick', onDbClick)
   })
 }

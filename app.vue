@@ -61,7 +61,6 @@ const { isSupported, notification, show, close, onClick, onShow, onError, onClos
           <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" />
           <Loading />
           <SeoKit />
-          <OgImageScreenshot />
           <NuxtPage />
         </NuxtLayout>
         <OverLay />
