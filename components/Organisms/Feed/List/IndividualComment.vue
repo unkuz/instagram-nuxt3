@@ -26,9 +26,7 @@ const { key } = useForceRenderTimer()
           <NuxtLink :to="`/${comment.user.user_name}`">
             <TagName :name="comment.user.user_name" />
           </NuxtLink>
-          <p :key="key" class="translate-y-[3px] text-[0.8rem] text-c3 dark:text-c21">
-            {{ moment(comment.created_at).fromNow() }}
-          </p>
+          <AtomsTimeFromNow :time="comment.created_at" />
         </div>
       </div>
       <div class="ml-[52px] -translate-y-[3px] pr-[10px]">
@@ -78,9 +76,7 @@ const { key } = useForceRenderTimer()
         <NuxtLink :to="`/${user.user_name}`">
           <TagName :name="comment.user.user_name" />
         </NuxtLink>
-        <p :key="key" class="text-[0.8rem] text-c3 dark:text-c21">
-          {{ moment(created_at).fromNow() }}
-        </p>
+        <AtomsTimeFromNow :time="created_at" />
       </div>
       <div class="ml-[52px] -translate-y-[3px] pr-[10px]">
         <p>{{ text }}</p>
