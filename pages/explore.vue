@@ -26,7 +26,7 @@ const exploreChunk = $computed(() => exploreStore.list)
 
 <template>
   <div>
-    <div class="fixed top-[10px] w-full px-[10px]">
+    <div class="fixed top-[15px] w-full px-[10px]">
       <Search v-model:value="keyword" v-model:is-focus="isFocus" class="h-[36px] w-[full]" />
     </div>
 

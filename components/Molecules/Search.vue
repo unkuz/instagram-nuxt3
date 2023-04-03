@@ -45,7 +45,7 @@ onClickOutside(searchRef, () => updateIsFocus(false))
       type="text"
       placeholder="Search"
       :class="[
-        'absolute left-[40px] top-1/2 h-[30px] w-[calc(100%-40px-16px)] -translate-y-1/2 bg-transparent text-sm caret-c7 placeholder:pl-[25px] focus:outline-none',
+        'absolute left-[40px] top-1/2 h-[30px] w-[calc(100%-40px-16px)] -translate-y-1/2  bg-transparent text-sm caret-c7 focus:outline-none',
       ]"
     />
   </div>
