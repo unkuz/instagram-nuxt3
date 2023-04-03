@@ -17,8 +17,8 @@ interface IProps {
 
 const props = defineProps<IProps>()
 const timelineStore = useFeedStore()
-const videoRef = ref<HTMLVideoElement | null>(null)
-let containerRef = $ref<HTMLVideoElement | null>(null)
+const videoRef = ref<HTMLVideoElement>()
+let containerRef = $ref<HTMLVideoElement>()
 
 const {
   playing,

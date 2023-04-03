@@ -49,11 +49,11 @@ watch(
   }
 )
 
-useDoubleClick(
-  sliderRef,
-  () => {},
-  () => {}
-)
+// useDoubleClick(
+//   sliderRef,
+//   () => {},
+//   () => {}
+// )
 
 watch([() => props.hasSaved, () => props.hasLiked], () => {
   initShowLikeSaved = true

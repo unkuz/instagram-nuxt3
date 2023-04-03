@@ -1,7 +1,7 @@
 import { Ref } from 'vue'
 
 export const useDoubleClick = (
-  refElement: Ref<HTMLElement | null | undefined>,
+  el: Ref<HTMLElement | null | undefined>,
   click: () => void,
   dblclick: () => void
 ) => {
@@ -21,16 +21,12 @@ export const useDoubleClick = (
   }
 
   onMounted(() => {
-    // if (refElement.value) {
-    //   refElement.value.addEventListener('click', _click)
-    //   refElement.value.addEventListener('dblclick', _dbclick)
-    // }
+    el.value!.addEventListener('click', _click)
+    el.value!.addEventListener('dblclick', _dbclick)
   })
 
   onBeforeUnmount(() => {
-    // if (refElement.value) {
-    //   refElement.value.removeEventListener('click', _click)
-    //   refElement.value.removeEventListener('dblclick', _dbclick)
-    // }
+    el.value!.removeEventListener('click', _click)
+    el.value!.removeEventListener('dblclick', _dbclick)
   })
 }
