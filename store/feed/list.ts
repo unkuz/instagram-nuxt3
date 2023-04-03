@@ -1,12 +1,10 @@
-import { defineStore } from 'pinia'
-import { ITimeLine } from '@/models'
-import { IFilePost, IStateStore } from '@/type'
-import { timeLine } from '@/mocks'
-import { ToastTypeEnum, useAddStore, useAuthStore, useSlashStore, useToastStore } from '@/store'
-import { axios } from '@/services/axios'
 import { APP_API, BASE_URL_API } from '@/apis'
+import { ITimeLine } from '@/models'
+import { axios } from '@/services/axios'
+import { ToastTypeEnum, useAddStore, useAuthStore, useSlashStore, useToastStore } from '@/store'
+import { IFilePost, IStateStore } from '@/type'
 import { isImageOrVideo } from '@/utils'
-import { TagsWithInnerContent } from '@unhead/shared'
+import { defineStore } from 'pinia'
 
 type TState = IStateStore<ITimeLine[]>
 

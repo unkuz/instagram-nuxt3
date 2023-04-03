@@ -1,5 +1,5 @@
-import { defineStore } from 'pinia'
 import { mock_reel } from '@/mocks'
+import { defineStore } from 'pinia'
 
 export const useReelStore = defineStore('reel', {
   state: () => ({

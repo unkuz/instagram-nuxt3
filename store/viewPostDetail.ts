@@ -1,5 +1,5 @@
-import { defineStore } from 'pinia'
 import { useFeedStore } from '@/store'
+import { defineStore } from 'pinia'
 
 export const usePostDetailStore = defineStore('post-detail', {
   state: () => ({

@@ -1,7 +1,6 @@
-import { defineStore } from 'pinia'
-import { TSuggestion } from '@/models'
 import { APP_CONFIGS } from '@/configs'
-import { suggests } from '@/mocks'
+import { TSuggestion } from '@/models'
+import { defineStore } from 'pinia'
 
 export interface IState {
   data: TSuggestion[]

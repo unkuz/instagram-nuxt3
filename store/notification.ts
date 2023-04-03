@@ -1,5 +1,5 @@
-import { defineStore } from 'pinia'
 import { notification } from '@/mocks/notification'
+import { defineStore } from 'pinia'
 
 export const useNotificationStore = defineStore('notification', {
   state: () => ({
