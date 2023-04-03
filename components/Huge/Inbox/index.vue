@@ -110,7 +110,7 @@ const setExpand = (section: InboxTypeEnum) => {
             <div class="h-[30px] w-[30px] rounded-[10px] bg-purple-500" />
             <div class="h-[30px] w-[30px] rounded-[10px] bg-purple-500" />
           </div>
-          <p class="mt-[10px] text-[0.8rem] line-clamp-5">
+          <p class="mt-[10px] line-clamp-5 text-[0.8rem]">
             <br />
           </p>
         </div>

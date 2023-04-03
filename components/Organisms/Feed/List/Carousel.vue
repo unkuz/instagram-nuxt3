@@ -49,11 +49,11 @@ watch(
   }
 )
 
-useDoubleClick(
-  sliderRef,
-  () => {},
-  () => {}
-)
+// useDoubleClick(
+//   sliderRef,
+//   () => {},
+//   () => {}
+// )
 
 watch([() => props.hasSaved, () => props.hasLiked], () => {
   initShowLikeSaved = true
@@ -82,7 +82,7 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
       <ArrowIcon_ class="opacity-80" />
     </div>
     <div
-      class="absolute top-[20px] right-[20px] flex min-w-[40px] select-none justify-center rounded-full bg-c2/30 px-[8px] py-[3px] text-[0.75rem] font-[600] text-c1 backdrop-blur-[1px] dark:bg-c1/30 dark:text-c2"
+      class="absolute right-[20px] top-[20px] flex min-w-[40px] select-none justify-center rounded-full bg-c2/30 px-[8px] py-[3px] text-[0.75rem] font-[600] text-c1 backdrop-blur-[1px] dark:bg-c1/30 dark:text-c2"
     >
       {{ `${currentParent + 1}/${totalMedia}` }}
     </div>

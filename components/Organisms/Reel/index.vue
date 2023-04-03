@@ -8,8 +8,8 @@ import { IActiveKey, IPending } from '@/type'
 import { useIdle, useTemplateRefsList } from '@vueuse/core'
 import { useKeenSlider } from 'keen-slider/vue.es'
 import Video from './Video.vue'
-import TopBar from './M/TopBar.vue'
 import ReelSkeleton from '@/components/Skeleton/Reel/index.vue'
+import TopBarSm from '@/components/Molecules/TopBarSm.vue'
 
 defineProps<IPending>()
 
@@ -113,7 +113,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div>
-    <TopBar class="" />
+    <TopBarSm text="Reel" />
     <div
       ref="container"
       class="keen-slider flex h-[calc(100vh-65px)] flex-col !flex-nowrap items-center md:h-[calc(100vh-84px)]"

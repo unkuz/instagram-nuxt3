@@ -7,3 +7,4 @@ export * from './inbox'
 export * from './inboxList'
 
 export * from './inboxListUser'
+export * from './notification'

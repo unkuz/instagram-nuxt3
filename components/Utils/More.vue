@@ -59,7 +59,7 @@ onClickOutside(moreRef, () => {
     <BackDrop>
       <div
         ref="moreRef"
-        class="fixed right-1/2 -bottom-[100%] z-20 w-[85%] translate-x-1/2 text-[0.8rem] sm:w-[400px]"
+        class="fixed -bottom-[100%] right-1/2 z-20 w-[85%] translate-x-1/2 text-[0.8rem] sm:w-[400px]"
       >
         <div
           v-if="type === TypeMoreEnum.FEED"

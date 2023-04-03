@@ -29,7 +29,7 @@ const logout = () => authStore.logout()
     >
       <NuxtLink :to="`/${userName}/`">
         <div
-          class="z-50 flex h-[37px] cursor-pointer items-center justify-start space-x-[12px] py-[8px] px-[16px] hover:bg-c4"
+          class="z-50 flex h-[37px] cursor-pointer items-center justify-start space-x-[12px] px-[16px] py-[8px] hover:bg-c4"
           @click="handleSelect(SectionEnum.SELF)"
         >
           <ProfileIcon_ />

@@ -9,7 +9,7 @@ import NewPost from '../Atoms/Nav/NewPost.vue'
 </script>
 <template>
   <header
-    class="fixed top-0 left-0 z-50 flex h-screen w-[60px] flex-col items-center justify-between border-r-[1px] border-c4 bg-c1 py-[50px] dark:bg-c19"
+    class="fixed left-0 top-0 z-50 flex h-screen w-[60px] flex-col items-center justify-between border-r-[1px] border-c4 bg-c1 py-[50px] dark:bg-c19"
   >
     <div class="mb-[100px]">
       <svg

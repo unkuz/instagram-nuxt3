@@ -20,7 +20,7 @@ defineProps<IProps>()
       /></NuxtLink>
 
       <NuxtLink :to="`/${user?.user_name}/`"
-        ><TagName :name="user?.user_name" class="max-w-[150px] !bg-c1 !text-c2 line-clamp-1"
+        ><TagName :name="user?.user_name" class="line-clamp-1 max-w-[150px] !bg-c1 !text-c2"
       /></NuxtLink>
 
       <Button
@@ -29,7 +29,7 @@ defineProps<IProps>()
       />
     </div>
     <p
-      class="mt-[10px] whitespace-pre-line text-c1 line-clamp-1 md:mt-[20px] [&>a]:text-c7 dark:[&>a]:text-c15"
+      class="mt-[10px] line-clamp-1 whitespace-pre-line text-c1 md:mt-[20px] [&>a]:text-c7 dark:[&>a]:text-c15"
     >
       {{ $urlify(caption) }}
     </p>

@@ -23,7 +23,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="unlikeRef" class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2">
+  <div ref="unlikeRef" class="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2">
     <SaveIcon_ :class="className" />
   </div>
 </template>

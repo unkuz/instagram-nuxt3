@@ -32,7 +32,7 @@ onBeforeUnmount(() => {
 <template>
   <div
     ref="el"
-    class="absolute top-0 -left-[17px] h-0 w-screen overflow-y-scroll border-[1px] border-c4 bg-c1 dark:border-c20 dark:bg-c19 sm:w-auto"
+    class="absolute -left-[17px] top-0 h-0 w-screen overflow-y-scroll border-[1px] border-c4 bg-c1 dark:border-c20 dark:bg-c19 sm:w-auto"
   >
     <div v-for="({ label, icons }, idx) in EMOJI" :key="idx">
       <p class="mt-[10px] h-[20px] pl-[10px] text-[0.8rem] font-[500]">

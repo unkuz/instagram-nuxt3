@@ -7,7 +7,7 @@ definePageMeta({
 </script>
 <template>
   <div
-    class="w-full overflow-hidden pt-[54px] pb-[60px] text-[.8rem] dark:text-white sm:overflow-visible md:mx-auto md:pt-[84px] lg:w-[935px]"
+    class="w-full overflow-hidden pb-[60px] pt-[54px] text-[.8rem] dark:text-white sm:overflow-visible md:mx-auto md:pt-[84px] lg:w-[935px]"
   >
     <h1 class="mx-[20px] flex items-center gap-[10px] text-[0.8rem] md:mx-auto">
       <NuxtLink to="/">

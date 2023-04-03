@@ -66,14 +66,14 @@ onBeforeUnmount(() => {
   <div
     ref="containerRef"
     :class="[
-      'fixed right-0 -bottom-[300px] hidden cursor-help rounded-[0.5rem] bg-c1/50 p-[40px_24px_20px_24px] shadow-md  backdrop-blur-[5px] dark:bg-c2/50  dark:text-c1 md:right-[40px]   md:block  md:w-[280px]',
+      'fixed -bottom-[300px] right-0 hidden cursor-help rounded-[0.5rem] bg-c1/50 p-[40px_24px_20px_24px] shadow-md  backdrop-blur-[5px] dark:bg-c2/50  dark:text-c1 md:right-[40px]   md:block  md:w-[280px]',
     ]"
   >
     <KeyboardIcon_
       class="absolute -top-[23px] right-1/2 w-[65px] origin-center translate-x-1/2 -rotate-[20deg] duration-500 hover:rotate-0 dark:fill-c1"
     />
     <div class="text-[0.8rem]">
-      <p class="mt-[15px] mb-[10px] text-center text-[0.85rem]">
+      <p class="mb-[10px] mt-[15px] text-center text-[0.85rem]">
         <span>{{ 'Keyboard shortcuts! ヾ(⌐■_■)ノ♪' }}</span>
       </p>
       <p

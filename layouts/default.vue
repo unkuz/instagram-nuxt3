@@ -49,9 +49,9 @@ const deskTopNodNeedPading = $(
     <!-- <Extension /> -->
     <div
       :class="[
-        'mx-auto w-full overflow-hidden pt-[54px] pb-[60px] dark:text-white sm:overflow-visible md:pt-[84px] lg:w-[935px]',
+        'mx-auto w-full overflow-hidden pb-[60px] pt-[54px] dark:text-white sm:overflow-visible md:pt-[84px] lg:w-[935px]',
         {
-          '!pt-0 !pb-0': noNeedPadingTop,
+          '!pb-0 !pt-0': noNeedPadingTop,
         },
         {
           '!pb-0 ': deskTopNodNeedPading,

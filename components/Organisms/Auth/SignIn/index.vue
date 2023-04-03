@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { SCHEMA_AUTH } from '@/utils'
 import { Form } from 'vee-validate'
-import { useAuthStore } from '~~/store'
+import { useAuthStore } from '@/store'
 import Input from './../Common/Input.vue'
 
 const authStore = useAuthStore()

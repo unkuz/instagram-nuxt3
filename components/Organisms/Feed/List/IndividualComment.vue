@@ -64,7 +64,7 @@ const { key } = useForceRenderTimer()
           </div>
         </div>
       </div>
-      <div class="absolute top-0 left-0 h-[85%] w-[3px] -translate-x-[0px] bg-c14" />
+      <div class="absolute left-0 top-0 h-[85%] w-[3px] -translate-x-[0px] bg-c14" />
     </div>
     <div
       v-for="({ user, created_at, text, comment_like_count }, idx) in comment.reply"
@@ -117,7 +117,7 @@ const { key } = useForceRenderTimer()
           </div>
         </div>
       </div>
-      <div class="absolute top-0 left-0 h-[85%] w-[3px] -translate-x-[0px] bg-c12" />
+      <div class="absolute left-0 top-0 h-[85%] w-[3px] -translate-x-[0px] bg-c12" />
     </div>
   </div>
 </template>

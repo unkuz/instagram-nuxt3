@@ -50,7 +50,7 @@ watch(
         <img :src="BASE_URL_API + i.src" class="h-full w-full object-contain" />
       </div>
     </div>
-    <div class="absolute top-[10px] right-1/2 flex h-[5px] w-[90%] translate-x-1/2 gap-[10px]">
+    <div class="absolute right-1/2 top-[10px] flex h-[5px] w-[90%] translate-x-1/2 gap-[10px]">
       <div v-for="i in media" class="h-full flex-1 rounded-[2.5px] bg-blue-400"></div>
     </div>
   </div>

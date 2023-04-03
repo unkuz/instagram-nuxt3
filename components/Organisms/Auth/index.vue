@@ -9,7 +9,7 @@ import SignIn from './SignIn/index.vue'
 import SignUp from './SignUp/index.vue'
 import InstagramLogo_ from '@/assets/svg/instagram_logo.svg'
 import Slider from './Common/Slider.vue'
-import { AUTH_SLIDER } from '~~/constants'
+import { AUTH_SLIDER } from '@/constants'
 
 const authStore = useAuthStore()
 const toastStore = useToastStore()

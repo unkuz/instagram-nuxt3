@@ -14,7 +14,7 @@ const emit = defineEmits(['click'])
 <template>
   <button
     :class="[
-      'inline-block cursor-pointer rounded-[10px] bg-c5 py-[3px] px-[10px] active:bg-c17',
+      'inline-block cursor-pointer rounded-[10px] bg-c5 px-[10px] py-[3px] active:bg-c17',
       { 'skeleton ': skeleton },
     ]"
     @click="emit('click')"

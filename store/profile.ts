@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { SELECT_TYPE } from '@/constants/screens/account'
-import { axios } from '~~/services/axios'
-import { APP_API } from '~~/apis'
+import { axios } from '@/services/axios'
+import { APP_API } from '@/apis'
 
 export type TData = {
   id: number

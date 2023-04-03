@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
 import { useGlobalStore } from './global'
-import { IFilePost, TypePostEnum } from '~~/type'
+import { IFilePost, TypePostEnum } from '@/type'
 import { ToastTypeEnum, useToastStore } from './toast'
-import { axios } from '~~/services/axios'
-import { APP_API } from '~~/apis'
+import { axios } from '@/services/axios'
+import { APP_API } from '@/apis'
 
 export const useAddStore = defineStore('add', {
   state: () => ({
