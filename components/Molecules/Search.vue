@@ -13,15 +13,13 @@ const changeVal = (e: Event) => {
 let isFocus = $ref(false)
 
 const searchRef = ref<HTMLInputElement>()
-const inputSearch = $ref<HTMLInputElement>()
+const inputRef = $ref<HTMLInputElement>()
 const isSearchHaveValue = $computed(() => !!props.value)
 
 watch(
   () => isFocus,
   (state) => {
-    if (state) {
-      inputSearch?.focus()
-    }
+    if (state) inputRef?.focus()
   }
 )
 
@@ -37,20 +35,16 @@ onClickOutside(searchRef, () => updateIsFocus(false))
     @click="updateIsFocus(true)"
   >
     <SearchIcon v-show="!isFocus" class="[&>path]:stroke-black [&>path]:dark:stroke-white" />
-    <span
-      v-show="!isFocus && !isSearchHaveValue"
-      class="absolute left-[45px] top-1/2 -translate-y-1/2 text-sm dark:text-c1"
-      >Search</span
-    >
     <input
-      ref="inputSearch"
+      ref="inputRef"
       :value="value"
       @input="changeVal($event)"
       type="text"
+      placeholder="Search"
       :class="[
-        'absolute left-1/2  top-1/2 h-[30px] w-[90%] -translate-x-1/2 -translate-y-1/2 bg-transparent text-sm caret-c7 focus:outline-none',
+        'absolute left-1/2 top-1/2 h-[30px]  w-[90%] -translate-x-1/2 -translate-y-1/2 !bg-red-300/20 text-sm caret-c7 placeholder:pl-[25px] focus:outline-none',
         {
-          'w-[72%]': !isFocus,
+          'w-[calc(90% -22px)] ml-[22px]': value,
         },
       ]"
     />
