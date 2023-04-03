@@ -70,7 +70,7 @@ const send = async () => {
       v-model="input"
       rows="1"
       spellcheck="false"
-      class="flex-1 resize-none rounded-[5px] bg-c4/50 px-[5px] py-[7px] placeholder:ml-[10px] focus:outline-none dark:bg-c23/50"
+      class="w-full resize-none rounded-[5px] bg-c4/50 px-[5px] py-[7px] placeholder:ml-[10px] focus:outline-none dark:bg-c23/50"
       @keyup.enter="send"
     />
 
