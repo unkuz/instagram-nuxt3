@@ -1,15 +1,13 @@
 <script lang="ts" setup>
-import { gsap } from 'gsap'
 import { useWatchWithMounted } from '@/composables/useWatchWithMounted'
+import { gsap } from 'gsap'
 
 interface IProps {
   arr: { text: string; section: string }[]
   select: string
 }
 
-const props = withDefaults(defineProps<IProps>(), {
-  arr: [{ text: 'HEHE', section: 'SIGN_IN' }],
-})
+const props = defineProps<IProps>()
 
 const sliderRef = $ref<HTMLDivElement>()
 
