@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { SELECT_TYPE } from '@/constants/screens/account'
 import { axios } from '@/services/axios'
 import { APP_API } from '@/apis'
+import { useAuthStore } from './auth'
 
 export type TData = {
   id: number
@@ -28,8 +29,10 @@ export const useProfileStore = defineStore('profile', {
       this.data = val
     },
     async updateProfile(val: any) {
+      const authStore = useAuthStore()
+      const idUser = authStore.data.user.id
       try {
-        await axios.put(APP_API.USER.UPDATE_PROFLE())
+        await axios.put(APP_API.USER.UPDATE_PROFLE(idUser))
       } catch (e) {}
     },
   },

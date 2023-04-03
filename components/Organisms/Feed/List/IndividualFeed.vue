@@ -28,7 +28,7 @@ const commentCount = $computed(() => {
   let i = props.feed.comments.length
   let j = 0
 
-  props.feed.comments.forEach((k) => {
+  props.feed.comments.forEach((k: any) => {
     j += k.reply.length
   })
 
