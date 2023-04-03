@@ -29,7 +29,7 @@ defineProps<IProps>()
           <Avatar :size="SizeAvatarEnum.M" :url="user?.profile_pic_url" />
         </div>
       </div>
-      <p class="mt-[5px] overflow-hidden text-ellipsis whitespace-nowrap text-center text-xs">
+      <p class="mt-[5px] overflow-hidden text-ellipsis whitespace-nowrap text-center text-[.8rem]">
         {{ user.user_name }}
       </p>
     </div>
