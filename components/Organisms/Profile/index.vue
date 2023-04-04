@@ -100,7 +100,8 @@ onBeforeUnmount(() => {
       </div>
       <div class="mt-[40px]">
         <div>
-          <hr class="border-c4" />
+          <div class="mx-auto w-[80%] md:w-[60%]"><hr class="border-c4" /></div>
+
           <div class="flex w-full justify-center gap-[30px] md:gap-[60px]">
             <div
               :class="[
@@ -142,7 +143,7 @@ onBeforeUnmount(() => {
             </div>
           </div>
         </div>
-        <div class="h-[200px] w-full bg-red-300">
+        <div class="mt-[10px] w-full">
           <Post v-if="section === ProfileSectionEnum.POST" />
           <Reel v-else-if="section === ProfileSectionEnum.REEL" />
           <Saved v-else-if="section === ProfileSectionEnum.SAVE" />
