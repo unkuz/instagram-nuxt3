@@ -16,6 +16,7 @@ import { ProfileSectionEnum } from '@/type'
 import Post from './Section/Post/index.vue'
 import Reel from './Section/Reel/index.vue'
 import Saved from './Section/Saved/index.vue'
+import Edit from './Edit/index.vue'
 
 const profileStore = useProfileStore()
 const { files: avatarFile, open: openAvatar } = useFileDialog({ multiple: false })
@@ -24,6 +25,8 @@ const { files: coverFile, open: openCover } = useFileDialog({ multiple: false })
 const profile = $computed(() => profileStore.profile)
 
 const section = $ref(ProfileSectionEnum.POST)
+
+let showEditProfile = $ref(false)
 
 let avatarImg = $ref<string>()
 let coverImg = $ref<string>()
@@ -95,6 +98,7 @@ onBeforeUnmount(() => {
           <AtomsButton
             text="Edit"
             class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
+            @click="showEditProfile = true"
           />
         </div>
       </div>
@@ -150,5 +154,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
     </div>
+
+    <Edit v-if="showEditProfile" @close="showEditProfile = false" />
   </div>
 </template>

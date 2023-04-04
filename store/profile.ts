@@ -1,7 +1,6 @@
 import { APP_API } from '@/apis'
 import { axios } from '@/services/axios'
 import { defineStore } from 'pinia'
-import { useAuthStore } from './auth'
 
 export type TData = {
   id: number
@@ -27,11 +26,25 @@ export const useProfileStore = defineStore('profile', {
     save(val: any) {
       this.data = val
     },
-    async updateProfile(val: any) {
-      const authStore = useAuthStore()
-      const idUser = authStore.data.user.id
+    async update(val: any) {
+      const idUser = this.data[0].id
+
+      const data = _omitBy(val, (i) => _isNil(i))
+
+      console.log('DATA', data)
       try {
-        await axios.put(APP_API.USER.UPDATE_PROFLE(idUser))
+        const formData = new FormData()
+
+        _each(data, (val, key) => {
+          formData.append(key, val)
+        })
+        formData.append('password', 'cuz')
+
+        console.log('FRORM', formData)
+
+        await axios.put(APP_API.USER.UPDATE_PROFLE(idUser), formData, {
+          headers: { 'Content-Type': 'multipart/form-data' },
+        })
       } catch (e) {}
     },
   },
