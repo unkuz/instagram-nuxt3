@@ -22,3 +22,9 @@ export enum SignInUpEnum {
   SIGN_IN,
   SIGN_UP,
 }
+
+export enum ProfileSectionEnum {
+  POST,
+  REEL,
+  SAVE,
+}

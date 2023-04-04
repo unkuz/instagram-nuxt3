@@ -6,12 +6,24 @@ import { SizeAvatarEnum } from '@/type'
 import { isImageOrVideo } from '@/utils'
 import { useFileDialog } from '@vueuse/core'
 import Section from './Section.vue'
+import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue'
+import HomeIcon_ from '@/assets/svg/home_icon.svg'
+import HomeIconSelected_ from '@/assets/svg/home_icon_selected.svg'
+import ReelIcon_ from '@/assets/svg/reel_icon.svg'
+import ReelIconSelected_ from '@/assets/svg/reel_icon_selected.svg'
+import SaveIcon_ from '@/assets/svg/save_icon.svg'
+import { ProfileSectionEnum } from '@/type'
+import Post from './Section/Post/index.vue'
+import Reel from './Section/Reel/index.vue'
+import Saved from './Section/Saved/index.vue'
 
 const profileStore = useProfileStore()
 const { files: avatarFile, open: openAvatar } = useFileDialog({ multiple: false })
 const { files: coverFile, open: openCover } = useFileDialog({ multiple: false })
 
 const profile = $computed(() => profileStore.profile)
+
+const section = $ref(ProfileSectionEnum.POST)
 
 let avatarImg = $ref<string>()
 let coverImg = $ref<string>()
@@ -50,7 +62,7 @@ onBeforeUnmount(() => {
 <template>
   <div class="relative mb-[65px] min-h-screen text-sm">
     <div class="relative h-[140px] md:h-[200px]">
-      <nuxt-img
+      <NuxtImageCustom
         v-if="!coverImg"
         class="absolute h-full w-full cursor-pointer bg-cover bg-center object-cover"
         :src="profile?.cover_pic_url"
@@ -76,9 +88,7 @@ onBeforeUnmount(() => {
             <Section text="Following" :count="200" />
           </div>
           <div class="line-clamp-3 text-c17 dark:text-c11">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab doloremque facere pariatur
-            perspiciatis, ea suscipit iusto velit soluta, dolores consectetur voluptate perferendis
-            quis totam ipsum, dolor dicta autem incidunt quae!
+            {{ profile?.bio }}
           </div>
         </div>
         <div class="hidden items-center justify-center md:flex md:h-[140px] md:w-[140px]">
@@ -88,8 +98,55 @@ onBeforeUnmount(() => {
           />
         </div>
       </div>
-      <div class="mt-[20px]">
-        <hr class="border-c4" />
+      <div class="mt-[40px]">
+        <div>
+          <hr class="border-c4" />
+          <div class="flex w-full justify-center gap-[30px] md:gap-[60px]">
+            <div
+              :class="[
+                'mb-[10px] flex w-[50px] justify-center  pt-[10px]',
+                {
+                  'border-t-[2px] border-c15': section === ProfileSectionEnum.POST,
+                },
+              ]"
+            >
+              <!-- <HomeIcon_ v-if="isSelect" class="dark:fill-c1" /> -->
+              <HomeIconSelected_
+                class="cursor-pointer dark:fill-c1"
+                @click="section = ProfileSectionEnum.POST"
+              />
+            </div>
+            <div
+              :class="[
+                'mb-[10px] flex w-[50px] items-stretch  justify-center pt-[10px]',
+                {
+                  'border-t-[2px] border-c15': section === ProfileSectionEnum.REEL,
+                },
+              ]"
+            >
+              <!-- <ReelIconSelected_ :class="['dark:fill-c1']" /> -->
+              <ReelIcon_ class="cursor-pointer" @click="section = ProfileSectionEnum.REEL" />
+            </div>
+            <div
+              :class="[
+                'mb-[10px] flex w-[50px] justify-center  pt-[10px]',
+                {
+                  'border-t-[2px] border-c15': section === ProfileSectionEnum.SAVE,
+                },
+              ]"
+            >
+              <SaveIcon_
+                :class="[' cursor-pointer dark:[&>path]:stroke-white']"
+                @click="section = ProfileSectionEnum.SAVE"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="h-[200px] w-full bg-red-300">
+          <Post v-if="section === ProfileSectionEnum.POST" />
+          <Reel v-else-if="section === ProfileSectionEnum.REEL" />
+          <Saved v-else-if="section === ProfileSectionEnum.SAVE" />
+        </div>
       </div>
     </div>
   </div>
