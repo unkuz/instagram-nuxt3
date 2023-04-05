@@ -2,6 +2,12 @@ import { useWindowResizeCallback } from '@/composables'
 import { gsap } from 'gsap'
 import { Ref } from 'vue'
 
+/**
+ * The function returns an object with methods to navigate a carousel and keep track of the current
+ * slide.
+ * @param containerMediaRef - A reference to the HTML element that contains the carousel items.
+ * @returns An object with three properties: `next`, `prev`, and `current`.
+ */
 export const useCarousel = (containerMediaRef: Ref<HTMLElement | undefined>) => {
   const current = ref<number>(0)
 

@@ -33,7 +33,7 @@ onClickOutside(searchRef, () => updateIsFocus(false))
 <template>
   <div
     ref="searchRef"
-    class="relative flex cursor-text items-center rounded-md bg-c4/50 px-[16px] dark:bg-c23/50"
+    class="relative flex cursor-text items-center rounded-[8px] bg-c4/50 px-[16px] dark:bg-c23/50"
     @click="updateIsFocus(true)"
   >
     <SearchIcon class="[&>path]:stroke-black [&>path]:dark:stroke-white" />

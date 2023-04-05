@@ -1,9 +1,7 @@
 <script lang="ts" setup>
-import PostSkl from '@/components/Skeleton/Post.vue'
+import TimeFromNow from '@/components/Atoms/TimeFromNow.vue'
 import { useForceRenderTimer } from '@/composables'
 import { useFeedStore } from '@/store'
-import { IPending } from '@/type'
-import moment from 'moment'
 import Caption from './Caption.vue'
 import Carousel from './Carousel.vue'
 import Comment from './Comment.vue'
@@ -11,8 +9,6 @@ import Head from './Head.vue'
 import IndividualComment from './IndividualComment.vue'
 import LikeCommentCount from './LikeCommentCount.vue'
 import React from './React.vue'
-import TimeFromNow from '@/components/Atoms/TimeFromNow.vue'
-import FetchMoreObserver from '@/components/Utils/FetchMoreObserver.vue'
 
 const props = defineProps<{
   feed: any
@@ -32,7 +28,7 @@ const commentCount = $computed(() => {
   let i = props.feed.comments.length
   let j = 0
 
-  props.feed.comments.forEach((k) => {
+  props.feed.comments.forEach((k: any) => {
     j += k.reply.length
   })
 

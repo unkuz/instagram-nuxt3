@@ -1,6 +1,9 @@
 import { useGlobalStore } from '@/store'
 import { SectionEnum } from '@/constants'
 
+/**
+ * The function watches the route and sets the section in the global store based on the current path.
+ */
 export const useWatchRouteSetSection = () => {
   const globalStore = useGlobalStore()
   const route = useRoute()

@@ -1,9 +1,9 @@
-import { IAuthData } from '@/models'
-import { IAccountLogin, IStateStore } from '@/type'
-import { defineStore } from 'pinia'
 import { APP_API } from '@/apis'
+import { IAuthData } from '@/models'
 import { axios } from '@/services/axios'
 import { ToastTypeEnum, useToastStore } from '@/store'
+import { IAccountLogin, IStateStore } from '@/type'
+import { defineStore } from 'pinia'
 
 type TState = IStateStore<IAuthData>
 

@@ -1,5 +1,9 @@
 import { getScrollbarWidth } from '@/utils'
 
+/**
+ * This function disables scrolling on the HTML element and adjusts its width to account for the
+ * scrollbar.
+ */
 export function useLockScroll() {
   let overflow = ''
 

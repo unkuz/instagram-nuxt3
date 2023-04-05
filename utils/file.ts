@@ -1,3 +1,12 @@
+/**
+ * The function determines whether a given file is an image or a video based on its file type.
+ * @param {File} file - A File object representing a file selected by the user through an input element
+ * of type file.
+ * @returns The function `isImageOrVideo` takes a `File` object as input and returns a string
+ * indicating whether the file is an image or a video. If the file type is one of the image types in
+ * the `imageTypes` array, the function returns the string `'image'`. If the file type is one of the
+ * video types in the `videoTypes` array, the function returns the
+ */
 export const isImageOrVideo = (file: File) => {
   const imageTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml']
   const videoTypes = ['video/mp4', 'video/ogg', 'video/webm']
@@ -11,6 +20,16 @@ export const isImageOrVideo = (file: File) => {
   return ''
 }
 
+/**
+ * The function formats a given number of bytes into a human-readable string with appropriate units.
+ * @param {number} bytes - The number of bytes to be formatted into a human-readable string.
+ * @param [decimals=2] - The number of decimal places to include in the formatted output. It defaults
+ * to 2 if not provided.
+ * @returns The function `formatBytes` takes in a number of bytes and an optional number of decimals to
+ * round to, and returns a string that represents the bytes in a human-readable format with the
+ * appropriate unit (e.g. KB, MB, GB, etc.). If the input is not a number, it returns the string '0
+ * Bytes'.
+ */
 export const formatBytes = (bytes: number, decimals = 2) => {
   if (!+bytes) return '0 Bytes'
 

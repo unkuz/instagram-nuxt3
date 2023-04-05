@@ -13,6 +13,8 @@ const notificationList = $computed(() => notificationStore.data)
 <template>
   <div>
     <TopBarSm text="activity" />
-    <div class="mt-[60px]"><ActivityFeedNotification :notificationList="notificationList" /></div>
+    <div class="mt-[60px] md:mt-0">
+      <ActivityFeedNotification :notificationList="notificationList" />
+    </div>
   </div>
 </template>
