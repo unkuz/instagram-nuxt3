@@ -7,7 +7,7 @@ defineProps<IProps>()
 </script>
 
 <template>
-  <div class="flex cursor-pointer flex-col items-center">
+  <div class="flex w-[60px] cursor-pointer flex-col items-center md:w-[100px]">
     <span class="">{{ count }}</span>
     <div class="capitalize">{{ text }}</div>
   </div>
