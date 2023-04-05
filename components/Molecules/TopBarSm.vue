@@ -9,7 +9,7 @@ defineProps<IProps>()
 </script>
 <template>
   <div
-    class="fixed left-0 right-0 top-0 z-20 flex h-[60px] items-center justify-between gap-[15px] bg-c1/50 backdrop-blur-[5px] px-[10px] text-[.85rem] md:hidden"
+    class="fixed left-0 right-0 top-0 z-20 flex h-[60px] items-center justify-between gap-[15px] bg-transparent px-[10px] text-[.85rem] md:hidden"
   >
     <div class="flex items-center gap-[20px]">
       <NuxtLink to="/_"><BackIcon_ /> </NuxtLink>

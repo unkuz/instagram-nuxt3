@@ -96,36 +96,37 @@ const submit = () => {
             @click="openCover"
           />
         </div>
-        <div class="mt-[20px] flex gap-[20px]">
-          <AtomsAvatar
-            class="h-[130px] w-[130px]"
-            @click="openAvatar"
-            :url="avatarImg ?? profile?.profile_pic_url"
-          />
-          <div class="flex flex-1 flex-col gap-[10px]">
-            <div class="flex flex-col">
-              <span class="capitalize">User Name</span>
-              <input type="text" v-model="formData.user_name" />
-            </div>
-            <div class="flex flex-col">
-              <span class="capitalize">Name</span>
-              <input type="text" v-model="formData.name" />
-            </div>
-            <div class="flex flex-col">
-              <span class="capitalize">Bio</span>
-              <input type="text"  v-model="formData.bio" />
+        <div class="w-full px-[20px] py-[20px]">
+          <div class="mt-[20px] flex gap-[50px]">
+            <AtomsAvatar
+              class="h-[130px] w-[130px]"
+              @click="openAvatar"
+              :url="avatarImg ?? profile?.profile_pic_url"
+            />
+            <div class="flex flex-1 flex-col gap-[10px]">
+              <div class="flex flex-col">
+                <span class="capitalize">User Name</span>
+                <input type="text" v-model="formData.user_name" />
+              </div>
+              <div class="flex flex-col">
+                <span class="capitalize">Name</span>
+                <input type="text" v-model="formData.name" />
+              </div>
+              <div class="flex flex-col">
+                <span class="capitalize">Bio</span>
+                <input type="text" v-model="formData.bio" />
+              </div>
             </div>
           </div>
-        </div>
-        <div class="mt-[20px] flex justify-center">
-          <AtomsButton
-            text="Submit"
-            class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
-            @click="submit"
-          />
+          <div class="mt-[20px] flex justify-center">
+            <AtomsButton
+              text="Submit"
+              class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
+              @click="submit"
+            />
+          </div>
         </div>
       </div>
     </UtilsBackDrop>
   </div>
 </template>
-
