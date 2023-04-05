@@ -4,6 +4,7 @@ import { useProfileStore } from '~/store'
 import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue'
 import { useFileDialog } from '@vueuse/core'
 import { isImageOrVideo } from '@/utils'
+import { useLockScroll } from '@/composables'
 
 const emit = defineEmits(['close'])
 
@@ -20,10 +21,17 @@ const formData = reactive({
 })
 
 onMounted(() => {
+  Object.assign(formData, profile)
+})
+
+onMounted(() => {
   gsap.to(elRef!, {
     translateY: 0,
+    ease: 'elastic.out(1, 0.3)',
+    duration: 0.3,
   })
 })
+useLockScroll()
 
 let avatarImg = $ref<string>()
 let coverImg = $ref<string>()
@@ -75,12 +83,13 @@ const submit = () => {
 <template>
   <div>
     <UtilsBackDrop @click.self="close">
-      <div ref="elRef" class="w-[600px] -translate-y-[500%] bg-c1 p-[20px]">
-        <div class="relative flex w-full justify-center mb-[20px]">
+      <div ref="elRef" class="-translate-y-[500%] bg-c1 lg:w-[935px]">
+        <div class="relative my-[20px] flex w-full justify-center">
+          <div>{{ '<' }}</div>
           <div>Edit Profile</div>
           <button class="absolute right-0" @click="close">x</button>
         </div>
-        <div class="h-[120px] w-full">
+        <div class="h-[140px] w-full md:h-[200px]">
           <NuxtImageCustom
             class="h-full w-full cursor-pointer bg-cover bg-center object-cover"
             :src="coverImg ?? profile?.cover_pic_url"
@@ -89,7 +98,7 @@ const submit = () => {
         </div>
         <div class="mt-[20px] flex gap-[20px]">
           <AtomsAvatar
-            class="h-[100px] w-[100px]"
+            class="h-[130px] w-[130px]"
             @click="openAvatar"
             :url="avatarImg ?? profile?.profile_pic_url"
           />
@@ -104,7 +113,7 @@ const submit = () => {
             </div>
             <div class="flex flex-col">
               <span class="capitalize">Bio</span>
-              <input type="text" v-model="formData.bio" />
+              <input type="text"  v-model="formData.bio" />
             </div>
           </div>
         </div>
@@ -119,3 +128,4 @@ const submit = () => {
     </UtilsBackDrop>
   </div>
 </template>
+

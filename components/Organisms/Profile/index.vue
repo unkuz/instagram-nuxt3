@@ -90,7 +90,7 @@ onBeforeUnmount(() => {
             <Section text="Followers" :count="100" />
             <Section text="Following" :count="200" />
           </div>
-          <div class="line-clamp-3 text-c17 dark:text-c11">
+          <div class="line-clamp-3 text-c17 dark:text-c11 text-center">
             {{ profile?.bio }}
           </div>
         </div>
