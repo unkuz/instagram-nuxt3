@@ -5,6 +5,10 @@ import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue'
 import { useFileDialog } from '@vueuse/core'
 import { isImageOrVideo } from '@/utils'
 import { useLockScroll } from '@/composables'
+import Input from '@/components/Atoms/Form/Input.vue'
+import TextArea from '@/components/Atoms/Form/TextArea.vue'
+import TopBarSm from '@/components/Molecules/TopBarSm.vue'
+import CloseIcon_ from '@/assets/svg/mingcute/close.svg'
 
 const emit = defineEmits(['close'])
 
@@ -18,6 +22,8 @@ const formData = reactive({
   name: '',
   user_name: '',
   bio: '',
+  website: '',
+  phone_number: '',
 })
 
 onMounted(() => {
@@ -83,11 +89,16 @@ const submit = () => {
 <template>
   <div>
     <UtilsBackDrop @click.self="close">
-      <div ref="elRef" class="-translate-y-[500%] bg-c1 lg:w-[935px]">
-        <div class="relative my-[20px] flex w-full justify-center">
-          <div>{{ '<' }}</div>
+      <TopBarSm text="Edit Profile" />
+      <div
+        ref="elRef"
+        class="fixed top-0 h-screen w-full -translate-y-[500%] overflow-scroll bg-c1 md:static md:top-auto md:h-auto lg:w-[935px]"
+      >
+        <div class="relative my-[20px] hidden w-full justify-center md:flex">
           <div>Edit Profile</div>
-          <button class="absolute right-0" @click="close">x</button>
+          <button class="absolute right-[10px]" @click="close">
+            <CloseIcon_ class="h-[20px] w-[20px]" />
+          </button>
         </div>
         <div class="h-[140px] w-full md:h-[200px]">
           <NuxtImageCustom
@@ -97,24 +108,43 @@ const submit = () => {
           />
         </div>
         <div class="w-full px-[20px] py-[20px]">
-          <div class="mt-[20px] flex gap-[50px]">
-            <AtomsAvatar
-              class="h-[130px] w-[130px]"
-              @click="openAvatar"
-              :url="avatarImg ?? profile?.profile_pic_url"
-            />
-            <div class="flex flex-1 flex-col gap-[10px]">
-              <div class="flex flex-col">
-                <span class="capitalize">User Name</span>
-                <input type="text" v-model="formData.user_name" />
+          <div
+            class="mt-[20px] flex -translate-y-[90px] flex-col items-center gap-[20px] md:translate-y-0 md:flex-row md:items-start md:gap-[50px]"
+          >
+            <div class="h-[120px] w-[120px] md:h-[130px] md:w-[130px]">
+              <AtomsAvatar
+                class="!h-full !w-full border-[3px] border-c1"
+                @click="openAvatar"
+                :url="avatarImg ?? profile?.profile_pic_url"
+              />
+            </div>
+
+            <div class="flex w-full flex-1 flex-col gap-[10px] md:w-auto">
+              <div class="flex w-full flex-col justify-between gap-[20px] md:flex-row">
+                <div class="flex w-full flex-col">
+                  <span class="capitalize">User Name</span>
+                  <Input type="text" v-model="formData.user_name" />
+                </div>
+                <div class="flex w-full flex-col">
+                  <span class="capitalize">Name</span>
+                  <Input type="text" v-model="formData.name" />
+                </div>
               </div>
-              <div class="flex flex-col">
-                <span class="capitalize">Name</span>
-                <input type="text" v-model="formData.name" />
+              <div class="flex w-full flex-col justify-between gap-[20px] md:flex-row">
+                <div class="flex w-full flex-col">
+                  <span class="capitalize">Phone Number</span>
+                  <Input type="text" v-model="formData.phone_number" />
+                </div>
+
+                <div class="flex w-full flex-col">
+                  <span class="capitalize">Website</span>
+                  <Input type="text" v-model="formData.website" />
+                </div>
               </div>
+
               <div class="flex flex-col">
                 <span class="capitalize">Bio</span>
-                <input type="text" v-model="formData.bio" />
+                <TextArea v-model="formData.bio" />
               </div>
             </div>
           </div>

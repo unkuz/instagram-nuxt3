@@ -1,6 +1,7 @@
 import { APP_API } from '@/apis'
 import { axios } from '@/services/axios'
 import { defineStore } from 'pinia'
+import { ToastTypeEnum, useToastStore } from './toast'
 
 export type TData = {
   id: number
@@ -16,6 +17,7 @@ export type TData = {
 export const useProfileStore = defineStore('profile', {
   state: () => ({
     data: [] as TData[],
+    isOpenEditProfile: false,
   }),
   getters: {
     profile: (state) => {
@@ -26,26 +28,39 @@ export const useProfileStore = defineStore('profile', {
     save(val: any) {
       this.data = val
     },
+    toggleEditProfile(val: boolean) {
+      if (_isBoolean(val)) {
+        this.isOpenEditProfile = val
+        return
+      }
+      return (this.isOpenEditProfile = !this.isOpenEditProfile)
+    },
     async update(val: any) {
+      const toastStore = useToastStore()
       const idUser = this.data[0].id
-
       const data = _omitBy(val, (i) => _isNil(i))
-
-      console.log('DATA', data)
       try {
         const formData = new FormData()
-
         _each(data, (val, key) => {
           formData.append(key, val)
         })
         formData.append('password', 'cuz')
-
-        console.log('FRORM', formData)
-
-        await axios.put(APP_API.USER.UPDATE_PROFLE(idUser), formData, {
+        const { status } = await axios.put(APP_API.USER.UPDATE_PROFLE(idUser), formData, {
           headers: { 'Content-Type': 'multipart/form-data' },
         })
-      } catch (e) {}
+
+        if (status === 200) {
+          toastStore.pushTimmer({
+            type: ToastTypeEnum.SUCCESS,
+            content: 'Edit Profile successfully!',
+          })
+        }
+      } catch (e) {
+        toastStore.pushTimmer({
+          type: ToastTypeEnum.ERROR,
+          content: 'Something went wrong!',
+        })
+      }
     },
   },
 })

@@ -24,6 +24,8 @@ const { files: coverFile, open: openCover } = useFileDialog({ multiple: false })
 
 const profile = $computed(() => profileStore.profile)
 
+const isOpenEditProfile = $computed(() => profileStore.isOpenEditProfile)
+
 const section = $ref(ProfileSectionEnum.POST)
 
 let showEditProfile = $ref(false)
@@ -90,7 +92,7 @@ onBeforeUnmount(() => {
             <Section text="Followers" :count="100" />
             <Section text="Following" :count="200" />
           </div>
-          <div class="line-clamp-3 text-c17 dark:text-c11 text-center">
+          <div class="line-clamp-3 text-center text-c17 dark:text-c11">
             {{ profile?.bio }}
           </div>
         </div>
@@ -98,7 +100,7 @@ onBeforeUnmount(() => {
           <AtomsButton
             text="Edit"
             class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
-            @click="showEditProfile = true"
+            @click="profileStore.toggleEditProfile(true)"
           />
         </div>
       </div>
@@ -155,6 +157,6 @@ onBeforeUnmount(() => {
       </div>
     </div>
 
-    <Edit v-if="showEditProfile" @close="showEditProfile = false" />
+    <Edit v-if="isOpenEditProfile" @close="profileStore.toggleEditProfile(false)" />
   </div>
 </template>
