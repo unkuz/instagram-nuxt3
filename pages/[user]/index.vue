@@ -3,7 +3,7 @@ import Profile from '@/components/Organisms/Profile/index.vue'
 import { axios } from '@/services/axios'
 import { APP_API } from '~/apis'
 import { useProfileStore } from '~/store'
-import TopBarSm from '@/components/Molecules/TopBarSm.vue';
+import TopBarSm from '@/components/Molecules/TopBarSm.vue'
 
 definePageMeta({
   middleware: 'auth',
@@ -27,7 +27,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div><TopBarSm text="cuzknothz">
-    <div>Options</div>
-  </TopBarSm><Profile  class="mt-[60px] md:mt-0"/></div>
+  <div>
+    <TopBarSm text="cuzknothz"> <div>Options</div> </TopBarSm><Profile class="mt-[60px] md:mt-0" />
+  </div>
 </template>

@@ -2,6 +2,7 @@ import { APP_API } from '@/apis'
 import { axios } from '@/services/axios'
 import { defineStore } from 'pinia'
 import { ToastTypeEnum, useToastStore } from './toast'
+import { sleep } from '@/utils'
 
 export type TData = {
   id: number
@@ -54,6 +55,8 @@ export const useProfileStore = defineStore('profile', {
             type: ToastTypeEnum.SUCCESS,
             content: 'Edit Profile successfully!',
           })
+          await sleep(1000)
+          this.isOpenEditProfile = false
         }
       } catch (e) {
         toastStore.pushTimmer({

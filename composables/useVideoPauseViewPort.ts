@@ -1,6 +1,11 @@
 import { Ref } from 'vue'
 import { useCurrentVideoStore } from '@/store'
 
+/**
+ * This function checks if a video element is within the viewport and pauses it if it is not.
+ * @param videoRef - A reference to the HTMLVideoElement that needs to be checked for visibility in the
+ * viewport.
+ */
 export const useVideoPauseViewPort = (videoRef: Ref<HTMLVideoElement | null>) => {
   const currentVideoStore = useCurrentVideoStore()
 

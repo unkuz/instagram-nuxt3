@@ -2,6 +2,9 @@ import { useThemeStore } from '@/store'
 import { useStyleTag } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 
+/**
+ * This function sets the scrollbar theme based on the current theme mode.
+ */
 export const useScrollBarTheme = () => {
   const { darkMode } = $(storeToRefs(useThemeStore()))
 

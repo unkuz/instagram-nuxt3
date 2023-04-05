@@ -16,7 +16,6 @@ const imageRef = ref<HTMLDivElement | null>(null)
 const toggleLike = () => {
   timelineStore.setToggleLike(props.idPost)
 }
-
 </script>
 
 <template>
