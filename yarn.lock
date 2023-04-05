@@ -2799,12 +2799,12 @@
     unimport "^3.0.4"
     untyped "^1.3.2"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.4.0-28010302.313b2e3e":
-  version "3.4.0-28010302.313b2e3e"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.4.0-28010302.313b2e3e.tgz#85043359d6af609f6e3e5cfaefdaab3bb7ffb5cb"
-  integrity sha512-kPAgr0WvEol+Rm1nX0E5odQWVmExIhcKfDGcufZk5gfB585apGWxZr5dXAjI7JPOTg3re0s7IX45eacAr0BMPA==
+"@nuxt/kit@npm:@nuxt/kit-edge@3.4.0-28010773.1ae30ba4":
+  version "3.4.0-28010773.1ae30ba4"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.4.0-28010773.1ae30ba4.tgz#7f2d234f4f8c5d24c525dd6367e66c7926bda754"
+  integrity sha512-o9n8a72SnpAWchCg6INNqMbBV5qyYmcyjxjJWyO0M7/wsiXagWjv/Ac0zAgjpaIds2uxtrzIy+8trOZFmij7Cg==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.0-28010302.313b2e3e"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.0-28010773.1ae30ba4"
     c12 "^1.2.0"
     consola "^2.15.3"
     defu "^6.1.2"
@@ -2820,7 +2820,7 @@
     scule "^1.0.0"
     semver "^7.3.8"
     unctx "^2.1.2"
-    unimport "^3.0.4"
+    unimport "^3.0.5"
     untyped "^1.3.2"
 
 "@nuxt/postcss8@^1.1.3":
@@ -2950,10 +2950,10 @@
     unimport "^3.0.4"
     untyped "^1.3.2"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.4.0-28010302.313b2e3e":
-  version "3.4.0-28010302.313b2e3e"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.4.0-28010302.313b2e3e.tgz#ccff367ce548523584372f06a49f94f34667de78"
-  integrity sha512-ikVpgi0Ty3GFRAeE2SZuOhhiNT2kxNYMnvMVFcQ7h09/1KThLV/B1m0H+laZzPblWEaKPOQ1cdX8qP0khlTugQ==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.4.0-28010773.1ae30ba4":
+  version "3.4.0-28010773.1ae30ba4"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.4.0-28010773.1ae30ba4.tgz#e2fcc14b9c25e5b1b00bf77aa3c5a94ae733d63b"
+  integrity sha512-rTQ5d6obqJZwn3Zm8DNkKwaNrpTViU2BUgn4xdzR2oBW4WTPmESe3EHCXj6qnIaggktWL7NC78bHN6dGaWeGOQ==
   dependencies:
     c12 "^1.2.0"
     create-require "^1.1.1"
@@ -2966,7 +2966,7 @@
     scule "^1.0.0"
     std-env "^3.3.2"
     ufo "^1.1.1"
-    unimport "^3.0.4"
+    unimport "^3.0.5"
     untyped "^1.3.2"
 
 "@nuxt/telemetry@^2.1.10":
@@ -2995,13 +2995,13 @@
     rc9 "^2.0.1"
     std-env "^3.3.2"
 
-"@nuxt/test-utils-edge@3.4.0-28010302.313b2e3e":
-  version "3.4.0-28010302.313b2e3e"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.4.0-28010302.313b2e3e.tgz#eeca42bb9218458fb6057c060724c015165368ea"
-  integrity sha512-/q9gqUm9hU9+k68/n515wWrajQDSgujNFnE9zwIx0qcLX6UphX8LuDpy3mhgMEPccK5ChDicammroT2v6IPyBw==
+"@nuxt/test-utils-edge@3.4.0-28010773.1ae30ba4":
+  version "3.4.0-28010773.1ae30ba4"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.4.0-28010773.1ae30ba4.tgz#f0eeaebfec767bd6ef88fea0251ac25973b484e5"
+  integrity sha512-Sl9hUIvdSTu2QUMAS4C5T6hx5k5zG5eVuSIdbOzdGmM3pb9W/D02Cd9xlxzFkvw6Kg83ahfLOin8nHdnyI7V3Q==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.4.0-28010302.313b2e3e"
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.0-28010302.313b2e3e"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.4.0-28010773.1ae30ba4"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.0-28010773.1ae30ba4"
     consola "^2.15.3"
     defu "^6.1.2"
     execa "^7.1.1"
@@ -14214,6 +14214,23 @@ unimport@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/unimport/-/unimport-3.0.4.tgz#b54d414b0f78673e76c9cbc2568b915c2d64b7c9"
   integrity sha512-eoof/HLiNJcIkVpnqc7sJbzKSLx39J6xTaP7E4ElgVQKeq2t9fPTkvJKcA55IJTaRPkEkDq8kcc/IZPmrypnFg==
+  dependencies:
+    "@rollup/pluginutils" "^5.0.2"
+    escape-string-regexp "^5.0.0"
+    fast-glob "^3.2.12"
+    local-pkg "^0.4.3"
+    magic-string "^0.30.0"
+    mlly "^1.2.0"
+    pathe "^1.1.0"
+    pkg-types "^1.0.2"
+    scule "^1.0.0"
+    strip-literal "^1.0.1"
+    unplugin "^1.3.1"
+
+unimport@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/unimport/-/unimport-3.0.5.tgz#a2b2c1ed41aaaff4b3702260878a159d1f921da2"
+  integrity sha512-enRW0sVcTBxUZY6R2iumWMUsPbGC5GW9jM89VtF0pFUz9vDPrvEmOAklbSE/a4fqhjW/7dMWBvfLw/IDlBaPdQ==
   dependencies:
     "@rollup/pluginutils" "^5.0.2"
     escape-string-regexp "^5.0.0"

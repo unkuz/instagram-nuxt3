@@ -12,7 +12,7 @@
   "devDependencies": {
     "@nuxt/content": "^2.5.2",
     "@nuxt/image-edge": "1.0.0-28008586.381b906",
-    "@nuxt/test-utils-edge": "3.4.0-28010302.313b2e3e",
+    "@nuxt/test-utils-edge": "3.4.0-28010773.1ae30ba4",
     "@nuxtjs/device": "^3.1.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/eslint-module": "^4.0.2",

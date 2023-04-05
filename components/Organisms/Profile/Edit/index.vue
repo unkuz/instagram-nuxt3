@@ -75,8 +75,8 @@ const submit = () => {
 <template>
   <div>
     <UtilsBackDrop @click.self="close">
-      <div ref="elRef" class="w-[600px] -translate-y-[500%] bg-yellow-200 p-[20px]">
-        <div class="relative flex w-full justify-center">
+      <div ref="elRef" class="w-[600px] -translate-y-[500%] bg-c1 p-[20px]">
+        <div class="relative flex w-full justify-center mb-[20px]">
           <div>Edit Profile</div>
           <button class="absolute right-0" @click="close">x</button>
         </div>
