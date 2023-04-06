@@ -23,14 +23,17 @@ const { data, pending: pendingTimeline } = await useLazyAsyncData<any>('profile'
   return res.data
 })
 
-const { data: feedList, pending: pendingFeed } = await useLazyAsyncData<any>('profile', async () => {
-  const res = await axios.get(APP_API.PROFILE.FEED.LIST, {
-    params: {
-      user_name: route.params.user,
-    },
-  })
-  return res.data
-})
+const { data: feedList, pending: pendingFeed } = await useLazyAsyncData<any>(
+  'profile-feed',
+  async () => {
+    const res = await axios.get(APP_API.PROFILE.FEED.LIST, {
+      params: {
+        user_name: route.params.user,
+      },
+    })
+    return res.data
+  }
+)
 
 watchEffect(() => {
   profileStore.save(data.value)
