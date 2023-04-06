@@ -3,6 +3,7 @@ import { axios } from '@/services/axios'
 import { defineStore } from 'pinia'
 import { ToastTypeEnum, useToastStore } from './toast'
 import { sleep } from '@/utils'
+import { useAuthStore } from './auth'
 
 export type TData = {
   id: number
@@ -38,6 +39,7 @@ export const useProfileStore = defineStore('profile', {
     },
     async update(val: any) {
       const toastStore = useToastStore()
+      const authStore = useAuthStore()
       const idUser = this.data[0].id
       const data = _omitBy(val, (i) => _isNil(i))
       try {
@@ -46,7 +48,7 @@ export const useProfileStore = defineStore('profile', {
           formData.append(key, val)
         })
         formData.append('password', 'cuz')
-        const { status } = await axios.put(APP_API.USER.UPDATE_PROFLE(idUser), formData, {
+        const { status,data :_data } = await axios.put(APP_API.USER.UPDATE_PROFLE(idUser), formData, {
           headers: { 'Content-Type': 'multipart/form-data' },
         })
 
@@ -55,8 +57,11 @@ export const useProfileStore = defineStore('profile', {
             type: ToastTypeEnum.SUCCESS,
             content: 'Edit Profile successfully!',
           })
+          console.log("_data",_data);
+          this.data[0] = {...this.data[0],..._data}
           await sleep(1000)
           this.isOpenEditProfile = false
+          // authStore.data.user = _pick(_data,['cover_pic_url','profile_pic_url','user_name'])
         }
       } catch (e) {
         toastStore.pushTimmer({

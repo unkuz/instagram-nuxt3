@@ -9,5 +9,5 @@ withDefaults(defineProps<IProps>(), {
 })
 </script>
 <template>
-  <div><nuxt-img :src="src" :class="['h-full w-full object-cover']" /></div>
+  <div class="w-full h-full"><nuxt-img :src="src" :class="['h-full w-full object-cover']" /></div>
 </template>
