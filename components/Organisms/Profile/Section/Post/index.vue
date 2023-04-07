@@ -23,6 +23,8 @@ const list = $computed(() => feedUserStore.data)
       :src="
         BASE_URL_API + (i?.carousel_media?.images?.[0]?.src ?? i?.carousel_media?.videos?.[0]?.src)
       "
+      :comments="i.comments.length"
+      :likes="i.likes.length"
     />
   </div>
 </template>
