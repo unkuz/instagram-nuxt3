@@ -2775,7 +2775,7 @@
     unimport "^3.0.2"
     untyped "^1.2.2"
 
-"@nuxt/kit@3.3.3", "@nuxt/kit@^3.3.3":
+"@nuxt/kit@3.3.3", "@nuxt/kit@^3.3.2", "@nuxt/kit@^3.3.3":
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.3.3.tgz#14706db145101750ac4ab75f2cc6d5a5c507c51b"
   integrity sha512-8ql3DweT1BNOCM6mmP8st+33NCAHHvmQuOS6Q75kXMZ6Ygqv06hxp5slpLXpT1ZOEoM+vzfkjO2lJ3rnjWYC4Q==
@@ -2799,12 +2799,12 @@
     unimport "^3.0.4"
     untyped "^1.3.2"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.4.0-28013105.b329ed78":
-  version "3.4.0-28013105.b329ed78"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.4.0-28013105.b329ed78.tgz#55f8fe5b8353160a036b85fadf66146414d0fe6c"
-  integrity sha512-+Oj9RYNARVjKIvXm4UBbN7UHPcNp/JtCDdUjP/i5CBxda2LdSU/dyz7MQhCJZPrgPj7LEoAeSs9FRtVcsxSC/g==
+"@nuxt/kit@npm:@nuxt/kit-edge@3.4.0-28014732.9878c5b6":
+  version "3.4.0-28014732.9878c5b6"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.4.0-28014732.9878c5b6.tgz#166a2e6e53c5e0562ed8bf0570b9a2be1e56b6f1"
+  integrity sha512-upyWSH3zWUoYM1Ko3CipFsWcZNzxH/7ObMcfywWA3DLL/XIm1wqlmWw5M17fJJMu1Y3F6xBRKJ6R9cYIq1oJ+Q==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.0-28013105.b329ed78"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.0-28014732.9878c5b6"
     c12 "^1.2.0"
     consola "^2.15.3"
     defu "^6.1.2"
@@ -2950,10 +2950,10 @@
     unimport "^3.0.4"
     untyped "^1.3.2"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.4.0-28013105.b329ed78":
-  version "3.4.0-28013105.b329ed78"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.4.0-28013105.b329ed78.tgz#2264ac4f04418b8320a88f9cb623c47095913f40"
-  integrity sha512-hxkl7f36OyEEiP3YmhgFrmG+OftsdFk3FsmFCuoHfm3IxkamickZ7/VaQiGsx48gMaxDDFqbuYMcjnI8iXB6OQ==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.4.0-28014732.9878c5b6":
+  version "3.4.0-28014732.9878c5b6"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.4.0-28014732.9878c5b6.tgz#a0d732b160772194c44145539d5b677fb4dd94d7"
+  integrity sha512-WXH/lcDH8FkCWdj/csyX9tAUqohujgpIw+ZnA7+xc3M+ONhEjYr4VpN6RfRp7rm7dSXU43vfoTtUrBP07DpLww==
   dependencies:
     c12 "^1.2.0"
     create-require "^1.1.1"
@@ -2995,13 +2995,13 @@
     rc9 "^2.0.1"
     std-env "^3.3.2"
 
-"@nuxt/test-utils-edge@3.4.0-28013105.b329ed78":
-  version "3.4.0-28013105.b329ed78"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.4.0-28013105.b329ed78.tgz#193206672b639d6eb7de12a7754f91c7ba94d9a1"
-  integrity sha512-tVVfdWs8dCkGUrTRQnDE1b/0DtRI6Gq53R3CoDtprkwO9apbDxpZA0pO9OlSiTyLeYT0eIcJtW1vvNFff+I6nA==
+"@nuxt/test-utils-edge@3.4.0-28014732.9878c5b6":
+  version "3.4.0-28014732.9878c5b6"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.4.0-28014732.9878c5b6.tgz#30c990805aa29acdf22c4dfab92ea7daa51d3d6b"
+  integrity sha512-H1VzIdd50hk333osqEVlvJ7RnMQ81zwytGrEckeRuh6t4OePhgEbrJBjYD+uHUlBYlEQPz+vXXQuM3x8VwQxnQ==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.4.0-28013105.b329ed78"
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.0-28013105.b329ed78"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.4.0-28014732.9878c5b6"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.0-28014732.9878c5b6"
     consola "^2.15.3"
     defu "^6.1.2"
     execa "^7.1.1"
@@ -3301,13 +3301,13 @@
     defu "^6.1.2"
     pinia-plugin-persistedstate ">=3.1.0"
 
-"@pinia/nuxt@^0.4.7":
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/@pinia/nuxt/-/nuxt-0.4.7.tgz#dc1bd597869043fc4ef8c14977454c7b909ba5d0"
-  integrity sha512-ifgA9PO/jmPlK1e/HtkrZa7OMSL8EUOpo8Z1O5vNLRr/OZ42kKGEaY1NbIoCz6dIf/pbkATTNHJmcrlPCo3zSA==
+"@pinia/nuxt@^0.4.8":
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/@pinia/nuxt/-/nuxt-0.4.8.tgz#ab6a6758f19da05e998dcda47be341a735c36f92"
+  integrity sha512-E0HKmW+6Ec5HYzomZl86xil2rGPRAqKG1d+slVVLBHC7PFZOM0VIw/1XFO9hwo+EiCuDEXZDReZwTqO7KQsMgQ==
   dependencies:
     "@nuxt/kit" "^3.0.0"
-    pinia ">=2.0.31"
+    pinia ">=2.0.34"
 
 "@pkgr/utils@^2.3.1":
   version "2.3.1"
@@ -10364,10 +10364,10 @@ mkdirp@^1.0.3:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-mkdirp@^2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-2.1.5.tgz#78d7eaf15e069ba7b6b47d76dd94cfadf7a4062f"
-  integrity sha512-jbjfql+shJtAPrFoKxHOXip4xS+kul9W3OzfzzrqueWK2QMGon2bFH2opl6W9EagBThjEz+iysyi/swOoVfB/w==
+mkdirp@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-2.1.6.tgz#964fbcb12b2d8c5d6fbc62a963ac95a273e2cc19"
+  integrity sha512-+hEnITedc8LAtIP9u3HJDFIdcLV2vXP33sqLLIzkv1Db1zO/1OxbvYf0Y1OC/S/Qo5dxHXepofhmxL02PsKe+A==
 
 mlly@^0.5.16:
   version "0.5.17"
@@ -10949,20 +10949,20 @@ nuxt-simple-sitemap@^1.0.9:
     sitemap "^7.1.1"
     ufo "^1.1.1"
 
-nuxt-typed-router@^3.0.9:
-  version "3.0.9"
-  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-3.0.9.tgz#964728de94a049b72d3c6ac0e962551aa3c74ee0"
-  integrity sha512-Nph21WFmS0Mhy5P/VsbsKueyOO8lK6Zwo04RvXBndCfW4k9NppGpsI5J8HM8zyw2W5f58bk+zhE77E8zeLntMQ==
+nuxt-typed-router@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-3.1.0.tgz#ee1a51536b06a83772d52b9e4d5f1ed353fd0aad"
+  integrity sha512-+H9e6A0/CH57F2ibh9TNlfSc01f8FnkZWeO+z3sEIlwdcB1LuQ2FpQtW5vu7natulYYX/j81zSIMcM7hwRGMWw==
   dependencies:
-    "@nuxt/kit" "^3.3.1"
+    "@nuxt/kit" "^3.3.2"
     chalk "^5.2.0"
     defu "^6.1.2"
     lodash-es "^4.17.21"
     log-symbols "^5.1.0"
-    mkdirp "^2.1.5"
-    nanoid "^4.0.1"
+    mkdirp "^2.1.6"
+    nanoid "^4.0.2"
     pathe "1.1.0"
-    prettier "2.8.6"
+    prettier "2.8.7"
 
 nuxt-unhead@^1.4.15:
   version "1.4.15"
@@ -11519,10 +11519,10 @@ pinia-plugin-persistedstate@>=3.1.0:
   resolved "https://registry.yarnpkg.com/pinia-plugin-persistedstate/-/pinia-plugin-persistedstate-3.1.0.tgz#eada2b61ecd478fce88e490a685210415cd7a1b4"
   integrity sha512-8UN+vYMEPBdgNLwceY08mi5olI0wkYaEb8b6hD6xW7SnBRuPydWHlEhZvUWgNb/ibuf4PvufpvtS+dmhYjJQOw==
 
-pinia@>=2.0.31, pinia@^2.0.33:
-  version "2.0.33"
-  resolved "https://registry.yarnpkg.com/pinia/-/pinia-2.0.33.tgz#b70065be697874d5824e9792f59bd5d87ddb5e7d"
-  integrity sha512-HOj1yVV2itw6rNIrR2f7+MirGNxhORjrULL8GWgRwXsGSvEqIQ+SE0MYt6cwtpegzCda3i+rVTZM+AM7CG+kRg==
+pinia@>=2.0.34, pinia@^2.0.34:
+  version "2.0.34"
+  resolved "https://registry.yarnpkg.com/pinia/-/pinia-2.0.34.tgz#6c0c84f06b631c30c030633fa64e525c609105a9"
+  integrity sha512-cgOoGUiyqX0SSgX8XelK9+Ri4XA2/YyNtgjogwfzIx1g7iZTaZPxm7/bZYMCLU2qHRiHhxG7SuQO0eBacFNc2Q==
   dependencies:
     "@vue/devtools-api" "^6.5.0"
     vue-demi "*"
@@ -11978,15 +11978,15 @@ prettier-plugin-tailwindcss@^0.2.7:
   resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.2.7.tgz#2314d728cce9c9699ced41a01253eb48b4218da5"
   integrity sha512-jQopIOgjLpX+y8HeD56XZw7onupRTC0cw7eKKUimI7vhjkPF5/1ltW5LyqaPtSyc8HvEpvNZsvvsGFa2qpa59w==
 
-prettier@2.8.6, prettier@^2.7.1:
-  version "2.8.6"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.6.tgz#5c174b29befd507f14b83e3c19f83fdc0e974b71"
-  integrity sha512-mtuzdiBbHwPEgl7NxWlqOkithPyp4VN93V7VeHVWBF+ad3I5avc0RVDT4oImXQy9H/AqxA2NSQH8pSxHW6FYbQ==
-
-prettier@^2.8.7:
+prettier@2.8.7, prettier@^2.8.7:
   version "2.8.7"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.7.tgz#bb79fc8729308549d28fe3a98fce73d2c0656450"
   integrity sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==
+
+prettier@^2.7.1:
+  version "2.8.6"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.6.tgz#5c174b29befd507f14b83e3c19f83fdc0e974b71"
+  integrity sha512-mtuzdiBbHwPEgl7NxWlqOkithPyp4VN93V7VeHVWBF+ad3I5avc0RVDT4oImXQy9H/AqxA2NSQH8pSxHW6FYbQ==
 
 pretty-bytes@^5.3.0:
   version "5.6.0"
@@ -12732,10 +12732,10 @@ safe-regex@^2.1.1:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sass@^1.60.0:
-  version "1.60.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.60.0.tgz#657f0c23a302ac494b09a5ba8497b739fb5b5a81"
-  integrity sha512-updbwW6fNb5gGm8qMXzVO7V4sWf7LMXnMly/JEyfbfERbVH46Fn6q02BX7/eHTdKpE7d+oTkMMQpFWNUMfFbgQ==
+sass@^1.61.0:
+  version "1.61.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.61.0.tgz#d1f6761bb833887b8fdab32a24e052c40531d02b"
+  integrity sha512-PDsN7BrVkNZK2+dj/dpKQAWZavbAQ87IXqVvw2+oEYI+GwlTWkvbQtL7F2cCNbMqJEYKPh1EcjSxsnqIb/kyaQ==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
@@ -14016,10 +14016,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@^5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.0.3.tgz#fe976f0c826a88d0a382007681cbb2da44afdedf"
-  integrity sha512-xv8mOEDnigb/tN9PSMTwSEqAnUvkoXMQlicOb0IUVDBSQCgBSaAAROUZYy2IcUy5qU6XajK5jjjO7TMWqBTKZA==
+typescript@^5.0.4:
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.0.4.tgz#b217fd20119bd61a94d4011274e0ab369058da3b"
+  integrity sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==
 
 ua-parser-js@^0.7.30:
   version "0.7.34"
