@@ -20,7 +20,9 @@ const list = $computed(() => feedUserStore.data)
     <IndividualPost
       v-for="i in list"
       :key="i.id"
-      :img="BASE_URL_API + i?.carousel_media?.images?.[0]?.src"
+      :src="
+        BASE_URL_API + (i?.carousel_media?.images?.[0]?.src ?? i?.carousel_media?.videos?.[0]?.src)
+      "
     />
   </div>
 </template>

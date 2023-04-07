@@ -41,3 +41,23 @@ export const formatBytes = (bytes: number, decimals = 2) => {
 
   return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`
 }
+
+const VIDEO_EXTENTIONS = ['.mpg', '.mp2', '.mpeg', '.mpe', '.mpv', '.mp4']
+const IMAGE_EXTENTIONS = ['.gif', '.jpg', '.jpeg', '.png']
+
+/**
+ * The function checks if a given string contains any of the image extensions defined in a constant
+ * array.
+ * @param {string} src - src is a string parameter that represents the source of an image. It is used
+ * as an input to the isImage function to determine whether the source is an image or not.
+ */
+export const isImage = (src: string) => IMAGE_EXTENTIONS.some((e) => src.includes(e))
+
+/**
+ * The function checks if a given string contains any of the video file extensions defined in a
+ * constant array.
+ * @param {string} src - src is a string parameter that represents the source of a file. In this case,
+ * it is used to check if the file is a video by checking if it has any of the video extensions listed
+ * in the VIDEO_EXTENTIONS array.
+ */
+export const isVideo = (src: string) => VIDEO_EXTENTIONS.some((e) => src.includes(e))

@@ -3,9 +3,10 @@ import ReelIcon_ from '@/assets/svg/reel_icon.svg'
 import { APP_CONFIGS } from '@/configs'
 import HeartIcon_ from '@/assets/svg/mingcute/heart.svg'
 import ChatIcon_ from '@/assets/svg/mingcute/chat.svg'
+import { isImage, isVideo } from '@/utils'
 
 interface IProps {
-  img?: string | undefined
+  src: string
   isBig?: boolean
   id?: number
   skeleton?: boolean
@@ -26,10 +27,17 @@ withDefaults(defineProps<IProps>(), { isBig: false, img: '', skeleton: false })
   >
     <NuxtLink v-if="!skeleton" :to="`/explore/${'1'}`">
       <nuxt-img
-        :src="img"
-        :alt="img"
+        v-if="isImage(src)"
+        :src="src"
+        :alt="src"
         class="h-full w-full object-cover duration-200 group-hover:scale-[1.1]"
         :quality="APP_CONFIGS.QUALITY_IMAGE.EXPLORE"
+      />
+
+      <video
+        v-if="isVideo(src)"
+        :src="src"
+        class="h-full w-full object-cover duration-200 group-hover:scale-[1.1]"
       />
 
       <div
