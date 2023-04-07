@@ -2,37 +2,38 @@
 import Square from './Square.vue'
 
 interface IProps {
-  cluster: string[] | undefined[]
-  idx: number
+  list: string[] | undefined[]
 }
-defineProps<IProps>()
+const props = defineProps<IProps>()
 
-const random = $ref(Math.random())
+let sequence: number[] = []
+
+const generateSequence = (): void => {
+  let num = -2
+  while (num <= props.list.length - 1) {
+    if (sequence.length % 2 === 0) {
+      num += 2
+      sequence.push(num)
+    } else {
+      num += 4
+      sequence.push(num)
+    }
+  }
+}
+
+watch(() => props.list.length, generateSequence, { immediate: true })
 </script>
 
 <template>
   <div>
-    <div
-      v-if="(idx + 1) % 2 === 0"
-      class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[15px] md:gap-[15px]"
-    >
-      <Square v-if="cluster?.[0]?.images?.[0]?.src" :src="cluster?.[0]?.images?.[0]?.src" />
-      <Square
-        v-if="cluster?.[1]?.images?.[0]?.src"
-        :is-big="true"
-        :src="cluster?.[1]?.images?.[0]?.src"
-      />
-      <Square v-if="cluster?.[2]?.images?.[0]?.src" :src="cluster?.[2]?.images?.[0]?.src" />
-    </div>
-
-    <div v-else class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[15px] md:gap-[15px]">
-      <Square
-        v-if="cluster?.[0]?.images?.[0]?.src"
-        :is-big="true"
-        :src="cluster?.[0]?.images?.[0]?.src"
-      />
-      <Square v-if="cluster?.[1]?.images?.[0]?.src" :src="cluster?.[1]?.images?.[0]?.src" />
-      <Square v-if="cluster?.[2]?.images?.[0]?.src" :src="cluster?.[2]?.images?.[0]?.src" />
+    <div class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[15px] md:gap-[15px]">
+      <template> </template>
+      <template v-for="(i, idx) in list" :key="i.id">
+        <Square
+          :is-big="sequence.includes(idx)"
+          :src="i?.images?.[0]?.src ?? i?.videos?.[0]?.src"
+        />
+      </template>
     </div>
   </div>
 </template>

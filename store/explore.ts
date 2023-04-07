@@ -5,7 +5,7 @@ export const useExploreStore = defineStore('explore', {
     data: [],
   }),
   getters: {
-    list: (state) => _chunk(state.data.reverse(), 3),
+    list: (state) => state.data.reverse(),
   },
   actions: {
     save(val: []) {
