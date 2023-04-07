@@ -89,7 +89,7 @@ const submit = () => {
 <template>
   <div>
     <UtilsBackDrop @click.self="close">
-      <TopBarSm text="Edit Profile">
+      <TopBarSm text="Edit Profile" @back="profileStore.toggleEditProfile(false)">
         <AtomsButton
           text="Save"
           class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
