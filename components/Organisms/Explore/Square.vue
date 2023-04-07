@@ -1,19 +1,28 @@
 <script lang="ts" setup>
-import ReelIcon_ from '@/assets/svg/reel_icon.svg'
-import { APP_CONFIGS } from '@/configs'
-import HeartIcon_ from '@/assets/svg/mingcute/heart.svg'
 import ChatIcon_ from '@/assets/svg/mingcute/chat.svg'
-import { isImage, isVideo } from '@/utils'
+import HeartIcon_ from '@/assets/svg/mingcute/heart.svg'
 import ReelIconSelected_ from '@/assets/svg/reel_icon_selected.svg'
+import { APP_CONFIGS } from '@/configs'
+import { isImage, isVideo } from '@/utils'
 
 interface IProps {
   src: string
   isBig?: boolean
   id?: number
   skeleton?: boolean
+  views?: number
+  likes: number
+  comments?: number
 }
 
-withDefaults(defineProps<IProps>(), { isBig: false, img: '', skeleton: false })
+withDefaults(defineProps<IProps>(), {
+  isBig: false,
+  img: '',
+  skeleton: false,
+  comments: 0,
+  likes: 0,
+  views: 0,
+})
 </script>
 
 <template>
@@ -49,13 +58,13 @@ withDefaults(defineProps<IProps>(), { isBig: false, img: '', skeleton: false })
         class="absolute inset-0 hidden items-center justify-center bg-black/20 backdrop-blur-[5px] duration-200 group-hover:flex"
       >
         <div class="flex gap-[20px] text-c1 dark:text-c1 md:gap-[30px]">
-          <div class="flex flex-col">
+          <div class="flex flex-col items-center">
             <HeartIcon_ />
-            <span>{{ $formatNum(300) }}</span>
+            <span>{{ $formatNum(likes) }}</span>
           </div>
-          <div class="flex flex-col">
+          <div class="flex flex-col items-center">
             <ChatIcon_ />
-            <span>{{ $formatNum(300) }}</span>
+            <span>{{ $formatNum(comments) }}</span>
           </div>
         </div>
       </div>

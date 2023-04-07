@@ -32,6 +32,8 @@ watch(() => props.list.length, generateSequence, { immediate: true })
         <Square
           :is-big="sequence.includes(idx)"
           :src="i?.images?.[0]?.src ?? i?.videos?.[0]?.src"
+          :comments="i.comments.length"
+          :likes="i.likes.length"
         />
       </template>
     </div>
