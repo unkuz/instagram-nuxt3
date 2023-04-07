@@ -106,7 +106,9 @@ onBeforeUnmount(() => {
       </div>
       <div class="mt-[40px]">
         <div>
-          <div class="mx-auto w-[80%] md:w-[60%]"><hr class="border-c4" /></div>
+          <div class="mx-auto w-[80%] md:w-[60%]">
+            <hr class="border-c4 dark:border-transparent" />
+          </div>
 
           <div class="flex w-full justify-center gap-[30px] md:gap-[60px]">
             <div

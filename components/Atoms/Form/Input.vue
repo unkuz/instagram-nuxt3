@@ -20,7 +20,7 @@ const changeVal = (e: Event) => {
       :type="type"
       :value="modelValue"
       @input="changeVal($event)"
-      class="h-[40px] w-full rounded-lg bg-c2/10 p-[10px] caret-c17 focus:outline-none"
+      class="h-[40px] w-full rounded-lg bg-c2/10 p-[10px] caret-c17 focus:outline-none dark:bg-c1/20"
     />
   </div>
 </template>

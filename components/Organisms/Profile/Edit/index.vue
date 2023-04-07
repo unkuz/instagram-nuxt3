@@ -37,7 +37,7 @@ onMounted(() => {
     duration: 0.3,
   })
 })
-useLockScroll()
+// useLockScroll()
 
 let avatarImg = $ref<string>()
 let coverImg = $ref<string>()
@@ -89,10 +89,15 @@ const submit = () => {
 <template>
   <div>
     <UtilsBackDrop @click.self="close">
-      <TopBarSm text="Edit Profile" />
+      <TopBarSm text="Edit Profile">
+        <AtomsButton
+          text="Save"
+          class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
+          @click="submit"
+      /></TopBarSm>
       <div
         ref="elRef"
-        class="fixed top-0 h-screen w-full -translate-y-[500%] overflow-scroll bg-c1 md:static md:top-auto md:h-auto lg:w-[935px]"
+        class="fixed top-0 h-screen w-full -translate-y-[500%] overflow-scroll bg-c1 dark:bg-c2 md:static md:top-auto md:h-auto lg:w-[935px]"
       >
         <div class="relative my-[20px] hidden w-full justify-center md:flex">
           <div>Edit Profile</div>
@@ -148,9 +153,9 @@ const submit = () => {
               </div>
             </div>
           </div>
-          <div class="mt-[20px] flex justify-center">
+          <div class="mt-[20px] hidden justify-center md:flex">
             <AtomsButton
-              text="Submit"
+              text="Save"
               class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
               @click="submit"
             />

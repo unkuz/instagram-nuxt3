@@ -17,7 +17,7 @@ withDefaults(defineProps<IProps>(), { isBig: false, img: '', skeleton: false })
 <template>
   <div
     :class="[
-      'group relative aspect-square w-full cursor-pointer overflow-hidden',
+      'group relative aspect-square h-full w-full cursor-pointer overflow-hidden',
       {
         '!col-span-2 !row-span-2 ': isBig,
         'skeleton ': skeleton,

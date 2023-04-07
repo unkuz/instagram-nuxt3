@@ -41,9 +41,12 @@ export const APP_API = {
   INBOX: {
     LIST: '/message/',
   },
-  PROFILE:{
-    FEED:{
-      LIST: '/feed/by-user/'
-    }
-  }
+  PROFILE: {
+    FEED: {
+      LIST: '/feed/by-user/',
+    },
+    REEL: {
+      LIST: '/reel/by-user/',
+    },
+  },
 }
