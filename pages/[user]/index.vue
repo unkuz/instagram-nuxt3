@@ -26,6 +26,10 @@ const { data, pending: pendingTimeline } = await useLazyAsyncData<any>('profile'
 watchEffect(() => {
   profileStore.save(data.value)
 })
+
+onBeforeUnmount(() => {
+  profileStore.$reset()
+})
 </script>
 
 <template>

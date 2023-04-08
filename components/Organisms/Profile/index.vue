@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Avatar from '@/components/Atoms/Avatar.vue'
 import TagName from '@/components/Atoms/TagName.vue'
-import { useProfileStore } from '@/store'
+import { useAuthStore, useProfileStore } from '@/store'
 import { SizeAvatarEnum } from '@/type'
 import { isImageOrVideo } from '@/utils'
 import { useFileDialog } from '@vueuse/core'
@@ -19,6 +19,7 @@ import Saved from './Section/Saved/index.vue'
 import Edit from './Edit/index.vue'
 
 const profileStore = useProfileStore()
+const authStore = useAuthStore()
 const { files: avatarFile, open: openAvatar } = useFileDialog({ multiple: false })
 const { files: coverFile, open: openCover } = useFileDialog({ multiple: false })
 
@@ -62,6 +63,8 @@ onBeforeUnmount(() => {
     URL.revokeObjectURL(i!)
   })
 })
+
+const isShowEdit = $computed(() => authStore.data.user.user_name === profileStore.data[0].user_name)
 </script>
 
 <template>
@@ -75,7 +78,7 @@ onBeforeUnmount(() => {
     </div>
     <div class="-translate-y-[50px]">
       <div
-        class="flex w-full flex-col items-center justify-between px-[20px] md:translate-x-0 md:flex-row md:items-end md:gap-[50px]"
+        class="flex w-full flex-col items-center justify-between px-[20px] md:translate-x-0 md:flex-row md:items-end md:gap-[20px]"
       >
         <div class="flex flex-col items-center justify-center gap-[5px]">
           <Avatar
@@ -85,6 +88,11 @@ onBeforeUnmount(() => {
             class="top-0 !h-[120px] !w-[120px] border-[3px] border-c1 dark:border-c19 md:!h-[140px] md:!w-[140px] md:border-[5px]"
           />
           <TagName :name="profile?.user_name" />
+          <AtomsButton
+            v-if="!isShowEdit"
+            text="Follow"
+            class="mt-[20px] select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17 md:hidden"
+          />
         </div>
         <div class="mt-[20px] flex flex-col gap-[10px] md:mt-0">
           <div class="flex justify-between gap-[50px] px-[50px]">
@@ -98,7 +106,14 @@ onBeforeUnmount(() => {
         </div>
         <div class="hidden items-center justify-center md:flex md:h-[140px] md:w-[140px]">
           <AtomsButton
+            v-if="isShowEdit"
             text="Edit"
+            class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
+            @click="profileStore.toggleEditProfile(true)"
+          />
+          <AtomsButton
+            v-else
+            text="Follow"
             class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
             @click="profileStore.toggleEditProfile(true)"
           />
