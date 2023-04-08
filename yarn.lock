@@ -2799,14 +2799,14 @@
     unimport "^3.0.4"
     untyped "^1.3.2"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.4.0-28014732.9878c5b6":
-  version "3.4.0-28014732.9878c5b6"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.4.0-28014732.9878c5b6.tgz#166a2e6e53c5e0562ed8bf0570b9a2be1e56b6f1"
-  integrity sha512-upyWSH3zWUoYM1Ko3CipFsWcZNzxH/7ObMcfywWA3DLL/XIm1wqlmWw5M17fJJMu1Y3F6xBRKJ6R9cYIq1oJ+Q==
+"@nuxt/kit@npm:@nuxt/kit-edge@3.4.0-28015826.ea4b5220":
+  version "3.4.0-28015826.ea4b5220"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.4.0-28015826.ea4b5220.tgz#4a7b02e8ab47e56c76fa6367846136f3779c8095"
+  integrity sha512-cuQC1TZ7/FcdzvixyiPEkvPiKjSj5o2w0UwwmIGSixnzE66eC+zXUqphkcW6iF+J4bU6WHZMWMSQHWoZInSD6A==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.0-28014732.9878c5b6"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.0-28015826.ea4b5220"
     c12 "^1.2.0"
-    consola "^2.15.3"
+    consola "^3.0.0-3"
     defu "^6.1.2"
     globby "^13.1.3"
     hash-sum "^2.0.0"
@@ -2950,10 +2950,10 @@
     unimport "^3.0.4"
     untyped "^1.3.2"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.4.0-28014732.9878c5b6":
-  version "3.4.0-28014732.9878c5b6"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.4.0-28014732.9878c5b6.tgz#a0d732b160772194c44145539d5b677fb4dd94d7"
-  integrity sha512-WXH/lcDH8FkCWdj/csyX9tAUqohujgpIw+ZnA7+xc3M+ONhEjYr4VpN6RfRp7rm7dSXU43vfoTtUrBP07DpLww==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.4.0-28015826.ea4b5220":
+  version "3.4.0-28015826.ea4b5220"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.4.0-28015826.ea4b5220.tgz#9b76f82f9446bbcc49756b737a4fb36ffe0b1692"
+  integrity sha512-xLm//0eowId6IuFnrV8m0+5WM8loKzzAyNZEysX/HxVFAVt7NZTN/Y6ZHb3ha/nX0PCBEpgTDYSK0JMmoJy5Zg==
   dependencies:
     c12 "^1.2.0"
     create-require "^1.1.1"
@@ -2995,14 +2995,14 @@
     rc9 "^2.0.1"
     std-env "^3.3.2"
 
-"@nuxt/test-utils-edge@3.4.0-28014732.9878c5b6":
-  version "3.4.0-28014732.9878c5b6"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.4.0-28014732.9878c5b6.tgz#30c990805aa29acdf22c4dfab92ea7daa51d3d6b"
-  integrity sha512-H1VzIdd50hk333osqEVlvJ7RnMQ81zwytGrEckeRuh6t4OePhgEbrJBjYD+uHUlBYlEQPz+vXXQuM3x8VwQxnQ==
+"@nuxt/test-utils-edge@3.4.0-28015826.ea4b5220":
+  version "3.4.0-28015826.ea4b5220"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.4.0-28015826.ea4b5220.tgz#44cf80fe9ef11e4fefee2b4c717bf3d86b16663c"
+  integrity sha512-H/FiQZ9DTT5anXio+h9pKKhVZ5fTMz0D8uRcOI/rQo6Xs9BPAvKYc5ZqWNwar7MVzf6IW8+YWMV88I5rsZg8MA==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.4.0-28014732.9878c5b6"
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.0-28014732.9878c5b6"
-    consola "^2.15.3"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.4.0-28015826.ea4b5220"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.0-28015826.ea4b5220"
+    consola "^3.0.0-3"
     defu "^6.1.2"
     execa "^7.1.1"
     get-port-please "^3.0.1"
@@ -5736,6 +5736,11 @@ consola@^2.15.3:
   version "2.15.3"
   resolved "https://registry.yarnpkg.com/consola/-/consola-2.15.3.tgz#2e11f98d6a4be71ff72e0bdf07bd23e12cb61550"
   integrity sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw==
+
+consola@^3.0.0-3:
+  version "3.0.0-3"
+  resolved "https://registry.yarnpkg.com/consola/-/consola-3.0.0-3.tgz#5b8231d8acc16d5e7a1c3be4d0de2d59bbb74ebd"
+  integrity sha512-3vhBx7Qw5LlF1/QnaeoQSSA5fOohGr9xtHkQ1RFbNlr6kOTwtVz0FvUPx6CdobrDDSP19cj0uWwPtf+/+VBKQA==
 
 console-control-strings@^1.0.0, console-control-strings@^1.1.0:
   version "1.1.0"
@@ -10949,10 +10954,10 @@ nuxt-simple-sitemap@^1.0.9:
     sitemap "^7.1.1"
     ufo "^1.1.1"
 
-nuxt-typed-router@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-3.1.0.tgz#ee1a51536b06a83772d52b9e4d5f1ed353fd0aad"
-  integrity sha512-+H9e6A0/CH57F2ibh9TNlfSc01f8FnkZWeO+z3sEIlwdcB1LuQ2FpQtW5vu7natulYYX/j81zSIMcM7hwRGMWw==
+nuxt-typed-router@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-3.1.1.tgz#e5c9d535ac2a9451f29c3b478080a9aa0c1263b4"
+  integrity sha512-vzN8v9HGNQxzLf3WsObvUKH121JG+VviVqxX85EeQI1SwrgcTyM1NjEsIUwYs1qoGQaQ7GKvv/lIHIPDr1pxjg==
   dependencies:
     "@nuxt/kit" "^3.3.2"
     chalk "^5.2.0"
