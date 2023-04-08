@@ -64,7 +64,7 @@ onBeforeUnmount(() => {
   })
 })
 
-const isShowEdit = $computed(() => authStore.data.user.user_name === profileStore?.data?.user_name)
+const isMyprofile = $computed(() => authStore.data.user.user_name === profileStore?.data?.user_name)
 </script>
 
 <template>
@@ -90,7 +90,7 @@ const isShowEdit = $computed(() => authStore.data.user.user_name === profileStor
           <TagName :name="profile?.user_name" />
           <div class="block md:hidden">
             <AtomsButton
-              v-if="isShowEdit"
+              v-if="isMyprofile"
               text="Edit"
               class="mt-[20px] select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
               @click="profileStore.toggleEditProfile(true)"
@@ -115,7 +115,7 @@ const isShowEdit = $computed(() => authStore.data.user.user_name === profileStor
         </div>
         <div class="hidden items-center justify-center md:flex md:h-[140px] md:w-[140px]">
           <AtomsButton
-            v-if="isShowEdit"
+            v-if="isMyprofile"
             text="Edit"
             class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
             @click="profileStore.toggleEditProfile(true)"
@@ -191,7 +191,7 @@ const isShowEdit = $computed(() => authStore.data.user.user_name === profileStor
         <div class="mt-[10px] w-full">
           <Post v-if="section === ProfileSectionEnum.POST" />
           <Reel v-else-if="section === ProfileSectionEnum.REEL" />
-          <Saved v-else-if="section === ProfileSectionEnum.SAVE" />
+          <Saved v-else-if="isMyprofile && (section === ProfileSectionEnum.SAVE)" />
         </div>
       </div>
     </div>

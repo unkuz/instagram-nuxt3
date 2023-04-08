@@ -12,6 +12,8 @@ const user_name = router.currentRoute.value?.params?.user
 feedUserStore.fetch(user_name)
 
 const list = $computed(() => feedUserStore.data)
+
+onUnmounted(()=>feedUserStore.$reset())
 </script>
 
 <template>

@@ -11,6 +11,8 @@ const user_name = router.currentRoute.value?.params?.user
 reelUserStore.fetch(user_name)
 
 const list = $computed(() => reelUserStore.data)
+onUnmounted(()=>reelUserStore.$reset())
+
 </script>
 
 <template>

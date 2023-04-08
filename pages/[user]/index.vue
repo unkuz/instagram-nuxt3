@@ -16,7 +16,7 @@ const router = useRouter()
 const profileStore = useProfileStore()
 const feedUserStore = useFeedUserStore()
 
-const { data, pending: pendingTimeline } = await useLazyAsyncData<any>('profile', async () => {
+const { data, pending } = await useLazyAsyncData<any>('profile', async () => {
   const res = await axios.get(APP_API.USER.detail, {
     params: {
       user_name: route.params.user,
@@ -61,6 +61,8 @@ onBeforeUnmount(() => {
           </g>
         </svg>
       </div> </TopBarSm
-    ><Profile class="mt-[60px] md:mt-0" />
+    > 
+    <div v-if="pending"></div>
+    <Profile v-else class="mt-[60px] md:mt-0" />
   </div>
 </template>

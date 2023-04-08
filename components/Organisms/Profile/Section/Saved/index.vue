@@ -8,6 +8,8 @@ const savedUserStore = useSavedUserStore()
 savedUserStore.fetch()
 
 const list = $computed(() => savedUserStore.data)
+onUnmounted(()=>savedUserStore.$reset())
+
 </script>
 
 <template>
