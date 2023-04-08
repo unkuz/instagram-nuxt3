@@ -23,14 +23,7 @@ const generateSequence = (): void => {
 
 watch(() => props.list.length, generateSequence, { immediate: true })
 
-const isMutiple = (i: any) => {
-  if (i.images.length === 1 && i.videos.length > 0) {
-    return true
-  } else if (i.images.length > 1) {
-    return true
-  }
-  return false
-}
+const isMutiple = (i: any) => (i.images.length === 1 && i.videos.length > 0) || i.images.length > 1
 </script>
 
 <template>
