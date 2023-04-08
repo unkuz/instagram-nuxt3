@@ -31,7 +31,7 @@
     "@vue/eslint-config-standard": "^8.0.1",
     "@vueuse/nuxt": "^9.13.0",
     "autoprefixer": "^10.4.14",
-    "eslint": "^8.37.0",
+    "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.2.1",
