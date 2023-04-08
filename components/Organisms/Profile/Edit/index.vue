@@ -14,7 +14,7 @@ const emit = defineEmits(['close'])
 
 const profileStore = useProfileStore()
 
-const profile = $computed(() => profileStore.data[0])
+const profile = $computed(() => profileStore.data)
 
 const elRef = $ref<HTMLDivElement>()
 

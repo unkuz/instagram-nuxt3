@@ -1,9 +1,9 @@
 <script lang="ts" setup>
+import TopBarSm from '@/components/Molecules/TopBarSm.vue'
 import Profile from '@/components/Organisms/Profile/index.vue'
 import { axios } from '@/services/axios'
 import { APP_API } from '~/apis'
 import { useProfileStore } from '~/store'
-import TopBarSm from '@/components/Molecules/TopBarSm.vue'
 import { useFeedUserStore } from '~/store/feed-user'
 
 definePageMeta({

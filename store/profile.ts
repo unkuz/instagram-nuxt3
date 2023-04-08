@@ -19,18 +19,16 @@ export type TData = {
 
 export const useProfileStore = defineStore('profile', {
   state: () => ({
-    data: [] as TData[],
+    data: {} as TData,
     isOpenEditProfile: false,
     currentProfileSection: ProfileSectionEnum.POST,
   }),
-  getters: {
-    profile: (state) => {
-      return state.data?.[0]
-    },
-  },
+  getters: {},
   actions: {
     save(val: any) {
-      this.data = val
+      if (_isObject(val?.[0])) {
+        this.data = val[0] as TData
+      }
     },
     toggleEditProfile(val: boolean) {
       if (_isBoolean(val)) {
@@ -42,7 +40,7 @@ export const useProfileStore = defineStore('profile', {
     async update(val: any) {
       const toastStore = useToastStore()
       const authStore = useAuthStore()
-      const idUser = this.data[0].id
+      const idUser = this.data.id
       const data = _omitBy(val, (i) => _isNil(i))
       try {
         const formData = new FormData()
@@ -63,7 +61,7 @@ export const useProfileStore = defineStore('profile', {
             type: ToastTypeEnum.SUCCESS,
             content: 'Edit Profile successfully!',
           })
-          this.data[0] = { ...this.data[0], ..._data }
+          this.data = { ...this.data, ..._data }
           await sleep(1000)
           this.isOpenEditProfile = false
           authStore.data.user = _pick(_data, ['cover_pic_url', 'profile_pic_url', 'user_name'])

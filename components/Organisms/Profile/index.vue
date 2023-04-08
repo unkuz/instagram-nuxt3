@@ -23,7 +23,7 @@ const authStore = useAuthStore()
 const { files: avatarFile, open: openAvatar } = useFileDialog({ multiple: false })
 const { files: coverFile, open: openCover } = useFileDialog({ multiple: false })
 
-const profile = $computed(() => profileStore.profile)
+const profile = $computed(() => profileStore.data)
 
 const isOpenEditProfile = $computed(() => profileStore.isOpenEditProfile)
 
@@ -64,7 +64,7 @@ onBeforeUnmount(() => {
   })
 })
 
-const isShowEdit = $computed(() => authStore.data.user.user_name === profileStore.data[0].user_name)
+const isShowEdit = $computed(() => authStore.data.user.user_name === profileStore?.data?.user_name)
 </script>
 
 <template>
