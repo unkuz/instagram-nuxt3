@@ -167,7 +167,7 @@ const isMyprofile = $computed(() => authStore.data.user.user_name === profileSto
               />
               <ReelIcon_ v-else @click="section = ProfileSectionEnum.REEL" />
             </div>
-            <div
+            <div v-if="isMyprofile"
               :class="[
                 'mb-[10px] flex w-[50px] justify-center  pt-[10px]',
                 {
