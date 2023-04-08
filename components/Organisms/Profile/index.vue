@@ -68,7 +68,7 @@ const isMyprofile = $computed(() => authStore.data.user.user_name === profileSto
 </script>
 
 <template>
-  <div class="relative mb-[65px] min-h-screen text-sm">
+  <div class="relative mb-[65px] md:mb-0 min-h-screen text-sm">
     <div class="relative h-[140px] md:h-[200px]">
       <NuxtImageCustom
         v-if="!coverImg"
