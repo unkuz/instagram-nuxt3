@@ -32,7 +32,7 @@ const list = $computed(() => exploreStore.list)
 
     <div class="mb-[84px] pt-[20px] text-[.85rem]">
       <ExploreSkeleton v-if="pending" />
-      <template v-else> <Explore :list="list" /></template>
+      <Explore v-else :list="list" />
       <NuxtPage />
     </div>
   </div>

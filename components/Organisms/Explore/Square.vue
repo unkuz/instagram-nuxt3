@@ -4,6 +4,7 @@ import HeartIcon_ from '@/assets/svg/mingcute/heart.svg'
 import ReelIconSelected_ from '@/assets/svg/reel_icon_selected.svg'
 import { APP_CONFIGS } from '@/configs'
 import { isImage, isVideo } from '@/utils'
+import MutipleMediaIcon_ from '@/assets/svg/mutiple_media.svg'
 
 interface IProps {
   src: string
@@ -13,6 +14,7 @@ interface IProps {
   views?: number
   likes: number
   comments?: number
+  isMutiple: boolean
 }
 
 withDefaults(defineProps<IProps>(), {
@@ -22,6 +24,7 @@ withDefaults(defineProps<IProps>(), {
   comments: 0,
   likes: 0,
   views: 0,
+  isMutiple: false,
 })
 </script>
 
@@ -42,7 +45,6 @@ withDefaults(defineProps<IProps>(), {
       class="h-full w-full object-cover duration-200 group-hover:scale-[1.1]"
       :quality="APP_CONFIGS.QUALITY_IMAGE.EXPLORE"
     />
-
     <template v-if="isVideo(src)"
       ><video :src="src" class="h-full w-full object-cover duration-200 group-hover:scale-[1.1]" />
       <ReelIconSelected_
@@ -50,7 +52,10 @@ withDefaults(defineProps<IProps>(), {
           'absolute right-[5px] top-[5px] z-10 fill-c1 dark:fill-c1 md:right-[20px] md:top-[20px]',
         ]"
     /></template>
-
+    <MutipleMediaIcon_
+      v-if="isMutiple"
+      class="absolute right-[5px] top-[5px] z-10 fill-c1 dark:fill-c1 md:right-[20px] md:top-[20px]"
+    />
     <div
       class="absolute inset-0 hidden items-center justify-center bg-black/20 backdrop-blur-[5px] duration-200 group-hover:flex"
     >

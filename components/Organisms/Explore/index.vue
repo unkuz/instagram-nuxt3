@@ -22,18 +22,27 @@ const generateSequence = (): void => {
 }
 
 watch(() => props.list.length, generateSequence, { immediate: true })
+
+const isMutiple = (i: any) => {
+  if (i.images.length === 1 && i.videos.length > 0) {
+    return true
+  } else if (i.images.length > 1) {
+    return true
+  }
+  return false
+}
 </script>
 
 <template>
   <div>
     <div class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[15px] md:gap-[15px]">
-      <template> </template>
       <template v-for="(i, idx) in list" :key="i.id">
         <Square
           :is-big="sequence.includes(idx)"
           :src="i?.images?.[0]?.src ?? i?.videos?.[0]?.src"
           :comments="i.comments.length"
           :likes="i.likes.length"
+          :isMutiple="isMutiple(i)"
         />
       </template>
     </div>
