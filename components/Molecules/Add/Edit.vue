@@ -48,7 +48,7 @@ const feedStore = useFeedStore()
 const toastStore = useToastStore()
 
 const userName = $computed(() => authStore.data.user?.user_name)
-const avatar = computed(() => BASE_URL_API + '/' + authStore.data.user?.profile_pic_url)
+const avatar = computed(() => authStore.data.user?.profile_pic_url)
 
 const [sliderRef, slider] = useKeenSlider({
   slides: {

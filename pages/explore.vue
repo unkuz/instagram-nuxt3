@@ -21,7 +21,7 @@ watchEffect(() => {
   exploreStore.save(data.value)
 })
 
-const exploreChunk = $computed(() => exploreStore.list)
+const list = $computed(() => exploreStore.list)
 </script>
 
 <template>
@@ -32,10 +32,7 @@ const exploreChunk = $computed(() => exploreStore.list)
 
     <div class="mb-[84px] pt-[20px] text-[.85rem]">
       <ExploreSkeleton v-if="pending" />
-      <template v-else>
-        <div v-for="(i, idx) in exploreChunk" :key="idx">
-          <Explore :cluster="i" :idx="idx" /></div
-      ></template>
+      <Explore v-else :list="list" />
       <NuxtPage />
     </div>
   </div>

@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import Avatar from '@/components/Atoms/Avatar.vue'
 import TagName from '@/components/Atoms/TagName.vue'
-import { useProfileStore } from '@/store'
+import { useAuthStore, useProfileStore } from '@/store'
 import { SizeAvatarEnum } from '@/type'
 import { isImageOrVideo } from '@/utils'
 import { useFileDialog } from '@vueuse/core'
 import Section from './Section.vue'
 import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue'
-import HomeIcon_ from '@/assets/svg/home_icon.svg'
-import HomeIconSelected_ from '@/assets/svg/home_icon_selected.svg'
+import HomeIconSelected_ from '@/assets/svg/home_icon.svg'
+import HomeIcon_ from '@/assets/svg/home_icon_selected.svg'
 import ReelIcon_ from '@/assets/svg/reel_icon.svg'
 import ReelIconSelected_ from '@/assets/svg/reel_icon_selected.svg'
 import SaveIcon_ from '@/assets/svg/save_icon.svg'
@@ -19,10 +19,11 @@ import Saved from './Section/Saved/index.vue'
 import Edit from './Edit/index.vue'
 
 const profileStore = useProfileStore()
+const authStore = useAuthStore()
 const { files: avatarFile, open: openAvatar } = useFileDialog({ multiple: false })
 const { files: coverFile, open: openCover } = useFileDialog({ multiple: false })
 
-const profile = $computed(() => profileStore.profile)
+const profile = $computed(() => profileStore.data)
 
 const isOpenEditProfile = $computed(() => profileStore.isOpenEditProfile)
 
@@ -62,6 +63,8 @@ onBeforeUnmount(() => {
     URL.revokeObjectURL(i!)
   })
 })
+
+const isShowEdit = $computed(() => authStore.data.user.user_name === profileStore?.data?.user_name)
 </script>
 
 <template>
@@ -75,16 +78,30 @@ onBeforeUnmount(() => {
     </div>
     <div class="-translate-y-[50px]">
       <div
-        class="flex w-full flex-col items-center justify-between px-[20px] md:translate-x-0 md:flex-row md:items-end md:gap-[50px]"
+        class="flex w-full flex-col items-center justify-between px-[20px] md:translate-x-0 md:flex-row md:items-end md:gap-[20px]"
       >
         <div class="flex flex-col items-center justify-center gap-[5px]">
           <Avatar
             v-if="!avatarImg"
             :size="SizeAvatarEnum.L"
             :url="profile?.profile_pic_url"
-            class="top-0 !h-[120px] !w-[120px] border-[3px] border-c1 dark:border-c19 md:!h-[140px] md:!w-[140px] md:border-[5px]"
+            class="top-0 mt-[20px] !h-[120px] !w-[120px] border-[3px] border-c1 dark:border-c19 md:!h-[140px] md:!w-[140px] md:border-[5px]"
           />
           <TagName :name="profile?.user_name" />
+          <div class="block md:hidden">
+            <AtomsButton
+              v-if="isShowEdit"
+              text="Edit"
+              class="mt-[20px] select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
+              @click="profileStore.toggleEditProfile(true)"
+            />
+            <AtomsButton
+              v-else
+              text="Follow"
+              class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
+              @click="profileStore.toggleEditProfile(true)"
+            />
+          </div>
         </div>
         <div class="mt-[20px] flex flex-col gap-[10px] md:mt-0">
           <div class="flex justify-between gap-[50px] px-[50px]">
@@ -98,7 +115,14 @@ onBeforeUnmount(() => {
         </div>
         <div class="hidden items-center justify-center md:flex md:h-[140px] md:w-[140px]">
           <AtomsButton
+            v-if="isShowEdit"
             text="Edit"
+            class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
+            @click="profileStore.toggleEditProfile(true)"
+          />
+          <AtomsButton
+            v-else
+            text="Follow"
             class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
             @click="profileStore.toggleEditProfile(true)"
           />
@@ -106,7 +130,9 @@ onBeforeUnmount(() => {
       </div>
       <div class="mt-[40px]">
         <div>
-          <div class="mx-auto w-[80%] md:w-[60%]"><hr class="border-c4" /></div>
+          <div class="mx-auto w-[80%] md:w-[60%]">
+            <hr class="border-c4 dark:border-transparent" />
+          </div>
 
           <div class="flex w-full justify-center gap-[30px] md:gap-[60px]">
             <div
@@ -117,9 +143,13 @@ onBeforeUnmount(() => {
                 },
               ]"
             >
-              <!-- <HomeIcon_ v-if="isSelect" class="dark:fill-c1" /> -->
               <HomeIconSelected_
-                class="cursor-pointer dark:fill-c1"
+                v-if="section === ProfileSectionEnum.POST"
+                class="cursor-pointer fill-c2 dark:fill-c1"
+              />
+              <HomeIcon_
+                v-else
+                class="cursor-pointer fill-c2 dark:[&__path]:stroke-c1"
                 @click="section = ProfileSectionEnum.POST"
               />
             </div>
@@ -131,8 +161,11 @@ onBeforeUnmount(() => {
                 },
               ]"
             >
-              <!-- <ReelIconSelected_ :class="['dark:fill-c1']" /> -->
-              <ReelIcon_ class="cursor-pointer" @click="section = ProfileSectionEnum.REEL" />
+              <ReelIconSelected_
+                v-if="section === ProfileSectionEnum.REEL"
+                :class="['dark:fill-c1']"
+              />
+              <ReelIcon_ v-else @click="section = ProfileSectionEnum.REEL" />
             </div>
             <div
               :class="[
@@ -143,7 +176,13 @@ onBeforeUnmount(() => {
               ]"
             >
               <SaveIcon_
-                :class="[' cursor-pointer dark:[&>path]:stroke-white']"
+                :class="[
+                  ' cursor-pointer dark:[&>path]:stroke-white',
+                  {
+                    ' [&__path]:fill-c2 dark:[&__path]:fill-c1':
+                      section === ProfileSectionEnum.SAVE,
+                  },
+                ]"
                 @click="section = ProfileSectionEnum.SAVE"
               />
             </div>

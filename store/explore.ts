@@ -5,14 +5,13 @@ export const useExploreStore = defineStore('explore', {
     data: [],
   }),
   getters: {
-    list: (state) => _chunk(state.data, 3),
+    list: (state) => state.data.reverse(),
   },
   actions: {
-    save(val) {
-      if (_isNil(val)) {
-        return
+    save(val: []) {
+      if (!_isNil(val)) {
+        this.data = val
       }
-      this.data = val
     },
   },
 })

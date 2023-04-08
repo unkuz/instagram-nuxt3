@@ -1,4 +1,4 @@
-import { APP_API } from '@/apis'
+import { APP_API, BASE_URL_API } from '@/apis'
 import { IAuthData } from '@/models'
 import { axios } from '@/services/axios'
 import { ToastTypeEnum, useToastStore } from '@/store'
@@ -25,18 +25,24 @@ export const useAuthStore = defineStore('auth', {
       const { user_name, password } = account
       this.pending = true
       try {
-        const { data } = await axios.post(APP_API.AUTH.LOGIN, {
+        const { data, status } = await axios.post(APP_API.AUTH.LOGIN, {
           user_name,
           password,
         })
-        this.data.user = data.user
-        this.data.token = data.token
-        toastStore.pushTimmer({
-          type: ToastTypeEnum.SUCCESS,
-          content: 'Login successfully',
-        })
 
-        navigateTo('/')
+        if (status === 200) {
+          this.data.user = {
+            ...data.user,
+            profile_pic_url: `${BASE_URL_API}/${data.user.profile_pic_url}`,
+            cover_pic_url: `${BASE_URL_API}/${data.user.cover_pic_url}`,
+          }
+          this.data.token = data.token
+          toastStore.pushTimmer({
+            type: ToastTypeEnum.SUCCESS,
+            content: 'Login successfully',
+          })
+          navigateTo('/')
+        }
       } catch (e: any) {
         this.data.user = {}
         this.data.token = {}

@@ -1,14 +1,12 @@
 import { Ref } from 'vue'
 
 /**
- * This function takes an input string and a delay time in seconds and returns a debounced version of
- * the input string.
- * @param {string} input - The input parameter is a string that represents the value that needs to be
- * debounced. This could be any user input such as search queries, form inputs, etc.
- * @param {number} delayTimeSecond - The `delayTimeSecond` parameter is a number that represents the
- * amount of time (in seconds) to wait before executing a function after the input has been changed.
- * This is commonly used to prevent excessive function calls when the input is changing rapidly, such
- * as in a search bar. The function will only
+ * This is a TypeScript function that listens for clicks outside of a specified HTML element and
+ * triggers a callback function when a click occurs outside of that element.
+ * @param ref - A reference to a HTMLDivElement or undefined, which is used to determine if the click
+ * event occurred outside of the element.
+ * @param callback - A function that will be called when a click or touch event occurs outside of the
+ * element referenced by the `ref` parameter.
  */
 export function useClickOutSide(ref: Ref<HTMLDivElement | undefined>, callback: () => void) {
   const listener = (e: MouseEvent | TouchEvent) => {
