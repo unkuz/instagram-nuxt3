@@ -49,4 +49,7 @@ export const APP_API = {
       LIST: '/reel/by-user/',
     },
   },
+  SAVED:{
+    LIST:'/feed/saved-by-user/'
+  }
 }

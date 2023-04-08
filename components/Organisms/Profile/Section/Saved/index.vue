@@ -1,9 +1,29 @@
 <script setup lang="ts">
-import IndividualSaved from './IndividualSaved.vue'
+import { fixSrc } from '@/utils';
+import { useSavedUserStore } from '~/store';
+import IndividualPost from '../Post/IndividualPost.vue';
+
+const savedUserStore = useSavedUserStore()
+
+savedUserStore.fetch()
+
+const list = $computed(() => savedUserStore.data)
+
+
+
+
 </script>
 
 <template>
   <div class="grid h-full w-full grid-cols-3 gap-[3px] md:gap-[10px]">
-    <IndividualSaved v-for="i in 10" />
+    <IndividualPost
+      v-for="i in list"
+      :key="i.id"
+      :src="
+        fixSrc((i?.carousel_media?.images?.[0]?.src ?? i?.carousel_media?.videos?.[0]?.src))
+      "
+      :comments="i.comments.length"
+      :likes="i.likes.length"
+    />
   </div>
 </template>

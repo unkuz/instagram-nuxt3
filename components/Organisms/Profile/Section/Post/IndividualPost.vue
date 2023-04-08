@@ -10,6 +10,6 @@ defineProps<IProps>()
 </script>
 <template>
   <div class="aspect-square h-full w-full bg-yellow-500">
-    <NuxtImageCustom :src="BASE_URL_API + src" />
+    <NuxtImageCustom :src="src" />
   </div>
 </template>

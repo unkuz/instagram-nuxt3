@@ -93,7 +93,6 @@ export const useFeedStore = defineStore('feed', {
             feed: id,
           })
           if(status === 201){
-            console.log("HHEE");
               this.data[idx].comments.push(data)
           }
         } catch (e) {}

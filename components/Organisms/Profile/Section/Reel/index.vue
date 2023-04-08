@@ -5,8 +5,6 @@ import IndivudualReel from './IndivudualReel.vue'
 const reelUserStore = useReelUserStore()
 const router = useRouter()
 
-console.log('ID', router)
-
 const user_name = router.currentRoute.value?.params?.user
 
 reelUserStore.fetch(user_name)
