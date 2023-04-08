@@ -11,7 +11,7 @@ interface IconProps {
 defineProps<IconProps>()
 
 const authStore = useAuthStore()
-const avatar = computed(() => BASE_URL_API + '/' + authStore.data.user?.profile_pic_url)
+const avatar = computed(() => authStore.data.user?.profile_pic_url)
 </script>
 
 <template>

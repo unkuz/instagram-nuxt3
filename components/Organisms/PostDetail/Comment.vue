@@ -23,11 +23,11 @@ onClickOutside(emojiRef, () => (isShowEmoji = false))
 
 const toggleShowEmoji = () => (isShowEmoji = !isShowEmoji)
 
-const send = async () => {
-  await viewPostDetailStore.comment(id, {
+const send = () => {
+  viewPostDetailStore.comment(id, {
     text: commentValueText,
     userName: authStore.data.user.user_name,
-    userImg: BASE_URL_API + '/' + authStore.data.user?.profile_pic_url,
+    userImg: authStore.data.user?.profile_pic_url,
     id: Math.random() * 10000,
   })
   commentValueText = ''
