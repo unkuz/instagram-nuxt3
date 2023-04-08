@@ -63,11 +63,10 @@ export const useProfileStore = defineStore('profile', {
             type: ToastTypeEnum.SUCCESS,
             content: 'Edit Profile successfully!',
           })
-          console.log('_data', _data)
           this.data[0] = { ...this.data[0], ..._data }
           await sleep(1000)
           this.isOpenEditProfile = false
-          // authStore.data.user = _pick(_data,['cover_pic_url','profile_pic_url','user_name'])
+          authStore.data.user = _pick(_data, ['cover_pic_url', 'profile_pic_url', 'user_name'])
         }
       } catch (e) {
         toastStore.pushTimmer({
