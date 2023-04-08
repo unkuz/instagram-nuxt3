@@ -4,7 +4,7 @@ import { APP_CONFIGS } from '@/configs'
 interface IProps {
   src: string
   quality?: number
-  loading: string
+  loading?: string
   alt?: string
 }
 
