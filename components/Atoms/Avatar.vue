@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue';
-import { SizeAvatarEnum } from '@/type';
+import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue'
+import { SizeAvatarEnum } from '@/type'
 
 const { T, S, M, L } = SizeAvatarEnum
 

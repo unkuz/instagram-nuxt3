@@ -16,6 +16,7 @@ interface IProps {
   likes: number
   comments?: number
   isMutiple: boolean
+  isReel?: boolean
 }
 
 withDefaults(defineProps<IProps>(), {
@@ -26,17 +27,19 @@ withDefaults(defineProps<IProps>(), {
   likes: 0,
   views: 0,
   isMutiple: false,
+  isReel: false,
 })
 </script>
 
 <template>
   <div
     :class="[
-      'group relative aspect-square h-full w-full cursor-pointer overflow-hidden',
+      'group relative  h-full w-full cursor-pointer overflow-hidden',
       {
         'col-span-2 row-span-2': isBig,
         'skeleton ': skeleton,
       },
+      isReel ? 'aspect-[1/1.5]' :'aspect-square'
     ]"
   >
     <NuxtImageCustom

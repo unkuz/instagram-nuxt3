@@ -76,24 +76,24 @@ export const useFeedStore = defineStore('feed', {
 
       if (commentReplyId) {
         try {
-         const {data ,status} = await axios.post(APP_API.FEED.COMMENT, {
+          const { data, status } = await axios.post(APP_API.FEED.COMMENT, {
             content: text,
             feed: id,
             comment_id: commentReplyId,
           })
-          if(status === 201){
+          if (status === 201) {
             const idxCmRep = this.data[idx].comments.findIndex((i) => i.id === commentReplyId)
             this.data[idx].comments[idxCmRep].reply.push(data)
           }
         } catch (e) {}
       } else {
         try {
-          const {data,status} = await axios.post(APP_API.FEED.COMMENT, {
+          const { data, status } = await axios.post(APP_API.FEED.COMMENT, {
             content: text,
             feed: id,
           })
-          if(status === 201){
-              this.data[idx].comments.push(data)
+          if (status === 201) {
+            this.data[idx].comments.push(data)
           }
         } catch (e) {}
       }

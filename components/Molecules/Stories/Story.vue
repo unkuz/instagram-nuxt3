@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import Avatar from '@/components/Atoms/Avatar.vue';
-import { stopOtherVideoPlaying } from '@/helpers';
-import { SizeAvatarEnum } from '@/type';
+import Avatar from '@/components/Atoms/Avatar.vue'
+import { stopOtherVideoPlaying } from '@/helpers'
+import { SizeAvatarEnum } from '@/type'
 
 interface IProps {
   name?: string
@@ -10,10 +10,10 @@ interface IProps {
   hasRead?: boolean
 }
 
-withDefaults(defineProps<IProps>(),{
-    name:'',
-    hasRead:false
-}) 
+withDefaults(defineProps<IProps>(), {
+  name: '',
+  hasRead: false,
+})
 </script>
 
 <template>
