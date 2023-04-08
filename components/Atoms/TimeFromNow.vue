@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import moment from 'moment'
-import { useForceRenderTimer } from '@/composables'
+import { useForceRenderTimer } from '@/composables';
+import moment from 'moment';
 
 const { key } = useForceRenderTimer()
 

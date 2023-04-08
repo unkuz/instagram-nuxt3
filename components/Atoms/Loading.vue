@@ -1,6 +1,6 @@
 <script setup>
-import LoadingIcon_ from '@/assets/svg/Ripple-1s-200px.svg'
-import BackDrop from '@/components/Utils/BackDrop.vue'
+import LoadingIcon_ from '@/assets/svg/Ripple-1s-200px.svg';
+import BackDrop from '@/components/Utils/BackDrop.vue';
 
 const nuxtApp = useNuxtApp()
 
