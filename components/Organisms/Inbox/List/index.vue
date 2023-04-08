@@ -8,6 +8,7 @@ import Search from '@/components/Molecules/Search.vue'
 import TopBarSm from '@/components/Molecules/TopBarSm.vue'
 
 const inboxStore = useInboxStore()
+const router = useRouter()
 
 let keyword = ref('')
 
@@ -21,7 +22,7 @@ const inboxList = $computed(() =>
 <template>
   <div class="mx-auto w-full px-[10px] text-[.85rem] md:w-[490px] md:px-0">
     <div class="md:h-[calc(100vh-84px-24px)]">
-      <TopBarSm text="Inbox">
+      <TopBarSm text="Inbox" @back="router.push('/')">
         <EditIcon_ class="[&__path]:fill-c17" />
       </TopBarSm>
       <div class="mt-[60px]">

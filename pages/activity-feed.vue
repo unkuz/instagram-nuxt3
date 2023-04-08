@@ -7,12 +7,13 @@ definePageMeta({
   middleware: 'auth',
 })
 
+const router = useRouter()
 const notificationStore = useNotificationStore()
 const notificationList = $computed(() => notificationStore.data)
 </script>
 <template>
   <div>
-    <TopBarSm text="activity" />
+    <TopBarSm text="activity" @back="router.push('/')" />
     <div class="mt-[60px] md:mt-0">
       <ActivityFeedNotification :notificationList="notificationList" />
     </div>

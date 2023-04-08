@@ -11,6 +11,8 @@ definePageMeta({
 })
 
 const route = useRoute()
+const router = useRouter()
+
 const profileStore = useProfileStore()
 const feedUserStore = useFeedUserStore()
 
@@ -34,7 +36,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div>
-    <TopBarSm text="cuzknothz">
+    <TopBarSm text="cuzknothz" @back="router.push('/')">
       <div>
         <svg
           width="20px"

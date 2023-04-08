@@ -15,6 +15,7 @@ defineProps<IPending>()
 
 let currentVideoOnScreen: HTMLVideoElement
 
+const router = useRouter()
 const reelStore = useReelStore()
 
 const reels = $computed(() => reelStore.data)
@@ -113,7 +114,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div>
-    <TopBarSm text="Reel" />
+    <TopBarSm text="Reel" @back="router.push('/')" />
     <div
       ref="container"
       class="keen-slider flex h-[calc(100vh-65px)] flex-col !flex-nowrap items-center md:h-[calc(100vh-84px)]"
