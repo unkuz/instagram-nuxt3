@@ -6,17 +6,17 @@ interface IProps {
 }
 const props = defineProps<IProps>()
 
-let sequence: number[] = []
+let bigIdx: number[] = []
 
 const generateSequence = (): void => {
   let num = -2
   while (num <= props.list.length - 1) {
-    if (sequence.length % 2 === 0) {
+    if (bigIdx.length % 2 === 0) {
       num += 2
-      sequence.push(num)
+      bigIdx.push(num)
     } else {
       num += 4
-      sequence.push(num)
+      bigIdx.push(num)
     }
   }
 }
@@ -38,7 +38,7 @@ const isMutiple = (i: any) => {
     <div class="mt-[2px] grid w-full grid-cols-3 gap-[2px] md:mt-[15px] md:gap-[15px]">
       <template v-for="(i, idx) in list" :key="i.id">
         <Square
-          :is-big="sequence.includes(idx)"
+          :is-big="bigIdx.includes(idx)"
           :src="i?.images?.[0]?.src ?? i?.videos?.[0]?.src"
           :comments="i.comments.length"
           :likes="i.likes.length"
