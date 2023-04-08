@@ -27,6 +27,7 @@ const toggleLike = () => {
       draggable="false"
       :src="BASE_URL_API + src"
       alt=""
+      loading="lazy"
     />
   </div>
 </template>

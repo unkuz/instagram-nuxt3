@@ -5,6 +5,7 @@ import ReelIconSelected_ from '@/assets/svg/reel_icon_selected.svg'
 import { APP_CONFIGS } from '@/configs'
 import { isImage, isVideo } from '@/utils'
 import MutipleMediaIcon_ from '@/assets/svg/mutiple_media.svg'
+import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue'
 
 interface IProps {
   src: string
@@ -38,13 +39,14 @@ withDefaults(defineProps<IProps>(), {
       },
     ]"
   >
-    <nuxt-img
+    <NuxtImageCustom
       v-if="isImage(src)"
+      class="[&__img]:duration-200 group-hover:[&__img]:scale-[1.1]"
       :src="src"
       :alt="src"
-      class="h-full w-full object-cover duration-200 group-hover:scale-[1.1]"
       :quality="APP_CONFIGS.QUALITY_IMAGE.EXPLORE"
     />
+
     <template v-if="isVideo(src)"
       ><video :src="src" class="h-full w-full object-cover duration-200 group-hover:scale-[1.1]" />
       <ReelIconSelected_

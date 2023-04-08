@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { SizeAvatarEnum } from '@/type'
+import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue'
 
 const { T, S, M, L } = SizeAvatarEnum
 
@@ -29,6 +30,6 @@ withDefaults(defineProps<IProps>(), {
     ]"
   >
     <div v-if="skeleton" class="skeleton h-full w-full"></div>
-    <nuxt-img v-else :class="['h-full w-full object-cover']" :src="url" :quality="quality" />
+    <NuxtImageCustom v-else :src="url" :quality="quality" />
   </div>
 </template>
