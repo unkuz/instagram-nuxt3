@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface IProps {
-  name: string
-  skeleton: boolean
+  name?: string
+  skeleton?: boolean
 }
 
 withDefaults(defineProps<IProps>(), {
