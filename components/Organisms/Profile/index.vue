@@ -85,14 +85,23 @@ const isShowEdit = $computed(() => authStore.data.user.user_name === profileStor
             v-if="!avatarImg"
             :size="SizeAvatarEnum.L"
             :url="profile?.profile_pic_url"
-            class="top-0 !h-[120px] !w-[120px] border-[3px] border-c1 dark:border-c19 md:!h-[140px] md:!w-[140px] md:border-[5px]"
+            class="top-0 mt-[20px] !h-[120px] !w-[120px] border-[3px] border-c1 dark:border-c19 md:!h-[140px] md:!w-[140px] md:border-[5px]"
           />
           <TagName :name="profile?.user_name" />
-          <AtomsButton
-            v-if="!isShowEdit"
-            text="Follow"
-            class="mt-[20px] select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17 md:hidden"
-          />
+          <div class="block md:hidden">
+            <AtomsButton
+              v-if="isShowEdit"
+              text="Edit"
+              class="mt-[20px] select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
+              @click="profileStore.toggleEditProfile(true)"
+            />
+            <AtomsButton
+              v-else
+              text="Follow"
+              class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
+              @click="profileStore.toggleEditProfile(true)"
+            />
+          </div>
         </div>
         <div class="mt-[20px] flex flex-col gap-[10px] md:mt-0">
           <div class="flex justify-between gap-[50px] px-[50px]">
