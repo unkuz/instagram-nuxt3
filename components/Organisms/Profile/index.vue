@@ -7,8 +7,8 @@ import { isImageOrVideo } from '@/utils'
 import { useFileDialog } from '@vueuse/core'
 import Section from './Section.vue'
 import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue'
-import HomeIcon_ from '@/assets/svg/home_icon.svg'
-import HomeIconSelected_ from '@/assets/svg/home_icon_selected.svg'
+import HomeIconSelected_ from '@/assets/svg/home_icon.svg'
+import HomeIcon_ from '@/assets/svg/home_icon_selected.svg'
 import ReelIcon_ from '@/assets/svg/reel_icon.svg'
 import ReelIconSelected_ from '@/assets/svg/reel_icon_selected.svg'
 import SaveIcon_ from '@/assets/svg/save_icon.svg'
@@ -143,9 +143,13 @@ const isShowEdit = $computed(() => authStore.data.user.user_name === profileStor
                 },
               ]"
             >
-              <!-- <HomeIcon_ v-if="isSelect" class="dark:fill-c1" /> -->
               <HomeIconSelected_
-                class="cursor-pointer dark:fill-c1"
+                v-if="section === ProfileSectionEnum.POST"
+                class="cursor-pointer fill-c2 dark:fill-c1"
+              />
+              <HomeIcon_
+                v-else
+                class="cursor-pointer fill-c2 dark:[&__path]:stroke-c1"
                 @click="section = ProfileSectionEnum.POST"
               />
             </div>
@@ -157,8 +161,11 @@ const isShowEdit = $computed(() => authStore.data.user.user_name === profileStor
                 },
               ]"
             >
-              <!-- <ReelIconSelected_ :class="['dark:fill-c1']" /> -->
-              <ReelIcon_ class="cursor-pointer" @click="section = ProfileSectionEnum.REEL" />
+              <ReelIconSelected_
+                v-if="section === ProfileSectionEnum.REEL"
+                :class="['dark:fill-c1']"
+              />
+              <ReelIcon_ v-else @click="section = ProfileSectionEnum.REEL" />
             </div>
             <div
               :class="[
@@ -169,7 +176,13 @@ const isShowEdit = $computed(() => authStore.data.user.user_name === profileStor
               ]"
             >
               <SaveIcon_
-                :class="[' cursor-pointer dark:[&>path]:stroke-white']"
+                :class="[
+                  ' cursor-pointer dark:[&>path]:stroke-white',
+                  {
+                    ' [&__path]:fill-c2 dark:[&__path]:fill-c1':
+                      section === ProfileSectionEnum.SAVE,
+                  },
+                ]"
                 @click="section = ProfileSectionEnum.SAVE"
               />
             </div>
