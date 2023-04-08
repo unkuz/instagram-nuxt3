@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import BackDrop from '@/components/Utils/BackDrop.vue'
 import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue'
+import BackDrop from '@/components/Utils/BackDrop.vue'
 
 interface IProps {
   previewMedia: any
