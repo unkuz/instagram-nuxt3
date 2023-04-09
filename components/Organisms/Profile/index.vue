@@ -68,7 +68,7 @@ const isMyprofile = $computed(() => authStore.data.user.user_name === profileSto
 </script>
 
 <template>
-  <div class="relative mb-[65px] md:mb-0 min-h-screen text-sm">
+  <div class="relative mb-[65px] min-h-screen text-sm md:mb-0">
     <div class="relative h-[140px] md:h-[200px]">
       <NuxtImageCustom
         v-if="!coverImg"
@@ -167,7 +167,8 @@ const isMyprofile = $computed(() => authStore.data.user.user_name === profileSto
               />
               <ReelIcon_ v-else @click="section = ProfileSectionEnum.REEL" />
             </div>
-            <div v-if="isMyprofile"
+            <div
+              v-if="isMyprofile"
               :class="[
                 'mb-[10px] flex w-[50px] justify-center  pt-[10px]',
                 {
@@ -191,7 +192,7 @@ const isMyprofile = $computed(() => authStore.data.user.user_name === profileSto
         <div class="mt-[10px] w-full">
           <Post v-if="section === ProfileSectionEnum.POST" />
           <Reel v-else-if="section === ProfileSectionEnum.REEL" />
-          <Saved v-else-if="isMyprofile && (section === ProfileSectionEnum.SAVE)" />
+          <Saved v-else-if="isMyprofile && section === ProfileSectionEnum.SAVE" />
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ feedUserStore.fetch(user_name)
 
 const list = $computed(() => feedUserStore.data)
 
-onUnmounted(()=>feedUserStore.$reset())
+onUnmounted(() => feedUserStore.$reset())
 </script>
 
 <template>

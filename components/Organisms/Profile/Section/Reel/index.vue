@@ -11,8 +11,7 @@ const user_name = router.currentRoute.value?.params?.user
 reelUserStore.fetch(user_name)
 
 const list = $computed(() => reelUserStore.data)
-onUnmounted(()=>reelUserStore.$reset())
-
+onUnmounted(() => reelUserStore.$reset())
 </script>
 
 <template>
@@ -20,9 +19,7 @@ onUnmounted(()=>reelUserStore.$reset())
     <IndividualPost
       v-for="i in list"
       :key="i.id"
-      :src="
-        fixSrc(i.videos[0].src)
-      "
+      :src="fixSrc(i.videos[0].src)"
       :comments="i.comments.length"
       :likes="i.likes.length"
       :isReel="true"

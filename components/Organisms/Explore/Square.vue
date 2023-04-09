@@ -39,19 +39,21 @@ withDefaults(defineProps<IProps>(), {
         'col-span-2 row-span-2': isBig,
         'skeleton ': skeleton,
       },
-      isReel ? 'aspect-[1/1.5]' :'aspect-square'
+      isReel ? 'aspect-[1/1.5]' : 'aspect-square',
     ]"
   >
     <NuxtImageCustom
       v-if="isImage(src)"
-      class="[&__img]:duration-200 group-hover:[&__img]:scale-[1.1] bg-c2"
+      class="bg-c2 [&__img]:duration-200 group-hover:[&__img]:scale-[1.1]"
       :src="src"
       :alt="src"
       :quality="APP_CONFIGS.QUALITY_IMAGE.EXPLORE"
     />
 
     <template v-if="isVideo(src)"
-      ><video :src="src" class="h-full w-full object-cover duration-200 group-hover:scale-[1.1] bg-c2" />
+      ><video
+        :src="src"
+        class="h-full w-full bg-c2 object-cover duration-200 group-hover:scale-[1.1]" />
       <ReelIconSelected_
         :class="[
           'absolute right-[5px] top-[5px] z-10 fill-c1 dark:fill-c1 md:right-[20px] md:top-[20px]',

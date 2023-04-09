@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import BgGlass from '@/components/Utils/BgGlass.vue'
 import Auth from '@/components/Organisms/Auth/index.vue'
+import BgGlass from '@/components/Utils/BgGlass.vue'
 
 definePageMeta({
   auth: false,

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ActivityFeedNotification from '@/components/Organisms/ActivityFeedNotification/index.vue'
 import TopBarSm from '@/components/Molecules/TopBarSm.vue'
+import ActivityFeedNotification from '@/components/Organisms/ActivityFeedNotification/index.vue'
 import { useNotificationStore } from '@/store'
 
 definePageMeta({
