@@ -70,7 +70,7 @@ const isMyprofile = $computed(() => authStore.data.user.user_name === profileSto
             <Section text="Followers" :count="100" :pending="pending" />
             <Section text="Following" :count="200" :pending="pending" />
           </div>
-         <Bio :content="profile?.bio" :pending="pending"/>
+          <Bio :content="profile?.bio" :pending="pending" />
         </div>
         <div class="hidden items-center justify-center md:flex md:h-[140px] md:w-[140px]">
           <AtomsButton

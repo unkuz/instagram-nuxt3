@@ -5,6 +5,7 @@ import { axios } from '@/services/axios'
 import { APP_API } from '~/apis'
 import { useProfileStore } from '~/store'
 import { useFeedUserStore } from '~/store/feed-user'
+import NotFound from '@/components/Utils/NotFound.vue'
 
 definePageMeta({
   middleware: 'auth',
@@ -33,7 +34,7 @@ onBeforeUnmount(() => {
   profileStore.$reset()
 })
 
-const isNotFound = $computed(()=>_isEmpty(profileStore.data) && pending)
+const isNotFound = $computed(() => _isEmpty(profileStore.data) && pending)
 </script>
 
 <template>
@@ -64,8 +65,7 @@ const isNotFound = $computed(()=>_isEmpty(profileStore.data) && pending)
         </svg>
       </div>
     </TopBarSm>
-    <div v-if="isNotFound">404</div>
+    <NotFound v-if="isNotFound" />
     <Profile v-else :pending="pending" class="mt-[60px] md:mt-0" />
-   
   </div>
 </template>
