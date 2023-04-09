@@ -52,4 +52,10 @@ export const APP_API = {
   SAVED: {
     LIST: '/feed/saved-by-user/',
   },
+  FOLLOW: {
+    FOLLOWING_BY_USER: (userName: string) => `/user/following-by-user/?user_name=${userName}`,
+    FOLLOWER_BY_USER: (userName: string) => `/user/follower-by-user/?user_name=${userName}`,
+    FOLLOW: '/user/follower/create/',
+    UNFOLLOW: (userName: string) => `/user/follower/unfollow/${userName}/`,
+  },
 }

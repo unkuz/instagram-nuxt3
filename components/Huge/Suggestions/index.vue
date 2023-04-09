@@ -93,11 +93,12 @@ const logout = () => {
       </div>
       <div class="mt-[8px] h-auto w-full">
         <Item
-          v-for="{ user_name, profile_pic_url, id } in suggestion"
+          v-for="{ user_name, profile_pic_url, id, is_follow } in suggestion"
           :id="id"
           :key="id"
           :user_name="user_name"
           :avatar="profile_pic_url"
+          :isFollowing="is_follow"
         />
       </div>
       <div class="mt-[10px] text-[0.85rem] text-c3 dark:text-c21" v-once>
