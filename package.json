@@ -50,7 +50,7 @@
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-pwa": "^0.14.7",
     "vite-plugin-vue-type-imports": "^0.2.4",
-    "vitest": "^0.29.8",
+    "vitest": "^0.30.0",
     "vue-gtag-next": "^1.14.0"
   },
   "dependencies": {
@@ -81,7 +81,7 @@
     "magic-regexp": "^0.6.3",
     "moment": "^2.29.4",
     "nanoid": "^4.0.2",
-    "next-auth": "4.21.1",
+    "next-auth": "4.22.0",
     "node-fetch-native": "^1.1.0",
     "nuxt-graphql-client": "^0.2.27",
     "nuxt-logrocket": "^2.0.4",

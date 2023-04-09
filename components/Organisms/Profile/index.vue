@@ -6,7 +6,7 @@ import ReelIconSelected_ from '@/assets/svg/reel_icon_selected.svg'
 import SaveIcon_ from '@/assets/svg/save_icon.svg'
 import Avatar from '@/components/Atoms/Avatar.vue'
 import TagName from '@/components/Atoms/TagName.vue'
-import { useAuthStore, useProfileStore } from '@/store'
+import { useAuthStore, useFollowStore, useProfileStore } from '@/store'
 import { ProfileSectionEnum, SizeAvatarEnum } from '@/type'
 import Edit from './Edit/index.vue'
 import Section from './Section.vue'
@@ -24,6 +24,7 @@ defineProps<IProps>()
 
 const profileStore = useProfileStore()
 const authStore = useAuthStore()
+const followStore = useFollowStore()
 
 const profile = $computed(() => profileStore.data)
 
@@ -32,6 +33,16 @@ const isOpenEditProfile = $computed(() => profileStore.isOpenEditProfile)
 const section = $ref(ProfileSectionEnum.POST)
 
 const isMyprofile = $computed(() => authStore.data.user.user_name === profileStore?.data?.user_name)
+
+const isFollow = $computed(() => profileStore.data.is_follow)
+
+const follow = () => {
+  profileStore.follow(profileStore.data.id)
+}
+
+const unfollow = () => {
+  profileStore.unfollow(profileStore.data.user_name)
+}
 </script>
 
 <template>
@@ -56,12 +67,17 @@ const isMyprofile = $computed(() => authStore.data.user.user_name === profileSto
               class="mt-[20px] select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
               @click="profileStore.toggleEditProfile(true)"
             />
-            <AtomsButton
-              v-else
-              text="Follow"
-              class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
-              @click="profileStore.toggleEditProfile(true)"
-            />
+            <template v-else>
+              <AtomsButton
+                v-if="!isFollow"
+                @click="follow"
+                text="Follow"
+                class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17" /><AtomsButton
+                v-else
+                text="Unfollow"
+                @click="unfollow"
+                class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
+            /></template>
           </div>
         </div>
         <div class="mt-[20px] flex flex-col gap-[10px] md:mt-0">
@@ -79,12 +95,18 @@ const isMyprofile = $computed(() => authStore.data.user.user_name === profileSto
             class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
             @click="profileStore.toggleEditProfile(true)"
           />
-          <AtomsButton
-            v-else
-            text="Follow"
-            class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
-            @click="profileStore.toggleEditProfile(true)"
-          />
+          <template v-else>
+            <AtomsButton
+              v-if="!isFollow"
+              @click="follow"
+              text="Follow"
+              class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17" />
+            <AtomsButton
+              v-else
+              text="UnFollow"
+              @click="unfollow"
+              class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
+          /></template>
         </div>
       </div>
       <div class="mt-[40px]">
