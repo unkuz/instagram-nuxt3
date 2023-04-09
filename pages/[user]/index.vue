@@ -62,7 +62,6 @@ onBeforeUnmount(() => {
         </svg>
       </div>
     </TopBarSm>
-    <div v-if="pending"></div>
-    <Profile v-else class="mt-[60px] md:mt-0" />
+    <Profile :pending="pending" class="mt-[60px] md:mt-0" />
   </div>
 </template>

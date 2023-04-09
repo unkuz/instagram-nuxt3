@@ -12,8 +12,8 @@ import { SizeAvatarEnum } from '@/type'
       <div class="h-[60px]">
         <div class="mx-[16px] flex h-full items-center justify-between">
           <div class="flex items-center space-x-[10px] text-[0.8rem]">
-            <Avatar :size="SizeAvatarEnum.S" skeleton />
-            <TagName skeleton />
+            <Avatar :size="SizeAvatarEnum.S" pending />
+            <TagName pending />
           </div>
           <div>
             <div class="skeleton h-[30px] w-[30px]"></div>
@@ -30,7 +30,7 @@ import { SizeAvatarEnum } from '@/type'
             <div class="skeleton h-[30px] w-[30px]"></div>
           </div>
         </div>
-        <TagName skeleton />
+        <TagName pending />
         <div>
           <p v-for="(i, idx) in 3" :key="idx" class="skeleton mb-[5px] h-[18px] w-full"></p>
         </div>
