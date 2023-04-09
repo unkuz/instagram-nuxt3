@@ -40,7 +40,7 @@
     "nuxt-icon": "^0.3.3",
     "nuxt-ionic": "^0.7.0",
     "nuxt-lodash": "^2.4.1",
-    "nuxt-typed-router": "^3.1.1",
+    "nuxt-typed-router": "^3.1.2",
     "postcss": "^8.4.21",
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.7",

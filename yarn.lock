@@ -10954,10 +10954,10 @@ nuxt-simple-sitemap@^1.0.9:
     sitemap "^7.1.1"
     ufo "^1.1.1"
 
-nuxt-typed-router@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-3.1.1.tgz#e5c9d535ac2a9451f29c3b478080a9aa0c1263b4"
-  integrity sha512-vzN8v9HGNQxzLf3WsObvUKH121JG+VviVqxX85EeQI1SwrgcTyM1NjEsIUwYs1qoGQaQ7GKvv/lIHIPDr1pxjg==
+nuxt-typed-router@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/nuxt-typed-router/-/nuxt-typed-router-3.1.2.tgz#23e9850b568d75e0be947129c41f5da84745b9e7"
+  integrity sha512-F9l+K4RjZYyBUhKgiudGWPBcKC663JIejs1Ihtdj9jQ8vsTob6vJ39znBYjHD385Q7lbY/ojMKIoQKMPmBi9HA==
   dependencies:
     "@nuxt/kit" "^3.3.2"
     chalk "^5.2.0"
