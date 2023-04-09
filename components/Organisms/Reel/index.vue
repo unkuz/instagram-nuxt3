@@ -95,6 +95,7 @@ onMounted(() => {
     childList: true,
     subtree: true,
   })
+  console.log("containvideoRefs",containvideoRefs);
 
   containvideoRefs.forEach((containVideoEl) => {
     observer.observe(containVideoEl.children[0].children[0])

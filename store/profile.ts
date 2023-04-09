@@ -22,6 +22,7 @@ export const useProfileStore = defineStore('profile', {
     data: {} as TData,
     isOpenEditProfile: false,
     currentProfileSection: ProfileSectionEnum.POST,
+    isPending: false,
   }),
   getters: {},
   actions: {
@@ -47,7 +48,6 @@ export const useProfileStore = defineStore('profile', {
         _each(data, (val, key) => {
           formData.append(key, val)
         })
-        formData.append('password', 'cuz')
         const { status, data: _data } = await axios.put(
           APP_API.USER.UPDATE_PROFLE(idUser),
           formData,

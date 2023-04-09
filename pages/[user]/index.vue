@@ -32,6 +32,8 @@ watchEffect(() => {
 onBeforeUnmount(() => {
   profileStore.$reset()
 })
+
+const isNotFound = $computed(()=>_isEmpty(profileStore.data) && pending)
 </script>
 
 <template>
@@ -62,6 +64,8 @@ onBeforeUnmount(() => {
         </svg>
       </div>
     </TopBarSm>
-    <Profile :pending="pending" class="mt-[60px] md:mt-0" />
+    <div v-if="isNotFound">404</div>
+    <Profile v-else :pending="pending" class="mt-[60px] md:mt-0" />
+   
   </div>
 </template>
