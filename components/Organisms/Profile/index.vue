@@ -1,27 +1,30 @@
 <script setup lang="ts">
-import Avatar from '@/components/Atoms/Avatar.vue'
-import TagName from '@/components/Atoms/TagName.vue'
-import { useAuthStore, useProfileStore } from '@/store'
-import { SizeAvatarEnum } from '@/type'
-import { isImageOrVideo } from '@/utils'
-import { useFileDialog } from '@vueuse/core'
-import Section from './Section.vue'
-import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue'
 import HomeIconSelected_ from '@/assets/svg/home_icon.svg'
 import HomeIcon_ from '@/assets/svg/home_icon_selected.svg'
 import ReelIcon_ from '@/assets/svg/reel_icon.svg'
 import ReelIconSelected_ from '@/assets/svg/reel_icon_selected.svg'
 import SaveIcon_ from '@/assets/svg/save_icon.svg'
-import { ProfileSectionEnum } from '@/type'
+import Avatar from '@/components/Atoms/Avatar.vue'
+import TagName from '@/components/Atoms/TagName.vue'
+import { useAuthStore, useFollowStore, useProfileStore } from '@/store'
+import { ProfileSectionEnum, SizeAvatarEnum } from '@/type'
+import Bio from './Bio.vue'
+import Edit from './Edit/index.vue'
+import ImageCover from './ImageCover.vue'
+import Section from './Section.vue'
 import Post from './Section/Post/index.vue'
 import Reel from './Section/Reel/index.vue'
 import Saved from './Section/Saved/index.vue'
-import Edit from './Edit/index.vue'
+
+interface IProps {
+  pending: boolean
+}
+
+defineProps<IProps>()
 
 const profileStore = useProfileStore()
 const authStore = useAuthStore()
-const { files: avatarFile, open: openAvatar } = useFileDialog({ multiple: false })
-const { files: coverFile, open: openCover } = useFileDialog({ multiple: false })
+const followStore = useFollowStore()
 
 const profile = $computed(() => profileStore.data)
 
@@ -29,103 +32,81 @@ const isOpenEditProfile = $computed(() => profileStore.isOpenEditProfile)
 
 const section = $ref(ProfileSectionEnum.POST)
 
-let showEditProfile = $ref(false)
+const isMyprofile = $computed(() => authStore.data.user.user_name === profileStore?.data?.user_name)
 
-let avatarImg = $ref<string>()
-let coverImg = $ref<string>()
+const isFollow = $computed(() => profileStore.data.is_follow)
 
-watch(avatarFile, (val) => {
-  if (val) {
-    const file = Array.from(val)?.[0]
-    const type = isImageOrVideo(file)
-    if (type === 'image') {
-      avatarImg = URL.createObjectURL(file)
-    }
-  }
-})
-
-watch(coverFile, (val) => {
-  if (val) {
-    const file = Array.from(val)?.[0]
-    const type = isImageOrVideo(file)
-    if (type === 'image') {
-      coverImg = URL.createObjectURL(file)
-    }
-  }
-})
-
-const changeAvatar = () => {
-  openAvatar()
+const follow = () => {
+  profileStore.follow(profileStore.data.id)
 }
 
-onBeforeUnmount(() => {
-  ;[avatarImg, coverImg].forEach((i) => {
-    URL.revokeObjectURL(i!)
-  })
-})
-
-const isShowEdit = $computed(() => authStore.data.user.user_name === profileStore?.data?.user_name)
+const unfollow = () => {
+  profileStore.unfollow(profileStore.data.user_name)
+}
 </script>
 
 <template>
-  <div class="relative mb-[65px] min-h-screen text-sm">
-    <div class="relative h-[140px] md:h-[200px]">
-      <NuxtImageCustom
-        v-if="!coverImg"
-        class="absolute h-full w-full cursor-pointer bg-cover bg-center object-cover"
-        :src="profile?.cover_pic_url"
-      />
-    </div>
+  <div class="relative mb-[65px] min-h-screen text-sm md:mb-0">
+    <ImageCover :src="profile?.cover_pic_url" :pending="pending" />
     <div class="-translate-y-[50px]">
       <div
         class="flex w-full flex-col items-center justify-between px-[20px] md:translate-x-0 md:flex-row md:items-end md:gap-[20px]"
       >
         <div class="flex flex-col items-center justify-center gap-[5px]">
           <Avatar
-            v-if="!avatarImg"
             :size="SizeAvatarEnum.L"
             :url="profile?.profile_pic_url"
+            :pending="pending"
             class="top-0 mt-[20px] !h-[120px] !w-[120px] border-[3px] border-c1 dark:border-c19 md:!h-[140px] md:!w-[140px] md:border-[5px]"
           />
-          <TagName :name="profile?.user_name" />
+          <TagName :name="profile?.user_name" :pending="pending" />
           <div class="block md:hidden">
             <AtomsButton
-              v-if="isShowEdit"
+              v-if="isMyprofile"
               text="Edit"
               class="mt-[20px] select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
               @click="profileStore.toggleEditProfile(true)"
             />
-            <AtomsButton
-              v-else
-              text="Follow"
-              class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
-              @click="profileStore.toggleEditProfile(true)"
-            />
+            <template v-else>
+              <AtomsButton
+                v-if="!isFollow"
+                @click="follow"
+                text="Follow"
+                class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17" /><AtomsButton
+                v-else
+                text="Unfollow"
+                @click="unfollow"
+                class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
+            /></template>
           </div>
         </div>
         <div class="mt-[20px] flex flex-col gap-[10px] md:mt-0">
           <div class="flex justify-between gap-[50px] px-[50px]">
-            <Section text="Posts" :count="20" />
-            <Section text="Followers" :count="100" />
-            <Section text="Following" :count="200" />
+            <Section text="Posts" :count="20" :pending="pending" />
+            <Section text="Followers" :count="100" :pending="pending" />
+            <Section text="Following" :count="200" :pending="pending" />
           </div>
-          <div class="line-clamp-3 text-center text-c17 dark:text-c11">
-            {{ profile?.bio }}
-          </div>
+          <Bio :content="profile?.bio" :pending="pending" />
         </div>
         <div class="hidden items-center justify-center md:flex md:h-[140px] md:w-[140px]">
           <AtomsButton
-            v-if="isShowEdit"
+            v-if="isMyprofile"
             text="Edit"
             class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
             @click="profileStore.toggleEditProfile(true)"
           />
-          <AtomsButton
-            v-else
-            text="Follow"
-            class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
-            @click="profileStore.toggleEditProfile(true)"
-          />
+          <template v-else>
+            <AtomsButton
+              v-if="!isFollow"
+              @click="follow"
+              text="Follow"
+              class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17" />
+            <AtomsButton
+              v-else
+              text="UnFollow"
+              @click="unfollow"
+              class="select-none !bg-c15 px-[20px] py-[6px] text-[0.8rem] text-c1 duration-500 active:!bg-c17"
+          /></template>
         </div>
       </div>
       <div class="mt-[40px]">
@@ -168,6 +149,7 @@ const isShowEdit = $computed(() => authStore.data.user.user_name === profileStor
               <ReelIcon_ v-else @click="section = ProfileSectionEnum.REEL" />
             </div>
             <div
+              v-if="isMyprofile"
               :class="[
                 'mb-[10px] flex w-[50px] justify-center  pt-[10px]',
                 {
@@ -191,7 +173,7 @@ const isShowEdit = $computed(() => authStore.data.user.user_name === profileStor
         <div class="mt-[10px] w-full">
           <Post v-if="section === ProfileSectionEnum.POST" />
           <Reel v-else-if="section === ProfileSectionEnum.REEL" />
-          <Saved v-else-if="section === ProfileSectionEnum.SAVE" />
+          <Saved v-else-if="isMyprofile && section === ProfileSectionEnum.SAVE" />
         </div>
       </div>
     </div>

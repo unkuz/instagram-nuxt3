@@ -7,7 +7,7 @@ import { stat } from 'fs'
 
 type TState = IStateStore<ITimeLine[]>
 
-export const useReelUserStore = defineStore('reel-user', {
+export const useSavedUserStore = defineStore('saved-user', {
   state: (): any => ({
     data: [],
     hasErr: false,
@@ -18,13 +18,9 @@ export const useReelUserStore = defineStore('reel-user', {
     save(val: any) {
       this.data = val
     },
-    async fetch(user_name: string) {
+    async fetch() {
       try {
-        const { data, status } = await axios.get(APP_API.PROFILE.REEL.LIST, {
-          params: {
-            user_name,
-          },
-        })
+        const { data, status } = await axios.get(APP_API.SAVED.LIST)
 
         if (status === 200 && _isArray(data)) {
           this.data = data

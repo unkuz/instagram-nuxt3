@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue'
 import BackDrop from '@/components/Utils/BackDrop.vue'
 
 interface IProps {
@@ -13,7 +14,7 @@ const close = () => emit('close')
 <template>
   <BackDrop @click.self="close">
     <div class="h-auto max-h-[90vh] w-auto max-w-[80vw] bg-c1 p-[10px]">
-      <nuxt-img v-if="previewMedia.type === 'image'" :src="previewMedia.src" />
+      <NuxtImageCustom v-if="previewMedia.type === 'image'" :src="previewMedia.src" />
       <video v-if="previewMedia.type === 'video'" :src="previewMedia.src" controls />
     </div>
   </BackDrop>

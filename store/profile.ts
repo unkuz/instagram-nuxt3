@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 import { ToastTypeEnum, useToastStore } from './toast'
 import { sleep } from '@/utils'
 import { useAuthStore } from './auth'
-import { ProfileSectionEnum } from '~/type'
+import { ProfileSectionEnum } from '@/type'
 
 export type TData = {
   id: number
@@ -15,6 +15,7 @@ export type TData = {
   phone_number?: any
   profile_pic_url: string
   cover_pic_url: string
+  is_follow: boolean
 }
 
 export const useProfileStore = defineStore('profile', {
@@ -22,9 +23,44 @@ export const useProfileStore = defineStore('profile', {
     data: {} as TData,
     isOpenEditProfile: false,
     currentProfileSection: ProfileSectionEnum.POST,
+    isPending: false,
   }),
   getters: {},
   actions: {
+    async fetch(userName: string) {
+      try {
+        const { data, status } = await axios.get(APP_API.USER.detail, {
+          params: {
+            user_name: userName,
+          },
+        })
+
+        if (status === 200) {
+          this.data = data
+        }
+      } catch (e) {}
+    },
+    async follow(userId: number) {
+      try {
+        const { data, status } = await axios.post(APP_API.FOLLOW.FOLLOW, {
+          followee: userId,
+        })
+
+        if (status === 201) {
+          this.data.is_follow = true
+        }
+      } catch (e) {}
+    },
+    async unfollow(userName: string) {
+      try {
+        const { status } = await axios.delete(APP_API.FOLLOW.UNFOLLOW(userName))
+
+        if (status === 204) {
+          this.data.is_follow = false
+        }
+      } catch (e) {}
+    },
+
     save(val: any) {
       if (_isObject(val?.[0])) {
         this.data = val[0] as TData
@@ -47,7 +83,6 @@ export const useProfileStore = defineStore('profile', {
         _each(data, (val, key) => {
           formData.append(key, val)
         })
-        formData.append('password', 'cuz')
         const { status, data: _data } = await axios.put(
           APP_API.USER.UPDATE_PROFLE(idUser),
           formData,

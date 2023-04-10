@@ -1,7 +1,12 @@
 import { APP_API, BASE_URL_API } from '@/apis'
 import { IAuthData } from '@/models'
 import { axios } from '@/services/axios'
-import { ToastTypeEnum, useToastStore } from '@/store'
+import {
+  ToastTypeEnum,
+  useToastStore,
+  useUserAuthFollowerStore,
+  useUserAuthFollowingStore,
+} from '@/store'
 import { IAccountLogin, IStateStore } from '@/type'
 import { defineStore } from 'pinia'
 
@@ -10,7 +15,10 @@ type TState = IStateStore<IAuthData>
 export const useAuthStore = defineStore('auth', {
   state: (): any => ({
     data: {
-      user: {},
+      user: {
+        followers: [],
+        following: [],
+      },
       token: {},
     },
     hasErr: false,
@@ -21,6 +29,8 @@ export const useAuthStore = defineStore('auth', {
   actions: {
     async login(account: IAccountLogin) {
       const toastStore = useToastStore()
+      const userAuthFollowerStore = useUserAuthFollowerStore()
+      const userAuthFollowingStore = useUserAuthFollowingStore()
 
       const { user_name, password } = account
       this.pending = true
@@ -37,10 +47,12 @@ export const useAuthStore = defineStore('auth', {
             cover_pic_url: `${BASE_URL_API}/${data.user.cover_pic_url}`,
           }
           this.data.token = data.token
+          userAuthFollowingStore.fetch()
           toastStore.pushTimmer({
             type: ToastTypeEnum.SUCCESS,
             content: 'Login successfully',
           })
+
           navigateTo('/')
         }
       } catch (e: any) {

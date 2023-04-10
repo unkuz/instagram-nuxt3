@@ -6,14 +6,14 @@ import { SizeAvatarEnum } from '@/type'
 
 <template>
   <article
-    class="w-full bg-transparent p-[1px] md:bg-c4 md:clip-path-cuzknothz dark:md:bg-transparent [&:not(:last-child)]:mb-[24px]"
+    class="w-full bg-transparent md:clip-path-cuzknothz dark:md:bg-transparent [&:not(:last-child)]:mb-[24px]"
   >
     <div class="w-full bg-c1 dark:bg-c19 md:clip-path-cuzknothz">
       <div class="h-[60px]">
         <div class="mx-[16px] flex h-full items-center justify-between">
           <div class="flex items-center space-x-[10px] text-[0.8rem]">
-            <Avatar :size="SizeAvatarEnum.S" skeleton />
-            <TagName skeleton />
+            <Avatar :size="SizeAvatarEnum.S" pending />
+            <TagName pending />
           </div>
           <div>
             <div class="skeleton h-[30px] w-[30px]"></div>
@@ -30,7 +30,7 @@ import { SizeAvatarEnum } from '@/type'
             <div class="skeleton h-[30px] w-[30px]"></div>
           </div>
         </div>
-        <TagName skeleton />
+        <TagName pending />
         <div>
           <p v-for="(i, idx) in 3" :key="idx" class="skeleton mb-[5px] h-[18px] w-full"></p>
         </div>

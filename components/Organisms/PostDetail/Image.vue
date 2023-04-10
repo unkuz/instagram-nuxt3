@@ -27,6 +27,7 @@ useDoubleClick(imageRef, () => {}, toggleLike)
       draggable="false"
       :src="src"
       alt=""
+      loading="lazy"
     />
   </div>
 </template>

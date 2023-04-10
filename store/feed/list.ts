@@ -1,4 +1,4 @@
-import { APP_API, BASE_URL_API } from '@/apis'
+import { APP_API } from '@/apis'
 import { ITimeLine } from '@/models'
 import { axios } from '@/services/axios'
 import { ToastTypeEnum, useAddStore, useAuthStore, useSlashStore, useToastStore } from '@/store'
@@ -54,7 +54,7 @@ export const useFeedStore = defineStore('feed', {
         }
       })
     },
-    comment(id, { text, id: commentId, commentReplyId }) {
+    async comment(id, { text, id: commentId, commentReplyId }) {
       const authStore = useAuthStore()
       const { user_name, profile_pic_url } = authStore.data.user
       const idx = this.data.findIndex((i) => i.id === id)
@@ -67,7 +67,7 @@ export const useFeedStore = defineStore('feed', {
           user_name: user_name,
           full_name: '',
           is_private: '',
-          profile_pic_url: `${BASE_URL_API}` + '/' + profile_pic_url,
+          profile_pic_url,
         },
         comment_like_count: 0,
         reply: [],
@@ -76,21 +76,25 @@ export const useFeedStore = defineStore('feed', {
 
       if (commentReplyId) {
         try {
-          axios.post(APP_API.FEED.COMMENT, {
+          const { data, status } = await axios.post(APP_API.FEED.COMMENT, {
             content: text,
             feed: id,
             comment_id: commentReplyId,
           })
-          const idxCmRep = this.data[idx].comments.findIndex((i) => i.id === commentReplyId)
-          this.data[idx].comments[idxCmRep].reply.push(data)
+          if (status === 201) {
+            const idxCmRep = this.data[idx].comments.findIndex((i) => i.id === commentReplyId)
+            this.data[idx].comments[idxCmRep].reply.push(data)
+          }
         } catch (e) {}
       } else {
         try {
-          axios.post(APP_API.FEED.COMMENT, {
+          const { data, status } = await axios.post(APP_API.FEED.COMMENT, {
             content: text,
             feed: id,
           })
-          this.data[idx].comments.push(data)
+          if (status === 201) {
+            this.data[idx].comments.push(data)
+          }
         } catch (e) {}
       }
     },

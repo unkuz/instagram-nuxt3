@@ -2,6 +2,7 @@
 import BackDrop from '@/components/Utils/BackDrop.vue'
 import { useWindowResizeCallback, useLockScroll } from '@/composables'
 import { onClickOutside } from '@vueuse/core'
+import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue'
 
 definePageMeta({
   middleware: 'auth',
@@ -34,11 +35,7 @@ useWindowResizeCallback(calcHeightComment)
         class="flex h-screen overflow-hidden bg-fuchsia-300 duration-500 md:h-[800px] md:w-full xl:w-[1000px]"
       >
         <div class="hidden md:block md:flex-1">
-          <nuxt-img
-            src="/personal/285912787_394288332653847_7603823348223049999_n.jpg"
-            alt=""
-            class="h-full w-full object-cover object-center"
-          />
+          <NuxtImageCustom src="/personal/285912787_394288332653847_7603823348223049999_n.jpg" />
         </div>
         <div ref="commentContainerRef" class="h-full bg-white md:flex-1">
           <div ref="commentHeadingRef" class="h-[60px] border-b-[1px] border-gray-300">

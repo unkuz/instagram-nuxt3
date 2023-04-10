@@ -70,7 +70,7 @@ const commentCount = $computed(() => {
         class="m-[0px_0px_0px_0px] h-[18px] text-c3 dark:text-c21 md:text-[0.8rem]"
       />
 
-      <div ref="commentRef" class="mt-[15px] w-full">
+      <div ref="commentRef" class="mt-[15px] max-h-[300px] w-full overflow-scroll md:max-h-[500px]">
         <IndividualComment
           v-for="(j, idx) in feed.comments"
           :key="idx"

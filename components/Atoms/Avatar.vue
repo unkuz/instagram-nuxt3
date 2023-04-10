@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue'
 import { SizeAvatarEnum } from '@/type'
 
 const { T, S, M, L } = SizeAvatarEnum
@@ -7,13 +8,13 @@ interface IProps {
   url: string
   size?: SizeAvatarEnum
   quality?: number
-  skeleton?: boolean
+  pending?: boolean
 }
 
 withDefaults(defineProps<IProps>(), {
   quality: 50,
   url: 'https://gextoneducation.com/wp-content/uploads/2015/06/no-avatar-female.png',
-  skeleton: false,
+  pending: false,
 })
 </script>
 <template>
@@ -28,7 +29,7 @@ withDefaults(defineProps<IProps>(), {
       },
     ]"
   >
-    <div v-if="skeleton" class="skeleton h-full w-full"></div>
-    <nuxt-img v-else :class="['h-full w-full object-cover']" :src="url" :quality="quality" />
+    <div v-if="pending" class="skeleton h-full w-full"></div>
+    <NuxtImageCustom v-else :src="url" :quality="quality" />
   </div>
 </template>

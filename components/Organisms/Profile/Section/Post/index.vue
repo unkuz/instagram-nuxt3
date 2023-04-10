@@ -1,18 +1,19 @@
 <script setup lang="ts">
-import { useFeedUserStore } from '~/store'
+import { useFeedUserStore } from '@/store'
 import IndividualPost from '@/components/Organisms/Explore/Square.vue'
 import { BASE_URL_API } from '@/apis'
+import { fixSrc } from '@/utils'
 
 const feedUserStore = useFeedUserStore()
 const router = useRouter()
-
-console.log('ID', router)
 
 const user_name = router.currentRoute.value?.params?.user
 
 feedUserStore.fetch(user_name)
 
 const list = $computed(() => feedUserStore.data)
+
+onUnmounted(() => feedUserStore.$reset())
 </script>
 
 <template>
@@ -20,9 +21,7 @@ const list = $computed(() => feedUserStore.data)
     <IndividualPost
       v-for="i in list"
       :key="i.id"
-      :src="
-        BASE_URL_API + (i?.carousel_media?.images?.[0]?.src ?? i?.carousel_media?.videos?.[0]?.src)
-      "
+      :src="fixSrc(i?.carousel_media?.images?.[0]?.src ?? i?.carousel_media?.videos?.[0]?.src)"
       :comments="i.comments.length"
       :likes="i.likes.length"
     />

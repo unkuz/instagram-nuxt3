@@ -2,9 +2,10 @@
 import TopBarSm from '@/components/Molecules/TopBarSm.vue'
 import Profile from '@/components/Organisms/Profile/index.vue'
 import { axios } from '@/services/axios'
-import { APP_API } from '~/apis'
-import { useProfileStore } from '~/store'
-import { useFeedUserStore } from '~/store/feed-user'
+import { APP_API } from '@/apis'
+import { useProfileStore } from '@/store'
+import { useFeedUserStore } from '@/store/feed-user'
+import NotFound from '@/components/Utils/NotFound.vue'
 
 definePageMeta({
   middleware: 'auth',
@@ -16,7 +17,7 @@ const router = useRouter()
 const profileStore = useProfileStore()
 const feedUserStore = useFeedUserStore()
 
-const { data, pending: pendingTimeline } = await useLazyAsyncData<any>('profile', async () => {
+const { data, pending } = await useLazyAsyncData<any>('profile', async () => {
   const res = await axios.get(APP_API.USER.detail, {
     params: {
       user_name: route.params.user,
@@ -32,6 +33,8 @@ watchEffect(() => {
 onBeforeUnmount(() => {
   profileStore.$reset()
 })
+
+const isNotFound = $computed(() => _isEmpty(profileStore.data) && pending)
 </script>
 
 <template>
@@ -60,7 +63,9 @@ onBeforeUnmount(() => {
             </g>
           </g>
         </svg>
-      </div> </TopBarSm
-    ><Profile class="mt-[60px] md:mt-0" />
+      </div>
+    </TopBarSm>
+    <NotFound v-if="isNotFound" />
+    <Profile v-else :pending="pending" class="mt-[60px] md:mt-0" />
   </div>
 </template>

@@ -1,16 +1,19 @@
 <script lang="ts" setup>
-import { SizeAvatarEnum } from '@/type'
-import { stopOtherVideoPlaying } from '@/helpers'
 import Avatar from '@/components/Atoms/Avatar.vue'
+import { stopOtherVideoPlaying } from '@/helpers'
+import { SizeAvatarEnum } from '@/type'
 
 interface IProps {
-  name: string
+  name?: string
   user: any
   id: string | number
-  hasRead: boolean
+  hasRead?: boolean
 }
 
-defineProps<IProps>()
+withDefaults(defineProps<IProps>(), {
+  name: '',
+  hasRead: false,
+})
 </script>
 
 <template>

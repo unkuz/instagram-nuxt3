@@ -35,6 +35,7 @@ watch(buffered, (val) => {})
       preload="metadata"
       @click="playing = !playing"
       :ins-data-video-id="id"
+      muted
     />
 
     <ProgressVideoBar
