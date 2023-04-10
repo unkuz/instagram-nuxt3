@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 import { ToastTypeEnum, useToastStore } from './toast'
 import { sleep } from '@/utils'
 import { useAuthStore } from './auth'
-import { ProfileSectionEnum } from '~/type'
+import { ProfileSectionEnum } from '@/type'
 
 export type TData = {
   id: number

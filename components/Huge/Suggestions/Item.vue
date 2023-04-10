@@ -2,7 +2,7 @@
 import Avatar from '@/components/Atoms/Avatar.vue'
 import Button from '@/components/Atoms/Button.vue'
 import { SizeAvatarEnum } from '@/type'
-import { useFollowStore } from '~/store'
+import { useFollowStore } from '@/store'
 
 interface IProps {
   avatar: string

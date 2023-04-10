@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { fixSrc } from '@/utils'
-import { useSavedUserStore } from '~/store'
+import { useSavedUserStore } from '@/store'
 import IndividualPost from '@/components/Organisms/Explore/Square.vue'
 
 const savedUserStore = useSavedUserStore()

@@ -2,7 +2,7 @@ import { ITimeLine } from '@/models'
 import { IStateStore } from '@/type'
 import { axios } from '@/services/axios'
 import { defineStore } from 'pinia'
-import { APP_API } from '~/apis'
+import { APP_API } from '@/apis'
 import { stat } from 'fs'
 
 type TState = IStateStore<ITimeLine[]>

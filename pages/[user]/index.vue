@@ -2,9 +2,9 @@
 import TopBarSm from '@/components/Molecules/TopBarSm.vue'
 import Profile from '@/components/Organisms/Profile/index.vue'
 import { axios } from '@/services/axios'
-import { APP_API } from '~/apis'
-import { useProfileStore } from '~/store'
-import { useFeedUserStore } from '~/store/feed-user'
+import { APP_API } from '@/apis'
+import { useProfileStore } from '@/store'
+import { useFeedUserStore } from '@/store/feed-user'
 import NotFound from '@/components/Utils/NotFound.vue'
 
 definePageMeta({

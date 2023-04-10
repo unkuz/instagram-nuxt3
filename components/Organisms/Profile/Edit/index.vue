@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
-import { useProfileStore } from '~/store'
+import { useProfileStore } from '@/store'
 import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue'
 import { useFileDialog } from '@vueuse/core'
 import { isImageOrVideo } from '@/utils'

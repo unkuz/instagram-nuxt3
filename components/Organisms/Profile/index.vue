@@ -8,13 +8,13 @@ import Avatar from '@/components/Atoms/Avatar.vue'
 import TagName from '@/components/Atoms/TagName.vue'
 import { useAuthStore, useFollowStore, useProfileStore } from '@/store'
 import { ProfileSectionEnum, SizeAvatarEnum } from '@/type'
+import Bio from './Bio.vue'
 import Edit from './Edit/index.vue'
+import ImageCover from './ImageCover.vue'
 import Section from './Section.vue'
 import Post from './Section/Post/index.vue'
 import Reel from './Section/Reel/index.vue'
 import Saved from './Section/Saved/index.vue'
-import ImageCover from './ImageCover.vue'
-import Bio from './Bio.vue'
 
 interface IProps {
   pending: boolean

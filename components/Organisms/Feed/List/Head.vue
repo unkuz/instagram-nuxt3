@@ -44,10 +44,9 @@ const jeje = () => {
             <Avatar :size="SizeAvatarEnum.S" :url="avatar" />
             <div
               :class="[
-                'absolute top-[40px] z-10 hidden duration-200',
-                {
-                  'block ': isShowBriefProfile,
-                },
+                'absolute top-[40px] z-10  duration-1000',
+
+                isShowBriefProfile ? 'opacity-100' : 'opacity-0',
               ]"
             >
               <PreviewProfile v-bind="feed.user" />

@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { useAuthStore } from './auth'
-import { axios } from '~/services/axios'
-import { APP_API } from '~/apis'
+import { axios } from '@/services/axios'
+import { APP_API } from '@/apis'
 
 export const useUserAuthFollowerStore = defineStore('user-auth-follower', {
   state: () => ({

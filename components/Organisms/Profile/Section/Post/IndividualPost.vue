@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import NuxtImageCustom from '@/components/Atoms/NuxtImage.vue'
-import { BASE_URL_API } from '~/apis'
+import { BASE_URL_API } from '@/apis'
 
 interface IProps {
   src: string

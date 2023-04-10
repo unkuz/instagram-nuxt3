@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useFeedUserStore } from '~/store'
+import { useFeedUserStore } from '@/store'
 import IndividualPost from '@/components/Organisms/Explore/Square.vue'
 import { BASE_URL_API } from '@/apis'
 import { fixSrc } from '@/utils'

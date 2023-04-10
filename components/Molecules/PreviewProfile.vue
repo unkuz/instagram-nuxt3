@@ -11,6 +11,7 @@ interface IProps {
 
 defineProps<IProps>()
 </script>
+
 <template>
   <div class="w-[300px] overflow-hidden rounded-md bg-c1">
     <div class="aspect-[4/1] w-full"><AtomsNuxtImage :src="fixSrc(cover_pic_url)" /></div>

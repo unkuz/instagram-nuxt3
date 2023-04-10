@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useReelUserStore } from '~/store/reel-user'
+import { useReelUserStore } from '@/store/reel-user'
 import IndivudualReel from './IndivudualReel.vue'
 import IndividualPost from '@/components/Organisms/Explore/Square.vue'
 
