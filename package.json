@@ -12,7 +12,7 @@
   "devDependencies": {
     "@nuxt/content": "^2.5.2",
     "@nuxt/image-edge": "1.0.0-28020728.5df24eb",
-    "@nuxt/test-utils-edge": "3.4.1-28020915.67ca0815",
+    "@nuxt/test-utils-edge": "3.4.1-28022011.e5d1d29b",
     "@nuxtjs/device": "^3.1.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/eslint-module": "^4.0.2",
@@ -58,14 +58,14 @@
     "@dicebear/core": "^6.0.2",
     "@morev/vue-transitions": "^2.3.6",
     "@nuxt/ufo": "^0.5.4",
-    "@nuxtjs/algolia": "^1.5.1",
+    "@nuxtjs/algolia": "^1.6.0",
     "@nuxtjs/fontaine": "^0.2.4",
     "@nuxtjs/i18n": "^7.3.1",
     "@nuxtjs/robots": "^3.0.0",
     "@pinia/nuxt": "^0.4.8",
     "@sentry/node": "^7.47.0",
     "@sentry/tracing": "^7.47.0",
-    "@twicpics/components": "^0.16.1",
+    "@twicpics/components": "^0.17.0",
     "@types/jwt-decode": "^3.1.0",
     "@vercel/analytics": "^0.1.11",
     "@vite-pwa/nuxt": "^0.0.7",
@@ -99,6 +99,6 @@
     "vee-validate": "^4.8.4",
     "vite-svg-loader": "^4.0.0",
     "vue3-lottie": "^2.5.0",
-    "yup": "^1.0.2"
+    "yup": "^1.1.0"
   }
 }
