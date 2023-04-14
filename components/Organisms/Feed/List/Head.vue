@@ -17,7 +17,7 @@ interface IProps {
 
 const props = defineProps<IProps>()
 
-const isShowBriefProfile = $ref(false)
+let isShowBriefProfile = $ref(false)
 
 const showMore = () => {
   moreStore.set({
@@ -29,6 +29,15 @@ const showMore = () => {
 const jeje = () => {
   console.log('asdfhjsdjkf')
 }
+
+let timer: NodeJS.Timeout
+
+const mouseLeave = () => {
+  clearTimeout(timer)
+  timer = setTimeout(() => {
+    isShowBriefProfile = false
+  }, 500)
+}
 </script>
 
 <template>
@@ -36,19 +45,9 @@ const jeje = () => {
     <div class="mx-[16px] flex h-full items-center justify-between">
       <div class="flex items-center space-x-[10px] text-[0.8rem]">
         <NuxtLink :to="`/${userName}/`">
-          <div
-            class="relative"
-            @mouseover="isShowBriefProfile = true"
-            @mouseleave="isShowBriefProfile = false"
-          >
+          <div class="relative" @mouseover="isShowBriefProfile = true" @mouseleave="mouseLeave">
             <Avatar :size="SizeAvatarEnum.S" :url="avatar" />
-            <div
-              :class="[
-                'absolute top-[40px] z-10  duration-1000',
-
-                isShowBriefProfile ? 'opacity-100' : 'opacity-0',
-              ]"
-            >
+            <div :class="['absolute top-[40px] z-10', isShowBriefProfile ? 'block' : 'hidden']">
               <PreviewProfile v-bind="feed.user" />
             </div>
           </div>
