@@ -96,7 +96,7 @@
     "three": "0.134",
     "troisjs": "^0.3.4",
     "uuid": "^9.0.0",
-    "vee-validate": "^4.8.5",
+    "vee-validate": "^4.8.6",
     "vite-svg-loader": "^4.0.0",
     "vue3-lottie": "^2.5.0",
     "yup": "^1.1.1"
