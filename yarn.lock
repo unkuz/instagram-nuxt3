@@ -2838,13 +2838,13 @@
     unimport "^3.0.4"
     untyped "^1.3.2"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.4.2-28031607.4ab4ac13":
-  version "3.4.2-28031607.4ab4ac13"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.4.2-28031607.4ab4ac13.tgz#ebf852459f91c8ba70c5972740cd1e09b60c7792"
-  integrity sha512-+eUCzAc/cZrJhLgzW+w4Ee9+dXVU68ns+LYGRK+g6DaNZHf96Pc6FBVTVPjJI88ie2Q6RIUFjQX4i2BZ+ZqbcA==
+"@nuxt/kit@npm:@nuxt/kit-edge@3.4.2-28032339.872d6815":
+  version "3.4.2-28032339.872d6815"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.4.2-28032339.872d6815.tgz#53e273408a055ad18b6ef289778e34932bbe613b"
+  integrity sha512-FmFWgpIHnC3qB3O+zAsxoFr8ltfx80f3XRw+recZ11c+/LP0La6x4AmgUwd08PJmkLFochM4i+f5zGfUvTvz4A==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.2-28031607.4ab4ac13"
-    c12 "^1.3.0"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.2-28032339.872d6815"
+    c12 "^1.4.1"
     consola "^3.1.0"
     defu "^6.1.2"
     globby "^13.1.4"
@@ -3009,20 +3009,16 @@
     unimport "^3.0.6"
     untyped "^1.3.2"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.4.2-28031607.4ab4ac13":
-  version "3.4.2-28031607.4ab4ac13"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.4.2-28031607.4ab4ac13.tgz#2307490f77295b25eecf401c3a68e4b2504311fd"
-  integrity sha512-YtLV7mlyoJ9BOCqlpBi8ENJo5kFtGn9e0R8hzZjie46Yc/WycLscABwWBHY2+T+p3wm7wBGs7qOWrfAynQ/0NQ==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.4.2-28032339.872d6815":
+  version "3.4.2-28032339.872d6815"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.4.2-28032339.872d6815.tgz#e6c6dddc4d9a96e431038f964915dc6ab9e56fe5"
+  integrity sha512-zQqIf45XuZ4vUT+RRgY9wOahvYFHGkz2KQ9IYWhCef3cqiPWpI61qoJ3s+F5iWyc0i5sqD8fgTv8XYiMMrAo6Q==
   dependencies:
-    c12 "^1.3.0"
-    create-require "^1.1.1"
     defu "^6.1.2"
     hookable "^5.5.3"
-    jiti "^1.18.2"
     pathe "^1.1.0"
     pkg-types "^1.0.2"
     postcss-import-resolver "^2.0.0"
-    scule "^1.0.0"
     std-env "^3.3.2"
     ufo "^1.1.1"
     unimport "^3.0.6"
@@ -3054,18 +3050,17 @@
     rc9 "^2.1.0"
     std-env "^3.3.2"
 
-"@nuxt/test-utils-edge@3.4.2-28031607.4ab4ac13":
-  version "3.4.2-28031607.4ab4ac13"
-  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.4.2-28031607.4ab4ac13.tgz#9b17f5b3aca746db4ab7522faf9c789e213eaf5e"
-  integrity sha512-eFryuvHOx5yeZ7TZ0EWSe8YVbZvt6xai1w9r5qE5uKGHYVeHosbUh9oixOjbPhekUM+UL3M6ScOYY0Ce8S/p1g==
+"@nuxt/test-utils-edge@3.4.2-28032339.872d6815":
+  version "3.4.2-28032339.872d6815"
+  resolved "https://registry.yarnpkg.com/@nuxt/test-utils-edge/-/test-utils-edge-3.4.2-28032339.872d6815.tgz#c1b1ebca90c73c7f24d6e3512a22c62ee2dc4add"
+  integrity sha512-fmUxtIvU5lyUzkzbXGk7WOfnMMkhscbUwI4gVPZH9++jsO+vliXJPuDs5FNK810whHkI4fUUgcQ5u9Zvag1gjQ==
   dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@3.4.2-28031607.4ab4ac13"
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.2-28031607.4ab4ac13"
+    "@nuxt/kit" "npm:@nuxt/kit-edge@3.4.2-28032339.872d6815"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.4.2-28032339.872d6815"
     consola "^3.1.0"
     defu "^6.1.2"
     execa "^7.1.1"
     get-port-please "^3.0.1"
-    jiti "^1.18.2"
     ofetch "^1.0.1"
     pathe "^1.1.0"
     ufo "^1.1.1"
@@ -4312,10 +4307,10 @@
     hookable "^5.5.1"
     unhead "1.1.25"
 
-"@vercel/analytics@^0.1.11":
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/@vercel/analytics/-/analytics-0.1.11.tgz#727a0ac655a4a89104cdea3e6925476470299428"
-  integrity sha512-mj5CPR02y0BRs1tN3oZcBNAX9a8NxsIUl9vElDPcqxnMfP0RbRc9fI9Ud7+QDg/1Izvt5uMumsr+6YsmVHcyuw==
+"@vercel/analytics@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vercel/analytics/-/analytics-1.0.0.tgz#7041bf3f14d65ab685f053b2fab09c605d12543e"
+  integrity sha512-RQmj7pv82JwGDHrnKeRc6TtSw2U7rWNubc2IH0ernTzWTj02yr9zvIYiYJeztsBzrJtWv7m8Nz6vxxb+cdEtJw==
 
 "@vercel/nft@^0.22.6":
   version "0.22.6"
@@ -4999,10 +4994,10 @@ axios@^1.3.4:
     form-data "^4.0.0"
     proxy-from-env "^1.1.0"
 
-axios@^1.3.5:
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.3.5.tgz#e07209b39a0d11848e3e341fa087acd71dadc542"
-  integrity sha512-glL/PvG/E+xCWwV8S6nCHcrfg1exGx7vxyUIivIA1iL7BIh6bePylCfVHwp6k13ao7SATxB6imau2kqY+I67kw==
+axios@^1.3.6:
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.3.6.tgz#1ace9a9fb994314b5f6327960918406fa92c6646"
+  integrity sha512-PEcdkk7JcdPiMDkvM4K6ZBRYq9keuVJsToxm2zQIM70Qqo2WHTdJZMXcG9X+RmRp2VPNUQC8W1RAGbgt6b1yMg==
   dependencies:
     follow-redirects "^1.15.0"
     form-data "^4.0.0"
@@ -5286,17 +5281,20 @@ c12@^1.1.0, c12@^1.1.2, c12@^1.2.0:
     pkg-types "^1.0.2"
     rc9 "^2.0.1"
 
-c12@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/c12/-/c12-1.3.0.tgz#cf818624e600e7c22787db34cad4a87c16ccb214"
-  integrity sha512-cYdnZn0y803ByEYHK7+gKmcQK9cqLuGciL3lOwOJnOMAEd9y4604OYAEVK385NkMcgGYltZhLW7eddJrWsFrkg==
+c12@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/c12/-/c12-1.4.1.tgz#37a98e848fe528b5f6ece51d52d409dd2af8ae07"
+  integrity sha512-0x7pWfLZpZsgtyotXtuepJc0rZYE0Aw8PwNAXs0jSG9zq6Sl5xmbWnFqfmRY01ieZLHNbvneSFm9/x88CvzAuw==
   dependencies:
+    chokidar "^3.5.3"
     defu "^6.1.2"
     dotenv "^16.0.3"
     giget "^1.1.2"
     jiti "^1.18.2"
     mlly "^1.2.0"
+    ohash "^1.1.1"
     pathe "^1.1.0"
+    perfect-debounce "^0.1.3"
     pkg-types "^1.0.2"
     rc9 "^2.1.0"
 
@@ -11388,6 +11386,11 @@ ohash@^1.0.0:
   resolved "https://registry.yarnpkg.com/ohash/-/ohash-1.0.0.tgz#e6ab04851ef9a479beb6e8a2457ff0d3ccf77371"
   integrity sha512-kxSyzq6tt+6EE/xCnD1XaFhCCjUNUaz3X30rJp6mnjGLXAAvuPFqohMdv0aScWzajR45C29HyBaXZ8jXBwnh9A==
 
+ohash@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/ohash/-/ohash-1.1.1.tgz#7f34db6fb2852f4cd96afffc595de68d6d9f80f1"
+  integrity sha512-N9UDJn2IV6oO6pNclJ80tRXraNNJqw/asscr3Lu7+ibRQdEswejJuuXNclMQTJVTsVhQs+ZJThVziy6t2v2KXA==
+
 oidc-token-hash@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/oidc-token-hash/-/oidc-token-hash-5.0.1.tgz#ae6beec3ec20f0fd885e5400d175191d6e2f10c6"
@@ -12236,10 +12239,10 @@ postcss@^8.0.9, postcss@^8.1.10, postcss@^8.2.15, postcss@^8.4.21:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-postcss@^8.4.22:
-  version "8.4.22"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.22.tgz#c29e6776b60ab3af602d4b513d5bd2ff9aa85dc1"
-  integrity sha512-XseknLAfRHzVWjCEtdviapiBtfLdgyzExD50Rg2ePaucEesyh8Wv4VPdW0nbyDa1ydbrAxV19jvMT4+LFmcNUA==
+postcss@^8.4.23:
+  version "8.4.23"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.23.tgz#df0aee9ac7c5e53e1075c24a3613496f9e6552ab"
+  integrity sha512-bQ3qMcpF6A/YjR55xtoTr0jGOlnPOKAIMdOWiv0EIT6HVPEaJiJB4NLljSbiHoC2RX7DN5Uvjtpbg1NPdwv1oA==
   dependencies:
     nanoid "^3.3.6"
     picocolors "^1.0.0"
