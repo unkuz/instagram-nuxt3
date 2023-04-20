@@ -82,7 +82,7 @@ const { key } = useForceRenderTimer()
         <p>{{ text }}</p>
         <div class="flex gap-[20px] text-[0.8rem]">
           <div class="flex items-end gap-[5px] font-[550]">
-            <span class="align-bottom text-[0.9rem] leading-[1.05rem]">{{
+            <span class="align-bottom text-[0.9rem]/[1.05rem]">{{
               comment_like_count
             }}</span>
             <span class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1" title="Like">
@@ -96,7 +96,7 @@ const { key } = useForceRenderTimer()
             </span>
           </div>
           <div class="flex items-end gap-[5px]">
-            <span class="align-bottom text-[0.9rem] leading-[1.05rem]">{{ '0' }}</span>
+            <span class="align-bottom text-[0.9rem]/[1.05rem]">{{ '0' }}</span>
             <span
               class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1"
               title="Reply"
