@@ -131,7 +131,9 @@ export default defineNuxtConfig({
   },
   experimental: {
     reactivityTransform: true,
+    viewTransition: true,
   },
+  devtools: true,
   // auth: {
   //     // The module is enabled. Change this to disable the module
   //     isEnabled: true,
