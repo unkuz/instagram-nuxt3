@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     'nuxt-lodash',
     '@nuxtjs/fontaine',
     '@vite-pwa/nuxt',
+    '@nuxt/devtools',
     // '@nuxtjs/eslint-module',
     // '@nuxtjs/eslint-module',
     // '@nuxtjs/algolia',
@@ -133,7 +134,13 @@ export default defineNuxtConfig({
     reactivityTransform: true,
     viewTransition: true,
   },
-  devtools: true,
+  devtools: {
+    // Enable devtools (default: true)
+    enabled: true,
+    // VS Code Server options
+    vscode: {},
+    // ...other options
+  },
   // auth: {
   //     // The module is enabled. Change this to disable the module
   //     isEnabled: true,
