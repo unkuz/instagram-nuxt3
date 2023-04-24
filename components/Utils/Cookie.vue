@@ -17,7 +17,7 @@ const animateOut = () => {
 }
 
 const acceptCookieUse = () => {
-    animateOut()
+  animateOut()
 }
 
 onMounted(() => {
