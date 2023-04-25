@@ -58,8 +58,7 @@ watch(percent, () => {
 })
 
 const scrub = (e: MouseEvent) => {
-  const scrubTime =
-    (e.offsetX / progressBarRef.value!.parentElement!.offsetWidth) * videoRef.value!.duration
+  const scrubTime = (e.offsetX / progressBarRef.value!.parentElement!.offsetWidth) * videoRef.value!.duration
   videoRef.value!.currentTime = scrubTime
 }
 
@@ -102,10 +101,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    ref="containerRef"
-    class="group relative flex min-w-full items-center justify-center overflow-hidden bg-c2"
-  >
+  <div ref="containerRef" class="group relative flex min-w-full items-center justify-center overflow-hidden bg-c2">
     <video
       ref="videoRef"
       class="video block max-h-[100vh] w-full"

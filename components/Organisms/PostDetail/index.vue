@@ -96,18 +96,8 @@ const scrollToComment = () => {
       @current-index-carousel="setCurrent($event)"
     />
     <div class="px-[16px] text-xs md:text-sm">
-      <React
-        :id="id"
-        :current-idx="currentIdx"
-        :has-liked="has_liked"
-        :media-arr="mediaArr"
-        :has-saved="is_saved"
-      />
-      <LikeCommentCount
-        :like-count="like_count"
-        :comment-count="comments.length"
-        @scrollToComment="scrollToComment"
-      />
+      <React :id="id" :current-idx="currentIdx" :has-liked="has_liked" :media-arr="mediaArr" :has-saved="is_saved" />
+      <LikeCommentCount :like-count="like_count" :comment-count="comments.length" @scrollToComment="scrollToComment" />
       <Caption :user-name="user.username" :caption-content="caption_text" :tags="tags" />
       <div :key="key" class="m-[0px_0px_0px_0px] h-[18px] text-[0.8rem] text-c3 dark:text-c21">
         {{ moment(created_at).fromNow() }}

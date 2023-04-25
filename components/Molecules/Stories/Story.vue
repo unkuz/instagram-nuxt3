@@ -25,9 +25,7 @@ withDefaults(defineProps<IProps>(), {
       <div
         :class="[
           'mx-auto flex aspect-square h-[66px] w-[66px] flex-col items-center overflow-hidden rounded-[50%] p-[3px] ',
-          hasRead
-            ? 'bg-c21/60'
-            : 'bg-gradient-to-bl from-[#2de6e6] to-[#c125ff] dark:from-c24 dark:to-c25',
+          hasRead ? 'bg-c21/60' : 'bg-gradient-to-bl from-[#2de6e6] to-[#c125ff] dark:from-c24 dark:to-c25',
         ]"
       >
         <div class="h-full w-full rounded-[50%] bg-c1 p-[2px] dark:bg-c19">

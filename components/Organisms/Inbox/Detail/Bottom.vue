@@ -165,9 +165,7 @@ onBeforeUnmount(() => {
             :placeholder="focused ? 'Type a message...' : 'Message'"
         /></span>
 
-        <span @click="toggleEmoji" class="absolute bottom-1/2 right-[10px] translate-y-1/2"
-          ><EmojiFillIcon_ />
-        </span>
+        <span @click="toggleEmoji" class="absolute bottom-1/2 right-[10px] translate-y-1/2"><EmojiFillIcon_ /> </span>
       </div>
       <div>
         <LikeFillIcon_ />

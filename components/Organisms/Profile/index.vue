@@ -142,10 +142,7 @@ const unfollow = () => {
                 },
               ]"
             >
-              <ReelIconSelected_
-                v-if="section === ProfileSectionEnum.REEL"
-                :class="['dark:fill-c1']"
-              />
+              <ReelIconSelected_ v-if="section === ProfileSectionEnum.REEL" :class="['dark:fill-c1']" />
               <ReelIcon_ v-else @click="section = ProfileSectionEnum.REEL" />
             </div>
             <div
@@ -161,8 +158,7 @@ const unfollow = () => {
                 :class="[
                   ' cursor-pointer dark:[&>path]:stroke-white',
                   {
-                    ' [&__path]:fill-c2 dark:[&__path]:fill-c1':
-                      section === ProfileSectionEnum.SAVE,
+                    ' [&__path]:fill-c2 dark:[&__path]:fill-c1': section === ProfileSectionEnum.SAVE,
                   },
                 ]"
                 @click="section = ProfileSectionEnum.SAVE"

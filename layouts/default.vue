@@ -10,9 +10,7 @@ const globalStore = useGlobalStore()
 
 const { smallMd } = $(useTailwindBreakPoint())
 
-const isShowNavBarBottom = computed(
-  () => !(globalStore.getIsMobile && globalStore.section === SectionEnum.MESSENGER)
-)
+const isShowNavBarBottom = computed(() => !(globalStore.getIsMobile && globalStore.section === SectionEnum.MESSENGER))
 
 const noNeedPadingTop = $(
   computed(() => {

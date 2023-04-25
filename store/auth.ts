@@ -1,12 +1,7 @@
 import { APP_API, BASE_URL_API } from '@/apis'
 import { IAuthData } from '@/models'
 import { axios } from '@/services/axios'
-import {
-  ToastTypeEnum,
-  useToastStore,
-  useUserAuthFollowerStore,
-  useUserAuthFollowingStore,
-} from '@/store'
+import { ToastTypeEnum, useToastStore, useUserAuthFollowerStore, useUserAuthFollowingStore } from '@/store'
 import { IAccountLogin, IStateStore } from '@/type'
 import { defineStore } from 'pinia'
 
@@ -59,8 +54,7 @@ export const useAuthStore = defineStore('auth', {
         this.data.user = {}
         this.data.token = {}
         this.hasErr = true
-        this.errors =
-          e.response?.data?.detail ?? 'The server is down, please try again later 😅😅😅'
+        this.errors = e.response?.data?.detail ?? 'The server is down, please try again later 😅😅😅'
         toastStore.pushTimmer({
           type: ToastTypeEnum.ERROR,
           content: this.errors,
@@ -85,8 +79,7 @@ export const useAuthStore = defineStore('auth', {
           content: 'Nice. Create account successfully',
         })
       } catch (e: any) {
-        this.errors =
-          e.response?.data?.detail ?? 'The server is down, please try again later 😅😅😅'
+        this.errors = e.response?.data?.detail ?? 'The server is down, please try again later 😅😅😅'
         toastStore.pushTimmer({
           type: ToastTypeEnum.ERROR,
           content: this.errors,

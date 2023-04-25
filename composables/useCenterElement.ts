@@ -5,10 +5,7 @@
  * @param {HTMLDivElement | null} refFile - A reference to an HTMLDivElement that is used to center
  * another HTMLDivElement.
  */
-export function useCenterElement(
-  refElement: HTMLDivElement | null,
-  refFile: HTMLDivElement | null
-) {
+export function useCenterElement(refElement: HTMLDivElement | null, refFile: HTMLDivElement | null) {
   const position = () => {
     Object.assign(refElement!.style, {
       top: `${window.scrollY + window.innerHeight / 2 - refElement!.clientHeight / 2}px`,

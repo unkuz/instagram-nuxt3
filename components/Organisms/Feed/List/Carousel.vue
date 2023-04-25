@@ -37,9 +37,7 @@ let initShowLikeSaved = $ref(false)
 const emit = defineEmits(['current-index-carousel'])
 
 const isShowPre = $computed(() => props.currentParent !== 0)
-const isShowNext = $computed(
-  () => props.currentParent !== props.images.concat(props.videos).length - 1
-)
+const isShowNext = $computed(() => props.currentParent !== props.images.concat(props.videos).length - 1)
 const totalMedia = $computed<number>(() => props.images.concat(props.videos).length)
 
 watch(

@@ -12,10 +12,7 @@ const id = $computed(() => route.params.id)
 const story = $computed(() => storyDetailStore.data)
 
 const media = computed(() =>
-  _concat(
-    storyDetailStore.data?.carousel_media?.videos,
-    storyDetailStore?.data?.carousel_media?.images
-  )
+  _concat(storyDetailStore.data?.carousel_media?.videos, storyDetailStore?.data?.carousel_media?.images)
 )
 
 const [sliderRef, slider] = useKeenSlider({

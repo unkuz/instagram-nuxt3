@@ -25,9 +25,7 @@ const containerMediaRef = ref<HTMLDivElement>()
 const { next, prev, current } = useCarousel(containerMediaRef)
 
 const isShowPre = computed<boolean>(() => unref(current) !== 0)
-const isShowNext = computed<boolean>(
-  () => unref(current) !== props.images.concat(props.videos).length - 1
-)
+const isShowNext = computed<boolean>(() => unref(current) !== props.images.concat(props.videos).length - 1)
 const totalMedia = computed<number>(() => props.images.concat(props.videos).length)
 
 watch(

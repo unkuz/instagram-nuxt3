@@ -23,10 +23,7 @@ withDefaults(defineProps<IProps>(), {
       sequent && !isReply && '',
     ]"
   >
-    <Avatar
-      :class="['w-[30px]', isReply ? 'opacity-100' : ' opacity-0']"
-      url="/image/91480011.jpg"
-    />
+    <Avatar :class="['w-[30px]', isReply ? 'opacity-100' : ' opacity-0']" url="/image/91480011.jpg" />
 
     <div
       :class="[

@@ -78,9 +78,7 @@ const setSelect = (val: SignInUpEnum) => (selected = val)
 <template>
   <div class="flex h-screen w-screen items-center justify-center">
     <div class="flex w-[400px] flex-col rounded-3xl bg-c1 duration-200 dark:bg-c19">
-      <InstagramLogo_
-        class="mx-auto mt-[7px] w-[200px] cursor-pointer fill-black dark:fill-white"
-      />
+      <InstagramLogo_ class="mx-auto mt-[7px] w-[200px] cursor-pointer fill-black dark:fill-white" />
       <div class="mx-auto mb-[25px]">{{ title }}</div>
       <Slider :arr="AUTH_SLIDER" :select="selected" @set="setSelect" />
       <template v-if="selected === SignInUpEnum.SIGN_IN"><SignIn /></template>

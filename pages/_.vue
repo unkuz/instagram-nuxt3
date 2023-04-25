@@ -20,27 +20,18 @@ const storiesStore = useStoriesStore()
 const timeLineStore = useFeedStore()
 const suggestionStore = useSuggestionStore()
 
-const { data: _stories, pending: pendingStories } = await useLazyAsyncData<IStory[]>(
-  'story',
-  async () => {
-    const res = await axios.get(APP_API.STORY.LIST)
-    return res.data
-  }
-)
-const { data: _suggestions, pending: pendingSugestion } = await useLazyAsyncData<IStory[]>(
-  'suggestion',
-  async () => {
-    const res = await axios.get(APP_API.SUGGESTION.user)
-    return res.data
-  }
-)
-const { data: _timeline, pending: pendingTimeline } = await useLazyAsyncData<ITimeLine[]>(
-  'feed',
-  async () => {
-    const res = await axios.get(APP_API.FEED.list)
-    return res.data
-  }
-)
+const { data: _stories, pending: pendingStories } = await useLazyAsyncData<IStory[]>('story', async () => {
+  const res = await axios.get(APP_API.STORY.LIST)
+  return res.data
+})
+const { data: _suggestions, pending: pendingSugestion } = await useLazyAsyncData<IStory[]>('suggestion', async () => {
+  const res = await axios.get(APP_API.SUGGESTION.user)
+  return res.data
+})
+const { data: _timeline, pending: pendingTimeline } = await useLazyAsyncData<ITimeLine[]>('feed', async () => {
+  const res = await axios.get(APP_API.FEED.list)
+  return res.data
+})
 
 const themeStore = useThemeStore()
 

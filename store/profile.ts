@@ -83,13 +83,9 @@ export const useProfileStore = defineStore('profile', {
         _each(data, (val, key) => {
           formData.append(key, val)
         })
-        const { status, data: _data } = await axios.put(
-          APP_API.USER.UPDATE_PROFLE(idUser),
-          formData,
-          {
-            headers: { 'Content-Type': 'multipart/form-data' },
-          }
-        )
+        const { status, data: _data } = await axios.put(APP_API.USER.UPDATE_PROFLE(idUser), formData, {
+          headers: { 'Content-Type': 'multipart/form-data' },
+        })
 
         if (status === 200) {
           toastStore.pushTimmer({

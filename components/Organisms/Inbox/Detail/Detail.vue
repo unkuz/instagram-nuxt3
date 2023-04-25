@@ -169,11 +169,7 @@ const { isOverDropZone } = useDropZone(inboxRef, onDrop)
         </IndividualLine>
       </div>
 
-      <PreviewMedia
-        v-if="previewMedia.isShow"
-        :previewMedia="previewMedia"
-        @close="previewMedia.isShow = false"
-      />
+      <PreviewMedia v-if="previewMedia.isShow" :previewMedia="previewMedia" @close="previewMedia.isShow = false" />
 
       <Bottom :id="data.id" />
     </div>

@@ -55,13 +55,7 @@ const toggleFullScreen = () => {
     ref="containerRef "
     class="keen-slider__slide group relative flex min-w-full items-center justify-center overflow-hidden bg-c2"
   >
-    <video
-      ref="videoRef"
-      class="video block max-h-[100vh] w-full"
-      type="video/mp4"
-      playsinline
-      loop
-    />
+    <video ref="videoRef" class="video block max-h-[100vh] w-full" type="video/mp4" playsinline loop />
     <Loading v-show="waiting" />
     <PauseIcon_
       v-show="!waiting"

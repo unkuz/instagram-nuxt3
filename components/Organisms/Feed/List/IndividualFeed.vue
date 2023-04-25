@@ -59,11 +59,7 @@ const commentCount = $computed(() => {
         :has-saved="feed.is_saved"
       />
       <LikeCommentCount :like-count="feed.like_count" :comment-count="commentCount" />
-      <Caption
-        :user-name="feed.user.user_name"
-        :captionContent="feed.caption_text"
-        :tags="feed.tags"
-      />
+      <Caption :user-name="feed.user.user_name" :captionContent="feed.caption_text" :tags="feed.tags" />
 
       <TimeFromNow
         :time="feed.created_at"
@@ -71,13 +67,7 @@ const commentCount = $computed(() => {
       />
 
       <div ref="commentRef" class="mt-[15px] max-h-[300px] w-full overflow-scroll md:max-h-[500px]">
-        <IndividualComment
-          v-for="(j, idx) in feed.comments"
-          :key="idx"
-          :comment="j"
-          :postId="feed.id"
-          @reply="reply"
-        />
+        <IndividualComment v-for="(j, idx) in feed.comments" :key="idx" :comment="j" :postId="feed.id" @reply="reply" />
       </div>
       <Comment
         :id="feed.id"

@@ -65,20 +65,8 @@ watch([() => props.hasSaved, () => props.hasLiked], () => {
 <template>
   <div class="relative overflow-hidden">
     <div ref="containerMediaRef" class="keen-slider inline-flex min-w-full select-none">
-      <Image
-        class="keen-slider__slide"
-        v-for="i in images"
-        :key="i.id"
-        :src="i.src"
-        :id-post="id"
-      />
-      <Video
-        class="keen-slider__slide"
-        v-for="(video, idx) in videos"
-        :key="idx"
-        :video="video"
-        :id-post="id"
-      />
+      <Image class="keen-slider__slide" v-for="i in images" :key="i.id" :src="i.src" :id-post="id" />
+      <Video class="keen-slider__slide" v-for="(video, idx) in videos" :key="idx" :video="video" :id-post="id" />
     </div>
     <div
       v-if="isShowPre"

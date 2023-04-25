@@ -92,12 +92,7 @@ onBeforeUnmount(() => {
       v-if="step === 1"
       class="flex w-[320px] flex-col justify-center rounded-[10px] bg-white p-[30px_20px_20px_20px]"
     >
-      <Slider
-        :select="typeAdd"
-        :arr="ADD_SLIDER"
-        @set="(val) => (typeAdd = val)"
-        class="mb-[20px] !w-full"
-      />
+      <Slider :select="typeAdd" :arr="ADD_SLIDER" @set="(val) => (typeAdd = val)" class="mb-[20px] !w-full" />
       <div
         @click="open()"
         ref="dropZoneRef"

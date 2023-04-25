@@ -92,9 +92,7 @@ onClickOutside(accountPopRef, () => (isShowProfile = false))
             <div><Extension v-if="showExtension" /></div>
           </div>
         </div>
-        <div
-          class="relative hidden w-full items-center justify-center md:flex md:w-auto lg:ml-0 lg:w-full"
-        >
+        <div class="relative hidden w-full items-center justify-center md:flex md:w-auto lg:ml-0 lg:w-full">
           <Search />
         </div>
         <div
@@ -129,10 +127,7 @@ onClickOutside(accountPopRef, () => (isShowProfile = false))
             </NuxtLink>
           </div>
           <div v-show="!isMobile" class="relative mr-0" @click="isShowProfile = true">
-            <SelfAvatar
-              :is-select="section === SectionEnum.SELF"
-              @click="isShowProfile = !isShowProfile"
-            />
+            <SelfAvatar :is-select="section === SectionEnum.SELF" @click="isShowProfile = !isShowProfile" />
             <div ref="accountPopRef">
               <AccountPop v-show="isShowProfile" />
             </div>

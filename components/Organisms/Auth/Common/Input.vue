@@ -17,10 +17,7 @@ const placeHolderRef = $ref<HTMLDivElement>()
     <div class="mt-[10px] h-[50px] w-full rounded-2xl bg-c18/10 px-[20px] py-[10px] dark:bg-c2/50">
       <div class="flex h-full w-full items-center justify-between">
         <div class="relative h-full w-full bg-transparent">
-          <p
-            class="absolute -top-[25px] bottom-1/2 translate-y-1/2 opacity-50"
-            ref="placeHolderRef"
-          >
+          <p class="absolute -top-[25px] bottom-1/2 translate-y-1/2 opacity-50" ref="placeHolderRef">
             {{ placeHolder }}
           </p>
           <Field

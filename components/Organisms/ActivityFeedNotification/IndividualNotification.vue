@@ -19,10 +19,7 @@ defineProps<IProps>()
         <AtomsTagName name="abc" />
         <p class="inline-block">{{ content }}</p>
       </div>
-      <TimeFromNow
-        :time="created_at"
-        class="m-[0px_0px_0px_0px] h-[18px] text-c3 dark:text-c21 md:text-[0.8rem]"
-      />
+      <TimeFromNow :time="created_at" class="m-[0px_0px_0px_0px] h-[18px] text-c3 dark:text-c21 md:text-[0.8rem]" />
     </div>
   </div>
 </template>

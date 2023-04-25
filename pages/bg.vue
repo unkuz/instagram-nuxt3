@@ -21,8 +21,6 @@ definePageMeta({
     <div
       class="absolute bottom-[100px] left-[25vw] h-[200px] w-[200px] rounded-full bg-c12 mix-blend-multiply blur-[200px]"
     />
-    <div
-      class="leff-[20vw] absolute top-1/2 h-[200px] w-[200px] rounded-full bg-c18 mix-blend-multiply blur-[200px]"
-    />
+    <div class="leff-[20vw] absolute top-1/2 h-[200px] w-[200px] rounded-full bg-c18 mix-blend-multiply blur-[200px]" />
   </div>
 </template>

@@ -73,11 +73,7 @@ const setCurrent = (val) => (currentIdx.value = val)
           </div>
 
           <div class="overflow-scroll pt-[123px] scrollbar-hide">
-            <Caption
-              :user-name="feed.user.username"
-              :caption-content="feed.caption_text"
-              :tags="feed.tags"
-            />
+            <Caption :user-name="feed.user.username" :caption-content="feed.caption_text" :tags="feed.tags" />
             <TimeFromNow
               :time="feed.created_at"
               class="m-[0px_0px_0px_0px] h-[18px] text-c3 dark:text-c21 md:text-[0.8rem]"
