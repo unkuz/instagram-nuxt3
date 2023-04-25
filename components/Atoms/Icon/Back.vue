@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const router = useRouter()
+
 const back = () => router.back()
 </script>
 <template>
