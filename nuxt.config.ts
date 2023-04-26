@@ -4,7 +4,6 @@ import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
   modules: [
-    // '@sidebase/nuxt-auth',
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
@@ -16,16 +15,14 @@ export default defineNuxtConfig({
     '@nuxtjs/fontaine',
     '@vite-pwa/nuxt',
     '@nuxt/devtools',
-    // '@nuxtjs/eslint-module',
+    // '@sidebase/nuxt-auth',
     // '@nuxtjs/eslint-module',
     // '@nuxtjs/algolia',
     // 'nuxt-logrocket',
     // '@nuxtjs/i18n',
     // '@nuxtjs/device',
     // 'nuxt-security',
-    // '@nuxtjs/algolia',
     // '@twicpics/components/nuxt3',
-    // 'nuxt-security',
     // '@nuxtjs/fontaine',
     // '@morev/vue-transitions/nuxt',
   ],
@@ -52,7 +49,8 @@ export default defineNuxtConfig({
         },
         { rel: 'manifest', href: '/manifest.json' },
       ],
-      viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
+      viewport:
+        'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no',
       title: 'Instagram',
       script: [
         // {
@@ -76,7 +74,6 @@ export default defineNuxtConfig({
   },
   buildDir: '.nuxt',
   builder: 'vite',
-  //   debug: true,
   devServer: {
     host: 'localhost',
     port: 3000,
@@ -87,7 +84,6 @@ export default defineNuxtConfig({
     presets: {},
   },
   vite: {
-    // plugins: [svgLoader({}), eslintPlugin()],
     plugins: [svgLoader({}), VueTypeImports()],
     // build: {
     //   rollupOptions: {
@@ -103,15 +99,6 @@ export default defineNuxtConfig({
       chunkSizeWarningLimit: 1600,
     },
   },
-  // twicpics: {
-  //   domain: `https://<your-domain>.twic.pics`,
-  //   anticipation: 0.5,
-  //   step: 50,
-  // },
-  // algolia: {
-  //   apiKey: 'MY_API_KEY',
-  //   applicationId: 'MY_APPLICATION_ID',
-  // },
   piniaPersistedstate: {
     cookieOptions: {
       sameSite: 'strict',
@@ -135,11 +122,7 @@ export default defineNuxtConfig({
     componentIslands: true,
   },
   devtools: {
-    // Enable devtools (default: true)
     enabled: true,
-    // VS Code Server options
-    vscode: {},
-    // ...other options
   },
   // auth: {
   //     // The module is enabled. Change this to disable the module
@@ -160,12 +143,6 @@ export default defineNuxtConfig({
   //         allow404WithoutAuth: true,
   //     },
   // },
-  // i18n: {
-  //     /* module options */
-  // },
-  // content: {
-  //     // https://content.nuxtjs.org/api/configuration
-  // },
   runtimeConfig: {
     public: {
       siteUrl: 'https://instagram-clone-nuxt3.vercel.app/',
@@ -175,7 +152,4 @@ export default defineNuxtConfig({
       titleSeparator: '|',
     },
   },
-  // content: {
-  //   // https://content.nuxtjs.org/api/configuration
-  // },
 })

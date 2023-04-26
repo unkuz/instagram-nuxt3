@@ -13,7 +13,7 @@
     "@nuxt/content": "^2.6.0",
     "@nuxt/devtools": "^0.4.2",
     "@nuxt/image-edge": "1.0.0-28020728.5df24eb",
-    "@nuxt/test-utils-edge": "3.4.3-28040330.ac598e4f",
+    "@nuxt/test-utils-edge": "3.4.3-28041505.7ab476b1",
     "@nuxtjs/device": "^3.1.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/eslint-module": "^4.0.2",
@@ -55,8 +55,8 @@
     "vue-gtag-next": "^1.14.0"
   },
   "dependencies": {
-    "@dicebear/collection": "^6.0.2",
-    "@dicebear/core": "^6.0.2",
+    "@dicebear/collection": "^6.0.3",
+    "@dicebear/core": "^6.0.3",
     "@morev/vue-transitions": "^2.3.6",
     "@nuxt/ufo": "^0.5.4",
     "@nuxtjs/algolia": "^1.6.0",
@@ -91,7 +91,7 @@
     "pinia": "^2.0.35",
     "postcss-custom-properties": "^13.1.5",
     "rxjs": "^7.8.0",
-    "sass": "^1.62.0",
+    "sass": "^1.62.1",
     "socket.io-client": "^4.6.1",
     "tailwind-scrollbar-hide": "^1.1.7",
     "three": "0.134",
