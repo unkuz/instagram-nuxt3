@@ -4,7 +4,6 @@ import Slash from '@/components/Molecules/Slash.vue'
 import OverLay from '@/components/Organisms/OverLay/index.vue'
 import Prelude from '@/components/Utils/Prelude.vue'
 import { usePrelude, useResizeWindow, useScroll, useScrollBarTheme, useWatchRouteSetSection } from '@/composables'
-import { registerSeviceWorkerPWA } from '@/helpers'
 import { useThemeStore } from '@/store'
 import { useWebNotification } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
@@ -12,7 +11,6 @@ import { storeToRefs } from 'pinia'
 const { darkMode } = storeToRefs(useThemeStore())
 const { isShowPrelude } = usePrelude()
 
-// registerSeviceWorkerPWA()
 useScroll()
 useResizeWindow()
 useWatchRouteSetSection()
@@ -29,36 +27,26 @@ const { isSupported, notification, show, close, onClick, onShow, onError, onClos
   renotify: true,
   tag: 'test',
 })
-
-// onMounted(() => {
-//   setInterval(() => {
-//     show()
-//   }, 5 * 1000 * 60)
-// })
 </script>
 
 <template>
   <div
     :class="[
-      'scroll-smooth font-quicksan text-[.85rem]',
+      'min-h-screen scroll-smooth font-quicksan text-[.85rem] selection:bg-c2 selection:text-c1 dark:bg-c19 dark:text-c21 dark:selection:bg-c1 dark:selection:text-c2',
       {
         'dark ': darkMode,
       },
     ]"
     v-signature
   >
-    <div class="selection:bg-c2 selection:text-c1 dark:selection:bg-c1 dark:selection:text-c2">
-      <Prelude v-if="isShowPrelude" />
-      <div class="min-h-screen dark:bg-c19 dark:text-c21">
-        <NuxtLayout>
-          <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" />
-          <Loading />
-          <SeoKit />
-          <NuxtPage />
-        </NuxtLayout>
-        <OverLay />
-      </div>
-    </div>
+    <Prelude v-if="isShowPrelude" />
+    <NuxtLayout>
+      <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" />
+      <Loading />
+      <SeoKit />
+      <NuxtPage />
+    </NuxtLayout>
+    <OverLay />
     <Slash />
   </div>
 </template>
