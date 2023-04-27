@@ -32,7 +32,7 @@ const { isSupported, notification, show, close, onClick, onShow, onError, onClos
 <template>
   <div
     :class="[
-      'min-h-screen scroll-smooth font-quicksan text-[.85rem] selection:bg-c2 selection:text-c1 dark:bg-c19 dark:text-c21 dark:selection:bg-c1 dark:selection:text-c2',
+      'scroll-smooth font-quicksan text-[.85rem] selection:bg-c2 selection:text-c1   dark:selection:bg-c1 dark:selection:text-c2',
       {
         'dark ': darkMode,
       },
@@ -40,13 +40,15 @@ const { isSupported, notification, show, close, onClick, onShow, onError, onClos
     v-signature
   >
     <Prelude v-if="isShowPrelude" />
-    <NuxtLayout>
-      <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" />
-      <Loading />
-      <SeoKit />
-      <NuxtPage />
-    </NuxtLayout>
-    <OverLay />
+    <div class="min-h-screen dark:bg-c19 dark:text-c21">
+      <NuxtLayout>
+        <NuxtLoadingIndicator color="#7fccff" :height="3" :duration="500" />
+        <Loading />
+        <SeoKit />
+        <NuxtPage />
+      </NuxtLayout>
+      <OverLay />
+    </div>
     <Slash />
   </div>
 </template>
