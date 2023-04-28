@@ -3,7 +3,13 @@ import Loading from '@/components/Atoms/Loading.vue'
 import Slash from '@/components/Molecules/Slash.vue'
 import OverLay from '@/components/Organisms/OverLay/index.vue'
 import Prelude from '@/components/Utils/Prelude.vue'
-import { usePrelude, useResizeWindow, useScroll, useScrollBarTheme, useWatchRouteSetSection } from '@/composables'
+import {
+  usePrelude,
+  useResizeWindow,
+  useScroll,
+  useScrollBarTheme,
+  useWatchRouteSetSection,
+} from '@/composables'
 import { useThemeStore } from '@/store'
 import { useWebNotification } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
@@ -20,19 +26,20 @@ useHead({
   meta: [{ name: 'theme-color', content: unref(darkMode) ? '#121212' : '#fff' }],
 })
 
-const { isSupported, notification, show, close, onClick, onShow, onError, onClose } = useWebNotification({
-  title: '😍',
-  dir: 'auto',
-  lang: 'en',
-  renotify: true,
-  tag: 'test',
-})
+const { isSupported, notification, show, close, onClick, onShow, onError, onClose } =
+  useWebNotification({
+    title: '😍',
+    dir: 'auto',
+    lang: 'en',
+    renotify: true,
+    tag: 'test',
+  })
 </script>
 
 <template>
   <div
     :class="[
-      'scroll-smooth font-quicksan text-[.85rem] selection:bg-c2 selection:text-c1   dark:selection:bg-c1 dark:selection:text-c2',
+      'scroll-smooth font-quicksan text-[.85rem] selection:bg-c2   selection:text-c1 dark:selection:bg-c1 dark:selection:text-c2 ',
       {
         'dark ': darkMode,
       },
