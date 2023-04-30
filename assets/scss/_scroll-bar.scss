@@ -1,0 +1,16 @@
+@import 'custom-vue-scrollbar/dist/style.css';
+
+// Modify the scrollbar size (placeholder container), the width of the scrollbar display before hover is 2/3 of the placeholder container, as follows, it is 12px.
+.scrollbar__thumbPlaceholder--vertical {
+  width: 6px;
+}
+
+.scrollbar__thumbPlaceholder--horizontal {
+  height: 6px;
+}
+
+// Modify the scrollbar style.
+.scrollbar__thumb {
+  background-color: red;
+  border-radius: 0px;
+}

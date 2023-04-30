@@ -6540,6 +6540,14 @@ cuint@^0.2.2:
   resolved "https://registry.yarnpkg.com/cuint/-/cuint-0.2.2.tgz#408086d409550c2631155619e9fa7bcadc3b991b"
   integrity sha512-d4ZVpCW31eWwCMe1YT3ur7mUDnTXbgwyzaL320DrcRT45rfjYxkt5QWLrmOJ+/UEAI2+fQgKe/fCjR8l4TpRgw==
 
+custom-vue-scrollbar@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/custom-vue-scrollbar/-/custom-vue-scrollbar-0.0.7.tgz#a506e371749232594b49fe5afe0085219d2e0bd0"
+  integrity sha512-ZO3mF83MBTeDwICBEqScbFFvYYzqaW9ZJzw7w2klBgly9ENL/DGe/2/CXyFfDl+Ylf81qmJrbZDH7n1t98nnbQ==
+  dependencies:
+    lodash-es "^4.17.21"
+    vue "^3.2.21"
+
 d@1, d@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/d/-/d-1.0.1.tgz#8698095372d58dbee346ffd0c7093f99f8f9eb5a"
@@ -16147,7 +16155,7 @@ vue3-lottie@^2.5.0:
     lodash-es "^4.17.21"
     lottie-web "^5.8.1"
 
-vue@^3.2.47:
+vue@^3.2.21, vue@^3.2.47:
   version "3.2.47"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.2.47.tgz#3eb736cbc606fc87038dbba6a154707c8a34cff0"
   integrity sha512-60188y/9Dc9WVrAZeUVSDxRQOZ+z+y5nO2ts9jWXSTkMvayiWxCWOWtBQoYjLeccfXkiiPZWAHcV+WTPhkqJHQ==
