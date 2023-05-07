@@ -124,10 +124,7 @@ const unfollow = () => {
                 },
               ]"
             >
-              <HomeIconSelected_
-                v-if="section === ProfileSectionEnum.POST"
-                class="cursor-pointer fill-c2 dark:fill-c1"
-              />
+              <HomeIconSelected_ v-if="section === ProfileSectionEnum.POST" class="cursor-pointer fill-c2 dark:fill-c1" />
               <HomeIcon_
                 v-else
                 class="cursor-pointer fill-c2 dark:[&__path]:stroke-c1"

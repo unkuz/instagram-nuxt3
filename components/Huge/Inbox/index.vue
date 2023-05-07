@@ -60,9 +60,9 @@ const setExpand = (section: InboxTypeEnum) => {
                 </div>
 
                 <div class="line-clamp-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa assumenda, excepturi vel non facere
-                  commodi delectus ipsam explicabo quaerat rem aspernatur placeat nobis veritatis quas quibusdam officia
-                  illum fugiat voluptatem?
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa assumenda, excepturi vel non facere commodi
+                  delectus ipsam explicabo quaerat rem aspernatur placeat nobis veritatis quas quibusdam officia illum fugiat
+                  voluptatem?
                 </div>
               </div>
               <p class="text-[0.7rem]">12:30</p>

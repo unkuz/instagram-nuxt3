@@ -88,10 +88,7 @@ onBeforeUnmount(() => {
 </script>
 <template>
   <BackDrop @click.self="addStore.toggle(false)">
-    <div
-      v-if="step === 1"
-      class="flex w-[320px] flex-col justify-center rounded-[10px] bg-white p-[30px_20px_20px_20px]"
-    >
+    <div v-if="step === 1" class="flex w-[320px] flex-col justify-center rounded-[10px] bg-white p-[30px_20px_20px_20px]">
       <Slider :select="typeAdd" :arr="ADD_SLIDER" @set="(val) => (typeAdd = val)" class="mb-[20px] !w-full" />
       <div
         @click="open()"

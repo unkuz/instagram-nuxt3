@@ -71,9 +71,7 @@ type TypedLocationAsRelativeRaw<T extends TypedRouteList> = {
   params?: TypedRouteParams[T]
 }
 
-type TypedRouteLocationRaw<T extends TypedRouteList> = RouteQueryAndHash &
-  TypedLocationAsRelativeRaw<T> &
-  RouteLocationOptions
+type TypedRouteLocationRaw<T extends TypedRouteList> = RouteQueryAndHash & TypedLocationAsRelativeRaw<T> & RouteLocationOptions
 
 export interface TypedRouter {
   /**

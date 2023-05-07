@@ -45,11 +45,7 @@ const { key } = useForceRenderTimer()
             <span class="align-bottom text-[0.9rem]">{{ comment.comment_like_count }}</span>
           </div>
           <div class="flex items-end gap-[5px]">
-            <span
-              class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1"
-              title="Reply"
-              @click="$emit('reply', comment.id)"
-            >
+            <span class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1" title="Reply" @click="$emit('reply', comment.id)">
               <svg width="18" height="18" viewBox="0 0 24 24">
                 <g>
                   <path
@@ -95,11 +91,7 @@ const { key } = useForceRenderTimer()
           </div>
           <div class="flex items-end gap-[5px]">
             <span class="align-bottom text-[0.9rem]/[1.05rem]">{{ '0' }}</span>
-            <span
-              class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1"
-              title="Reply"
-              @click="$emit('reply', comment.id)"
-            >
+            <span class="cursor-pointer [&>svg]:fill-c2 dark:[&>svg]:fill-c1" title="Reply" @click="$emit('reply', comment.id)">
               <svg width="18" height="18" viewBox="0 0 24 24">
                 <g>
                   <path

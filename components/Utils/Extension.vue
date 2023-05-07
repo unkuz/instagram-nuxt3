@@ -11,10 +11,7 @@ const isDarkMode = computed(() => themeStore.darkMode)
   >
     <div class="flex w-full cursor-pointer select-none items-center justify-start gap-[30px] px-[20px]">
       <div>Dark mode :</div>
-      <div
-        class="relative h-[20px] w-[40px] overflow-hidden rounded-[10px] bg-c2 dark:bg-c1"
-        @click="themeStore.toggleDarkMode"
-      >
+      <div class="relative h-[20px] w-[40px] overflow-hidden rounded-[10px] bg-c2 dark:bg-c1" @click="themeStore.toggleDarkMode">
         <div
           :class="[
             'relative top-1/2 -translate-y-1/2 translate-x-[2.5px] duration-200',

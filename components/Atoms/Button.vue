@@ -13,10 +13,7 @@ const emit = defineEmits(['click'])
 </script>
 <template>
   <button
-    :class="[
-      'inline-block cursor-pointer rounded-[10px] bg-c5 px-[10px] py-[3px] active:bg-c17',
-      { 'skeleton ': skeleton },
-    ]"
+    :class="['inline-block cursor-pointer rounded-[10px] bg-c5 px-[10px] py-[3px] active:bg-c17', { 'skeleton ': skeleton }]"
     @click="emit('click')"
   >
     <span>{{ skeleton ? '' : text }}</span>

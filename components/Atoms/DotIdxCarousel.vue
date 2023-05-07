@@ -14,10 +14,7 @@ defineProps<IProps>()
     <div
       v-for="(_i, idx) in mediaArr.slice(0, APP_CONFIGS.MAX_DOT_CAROUSEL)"
       :key="idx"
-      :class="[
-        'h-[6px] w-[6px]  cursor-pointer  rounded-[50%]',
-        current === idx ? 'bg-c7 dark:bg-c7' : 'bg-c3 dark:bg-c1',
-      ]"
+      :class="['h-[6px] w-[6px]  cursor-pointer  rounded-[50%]', current === idx ? 'bg-c7 dark:bg-c7' : 'bg-c3 dark:bg-c1']"
     />
     <div
       v-if="mediaArr.length > APP_CONFIGS.MAX_DOT_CAROUSEL"

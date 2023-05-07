@@ -81,10 +81,7 @@ const toggleFullScreen = () => {
         v-if="!isPictureInPicture"
         class="absolute left-[10px] top-[10px] hidden !w-[26px] cursor-pointer group-hover:block"
       />
-      <ExpandPlayerIcon_
-        v-else
-        class="absolute left-[10px] top-[10px] hidden !w-[26px] cursor-pointer group-hover:block"
-      />
+      <ExpandPlayerIcon_ v-else class="absolute left-[10px] top-[10px] hidden !w-[26px] cursor-pointer group-hover:block" />
     </div>
   </div>
 </template>

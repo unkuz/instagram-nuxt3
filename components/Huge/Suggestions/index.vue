@@ -125,9 +125,7 @@ const logout = () => {
           © <span> {{ getCurrentYear() }}</span> Instagram clone by
         </div>
         <NuxtLink :to="APP_CONFIGS.GITHUB_AUTHOR_LINK" target="_blank" class="relative overflow-hidden">
-          <div
-            class="cursor-pointer font-august text-[1.25rem] uppercase tracking-wider text-c2 drop-shadow-md dark:text-c1"
-          >
+          <div class="cursor-pointer font-august text-[1.25rem] uppercase tracking-wider text-c2 drop-shadow-md dark:text-c1">
             {{ APP_CONFIGS.AUTHOR }}
           </div>
         </NuxtLink>
