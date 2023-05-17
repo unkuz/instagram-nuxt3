@@ -79,7 +79,7 @@ export default defineNuxtConfig({
   vite: {
     plugins: [svgLoader({}), VueTypeImports()],
     build: {
-      chunkSizeWarningLimit: 1600,
+      chunkSizeWarningLimit: 5000,
     },
   },
   piniaPersistedstate: {

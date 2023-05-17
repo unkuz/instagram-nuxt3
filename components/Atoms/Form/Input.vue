@@ -4,7 +4,7 @@ interface IProps {
   modelValue: string
 }
 
-const props = withDefaults(defineProps<IProps>(), {
+withDefaults(defineProps<IProps>(), {
   type: 'password',
 })
 

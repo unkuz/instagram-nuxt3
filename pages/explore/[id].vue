@@ -3,7 +3,7 @@ import BackDrop from '@/components/Utils/BackDrop.vue'
 definePageMeta({
   middleware: 'auth',
 })
-const emit = defineEmits(['close'])
+defineEmits(['close'])
 
 const close = () => navigateTo('/explore')
 </script>
