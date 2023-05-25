@@ -116,7 +116,10 @@ onBeforeUnmount(() => {
 <template>
   <div>
     <TopBarSm text="Reel" @back="router.push('/')" />
-    <div ref="container" class="keen-slider flex h-[calc(100vh-65px)] flex-col !flex-nowrap items-center md:h-[calc(100vh-84px)]">
+    <div
+      ref="container"
+      class="keen-slider flex h-[calc(100vh-65px)] flex-col !flex-nowrap items-center md:h-[calc(100vh-84px)]"
+    >
       <ReelSkeleton v-if="isPending" />
       <template v-else>
         <div

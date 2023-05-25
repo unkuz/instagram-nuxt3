@@ -8,7 +8,6 @@ withDefaults(defineProps<IProps>(), {
 })
 
 const modelValue = defineModel<string>()
-
 </script>
 <template>
   <div class="">

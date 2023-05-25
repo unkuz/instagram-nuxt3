@@ -5,7 +5,9 @@ import { SizeAvatarEnum } from '@/type'
 </script>
 
 <template>
-  <article class="w-full bg-transparent md:clip-path-cuzknothz dark:md:bg-transparent [&:not(:last-child)]:mb-[24px]">
+  <article
+    class="w-full bg-transparent md:clip-path-cuzknothz dark:md:bg-transparent [&:not(:last-child)]:mb-[24px]"
+  >
     <div class="w-full bg-c1 dark:bg-c19 md:clip-path-cuzknothz">
       <div class="h-[60px]">
         <div class="mx-[16px] flex h-full items-center justify-between">

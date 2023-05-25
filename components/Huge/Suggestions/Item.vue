@@ -39,8 +39,18 @@ const handleFollow = () => {
       <p class="text-[0.8rem] text-c3 dark:text-c21">Suggested for you</p>
     </div>
     <div class="flex w-[55px] cursor-pointer justify-end text-[0.8rem] font-[500] [&>div]:px-[6px]">
-      <Button v-if="isFollowing" @click="handleUnfollow" text="Unfollow" class="!bg-c8 !px-[8px] !py-[4px] !text-c9" />
-      <Button v-else text="Follow" @click="handleFollow" class="!bg-c10 !px-[8px] !py-[4px] !text-c7" />
+      <Button
+        v-if="isFollowing"
+        @click="handleUnfollow"
+        text="Unfollow"
+        class="!bg-c8 !px-[8px] !py-[4px] !text-c9"
+      />
+      <Button
+        v-else
+        text="Follow"
+        @click="handleFollow"
+        class="!bg-c10 !px-[8px] !py-[4px] !text-c7"
+      />
     </div>
   </div>
 </template>

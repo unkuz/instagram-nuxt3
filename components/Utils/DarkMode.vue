@@ -17,7 +17,9 @@ const isDarkMode = computed(() => themeStore.darkMode)
         },
       ]"
     >
-      <div class="absolute top-1/2 h-[15px] w-[15px] -translate-y-1/2 translate-x-0 rounded-[50%] bg-c11" />
+      <div
+        class="absolute top-1/2 h-[15px] w-[15px] -translate-y-1/2 translate-x-0 rounded-[50%] bg-c11"
+      />
       <div
         :class="[
           'absolute top-1/2 h-[15px] w-[15px] -translate-x-[8px] -translate-y-[calc(50%+3px)] scale-0 rounded-[50%] bg-c2 duration-75 dark:bg-c2',

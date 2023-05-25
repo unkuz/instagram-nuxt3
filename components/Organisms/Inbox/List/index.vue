@@ -14,7 +14,9 @@ let keyword = ref('')
 
 let isFocus = $ref(false)
 
-const inboxList = $computed(() => inboxStore.data.filter((i) => i.recipient?.user_name.includes(keyword.value)))
+const inboxList = $computed(() =>
+  inboxStore.data.filter((i) => i.recipient?.user_name.includes(keyword.value))
+)
 </script>
 
 <template>
@@ -30,7 +32,9 @@ const inboxList = $computed(() => inboxStore.data.filter((i) => i.recipient?.use
 
         <ListUser :keyword="keyword" />
 
-        <div class="h-[calc(100vh-60px-45px-120px)] overflow-scroll md:h-[calc(100vh-84px-60px-120px)]">
+        <div
+          class="h-[calc(100vh-60px-45px-120px)] overflow-scroll md:h-[calc(100vh-84px-60px-120px)]"
+        >
           <template v-if="inboxList.length">
             <IndividualLine
               v-for="(i, idx) in inboxList"

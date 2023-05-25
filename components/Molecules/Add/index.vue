@@ -160,7 +160,10 @@ const close = () => addStore.toggle(false)
             </g>
           </g>
         </svg>
-        <div ref="sliderRef" :class="['keen-slider h-full', isShowInputCaption ? '!w-[500px]' : 'w-full']">
+        <div
+          ref="sliderRef"
+          :class="['keen-slider h-full', isShowInputCaption ? '!w-[500px]' : 'w-full']"
+        >
           <div v-for="(i, idx) in media" class="keen-slider__slide h-full w-full">
             <div v-if="i.type === 'image'" class="flex h-full w-full items-center justify-center">
               <img :src="i.src" class="max-h-full max-w-full object-contain" />

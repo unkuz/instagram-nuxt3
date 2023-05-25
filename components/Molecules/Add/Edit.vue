@@ -79,7 +79,10 @@ const post = () => {
   <div class="flex bg-black md:h-[80vh] md:w-[80vw]">
     <div class="w-[65%]">
       <div class="keen-slider h-full w-full bg-red-200" ref="sliderRef">
-        <div v-for="(i, idx) in listFile" class="keen-slider__slide relative flex items-center justify-center bg-c2">
+        <div
+          v-for="(i, idx) in listFile"
+          class="keen-slider__slide relative flex items-center justify-center bg-c2"
+        >
           <img v-if="i.type === 'image'" :src="i.src" class="h-full w-full object-contain" />
           <video v-else-if="i.type === 'video'" :src="i.src" class="h-full w-full object-contain" />
         </div>
@@ -94,7 +97,9 @@ const post = () => {
     <div class="h-full w-[35%] bg-c1 px-[20px]">
       <div class="flex h-[60px] w-full items-center justify-between">
         <div class="flex items-center gap-[10px]">
-          <NuxtLink :to="`/${userName}/`"> <Avatar :size="SizeAvatarEnum.S" :url="avatar" /></NuxtLink>
+          <NuxtLink :to="`/${userName}/`">
+            <Avatar :size="SizeAvatarEnum.S" :url="avatar"
+          /></NuxtLink>
           <TagName :name="userName" class="line-clamp-1" />
         </div>
         <AtomsButton

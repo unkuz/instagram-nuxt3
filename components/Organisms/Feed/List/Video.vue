@@ -55,7 +55,13 @@ const toggleFullScreen = () => {
     ref="containerRef "
     class="keen-slider__slide group relative flex min-w-full items-center justify-center overflow-hidden bg-c2"
   >
-    <video ref="videoRef" class="video block max-h-[100vh] w-full" type="video/mp4" playsinline loop />
+    <video
+      ref="videoRef"
+      class="video block max-h-[100vh] w-full"
+      type="video/mp4"
+      playsinline
+      loop
+    />
     <Loading v-show="waiting" />
     <PauseIcon_
       v-show="!waiting"
@@ -81,7 +87,10 @@ const toggleFullScreen = () => {
         v-if="!isPictureInPicture"
         class="absolute left-[10px] top-[10px] hidden !w-[26px] cursor-pointer group-hover:block"
       />
-      <ExpandPlayerIcon_ v-else class="absolute left-[10px] top-[10px] hidden !w-[26px] cursor-pointer group-hover:block" />
+      <ExpandPlayerIcon_
+        v-else
+        class="absolute left-[10px] top-[10px] hidden !w-[26px] cursor-pointer group-hover:block"
+      />
     </div>
   </div>
 </template>

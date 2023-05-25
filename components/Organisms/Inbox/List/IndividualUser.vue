@@ -34,14 +34,23 @@ const inbox = () => {
       <div
         :class="[
           'relative mx-auto flex aspect-square h-[66px] w-[66px] flex-col items-center  rounded-[50%] p-[3px] ',
-          has_read_story ? 'bg-c21/60' : 'bg-gradient-to-bl from-c17 to-c18 dark:from-c24 dark:to-c25',
+          has_read_story
+            ? 'bg-c21/60'
+            : 'bg-gradient-to-bl from-c17 to-c18 dark:from-c24 dark:to-c25',
         ]"
       >
         <div class="h-full w-full rounded-[50%] bg-c1 p-[2px] dark:bg-c19">
           <Avatar :size="SizeAvatarEnum.M" :url="profile_pic_url" />
         </div>
-        <div class="absolute bottom-0 right-0 flex items-center justify-center rounded-[50%] bg-white p-[2px]">
-          <Dot :class="['relative bottom-auto right-auto !h-[15px] !w-[15px] !p-[2px]', is_online ? 'bg-c15' : 'bg-c20/80']" />
+        <div
+          class="absolute bottom-0 right-0 flex items-center justify-center rounded-[50%] bg-white p-[2px]"
+        >
+          <Dot
+            :class="[
+              'relative bottom-auto right-auto !h-[15px] !w-[15px] !p-[2px]',
+              is_online ? 'bg-c15' : 'bg-c20/80',
+            ]"
+          />
         </div>
       </div>
       <p class="mt-[5px] overflow-hidden text-ellipsis whitespace-nowrap text-center text-xs">

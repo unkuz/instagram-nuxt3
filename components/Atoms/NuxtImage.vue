@@ -17,6 +17,12 @@ withDefaults(defineProps<IProps>(), {
 </script>
 <template>
   <div class="h-full w-full">
-    <nuxt-img :src="src" :class="['h-full w-full object-cover']" :loading="loading" :quality="quality" :alt="alt" />
+    <nuxt-img
+      :src="src"
+      :class="['h-full w-full object-cover']"
+      :loading="loading"
+      :quality="quality"
+      :alt="alt"
+    />
   </div>
 </template>

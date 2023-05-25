@@ -20,5 +20,6 @@ export const APP_CONFIGS = Object.freeze({
   STYLE_SNAP_CHAT: true,
   AUTHOR: 'cuzknothz',
   DEFAULT_AVATAR: 'https://gextoneducation.com/wp-content/uploads/2015/06/no-avatar-female.png',
-  DEFAULT_IMAGE_ERROR: 'https://gextoneducation.com/wp-content/uploads/2015/06/no-avatar-female.png',
+  DEFAULT_IMAGE_ERROR:
+    'https://gextoneducation.com/wp-content/uploads/2015/06/no-avatar-female.png',
 })

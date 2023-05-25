@@ -10,23 +10,33 @@ const globalStore = useGlobalStore()
 
 const { smallMd } = $(useTailwindBreakPoint())
 
-const isShowNavBarBottom = computed(() => !(globalStore.getIsMobile && globalStore.section === SectionEnum.MESSENGER))
+const isShowNavBarBottom = computed(
+  () => !(globalStore.getIsMobile && globalStore.section === SectionEnum.MESSENGER)
+)
 
 const noNeedPadingTop = $(
   computed(() => {
     return (
-      [SectionEnum.MESSENGER, SectionEnum.REELS, SectionEnum.SEARCH, SectionEnum.ACTIVITYFEED, SectionEnum.SELF].includes(
-        globalStore.section
-      ) && smallMd
+      [
+        SectionEnum.MESSENGER,
+        SectionEnum.REELS,
+        SectionEnum.SEARCH,
+        SectionEnum.ACTIVITYFEED,
+        SectionEnum.SELF,
+      ].includes(globalStore.section) && smallMd
     )
   })
 )
 
 const deskTopNodNeedPading = $(
   computed(() => {
-    return [SectionEnum.MESSENGER, SectionEnum.REELS, SectionEnum.SEARCH, SectionEnum.ACTIVITYFEED, SectionEnum.SELF].includes(
-      globalStore.section
-    )
+    return [
+      SectionEnum.MESSENGER,
+      SectionEnum.REELS,
+      SectionEnum.SEARCH,
+      SectionEnum.ACTIVITYFEED,
+      SectionEnum.SELF,
+    ].includes(globalStore.section)
   })
 )
 </script>

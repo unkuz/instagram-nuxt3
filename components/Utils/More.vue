@@ -57,7 +57,10 @@ onClickOutside(moreRef, () => {
 <template>
   <div class="z-50">
     <BackDrop>
-      <div ref="moreRef" class="fixed -bottom-[100%] right-1/2 z-20 w-[85%] translate-x-1/2 text-[0.8rem] sm:w-[400px]">
+      <div
+        ref="moreRef"
+        class="fixed -bottom-[100%] right-1/2 z-20 w-[85%] translate-x-1/2 text-[0.8rem] sm:w-[400px]"
+      >
         <div
           v-if="type === TypeMoreEnum.FEED"
           class="flex h-[60px] items-center justify-between rounded-[0.8rem] bg-c1/100 px-[20px] backdrop-blur-sm sm:px-[30px]"

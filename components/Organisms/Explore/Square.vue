@@ -51,8 +51,13 @@ withDefaults(defineProps<IProps>(), {
     />
 
     <template v-if="isVideo(src)"
-      ><video :src="src" class="h-full w-full bg-c2 object-cover duration-200 group-hover:scale-[1.1]" />
-      <ReelIconSelected_ :class="['absolute right-[5px] top-[5px] z-10 fill-c1 dark:fill-c1 md:right-[20px] md:top-[20px]']"
+      ><video
+        :src="src"
+        class="h-full w-full bg-c2 object-cover duration-200 group-hover:scale-[1.1]" />
+      <ReelIconSelected_
+        :class="[
+          'absolute right-[5px] top-[5px] z-10 fill-c1 dark:fill-c1 md:right-[20px] md:top-[20px]',
+        ]"
     /></template>
     <MutipleMediaIcon_
       v-if="isMutiple"

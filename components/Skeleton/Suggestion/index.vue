@@ -22,13 +22,21 @@ import { SizeAvatarEnum } from '@/type'
       <div class="skeleton h-[18px] w-[60px] cursor-pointer"></div>
     </div>
     <div class="mt-[8px] h-auto w-full">
-      <div class="flex h-[48px] items-center justify-between py-[8px]" v-for="(i, idx) in 4" :index="idx">
+      <div
+        class="flex h-[48px] items-center justify-between py-[8px]"
+        v-for="(i, idx) in 4"
+        :index="idx"
+      >
         <Avatar :size="SizeAvatarEnum.S" skeleton />
         <div class="w-[185px]">
-          <p class="skeleton h-[15px] w-[60px] cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap font-medium"></p>
+          <p
+            class="skeleton h-[15px] w-[60px] cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap font-medium"
+          ></p>
           <p class="skeleton mt-[2px] h-[15px] w-[130px] text-[0.8rem] text-c3 dark:text-c21"></p>
         </div>
-        <div class="flex w-[55px] cursor-pointer justify-end text-[0.8rem] font-[500] [&>div]:px-[6px]">
+        <div
+          class="flex w-[55px] cursor-pointer justify-end text-[0.8rem] font-[500] [&>div]:px-[6px]"
+        >
           <Button skeleton class="h-[27px] w-[52px] !bg-c8 !px-[8px] !py-[4px] !text-c9" />
         </div>
       </div>

@@ -6,7 +6,6 @@ interface IProps {
   previewMedia: any
 }
 defineProps<IProps>()
-
 </script>
 <template>
   <BackDrop @click.self="$emit('close')">

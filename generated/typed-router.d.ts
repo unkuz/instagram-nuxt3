@@ -71,7 +71,9 @@ type TypedLocationAsRelativeRaw<T extends TypedRouteList> = {
   params?: TypedRouteParams[T]
 }
 
-type TypedRouteLocationRaw<T extends TypedRouteList> = RouteQueryAndHash & TypedLocationAsRelativeRaw<T> & RouteLocationOptions
+type TypedRouteLocationRaw<T extends TypedRouteList> = RouteQueryAndHash &
+  TypedLocationAsRelativeRaw<T> &
+  RouteLocationOptions
 
 export interface TypedRouter {
   /**
@@ -107,14 +109,18 @@ export interface TypedRouter {
    *
    * @param to - Route location to navigate to
    */
-  push<T extends TypedRouteList>(to: TypedRouteLocationRaw<T>): Promise<NavigationFailure | void | undefined>
+  push<T extends TypedRouteList>(
+    to: TypedRouteLocationRaw<T>
+  ): Promise<NavigationFailure | void | undefined>
   /**
    * Programmatically navigate to a new URL by replacing the current entry in
    * the history stack.
    *
    * @param to - Route location to navigate to
    */
-  replace<T extends TypedRouteList>(to: TypedRouteLocationRaw<T>): Promise<NavigationFailure | void | undefined>
+  replace<T extends TypedRouteList>(
+    to: TypedRouteLocationRaw<T>
+  ): Promise<NavigationFailure | void | undefined>
 }
 
 declare module 'nuxt/dist/app/nuxt' {

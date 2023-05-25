@@ -51,7 +51,8 @@ export default {
         c25: '#16ff01',
       },
       clipPath: {
-        cuzknothz: 'polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px)',
+        cuzknothz:
+          'polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px)',
         cuzknothz2: 'polygon(12px 0, 100% 0, 100% 100%, 0 100%, 0 12px)',
       },
       keyframes: {

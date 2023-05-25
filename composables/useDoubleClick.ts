@@ -9,7 +9,11 @@ import { Ref } from 'vue'
  * @param {Function} dbclickCb - dbclickCb is a callback function that will be executed when the
  * element is double-clicked.
  */
-export const useDoubleClick = (el: Ref<HTMLElement | null | undefined>, clickCb: Function, dbclickCb: Function) => {
+export const useDoubleClick = (
+  el: Ref<HTMLElement | null | undefined>,
+  clickCb: Function,
+  dbclickCb: Function
+) => {
   let timer = ref<any>(null)
 
   const onClick = (e: MouseEvent) => {

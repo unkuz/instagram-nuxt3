@@ -11,7 +11,9 @@ interface IProps {
 const props = defineProps<IProps>()
 
 const inboxListUserStore = useInboxListUserStore()
-const listUser = computed(() => inboxListUserStore.data.filter((i) => i?.user_name?.includes(props.keyword)))
+const listUser = computed(() =>
+  inboxListUserStore.data.filter((i) => i?.user_name?.includes(props.keyword))
+)
 
 const [sliderRef, slider] = useKeenSlider({
   breakpoints: {

@@ -17,10 +17,13 @@ watchEffect(() => {
   inboxStore.save(unref(data))
 })
 
-const { data: listUser, pending: pendingListUser } = await useLazyAsyncData('inbox-list-user', async () => {
-  const res = await axios.get(APP_API.USER.LIST)
-  return res.data
-})
+const { data: listUser, pending: pendingListUser } = await useLazyAsyncData(
+  'inbox-list-user',
+  async () => {
+    const res = await axios.get(APP_API.USER.LIST)
+    return res.data
+  }
+)
 
 watchEffect(() => {
   inboxListUserStore.save(unref(listUser))
