@@ -4,6 +4,7 @@ import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
   modules: [
+    'nuxt-svgo',
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
@@ -78,7 +79,7 @@ export default defineNuxtConfig({
     presets: {},
   },
   vite: {
-    plugins: [svgLoader({}), VueTypeImports()],
+    plugins: [],
     build: {
       chunkSizeWarningLimit: 5000,
     },
