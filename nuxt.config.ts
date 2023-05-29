@@ -1,5 +1,4 @@
 import { defineNuxtConfig } from 'nuxt/config'
-import VueTypeImports from 'vite-plugin-vue-type-imports'
 import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
@@ -27,8 +26,12 @@ export default defineNuxtConfig({
     // '@nuxtjs/fontaine',
     // '@morev/vue-transitions/nuxt',
   ],
-  content: {},
-  extends: ['nuxt-seo-kit'],
+  experimental: {
+    reactivityTransform: true,
+    viewTransition: true,
+    componentIslands: true,
+    typedPages: true,
+  },
   app: {
     head: {
       meta: [
@@ -62,6 +65,8 @@ export default defineNuxtConfig({
     rootId: '__nuxt',
     rootTag: 'div',
   },
+  content: {},
+  extends: ['nuxt-seo-kit'],
   appConfig: {
     analyze: {
       analyzerMode: 'static',
@@ -100,11 +105,6 @@ export default defineNuxtConfig({
       ['kebabCase', 'stringToKebab'],
       ['isDate', 'isLodashDate'],
     ],
-  },
-  experimental: {
-    reactivityTransform: true,
-    viewTransition: true,
-    componentIslands: true,
   },
   devtools: {
     enabled: true,

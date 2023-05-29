@@ -39,7 +39,7 @@ const { isSupported, notification, show, close, onClick, onShow, onError, onClos
 <template>
   <div
     :class="[
-      'scroll-smooth font-quicksan text-[.85rem] selection:bg-c2   selection:text-c1 dark:selection:bg-c1 dark:selection:text-c2 ',
+      'scroll-smooth font-quicksan text-[.85rem] selection:bg-c2 selection:text-c1 dark:selection:bg-c1 dark:selection:text-c2',
       {
         'dark ': darkMode,
       },

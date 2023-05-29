@@ -52,7 +52,6 @@
     "typescript": "^5.0.4",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-pwa": "^0.15.1",
-    "vite-plugin-vue-type-imports": "^0.2.4",
     "vitest": "^0.31.1",
     "vue-gtag-next": "^1.14.0"
   },
